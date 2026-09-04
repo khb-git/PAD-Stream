@@ -1,0 +1,650 @@
+{
+  "milestone": "V16E-1B2Q-XPU",
+  "classification": "SOURCE_NATIVE_GODUNOV_FINITE_VOLUME_DISCRETE_CONSERVATION_AUDIT",
+  "authority": {
+    "Stage2_source_sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+    "base_runner_sha256": "587bd355cd17efd3e7d814f1320d4894c857256c89699ea7c71dc5e63984ae18",
+    "B2P_protocol_sha256": "553288b7e18c012d87c977efd6742bc5719f3e5f05e37734fe5e6f595590ae0d"
+  },
+  "exact_update_identity": "S_raw[1:] - S_old[1:] + dt/(phi*dx)*(F[2:]-F[1:-1]) = 0",
+  "post_update_operations": [
+    "S[0]=sw_inj",
+    "np.clip(S,swc,1-sor)"
+  ],
+  "identity_tolerance_policy": {
+    "float64_epsilon": 2.220446049250313e-16,
+    "multiplier": 2048.0,
+    "classification": "computational identity tolerance only; not a scientific model threshold"
+  },
+  "cases": {
+    "case1": {
+      "0.00": {
+        "Nc": 0.0,
+        "tBT_days": 5260.298041565617,
+        "dense_times": 61,
+        "native_grid": 1601,
+        "step_count": 5939,
+        "dt_cfl_days": 0.8468723770964507,
+        "preclip_identity": {
+          "n": 9502400,
+          "MSE": 4.810921296604616e-34,
+          "RMSE": 2.1933812474361623e-17,
+          "MAE": 1.3019152257834211e-17,
+          "max_abs": 5.551115123125783e-17,
+          "machine_epsilon_identity_bound": 4.547473508864641e-13,
+          "max_abs_within_machine_bound": true
+        },
+        "postclip_balance": {
+          "n": 9502400,
+          "MSE": 4.810921296604616e-34,
+          "RMSE": 2.1933812474361623e-17,
+          "MAE": 1.3019152257834211e-17,
+          "max_abs": 5.551115123125783e-17
+        },
+        "clip_correction": {
+          "n": 9502400,
+          "MSE": 0.0,
+          "RMSE": 0.0,
+          "MAE": 0.0,
+          "max_abs": 0.0,
+          "clipped_cell_events": 0
+        },
+        "global_preclip_balance": {
+          "n": 5939,
+          "MSE": 4.683794118686059e-32,
+          "RMSE": 2.1642075036109774e-16,
+          "MAE": 1.640875011354256e-16,
+          "max_abs": 8.842386430748807e-16
+        },
+        "global_postclip_balance": {
+          "n": 5939,
+          "MSE": 4.683794118686059e-32,
+          "RMSE": 2.1642075036109774e-16,
+          "MAE": 1.640875011354256e-16,
+          "max_abs": 8.842386430748807e-16
+        },
+        "native_continuous_diagnostic": {
+          "full_native_interior": {
+            "n": 97539,
+            "MSE": 251.32591600456792,
+            "RMSE": 15.853261998862187,
+            "MAE": 1.3629260568526826,
+            "max_abs": 480.07331406134233
+          },
+          "prefront_smooth_native": {
+            "n": 46436,
+            "MSE": 16.480637296552118,
+            "RMSE": 4.05963511864701,
+            "MAE": 0.6630814364438905,
+            "max_abs": 79.22462569609029
+          }
+        }
+      },
+      "0.05": {
+        "Nc": 0.05,
+        "tBT_days": 5130.955255698444,
+        "dense_times": 61,
+        "native_grid": 1601,
+        "step_count": 6065,
+        "dt_cfl_days": 0.8055699238913413,
+        "preclip_identity": {
+          "n": 9704000,
+          "MSE": 5.102532662441325e-34,
+          "RMSE": 2.258878629417996e-17,
+          "MAE": 1.6583061673690937e-17,
+          "max_abs": 5.551115123125783e-17,
+          "machine_epsilon_identity_bound": 4.547473508864641e-13,
+          "max_abs_within_machine_bound": true
+        },
+        "postclip_balance": {
+          "n": 9704000,
+          "MSE": 5.102532662441325e-34,
+          "RMSE": 2.258878629417996e-17,
+          "MAE": 1.6583061673690937e-17,
+          "max_abs": 5.551115123125783e-17
+        },
+        "clip_correction": {
+          "n": 9704000,
+          "MSE": 0.0,
+          "RMSE": 0.0,
+          "MAE": 0.0,
+          "max_abs": 0.0,
+          "clipped_cell_events": 0
+        },
+        "global_preclip_balance": {
+          "n": 6065,
+          "MSE": 5.22600364994798e-32,
+          "RMSE": 2.286045417297736e-16,
+          "MAE": 1.7671746443808536e-16,
+          "max_abs": 1.104238922524964e-15
+        },
+        "global_postclip_balance": {
+          "n": 6065,
+          "MSE": 5.22600364994798e-32,
+          "RMSE": 2.286045417297736e-16,
+          "MAE": 1.7671746443808536e-16,
+          "max_abs": 1.104238922524964e-15
+        },
+        "native_continuous_diagnostic": {
+          "full_native_interior": {
+            "n": 97539,
+            "MSE": 262.60867964119586,
+            "RMSE": 16.20520532548711,
+            "MAE": 1.3892075300028475,
+            "max_abs": 498.50412555811806
+          },
+          "prefront_smooth_native": {
+            "n": 46003,
+            "MSE": 17.587725586238825,
+            "RMSE": 4.19377223824075,
+            "MAE": 0.6858856093159929,
+            "max_abs": 80.50692770608504
+          }
+        }
+      },
+      "0.10": {
+        "Nc": 0.1,
+        "tBT_days": 5005.835435357693,
+        "dense_times": 61,
+        "native_grid": 1601,
+        "step_count": 6251,
+        "dt_cfl_days": 0.7662818150985455,
+        "preclip_identity": {
+          "n": 10001600,
+          "MSE": 5.0619516092457354e-34,
+          "RMSE": 2.249878132087544e-17,
+          "MAE": 1.6495361981446496e-17,
+          "max_abs": 5.551115123125783e-17,
+          "machine_epsilon_identity_bound": 4.547473508864641e-13,
+          "max_abs_within_machine_bound": true
+        },
+        "postclip_balance": {
+          "n": 10001600,
+          "MSE": 5.0619516092457354e-34,
+          "RMSE": 2.249878132087544e-17,
+          "MAE": 1.6495361981446496e-17,
+          "max_abs": 5.551115123125783e-17
+        },
+        "clip_correction": {
+          "n": 10001600,
+          "MSE": 0.0,
+          "RMSE": 0.0,
+          "MAE": 0.0,
+          "max_abs": 0.0,
+          "clipped_cell_events": 0
+        },
+        "global_preclip_balance": {
+          "n": 6251,
+          "MSE": 4.95178449751053e-32,
+          "RMSE": 2.225260545983443e-16,
+          "MAE": 1.694960853307961e-16,
+          "max_abs": 9.260423660137596e-16
+        },
+        "global_postclip_balance": {
+          "n": 6251,
+          "MSE": 4.95178449751053e-32,
+          "RMSE": 2.225260545983443e-16,
+          "MAE": 1.694960853307961e-16,
+          "max_abs": 9.260423660137596e-16
+        },
+        "native_continuous_diagnostic": {
+          "full_native_interior": {
+            "n": 97539,
+            "MSE": 270.32496059750343,
+            "RMSE": 16.441561987764526,
+            "MAE": 1.4172858438706726,
+            "max_abs": 521.833772592825
+          },
+          "prefront_smooth_native": {
+            "n": 45568,
+            "MSE": 18.792861691965484,
+            "RMSE": 4.335073435590854,
+            "MAE": 0.7106586019978137,
+            "max_abs": 81.0814461093095
+          }
+        }
+      },
+      "0.20": {
+        "Nc": 0.2,
+        "tBT_days": 4767.65132289983,
+        "dense_times": 61,
+        "native_grid": 1601,
+        "step_count": 6565,
+        "dt_cfl_days": 0.6933604590621821,
+        "preclip_identity": {
+          "n": 10504000,
+          "MSE": 4.967202249976334e-34,
+          "RMSE": 2.2287221114298513e-17,
+          "MAE": 1.628939459325187e-17,
+          "max_abs": 5.551115123125783e-17,
+          "machine_epsilon_identity_bound": 4.547473508864641e-13,
+          "max_abs_within_machine_bound": true
+        },
+        "postclip_balance": {
+          "n": 10504000,
+          "MSE": 4.967202249976334e-34,
+          "RMSE": 2.2287221114298513e-17,
+          "MAE": 1.628939459325187e-17,
+          "max_abs": 5.551115123125783e-17
+        },
+        "clip_correction": {
+          "n": 10504000,
+          "MSE": 0.0,
+          "RMSE": 0.0,
+          "MAE": 0.0,
+          "max_abs": 0.0,
+          "clipped_cell_events": 0
+        },
+        "global_preclip_balance": {
+          "n": 6565,
+          "MSE": 4.7688377250618177e-32,
+          "RMSE": 2.1837668660051187e-16,
+          "MAE": 1.6772219864354237e-16,
+          "max_abs": 9.859663295807327e-16
+        },
+        "global_postclip_balance": {
+          "n": 6565,
+          "MSE": 4.7688377250618177e-32,
+          "RMSE": 2.1837668660051187e-16,
+          "MAE": 1.6772219864354237e-16,
+          "max_abs": 9.859663295807327e-16
+        },
+        "native_continuous_diagnostic": {
+          "full_native_interior": {
+            "n": 97539,
+            "MSE": 289.66796014263014,
+            "RMSE": 17.019634547857663,
+            "MAE": 1.4622628211592286,
+            "max_abs": 550.5736302924262
+          },
+          "prefront_smooth_native": {
+            "n": 44668,
+            "MSE": 20.946745015732674,
+            "RMSE": 4.576761411274644,
+            "MAE": 0.7548997049916859,
+            "max_abs": 81.44199882676818
+          }
+        }
+      },
+      "0.30": {
+        "Nc": 0.3,
+        "tBT_days": 4544.578020524838,
+        "dense_times": 61,
+        "native_grid": 1601,
+        "step_count": 6940,
+        "dt_cfl_days": 0.6273784875464664,
+        "preclip_identity": {
+          "n": 11104000,
+          "MSE": 4.871861490900951e-34,
+          "RMSE": 2.20722936979847e-17,
+          "MAE": 1.6086041909324137e-17,
+          "max_abs": 5.551115123125783e-17,
+          "machine_epsilon_identity_bound": 4.547473508864641e-13,
+          "max_abs_within_machine_bound": true
+        },
+        "postclip_balance": {
+          "n": 11104000,
+          "MSE": 4.871861490900951e-34,
+          "RMSE": 2.20722936979847e-17,
+          "MAE": 1.6086041909324137e-17,
+          "max_abs": 5.551115123125783e-17
+        },
+        "clip_correction": {
+          "n": 11104000,
+          "MSE": 0.0,
+          "RMSE": 0.0,
+          "MAE": 0.0,
+          "max_abs": 0.0,
+          "clipped_cell_events": 0
+        },
+        "global_preclip_balance": {
+          "n": 6940,
+          "MSE": 5.094630626671397e-32,
+          "RMSE": 2.2571288458285666e-16,
+          "MAE": 1.72031579782737e-16,
+          "max_abs": 1.0590807328495193e-15
+        },
+        "global_postclip_balance": {
+          "n": 6940,
+          "MSE": 5.094630626671397e-32,
+          "RMSE": 2.2571288458285666e-16,
+          "MAE": 1.72031579782737e-16,
+          "max_abs": 1.0590807328495193e-15
+        },
+        "native_continuous_diagnostic": {
+          "full_native_interior": {
+            "n": 97539,
+            "MSE": 306.84831769904395,
+            "RMSE": 17.517086450064802,
+            "MAE": 1.4966582533244042,
+            "max_abs": 587.7449489348742
+          },
+          "prefront_smooth_native": {
+            "n": 43732,
+            "MSE": 22.892904195303593,
+            "RMSE": 4.784652985881379,
+            "MAE": 0.7937715044880358,
+            "max_abs": 81.7076024563099
+          }
+        }
+      }
+    },
+    "case2": {
+      "0.00": {
+        "Nc": 0.0,
+        "tBT_days": 7261.132154753214,
+        "dense_times": 61,
+        "native_grid": 1601,
+        "step_count": 9132,
+        "dt_cfl_days": 0.7603431884630474,
+        "preclip_identity": {
+          "n": 14611200,
+          "MSE": 4.797127282866216e-34,
+          "RMSE": 2.1902345269094394e-17,
+          "MAE": 1.2981441214832866e-17,
+          "max_abs": 5.551115123125783e-17,
+          "machine_epsilon_identity_bound": 4.547473508864641e-13,
+          "max_abs_within_machine_bound": true
+        },
+        "postclip_balance": {
+          "n": 14611200,
+          "MSE": 4.797127282866216e-34,
+          "RMSE": 2.1902345269094394e-17,
+          "MAE": 1.2981441214832866e-17,
+          "max_abs": 5.551115123125783e-17
+        },
+        "clip_correction": {
+          "n": 14611200,
+          "MSE": 0.0,
+          "RMSE": 0.0,
+          "MAE": 0.0,
+          "max_abs": 0.0,
+          "clipped_cell_events": 0
+        },
+        "global_preclip_balance": {
+          "n": 9132,
+          "MSE": 7.563579432955645e-32,
+          "RMSE": 2.750196253534581e-16,
+          "MAE": 2.0741919117248206e-16,
+          "max_abs": 1.2881346584351108e-15
+        },
+        "global_postclip_balance": {
+          "n": 9132,
+          "MSE": 7.563579432955645e-32,
+          "RMSE": 2.750196253534581e-16,
+          "MAE": 2.0741919117248206e-16,
+          "max_abs": 1.2881346584351108e-15
+        },
+        "native_continuous_diagnostic": {
+          "full_native_interior": {
+            "n": 97539,
+            "MSE": 450.44976837819553,
+            "RMSE": 21.223801930337448,
+            "MAE": 1.6565259315972432,
+            "max_abs": 666.1978562703076
+          },
+          "prefront_smooth_native": {
+            "n": 46078,
+            "MSE": 25.30524975686137,
+            "RMSE": 5.030432362815484,
+            "MAE": 0.8298903768669268,
+            "max_abs": 90.47018035412933
+          }
+        }
+      },
+      "0.05": {
+        "Nc": 0.05,
+        "tBT_days": 7082.591879273697,
+        "dense_times": 61,
+        "native_grid": 1601,
+        "step_count": 9319,
+        "dt_cfl_days": 0.7232608135849571,
+        "preclip_identity": {
+          "n": 14910400,
+          "MSE": 5.084558764278762e-34,
+          "RMSE": 2.254896619421556e-17,
+          "MAE": 1.6471554740983164e-17,
+          "max_abs": 5.551115123125783e-17,
+          "machine_epsilon_identity_bound": 4.547473508864641e-13,
+          "max_abs_within_machine_bound": true
+        },
+        "postclip_balance": {
+          "n": 14910400,
+          "MSE": 5.084558764278762e-34,
+          "RMSE": 2.254896619421556e-17,
+          "MAE": 1.6471554740983164e-17,
+          "max_abs": 5.551115123125783e-17
+        },
+        "clip_correction": {
+          "n": 14910400,
+          "MSE": 0.0,
+          "RMSE": 0.0,
+          "MAE": 0.0,
+          "max_abs": 0.0,
+          "clipped_cell_events": 0
+        },
+        "global_preclip_balance": {
+          "n": 9319,
+          "MSE": 1.9643632061957437e-31,
+          "RMSE": 4.432113723942272e-16,
+          "MAE": 3.687471976263203e-16,
+          "max_abs": 1.2897879625521358e-15
+        },
+        "global_postclip_balance": {
+          "n": 9319,
+          "MSE": 1.9643632061957437e-31,
+          "RMSE": 4.432113723942272e-16,
+          "MAE": 3.687471976263203e-16,
+          "max_abs": 1.2897879625521358e-15
+        },
+        "native_continuous_diagnostic": {
+          "full_native_interior": {
+            "n": 97539,
+            "MSE": 474.63209031756503,
+            "RMSE": 21.786052655714506,
+            "MAE": 1.6900378493501143,
+            "max_abs": 675.6511025104683
+          },
+          "prefront_smooth_native": {
+            "n": 45630,
+            "MSE": 27.12060405346872,
+            "RMSE": 5.207744622527945,
+            "MAE": 0.8611624309997025,
+            "max_abs": 91.31392427139441
+          }
+        }
+      },
+      "0.10": {
+        "Nc": 0.1,
+        "tBT_days": 6909.880838284323,
+        "dense_times": 61,
+        "native_grid": 1601,
+        "step_count": 9566,
+        "dt_cfl_days": 0.687986967470531,
+        "preclip_identity": {
+          "n": 15305600,
+          "MSE": 5.05233418771955e-34,
+          "RMSE": 2.24773979537658e-17,
+          "MAE": 1.6499561549258075e-17,
+          "max_abs": 5.551115123125783e-17,
+          "machine_epsilon_identity_bound": 4.547473508864641e-13,
+          "max_abs_within_machine_bound": true
+        },
+        "postclip_balance": {
+          "n": 15305600,
+          "MSE": 5.05233418771955e-34,
+          "RMSE": 2.24773979537658e-17,
+          "MAE": 1.6499561549258075e-17,
+          "max_abs": 5.551115123125783e-17
+        },
+        "clip_correction": {
+          "n": 15305600,
+          "MSE": 0.0,
+          "RMSE": 0.0,
+          "MAE": 0.0,
+          "max_abs": 0.0,
+          "clipped_cell_events": 0
+        },
+        "global_preclip_balance": {
+          "n": 9566,
+          "MSE": 9.824234451457103e-32,
+          "RMSE": 3.134363484259141e-16,
+          "MAE": 2.4899479821054817e-16,
+          "max_abs": 1.5193767208201641e-15
+        },
+        "global_postclip_balance": {
+          "n": 9566,
+          "MSE": 9.824234451457103e-32,
+          "RMSE": 3.134363484259141e-16,
+          "MAE": 2.4899479821054817e-16,
+          "max_abs": 1.5193767208201641e-15
+        },
+        "native_continuous_diagnostic": {
+          "full_native_interior": {
+            "n": 97539,
+            "MSE": 488.7528201616315,
+            "RMSE": 22.107754751707184,
+            "MAE": 1.7190327401421555,
+            "max_abs": 698.5646398906965
+          },
+          "prefront_smooth_native": {
+            "n": 45153,
+            "MSE": 28.778414305869372,
+            "RMSE": 5.364551640712332,
+            "MAE": 0.8900357876572585,
+            "max_abs": 91.59041608101558
+          }
+        }
+      },
+      "0.20": {
+        "Nc": 0.2,
+        "tBT_days": 6581.099787466829,
+        "dense_times": 61,
+        "native_grid": 1601,
+        "step_count": 10061,
+        "dt_cfl_days": 0.6225163512887509,
+        "preclip_identity": {
+          "n": 16097600,
+          "MSE": 4.939433521448419e-34,
+          "RMSE": 2.2224836380609012e-17,
+          "MAE": 1.623192793460484e-17,
+          "max_abs": 5.551115123125783e-17,
+          "machine_epsilon_identity_bound": 4.547473508864641e-13,
+          "max_abs_within_machine_bound": true
+        },
+        "postclip_balance": {
+          "n": 16097600,
+          "MSE": 4.939433521448419e-34,
+          "RMSE": 2.2224836380609012e-17,
+          "MAE": 1.623192793460484e-17,
+          "max_abs": 5.551115123125783e-17
+        },
+        "clip_correction": {
+          "n": 16097600,
+          "MSE": 0.0,
+          "RMSE": 0.0,
+          "MAE": 0.0,
+          "max_abs": 0.0,
+          "clipped_cell_events": 0
+        },
+        "global_preclip_balance": {
+          "n": 10061,
+          "MSE": 7.951277985949408e-32,
+          "RMSE": 2.819801054320926e-16,
+          "MAE": 2.184168527244641e-16,
+          "max_abs": 1.4085892965386823e-15
+        },
+        "global_postclip_balance": {
+          "n": 10061,
+          "MSE": 7.951277985949408e-32,
+          "RMSE": 2.819801054320926e-16,
+          "MAE": 2.184168527244641e-16,
+          "max_abs": 1.4085892965386823e-15
+        },
+        "native_continuous_diagnostic": {
+          "full_native_interior": {
+            "n": 97539,
+            "MSE": 515.4268737882114,
+            "RMSE": 22.703014640972494,
+            "MAE": 1.75783334633,
+            "max_abs": 729.4529409084391
+          },
+          "prefront_smooth_native": {
+            "n": 44105,
+            "MSE": 31.480017966687374,
+            "RMSE": 5.610705656750082,
+            "MAE": 0.9362732088590553,
+            "max_abs": 92.32743876684174
+          }
+        }
+      },
+      "0.30": {
+        "Nc": 0.3,
+        "tBT_days": 6273.1771724471,
+        "dense_times": 61,
+        "native_grid": 1601,
+        "step_count": 10618,
+        "dt_cfl_days": 0.5632760879855467,
+        "preclip_identity": {
+          "n": 16988800,
+          "MSE": 4.825604408525859e-34,
+          "RMSE": 2.196725838270643e-17,
+          "MAE": 1.5983254487299887e-17,
+          "max_abs": 5.551115123125783e-17,
+          "machine_epsilon_identity_bound": 4.547473508864641e-13,
+          "max_abs_within_machine_bound": true
+        },
+        "postclip_balance": {
+          "n": 16988800,
+          "MSE": 4.825604408525859e-34,
+          "RMSE": 2.196725838270643e-17,
+          "MAE": 1.5983254487299887e-17,
+          "max_abs": 5.551115123125783e-17
+        },
+        "clip_correction": {
+          "n": 16988800,
+          "MSE": 0.0,
+          "RMSE": 0.0,
+          "MAE": 0.0,
+          "max_abs": 0.0,
+          "clipped_cell_events": 0
+        },
+        "global_preclip_balance": {
+          "n": 10618,
+          "MSE": 7.470773192114463e-32,
+          "RMSE": 2.733271518183743e-16,
+          "MAE": 2.103022815875217e-16,
+          "max_abs": 1.2232787265386944e-15
+        },
+        "global_postclip_balance": {
+          "n": 10618,
+          "MSE": 7.470773192114463e-32,
+          "RMSE": 2.733271518183743e-16,
+          "MAE": 2.103022815875217e-16,
+          "max_abs": 1.2232787265386944e-15
+        },
+        "native_continuous_diagnostic": {
+          "full_native_interior": {
+            "n": 97539,
+            "MSE": 529.4272852107879,
+            "RMSE": 23.009286933992282,
+            "MAE": 1.7804085426047624,
+            "max_abs": 744.1962701829384
+          },
+          "prefront_smooth_native": {
+            "n": 42952,
+            "MSE": 33.89006466719682,
+            "RMSE": 5.821517385286831,
+            "MAE": 0.9754612466207243,
+            "max_abs": 93.42963427184867
+          }
+        }
+      }
+    }
+  },
+  "no_training": true,
+  "no_optimizer": true,
+  "no_weight_update": true,
+  "no_OOD": true,
+  "no_TOF": true
+}

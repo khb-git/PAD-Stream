@@ -1,0 +1,70 @@
+{
+  "milestone": "V16E-1B2T-XPU",
+  "classification": "B2S_MEMORY_FEASIBILITY_VS_FULL_RUN_PRACTICALITY_INTERPRETATION",
+  "B2S_certified_result": {
+    "all_tested_microbatches_passed": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "largest_successful_tested_microbatch": 16,
+    "meaning": "16 is the largest value permitted by the B2R/B2S candidate set; it is not an observed XPU or graph failure boundary."
+  },
+  "measured_throughput": [
+    {
+      "microbatch": 1,
+      "measured_backward_path_seconds": 26.667199999999866,
+      "measured_profiles_per_second": 0.03749925001499989,
+      "peak_xpu_memory_bytes": 75192832,
+      "success": true
+    },
+    {
+      "microbatch": 2,
+      "measured_backward_path_seconds": 29.130588899999566,
+      "measured_profiles_per_second": 0.06865635318481425,
+      "peak_xpu_memory_bytes": 86268416,
+      "success": true
+    },
+    {
+      "microbatch": 4,
+      "measured_backward_path_seconds": 23.38904989999901,
+      "measured_profiles_per_second": 0.17102020035453297,
+      "peak_xpu_memory_bytes": 158674944,
+      "success": true
+    },
+    {
+      "microbatch": 8,
+      "measured_backward_path_seconds": 26.1243271000003,
+      "measured_profiles_per_second": 0.3062279831888917,
+      "peak_xpu_memory_bytes": 303522816,
+      "success": true
+    },
+    {
+      "microbatch": 16,
+      "measured_backward_path_seconds": 25.567035199999737,
+      "measured_profiles_per_second": 0.6258058423606412,
+      "peak_xpu_memory_bytes": 593251840,
+      "success": true
+    }
+  ],
+  "candidate_16_projection": {
+    "dataset_profiles": 14400,
+    "frozen_train_profiles": 11520,
+    "logical_batch": 8192,
+    "microbatch": 16,
+    "measured_single_candidate_seconds": 25.567035199999737,
+    "microbatches_per_epoch": 720,
+    "projected_seconds_per_epoch_from_single_B2S_measurement": 18408.26534399981,
+    "projected_hours_per_epoch_from_single_B2S_measurement": 5.113407039999947,
+    "projected_days_for_800_epochs_from_single_B2S_measurement": 170.4469013333316,
+    "peak_xpu_memory_bytes_observed_in_B2S": 593251840,
+    "interpretation": "Projection is an operational diagnostic, not a runtime promise. It excludes optimizer/checkpoint overhead and is used only to show that memory feasibility at microbatch 16 is not sufficient evidence for a practical 800-epoch execution contract."
+  },
+  "decision": "DO_NOT_FREEZE_MICROBATCH_16_AS_FINAL_TRAINING_MICROBATCH",
+  "reason": "B2S found no memory/graph ceiling through 16 and measured throughput continued to improve strongly with candidate size. A larger no-update benchmark is warranted before locking the operational training contract.",
+  "scientific_protocol_changed": false,
+  "COMP_XPU_005_full_training_authorized": false,
+  "B3_authorized": false
+}

@@ -1,0 +1,13 @@
+{
+  "milestone": "V15-SG7C-R3D",
+  "status": "FROZEN_DEPLOYMENT_CALIBRATION_CONTRACT_INCOMPLETE",
+  "validation_passed": false,
+  "training_performed": false,
+  "frozen_model_modified": false,
+  "global_required_correction_MAE": 0.001702969736427919,
+  "front_required_correction_MAE_100d": 0.009261960129912362,
+  "short_TOF_required_correction_MAE": 0.0011638090729701928,
+  "very_long_TOF_required_correction_MAE": 0.0047112654138375,
+  "recommendation": "Do not fit a calibrator until the R3D contract validates.",
+  "next_milestone": "V15-SG7C-R3D-R \u2014 Frozen Deployment Calibration Contract Repair"
+}

@@ -1,0 +1,8 @@
+{
+  "milestone": "V15-SG7C-R3F4-R3",
+  "status": "DUAL_REFERENCE_FRONT_CONTRACT_CONFLICT_ESTABLISHED",
+  "diagnosis": "FROZEN_FRONT_PRESERVATION_CONFLICTS_WITH_SG7A_FRONT_ACCURACY",
+  "training_performed": false,
+  "recommendation": "The reconciled metrics show that the frozen SG7B-11 front is itself far from the validated SG7A front, while B4 moves almost exactly onto SG7A truth. Under the unchanged frozen-relative front limits, only a very small interpolation fraction toward SG7A is admissible. Do not retrain and do not relax the gate. The next milestone must determine which front reference is authoritative for deployment acceptance while preserving both metrics in the record.",
+  "next_milestone": "V15-SG7C-R3F4-R3A \u2014 Front-Reference Authority / Acceptance Contract Audit"
+}

@@ -1,0 +1,636 @@
+[
+  {
+    "file": "PAD_Stream_V16B1_Fast_Marching_Governing_Metric_Speed_Field_Contract_Audit.py",
+    "sha256": "0b8f3448f4da2a5022c3e1b14041351e925aa564dbced51746954e972ac6ce80",
+    "role": {
+      "defines_xyz_to_cell": true,
+      "contains_log10_Kh": false,
+      "contains_pressure_z": false,
+      "contains_porosity": true,
+      "is_C2_transport_database": false
+    },
+    "imports": [
+      "__future__:annotations",
+      "csv",
+      "hashlib",
+      "json",
+      "numpy",
+      "pathlib:Path"
+    ],
+    "calls": [
+      "DictWriter",
+      "FileNotFoundError",
+      "Path",
+      "RuntimeError",
+      "all",
+      "any",
+      "append",
+      "array",
+      "asarray",
+      "ascontiguousarray",
+      "astype",
+      "bool",
+      "dumps",
+      "empty",
+      "encode",
+      "exists",
+      "face_to_cell_x",
+      "face_to_cell_y",
+      "face_to_cell_z",
+      "finfo",
+      "float",
+      "frombuffer",
+      "get",
+      "hexdigest",
+      "int",
+      "isfinite",
+      "iter",
+      "join",
+      "len",
+      "list",
+      "load",
+      "load_foundation",
+      "loads",
+      "main",
+      "max",
+      "maximum",
+      "mean",
+      "median",
+      "min",
+      "mkdir",
+      "open",
+      "percentile",
+      "positive_floor",
+      "print",
+      "read",
+      "read_text",
+      "resolve",
+      "save_csv",
+      "save_json",
+      "savez_compressed",
+      "sha256",
+      "sha256_array",
+      "sha256_file",
+      "sqrt",
+      "str",
+      "sum",
+      "tobytes",
+      "tuple",
+      "update",
+      "write_text",
+      "writeheader",
+      "writerows"
+    ],
+    "sampling_snippets": [
+      {
+        "lines": [
+          89,
+          97
+        ],
+        "text": "# Then:\n#\n#   speed_cell = sqrt(Vxc^2 + Vyc^2 + Vzc^2)\n#\n# Since SG5 face velocities already include the porosity conversion used in the\n# frozen Pollock physics, V16B-1 DOES NOT divide them by porosity again.\n#\n# A positive floor epsilon is permitted only as an FMM numerical regularization\n# for stagnant cells:"
+      },
+      {
+        "lines": [
+          90,
+          98
+        ],
+        "text": "#\n#   speed_cell = sqrt(Vxc^2 + Vyc^2 + Vzc^2)\n#\n# Since SG5 face velocities already include the porosity conversion used in the\n# frozen Pollock physics, V16B-1 DOES NOT divide them by porosity again.\n#\n# A positive floor epsilon is permitted only as an FMM numerical regularization\n# for stagnant cells:\n#"
+      },
+      {
+        "lines": [
+          234,
+          242
+        ],
+        "text": "\n    return out\n\n\ndef positive_floor(speed):\n    positive = speed[speed > 0.0]\n\n    if positive.size == 0:\n        raise RuntimeError(\"No positive cell-centered speeds exist.\")"
+      },
+      {
+        "lines": [
+          276,
+          284
+        ],
+        "text": "    required = [\n        \"Kx\",\n        \"Ky\",\n        \"Kz\",\n        \"porosity\",\n        \"pressure\",\n        \"Qx\",\n        \"Qy\",\n        \"Qz\","
+      },
+      {
+        "lines": [
+          284,
+          292
+        ],
+        "text": "        \"Qz\",\n        \"Vx\",\n        \"Vy\",\n        \"Vz\",\n        \"streamline_xyz\",\n        \"pollock_tof\",\n        \"streamline_weight\",\n    ]\n"
+      },
+      {
+        "lines": [
+          322,
+          330
+        ],
+        "text": "            \"name\": \"CONSTANT_GEOMETRIC_SPEED\",\n            \"pressure_dependent\": False,\n            \"permeability_dependent\": False,\n            \"flow_dependent\": False,\n            \"porosity_dependent\": False,\n            \"selected_primary\": False,\n            \"role\": \"GEOMETRIC_CONTROL_ONLY\",\n            \"reason\": \"No reservoir-flow physics.\",\n        },"
+      },
+      {
+        "lines": [
+          333,
+          341
+        ],
+        "text": "            \"name\": \"FROZEN_DARCY_PORE_SPEED_MAGNITUDE\",\n            \"pressure_dependent\": True,\n            \"permeability_dependent\": True,\n            \"flow_dependent\": True,\n            \"porosity_dependent\": True,\n            \"selected_primary\": True,\n            \"role\": \"PRIMARY_FMM_PHYSICS_BASELINE\",\n            \"reason\": \"Directly inherits frozen SG3-SG5 permeability-pressure-Darcy-flow physics.\",\n        },"
+      },
+      {
+        "lines": [
+          344,
+          352
+        ],
+        "text": "            \"name\": \"PRESSURE_GRADIENT_MOBILITY_PROXY\",\n            \"pressure_dependent\": True,\n            \"permeability_dependent\": True,\n            \"flow_dependent\": True,\n            \"porosity_dependent\": True,\n            \"selected_primary\": False,\n            \"role\": \"DERIVED_REFERENCE_ONLY\",\n            \"reason\": \"Would rederive flow from K and grad(p), duplicating frozen V field.\",\n        },"
+      },
+      {
+        "lines": [
+          355,
+          363
+        ],
+        "text": "            \"name\": \"PERMEABILITY_ONLY_PROXY\",\n            \"pressure_dependent\": False,\n            \"permeability_dependent\": True,\n            \"flow_dependent\": False,\n            \"porosity_dependent\": True,\n            \"selected_primary\": False,\n            \"role\": \"GEOLOGICAL_SENSITIVITY_REFERENCE\",\n            \"reason\": \"Does not include pressure forcing and is not an advective travel-time analogue.\",\n        },"
+      },
+      {
+        "lines": [
+          391,
+          399
+        ],
+        "text": "\n    if not np.all(np.isfinite(speed_raw)):\n        raise RuntimeError(\"Raw FMM speed contains non-finite values.\")\n\n    eps, median_positive = positive_floor(speed_raw)\n\n    speed_fmm = np.maximum(speed_raw, eps)\n\n    floor_mask = speed_raw < eps"
+      },
+      {
+        "lines": [
+          506,
+          514
+        ],
+        "text": "        (\"raw_speed_nonnegative\", np.min(speed_raw) >= 0.0),\n        (\"positive_speed_population_exists\", np.any(speed_raw > 0.0)),\n        (\"speed_floor_deterministically_defined\", eps > 0.0),\n        (\"FMM_speed_strictly_positive\", np.min(speed_fmm) > 0.0),\n        (\"no_double_porosity_division\", True),\n        (\"foundation_arrays_not_modified\", True),\n        (\"no_FMM_solve_executed\", True),\n        (\"no_arrival_time_generated\", True),\n        (\"no_SG3_rerun\", True),"
+      },
+      {
+        "lines": [
+          575,
+          583
+        ],
+        "text": "            \"id\": \"M1\",\n            \"name\": \"FROZEN_DARCY_PORE_SPEED_MAGNITUDE\",\n            \"definition\": \"F = max(sqrt(Vxc^2 + Vyc^2 + Vzc^2), epsilon)\",\n            \"units\": \"m/s\",\n            \"porosity_division_applied_in_V16B1\": False,\n            \"reason\": (\n                \"Frozen SG5 velocities already embody the Darcy-to-pore-velocity conversion used by Pollock; \"\n                \"dividing by porosity again would double-count porosity.\"\n            ),"
+      },
+      {
+        "lines": [
+          578,
+          586
+        ],
+        "text": "            \"units\": \"m/s\",\n            \"porosity_division_applied_in_V16B1\": False,\n            \"reason\": (\n                \"Frozen SG5 velocities already embody the Darcy-to-pore-velocity conversion used by Pollock; \"\n                \"dividing by porosity again would double-count porosity.\"\n            ),\n        },\n        \"face_to_cell_contract\": {\n            \"x\": \"boundary=adjacent face; interior=mean of bracketing x faces\","
+      },
+      {
+        "lines": [
+          640,
+          648
+        ],
+        "text": "    print(\"  Candidate               : M1\")\n    print(\"  Name                    : FROZEN_DARCY_PORE_SPEED_MAGNITUDE\")\n    print(\"  Governing equation      : |grad(T)| = 1 / F\")\n    print(\"  Speed units             : m/s\")\n    print(\"  Divide by porosity again: False\")\n\n    print(\"\\nCELL-CENTERED SPEED\")\n    print(f\"  Shape                   : {speed_raw.shape}\")\n    print(f\"  Raw min/max             : {np.min(speed_raw):.6e} / {np.max(speed_raw):.6e} m/s\")"
+      }
+    ]
+  },
+  {
+    "file": "PAD_Stream_V16B4_FMM_Pollock_Discrepancy_Structure_Directionality_Audit.py",
+    "sha256": "b505e453a689b094c7587bb2b92391c31ae5e532b6a80dec12c1c73729319ff9",
+    "role": {
+      "defines_xyz_to_cell": true,
+      "contains_log10_Kh": false,
+      "contains_pressure_z": false,
+      "contains_porosity": false,
+      "is_C2_transport_database": false
+    },
+    "imports": [
+      "__future__:annotations",
+      "csv",
+      "hashlib",
+      "json",
+      "numpy",
+      "pathlib:Path"
+    ],
+    "calls": [
+      "DictWriter",
+      "FileNotFoundError",
+      "Path",
+      "RuntimeError",
+      "abs",
+      "all",
+      "any",
+      "append",
+      "array",
+      "asarray",
+      "astype",
+      "binned_rows",
+      "bool",
+      "clip",
+      "corrcoef",
+      "diff",
+      "dumps",
+      "exists",
+      "extend",
+      "float",
+      "floor",
+      "frombuffer",
+      "get",
+      "gradient",
+      "hexdigest",
+      "int",
+      "isfinite",
+      "items",
+      "iter",
+      "len",
+      "linspace",
+      "list",
+      "load",
+      "load_json",
+      "loads",
+      "log",
+      "main",
+      "max",
+      "maximum",
+      "mean",
+      "median",
+      "min",
+      "minimum",
+      "mkdir",
+      "norm",
+      "normalize",
+      "open",
+      "print",
+      "quantile",
+      "range",
+      "read",
+      "read_text",
+      "reshape",
+      "resolve",
+      "safe_corr",
+      "save_csv",
+      "save_json",
+      "savez_compressed",
+      "sha256",
+      "sha256_file",
+      "sort",
+      "stack",
+      "std",
+      "str",
+      "sum",
+      "trilinear",
+      "update",
+      "write_text",
+      "writeheader",
+      "writerows",
+      "zeros_like"
+    ],
+    "sampling_snippets": [
+      {
+        "lines": [
+          143,
+          151
+        ],
+        "text": "    fx = (pts[:, 0] - origin[0]) / dx\n    fy = (pts[:, 1] - origin[1]) / dy\n    fz = (pts[:, 2] - origin[2]) / dz\n\n    fx = np.clip(fx, 0.0, nx - 1.0)\n    fy = np.clip(fy, 0.0, ny - 1.0)\n    fz = np.clip(fz, 0.0, nz - 1.0)\n\n    i0 = np.floor(fx).astype(int)"
+      },
+      {
+        "lines": [
+          144,
+          152
+        ],
+        "text": "    fy = (pts[:, 1] - origin[1]) / dy\n    fz = (pts[:, 2] - origin[2]) / dz\n\n    fx = np.clip(fx, 0.0, nx - 1.0)\n    fy = np.clip(fy, 0.0, ny - 1.0)\n    fz = np.clip(fz, 0.0, nz - 1.0)\n\n    i0 = np.floor(fx).astype(int)\n    j0 = np.floor(fy).astype(int)"
+      },
+      {
+        "lines": [
+          145,
+          153
+        ],
+        "text": "    fz = (pts[:, 2] - origin[2]) / dz\n\n    fx = np.clip(fx, 0.0, nx - 1.0)\n    fy = np.clip(fy, 0.0, ny - 1.0)\n    fz = np.clip(fz, 0.0, nz - 1.0)\n\n    i0 = np.floor(fx).astype(int)\n    j0 = np.floor(fy).astype(int)\n    k0 = np.floor(fz).astype(int)"
+      },
+      {
+        "lines": [
+          147,
+          155
+        ],
+        "text": "    fx = np.clip(fx, 0.0, nx - 1.0)\n    fy = np.clip(fy, 0.0, ny - 1.0)\n    fz = np.clip(fz, 0.0, nz - 1.0)\n\n    i0 = np.floor(fx).astype(int)\n    j0 = np.floor(fy).astype(int)\n    k0 = np.floor(fz).astype(int)\n    i1 = np.minimum(i0 + 1, nx - 1)\n    j1 = np.minimum(j0 + 1, ny - 1)"
+      },
+      {
+        "lines": [
+          148,
+          156
+        ],
+        "text": "    fy = np.clip(fy, 0.0, ny - 1.0)\n    fz = np.clip(fz, 0.0, nz - 1.0)\n\n    i0 = np.floor(fx).astype(int)\n    j0 = np.floor(fy).astype(int)\n    k0 = np.floor(fz).astype(int)\n    i1 = np.minimum(i0 + 1, nx - 1)\n    j1 = np.minimum(j0 + 1, ny - 1)\n    k1 = np.minimum(k0 + 1, nz - 1)"
+      },
+      {
+        "lines": [
+          149,
+          157
+        ],
+        "text": "    fz = np.clip(fz, 0.0, nz - 1.0)\n\n    i0 = np.floor(fx).astype(int)\n    j0 = np.floor(fy).astype(int)\n    k0 = np.floor(fz).astype(int)\n    i1 = np.minimum(i0 + 1, nx - 1)\n    j1 = np.minimum(j0 + 1, ny - 1)\n    k1 = np.minimum(k0 + 1, nz - 1)\n"
+      },
+      {
+        "lines": [
+          266,
+          274
+        ],
+        "text": "        \"B2_arrival_sha256\": sha256_file(B2_ARRIVAL),\n        \"B3_comparison_sha256\": sha256_file(B3_COMPARISON),\n    }])\n\n    xyz = np.asarray(b3[\"streamline_xyz_m\"], dtype=np.float64)\n    pollock = np.asarray(b3[\"pollock_tof_s\"], dtype=np.float64)\n    fmm_aligned = np.asarray(b3[\"fmm_sample_seed_aligned_s\"], dtype=np.float64)\n\n    dx = float(np.asarray(b2[\"dx_m\"]).reshape(-1)[0])"
+      },
+      {
+        "lines": [
+          270,
+          278
+        ],
+        "text": "    xyz = np.asarray(b3[\"streamline_xyz_m\"], dtype=np.float64)\n    pollock = np.asarray(b3[\"pollock_tof_s\"], dtype=np.float64)\n    fmm_aligned = np.asarray(b3[\"fmm_sample_seed_aligned_s\"], dtype=np.float64)\n\n    dx = float(np.asarray(b2[\"dx_m\"]).reshape(-1)[0])\n    dy = float(np.asarray(b2[\"dy_m\"]).reshape(-1)[0])\n    dz = float(np.asarray(b2[\"dz_m\"]).reshape(-1)[0])\n    origin = np.asarray(b3[\"origin_center_m\"], dtype=np.float64)\n"
+      },
+      {
+        "lines": [
+          271,
+          279
+        ],
+        "text": "    pollock = np.asarray(b3[\"pollock_tof_s\"], dtype=np.float64)\n    fmm_aligned = np.asarray(b3[\"fmm_sample_seed_aligned_s\"], dtype=np.float64)\n\n    dx = float(np.asarray(b2[\"dx_m\"]).reshape(-1)[0])\n    dy = float(np.asarray(b2[\"dy_m\"]).reshape(-1)[0])\n    dz = float(np.asarray(b2[\"dz_m\"]).reshape(-1)[0])\n    origin = np.asarray(b3[\"origin_center_m\"], dtype=np.float64)\n\n    Vxc = np.asarray(speed_db[\"Vxc_m_s\"], dtype=np.float64)"
+      },
+      {
+        "lines": [
+          272,
+          280
+        ],
+        "text": "    fmm_aligned = np.asarray(b3[\"fmm_sample_seed_aligned_s\"], dtype=np.float64)\n\n    dx = float(np.asarray(b2[\"dx_m\"]).reshape(-1)[0])\n    dy = float(np.asarray(b2[\"dy_m\"]).reshape(-1)[0])\n    dz = float(np.asarray(b2[\"dz_m\"]).reshape(-1)[0])\n    origin = np.asarray(b3[\"origin_center_m\"], dtype=np.float64)\n\n    Vxc = np.asarray(speed_db[\"Vxc_m_s\"], dtype=np.float64)\n    Vyc = np.asarray(speed_db[\"Vyc_m_s\"], dtype=np.float64)"
+      }
+    ]
+  },
+  {
+    "file": "PAD_Stream_V16C2_Multi_Coordinate_Streamline_Transport_Database_Assembly.py",
+    "sha256": "315a25cab35c1da6d58fa9bb8254eecb55dbe0abca71f112ac319f123ea7cea6",
+    "role": {
+      "defines_xyz_to_cell": true,
+      "contains_log10_Kh": false,
+      "contains_pressure_z": false,
+      "contains_porosity": true,
+      "is_C2_transport_database": true
+    },
+    "imports": [
+      "__future__:annotations",
+      "csv",
+      "hashlib",
+      "json",
+      "numpy",
+      "pathlib:Path"
+    ],
+    "calls": [
+      "DictWriter",
+      "FileNotFoundError",
+      "Path",
+      "RuntimeError",
+      "abs",
+      "all",
+      "any",
+      "append",
+      "asarray",
+      "astype",
+      "bool",
+      "channel_stats",
+      "clip",
+      "dumps",
+      "exists",
+      "float",
+      "floor",
+      "frombuffer",
+      "get",
+      "hexdigest",
+      "int",
+      "isfinite",
+      "items",
+      "iter",
+      "len",
+      "linspace",
+      "list",
+      "load",
+      "load_json",
+      "loads",
+      "main",
+      "max",
+      "mean",
+      "median",
+      "min",
+      "minimum",
+      "mkdir",
+      "nanmax",
+      "nanmean",
+      "nanmedian",
+      "nanmin",
+      "nanpercentile",
+      "open",
+      "print",
+      "read",
+      "read_text",
+      "reshape",
+      "resolve",
+      "save_csv",
+      "save_json",
+      "savez_compressed",
+      "sha256",
+      "sha256_file",
+      "str",
+      "sum",
+      "trilinear",
+      "tuple",
+      "update",
+      "write_text",
+      "writeheader",
+      "writerows"
+    ],
+    "sampling_snippets": [
+      {
+        "lines": [
+          20,
+          28
+        ],
+        "text": "#   - authoritative Pollock TOF,\n#   - sampled isotropic FMM arrival time,\n#   - sampled directional ADV travel time,\n#   - sampled Kx, Ky, Kz,\n#   - sampled porosity,\n#   - sampled pressure,\n#   - frozen streamline weight.\n#\n# Pollock TOF remains the AUTHORITATIVE STREAMLINE TRANSPORT COORDINATE."
+      },
+      {
+        "lines": [
+          141,
+          149
+        ],
+        "text": "    fx = (pts[:, 0] - origin[0]) / dx\n    fy = (pts[:, 1] - origin[1]) / dy\n    fz = (pts[:, 2] - origin[2]) / dz\n\n    fx_clip = np.clip(fx, 0.0, nx - 1.0)\n    fy_clip = np.clip(fy, 0.0, ny - 1.0)\n    fz_clip = np.clip(fz, 0.0, nz - 1.0)\n\n    i0 = np.floor(fx_clip).astype(int)"
+      },
+      {
+        "lines": [
+          142,
+          150
+        ],
+        "text": "    fy = (pts[:, 1] - origin[1]) / dy\n    fz = (pts[:, 2] - origin[2]) / dz\n\n    fx_clip = np.clip(fx, 0.0, nx - 1.0)\n    fy_clip = np.clip(fy, 0.0, ny - 1.0)\n    fz_clip = np.clip(fz, 0.0, nz - 1.0)\n\n    i0 = np.floor(fx_clip).astype(int)\n    j0 = np.floor(fy_clip).astype(int)"
+      },
+      {
+        "lines": [
+          143,
+          151
+        ],
+        "text": "    fz = (pts[:, 2] - origin[2]) / dz\n\n    fx_clip = np.clip(fx, 0.0, nx - 1.0)\n    fy_clip = np.clip(fy, 0.0, ny - 1.0)\n    fz_clip = np.clip(fz, 0.0, nz - 1.0)\n\n    i0 = np.floor(fx_clip).astype(int)\n    j0 = np.floor(fy_clip).astype(int)\n    k0 = np.floor(fz_clip).astype(int)"
+      },
+      {
+        "lines": [
+          145,
+          153
+        ],
+        "text": "    fx_clip = np.clip(fx, 0.0, nx - 1.0)\n    fy_clip = np.clip(fy, 0.0, ny - 1.0)\n    fz_clip = np.clip(fz, 0.0, nz - 1.0)\n\n    i0 = np.floor(fx_clip).astype(int)\n    j0 = np.floor(fy_clip).astype(int)\n    k0 = np.floor(fz_clip).astype(int)\n\n    i1 = np.minimum(i0 + 1, nx - 1)"
+      },
+      {
+        "lines": [
+          146,
+          154
+        ],
+        "text": "    fy_clip = np.clip(fy, 0.0, ny - 1.0)\n    fz_clip = np.clip(fz, 0.0, nz - 1.0)\n\n    i0 = np.floor(fx_clip).astype(int)\n    j0 = np.floor(fy_clip).astype(int)\n    k0 = np.floor(fz_clip).astype(int)\n\n    i1 = np.minimum(i0 + 1, nx - 1)\n    j1 = np.minimum(j0 + 1, ny - 1)"
+      },
+      {
+        "lines": [
+          147,
+          155
+        ],
+        "text": "    fz_clip = np.clip(fz, 0.0, nz - 1.0)\n\n    i0 = np.floor(fx_clip).astype(int)\n    j0 = np.floor(fy_clip).astype(int)\n    k0 = np.floor(fz_clip).astype(int)\n\n    i1 = np.minimum(i0 + 1, nx - 1)\n    j1 = np.minimum(j0 + 1, ny - 1)\n    k1 = np.minimum(k0 + 1, nz - 1)"
+      },
+      {
+        "lines": [
+          245,
+          253
+        ],
+        "text": "        raise RuntimeError(\"V16C-2 requires completed V16C-1.\")\n\n    with np.load(FOUNDATION_NPZ, allow_pickle=False) as db:\n        required = [\n            \"Kx\", \"Ky\", \"Kz\", \"porosity\", \"pressure\",\n            \"streamline_xyz\", \"pollock_tof\", \"streamline_weight\",\n        ]\n        missing = [k for k in required if k not in db.files]\n        if missing:"
+      },
+      {
+        "lines": [
+          246,
+          254
+        ],
+        "text": "\n    with np.load(FOUNDATION_NPZ, allow_pickle=False) as db:\n        required = [\n            \"Kx\", \"Ky\", \"Kz\", \"porosity\", \"pressure\",\n            \"streamline_xyz\", \"pollock_tof\", \"streamline_weight\",\n        ]\n        missing = [k for k in required if k not in db.files]\n        if missing:\n            raise RuntimeError(f\"Foundation missing required channels: {missing}\")"
+      },
+      {
+        "lines": [
+          255,
+          263
+        ],
+        "text": "\n        Kx = np.asarray(db[\"Kx\"], dtype=np.float64)\n        Ky = np.asarray(db[\"Ky\"], dtype=np.float64)\n        Kz = np.asarray(db[\"Kz\"], dtype=np.float64)\n        porosity = np.asarray(db[\"porosity\"], dtype=np.float64)\n        pressure = np.asarray(db[\"pressure\"], dtype=np.float64)\n        weight = np.asarray(db[\"streamline_weight\"], dtype=np.float64)\n\n    with np.load(B2_NPZ, allow_pickle=False) as db:"
+      },
+      {
+        "lines": [
+          261,
+          269
+        ],
+        "text": "        weight = np.asarray(db[\"streamline_weight\"], dtype=np.float64)\n\n    with np.load(B2_NPZ, allow_pickle=False) as db:\n        T_fmm = np.asarray(db[\"arrival_time_s\"], dtype=np.float64)\n        dx = float(np.asarray(db[\"dx_m\"]).reshape(-1)[0])\n        dy = float(np.asarray(db[\"dy_m\"]).reshape(-1)[0])\n        dz = float(np.asarray(db[\"dz_m\"]).reshape(-1)[0])\n\n    with np.load(B3_NPZ, allow_pickle=False) as db:"
+      },
+      {
+        "lines": [
+          262,
+          270
+        ],
+        "text": "\n    with np.load(B2_NPZ, allow_pickle=False) as db:\n        T_fmm = np.asarray(db[\"arrival_time_s\"], dtype=np.float64)\n        dx = float(np.asarray(db[\"dx_m\"]).reshape(-1)[0])\n        dy = float(np.asarray(db[\"dy_m\"]).reshape(-1)[0])\n        dz = float(np.asarray(db[\"dz_m\"]).reshape(-1)[0])\n\n    with np.load(B3_NPZ, allow_pickle=False) as db:\n        xyz_m = np.asarray(db[\"streamline_xyz_m\"], dtype=np.float64)"
+      },
+      {
+        "lines": [
+          263,
+          271
+        ],
+        "text": "    with np.load(B2_NPZ, allow_pickle=False) as db:\n        T_fmm = np.asarray(db[\"arrival_time_s\"], dtype=np.float64)\n        dx = float(np.asarray(db[\"dx_m\"]).reshape(-1)[0])\n        dy = float(np.asarray(db[\"dy_m\"]).reshape(-1)[0])\n        dz = float(np.asarray(db[\"dz_m\"]).reshape(-1)[0])\n\n    with np.load(B3_NPZ, allow_pickle=False) as db:\n        xyz_m = np.asarray(db[\"streamline_xyz_m\"], dtype=np.float64)\n        pollock_tof_s = np.asarray(db[\"pollock_tof_s\"], dtype=np.float64)"
+      },
+      {
+        "lines": [
+          266,
+          274
+        ],
+        "text": "        dy = float(np.asarray(db[\"dy_m\"]).reshape(-1)[0])\n        dz = float(np.asarray(db[\"dz_m\"]).reshape(-1)[0])\n\n    with np.load(B3_NPZ, allow_pickle=False) as db:\n        xyz_m = np.asarray(db[\"streamline_xyz_m\"], dtype=np.float64)\n        pollock_tof_s = np.asarray(db[\"pollock_tof_s\"], dtype=np.float64)\n        origin = np.asarray(db[\"origin_center_m\"], dtype=np.float64)\n        fmm_b3 = np.asarray(db[\"fmm_sample_raw_s\"], dtype=np.float64)\n"
+      },
+      {
+        "lines": [
+          295,
+          303
+        ],
+        "text": "    for name, arr in [\n        (\"Kx\", Kx),\n        (\"Ky\", Ky),\n        (\"Kz\", Kz),\n        (\"porosity\", porosity),\n        (\"pressure\", pressure),\n        (\"T_fmm\", T_fmm),\n        (\"tau_adv\", tau_adv),\n    ]:"
+      },
+      {
+        "lines": [
+          312,
+          320
+        ],
+        "text": "\n    kx_s, audit_kx = trilinear(Kx, xyz_m, dx, dy, dz, origin)\n    ky_s, audit_ky = trilinear(Ky, xyz_m, dx, dy, dz, origin)\n    kz_s, audit_kz = trilinear(Kz, xyz_m, dx, dy, dz, origin)\n    phi_s, audit_phi = trilinear(porosity, xyz_m, dx, dy, dz, origin)\n    p_s, audit_p = trilinear(pressure, xyz_m, dx, dy, dz, origin)\n\n    # Existing B3/B8 travel-time mapping must be exactly reproduced to numerical\n    # roundoff under the frozen mapping contract."
+      },
+      {
+        "lines": [
+          395,
+          403
+        ],
+        "text": "            \"role\": \"geology_context\",\n            \"units\": \"mD\",\n        },\n        {\n            \"channel\": \"porosity\",\n            \"domain\": \"streamline_node\",\n            \"shape\": str(tuple(phi_s.shape)),\n            \"authority\": \"SAMPLED_FROM_FOUNDATION\",\n            \"role\": \"storage_context\","
+      },
+      {
+        "lines": [
+          428,
+          436
+        ],
+        "text": "        (\"ADV\", audit_adv),\n        (\"Kx\", audit_kx),\n        (\"Ky\", audit_ky),\n        (\"Kz\", audit_kz),\n        (\"porosity\", audit_phi),\n        (\"pressure\", audit_p),\n    ]:\n        sampling_rows.append({\n            \"channel\": name,"
+      },
+      {
+        "lines": [
+          437,
+          445
+        ],
+        "text": "            \"method\": \"TRILINEAR_CELL_CENTERED\",\n            \"origin_x_m\": float(origin[0]),\n            \"origin_y_m\": float(origin[1]),\n            \"origin_z_m\": float(origin[2]),\n            \"dx_m\": dx,\n            \"dy_m\": dy,\n            \"dz_m\": dz,\n            **audit,\n        })"
+      },
+      {
+        "lines": [
+          438,
+          446
+        ],
+        "text": "            \"origin_x_m\": float(origin[0]),\n            \"origin_y_m\": float(origin[1]),\n            \"origin_z_m\": float(origin[2]),\n            \"dx_m\": dx,\n            \"dy_m\": dy,\n            \"dz_m\": dz,\n            **audit,\n        })\n    save_csv(SAMPLING_CSV, sampling_rows)"
+      },
+      {
+        "lines": [
+          439,
+          447
+        ],
+        "text": "            \"origin_y_m\": float(origin[1]),\n            \"origin_z_m\": float(origin[2]),\n            \"dx_m\": dx,\n            \"dy_m\": dy,\n            \"dz_m\": dz,\n            **audit,\n        })\n    save_csv(SAMPLING_CSV, sampling_rows)\n"
+      },
+      {
+        "lines": [
+          451,
+          459
+        ],
+        "text": "        channel_stats(\"adv_travel_time_s\", adv_s),\n        channel_stats(\"Kx_mD\", kx_s),\n        channel_stats(\"Ky_mD\", ky_s),\n        channel_stats(\"Kz_mD\", kz_s),\n        channel_stats(\"porosity\", phi_s),\n        channel_stats(\"pressure_psi\", p_s),\n        channel_stats(\"streamline_weight_m3_s\", weight),\n    ]\n    save_csv(STATS_CSV, stats_rows)"
+      },
+      {
+        "lines": [
+          464,
+          472
+        ],
+        "text": "        \"adv_travel_time_s\": adv_s,\n        \"Kx_mD\": kx_s,\n        \"Ky_mD\": ky_s,\n        \"Kz_mD\": kz_s,\n        \"porosity\": phi_s,\n        \"pressure_psi\": p_s,\n    }\n\n    shape_rows = []"
+      },
+      {
+        "lines": [
+          480,
+          488
+        ],
+        "text": "            \"finite\": bool(np.all(np.isfinite(arr))),\n        })\n\n    shape_rows.append({\n        \"channel\": \"streamline_xyz_m\",\n        \"shape\": str(tuple(xyz_m.shape)),\n        \"expected_shape\": str((1078, 201, 3)),\n        \"shape_valid\": xyz_m.shape == (1078, 201, 3),\n        \"finite\": bool(np.all(np.isfinite(xyz_m))),"
+      },
+      {
+        "lines": [
+          541,
+          549
+        ],
+        "text": "\n    # Persist raw database only. No normalization.\n    np.savez_compressed(\n        DATABASE_NPZ,\n        streamline_xyz_m=xyz_m.astype(np.float64),\n        pollock_tof_s=pollock_tof_s.astype(np.float64),\n        pollock_tof_days=(pollock_tof_s / SECONDS_PER_DAY).astype(np.float64),\n        fmm_arrival_s=fmm_s.astype(np.float64),\n        fmm_arrival_days=(fmm_s / SECONDS_PER_DAY).astype(np.float64),"
+      },
+      {
+        "lines": [
+          551,
+          559
+        ],
+        "text": "        adv_travel_time_days=(adv_s / SECONDS_PER_DAY).astype(np.float64),\n        Kx_mD=kx_s.astype(np.float64),\n        Ky_mD=ky_s.astype(np.float64),\n        Kz_mD=kz_s.astype(np.float64),\n        porosity=phi_s.astype(np.float64),\n        pressure_psi=p_s.astype(np.float64),\n        streamline_weight_m3_s=weight.astype(np.float64),\n        xi=np.linspace(0.0, 1.0, pollock_tof_s.shape[1], dtype=np.float64),\n        origin_center_m=origin.astype(np.float64),"
+      },
+      {
+        "lines": [
+          580,
+          588
+        ],
+        "text": "        (\"Pollock_TOF_retained_as_primary_coordinate\", True),\n        (\"FMM_sampled_on_frozen_Pollock_nodes\", True),\n        (\"ADV_sampled_on_frozen_Pollock_nodes\", True),\n        (\"Kx_Ky_Kz_sampled_on_frozen_Pollock_nodes\", True),\n        (\"porosity_sampled_on_frozen_Pollock_nodes\", True),\n        (\"pressure_sampled_on_frozen_Pollock_nodes\", True),\n        (\"all_database_shapes_valid\", all_shapes_valid),\n        (\"all_database_values_finite\", all_finite),\n        (\"V16B3_FMM_mapping_reproduced\", fmm_linf_b3 <= 1e-9),"
+      },
+      {
+        "lines": [
+          654,
+          662
+        ],
+        "text": "            \"adv_travel_time_s\",\n            \"Kx_mD\",\n            \"Ky_mD\",\n            \"Kz_mD\",\n            \"porosity\",\n            \"pressure_psi\",\n        ],\n        \"streamline_channels\": [\n            \"streamline_weight_m3_s\","
+      },
+      {
+        "lines": [
+          704,
+          712
+        ],
+        "text": "    print(f\"  Pollock TOF              : AUTHORITATIVE\")\n    print(f\"  FMM context              : PRESENT\")\n    print(f\"  ADV context              : PRESENT\")\n    print(f\"  Kx/Ky/Kz                 : PRESENT\")\n    print(f\"  Porosity                 : PRESENT\")\n    print(f\"  Pressure                 : PRESENT\")\n    print(f\"  Streamline weight        : PRESENT\")\n\n    print(\"\\nTRAVEL-TIME REPRODUCTION\")"
+      }
+    ]
+  }
+]

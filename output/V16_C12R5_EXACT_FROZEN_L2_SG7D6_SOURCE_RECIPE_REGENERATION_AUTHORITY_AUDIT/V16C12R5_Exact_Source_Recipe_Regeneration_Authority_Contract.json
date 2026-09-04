@@ -1,0 +1,45 @@
+{
+  "milestone": "V16C-12R5",
+  "status": "V16C_SG7D6_RECIPE_PRESERVED_BUT_MISSING_CERTIFIED_L2_REGENERATION_NOT_AUTHORIZED",
+  "diagnosis": "THE_GRID_DEPLOYMENT_RECIPE_IS_DETERMINISTIC_FROM_R1F3_L2_BUT_THE_FORMAL_V15_RECORD_DOES_NOT_AUTHORIZE_EXACT_REGENERATION_OF_THE_MISSING_CERTIFIED_L2_BECAUSE_HISTORICAL_INFERENCE_RUNTIME_REPRODUCTION_IS_NOT_CERTIFIED",
+  "formal_L2_sha256": "01bb967c07b262836f6c140dd519538db13d9ce5b3bc0f83d52a6164ddcfa950",
+  "formal_SG7D6_sha256": "6bf6661e2344d51c54df4689758a1998952454e0bc13797b8e4da57824cf9522",
+  "lineage": [
+    {
+      "order": 1,
+      "source": "R1F3 frozen L2",
+      "target": "SG7D1 conservative map-back",
+      "source_evidence": true,
+      "target_evidence": true
+    },
+    {
+      "order": 2,
+      "source": "SG7D1 conservative map-back",
+      "target": "SG7D4 controlled completion",
+      "source_evidence": true,
+      "target_evidence": true
+    },
+    {
+      "order": 3,
+      "source": "SG7D4 controlled completion",
+      "target": "SG7D5 independent validation",
+      "source_evidence": true,
+      "target_evidence": true
+    },
+    {
+      "order": 4,
+      "source": "SG7D5 independent validation",
+      "target": "SG7D6 frozen full-grid",
+      "source_evidence": true,
+      "target_evidence": true
+    }
+  ],
+  "L2_regeneration_authorized": false,
+  "SG7D6_recipe_authorized_if_L2_available": true,
+  "full_regeneration_authorized": false,
+  "historical_runtime_reproduction_certified": false,
+  "regeneration_executed": false,
+  "Y_generation_authorized": false,
+  "recommendation": "Do not rerun the PI-RNN and do not substitute an ambiguous frozen100 candidate. Search/bind the exact certified L2_independent_100 bytes from the frozen V15 package/archive or another preserved copy. Once exact L2 bytes are recovered, SG7D6 may be deterministically reconstructed and hash-checked.",
+  "next_milestone": "V16C-12R5A \u2014 Frozen V15 Package/Archive Exact L2 Byte-Recovery Audit"
+}

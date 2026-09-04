@@ -1,0 +1,17 @@
+{
+  "milestone": "V16D-24C",
+  "status": "V16D_D7A_EXECUTION_MECHANICS_EXTRACTED_D24C_R1_EXECUTOR_GENERATION_AUTHORIZED",
+  "mechanics_evidence_sha256": "8255eb8a8ce5097f4779c743f83c7e7b12dc455b7e6e3ef3b03e91a40be2c4c5",
+  "contract_sha256": "ec696aaf8af68f9d83ae84f395fc717a460f6612de7cf8bccc7aebca7b679990",
+  "gates": {
+    "R2_SHA_exact": true,
+    "D7A_SHA_exact": true,
+    "SG3_SHA_exact": true,
+    "G26_exists": true,
+    "one_D7A_CASE_assignment": true,
+    "one_D7A_OUT_assignment": true,
+    "D7A_mechanics_evidence_extracted": true,
+    "D7A_has_pressure_flux_outputs": true
+  },
+  "next_milestone": "V16D-24C-R1 \u2014 Generate exact D7A-derived executable for reference equivalence and one 0026 TRAIN pilot"
+}

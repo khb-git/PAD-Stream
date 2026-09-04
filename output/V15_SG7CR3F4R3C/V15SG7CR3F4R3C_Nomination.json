@@ -1,0 +1,12 @@
+{
+  "milestone": "V15-SG7C-R3F4-R3C",
+  "status": "NO_CANDIDATE_PASSES_CLARIFIED_SCREEN_SINGLE_NEAR_THRESHOLD_LIMITER",
+  "diagnosis": "FRONT_ERROR_REDUCTION_ONLY_REMAINING_LIMITER",
+  "candidate_experiment": null,
+  "best_existing_experiment": "B4",
+  "best_existing_failed_gates": "front_error_reduction",
+  "candidate_is_frozen": false,
+  "historical_frozen_relative_metrics_retained": true,
+  "historical_frozen_relative_metrics_deployment_veto": false,
+  "next_milestone": "V15-SG7C-R3F4-R3D \u2014 Near-Threshold Front-Reduction Limiter Audit"
+}

@@ -1,0 +1,11 @@
+{
+  "milestone": "V16C-7",
+  "status": "V16C_POLLOCK_TOF_ADAPTER_PHYSICS_REQUIRES_AUDIT",
+  "diagnosis": "ONE_OR_MORE_GEOMETRIC_OR_OPERATOR_TRANSFORM_GATES_FAILED",
+  "geometry_adapter_ready": true,
+  "capillary_transform_ready": true,
+  "compressibility_authority_ready": false,
+  "metric_sha256": "5a47ef2a4154291b424e43d1b0e21e30baa0c805c846e9943f62f8b389289e6d",
+  "recommendation": "Do not proceed to compressibility or target generation. Audit only failed V16C-7 gates.",
+  "next_milestone": "V16C-7R \u2014 Pollock-TOF Adapter Residual Audit"
+}

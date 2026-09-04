@@ -1,0 +1,13 @@
+{
+  "milestone": "V16C-12R4",
+  "status": "V16C_FORMAL_V15_AUTHORITIES_RESOLVED_EXACT_BYTES_REQUIRE_BINDING_OR_AUTHORIZED_REGENERATION",
+  "diagnosis": "THE_FORMAL_FREEZE_CONTRACT_RESOLVES_WHAT_THE_AUTHORITATIVE_OBJECTS_ARE_BUT_ONE_OR_BOTH_EXACT_NUMERICAL_ARTIFACTS_ARE_NOT_UNIQUELY_AVAILABLE_BY_THEIR_FROZEN_HASH",
+  "formal_authority_resolved": true,
+  "L2_exact_matches": 0,
+  "SG7D6_exact_matches": 0,
+  "C12A_ready": false,
+  "Y_transport_generated": false,
+  "Y_generation_authorized": false,
+  "recommendation": "Do not select one of the three ambiguous historical hashes. The formal authority is now resolved. Next audit the exact R1F3->SG7D1->SG7D6 source recipe and authorize deterministic regeneration only if the frozen contract permits it.",
+  "next_milestone": "V16C-12R5 \u2014 Exact Frozen L2/SG7D6 Source-Recipe Regeneration Authority Audit"
+}

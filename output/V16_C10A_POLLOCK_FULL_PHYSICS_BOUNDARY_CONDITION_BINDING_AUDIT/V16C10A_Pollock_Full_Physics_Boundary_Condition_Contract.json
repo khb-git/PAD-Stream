@@ -1,0 +1,61 @@
+{
+  "milestone": "V16C-10A",
+  "status": "V16C_POLLOCK_BOUNDARY_PHYSICS_REQUIRES_SOURCE_AUDIT",
+  "diagnosis": "ONE_OR_MORE_PHYSICAL_BOUNDARY_SEMANTICS_ARE_NOT_EXPLICITLY_BOUND_FROM_THE_STAGE4_SOURCE",
+  "stage4_source_sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+  "C10_operator_sha256": "9162e313351c556e8ac39587e10e191c85eb71cbdb74dfb67bdc1c6e11b3636e",
+  "source_evidence": {
+    "exact_sha_match": true,
+    "injector_bc_function_detected": true,
+    "outlet_bc_function_detected": true,
+    "boundary_language_detected": true,
+    "saturation_boundary_language_detected": true,
+    "capillary_boundary_language_detected": true,
+    "zero_gradient_or_no_flux_language_detected": false,
+    "injector_evidence_excerpt": "truth's outlet value; anchors move to injector / mid-fan / front | mean residual (-0.07 to -0.10): a lagging front deletes injected | construction, breakthrough-proof, no boundary-condition | plus the undersampled early-time boundary layer. Signed bias is the",
+    "outlet_evidence_excerpt": "[S3-5] tip_bc_loss at Sw_star is replaced by outlet_bc_loss against the | truth's outlet value; anchors move to injector / mid-fan / front | midpoint / outlet with targets from the solver | form selected by CONSERVATIVE_FORM; CFL uses the outlet velocity.",
+    "capillary_evidence_excerpt": "STAGE 3: CAPILLARY PRESSURE ONLY. The governing equation gains a nonlinear | diffusion term (Brooks-Corey capillary pressure): | THE STRUCTURAL CHANGE: there is no shock in this stage. Capillary diffusion | [S3-1] Capillary physics: Brooks-Corey Pc, normalized diffusion shape"
+  },
+  "boundary_contract": [
+    {
+      "boundary": "inlet",
+      "native_stage4_semantics": "source-supported saturation/injection boundary",
+      "pollock_location": "theta=0",
+      "advection_face_action": "use source-authentic injected-state fractional-flow face flux; numeric state deferred to source parameter binding",
+      "capillary_action": "do not invent; bind exact source treatment before solve",
+      "authority": "STAGE4_SOURCE"
+    },
+    {
+      "boundary": "outlet",
+      "native_stage4_semantics": "UNRESOLVED",
+      "pollock_location": "theta=1",
+      "advection_face_action": "conservative outflow using interior/upwind state; no external velocity multiplier",
+      "capillary_action": "G_out=0 if source zero-gradient/no-flux semantics are confirmed",
+      "authority": "PENDING"
+    }
+  ],
+  "coordinate_transform": [
+    {
+      "native_condition": "dS/dxD = 0",
+      "transformed_condition": "M dS/dtheta = 0",
+      "implication": "because M>0, dS/dtheta=0",
+      "status": "EXACT_COORDINATE_TRANSFORM"
+    },
+    {
+      "native_condition": "capillary face flux = 0",
+      "transformed_condition": "D_tilde M dS/dtheta = 0",
+      "implication": "transformed face flux remains zero",
+      "status": "EXACT_COORDINATE_TRANSFORM"
+    },
+    {
+      "native_condition": "Dirichlet saturation",
+      "transformed_condition": "same saturation value at corresponding theta boundary",
+      "implication": "coordinate change does not alter saturation value",
+      "status": "EXACT_COORDINATE_TRANSFORM"
+    }
+  ],
+  "solver_assembly_authorized": false,
+  "Y_generation_authorized": false,
+  "recommendation": "Do not guess missing boundary physics and do not generate Y. Audit the failed C10A source-boundary gates against the exact Stage-4 solver implementation and, if needed, its nested Stage-3 predecessor.",
+  "next_milestone": "V16C-10A-R \u2014 Full-Physics Boundary Source Residual Audit"
+}

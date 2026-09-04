@@ -1,0 +1,15 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1F0",
+  "status": "NONFRONT_SLOW_TOF_CAPACITY_CONTRACT_READY",
+  "diagnosis": "TARGETED_EFFECTIVE_BETA_DEFICIT_REPAIR_DESIGNED",
+  "training_performed": false,
+  "second_stage_correction_performed": false,
+  "X08_support_geometry_changed": false,
+  "J5_field_changed": false,
+  "gate_changed": false,
+  "second_stage_form": "S_K = S_J5 + gamma_nonfront * (S_truth - S_J5)",
+  "front_core_gamma": 0.0,
+  "front_shell_gamma_max": 0.03,
+  "recommendation": "Proceed to controlled R1F1 non-front residual correction. Keep X08 support geometry and the accepted front core locked. Apply only the analytically sized second-stage gamma to non-front slow-TOF / very-slow-TOF / tail nodes. Select the least aggressive K candidate that passes every unchanged support, front, TOF, tail, and topology gate.",
+  "next_milestone": "V15-SG7C-R3F5-R1F1 \u2014 Controlled Non-Front Slow-TOF Residual Correction"
+}

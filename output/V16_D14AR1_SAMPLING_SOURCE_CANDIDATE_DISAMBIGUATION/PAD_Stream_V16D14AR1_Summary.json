@@ -1,0 +1,19 @@
+{
+  "milestone": "V16D-14AR1",
+  "status": "V16D_SAMPLING_ALGEBRA_NOT_UNIQUELY_DISAMBIGUATED_NO_ASSEMBLY",
+  "selected_authority": null,
+  "full_semantics_candidates": [],
+  "candidate_semantics_sha256": "a93fd884ace659d3c3ffa59c222766a5e7c6e73299cdca42361314e56e3cbf1e",
+  "gates": {
+    "D14AR_SHA_exact": true,
+    "three_candidate_SHAs_exact": true,
+    "source_semantics_examined": true,
+    "no_numerical_output_comparison": true,
+    "full_predictor_sampling_semantics_candidate_found": false,
+    "unique_full_semantics_authority": false,
+    "no_fitting": true,
+    "no_OOD_target_read": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-14AR2 \u2014 Exact Sampling Statement/Lineage Binding Repair"
+}

@@ -1,0 +1,16 @@
+{
+  "milestone": "V16D-24B-R2",
+  "status": "V16D_D7A_SINGLE_PILOT_D7B_FULL_ENSEMBLE_ROLES_CORRECTLY_BOUND_D24C_EXECUTION_AUTHORIZED",
+  "authority_sha256": "a4026be6585b791e368b402bb65106692d846aa26334f7bb0993578a0221e877",
+  "gates": {
+    "R1_SHA_exact": true,
+    "D7A_SHA_exact": true,
+    "D7B_SHA_exact": true,
+    "D7A_execution_role_single_case_pilot": true,
+    "D7B_execution_role_full_ensemble": true,
+    "D7B_is_downstream_of_D7A": true,
+    "token_0025_in_D7A_not_used_as_negative_role_test": true,
+    "roles_complementary_and_sequential": true
+  },
+  "next_milestone": "V16D-24C \u2014 Derive D7A Mechanics for 500/2000 Adapter Equivalence + Geology0026 TRAIN New-Control Pilot"
+}

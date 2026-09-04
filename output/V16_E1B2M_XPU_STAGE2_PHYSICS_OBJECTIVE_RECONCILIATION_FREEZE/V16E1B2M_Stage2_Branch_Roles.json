@@ -1,0 +1,30 @@
+{
+  "milestone": "V16E-1B2M-XPU",
+  "source_faithful_historical_lineage": {
+    "status": "PRESERVED",
+    "authority": "pi_rnn_stage2_compressible_godunov.py",
+    "source_sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+    "rule": "Never rewrite the original Stage-2 source definition or retroactively describe its characteristic residual as the exact conservative Godunov PDE residual.",
+    "role": "Historical/source-definition provenance and reproduction lineage."
+  },
+  "best_accuracy_experimental_branch": {
+    "status": "PRESERVED",
+    "experiment": "V16E-BLREP-COMP-XPU-004",
+    "checkpoint_sha256": "2b54c6ace6c893916bf55ee54dea2ad55eb3b5239d8e0c0cda21bc9311efca69",
+    "architecture": "[xi, eta] sequence features + raw physical 11-D p11",
+    "role": "Best observed absolute Stage-2 reproduction candidate pending final closure decision.",
+    "limitation": "Still trained with the retained characteristic residual, which B2L shows is incompatible with the conservative Godunov teacher for Nc>0."
+  },
+  "corrected_conservative_PI_RNN_branch": {
+    "status": "DESIGN_REQUIRED_BEFORE_TRAINING",
+    "training_authorized": false,
+    "required_next_work": "Derive a conservative residual consistent with the moving fan coordinate xi=xD/xD_star(tD) and the model conditioner.",
+    "do_not_assume": [
+      "that dS/dtD at fixed xi equals dS/dtD at fixed xD",
+      "that xD_star is constant with time",
+      "that the simple characteristic residual can be repaired by a scalar weight"
+    ],
+    "candidate_physical_equation": "dS/dtD + d[uD*f_w(S)]/dxD = 0",
+    "coordinate_transform_requirement": "Apply the chain rule consistently before implementing the residual in xi/tD coordinates."
+  }
+}

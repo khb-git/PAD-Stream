@@ -1,0 +1,9 @@
+{
+  "milestone": "V15-SG7E1R26F",
+  "status": "UPSTREAM_EVALUATOR_LINEAGE_CONFLICT_REMAINS",
+  "diagnosis": "TOP_RUNTIME_SOURCES_REMAIN_TIED_AFTER_MODEL_AND_NO_TRAINING_LINEAGE_AUDIT",
+  "selected_upstream_source": null,
+  "selected_upstream_function": null,
+  "recommendation": "Do not generate later-time states. Audit only the top two lineage candidates using exact checkpoint parent-manifest and saved-array consumer provenance.",
+  "next_milestone": "V15-SG7E1R26G \u2014 Final Evaluator Parent-Manifest / Consumer Conflict Audit"
+}

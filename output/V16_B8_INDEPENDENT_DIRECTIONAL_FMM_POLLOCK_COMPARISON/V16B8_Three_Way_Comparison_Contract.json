@@ -1,0 +1,86 @@
+{
+  "milestone": "V16B-8",
+  "status": "V16B_INDEPENDENT_DIRECTIONAL_FMM_POLLOCK_COMPARISON_COMPLETE",
+  "diagnosis": "DIRECTIONAL_ADVECTIVE_FORMULATION_SUBSTANTIALLY_IMPROVES_POLLOCK_CONSISTENCY",
+  "comparison_policy": {
+    "raw_physical_outputs_only": true,
+    "scaling": false,
+    "offset_alignment": false,
+    "speed_recalibration": false,
+    "Pollock_retrace": false
+  },
+  "global_statistics": {
+    "FMM_all_nodes": {
+      "comparison": "FMM_vs_POLLOCK_ALL_NODES_RAW",
+      "count": 216678,
+      "pearson_r": 0.7311921569796599,
+      "bias_days": -106.66629649041047,
+      "MAE_days": 107.58734942368083,
+      "RMSE_days": 228.84389233386227,
+      "median_abs_error_days": 38.898133363230286,
+      "p95_abs_error_days": 442.35068116243576,
+      "max_abs_error_days": 3472.5320094358085,
+      "median_abs_relative_error": 0.27616031797709195,
+      "p95_abs_relative_error": 0.7217774068754146
+    },
+    "ADV_all_nodes": {
+      "comparison": "ADV_vs_POLLOCK_ALL_NODES_RAW",
+      "count": 216678,
+      "pearson_r": 0.9218794280784434,
+      "bias_days": 51.330355152211546,
+      "MAE_days": 66.7427616266144,
+      "RMSE_days": 121.18869771306834,
+      "median_abs_error_days": 33.14560807081269,
+      "p95_abs_error_days": 250.9788155979331,
+      "max_abs_error_days": 3010.859172962813,
+      "median_abs_relative_error": 0.2527399145186821,
+      "p95_abs_relative_error": 0.9345077189876757
+    },
+    "FMM_terminal": {
+      "comparison": "FMM_vs_POLLOCK_TERMINAL_RAW",
+      "count": 1078,
+      "pearson_r": 0.20389070064976503,
+      "bias_days": -285.47598559032167,
+      "MAE_days": 285.5503045118984,
+      "RMSE_days": 457.5151688865177,
+      "median_abs_error_days": 168.66022410710397,
+      "p95_abs_error_days": 879.9518915869296,
+      "max_abs_error_days": 3472.5320094358085,
+      "median_abs_relative_error": 0.4931004104856408,
+      "p95_abs_relative_error": 0.8339479218174534
+    },
+    "ADV_terminal": {
+      "comparison": "ADV_vs_POLLOCK_TERMINAL_RAW",
+      "count": 1078,
+      "pearson_r": 0.39284084026386495,
+      "bias_days": 122.73607328439734,
+      "MAE_days": 257.30615429291373,
+      "RMSE_days": 365.13869218966624,
+      "median_abs_error_days": 191.61680249365386,
+      "p95_abs_error_days": 641.4800250887939,
+      "max_abs_error_days": 3010.859172962813,
+      "median_abs_relative_error": 0.4778231065364772,
+      "p95_abs_relative_error": 2.003989136560618
+    }
+  },
+  "improvement_metrics": {
+    "delta_all_node_MAE_days_FMM_minus_ADV": 40.84458779706644,
+    "delta_all_node_RMSE_days_FMM_minus_ADV": 107.65519462079394,
+    "delta_all_node_r_ADV_minus_FMM": 0.19068727109878347,
+    "delta_terminal_MAE_days_FMM_minus_ADV": 28.244150218984657,
+    "delta_terminal_RMSE_days_FMM_minus_ADV": 92.37647669685146,
+    "delta_terminal_r_ADV_minus_FMM": 0.18895013961409993,
+    "delta_monotonic_fraction_ADV_minus_FMM": 0.14471243042671617,
+    "delta_negative_step_fraction_FMM_minus_ADV": 0.0913265306122449,
+    "median_terminal_FMM_to_Pollock_ratio": 0.5068995895143592,
+    "median_terminal_ADV_to_Pollock_ratio": 1.4418945977900655,
+    "fraction_streamlines_ADV_lower_abs_terminal_error_than_FMM": 0.47959183673469385
+  },
+  "interpretation": "DIRECTIONAL_ADVECTIVE_FORMULATION_SUBSTANTIALLY_IMPROVES_POLLOCK_CONSISTENCY",
+  "output": {
+    "file": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_B8_INDEPENDENT_DIRECTIONAL_FMM_POLLOCK_COMPARISON\\V16B8_Directional_FMM_Pollock_Comparison.npz",
+    "sha256": "9264f93ed8d4870ceefc0919f82c91ba468864aa3a2feb1348f8ff4a9ec2f532"
+  },
+  "recommendation": "Preserve all three untuned baselines. Use the V16B-8 evidence to decide the final role of isotropic FMM and directional advective travel time in PAD-Stream. Proceed to V16B-9 for branch interpretation / architecture role decision; do not recalibrate either method.",
+  "next_milestone": "V16B-9 \u2014 FMM / Directional Travel-Time Architecture Role Decision"
+}

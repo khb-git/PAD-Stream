@@ -1,0 +1,28 @@
+{
+  "milestone": "V16E-1B2Y-XPU",
+  "steady_state_corrected_median_seconds": 23.099733400000332,
+  "steady_state_corrected_mean_seconds": 23.957493033332867,
+  "steady_state_control_median_seconds": 0.10913980000077572,
+  "steady_state_control_mean_seconds": 0.10382586666673888,
+  "steady_state_median_corrected_over_control_ratio": 211.6527004798996,
+  "steady_state_mean_corrected_over_control_ratio": 230.74686301662982,
+  "steady_state_corrected_median_profiles_per_second": 5.5411894926890435,
+  "warmed_dominant_measured_stage": "total_backward",
+  "warmed_stage_times_seconds": {
+    "model_forward": 0.025992999999289168,
+    "local_recurrent_derivatives": 6.671928400000979,
+    "corrected_physics_algebra": 0.0038180000010470394,
+    "nonphysics_loss_assembly": 0.0008782999993854901,
+    "total_backward": 15.703743700001723
+  },
+  "diagnostic_projection": {
+    "hours_per_epoch": 0.5774933350000083,
+    "days_for_target_epochs": 19.24977783333361,
+    "target_epochs": 800,
+    "semantics": "operational diagnostic only; not a runtime promise"
+  },
+  "optimization_branch_authorized": false,
+  "COMP_XPU_005_full_training_authorized": false,
+  "B3_authorized": false,
+  "next_decision_required": "V16E-1B2Z-XPU must interpret the warmed steady-state baseline and decide whether an equivalence-preserving derivative-engine optimization branch is required before the COMP-XPU-005 execution-contract freeze."
+}

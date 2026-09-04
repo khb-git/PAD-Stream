@@ -1,0 +1,41 @@
+{
+  "milestone": "V16E-1A",
+  "policy": "Do not silently alter the final research source. Record stale metadata separately and make the NEW reproduction manifest reflect the actual executable interface.",
+  "Stage3_capillary": {
+    "source_sha256": "dab8eade38ac08c819ac27d803c8f1bceca9722c4c37e82977dbef6e6232ae0f",
+    "legacy_TrainConfig_condition_on_dim": 12,
+    "legacy_config_writer_param_dim_source": "P.param_dim() from 12-field TrainConfig.condition_on",
+    "actual_executable_param_dim": 13,
+    "actual_extra_feature": "log10(mu_w / mu_o)",
+    "N_SEQ": 64,
+    "classification": "KNOWN_STALE_CONFIG_METADATA",
+    "reproduction_rule": "Do not load the new reproduction from a config that claims param_dim=12. The V16E manifest must record effective_param_dim=13 and the appended logM feature."
+  },
+  "Stage4_full": {
+    "source_sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+    "legacy_TrainConfig_condition_on_dim": 12,
+    "legacy_config_writer_param_dim_source": "P.param_dim() from 12-field TrainConfig.condition_on",
+    "actual_executable_param_dim": 14,
+    "actual_extra_features": [
+      "Nc at executable conditioning index 12",
+      "log10(mu_w / mu_o) at executable conditioning index 13"
+    ],
+    "N_SEQ": 64,
+    "source_nc_training_grid": [
+      0.0,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "legacy_config_writer_omits_nc_vals": true,
+    "classification": "KNOWN_STALE_CONFIG_METADATA",
+    "reproduction_rule": "The V16E manifest must record effective_param_dim=14, the full conditioning order, and nc_vals explicitly. Do not rely on the legacy config writer alone to reconstruct the executable model."
+  },
+  "Stage3_Stage4_batch_size_notes": {
+    "Stage3_TrainConfig_field": 16384,
+    "Stage3_runtime_dataset_batch": 4096,
+    "Stage4_TrainConfig_field": 256,
+    "Stage4_runtime_dataset_batch": 4096,
+    "reproduction_rule": "Use the explicit runtime dataset construction in the authoritative source when reproducing source behavior; archive both values in the manifest."
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "cache": {
+    "exact_geometry_reuse_fraction": 0.907941325240263,
+    "full_retrace_avoidance_fraction": 0.7530747398297067,
+    "full_retrace_count": 1540,
+    "full_retrace_fraction": 0.2469252601702933,
+    "new_path_count": 548,
+    "path_decisions": 8456,
+    "reuse_corrected_count": 0,
+    "reuse_exact_count": 6368,
+    "screen_false_reuse_fraction": 0.0
+  },
+  "deployment_snapshots": 25,
+  "deployment_times_days": [
+    15,
+    30,
+    45,
+    60,
+    75,
+    90,
+    105,
+    120,
+    135,
+    150,
+    165,
+    180,
+    195,
+    210,
+    225,
+    240,
+    255,
+    270,
+    285,
+    300,
+    315,
+    330,
+    345,
+    360,
+    365
+  ],
+  "description": "Full-year sequential FMM-guided Pollock RNN proposal, positive-flux screen, corrected path cache, and exact Pollock correction audit",
+  "integrity": {
+    "frozen_v14_sha256": "48ca93446701269e5d2cac2fdbf469e07e8b05a67285e69ea7f05e026cdd79c0",
+    "v15c2_checkpoint_sha256": "98680238e2c911508822727aa42366e08afa009d46665ac88f60f10e80c15d4a"
+  },
+  "milestone": "15C-3",
+  "path_model": {
+    "corrected_event_identity": 1.0,
+    "corrected_segment_tof_identity": 1.0,
+    "exact_event_correction_rate": 0.028558386351316654,
+    "paths": 8456,
+    "raw_event_accuracy": 0.9650937205785854,
+    "raw_positive_flux_legal_fraction": 0.9926535619525834,
+    "screened_event_accuracy": 0.9714416136486833,
+    "screened_positive_flux_legal_fraction": 1.0,
+    "segment_log_tof_rmse": 1.1171954870224,
+    "segments": 70102
+  },
+  "simulator": {
+    "breakthrough_time_days": 115.75045110969795,
+    "final_producer_gas_cut": 0.853947741531437,
+    "maximum_mass_error_kg": 7.152557373046875e-07,
+    "maximum_pressure_residual_m3_s": 2.5963681955131407e-10,
+    "restart_identity": {
+      "cumulative_injected_mass_kg": 0.0,
+      "cumulative_produced_mass_kg": 0.0,
+      "feature_history_max_difference": 0.0,
+      "gas_cut": 0.0,
+      "learned_candidate_count_difference": 0,
+      "learned_selection_count_difference": 0,
+      "max_cell_mass_kg": 0.0,
+      "max_pressure_pa": 0.0,
+      "max_saturation": 0.0,
+      "relative_pressure_l2": 0.0
+    }
+  },
+  "status": "PASS",
+  "timing": {
+    "exact_pollock_trace_seconds": 2.3250633319967164,
+    "mean_exact_trace_seconds_per_phase_snapshot": 0.04650126663993433,
+    "mean_rnn_inference_seconds_per_snapshot": 0.019456854600139194,
+    "rnn_inference_seconds": 0.4864213650034799,
+    "teacher_build_seconds": 15.608986367998114
+  },
+  "validation": {
+    "passed": 24,
+    "total": 24
+  }
+}

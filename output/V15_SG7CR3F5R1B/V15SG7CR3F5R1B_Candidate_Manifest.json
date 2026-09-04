@@ -1,0 +1,17 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1B",
+  "status": "MINIMAL_EXACT_ARRAY_SUPPORT_EXTENSION_NOMINATED",
+  "diagnosis": "UNCHANGED_50_PERCENT_GATE_CROSSED_WITH_BOUNDED_GEOMETRIC_SHOULDER",
+  "authoritative_model_sha256": "b9a2af574ff3ef5eef6377bbcbd0bd87b6490ff4d938de51f7e1d8ffcd18c0a6",
+  "authoritative_model_modified": false,
+  "SG7B11_modified": false,
+  "historical_support_scalar_overwritten": false,
+  "historical_support_fraction": 0.495478416297645,
+  "runtime_exact_support_fraction": 0.49547147868938796,
+  "support_extension_calibrated": true,
+  "selected_experiment": "X08",
+  "candidate_frozen": false,
+  "front_error_reduction_gate": 0.5,
+  "front_error_reduction_gate_changed": false,
+  "next_milestone": "V15-SG7C-R3F5-R1C \u2014 Independent Exact-Array Support Extension Validation"
+}

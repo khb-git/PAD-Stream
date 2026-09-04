@@ -1,0 +1,12 @@
+{
+  "milestone": "V16C-2",
+  "status": "V16C_MULTI_COORDINATE_STREAMLINE_TRANSPORT_DATABASE_COMPLETE",
+  "diagnosis": "AUTHORITATIVE_POLLOCK_TOF_AND_RAW_FMM_ADV_GEOLOGY_PRESSURE_CONTEXT_ARE_SYNCHRONIZED_ON_ONE_FROZEN_STREAMLINE_NODE_DATABASE",
+  "streamlines": 1078,
+  "nodes_per_streamline": 201,
+  "authoritative_coordinate": "pollock_tof_s",
+  "database_sha256": "f5fe7bd2bcb113374b32966911d50976f8a581f95e63e2dd0e94642caa6f11b6",
+  "sampling_clipping_detected": true,
+  "recommendation": "Freeze the V16C-2 raw database. Proceed to V16C-3 to define the transport/PI-RNN conditioning contract, including which raw channels are inputs, which remain diagnostics, and how normalization is performed without changing Pollock TOF authority.",
+  "next_milestone": "V16C-3 \u2014 PI-RNN / Transport Conditioning Contract"
+}

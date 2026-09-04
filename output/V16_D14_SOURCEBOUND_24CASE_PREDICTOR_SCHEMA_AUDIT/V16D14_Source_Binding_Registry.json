@@ -1,0 +1,3050 @@
+{
+  "0020": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0020_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0020_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0020_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0015": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0015_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0015_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0015_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0013": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0013_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0013_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0013_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0004": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0004_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0004_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0004_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0006": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0006_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0006_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0006_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0002": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0002_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0002_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0002_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0023": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0023_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0023_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0023_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0016": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0016_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0016_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0016_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0009": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0009_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0009_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0009_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0019": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0019_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0019_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0019_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0017": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0017_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0017_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0017_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0024": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0024_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0024_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0024_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0003": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0003_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0003_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0003_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0011": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0011_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0011_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0011_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0014": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0014_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0014_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0014_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0007": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0007_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0007_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0007_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0010": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0010_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0010_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0010_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0025": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0025_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0025_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0025_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0008": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0008_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0008_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0008_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0012": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0012_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0012_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0012_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0005": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0005_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0005_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0005_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0018": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0018_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0018_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0018_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0021": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0021_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0021_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0021_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  },
+  "0022": {
+    "geology_flow": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0022_Geology.npz",
+    "pollock_metric": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0022_Pollock_201Node_C7_FaceMetric.npz",
+    "adv_travel_time": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0022_FMM_ADV_Pollock_Hierarchy.npz",
+    "geology_keys": {
+      "gaussian": [
+        15,
+        50,
+        50
+      ],
+      "Kx_mD": [
+        15,
+        50,
+        50
+      ],
+      "Ky_mD": [
+        15,
+        50,
+        50
+      ],
+      "Kz_mD": [
+        15,
+        50,
+        50
+      ],
+      "porosity": [
+        15,
+        50,
+        50
+      ],
+      "seed": [],
+      "case_id": [],
+      "recipe_id": [],
+      "transform_id": []
+    },
+    "pollock_keys": {
+      "theta": [
+        201
+      ],
+      "xyz_m": [
+        1078,
+        201,
+        3
+      ],
+      "pollock_tau_s": [
+        1078,
+        201
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "arc_length_m": [
+        1078,
+        201
+      ],
+      "path_length_m": [
+        1078
+      ],
+      "xD": [
+        1078,
+        201
+      ],
+      "M_face_dtheta_dxD": [
+        1078,
+        200
+      ],
+      "M_node_sidecar_dtheta_dxD": [
+        1078,
+        201
+      ],
+      "dxD_dtheta_face": [
+        1078,
+        200
+      ],
+      "streamline_weight_m3_s": [
+        1078
+      ],
+      "producer": [
+        1078
+      ],
+      "status": [
+        1078
+      ],
+      "seed_id": [
+        1078
+      ],
+      "source_d8b_artifact": [],
+      "source_d8b_sha256": [],
+      "c7_contract": []
+    },
+    "adv_keys": {
+      "fmm_arrival_s": [
+        15,
+        50,
+        50
+      ],
+      "tau_adv_s": [
+        15,
+        50,
+        50
+      ],
+      "source_mask": [
+        15,
+        50,
+        50
+      ],
+      "pollock_tau_end_s": [
+        1078
+      ],
+      "Vx": [
+        15,
+        50,
+        49
+      ],
+      "Vy": [
+        15,
+        49,
+        50
+      ],
+      "Vz": [
+        14,
+        50,
+        50
+      ],
+      "case_id": []
+    }
+  }
+}

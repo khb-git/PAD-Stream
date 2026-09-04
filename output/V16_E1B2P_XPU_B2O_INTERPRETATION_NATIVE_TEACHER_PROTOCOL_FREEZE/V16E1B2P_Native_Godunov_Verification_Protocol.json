@@ -1,0 +1,57 @@
+{
+  "milestone": "V16E-1B2P-XPU",
+  "next_milestone": "V16E-1B2Q-XPU",
+  "classification": "SOURCE_NATIVE_GODUNOV_CONSERVATION_VERIFICATION_PROTOCOL",
+  "goal": "Validate the corrected conservative physics against the exact Stage-2 teacher before fan postprocessing.",
+  "authority": {
+    "Stage2_source_sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+    "base_runner_sha256": "587bd355cd17efd3e7d814f1320d4894c857256c89699ea7c71dc5e63984ae18",
+    "B2N_derivation_sha256": "85b6757df96cb256ae4f87d5412f276f92ad8d84600e576b2d34e864b4f35b14",
+    "B2O_autograd_audit_sha256": "fb347b81ece990860e2caf599e9d276296a833f800b3c881dfec5235f76bb39e",
+    "B2O_teacher_audit_sha256": "db621f7cb83bb82c38c28974a08f50b21e303d9f615ea5c601e480644b0f608f"
+  },
+  "required_audits": [
+    {
+      "name": "native_finite_volume_balance",
+      "requirement": "Instrument or faithfully reproduce the exact Godunov update on the native NX_TRAIN grid and evaluate the discrete conservation balance using the same face fluxes and time step.",
+      "purpose": "Confirm the numerical teacher is conservative before any fan mapping."
+    },
+    {
+      "name": "native_grid_continuous_residual_diagnostic",
+      "requirement": "Evaluate a continuous-form diagnostic on raw native-grid snapshots using sufficiently dense source-native time sampling, while clearly separating it from the exact discrete FV balance.",
+      "purpose": "Quantify finite-difference/truncation behavior without fan processing."
+    },
+    {
+      "name": "fan_processing_ablation",
+      "requirement": "Apply fan operations sequentially and measure their effect: front extraction -> interpolation to xi -> Sw_star flooring -> forced endpoints -> sparse six-time sampling.",
+      "purpose": "Identify which representation step creates the B2O residual inflation."
+    },
+    {
+      "name": "Nc0_control",
+      "requirement": "Use Nc=0 as the mandatory derivation/audit control case.",
+      "purpose": "The corrected conservative formulation must nest the incompressible limit before positive-Nc interpretation is accepted."
+    },
+    {
+      "name": "positive_Nc_sweep",
+      "requirement": "Repeat the same audit at physical Nc=0.05, 0.10, 0.20, 0.30.",
+      "purpose": "Separate real compressibility effects from representation artifacts."
+    }
+  ],
+  "front_speed_policy": {
+    "primary_physical_closure": "Rankine-Hugoniot Xdot = exp(Nc*X)*sigma_BL",
+    "diagnostic_alternate": "finite-difference Godunov mid-jump Xdot",
+    "reason": "B2N supports RH physically; B2O shows RH-vs-FD is not the dominant source of processed-fan residual inflation."
+  },
+  "scientific_firewall": {
+    "training": false,
+    "optimizer": false,
+    "weight_update": false,
+    "COMP004_modified": false,
+    "dataset_redefinition": false,
+    "physical_Nc_changed": false,
+    "OOD": false,
+    "TOF": false,
+    "B3_authorized": false
+  },
+  "acceptance_policy": "No new scientific numeric threshold. Use exact discrete-balance identities, convergence/truncation behavior, Nc=0 control, and representation-ablation evidence to decide whether the corrected residual is ready for a training protocol."
+}

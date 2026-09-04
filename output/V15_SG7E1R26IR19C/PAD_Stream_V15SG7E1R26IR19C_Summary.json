@@ -1,0 +1,12 @@
+{
+  "milestone": "V15-SG7E1R26I-R19C",
+  "status": "CONTROLLED_RUNTIME_VARIANCE_EXPERIMENT_DESIGN_READY",
+  "diagnosis": "HISTORICAL_RUNTIME_IS_PARTIALLY_UNRECOVERABLE_BUT_ONE_BOUNDED_UNRESOLVED_RUNTIME_DIMENSION_CAN_BE_TESTED_WITHOUT_CHANGING_MODEL_OR_GATES",
+  "authorized_cases": [
+    "C0",
+    "C1"
+  ],
+  "failed_gates": [],
+  "recommendation": "Execute only the authorized controlled cases. C0 is the existing baseline. C1 is the only new execution authorized: current TensorFlow/Keras runtime with TF_ENABLE_ONEDNN_OPTS=0, while keeping the historical thread/determinism contract, model, X100, batch semantics, and precision envelope unchanged. Do not test alternate TensorFlow versions unless a historical version is explicitly recovered.",
+  "next_milestone": "V15-SG7E1R26I-R19D \u2014 Controlled oneDNN-Off 100-Day Replay"
+}

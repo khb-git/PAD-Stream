@@ -1,0 +1,40 @@
+{
+  "milestone": "V16B-6A",
+  "status": "V16B_CLOSED_EXTERNAL_BOUNDARY_OPERATOR_POLICY_RESOLVED",
+  "diagnosis": "FROZEN_SG3_SG4_TOPOLOGY_SUPPORTS_NO_FLOW_OUTER_BOUNDARIES_AND_CELL_CENTERED_EXTERNAL_UPWIND_DEPENDENCIES_ARE_NUMERICAL_OPERATOR_ARTIFACTS",
+  "physical_boundary_policy": {
+    "outer_domain": "NO_FLOW",
+    "basis": [
+      "SG3/SG4 finite-volume source semantics",
+      "Qx/Qy/Qz persist internal faces only",
+      "no persisted external boundary face-flux authority"
+    ]
+  },
+  "directional_operator_policy": {
+    "external_tau_Dirichlet": null,
+    "external_tau_inflow": null,
+    "rule": "suppress only out-of-domain upwind coefficient on each closed external face",
+    "interior_coefficients_changed": false,
+    "foundation_velocity_changed": false
+  },
+  "audit_counts": {
+    "original_missing_upwind_cells": 3563,
+    "remaining_external_dependencies_after_projection": 0,
+    "zero_diagonal_non_source_after_projection": 0
+  },
+  "output": {
+    "file": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_B6A_DIRECTIONAL_EXTERNAL_BOUNDARY_POLICY_AUDIT\\V16B6A_Closed_Boundary_Projected_Scheme_Contract.npz",
+    "sha256": "fe7590742a8a2f32ca2bff631767eb719f5ea073592b10563afc23ba3fb71ded"
+  },
+  "constraints": {
+    "directional_solve_executed": false,
+    "external_tau_invented": false,
+    "foundation_modified": false,
+    "FMM_modified": false,
+    "Pollock_retrace": false,
+    "artificial_diffusion": false,
+    "training": false
+  },
+  "recommendation": "Freeze the closed-boundary projected coefficient contract. Proceed to V16B-7 for the first controlled directional advective travel-time solve using the projected operator. Do not impose any external tau value.",
+  "next_milestone": "V16B-7 \u2014 Controlled Directional Advective Travel-Time Solve"
+}

@@ -1,0 +1,11 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1A",
+  "status": "EXACT_SUPPORT_ARRAY_RECOVERY_INCOMPLETE",
+  "diagnosis": "AUTHORITATIVE_SUPPORT_ARRAYS_NOT_PERSISTED_OR_NOT_IDENTIFIED",
+  "training_performed": false,
+  "support_extension_calibrated": false,
+  "gate_changed": false,
+  "exact_array_closure": false,
+  "recommendation": "The source dependency chain and persisted-array search still do not reproduce the authoritative B4 sums exactly. Do not calibrate support. Use the generated symbol trace to identify the deterministic reconstruction function in the authoritative R3F4/R source and serialize its exact front-shell and support arrays directly.",
+  "next_milestone": "V15-SG7C-R3F5-R1A2 \u2014 Authoritative Support Reconstruction Serialization"
+}

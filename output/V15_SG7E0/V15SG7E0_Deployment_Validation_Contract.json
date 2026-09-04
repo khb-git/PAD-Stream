@@ -1,0 +1,43 @@
+{
+  "milestone": "V15-SG7E0",
+  "status": "SG7E_CONTRACT_PROVENANCE_REQUIRES_CLARIFICATION",
+  "diagnosis": "SG7E_GATE_EVIDENCE_FOUND_BUT_AUTHORITY_NOT_EXPLICITLY_RESOLVED",
+  "frozen_input": {
+    "candidate": "P4_full_grid",
+    "file": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7D6\\frozen_full_grid\\V15SG7D6_P4_Frozen_Full_Grid_Deployment_Candidate.npz",
+    "sha256": "5c881046bf7b6bcfb411cffc9a332b6e4705e03f91a3a2438ecb58c2eedf9df5",
+    "grid_shape": [
+      15,
+      50,
+      50
+    ],
+    "supported_cells": 29107,
+    "unsupported_cells": 8393,
+    "background_saturation": 0.20072828233242035
+  },
+  "historical_SG7E": {
+    "sources_found": 81,
+    "threshold_candidates_found": 45,
+    "explicit_authoritative_candidates": 0,
+    "unknown_role_candidates": 43
+  },
+  "baseline": {
+    "grid_cell_count": 37500,
+    "grid_finite_fraction": 1.0,
+    "grid_min_saturation": 0.20072828233242035,
+    "grid_max_saturation": 0.7321747541427612,
+    "grid_mean_saturation": 0.3620054849223296,
+    "supported_cells": 29107,
+    "unsupported_background_cells": 8393,
+    "support_fraction": 0.7761866666666667,
+    "background_saturation": 0.20072828233242035,
+    "diagnostic_plume_threshold": 0.21,
+    "diagnostic_full_grid_plume_cells": 23370,
+    "diagnostic_supported_plume_cells": 23370,
+    "diagnostic_unsupported_plume_cells": 0
+  },
+  "thresholds_changed": false,
+  "deployment_correction_performed": false,
+  "recommendation": "Historical SG7E evidence exists, but explicit authoritative-vs-diagnostic semantics are not yet strong enough to launch the final deployment screen. Do not change thresholds. Resolve gate authority from source/contract provenance before SG7E1.",
+  "next_milestone": "V15-SG7E0R \u2014 Historical SG7E Gate Authority Reconciliation"
+}

@@ -1,0 +1,17 @@
+{
+  "milestone": "V15-SG7D0",
+  "status": "FROZEN_L2_MAPBACK_INTERFACE_CONTRACT_READY",
+  "diagnosis": "SG7D1_CONSERVATIVE_MAPBACK_INPUTS_AVAILABLE",
+  "frozen_candidate": "L2",
+  "frozen_candidate_sha256": "63540f125b5124974ad3348103a9c7347aa9d6484240721d64f8a3efe66397b0",
+  "streamline_count": 2662,
+  "xi_nodes": 201,
+  "target_grid": [
+    15,
+    50,
+    50
+  ],
+  "mapback_performed": false,
+  "recommendation": "The frozen L2 transport state, SG6 streamline geometry, TOF coordinates, streamline weights, and 15x50x50 SGSim grid contract are jointly available. Proceed to SG7D1 conservative streamline-to-grid accumulation. Keep the R1F3 artifact immutable and do not introduce an unweighted averaging rule.",
+  "next_milestone": "V15-SG7D1 \u2014 Conservative Frozen-L2 Streamline-to-Grid Map-Back"
+}

@@ -1,0 +1,20 @@
+{
+  "milestone": "V16B-7",
+  "status": "V16B_DIRECTIONAL_ADVECTIVE_TRAVEL_TIME_SOLVE_COMPLETE",
+  "diagnosis": "CLOSED_BOUNDARY_UPWIND_ADVECTIVE_SYSTEM_SOLVED_WITH_FINITE_NONNEGATIVE_SOURCE_ANCHORED_TRAVEL_TIMES",
+  "statistics": {
+    "finite_cells": 37500,
+    "total_cells": 37500,
+    "min_days": 0.0,
+    "median_days": 223.48208981513065,
+    "mean_days": 293.4439046551408,
+    "max_days": 4996.618288842583,
+    "negative_cells": 0,
+    "nonpositive_non_source_cells": 0,
+    "max_abs_source_tau_s": 0.0
+  },
+  "relative_L2_residual": 8.935923261052864e-15,
+  "causal_fraction": 1.0,
+  "recommendation": "Freeze the untuned directional travel-time solution. Proceed to V16B-8 for an independent directional-advective vs isotropic-FMM vs Pollock TOF comparison. Do not recalibrate any field.",
+  "next_milestone": "V16B-8 \u2014 Independent Directional / FMM / Pollock TOF Comparison"
+}

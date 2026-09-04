@@ -1,0 +1,13 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1F2B",
+  "status": "CROSSING_LOCAL_CANDIDATE_NOMINATED",
+  "diagnosis": "CROSSING_LOCAL_TRUTH_DIRECTED_CORRECTION_PASSES_COMPLETE_CONTRACT",
+  "X08_support_locked": true,
+  "K5_input_locked": true,
+  "selected_guard_half_width": 0.029999971389770508,
+  "selected_experiment": "L2",
+  "candidate_frozen": false,
+  "model_weights_changed": false,
+  "gate_changed": false,
+  "next_milestone": "V15-SG7C-R3F5-R1F2C \u2014 Independent Crossing-Local Candidate Validation"
+}

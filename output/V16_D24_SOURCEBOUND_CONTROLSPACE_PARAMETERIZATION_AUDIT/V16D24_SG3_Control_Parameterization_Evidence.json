@@ -1,0 +1,110 @@
+{
+  "rate_evidence": [
+    {
+      "line": 22,
+      "context": "17: # 1. Load frozen SG1/SG2 geology.\n18: # 2. Convert all physical quantities internally to SI units.\n19: # 3. Build anisotropic finite-volume pressure coefficients.\n20: # 4. Apply:\n21: #       - no-flow external boundaries\n22: #       - center rate-controlled CO2 injector\n23: #       - four Peaceman BHP-controlled producers\n24: #       - gravity\n25: # 5. Solve steady reference-mobility pressure equation.\n26: # 6. Validate residual and global mass balance.\n27: #"
+    },
+    {
+      "line": 88,
+      "context": "83: \n84: PSI_TO_PA = 6894.757293168\n85: PA_TO_PSI = 1.0 / PSI_TO_PA\n86: \n87: DAY_TO_S = 86400.0\n88: TONNE_TO_KG = 1000.0\n89: \n90: \n91: # SI grid dimensions\n92: DX_M = DX_FT * FT_TO_M\n93: DY_M = DY_FT * FT_TO_M"
+    },
+    {
+      "line": 121,
+      "context": "116: \n117: # ----------------------------------------------------------------------\n118: # INITIAL / WELL PRESSURES\n119: # ----------------------------------------------------------------------\n120: \n121: INITIAL_PRESSURE_PSI = 2500.0\n122: PRODUCER_BHP_PSI = 2000.0\n123: \n124: INITIAL_PRESSURE_PA = INITIAL_PRESSURE_PSI * PSI_TO_PA\n125: PRODUCER_BHP_PA = PRODUCER_BHP_PSI * PSI_TO_PA\n126: "
+    },
+    {
+      "line": 129,
+      "context": "124: INITIAL_PRESSURE_PA = INITIAL_PRESSURE_PSI * PSI_TO_PA\n125: PRODUCER_BHP_PA = PRODUCER_BHP_PSI * PSI_TO_PA\n126: \n127: \n128: # ----------------------------------------------------------------------\n129: # CO2 INJECTION CONTROL\n130: # ----------------------------------------------------------------------\n131: \n132: CO2_MASS_RATE_TONNES_DAY = 500.0\n133: CO2_DENSITY_KG_M3 = 700.0\n134: "
+    },
+    {
+      "line": 132,
+      "context": "127: \n128: # ----------------------------------------------------------------------\n129: # CO2 INJECTION CONTROL\n130: # ----------------------------------------------------------------------\n131: \n132: CO2_MASS_RATE_TONNES_DAY = 500.0\n133: CO2_DENSITY_KG_M3 = 700.0\n134: \n135: CO2_MASS_RATE_KG_S = (\n136:     CO2_MASS_RATE_TONNES_DAY\n137:     * TONNE_TO_KG"
+    },
+    {
+      "line": 133,
+      "context": "128: # ----------------------------------------------------------------------\n129: # CO2 INJECTION CONTROL\n130: # ----------------------------------------------------------------------\n131: \n132: CO2_MASS_RATE_TONNES_DAY = 500.0\n133: CO2_DENSITY_KG_M3 = 700.0\n134: \n135: CO2_MASS_RATE_KG_S = (\n136:     CO2_MASS_RATE_TONNES_DAY\n137:     * TONNE_TO_KG\n138:     / DAY_TO_S"
+    },
+    {
+      "line": 135,
+      "context": "130: # ----------------------------------------------------------------------\n131: \n132: CO2_MASS_RATE_TONNES_DAY = 500.0\n133: CO2_DENSITY_KG_M3 = 700.0\n134: \n135: CO2_MASS_RATE_KG_S = (\n136:     CO2_MASS_RATE_TONNES_DAY\n137:     * TONNE_TO_KG\n138:     / DAY_TO_S\n139: )\n140: "
+    },
+    {
+      "line": 136,
+      "context": "131: \n132: CO2_MASS_RATE_TONNES_DAY = 500.0\n133: CO2_DENSITY_KG_M3 = 700.0\n134: \n135: CO2_MASS_RATE_KG_S = (\n136:     CO2_MASS_RATE_TONNES_DAY\n137:     * TONNE_TO_KG\n138:     / DAY_TO_S\n139: )\n140: \n141: Q_INJ_M3_S = ("
+    },
+    {
+      "line": 137,
+      "context": "132: CO2_MASS_RATE_TONNES_DAY = 500.0\n133: CO2_DENSITY_KG_M3 = 700.0\n134: \n135: CO2_MASS_RATE_KG_S = (\n136:     CO2_MASS_RATE_TONNES_DAY\n137:     * TONNE_TO_KG\n138:     / DAY_TO_S\n139: )\n140: \n141: Q_INJ_M3_S = (\n142:     CO2_MASS_RATE_KG_S"
+    },
+    {
+      "line": 142,
+      "context": "137:     * TONNE_TO_KG\n138:     / DAY_TO_S\n139: )\n140: \n141: Q_INJ_M3_S = (\n142:     CO2_MASS_RATE_KG_S\n143:     / CO2_DENSITY_KG_M3\n144: )\n145: \n146: Q_INJ_M3_DAY = Q_INJ_M3_S * DAY_TO_S\n147: "
+    },
+    {
+      "line": 143,
+      "context": "138:     / DAY_TO_S\n139: )\n140: \n141: Q_INJ_M3_S = (\n142:     CO2_MASS_RATE_KG_S\n143:     / CO2_DENSITY_KG_M3\n144: )\n145: \n146: Q_INJ_M3_DAY = Q_INJ_M3_S * DAY_TO_S\n147: \n148: "
+    },
+    {
+      "line": 1033,
+      "context": "1028: \n1029:         \"external_boundaries\":\n1030:             \"NO_FLOW\",\n1031: \n1032:         \"injection_control\": {\n1033:             \"mass_rate_tonnes_day\":\n1034:                 CO2_MASS_RATE_TONNES_DAY,\n1035:             \"reference_co2_density_kg_m3\":\n1036:                 CO2_DENSITY_KG_M3,\n1037:             \"reservoir_volume_rate_m3_day\":\n1038:                 Q_INJ_M3_DAY,"
+    },
+    {
+      "line": 1034,
+      "context": "1029:         \"external_boundaries\":\n1030:             \"NO_FLOW\",\n1031: \n1032:         \"injection_control\": {\n1033:             \"mass_rate_tonnes_day\":\n1034:                 CO2_MASS_RATE_TONNES_DAY,\n1035:             \"reference_co2_density_kg_m3\":\n1036:                 CO2_DENSITY_KG_M3,\n1037:             \"reservoir_volume_rate_m3_day\":\n1038:                 Q_INJ_M3_DAY,\n1039:             \"completed_layers\":"
+    },
+    {
+      "line": 1035,
+      "context": "1030:             \"NO_FLOW\",\n1031: \n1032:         \"injection_control\": {\n1033:             \"mass_rate_tonnes_day\":\n1034:                 CO2_MASS_RATE_TONNES_DAY,\n1035:             \"reference_co2_density_kg_m3\":\n1036:                 CO2_DENSITY_KG_M3,\n1037:             \"reservoir_volume_rate_m3_day\":\n1038:                 Q_INJ_M3_DAY,\n1039:             \"completed_layers\":\n1040:                 \"6-10\","
+    },
+    {
+      "line": 1036,
+      "context": "1031: \n1032:         \"injection_control\": {\n1033:             \"mass_rate_tonnes_day\":\n1034:                 CO2_MASS_RATE_TONNES_DAY,\n1035:             \"reference_co2_density_kg_m3\":\n1036:                 CO2_DENSITY_KG_M3,\n1037:             \"reservoir_volume_rate_m3_day\":\n1038:                 Q_INJ_M3_DAY,\n1039:             \"completed_layers\":\n1040:                 \"6-10\",\n1041:         },"
+    },
+    {
+      "line": 1127,
+      "context": "1122:     print(\n1123:         f\"  Gravity                 : \"\n1124:         f\"{GRAVITY_ON}\"\n1125:     )\n1126: \n1127:     print(\"\\nCO2 INJECTION CONTROL\")\n1128: \n1129:     print(\n1130:         f\"  Mass rate               : \"\n1131:         f\"{CO2_MASS_RATE_TONNES_DAY:.1f} tonnes/day\"\n1132:     )"
+    },
+    {
+      "line": 1130,
+      "context": "1125:     )\n1126: \n1127:     print(\"\\nCO2 INJECTION CONTROL\")\n1128: \n1129:     print(\n1130:         f\"  Mass rate               : \"\n1131:         f\"{CO2_MASS_RATE_TONNES_DAY:.1f} tonnes/day\"\n1132:     )\n1133: \n1134:     print(\n1135:         f\"  Reference CO2 density   : \""
+    },
+    {
+      "line": 1131,
+      "context": "1126: \n1127:     print(\"\\nCO2 INJECTION CONTROL\")\n1128: \n1129:     print(\n1130:         f\"  Mass rate               : \"\n1131:         f\"{CO2_MASS_RATE_TONNES_DAY:.1f} tonnes/day\"\n1132:     )\n1133: \n1134:     print(\n1135:         f\"  Reference CO2 density   : \"\n1136:         f\"{CO2_DENSITY_KG_M3:.1f} kg/m3\""
+    },
+    {
+      "line": 1135,
+      "context": "1130:         f\"  Mass rate               : \"\n1131:         f\"{CO2_MASS_RATE_TONNES_DAY:.1f} tonnes/day\"\n1132:     )\n1133: \n1134:     print(\n1135:         f\"  Reference CO2 density   : \"\n1136:         f\"{CO2_DENSITY_KG_M3:.1f} kg/m3\"\n1137:     )\n1138: \n1139:     print(\n1140:         f\"  Reservoir volume rate   : \""
+    },
+    {
+      "line": 1136,
+      "context": "1131:         f\"{CO2_MASS_RATE_TONNES_DAY:.1f} tonnes/day\"\n1132:     )\n1133: \n1134:     print(\n1135:         f\"  Reference CO2 density   : \"\n1136:         f\"{CO2_DENSITY_KG_M3:.1f} kg/m3\"\n1137:     )\n1138: \n1139:     print(\n1140:         f\"  Reservoir volume rate   : \"\n1141:         f\"{Q_INJ_M3_DAY:.3f} m3/day\""
+    }
+  ],
+  "bhp_evidence": [
+    {
+      "line": 23,
+      "context": "18: # 2. Convert all physical quantities internally to SI units.\n19: # 3. Build anisotropic finite-volume pressure coefficients.\n20: # 4. Apply:\n21: #       - no-flow external boundaries\n22: #       - center rate-controlled CO2 injector\n23: #       - four Peaceman BHP-controlled producers\n24: #       - gravity\n25: # 5. Solve steady reference-mobility pressure equation.\n26: # 6. Validate residual and global mass balance.\n27: #\n28: # IMPORTANT"
+    },
+    {
+      "line": 122,
+      "context": "117: # ----------------------------------------------------------------------\n118: # INITIAL / WELL PRESSURES\n119: # ----------------------------------------------------------------------\n120: \n121: INITIAL_PRESSURE_PSI = 2500.0\n122: PRODUCER_BHP_PSI = 2000.0\n123: \n124: INITIAL_PRESSURE_PA = INITIAL_PRESSURE_PSI * PSI_TO_PA\n125: PRODUCER_BHP_PA = PRODUCER_BHP_PSI * PSI_TO_PA\n126: \n127: "
+    },
+    {
+      "line": 501,
+      "context": "496:         )\n497: \n498:         b[c] += Q_INJ_PERF_M3_S\n499: \n500:     # --------------------------------------------------------------\n501:     # BHP-controlled producers\n502:     # --------------------------------------------------------------\n503: \n504:     for name, well in PRODUCERS.items():\n505: \n506:         perf_data = []"
+    },
+    {
+      "line": 702,
+      "context": "697:         (\n698:             \"Global mass-balance error < 0.1%\",\n699:             mass_error_fraction < 1.0e-3,\n700:         ),\n701:         (\n702:             \"Injector completion pressure > producer BHP\",\n703:             injector_pressures.mean()\n704:             > PRODUCER_BHP_PSI,\n705:         ),\n706:     ]\n707: "
+    },
+    {
+      "line": 957,
+      "context": "952:     )\n953: \n954:     ax.axvline(\n955:         PRODUCER_BHP_PSI,\n956:         linestyle=\"--\",\n957:         label=\"Producer BHP\",\n958:     )\n959: \n960:     ax.set_xlabel(\n961:         \"Pressure (psi)\"\n962:     )"
+    },
+    {
+      "line": 1152,
+      "context": "1147:     )\n1148: \n1149:     print(\"\\nPRODUCTION CONTROL\")\n1150: \n1151:     print(\n1152:         f\"  Producer BHP            : \"\n1153:         f\"{PRODUCER_BHP_PSI:.1f} psi\"\n1154:     )\n1155: \n1156:     print(\n1157:         f\"  Well radius             : \""
+    }
+  ]
+}

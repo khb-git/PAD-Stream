@@ -1,0 +1,19 @@
+{
+  "milestone": "V16B-9",
+  "status": "V16B_TRAVEL_TIME_ARCHITECTURE_ROLES_FROZEN",
+  "diagnosis": "FMM_ADV_AND_POLLOCK_PROVIDE_DISTINCT_COMPLEMENTARY_LEVELS_OF_CONNECTIVITY_AND_TRAVEL_TIME_INFORMATION",
+  "role_registry": {
+    "FMM": "rapid scalar connectivity / arrival-time control",
+    "ADV": "directional Eulerian travel-time field",
+    "Pollock": "authoritative trajectory-level TOF reference"
+  },
+  "prohibited_interpretations": [
+    "FMM equivalent to Pollock",
+    "ADV exact replacement for Pollock",
+    "Pollock unnecessary after ADV",
+    "cross-calibrated equivalence"
+  ],
+  "architecture_principle": "retain multiple travel-time representations because they encode different levels of directional information",
+  "recommendation": "Close V16B with all three methods preserved. Use FMM for rapid scalar connectivity screening, ADV for directional Eulerian travel time, and Pollock for exact trajectory-level TOF. Proceed to V16C to integrate this hierarchy into the downstream PAD-Stream transport architecture.",
+  "next_milestone": "V16C \u2014 Travel-Time Hierarchy Integration into PAD-Stream Transport"
+}

@@ -1,0 +1,225 @@
+{
+  "milestone": "V15-SG7B-12",
+  "description": "TOF-conditioned residual bias refinement design",
+  "training_performed": false,
+  "weights_changed": false,
+  "architecture_changed": false,
+  "frozen_model_replaced": false,
+  "SG7B11_gates_relaxed": false,
+  "SG7E_threshold_changed": false,
+  "incoming_diagnosis": "TOF_CONDITIONED_BIAS",
+  "starting_checkpoint": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B11\\V15SG7B_FRONT_AWARE_FROZEN_Model.keras",
+  "starting_checkpoint_sha256": "28c3e555f1ea9e128bddc6c021c5b3648699ba7a33125b3b40a6556990fa9141",
+  "diagnostic_baseline": {
+    "TOF_500_1000_mean_bias": 0.004756026104725998,
+    "TOF_500_1000_material_share": 0.5724998873992223,
+    "TOF_1000_2000_mean_bias": 0.008821790222551053,
+    "TOF_gt_2000_mean_bias": 0.010334881049249931,
+    "tail_mean_bias": 0.010328912605362393,
+    "tail_material_share": 0.4899860375035657,
+    "front_mean_bias": 0.00579905375605903
+  },
+  "new_loss_terms": {
+    "L_TOF_bias": "positive-bias penalty for tau_end >= 500 days",
+    "L_TOF_slow": "strong positive-bias penalty for tau_end >= 1000 days",
+    "L_tail_anchor": "anchor SG7A initial-state tail S<=0.205",
+    "L_short_TOF_anchor": "preserve fast-streamline behavior",
+    "L_frozen_anchor": "preserve SG7B-11 away from targeted regions"
+  },
+  "bias_improvement_gates": [
+    {
+      "gate": "500-1000d mean positive bias",
+      "baseline": 0.004756026104725998,
+      "target_limit": 0.0025,
+      "improvement_required": ">=45% reduction"
+    },
+    {
+      "gate": "1000-2000d mean positive bias",
+      "baseline": 0.008821790222551053,
+      "target_limit": 0.0045,
+      "improvement_required": ">=45% reduction"
+    },
+    {
+      "gate": ">2000d mean positive bias",
+      "baseline": 0.010334881049249931,
+      "target_limit": 0.005,
+      "improvement_required": ">=45% reduction"
+    },
+    {
+      "gate": "Initial-tail mean positive bias",
+      "baseline": 0.010328912605362393,
+      "target_limit": 0.005,
+      "improvement_required": ">=45% reduction"
+    },
+    {
+      "gate": "500-1000d material-positive-node share",
+      "baseline": 0.5724998873992223,
+      "target_limit": 0.4,
+      "improvement_required": "reduce dominant TOF concentration"
+    }
+  ],
+  "preservation_gates": [
+    {
+      "gate": "Held-out L1",
+      "limit": "< 0.020",
+      "source": "SG7B-7R / SG7B-11",
+      "status": "mandatory"
+    },
+    {
+      "gate": "Held-out L2",
+      "limit": "< 0.030",
+      "source": "SG7B-7R / SG7B-11",
+      "status": "mandatory"
+    },
+    {
+      "gate": "Mass relative MAE",
+      "limit": "< 0.030",
+      "source": "SG7B-7R / SG7B-11",
+      "status": "mandatory"
+    },
+    {
+      "gate": "Canonical mean",
+      "limit": "< 0.500",
+      "source": "SG7B-6H / SG7B-11",
+      "status": "mandatory"
+    },
+    {
+      "gate": "Canonical P90",
+      "limit": "< 1.000",
+      "source": "SG7B-6H / SG7B-11",
+      "status": "mandatory"
+    },
+    {
+      "gate": "Canonical fraction > 1",
+      "limit": "< 10%",
+      "source": "SG7B-6H / SG7B-11",
+      "status": "mandatory"
+    },
+    {
+      "gate": "Injector-region L1",
+      "limit": "< 0.015",
+      "source": "SG7B-7R / SG7B-11",
+      "status": "mandatory"
+    },
+    {
+      "gate": "Front-region L1",
+      "limit": "< 0.030",
+      "source": "SG7B-7R / SG7B-11",
+      "status": "mandatory"
+    },
+    {
+      "gate": "Early-time L1",
+      "limit": "< 0.020",
+      "source": "SG7B-7R / SG7B-11",
+      "status": "mandatory"
+    },
+    {
+      "gate": "Late-time L1",
+      "limit": "< 0.025",
+      "source": "SG7B-7R / SG7B-11",
+      "status": "mandatory"
+    },
+    {
+      "gate": "Recovered 100d fronts",
+      "limit": ">= 744",
+      "source": "SG7B-9 / SG7B-11",
+      "status": "mandatory"
+    },
+    {
+      "gate": "100d conditioned front gap",
+      "limit": "<= SG7B-10S contract",
+      "source": "SG7B-10S / SG7B-11",
+      "status": "mandatory"
+    },
+    {
+      "gate": "100d profile L1",
+      "limit": "<= SG7B-10S contract",
+      "source": "SG7B-10S / SG7B-11",
+      "status": "mandatory"
+    },
+    {
+      "gate": "SG7A/E0-relative front shape",
+      "limit": "all SG7B-10S gates pass",
+      "source": "SG7B-10S / SG7B-11",
+      "status": "mandatory"
+    }
+  ],
+  "training_contract": {
+    "starting_checkpoint": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B11\\V15SG7B_FRONT_AWARE_FROZEN_Model.keras",
+    "maximum_epochs": 140,
+    "initial_learning_rate": 1.5e-06,
+    "minimum_learning_rate": 1.5e-07,
+    "early_stop_patience": 28,
+    "lr_reduction_patience": 10,
+    "batch_strategy": "retain SG7B-10 batching; add TOF-conditioned sample weights",
+    "targeted_TOF_weighting": {
+      "<=500d": 1.0,
+      "500-1000d": 3.0,
+      "1000-2000d": 4.0,
+      ">2000d": 4.0
+    },
+    "state_region_weighting": {
+      "initial_tail_S<=0.205": 3.0,
+      "front_band_0.21_to_0.30": 1.5,
+      "swept_high": 1.0
+    },
+    "selection_rule": "Candidate must satisfy every original SG7B-11 preservation gate AND every SG7B-12 bias-improvement gate. No scalar training score may override a failed mandatory gate."
+  },
+  "controlled_experiments": [
+    {
+      "experiment": "E0",
+      "description": "Frozen SG7B-11 control",
+      "lambda_TOF_bias": 0.0,
+      "lambda_TOF_slow": 0.0,
+      "lambda_tail": 0.0,
+      "lambda_short_anchor": 0.0,
+      "lambda_frozen_anchor": 0.0
+    },
+    {
+      "experiment": "E1",
+      "description": "Moderate TOF-bias correction",
+      "lambda_TOF_bias": 0.5,
+      "lambda_TOF_slow": 0.25,
+      "lambda_tail": 0.1,
+      "lambda_short_anchor": 0.25,
+      "lambda_frozen_anchor": 1.0
+    },
+    {
+      "experiment": "E2",
+      "description": "Balanced TOF + tail correction",
+      "lambda_TOF_bias": 0.75,
+      "lambda_TOF_slow": 0.5,
+      "lambda_tail": 0.25,
+      "lambda_short_anchor": 0.35,
+      "lambda_frozen_anchor": 1.0
+    },
+    {
+      "experiment": "E3",
+      "description": "Strong slow-streamline correction",
+      "lambda_TOF_bias": 0.75,
+      "lambda_TOF_slow": 0.85,
+      "lambda_tail": 0.25,
+      "lambda_short_anchor": 0.4,
+      "lambda_frozen_anchor": 1.25
+    },
+    {
+      "experiment": "E4",
+      "description": "Strong tail-anchor correction",
+      "lambda_TOF_bias": 0.7,
+      "lambda_TOF_slow": 0.55,
+      "lambda_tail": 0.55,
+      "lambda_short_anchor": 0.4,
+      "lambda_frozen_anchor": 1.25
+    },
+    {
+      "experiment": "E5",
+      "description": "Conservative bias correction",
+      "lambda_TOF_bias": 0.45,
+      "lambda_TOF_slow": 0.35,
+      "lambda_tail": 0.2,
+      "lambda_short_anchor": 0.5,
+      "lambda_frozen_anchor": 1.5
+    }
+  ],
+  "next_milestone": "V15-SG7B-13 \u2014 Controlled TOF-Conditioned Residual Bias Refinement"
+}

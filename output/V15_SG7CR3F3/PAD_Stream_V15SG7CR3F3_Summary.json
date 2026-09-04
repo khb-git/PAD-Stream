@@ -1,0 +1,9 @@
+{
+  "milestone": "V15-SG7C-R3F3",
+  "status": "FRONT_LOCAL_RESIDUAL_BASIS_CONTRACT_READY",
+  "validation_passed": true,
+  "training_performed": false,
+  "SG7B11_modified": false,
+  "recommendation": "Proceed to controlled R3F4 training using bounded front-local fractions of the validated canonical residual. Do not train an unconstrained additive correction. Preserve SG7B-11 and every existing front/TOF/map-back/plume gate.",
+  "next_milestone": "V15-SG7C-R3F4 \u2014 Controlled Front-Local Residual Basis Calibration"
+}

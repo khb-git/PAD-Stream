@@ -1,0 +1,62 @@
+{
+  "milestone": "V15-SG7B-10R",
+  "description": "Front-aware refinement outcome / monotonicity audit",
+  "training_performed": false,
+  "model_parameters_changed": false,
+  "freeze_gate_changed": false,
+  "candidate_promoted": false,
+  "deployment_workspace": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11",
+  "frozen_identity_linf": 2.384185791015625e-07,
+  "SG7A": {
+    "field": "SG7A",
+    "eligible_pairs": 78906,
+    "violation_pairs": 0,
+    "violation_fraction": 0.0,
+    "positive_dS_median": 0.0,
+    "positive_dS_p90": 0.0,
+    "positive_dS_p99": 0.0,
+    "positive_dS_max": 0.0,
+    "recovered_fronts": 992,
+    "conditioned_gap": 0.0015781378920280158,
+    "profile_L1": 0.0
+  },
+  "E0": {
+    "field": "E0",
+    "eligible_pairs": 78906,
+    "violation_pairs": 13917,
+    "violation_fraction": 0.1763744201961828,
+    "positive_dS_median": 0.00017702579498291016,
+    "positive_dS_p90": 0.00033844411373138426,
+    "positive_dS_p99": 0.0003621405363082886,
+    "positive_dS_max": 0.00036485493183135986,
+    "recovered_fronts": 0,
+    "conditioned_gap": 0.002132494911671654,
+    "profile_L1": 0.004091208566285885
+  },
+  "E2": {
+    "field": "E2",
+    "eligible_pairs": 78906,
+    "violation_pairs": 14652,
+    "violation_fraction": 0.18568930119382557,
+    "positive_dS_median": 0.0001323223114013672,
+    "positive_dS_p90": 0.0002416655421257019,
+    "positive_dS_p99": 0.00025827422738075253,
+    "positive_dS_max": 0.0002599060535430908,
+    "recovered_fronts": 949,
+    "conditioned_gap": 0.00039032765093349666,
+    "profile_L1": 0.003531355132111311
+  },
+  "truth_orientation": {
+    "positive_fraction": 0.0,
+    "negative_fraction": 0.22858844701290143,
+    "near_zero_fraction": 0.7714115529870986,
+    "signed_dS_mean": -0.0013462038422674503,
+    "median_dS": 0.0
+  },
+  "E2_minus_E0_violation_fraction": 0.009314880997642772,
+  "E2_tiny_amplitude_violation_share": 1.0,
+  "diagnosis": "PREEXISTING_MONOTONICITY_METRIC_FLOOR",
+  "recommendation": "The frozen accepted SG7B baseline already violates the new 2% safeguard, while E2 does not materially worsen that behavior. Define a baseline-relative / SG7A-relative front-shape preservation criterion before judging E2.",
+  "audit_passed": true,
+  "next_milestone": "V15-SG7B-10S \u2014 SG7A-Relative Front-Shape Preservation Contract"
+}

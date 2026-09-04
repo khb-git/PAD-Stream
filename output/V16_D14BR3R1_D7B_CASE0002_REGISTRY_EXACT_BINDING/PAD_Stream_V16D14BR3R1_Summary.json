@@ -1,0 +1,28 @@
+{
+  "milestone": "V16D-14BR3R1",
+  "status": "V16D_CASE0002_D7B_PRESSURE_ARTIFACT_EXACTLY_BOUND_MISSING_OPTIONAL_MANIFEST_NOT_A_PROVENANCE_BLOCKER_24CASE_PRESSURE_INTERFACE_COMPLETE",
+  "selected_pressure_artifact": {
+    "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D7B_FULL_FROZEN_CASE0002_0025_SOURCEBOUND_SG2_SG3_SG4_FLOW_ENSEMBLE\\cases\\V16D_Foundation_Case_0002_Flow.npz",
+    "sha256": "ff150f3a5ce97a779e71c09e2b44daed505f7f89ef6deccb8962fc2cb20e9780",
+    "case_id": "0002",
+    "field": "pressure_psi"
+  },
+  "D14_registry_exact_artifact_references": [],
+  "note": "Absence of a redundant JSON mention does not negate exact frozen artifact identity.",
+  "gates": {
+    "BR3R_summary_SHA_exact": true,
+    "selected_artifact_exists": true,
+    "selected_basename_exact": true,
+    "selected_under_frozen_D7B_directory": true,
+    "selected_SHA_exact": true,
+    "selected_field_explicit_pressure_psi": true,
+    "artifact_identity_independent_of_missing_optional_manifest": true,
+    "no_numerical_closeness": true,
+    "no_pressure_reconstruction": true,
+    "no_SG3_rerun": true,
+    "no_target_Y_read": true,
+    "no_normalization_fit": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-14B-R1 \u2014 Contract-1.0 24-Case Predictor Assembly with D6 K_mD/porosity + exact D7B pressure_psi"
+}

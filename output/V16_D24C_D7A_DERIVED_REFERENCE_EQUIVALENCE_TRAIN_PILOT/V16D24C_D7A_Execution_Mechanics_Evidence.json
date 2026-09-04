@@ -1,0 +1,230 @@
+[
+  {
+    "line": 7,
+    "text": "D7=ROOT/\"output\"/\"V16_D7_MULTICASE_SG2_SG3_SG4_SOURCE_AUTHENTIC_EXECUTION_BINDING_AUDIT\"/\"PAD_Stream_V16D7_Summary.json\""
+  },
+  {
+    "line": 8,
+    "text": "D6=ROOT/\"output\"/\"V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\"/\"PAD_Stream_V16D6_Summary.json\""
+  },
+  {
+    "line": 9,
+    "text": "CASE=ROOT/\"output\"/\"V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\"/\"cases\"/\"V16D_Foundation_Case_0002_Geology.npz\""
+  },
+  {
+    "line": 10,
+    "text": "OUT=ROOT/\"output\"/\"V16_D7A_SOURCEBOUND_SG2_SG3_SG4_ADAPTER_CASE0002_PILOT\";OUT.mkdir(parents=True,exist_ok=True)"
+  },
+  {
+    "line": 12,
+    "text": "S2=ROOT/\"PAD_Stream_V15SG2_Anisotropic_Transmissibility.py\""
+  },
+  {
+    "line": 13,
+    "text": "S3=ROOT/\"PAD_Stream_V15SG3_FiveSpot_Pressure_Solve.py\""
+  },
+  {
+    "line": 14,
+    "text": "S4=ROOT/\"PAD_Stream_V15SG4_Conservative_Darcy_Fluxes.py\""
+  },
+  {
+    "line": 24,
+    "text": " m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m"
+  },
+  {
+    "line": 28,
+    "text": " print(\"Source-Bound SG2/SG3/SG4 Adapter Implementation and Case 0002 Pilot\");print(\"=\"*78)"
+  },
+  {
+    "line": 30,
+    "text": " if d7[\"status\"]!=\"V16D_SG2_SG3_SG4_SOURCE_AUTHENTIC_FLOW_LINEAGE_BOUND_MULTICASE_ADAPTER_IMPLEMENTATION_AUTHORIZED\":raise RuntimeError(\"D7 mismatch\")"
+  },
+  {
+    "line": 31,
+    "text": " if d6[\"status\"]!=\"V16D_CASE0002_0025_ENSEMBLE_GEOLOGIES_GENERATED_CERTIFIED_READY_FOR_MULTI_CASE_FLOW_PIPELINE\":raise RuntimeError(\"D6 mismatch\")"
+  },
+  {
+    "line": 33,
+    "text": " for st,p in [(\"SG2\",S2),(\"SG3\",S3),(\"SG4\",S4)]:"
+  },
+  {
+    "line": 37,
+    "text": "D7A RUNS ONLY CASE 0002."
+  },
+  {
+    "line": 39,
+    "text": "THE ADAPTER CALLS THE SHA-BOUND V15 SG2/SG3/SG4 FUNCTIONS DIRECTLY."
+  },
+  {
+    "line": 47,
+    "text": " g=np.load(CASE)"
+  },
+  {
+    "line": 49,
+    "text": " if k.shape!=(15,50,50):raise RuntimeError(\"Case0002 geology shape mismatch\")"
+  },
+  {
+    "line": 51,
+    "text": " sg2=loadmod(\"v16d_sg2_bound\",S2)"
+  },
+  {
+    "line": 52,
+    "text": " sg3=loadmod(\"v16d_sg3_bound\",S3)"
+  },
+  {
+    "line": 53,
+    "text": " sg4=loadmod(\"v16d_sg4_bound\",S4)"
+  },
+  {
+    "line": 55,
+    "text": " # SG2: call exact bound algebraic functions."
+  },
+  {
+    "line": 56,
+    "text": " kx,ky,kz=sg2.build_directional_permeability(k)"
+  },
+  {
+    "line": 57,
+    "text": " kfx,kfy,kfz=sg2.build_face_permeabilities(kx,ky,kz)"
+  },
+  {
+    "line": 58,
+    "text": " tx2,ty2,tz2=sg2.build_transmissibilities(kfx,kfy,kfz)"
+  },
+  {
+    "line": 60,
+    "text": " # SG3: exact bound SI conversion + assembly + solve."
+  },
+  {
+    "line": 61,
+    "text": " tx,ty,tz=sg3.construct_si_transmissibilities(kfx,kfy,kfz)"
+  },
+  {
+    "line": 62,
+    "text": " assembled=sg3.assemble_pressure_system(k,tx,ty,tz)"
+  },
+  {
+    "line": 64,
+    "text": "  raise RuntimeError(f\"Unexpected SG3 assemble return: {type(assembled)}, len={len(assembled) if isinstance(assembled,tuple) else 'NA'}\")"
+  },
+  {
+    "line": 66,
+    "text": " psol=sg3.solve_pressure(A,b)"
+  },
+  {
+    "line": 72,
+    "text": " # SG4: exact bound face flux function."
+  },
+  {
+    "line": 73,
+    "text": " flux=sg4.compute_face_fluxes(p_psi,tx,ty,tz)"
+  },
+  {
+    "line": 74,
+    "text": " if not isinstance(flux,tuple) or len(flux)<3:raise RuntimeError(\"Unexpected SG4 flux return\")"
+  },
+  {
+    "line": 75,
+    "text": " qx,qy,qz=[np.asarray(x,float) for x in flux[:3]]"
+  },
+  {
+    "line": 76,
+    "text": " div=np.asarray(sg4.compute_flux_divergence(qx,qy,qz),float)"
+  },
+  {
+    "line": 78,
+    "text": " # Expected well source through bound SG4 function."
+  },
+  {
+    "line": 79,
+    "text": " ew=sg4.construct_expected_well_rates(k,p_psi)"
+  },
+  {
+    "line": 90,
+    "text": " if ws is None:raise RuntimeError(\"Could not bind SG4 well_source grid from exact return contract.\")"
+  },
+  {
+    "line": 102,
+    "text": " artifact=OUT/\"V16D7A_Case0002_SG2_SG3_SG4_Pilot.npz\""
+  },
+  {
+    "line": 103,
+    "text": " np.savez_compressed(artifact,Kx_mD=kx,Ky_mD=ky,Kz_mD=kz,kfx_mD=kfx,kfy_mD=kfy,kfz_mD=kfz,"
+  },
+  {
+    "line": 104,
+    "text": "  Tx_SI=tx,Ty_SI=ty,Tz_SI=tz,pressure_psi=p_psi,Qx=qx,Qy=qy,Qz=qz,divergence=div,well_source=ws,"
+  },
+  {
+    "line": 105,
+    "text": "  case_id=np.array(\"V16D_Foundation_Case_0002\"))"
+  },
+  {
+    "line": 107,
+    "text": " shapes=(qx.shape==(15,50,49) and qy.shape==(15,49,50) and qz.shape==(14,50,50))"
+  },
+  {
+    "line": 108,
+    "text": " finite=all(np.isfinite(x).all() for x in [p_psi,qx,qy,qz,div,ws])"
+  },
+  {
+    "line": 109,
+    "text": " # Gates use validated numerical tolerances, not Case0001 numerical closeness."
+  },
+  {
+    "line": 112,
+    "text": "  \"exact_SG2_functions_called\":True,\"exact_SG3_functions_called\":True,\"exact_SG4_functions_called\":True,"
+  },
+  {
+    "line": 113,
+    "text": "  \"case0002_only\":True,\"pressure_shape\":p_psi.shape==(15,50,50),\"flux_shapes\":shapes,\"finite\":finite,"
+  },
+  {
+    "line": 117,
+    "text": "  \"no_case0001_closeness_gate\":True,\"no_transport\":True,\"no_training\":True}"
+  },
+  {
+    "line": 119,
+    "text": " status=\"V16D_CASE0002_SOURCEBOUND_SG2_SG3_SG4_PILOT_CERTIFIED_FULL_24CASE_FLOW_EXECUTION_AUTHORIZED\" if ok else \"V16D_CASE0002_SOURCEBOUND_FLOW_PILOT_BLOCKED\""
+  },
+  {
+    "line": 121,
+    "text": "  \"case_id\":\"V16D_Foundation_Case_0002\","
+  },
+  {
+    "line": 126,
+    "text": "             \"Qx_minmax\":[float(qx.min()),float(qx.max())],\"Qy_minmax\":[float(qy.min()),float(qy.max())],"
+  },
+  {
+    "line": 127,
+    "text": "             \"Qz_minmax\":[float(qz.min()),float(qz.max())]},"
+  },
+  {
+    "line": 128,
+    "text": "  \"artifact\":{\"path\":str(artifact.relative_to(ROOT)),\"sha256\":sha(artifact)},"
+  },
+  {
+    "line": 130,
+    "text": "  \"next_milestone\":\"V16D-7B \u2014 Full Frozen Case 0002-0025 Source-Bound SG2/SG3/SG4 Flow Ensemble Execution\"}"
+  },
+  {
+    "line": 131,
+    "text": " (OUT/\"PAD_Stream_V16D7A_Summary.json\").write_text(json.dumps(summary,indent=2))"
+  },
+  {
+    "line": 132,
+    "text": " print(\"\\nCASE 0002 PILOT\")"
+  },
+  {
+    "line": 139,
+    "text": " print(f\"  Qx shape {qx.shape}; Qy {qy.shape}; Qz {qz.shape}\")"
+  },
+  {
+    "line": 140,
+    "text": " print(f\"  artifact SHA-256: {sha(artifact)}\")"
+  },
+  {
+    "line": 144,
+    "text": " print(\"\\nNEXT MILESTONE\\n  V16D-7B \u2014 Full Frozen Case 0002-0025 Source-Bound SG2/SG3/SG4 Flow Ensemble Execution\")"
+  }
+]

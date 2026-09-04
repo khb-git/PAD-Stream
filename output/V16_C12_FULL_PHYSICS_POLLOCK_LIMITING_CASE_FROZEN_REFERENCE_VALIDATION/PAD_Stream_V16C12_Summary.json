@@ -1,0 +1,13 @@
+{
+  "milestone": "V16C-12",
+  "status": "V16C_LIMITING_CASE_HIERARCHY_VALIDATED_FROZEN_V15_100D_REFERENCE_BINDING_REQUIRED",
+  "diagnosis": "THE_V16_SOLVER_LIMITING_CASE_HIERARCHY_IS_SOURCE_AUTHENTIC_BUT_THE_FROZEN_V15_100D_REFERENCE_CANNOT_YET_BE_UNIQUELY_CERTIFIED_FROM_LOCAL_PROVENANCE",
+  "limiting_case_physics_validated": true,
+  "candidate_count": 98,
+  "certified_reference_count": 6,
+  "unique_V15_100d_reference_bound": false,
+  "Y_transport_generated": false,
+  "Y_generation_authorized": false,
+  "recommendation": "Freeze the C12 limiting-case result. Do not compare by numerical closeness and do not relabel a candidate. Perform a dedicated provenance audit to bind the exact frozen V15 100-day reference/SG7D6 authority.",
+  "next_milestone": "V16C-12R \u2014 Frozen V15 100-Day Reference Provenance Binding Audit"
+}

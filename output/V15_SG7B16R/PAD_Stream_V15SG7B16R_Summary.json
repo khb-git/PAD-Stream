@@ -1,0 +1,20 @@
+{
+  "milestone": "V15-SG7B-16R",
+  "status": "FRONT_PRESERVING_TOF_OUTCOME_AUDIT_COMPLETE",
+  "incoming_status": "NO_SG7B16_CANDIDATE_PASSES_COMPLETE_CONTRACT",
+  "diagnosis": "COUPLED_DEPLOYMENT_TRANSFER_MISMATCH",
+  "any_front_contract_epoch": false,
+  "any_bias_contract_epoch": false,
+  "any_joint_contract_epoch": false,
+  "best_observed": {
+    "conditioned_gap": 0.00020805776840256124,
+    "front_anchor_MAE": 0.0008928332654604215,
+    "front_xi_shift_P90": 0.0012344517197143026,
+    "bias_500_1000": 0.003995360067281526,
+    "bias_1000_2000": 0.008852312351321423,
+    "bias_gt2000": 0.0104872737061325,
+    "tail_bias": 0.010193957578863225
+  },
+  "recommendation": "Neither the complete front contract nor the complete TOF-bias contract is reached. Further PI-RNN loss tuning is unlikely to resolve the issue; audit deployment conditioning first.",
+  "next_milestone": "V15-SG7C-R3A \u2014 Deployment TOF-Coordinate / Model-Transfer Audit"
+}

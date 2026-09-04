@@ -1,0 +1,11 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1A2R4",
+  "status": "B4_PROVENANCE_CHECKPOINT_AMBIGUITY",
+  "diagnosis": "MULTIPLE_B4_CHECKPOINT_IDENTITIES_WITH_TINY_COEFFICIENT_DRIFT",
+  "training_performed": false,
+  "support_extension_calibrated": false,
+  "gate_changed": false,
+  "resolved": false,
+  "recommendation": "The numerical difference is tiny, but more than one B4 checkpoint identity exists and no unique historical identity has yet been established. Do not calibrate support. Resolve which checkpoint generated the R3F4-R support table using manifest/epoch/hash evidence.",
+  "next_milestone": "V15-SG7C-R3F5-R1A2R4A \u2014 Historical B4 Checkpoint Identity Resolution"
+}

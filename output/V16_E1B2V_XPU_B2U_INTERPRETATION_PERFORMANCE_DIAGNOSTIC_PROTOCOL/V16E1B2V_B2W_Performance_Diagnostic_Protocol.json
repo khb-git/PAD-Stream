@@ -1,0 +1,43 @@
+{
+  "milestone": "V16E-1B2V-XPU",
+  "authorized_next_milestone": "V16E-1B2W-XPU",
+  "classification": "NO_UPDATE_EXACT_GRAPH_PERFORMANCE_BOTTLENECK_AUDIT",
+  "reference_microbatch": 128,
+  "reference_reason": "largest actually successful B2U candidate",
+  "implementation_authority": {
+    "B2S_source_sha256": "4bd70ab33dbf30ef4fd8a12037982724ea1bed6ef90684d326b3de71569e5bea",
+    "rule": "Reuse the exact certified corrected-residual derivative functions; do not change the scientific graph."
+  },
+  "required_timing_decomposition": [
+    "model forward",
+    "local recurrent derivative construction N_xi/N_tD/N_X",
+    "fractional-flow plus dfdS and corrected residual algebra",
+    "non-physics loss construction",
+    "complete corrected total loss assembly",
+    "total backward",
+    "XPU synchronization"
+  ],
+  "matched_control": {
+    "type": "first-order non-physics backward",
+    "purpose": "quantify the incremental cost of the corrected derivative engine relative to the same recurrent model/data/BC/anchor/monotonicity graph without corrected physics derivatives",
+    "weight_update": false,
+    "optimizer": false
+  },
+  "microbatch_256_policy": {
+    "frozen_failure_class": "RUNTIME_ERROR",
+    "frozen_error_text": "RuntimeError: level_zero backend failed with error: 40 (UR_RESULT_ERROR_OUT_OF_RESOURCES)",
+    "B2W_rule": "Preserve exact text/classification. Do not diagnose from label alone. Any reproduction must be isolated and no-update."
+  },
+  "scientific_firewall": {
+    "training": false,
+    "optimizer": false,
+    "optimizer_step": false,
+    "weight_update": false,
+    "scientific_settings_changed": false,
+    "COMP004_checkpoint_mutation": false,
+    "OOD": false,
+    "TOF": false,
+    "B3_authorized": false
+  },
+  "COMP_XPU_005_full_training_authorized": false
+}

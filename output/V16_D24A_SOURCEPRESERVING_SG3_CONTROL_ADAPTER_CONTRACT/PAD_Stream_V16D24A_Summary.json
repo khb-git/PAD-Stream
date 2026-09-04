@@ -1,0 +1,19 @@
+{
+  "milestone": "V16D-24A",
+  "status": "V16D_SG3_CONTROL_ADAPTER_1_0_FROZEN_REFERENCE_REPRODUCTION_AND_SINGLE_TRAIN_PILOT_IMPLEMENTATION_AUTHORIZED",
+  "contract_sha256": "6797885c48c8337c2139e75a60c5326618cbf40e6f3c4036a718373c23d138ea",
+  "gates": {
+    "D24_SHA_exact": true,
+    "SG3_SHA_exact": true,
+    "rate_assignment_candidates_bound": true,
+    "BHP_assignment_candidates_bound": true,
+    "only_two_control_dimensions_authorized": true,
+    "reference_reproduction_required_before_new_controls": true,
+    "pilot_must_be_TRAIN_only": true,
+    "no_SG3_source_mutation": true,
+    "no_equation_rewrite": true,
+    "no_flow_run_in_D24A": true,
+    "no_locked_OOD_generation": true
+  },
+  "next_milestone": "V16D-24B \u2014 Implement Exact-Variable SG3 Adapter; Reproduce 500/2000 Reference and Run One TRAIN Control Pilot"
+}

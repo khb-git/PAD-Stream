@@ -1,0 +1,33 @@
+{
+  "name": "PAD-Stream SG7B Canonical PI-RNN Physics Contract",
+  "milestone": "V15-SG7B-6H",
+  "primary_metric": {
+    "name": "SG7A-activity-scaled residual discrepancy",
+    "mathematical_definition": "abs(R_NN - R_SG7A) / (abs(T_SG7A) + abs(A_SG7A) + abs(C_SG7A) + 1e-4)",
+    "interpretation": "PI-RNN discrete conservative-balance discrepancy relative to canonical SG7A physical activity.",
+    "mean_max": 0.5,
+    "P90_max": 1.0,
+    "fraction_gt_1_max": 0.1
+  },
+  "secondary_metrics": [
+    "absolute residual discrepancy MAE",
+    "canonical RMS",
+    "canonical P95",
+    "canonical P99",
+    "state L1",
+    "state L2",
+    "mass relative MAE"
+  ],
+  "legacy_metric": {
+    "name": "self-normalized FV residual",
+    "status": "diagnostic_only",
+    "historical_ratio_gate": 50.0,
+    "reason_not_primary": "V15-SG7B-6G demonstrated residual-metric conditioning and model-ranking inversion."
+  },
+  "state_guardrails": {
+    "L1_max": 0.02,
+    "L2_max": 0.03,
+    "mass_relative_MAE_max": 0.03
+  },
+  "freeze_action": "NONE_IN_SG7B6H"
+}

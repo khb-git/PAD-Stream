@@ -1,0 +1,15 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1F2B",
+  "status": "CROSSING_LOCAL_CANDIDATE_NOMINATED",
+  "diagnosis": "CROSSING_LOCAL_TRUTH_DIRECTED_CORRECTION_PASSES_COMPLETE_CONTRACT",
+  "training_performed": false,
+  "crossing_local_correction_performed": true,
+  "X08_support_geometry_changed": false,
+  "K5_input_changed": false,
+  "model_weights_changed": false,
+  "gate_changed": false,
+  "selected_guard_half_width": 0.029999971389770508,
+  "selected_experiment": "L2",
+  "recommendation": "A crossing-distance-local residual correction passes the complete unchanged support/front/profile/TOF/tail/material/topology contract while the physical SG7A crossing neighborhood remains exactly locked. Do not freeze yet. Independently reconstruct the nominated L candidate from persisted arrays and verify the entire clarified deployment contract before freeze readiness.",
+  "next_milestone": "V15-SG7C-R3F5-R1F2C \u2014 Independent Crossing-Local Candidate Validation"
+}

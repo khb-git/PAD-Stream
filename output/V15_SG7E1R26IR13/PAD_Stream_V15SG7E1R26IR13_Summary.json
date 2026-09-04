@@ -1,0 +1,10 @@
+{
+  "milestone": "V15-SG7E1R26I-R13",
+  "status": "FROZEN100_DIRECT_CREATOR_LINEAGE_RESOLVED",
+  "diagnosis": "ONE_DIRECT_FROZEN100_CREATOR_HAS_STRONGER_DOWNSTREAM_CR3_R1F_OR_MANIFEST_PROVENANCE",
+  "selected_creator": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+  "candidate_changed": false,
+  "threshold_changed": false,
+  "recommendation": "The SG7B13/SG7B16 creator conflict is resolved from downstream provenance rather than numerical closeness or chronology. Preserve the selected creator source, frozen-model load path, and deployment/X100 lineage. Next resolve the exact model artifact and replay only that creator's 100-day frozen_model.predict path against persisted frozen100.",
+  "next_milestone": "V15-SG7E1R26I-R14 \u2014 Selected Frozen100 Creator Model / X100 Runtime Reconciliation"
+}

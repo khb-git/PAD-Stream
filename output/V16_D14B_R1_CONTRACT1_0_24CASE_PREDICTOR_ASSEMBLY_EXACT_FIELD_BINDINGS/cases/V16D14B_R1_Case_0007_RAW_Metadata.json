@@ -1,0 +1,62 @@
+{
+  "case_id": "0007",
+  "partition": "TRAIN",
+  "shape": [
+    9,
+    1078,
+    201,
+    9
+  ],
+  "feature_order": [
+    "xi",
+    "pollock_tau_hat",
+    "adv_tau_hat",
+    "log10_Kh",
+    "log10_Kz_over_Kh",
+    "porosity",
+    "pressure_z",
+    "target_time_hat",
+    "target_eta_sequence"
+  ],
+  "sampling_contract": "V16D_STREAMLINE_TO_GRID_SAMPLING_1.0",
+  "pressure_raw_units": "psi",
+  "sources": {
+    "D6_geology": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\cases\\V16D_Foundation_Case_0007_Geology.npz",
+      "sha256": "817e0e6f37467ac06aed0d71c016b36496f3f2c9ab210ba0bb93f35db7ae2255",
+      "keys": [
+        "Kx_mD",
+        "Ky_mD",
+        "Kz_mD",
+        "porosity"
+      ]
+    },
+    "D7B_pressure": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D7B_FULL_FROZEN_CASE0002_0025_SOURCEBOUND_SG2_SG3_SG4_FLOW_ENSEMBLE\\cases\\V16D_Foundation_Case_0007_Flow.npz",
+      "sha256": "6949d37b55ecf441ff150e4c08c5c0969552a5a0cc28b8a3f94542770367aef5",
+      "key": "pressure_psi"
+    },
+    "pollock_metric": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0007_Pollock_201Node_C7_FaceMetric.npz",
+      "sha256": "be2eb1e125aa9f65180c75269635919c7f009f5733db69fe95883b808355dd46",
+      "keys": [
+        "theta",
+        "pollock_tau_s",
+        "pollock_tau_end_s"
+      ]
+    },
+    "pollock_xyz": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0007_Pollock_201Node_C7_FaceMetric.npz",
+      "sha256": "be2eb1e125aa9f65180c75269635919c7f009f5733db69fe95883b808355dd46",
+      "key": "xyz_m"
+    },
+    "ADV": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0007_FMM_ADV_Pollock_Hierarchy.npz",
+      "sha256": "9e72557ba81e5a5695961a658fb6fc5b7d00d5ccd7aa178e17c05f48b1f4c234",
+      "key": "tau_adv_s",
+      "mode": "Contract1.0_containing_cell_grid_sample"
+    }
+  },
+  "raw_artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0007_Predictors_RAW.npz",
+  "raw_sha256": "4d6316bb5eec4218b6c0cfef5a1673c01b521dfa108353f8e577bf39f6c9eee1"
+}

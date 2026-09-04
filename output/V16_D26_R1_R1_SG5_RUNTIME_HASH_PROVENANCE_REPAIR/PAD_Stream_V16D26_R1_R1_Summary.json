@@ -1,0 +1,20 @@
+{
+  "milestone": "V16D-26-R1-R1",
+  "status": "V16D_SG5_RUNTIME_HASH_PROVENANCE_REPAIRED_EXACT_SOURCE_BOUND_D26R2_EXECUTOR_GENERATION_AUTHORIZED",
+  "report_sha256": "b02f245ecf0bd7443cc36fcacc220eb6b35dd1ebfdd9d6cfa322ff8983af4c8e",
+  "gates": {
+    "D26_blocked_summary_SHA_exact": true,
+    "D8B_SHA_exact": true,
+    "SG5_exists": true,
+    "D8R1_summary_exists": true,
+    "D8B_runtime_SG5_hash_binding_expression_found": true,
+    "D8R1_status_certified": true,
+    "SG5_SHA_matches_D8R1_runtime_authority": true,
+    "D8B_has_construct_face_pore_velocities": true,
+    "D8B_has_build_seeds": true,
+    "D8B_has_trace_streamlines": true,
+    "D8B_has_validate_streamlines": true,
+    "D26_failed_only_hash_binding_among_core_bindings": true
+  },
+  "next_milestone": "V16D-26-R2 \u2014 Generate exact D8B-derived 36-case SG5 Pollock executor"
+}

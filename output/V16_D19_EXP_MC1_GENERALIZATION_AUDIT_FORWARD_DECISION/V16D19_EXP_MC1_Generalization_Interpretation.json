@@ -1,0 +1,37 @@
+{
+  "validation": {
+    "MSE": 1.651867205509916e-05,
+    "RMSE": 0.004064316923555441,
+    "MAE": 0.0018364625284448266
+  },
+  "locked_OOD": {
+    "MSE": 1.8810647794830704e-05,
+    "RMSE": 0.004337124369306315,
+    "MAE": 0.0019072290649452615,
+    "max_abs_error": 0.13418035209178925
+  },
+  "relative_to_validation_percent": {
+    "MSE": 13.875060489647728,
+    "RMSE": 6.7122581944772275,
+    "MAE": 3.8534157601550545
+  },
+  "case_RMSE_range": [
+    0.0034720434921302443,
+    0.005395763033037058
+  ],
+  "interpretation": [
+    "EXP-MC1 demonstrates nontrivial generalization to four completely unseen Foundation Cases under the fixed-control Recipe1.1 spectral-GRF geology ensemble.",
+    "OOD aggregate error is modestly higher than validation error; this is a measured generalization gap, not a tuning signal.",
+    "All predictions respect the frozen saturation bounds.",
+    "Large pointwise maximum errors coexist with low aggregate RMSE/MAE and require later structural/front diagnostics before stronger claims.",
+    "This result does not by itself authorize a foundation-model claim: controls remain fixed and geology coverage is one versioned ensemble family."
+  ],
+  "forward_decision": {
+    "EXP_MC1": "FROZEN_PREDICTIVE_BASELINE",
+    "retrain_MC1": "NOT_AUTHORIZED",
+    "OOD_informed_tuning": "PROHIBITED",
+    "next_scientific_action": "audit OOD structure/front/time/case behavior using the already-frozen checkpoint; no adaptive selection",
+    "physics_informed_multicase_EXP_MC2": "DESIGN_NOT_YET_AUTHORIZED_UNTIL_POST_OOD_DIAGNOSTIC_CONTRACT",
+    "foundation_model_claim": "NOT_AUTHORIZED"
+  }
+}

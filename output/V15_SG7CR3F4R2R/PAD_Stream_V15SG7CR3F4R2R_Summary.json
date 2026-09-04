@@ -1,0 +1,32 @@
+{
+  "milestone": "V15-SG7C-R3F4-R2R",
+  "status": "FRONT_REFERENCE_CROSSING_METRIC_RECONCILIATION_COMPLETE",
+  "incoming_status": "TRUE_FRONT_DISPLACEMENT_BASIS_AUDIT_COMPLETE",
+  "best_experiment": "B4",
+  "diagnosis": "TRUE_FROZEN_RELATIVE_DISPLACEMENT_CONFIRMED",
+  "flags": {
+    "identity_closes": true,
+    "reconciled_geometry_pass": false,
+    "same_crossing_identity_high": true,
+    "multi_crossing_material": true,
+    "near_front_reduction_target": true
+  },
+  "best_metrics": {
+    "experiment": "B4",
+    "front_error_reduction_fraction": 0.4954781984966692,
+    "mean_abs_cal_vs_truth_xi": 1.3256288912218535e-05,
+    "P90_abs_cal_vs_truth_xi": 2.921300116240922e-05,
+    "mean_abs_frozen_vs_truth_xi": 0.07981399981700997,
+    "P90_abs_frozen_vs_truth_xi": 0.44365669912484623,
+    "mean_abs_cal_vs_frozen_xi": 0.07980130132414287,
+    "P90_abs_cal_vs_frozen_xi": 0.4436530666350128,
+    "identity_closure_L1": 9.359098205480771e-19,
+    "identity_closure_Linf": 1.1102230246251565e-16,
+    "same_crossing_identity_fraction": 1.0,
+    "frozen_multi_crossing_fraction": 0.726027397260274,
+    "calibrated_multi_crossing_fraction": 0.8714436248682824,
+    "reconciled_authoritative_front_gate_pass": false
+  },
+  "recommendation": "The reference identity closes exactly and the same physical crossing is matched consistently, but calibrated-vs-frozen displacement still exceeds the authoritative limits. A true geometry limiter remains.",
+  "next_milestone": "V15-SG7C-R3F4-R3 \u2014 Reconciled Front-Displacement Repair Design"
+}

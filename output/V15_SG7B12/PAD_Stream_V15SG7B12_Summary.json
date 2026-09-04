@@ -1,0 +1,10 @@
+{
+  "milestone": "V15-SG7B-12",
+  "description": "TOF-conditioned residual bias refinement design",
+  "training_performed": false,
+  "incoming_diagnosis": "TOF_CONDITIONED_BIAS",
+  "status": "TOF_CONDITIONED_REFINEMENT_CONTRACT_READY",
+  "validation_passed": true,
+  "recommendation": "Proceed to a controlled SG7B-13 refinement branch starting from the front-aware frozen SG7B-11 checkpoint. Candidate selection must satisfy every original SG7B-11 preservation gate together with the new TOF-conditioned bias-reduction contract.",
+  "next_milestone": "V15-SG7B-13 \u2014 Controlled TOF-Conditioned Residual Bias Refinement"
+}

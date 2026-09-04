@@ -1,0 +1,17 @@
+{
+  "milestone": "V15-SG7C-R3F4-R3C",
+  "status": "NO_CANDIDATE_PASSES_CLARIFIED_SCREEN_SINGLE_NEAR_THRESHOLD_LIMITER",
+  "diagnosis": "FRONT_ERROR_REDUCTION_ONLY_REMAINING_LIMITER",
+  "training_performed": false,
+  "historical_gate_threshold_changed": false,
+  "experiments_screened": [
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B5"
+  ],
+  "passing_experiments": [],
+  "recommendation": "B4 passes every clarified authoritative deployment gate except the unchanged 50% front-error-reduction requirement, reaching 49.548%. Do not retrain yet and do not relax the 50% gate. Audit whether the shortfall is numerical, basis-support-limited, or checkpoint-selection-limited using persisted R3F4 evidence.",
+  "next_milestone": "V15-SG7C-R3F4-R3D \u2014 Near-Threshold Front-Reduction Limiter Audit"
+}

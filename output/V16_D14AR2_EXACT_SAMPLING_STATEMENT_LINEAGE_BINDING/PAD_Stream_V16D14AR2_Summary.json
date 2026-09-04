@@ -1,0 +1,58 @@
+{
+  "milestone": "V16D-14AR2",
+  "status": "V16D_PRESERVED_SOURCES_DO_NOT_FULLY_BIND_RAW_C20_SAMPLING_ALGEBRA_NEW_VERSIONED_SAMPLING_CONTRACT_REQUIRED",
+  "C2_checks": {
+    "index": true,
+    "K": false,
+    "porosity": true,
+    "pressure": false
+  },
+  "statement_registry_sha256": "41d0316100de8cba1a25f9a7ee2722c4da2808574aa1b1ae4733c2b2b4be31b6",
+  "index_statement_signatures": {
+    "B1": [
+      "reg_csv=out/\"v16b1_speed_floor_regularization_contract.csv\"",
+      "machine_floor=float(np.finfo(np.float64).tiny)",
+      "eps=max(machine_floor,1.0e-6*median_positive)",
+      "eps,median_positive=positive_floor(speed_raw)",
+      "floor_mask=speed_raw<eps",
+      "gates=[(\"foundation_case_0001_status_reproduced\",true),(\"foundation_sha256_recorded\",true),(\"all_required_foundation_inputs_present\",len(missing)==0),(\"fmm_candidate_metric_matrix_constructed\",true),(\"m1_selected_as_primary_physics_baseline\",true),(\"vx_face_to_cell_contract_valid\",vxc.shape==expected_cell_shape),(\"vy_face_to_cell_contract_valid\",vyc.shape==expected_cell_shape),(\"vz_face_to_cell_contract_valid\",vzc.shape==expected_cell_shape),(\"raw_speed_finite\",np.all(np.isfinite(speed_raw))),(\"raw_speed_nonnegative\",np.min(speed_raw)>=0.0),(\"positive_speed_population_exists\",np.any(speed_raw>0.0)),(\"speed_floor_deterministically_defined\",eps>0.0),(\"fmm_speed_strictly_positive\",np.min(speed_fmm)>0.0),(\"no_double_porosity_division\",true),(\"foundation_arrays_not_modified\",true),(\"no_fmm_solve_executed\",true),(\"no_arrival_time_generated\",true),(\"no_sg3_rerun\",true),(\"no_sg4_rerun\",true),(\"no_velocity_physics_recompute\",true),(\"no_pollock_retrace\",true),(\"no_model_predict\",true),(\"no_training\",true),]",
+      "contract={\"milestone\":\"v16b-1\",\"status\":status,\"diagnosis\":diagnosis,\"foundation\":{\"file\":str(foundation_npz),\"sha256\":foundation_hash,\"immutable\":true,},\"governing_equation\":\"|grad(t)|=1/f\",\"selected_metric\":{\"id\":\"m1\",\"name\":\"frozen_darcy_pore_speed_magnitude\",\"definition\":\"f=max(sqrt(vxc^2+vyc^2+vzc^2),epsilon)\",\"units\":\"m/s\",\"porosity_division_applied_in_v16b1\":false,\"reason\":(\"frozensg5velocitiesalreadyembodythedarcy-to-pore-velocityconversionusedbypollock;\"\"dividingbyporosityagainwoulddouble-countporosity.\"),},\"face_to_cell_contract\":{\"x\":\"boundary=adjacentface;interior=meanofbracketingxfaces\",\"y\":\"boundary=adjacentface;interior=meanofbracketingyfaces\",\"z\":\"boundary=adjacentface;interior=meanofbracketingzfaces\",},\"regularization\":{\"formula\":\"epsilon=max(float64_tiny,1e-6*median_positive_speed)\",\"epsilon_m_s\":eps,\"cells_floored\":int(np.sum(floor_mask)),\"fraction_floored\":float(np.mean(floor_mask)),\"scope\":\"v16bfmmmetriconly\",},\"metric_artifact\":{\"file\":str(speed_npz),\"sha256\":sha256_file(speed_npz),\"speed_field_sha256\":sha256_array(speed_fmm),},\"comparison_policy\":{\"pollock_tof_used_for_metric_tuning\":false,\"pollock_tof_role\":\"independentfrozenreferencefordownstreamcomparisononly\",},\"constraints\":{\"fmm_executed\":false,\"arrival_time_generated\":false,\"foundation_mutated\":false,\"sg3_rerun\":false,\"sg4_rerun\":false,\"pollock_retrace\":false,\"model_predict\":false,\"training\":false,},\"recommendation\":recommendation,\"next_milestone\":next_milestone,}"
+    ],
+    "B4": [
+      "fx=np.clip(fx,0.0,nx-1.0)",
+      "fy=np.clip(fy,0.0,ny-1.0)",
+      "fz=np.clip(fz,0.0,nz-1.0)",
+      "i0=np.floor(fx).astype(int)",
+      "j0=np.floor(fy).astype(int)",
+      "k0=np.floor(fz).astype(int)"
+    ],
+    "C2": [
+      "fx_clip=np.clip(fx,0.0,nx-1.0)",
+      "fy_clip=np.clip(fy,0.0,ny-1.0)",
+      "fz_clip=np.clip(fz,0.0,nz-1.0)",
+      "i0=np.floor(fx_clip).astype(int)",
+      "j0=np.floor(fy_clip).astype(int)",
+      "k0=np.floor(fz_clip).astype(int)",
+      "wx=fx_clip-i0",
+      "wy=fy_clip-j0",
+      "wz=fz_clip-k0",
+      "audit={\"x_clip_count\":int(np.sum(fx!=fx_clip)),\"y_clip_count\":int(np.sum(fy!=fy_clip)),\"z_clip_count\":int(np.sum(fz!=fz_clip)),\"total_points\":int(len(pts)),}",
+      "any_clip=any((r[\"x_clip_count\"]+r[\"y_clip_count\"]+r[\"z_clip_count\"])>0forrinsampling_rows)",
+      "contract={\"milestone\":\"v16c-2\",\"status\":status,\"diagnosis\":diagnosis,\"database_shape\":{\"streamlines\":int(xyz_m.shape[0]),\"nodes_per_streamline\":int(xyz_m.shape[1]),},\"authoritative_coordinate\":\"pollock_tof_s\",\"auxiliary_node_channels\":[\"fmm_arrival_s\",\"adv_travel_time_s\",\"kx_md\",\"ky_md\",\"kz_md\",\"porosity\",\"pressure_psi\",],\"streamline_channels\":[\"streamline_weight_m3_s\",],\"sampling\":{\"method\":\"trilinearcell-centered\",\"origin_center_m\":[float(x)forxinorigin],\"grid_spacing_m\":[dx,dy,dz],\"coordinate_source\":\"frozenv16b-3pollockxyzmapping\",\"clipping_detected\":any_clip,},\"normalization\":{\"performed\":false,\"raw_database_preserved\":true,},\"database_artifact\":{\"path\":str(database_npz),\"sha256\":sha256_file(database_npz),},\"recommendation\":recommendation,\"next_milestone\":next_ms,}"
+    ]
+  },
+  "gates": {
+    "AR1_SHA_exact": true,
+    "candidate_SHAs_exact": true,
+    "exact_statements_persisted": true,
+    "C2_explicit_index_conversion": true,
+    "C2_raw_permeability_sampling": false,
+    "C2_raw_porosity_sampling": true,
+    "C2_raw_pressure_sampling": false,
+    "no_numerical_closeness": true,
+    "no_fitting": true,
+    "no_OOD_labels": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-14AR3 \u2014 New Explicit V16D Streamline-to-Grid Sampling Contract (No Historical Relabeling)"
+}

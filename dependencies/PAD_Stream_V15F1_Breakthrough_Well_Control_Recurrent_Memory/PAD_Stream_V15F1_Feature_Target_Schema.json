@@ -1,0 +1,200 @@
+{
+  "version": "15F-1",
+  "architecture": "frozen 15F-0 GRU hidden state plus compact calibrated well-memory heads",
+  "features": [
+    {
+      "index": 0,
+      "name": "f0_hidden_00"
+    },
+    {
+      "index": 1,
+      "name": "f0_hidden_01"
+    },
+    {
+      "index": 2,
+      "name": "f0_hidden_02"
+    },
+    {
+      "index": 3,
+      "name": "f0_hidden_03"
+    },
+    {
+      "index": 4,
+      "name": "f0_hidden_04"
+    },
+    {
+      "index": 5,
+      "name": "f0_hidden_05"
+    },
+    {
+      "index": 6,
+      "name": "f0_hidden_06"
+    },
+    {
+      "index": 7,
+      "name": "f0_hidden_07"
+    },
+    {
+      "index": 8,
+      "name": "f0_hidden_08"
+    },
+    {
+      "index": 9,
+      "name": "f0_hidden_09"
+    },
+    {
+      "index": 10,
+      "name": "f0_hidden_10"
+    },
+    {
+      "index": 11,
+      "name": "f0_hidden_11"
+    },
+    {
+      "index": 12,
+      "name": "f0_hidden_12"
+    },
+    {
+      "index": 13,
+      "name": "f0_hidden_13"
+    },
+    {
+      "index": 14,
+      "name": "f0_hidden_14"
+    },
+    {
+      "index": 15,
+      "name": "f0_hidden_15"
+    },
+    {
+      "index": 16,
+      "name": "f0_hidden_16"
+    },
+    {
+      "index": 17,
+      "name": "f0_hidden_17"
+    },
+    {
+      "index": 18,
+      "name": "f0_hidden_18"
+    },
+    {
+      "index": 19,
+      "name": "f0_hidden_19"
+    },
+    {
+      "index": 20,
+      "name": "f0_hidden_20"
+    },
+    {
+      "index": 21,
+      "name": "f0_hidden_21"
+    },
+    {
+      "index": 22,
+      "name": "f0_hidden_22"
+    },
+    {
+      "index": 23,
+      "name": "f0_hidden_23"
+    },
+    {
+      "index": 24,
+      "name": "f0_hidden_24"
+    },
+    {
+      "index": 25,
+      "name": "f0_hidden_25"
+    },
+    {
+      "index": 26,
+      "name": "f0_hidden_26"
+    },
+    {
+      "index": 27,
+      "name": "f0_hidden_27"
+    },
+    {
+      "index": 28,
+      "name": "f0_hidden_28"
+    },
+    {
+      "index": 29,
+      "name": "f0_hidden_29"
+    },
+    {
+      "index": 30,
+      "name": "f0_hidden_30"
+    },
+    {
+      "index": 31,
+      "name": "f0_hidden_31"
+    },
+    {
+      "index": 32,
+      "name": "current_producer_gas_cut"
+    },
+    {
+      "index": 33,
+      "name": "log10_current_producer_gas_cut_plus_1e-8"
+    },
+    {
+      "index": 34,
+      "name": "current_gas_cut_increment"
+    },
+    {
+      "index": 35,
+      "name": "current_breakthrough_memory"
+    },
+    {
+      "index": 36,
+      "name": "time_since_breakthrough_fraction"
+    },
+    {
+      "index": 37,
+      "name": "current_injector_mass_rate_mode"
+    },
+    {
+      "index": 38,
+      "name": "current_injector_bhp_over_limit"
+    },
+    {
+      "index": 39,
+      "name": "current_injector_mass_rate_over_limit"
+    },
+    {
+      "index": 40,
+      "name": "current_bhp_headroom_over_4mpa"
+    },
+    {
+      "index": 41,
+      "name": "current_mass_rate_headroom_kg_s"
+    },
+    {
+      "index": 42,
+      "name": "current_control_switch_memory"
+    }
+  ],
+  "targets": {
+    "producer_gas_cut": "next accepted-step producer gas cut residual",
+    "breakthrough_hazard": "exp(-days-to-first-accepted-breakthrough/15.0)",
+    "injector_control_mode": "next accepted-step BHP versus mass-rate mode"
+  },
+  "screens": {
+    "gas_cut": "bounded one-step increment, hazard threshold, train-calibrated state distance, persistence fallback",
+    "breakthrough": "monotone cumulative hazard with 0.20 warning and 0.50 proposal thresholds",
+    "well_control": "confidence band, control-boundary preflight, exact active BHP/rate constraints"
+  },
+  "forbidden_features": [
+    "next_",
+    "future_",
+    "target_",
+    "exact_future",
+    "target_saturation",
+    "target_pressure",
+    "target_inventory",
+    "next_producer",
+    "next_injector"
+  ],
+  "scope_boundary": "exact Peaceman well equations and control switching remain mandatory"
+}

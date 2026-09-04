@@ -1,0 +1,24 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1F2CR",
+  "status": "RECONSTRUCTION_CLOSURE_PROVENANCE_RESOLVED",
+  "diagnosis": "FLOAT32_PERSISTENCE_PRECISION_EXPLAINS_CLOSURE_FAILURE",
+  "training_performed": false,
+  "candidate_recalibrated": false,
+  "candidate_frozen": false,
+  "physics_gate_changed": false,
+  "failed_R1F2C_gates": [
+    "reconstruction_gamma_closure",
+    "reconstruction_state_closure"
+  ],
+  "persisted_state_dtype": "float32",
+  "persisted_gamma_dtype": "float32",
+  "gamma_max_half_ulp": 1.4901161193847656e-08,
+  "state_max_half_ulp": 2.9802322387695312e-08,
+  "gamma_precision_aware_envelope": 2.9802322387695312e-08,
+  "state_precision_aware_envelope": 1.1920928955078125e-07,
+  "observed_gamma_Linf": 1.363601331849651e-08,
+  "observed_state_Linf": 2.9799280265585537e-08,
+  "quantization_consistent": true,
+  "recommendation": "The only failed R1F2C gates are reconstruction-closure checks, and the observed 1e-8-scale differences are consistent with the persisted float32 representation / reconstruction operation order. Do not change L2, the crossing guard, gamma design, or any physics/TOF/front gate. Replace the fixed decimal reconstruction tolerances with a precision-aware closure criterion derived from the persisted dtype/ULP envelope, then rerun the independent validation.",
+  "next_milestone": "V15-SG7C-R3F5-R1F2C-R \u2014 Precision-Aware Independent Validation Contract Repair"
+}

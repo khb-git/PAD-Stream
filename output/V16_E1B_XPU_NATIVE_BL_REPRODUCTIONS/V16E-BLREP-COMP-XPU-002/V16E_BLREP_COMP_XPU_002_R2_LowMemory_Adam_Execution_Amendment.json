@@ -1,0 +1,37 @@
+{
+  "milestone": "V16E-1B2C-XPU-R2",
+  "experiment_id": "V16E-BLREP-COMP-XPU-002",
+  "classification": "OPERATIONAL_MEMORY_EXECUTION_REPAIR",
+  "parent_R1_source_sha256": "3a29b62b1d005c535cbc3f8f5b97215ee55b81326c3a6bfff752e88aea08440c",
+  "observed_failure": {
+    "runtime_error": "UR_RESULT_ERROR_OUT_OF_DEVICE_MEMORY",
+    "location": "torch.optim.adam._multi_tensor_adam -> torch._foreach_sqrt",
+    "timing": "first optimizer step of fresh COMP-XPU-002 R1 attempt",
+    "recovery_checkpoint_created_before_failure": false
+  },
+  "single_operational_change": {
+    "component": "torch.optim.Adam implementation",
+    "old": "foreach=None/default runtime selection",
+    "new": "foreach=False",
+    "reason": "reduce peak optimizer-step memory by avoiding foreach tensor-list intermediates"
+  },
+  "scientific_settings_unchanged": {
+    "experiment_id": "V16E-BLREP-COMP-XPU-002",
+    "optimizer_algorithm": "Adam",
+    "learning_rate": 0.001,
+    "logical_batch": 8192,
+    "XPU_microbatch": 2048,
+    "epochs": 800,
+    "seed": 1337,
+    "fresh_initialization": true,
+    "dataset_changed": false,
+    "architecture_changed": false,
+    "conditioning_changed": false,
+    "loss_weights_changed": false,
+    "Nc_transform_changed": false,
+    "TOF": false,
+    "OOD": false
+  },
+  "recovery_semantics": "R1 epoch-boundary model + Adam-state recovery remains active. R2 recovery checkpoints must be resumed with this R2 runner.",
+  "provenance_policy": "Final COMP-XPU-002 evidence must bind this sidecar amendment because the base B2C config records Adam but not foreach=False."
+}

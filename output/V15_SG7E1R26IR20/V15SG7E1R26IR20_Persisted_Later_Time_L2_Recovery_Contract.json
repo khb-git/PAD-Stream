@@ -1,0 +1,105 @@
+{
+  "milestone": "V15-SG7E1R26I-R20",
+  "status": "PERSISTED_LATER_TIME_L2_STATE_COVERAGE_NOT_RECOVERABLE",
+  "diagnosis": "ONE_OR_MORE_REQUIRED_250_500_1000_DAY_STATES_HAVE_NO_GENUINELY_PERSISTED_PRE_AUDIT_L2_STATE",
+  "required_times_days": [
+    250.0,
+    500.0,
+    1000.0
+  ],
+  "coverage": [
+    {
+      "time_days": 250.0,
+      "candidate_hash_count": 1,
+      "classification": "UNIQUE_PERSISTED_HASH",
+      "unique_authoritative_candidate": true,
+      "selected_sha256": "a08c7320a63ace580456191f408a29afde65e0ad3f078846265243e53cd10297",
+      "selected_artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7E1R26IR10\\V15SG7E1R26IR10_100d_Runtime_Control.npz",
+      "selected_key": "frozen100",
+      "provenance_margin": ""
+    },
+    {
+      "time_days": 500.0,
+      "candidate_hash_count": 1,
+      "classification": "UNIQUE_PERSISTED_HASH",
+      "unique_authoritative_candidate": true,
+      "selected_sha256": "a08c7320a63ace580456191f408a29afde65e0ad3f078846265243e53cd10297",
+      "selected_artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7E1R26IR10\\V15SG7E1R26IR10_100d_Runtime_Control.npz",
+      "selected_key": "frozen100",
+      "provenance_margin": ""
+    },
+    {
+      "time_days": 1000.0,
+      "candidate_hash_count": 0,
+      "classification": "NO_PERSISTED_STATE",
+      "unique_authoritative_candidate": false,
+      "selected_sha256": "",
+      "selected_artifact": "",
+      "selected_key": "",
+      "provenance_margin": ""
+    }
+  ],
+  "selected_candidates": [
+    {
+      "time_days": 250.0,
+      "sha256_float32": "a08c7320a63ace580456191f408a29afde65e0ad3f078846265243e53cd10297",
+      "artifact_instance_count": 1,
+      "top_provenance_score": 300,
+      "top_artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7E1R26IR10\\V15SG7E1R26IR10_100d_Runtime_Control.npz",
+      "top_key": "frozen100",
+      "top_reasons": "frozen_state_semantics;parent_metadata_time_hits=1;parent_alias_hits=14",
+      "selection_basis": "UNIQUE_PERSISTED_HASH"
+    },
+    {
+      "time_days": 500.0,
+      "sha256_float32": "a08c7320a63ace580456191f408a29afde65e0ad3f078846265243e53cd10297",
+      "artifact_instance_count": 1,
+      "top_provenance_score": 300,
+      "top_artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7E1R26IR10\\V15SG7E1R26IR10_100d_Runtime_Control.npz",
+      "top_key": "frozen100",
+      "top_reasons": "frozen_state_semantics;parent_metadata_time_hits=1;parent_alias_hits=14",
+      "selection_basis": "UNIQUE_PERSISTED_HASH"
+    }
+  ],
+  "exclusion_tokens": [
+    "V15_SG7E1R26IR16",
+    "V15_SG7E1R26IR17",
+    "V15_SG7E1R26IR18",
+    "V15_SG7E1R26IR18R",
+    "V15_SG7E1R26IR19",
+    "V15_SG7E1R26IR19R",
+    "V15_SG7E1R26IR19A",
+    "V15_SG7E1R26IR19B",
+    "V15_SG7E1R26IR19C",
+    "V15_SG7E1R26IR19D",
+    "V15_SG7E1R26IR19E",
+    "V15_SG7E1R26IR20",
+    "V15SG7E1R26IR16",
+    "V15SG7E1R26IR17",
+    "V15SG7E1R26IR18",
+    "V15SG7E1R26IR18R",
+    "V15SG7E1R26IR19",
+    "V15SG7E1R26IR19R",
+    "V15SG7E1R26IR19A",
+    "V15SG7E1R26IR19B",
+    "V15SG7E1R26IR19C",
+    "V15SG7E1R26IR19D",
+    "V15SG7E1R26IR19E",
+    "V15SG7E1R26IR20"
+  ],
+  "constraints": {
+    "training_performed": false,
+    "model_predict_executed": false,
+    "model_parameters_changed": false,
+    "later_time_runtime_generation_allowed": false,
+    "interpolation_allowed": false,
+    "extrapolation_allowed": false,
+    "precision_envelope_relaxed": false,
+    "candidate_performance_used": false,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false
+  },
+  "recommendation": "Do not fabricate or runtime-regenerate missing states. Record the multi-time deployment coverage limitation formally and determine whether SG7E can proceed only as a historical reference-validation contract rather than a fully reproducible multi-time deployment contract.",
+  "next_milestone": "V15-SG7E1R26I-R21 \u2014 Multi-Time Deployment Coverage Limitation / SG7E Scope Decision Audit"
+}

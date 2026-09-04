@@ -1,0 +1,89 @@
+{
+  "milestone": "V16D-4",
+  "status": "V16D_PREDECLARED_CASE0002_0025_SGSIM_SEED_REGISTRY_FROZEN_GENERATION_EXECUTION_CAN_PROCEED",
+  "contract": {
+    "registry_sha256": "735f71e7f7fac08c69fbd22831d3d2ff5e6d2da42a932987ccbe0b9d1278c680",
+    "new_case_count": 24,
+    "case_range": "0002-0025",
+    "case0001": "historical immutable reference; not regenerated and not assigned a Recipe 1.0 seed",
+    "seed_rule": {
+      "base_seed": 160400,
+      "stride": 7919,
+      "formula": "seed(case i)=160400+(i-2)*7919 for i=2..25",
+      "selection": "predeclared arithmetic registry; not sampled after geology inspection"
+    },
+    "first_phase_controls": {
+      "CO2_mass_rate_tonnes_per_day": 500.0,
+      "producer_BHP_psi": 2000.0
+    },
+    "generation_policy": {
+      "order": "ascending case_id",
+      "all_registered_cases_attempted": true,
+      "technical_failure": "record failure and diagnostics; do not silently replace",
+      "visual_or_statistical_rejection": "prohibited",
+      "permeability_transform_refit": "prohibited",
+      "recipe_change_mid_registry": "prohibited; requires new recipe/version and new contract"
+    },
+    "split_policy": {
+      "D4_does_not_assign_train_validation_test": true,
+      "reason": "case split is frozen only after cases are generated and certified as valid physics cases, but before any multi-case learning",
+      "failed_cases_never_replaced_to_balance_split": true
+    },
+    "generation_authorized_in_D4": false,
+    "training_authorized": false
+  },
+  "gates": {
+    "R3_bound": true,
+    "case0001_excluded_from_new_recipe_registry": true,
+    "case_ids_unique": true,
+    "seeds_unique": true,
+    "24_new_cases_predeclared": true,
+    "deterministic_seed_formula": true,
+    "fixed_controls_first_phase": true,
+    "no_cherrypicking": true,
+    "no_silent_seed_replacement": true,
+    "failure_provenance_required": true,
+    "no_per_realization_transform_refit": true,
+    "registry_hash_frozen": true,
+    "no_generation_in_D4": true,
+    "no_training_in_D4": true
+  },
+  "registry_preview": [
+    {
+      "case_id": "V16D_Foundation_Case_0002",
+      "geology_id": "V16D_Geology_0002",
+      "sgsim_seed": 160400,
+      "recipe_id": "V16D_SGSIM_ENSEMBLE_RECIPE_1.0",
+      "controls_id": "REFERENCE_500TPD_2000PSI"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0003",
+      "geology_id": "V16D_Geology_0003",
+      "sgsim_seed": 168319,
+      "recipe_id": "V16D_SGSIM_ENSEMBLE_RECIPE_1.0",
+      "controls_id": "REFERENCE_500TPD_2000PSI"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0004",
+      "geology_id": "V16D_Geology_0004",
+      "sgsim_seed": 176238,
+      "recipe_id": "V16D_SGSIM_ENSEMBLE_RECIPE_1.0",
+      "controls_id": "REFERENCE_500TPD_2000PSI"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0005",
+      "geology_id": "V16D_Geology_0005",
+      "sgsim_seed": 184157,
+      "recipe_id": "V16D_SGSIM_ENSEMBLE_RECIPE_1.0",
+      "controls_id": "REFERENCE_500TPD_2000PSI"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0006",
+      "geology_id": "V16D_Geology_0006",
+      "sgsim_seed": 192076,
+      "recipe_id": "V16D_SGSIM_ENSEMBLE_RECIPE_1.0",
+      "controls_id": "REFERENCE_500TPD_2000PSI"
+    }
+  ],
+  "next_milestone": "V16D-5 \u2014 Deterministic SGSim Recipe 1.0 Generator Implementation and Pre-Generation Validation"
+}

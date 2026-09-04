@@ -1,0 +1,114 @@
+{
+  "name": "V16D_EXP_MC1_EXECUTABLE_PROTOCOL_1.0",
+  "dataset_registry_sha256": "7e3e885a1219bf72f89dd759df7043fe2bd6e9a718d418edbe8db3e2afce6266",
+  "training_authority_sha256": "b8987bfddefcdb890b99bbb0de9d8c7f6ad29c4332082c16c06a4beab0f3f65e",
+  "seed": 161501,
+  "model": {
+    "input_shape": [
+      201,
+      9
+    ],
+    "architecture": [
+      {
+        "layer": "LSTM",
+        "units": 64,
+        "return_sequences": true
+      },
+      {
+        "layer": "LSTM",
+        "units": 64,
+        "return_sequences": true
+      },
+      {
+        "layer": "TimeDistributed(Dense)",
+        "units": 1,
+        "activation": "sigmoid_affine_to_[0.2,0.8]"
+      }
+    ],
+    "lineage": "C20 / Case0001 EXP1 predictive baseline",
+    "output_shape": [
+      201,
+      1
+    ],
+    "bounded_output": {
+      "Sw_min": 0.2,
+      "Sw_max": 0.8
+    }
+  },
+  "objective": {
+    "training_loss": "MSE",
+    "physics_loss": "NONE",
+    "metrics": [
+      "MSE",
+      "MAE"
+    ]
+  },
+  "optimizer": {
+    "name": "Adam",
+    "learning_rate": 0.001
+  },
+  "sampling": {
+    "sample_unit": "one (FoundationCase,target_time,streamline) sequence",
+    "sequence_shape": [
+      201,
+      9
+    ],
+    "target_shape": [
+      201,
+      1
+    ],
+    "TRAIN_samples": 155232,
+    "VALIDATION_samples": 38808,
+    "case_weighting": "equal per sequence; every case has identical 9x1078 sample count",
+    "shuffle": "TRAIN only, deterministic from seed each epoch",
+    "batch_size": 64
+  },
+  "loading": {
+    "strategy": "streaming/memory-safe per-case NPZ loading through deterministic generator or tf.data",
+    "do_not_materialize_all_24_cases_in_RAM": true,
+    "TRAIN_cases_only_for_gradient_updates": true,
+    "VALIDATION_cases_read_for_validation_only": true,
+    "LOCKED_OOD_cases_not_opened_during_training": true
+  },
+  "epochs": {
+    "max": 300,
+    "early_stopping": {
+      "monitor": "val_loss",
+      "mode": "min",
+      "patience": 25,
+      "min_delta": 0.0,
+      "restore_best_weights": false
+    }
+  },
+  "checkpoint": {
+    "monitor": "val_loss",
+    "mode": "min",
+    "save_best_only": true,
+    "format": "weights_only_HDF5_or_Keras_weights",
+    "selection_authority": "minimum raw validation MSE"
+  },
+  "postfit": {
+    "reload_best_checkpoint_before_any_test": true,
+    "validation_diagnostics_allowed": true,
+    "locked_OOD_evaluation": "separate later milestone, once only"
+  },
+  "prohibited": [
+    "physics loss",
+    "OOD-informed tuning",
+    "OOD normalization",
+    "OOD checkpoint selection",
+    "architecture changes after training starts",
+    "retraining merely to repair serialization"
+  ],
+  "failure_policy": {
+    "serialization_failure": "repair/recover frozen best weights; do not retrain",
+    "OOM": "repair loading/batch execution without changing model/objective; if batch size must change, freeze a protocol revision before retry",
+    "interruption": "resume only from an explicitly persisted training-state/checkpoint contract; never silently restart and call it same run"
+  },
+  "scientific_scope": {
+    "geology": "Recipe1.1 spectral GRF Cases0002-0025",
+    "controls": "fixed",
+    "generalization": "case-level geology OOD",
+    "foundation_model_claim": "NOT YET AUTHORIZED"
+  }
+}

@@ -1,0 +1,391 @@
+{
+  "milestone": "V15-SG7B-15R",
+  "description": "Repaired front-preserving TOF refinement design contract",
+  "training_performed": false,
+  "incoming_diagnosis": "TOF_REFINEMENT_FRONT_PRESERVATION_TRADEOFF",
+  "starting_checkpoint": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B11\\V15SG7B_FRONT_AWARE_FROZEN_Model.keras",
+  "front_regions": {
+    "front_shell": [
+      0.205,
+      0.3
+    ],
+    "front_core": [
+      0.21,
+      0.26
+    ]
+  },
+  "TOF_regions": {
+    "long_TOF_min_days": 500.0,
+    "very_long_TOF_min_days": 1000.0
+  },
+  "new_front_guards": {
+    "maximum_front_anchor_MAE": 0.0015,
+    "maximum_mean_frozen_front_xi_shift": 0.002,
+    "maximum_P90_frozen_front_xi_shift": 0.005
+  },
+  "preservation_gates": [
+    {
+      "gate": "Held-out L1",
+      "limit": "< 0.020",
+      "authority": "SG7B-11"
+    },
+    {
+      "gate": "Held-out L2",
+      "limit": "< 0.030",
+      "authority": "SG7B-11"
+    },
+    {
+      "gate": "Mass relative MAE",
+      "limit": "< 0.030",
+      "authority": "SG7B-11"
+    },
+    {
+      "gate": "Canonical mean",
+      "limit": "< 0.500",
+      "authority": "SG7B-11"
+    },
+    {
+      "gate": "Canonical P90",
+      "limit": "< 1.000",
+      "authority": "SG7B-11"
+    },
+    {
+      "gate": "Canonical fraction > 1",
+      "limit": "< 10%",
+      "authority": "SG7B-11"
+    },
+    {
+      "gate": "Recovered 100d fronts",
+      "limit": ">= 744",
+      "authority": "SG7B-10S / SG7B-11"
+    },
+    {
+      "gate": "Conditioned front gap",
+      "limit": "<= 5.33123727917913484e-04",
+      "authority": "SG7B-10S",
+      "exact_numeric_limit": 0.0005331237279179135
+    },
+    {
+      "gate": "100d profile L1",
+      "limit": "<= 4.50032942291447424e-03",
+      "authority": "SG7B-10S",
+      "exact_numeric_limit": 0.004500329422914474
+    },
+    {
+      "gate": "SG7A/E0-relative front shape",
+      "limit": "all SG7B-10S shape gates PASS",
+      "authority": "SG7B-10S"
+    },
+    {
+      "gate": "Front frozen-anchor MAE",
+      "limit": "<= 1.500000e-03",
+      "authority": "SG7B-15 new guard"
+    },
+    {
+      "gate": "Mean frozen-front xi shift",
+      "limit": "<= 2.000000e-03",
+      "authority": "SG7B-15 new guard"
+    },
+    {
+      "gate": "P90 frozen-front xi shift",
+      "limit": "<= 5.000000e-03",
+      "authority": "SG7B-15 new guard"
+    }
+  ],
+  "bias_gates": [
+    {
+      "gate": "500-1000d mean bias",
+      "limit": "<= 2.500000e-03",
+      "authority": "SG7B-12"
+    },
+    {
+      "gate": "1000-2000d mean bias",
+      "limit": "<= 4.500000e-03",
+      "authority": "SG7B-12"
+    },
+    {
+      "gate": ">2000d mean bias",
+      "limit": "<= 5.000000e-03",
+      "authority": "SG7B-12"
+    },
+    {
+      "gate": "Initial-tail mean bias",
+      "limit": "<= 5.000000e-03",
+      "authority": "SG7B-12"
+    },
+    {
+      "gate": "500-1000d material-positive share",
+      "limit": "<= 40.0%",
+      "authority": "SG7B-12"
+    }
+  ],
+  "training_regions": [
+    {
+      "region": "R0_short_TOF",
+      "definition": "tau_end < 500 days",
+      "purpose": "preserve already-good fast-streamline behavior",
+      "TOF_correction": "OFF",
+      "front_anchor": "ON",
+      "frozen_anchor": "STRONG"
+    },
+    {
+      "region": "R1_long_TOF_nonfront",
+      "definition": "tau_end >= 500 days AND SG7A S < 0.205 or S > 0.300",
+      "purpose": "primary TOF-bias correction away from accepted front",
+      "TOF_correction": "STRONG",
+      "front_anchor": "OFF",
+      "frozen_anchor": "MODERATE"
+    },
+    {
+      "region": "R2_long_TOF_front_shell",
+      "definition": "tau_end >= 500 days AND 0.205 <= SG7A S <= 0.300",
+      "purpose": "protect front neighborhood from TOF correction",
+      "TOF_correction": "WEAK/OFF",
+      "front_anchor": "STRONG",
+      "frozen_anchor": "VERY_STRONG"
+    },
+    {
+      "region": "R3_front_core",
+      "definition": "0.210 <= SG7A S <= 0.260",
+      "purpose": "preserve crossing position and local front morphology",
+      "TOF_correction": "OFF",
+      "front_anchor": "VERY_STRONG",
+      "frozen_anchor": "VERY_STRONG"
+    },
+    {
+      "region": "R4_initial_tail",
+      "definition": "SG7A S <= 0.205",
+      "purpose": "reduce long-TOF elevated unswept-state floor",
+      "TOF_correction": "STRONG for long TOF",
+      "front_anchor": "OFF",
+      "frozen_anchor": "WEAK/MODERATE"
+    }
+  ],
+  "loss_components": [
+    {
+      "component": "L_state",
+      "role": "Preserve global held-out saturation accuracy",
+      "target_region": "all canonical training samples",
+      "new_or_retained": "retained"
+    },
+    {
+      "component": "L_phys",
+      "role": "Preserve canonical physics residual",
+      "target_region": "all canonical training samples",
+      "new_or_retained": "retained"
+    },
+    {
+      "component": "L_mass",
+      "role": "Preserve inventory / mass",
+      "target_region": "all canonical training samples",
+      "new_or_retained": "retained"
+    },
+    {
+      "component": "L_TOF_away",
+      "role": "Reduce positive long-TOF bias only away from front",
+      "target_region": "tau_end >= 500 d AND outside S=[0.205,0.300]",
+      "new_or_retained": "new"
+    },
+    {
+      "component": "L_TOF_very_slow_away",
+      "role": "Stronger correction on very slow non-front streamlines",
+      "target_region": "tau_end >= 1000 d AND outside S=[0.205,0.300]",
+      "new_or_retained": "new"
+    },
+    {
+      "component": "L_tail",
+      "role": "Lower long-TOF initial-state tail bias",
+      "target_region": "S_SG7A <= 0.205",
+      "new_or_retained": "retained/refined"
+    },
+    {
+      "component": "L_front_anchor",
+      "role": "Anchor candidate to SG7B-11 in front shell",
+      "target_region": "S_SG7A in [0.205,0.300]",
+      "new_or_retained": "new primary preservation"
+    },
+    {
+      "component": "L_front_core_anchor",
+      "role": "Very strong frozen-model anchor at S=0.21 crossing core",
+      "target_region": "S_SG7A in [0.210,0.260]",
+      "new_or_retained": "new primary preservation"
+    },
+    {
+      "component": "L_cross_position",
+      "role": "Penalize displacement of the S=0.21 crossing",
+      "target_region": "profiles with SG7A front",
+      "new_or_retained": "new"
+    },
+    {
+      "component": "L_front_gradient",
+      "role": "Preserve SG7A/SG7B-11 local front gradient",
+      "target_region": "front shell",
+      "new_or_retained": "new"
+    },
+    {
+      "component": "L_front_TV",
+      "role": "Preserve local total variation / shape",
+      "target_region": "front shell",
+      "new_or_retained": "new"
+    },
+    {
+      "component": "L_short_TOF_anchor",
+      "role": "Preserve fast-streamline prediction",
+      "target_region": "tau_end < 500 d",
+      "new_or_retained": "retained"
+    },
+    {
+      "component": "L_global_frozen_anchor",
+      "role": "Prevent broad drift outside targeted correction region",
+      "target_region": "non-target domain",
+      "new_or_retained": "retained"
+    }
+  ],
+  "controlled_experiments": [
+    {
+      "experiment": "E0",
+      "description": "Frozen SG7B-11 control",
+      "lambda_TOF_away": 0.0,
+      "lambda_TOF_very_slow": 0.0,
+      "lambda_tail": 0.0,
+      "lambda_front_anchor": 0.0,
+      "lambda_front_core": 0.0,
+      "lambda_cross_position": 0.0,
+      "lambda_front_gradient": 0.0,
+      "lambda_front_TV": 0.0,
+      "lambda_short_anchor": 0.0,
+      "lambda_global_anchor": 0.0
+    },
+    {
+      "experiment": "E1",
+      "description": "Conservative away-from-front TOF correction",
+      "lambda_TOF_away": 0.4,
+      "lambda_TOF_very_slow": 0.25,
+      "lambda_tail": 0.2,
+      "lambda_front_anchor": 2.0,
+      "lambda_front_core": 3.0,
+      "lambda_cross_position": 1.0,
+      "lambda_front_gradient": 0.5,
+      "lambda_front_TV": 0.4,
+      "lambda_short_anchor": 0.75,
+      "lambda_global_anchor": 1.5
+    },
+    {
+      "experiment": "E2",
+      "description": "Balanced front-preserving TOF correction",
+      "lambda_TOF_away": 0.55,
+      "lambda_TOF_very_slow": 0.35,
+      "lambda_tail": 0.25,
+      "lambda_front_anchor": 2.5,
+      "lambda_front_core": 4.0,
+      "lambda_cross_position": 1.5,
+      "lambda_front_gradient": 0.75,
+      "lambda_front_TV": 0.6,
+      "lambda_short_anchor": 0.9,
+      "lambda_global_anchor": 1.75
+    },
+    {
+      "experiment": "E3",
+      "description": "Strong front lock with moderate TOF correction",
+      "lambda_TOF_away": 0.5,
+      "lambda_TOF_very_slow": 0.4,
+      "lambda_tail": 0.25,
+      "lambda_front_anchor": 3.0,
+      "lambda_front_core": 5.0,
+      "lambda_cross_position": 2.0,
+      "lambda_front_gradient": 1.0,
+      "lambda_front_TV": 0.75,
+      "lambda_short_anchor": 1.0,
+      "lambda_global_anchor": 2.0
+    },
+    {
+      "experiment": "E4",
+      "description": "Tail-focused correction with maximum front protection",
+      "lambda_TOF_away": 0.35,
+      "lambda_TOF_very_slow": 0.3,
+      "lambda_tail": 0.45,
+      "lambda_front_anchor": 3.5,
+      "lambda_front_core": 6.0,
+      "lambda_cross_position": 2.5,
+      "lambda_front_gradient": 1.1,
+      "lambda_front_TV": 0.85,
+      "lambda_short_anchor": 1.1,
+      "lambda_global_anchor": 2.25
+    },
+    {
+      "experiment": "E5",
+      "description": "Minimal TOF correction / strongest SG7B-11 preservation",
+      "lambda_TOF_away": 0.25,
+      "lambda_TOF_very_slow": 0.2,
+      "lambda_tail": 0.25,
+      "lambda_front_anchor": 4.0,
+      "lambda_front_core": 7.0,
+      "lambda_cross_position": 3.0,
+      "lambda_front_gradient": 1.25,
+      "lambda_front_TV": 1.0,
+      "lambda_short_anchor": 1.25,
+      "lambda_global_anchor": 2.5
+    }
+  ],
+  "training_contract": {
+    "starting_checkpoint": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B11\\V15SG7B_FRONT_AWARE_FROZEN_Model.keras",
+    "starting_checkpoint_role": "authoritative front-aware frozen SG7B-11 model",
+    "maximum_epochs": 120,
+    "initial_learning_rate": 7.5e-07,
+    "minimum_learning_rate": 7.5e-08,
+    "early_stop_patience": 24,
+    "lr_reduction_patience": 8,
+    "evaluation_frequency_epochs": 5,
+    "critical_change_from_SG7B13": "TOF correction is masked out of the SG7A front shell [0.205,0.300], with especially strong protection in [0.210,0.260].",
+    "selection_rule": "No scalar score may override a failed gate. A candidate must satisfy every SG7B-11 state/mass/canonical gate, every SG7B-10S front recovery/shape gate, every SG7B-12 TOF-bias gate, and all new SG7B-15 frozen-front displacement guards."
+  },
+  "status": "FRONT_PRESERVING_TOF_REFINEMENT_CONTRACT_READY",
+  "next_milestone": "V15-SG7B-16 \u2014 Controlled Front-Preserving TOF Refinement",
+  "repair": {
+    "source_milestone": "V15-SG7B-15",
+    "reason": "SG7B-15 compared a display-rounded conditioned-front-gap value against the full-precision SG7B-10S contract.",
+    "gate_relaxed": false,
+    "authoritative_source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B10S\\V15SG7B10S_SG7A_Relative_Front_Shape_Contract.json",
+    "rounded_value_used_by_SG7B15": 0.0005331237,
+    "exact_SG7B10S_value": 0.0005331237279179135,
+    "absolute_difference": 2.791791353217582e-11,
+    "relative_difference": 5.236666850527879e-08
+  },
+  "authoritative_front_improvement_contract": {
+    "minimum_recovered_fronts": 744,
+    "maximum_conditioned_threshold_gap": 0.0005331237279179135,
+    "maximum_100d_profile_L1": 0.004500329422914474
+  },
+  "authoritative_SG7B12_bias_improvement_gates": [
+    {
+      "gate": "500-1000d mean positive bias",
+      "baseline": 0.004756026104725998,
+      "target_limit": 0.0025,
+      "improvement_required": ">=45% reduction"
+    },
+    {
+      "gate": "1000-2000d mean positive bias",
+      "baseline": 0.008821790222551053,
+      "target_limit": 0.0045,
+      "improvement_required": ">=45% reduction"
+    },
+    {
+      "gate": ">2000d mean positive bias",
+      "baseline": 0.010334881049249931,
+      "target_limit": 0.005,
+      "improvement_required": ">=45% reduction"
+    },
+    {
+      "gate": "Initial-tail mean positive bias",
+      "baseline": 0.010328912605362393,
+      "target_limit": 0.005,
+      "improvement_required": ">=45% reduction"
+    },
+    {
+      "gate": "500-1000d material-positive-node share",
+      "baseline": 0.5724998873992223,
+      "target_limit": 0.4,
+      "improvement_required": "reduce dominant TOF concentration"
+    }
+  ]
+}

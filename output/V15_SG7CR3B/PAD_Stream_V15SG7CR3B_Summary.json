@@ -1,0 +1,16 @@
+{
+  "milestone": "V15-SG7C-R3B",
+  "status": "CANONICAL_VS_SGSIM_TRANSFER_DENSITY_AUDIT_COMPLETE",
+  "incoming_diagnosis": "TRANSFER_MISMATCH_NOT_EXPLAINED_BY_SIMPLE_TD_SUPPORT_SHIFT",
+  "diagnosis": "MARGINAL_TIME_DISTRIBUTION_SHIFT_WITHOUT_DENSITY_ERROR_LINK",
+  "TV_distance_xi": 0.0,
+  "TV_distance_normalized_tD": 0.6105675568949782,
+  "TV_distance_joint_xi_tD": 0.6105675568949782,
+  "zero_support_fraction": 0.0,
+  "sparse_count_le_1_fraction": 0.0,
+  "sparse_count_le_5_fraction": 0.0,
+  "corr_log_density_abs_error": 0.15859268474780364,
+  "corr_log_density_signed_error": -0.008667100962954677,
+  "recommendation": "The normalized-time distribution differs from canonical training, but local canonical density does not strongly explain the residual error. Audit conditional feature construction and target scaling next.",
+  "next_milestone": "V15-SG7C-R3C \u2014 Conditional Feature / Target-Scaling Transfer Audit"
+}

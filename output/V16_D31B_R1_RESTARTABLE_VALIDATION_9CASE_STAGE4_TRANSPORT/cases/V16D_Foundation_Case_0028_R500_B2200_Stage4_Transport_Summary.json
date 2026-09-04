@@ -1,0 +1,28 @@
+{
+  "case_id": "V16D_Foundation_Case_0028_R500_B2200",
+  "partition": "VALIDATION",
+  "status": "CERTIFIED",
+  "metric_sha256": "d6c5478f5095ca4c69b696b13e3768e78976d33d44dba52c18e0fec6febb2e35",
+  "artifact_sha256": "8ab9d97e3f73f1fdb2a034ee2cefbf0fc19391f0780c75a65e17fbde33a4dc65",
+  "steps": 49251,
+  "elapsed_seconds": 2808.181878089905,
+  "S_min": 0.20099999999999876,
+  "S_max": 0.799,
+  "adv_max": 1.2308235756552238e-17,
+  "cap_max": 1.4210854715202004e-14,
+  "preclip_max": 0.0,
+  "temporal_negative_fraction": 0.0,
+  "spatial_positive_fraction": 0.0,
+  "gates": {
+    "finite": true,
+    "shape": true,
+    "bounds": true,
+    "injector": true,
+    "undershoot": true,
+    "adv_conservation": true,
+    "cap_residual": true,
+    "preclip": true,
+    "temporal": true,
+    "spatial": true
+  }
+}

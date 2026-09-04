@@ -1,0 +1,28 @@
+{
+  "milestone": "V16C-23A",
+  "status": "V16C_EXP1_DIFFERENTIAL_FULL_PHYSICS_RESIDUAL_AUDIT_COMPLETE",
+  "C7_sha256": "5a47ef2a4154291b424e43d1b0e21e30baa0c805c846e9943f62f8b389289e6d",
+  "prediction_sha256": "b0495d1ef6acd58172cb962c4fbf0abc812f6c4e61f030100481ab9290441fb3",
+  "residual": {
+    "global_l1": 0.2565693620128529,
+    "global_l2": 0.7510873362126534,
+    "global_linf": 15.257634621197875,
+    "interpretation": "INDEPENDENT_DISCRETE_DIAGNOSTIC_NOT_A_TRAINING_LOSS_OR_ACCEPTANCE_THRESHOLD"
+  },
+  "gates": {
+    "C23_pending_residual_prerequisite_bound": true,
+    "exact_C7_hash_bound": true,
+    "exact_C18R_hash_bound": true,
+    "C7_metric_shape_1078x201": true,
+    "locked_test_predictions_unchanged": true,
+    "all_161_test_streamlines_bound": true,
+    "all_nine_times_per_streamline": true,
+    "residual_finite": true,
+    "no_training": true,
+    "no_retuning": true,
+    "no_residual_based_model_selection": true
+  },
+  "training": false,
+  "retuning": false,
+  "next_milestone": "V16C-24 \u2014 EXP1 Baseline Scientific Assessment and Physics-Informed EXP2 Decision Contract"
+}

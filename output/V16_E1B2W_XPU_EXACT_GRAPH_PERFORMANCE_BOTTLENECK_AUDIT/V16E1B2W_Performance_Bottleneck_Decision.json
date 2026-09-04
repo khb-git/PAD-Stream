@@ -1,0 +1,34 @@
+{
+  "milestone": "V16E-1B2W-XPU",
+  "dominant_measured_stage": "total_backward",
+  "ordered_measured_stage_times": [
+    {
+      "stage": "total_backward",
+      "seconds": 17.009207799999785
+    },
+    {
+      "stage": "local_recurrent_derivatives",
+      "seconds": 11.955773700001373
+    },
+    {
+      "stage": "corrected_physics_algebra",
+      "seconds": 2.7971595999988494
+    },
+    {
+      "stage": "model_forward",
+      "seconds": 2.0431527999990067
+    },
+    {
+      "stage": "nonphysics_loss_assembly",
+      "seconds": 0.12230380000073637
+    }
+  ],
+  "corrected_over_first_order_total_wall_ratio": 226.82241415387188,
+  "local_recurrent_derivatives_fraction_of_corrected_total": 0.35239081192009836,
+  "corrected_backward_fraction_of_corrected_total": 0.5013384074640779,
+  "interpretation_policy": "Descriptive timing only. No numeric scientific or operational acceptance threshold is introduced in B2W.",
+  "scientific_graph_changed": false,
+  "COMP_XPU_005_full_training_authorized": false,
+  "B3_authorized": false,
+  "next_decision_required": "V16E-1B2X must interpret the measured bottleneck and decide whether to freeze an equivalence-preserving implementation optimization branch or proceed to an execution-contract freeze."
+}

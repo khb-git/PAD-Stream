@@ -1,0 +1,8 @@
+{
+  "case_id": "V16D_Foundation_Case_0026_R350_B1800",
+  "partition": "TRAIN",
+  "status": "CERTIFIED",
+  "provenance": "exact D30-R1-R2 pilot reuse",
+  "source_pilot_sha256": "d814fbcaab7dc8a5ea1ce6a06096d3bc0c05abb1077333a569f01e98e57c2028",
+  "artifact_sha256": "d814fbcaab7dc8a5ea1ce6a06096d3bc0c05abb1077333a569f01e98e57c2028"
+}

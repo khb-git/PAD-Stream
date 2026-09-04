@@ -1,0 +1,116 @@
+{
+  "milestone": "V16A-R2",
+  "status": "V16A_RESIDUAL_COMPONENT_LINEAGE_RESOLVED_FOR_RECONSTRUCTION_AUDIT",
+  "diagnosis": "ALL_R1_SOURCE_DEFINED_COMPONENTS_REPRODUCED_AND_PREVIOUSLY_NOT_FOUND_PRESSURE_PRODUCER_LINEAGES_HAVE_SOURCE_OR_DOWNSTREAM_EVIDENCE",
+  "pressure_lineage_evidence": true,
+  "producer_id_lineage_evidence": true,
+  "source_defined_components_reproduced": true,
+  "component_resolution": [
+    {
+      "component": "Kx",
+      "R1_status": "SOURCE_DEFINED_NOT_PERSISTED",
+      "R2_status": "DETERMINISTIC_RECONSTRUCTION_FEASIBILITY_REQUIRES_EXACT_DEPENDENCY_AUDIT",
+      "source_symbol_records": 4,
+      "downstream_semantic_records": 0,
+      "reason": "source-defined component exists but was not uniquely persisted"
+    },
+    {
+      "component": "Ky",
+      "R1_status": "SOURCE_DEFINED_NOT_PERSISTED",
+      "R2_status": "DETERMINISTIC_RECONSTRUCTION_FEASIBILITY_REQUIRES_EXACT_DEPENDENCY_AUDIT",
+      "source_symbol_records": 4,
+      "downstream_semantic_records": 0,
+      "reason": "source-defined component exists but was not uniquely persisted"
+    },
+    {
+      "component": "Kz",
+      "R1_status": "SOURCE_DEFINED_NOT_PERSISTED",
+      "R2_status": "DETERMINISTIC_RECONSTRUCTION_FEASIBILITY_REQUIRES_EXACT_DEPENDENCY_AUDIT",
+      "source_symbol_records": 4,
+      "downstream_semantic_records": 0,
+      "reason": "source-defined component exists but was not uniquely persisted"
+    },
+    {
+      "component": "porosity",
+      "R1_status": "SOURCE_DEFINED_NOT_PERSISTED",
+      "R2_status": "DETERMINISTIC_RECONSTRUCTION_FEASIBILITY_REQUIRES_EXACT_DEPENDENCY_AUDIT",
+      "source_symbol_records": 3,
+      "downstream_semantic_records": 0,
+      "reason": "source-defined component exists but was not uniquely persisted"
+    },
+    {
+      "component": "pressure",
+      "R1_status": "NOT_FOUND",
+      "R2_status": "RESIDUAL_LINEAGE_EVIDENCE_FOUND",
+      "source_symbol_records": 43,
+      "downstream_semantic_records": 22,
+      "reason": "broader alias/downstream evidence found for previously not-found component"
+    },
+    {
+      "component": "Qx",
+      "R1_status": "SOURCE_DEFINED_NOT_PERSISTED",
+      "R2_status": "DETERMINISTIC_RECONSTRUCTION_FEASIBILITY_REQUIRES_EXACT_DEPENDENCY_AUDIT",
+      "source_symbol_records": 2,
+      "downstream_semantic_records": 0,
+      "reason": "source-defined component exists but was not uniquely persisted"
+    },
+    {
+      "component": "Qy",
+      "R1_status": "SOURCE_DEFINED_NOT_PERSISTED",
+      "R2_status": "DETERMINISTIC_RECONSTRUCTION_FEASIBILITY_REQUIRES_EXACT_DEPENDENCY_AUDIT",
+      "source_symbol_records": 2,
+      "downstream_semantic_records": 0,
+      "reason": "source-defined component exists but was not uniquely persisted"
+    },
+    {
+      "component": "Qz",
+      "R1_status": "SOURCE_DEFINED_NOT_PERSISTED",
+      "R2_status": "DETERMINISTIC_RECONSTRUCTION_FEASIBILITY_REQUIRES_EXACT_DEPENDENCY_AUDIT",
+      "source_symbol_records": 2,
+      "downstream_semantic_records": 0,
+      "reason": "source-defined component exists but was not uniquely persisted"
+    },
+    {
+      "component": "Vx",
+      "R1_status": "SOURCE_DEFINED_NOT_PERSISTED",
+      "R2_status": "DETERMINISTIC_RECONSTRUCTION_FEASIBILITY_REQUIRES_EXACT_DEPENDENCY_AUDIT",
+      "source_symbol_records": 2,
+      "downstream_semantic_records": 0,
+      "reason": "source-defined component exists but was not uniquely persisted"
+    },
+    {
+      "component": "Vy",
+      "R1_status": "SOURCE_DEFINED_NOT_PERSISTED",
+      "R2_status": "DETERMINISTIC_RECONSTRUCTION_FEASIBILITY_REQUIRES_EXACT_DEPENDENCY_AUDIT",
+      "source_symbol_records": 2,
+      "downstream_semantic_records": 0,
+      "reason": "source-defined component exists but was not uniquely persisted"
+    },
+    {
+      "component": "Vz",
+      "R1_status": "SOURCE_DEFINED_NOT_PERSISTED",
+      "R2_status": "DETERMINISTIC_RECONSTRUCTION_FEASIBILITY_REQUIRES_EXACT_DEPENDENCY_AUDIT",
+      "source_symbol_records": 2,
+      "downstream_semantic_records": 0,
+      "reason": "source-defined component exists but was not uniquely persisted"
+    },
+    {
+      "component": "producer_id",
+      "R1_status": "NOT_FOUND",
+      "R2_status": "RESIDUAL_LINEAGE_EVIDENCE_FOUND",
+      "source_symbol_records": 30,
+      "downstream_semantic_records": 3,
+      "reason": "broader alias/downstream evidence found for previously not-found component"
+    }
+  ],
+  "constraints": {
+    "training_performed": false,
+    "model_predict_executed": false,
+    "array_reconstructed": false,
+    "new_physics_solved": false,
+    "FMM_executed": false,
+    "V15_artifact_changed": false
+  },
+  "recommendation": "Proceed to a deterministic reconstruction-feasibility audit. Reconstruct nothing yet. Bind the exact immutable inputs and source expressions for K/phi, pressure, Q, V, and producer IDs.",
+  "next_milestone": "V16A-R3 \u2014 Deterministic Frozen Component Reconstruction Feasibility Audit"
+}

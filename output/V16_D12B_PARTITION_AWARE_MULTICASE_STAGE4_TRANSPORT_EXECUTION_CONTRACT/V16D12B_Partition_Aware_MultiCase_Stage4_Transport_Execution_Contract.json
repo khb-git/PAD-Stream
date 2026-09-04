@@ -1,0 +1,106 @@
+{
+  "milestone": "V16D-12B",
+  "status": "V16D_PARTITION_AWARE_MULTICASE_STAGE4_TRANSPORT_EXECUTION_CONTRACT_FROZEN_TRAIN_BATCH_GENERATION_AUTHORIZED",
+  "split": {
+    "train": [
+      "0020",
+      "0015",
+      "0013",
+      "0004",
+      "0006",
+      "0002",
+      "0023",
+      "0016",
+      "0009",
+      "0019",
+      "0017",
+      "0024",
+      "0003",
+      "0011",
+      "0014",
+      "0007"
+    ],
+    "validation": [
+      "0010",
+      "0025",
+      "0008",
+      "0012"
+    ],
+    "locked_ood_test": [
+      "0005",
+      "0018",
+      "0021",
+      "0022"
+    ]
+  },
+  "target_days": [
+    30,
+    60,
+    100,
+    150,
+    250,
+    365,
+    500,
+    750,
+    1000
+  ],
+  "per_case_Y_shape": [
+    9,
+    1078,
+    201
+  ],
+  "certified_case0002": {
+    "artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D12A_CASE0002_SOURCEAUTHENTIC_9TIME_STAGE4_TRANSPORT_PILOT\\V16D12A_Case0002_SourceAuthentic_Y_Transport.npz",
+    "sha256": "211cacb7752c9a11f81d009a6968aeee414d6b5e3df524f0300e5c490ef7ee70",
+    "policy": "IMMUTABLE_DO_NOT_RECOMPUTE"
+  },
+  "execution": {
+    "unit": "ONE_COMPLETE_FOUNDATION_CASE_PER_JOB",
+    "partial_case": "NOT_CERTIFIED",
+    "completed_case": "IMMUTABLE",
+    "order": [
+      "TRAIN",
+      "VALIDATION",
+      "LOCKED_OOD_TEST"
+    ],
+    "restart": "SKIP_ONLY_CERTIFIED_COMPLETED_CASE",
+    "locked_ood_test": "FINAL_EVALUATION_ONLY"
+  },
+  "physics": {
+    "kinematics": "POLLOCK_AUTHORITATIVE",
+    "capillary_metric": "D9R1_M_FACE_DIRECT",
+    "node_M": "SIDECAR_CELL_COEFFICIENT_ONLY",
+    "FMM_ADV": "AUXILIARY_ONLY",
+    "legacy_exp_Nc_xD": "PROHIBITED"
+  },
+  "gates": {
+    "D12AR_certified_Y_exact_SHA": true,
+    "D11_split_source_bound": true,
+    "D12_source_binding_bound": true,
+    "D12AR_pilot_source_bound": true,
+    "exact_24_cases": true,
+    "split_16_train_4_val_4_test": true,
+    "partitions_disjoint": true,
+    "partition_union_24_unique": true,
+    "Case0002_train_and_certified": true,
+    "all_24_D9R1_geometry_bound": true,
+    "nine_time_schedule": true,
+    "one_case_one_restartable_job": true,
+    "completed_case_artifacts_immutable": true,
+    "Case0002_no_recompute": true,
+    "train_before_validation": true,
+    "validation_before_locked_test": true,
+    "locked_test_evaluation_only": true,
+    "no_OOD_normalization_fit": true,
+    "no_OOD_model_selection": true,
+    "no_OOD_early_stopping": true,
+    "no_OOD_hyperparameter_tuning": true,
+    "Pollock_primary": true,
+    "C7_Mface_primary": true,
+    "FMM_ADV_auxiliary_only": true,
+    "legacy_exp_Nc_xD_prohibited": true,
+    "no_transport_executed": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-12C \u2014 Restartable TRAIN-Partition Stage-4 Transport Generation (15 remaining cases; Case0002 reused immutable)"
+}

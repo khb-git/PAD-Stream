@@ -1,0 +1,145 @@
+{
+  "milestone": "V16D-3",
+  "status": "V16D_CASE0001_SGSIM_GEOSTATISTICAL_RECIPE_SOURCE_BOUND_GENERATION_CONTRACT_CAN_PROCEED",
+  "candidate_count": 3518,
+  "indicators": {
+    "sgsim_source_evidence": true,
+    "variogram_evidence": true,
+    "azimuth_evidence": true,
+    "seed_evidence": true,
+    "vertical_evidence": true
+  },
+  "top_candidates": [
+    {
+      "path": "PAD_Stream_V16D3_Exact_Case0001_SGSim_Geostatistical_Recipe_Provenance_and_Executable_Binding_Audit.py",
+      "sha256": "59d214a8f7184f71d814e21d8af82b8b64bbdf4d9e4ac76d46a81f183e1a56ac",
+      "score": 11,
+      "snippet": "ython from pathlib import Path import json,re,hashlib,csv ROOT=Path(__file__).resolve().parent D2=ROOT/\"output\"/\"V16_D2_SGSIM_MULTI_REALIZATION_GEOLOGY_RECIPE_CONTROL_SPACE_DESIGN_AUTHORITY_CONTRACT\"/\"PAD_Stream_V16D2_Summary.json\" OUT=ROOT/\"output\"/\"V16_D3_EXACT_CASE0001_SGSIM_RECIPE_PROVENANCE_EXECUTABLE_BINDING_AUDIT\";OUT.mkdir(parents=True | ,\".md\",\".xml\",\".par\",\".params\",\".sgems\",\".prj\",\".project\",\".yaml\",\".yml\",\".ini\",\".cfg\",\".log\"} TOKENS=[\"sgsim\",\"sgems\",\"variogram\",\"azimuth\",\"range\",\"seed\",\"50x50x15\",\"gauss\",\"transform_sgsim_perm\",\"ah_min\",\"vertical\"] def sha(p): h=hashlib.sha256() with p.open(\"rb\") as f: for b in iter(lambda:f.read(1048576),b\"\"):h.update(b) return h.hexdige | \",\".par\",\".params\",\".sgems\",\".prj\",\".project\",\".yaml\",\".yml\",\".ini\",\".cfg\",\".log\"} TOKENS=[\"sgsim\",\"sgems\",\"variogram\",\"azimuth\",\"range\",\"seed\",\"50x50x15\",\"gauss\",\"transform_sgsim_perm\",\"ah_min\",\"vertical\"] def sha(p): h=hashlib.sha256() with p.open(\"rb\") as f: for b in iter(lambda:f.read(1048576),b\"\"):h.update(b) return h.hexdigest() def m | ,\".sgems\",\".prj\",\".project\",\".yaml\",\".yml\",\".ini\",\".cfg\",\".log\"} TOKENS=[\"sgsim\",\"sgems\",\"variogram\",\"azimuth\",\"range\",\"seed\",\"50x50x15\",\"gauss\",\"transform_sgsim_perm\",\"ah_min\",\"vertical\"] def sha(p): h=hashlib.sha256() with p.open(\"rb\") as f: for b in iter(lambda:f.read(1048576),b\"\"):h.update(b) return h.hexdigest() def main(): print(\" | ,\".cfg\",\".log\"} TOKENS=[\"sgsim\",\"sgems\",\"variogram\",\"azimuth\",\"range\",\"seed\",\"50x50x15\",\"gauss\",\"transform_sgsim_perm\",\"ah_min\",\"vertical\"] def sha(p): h=hashlib.sha256() with p.open(\"rb\") as f: for b in iter(lambda:f.read(1048576),b\"\"):h.update(b) return h.hexdigest() def main(): print(\"=\"*78);print(\"PAD-Stream V16D-3\") print(\"Exact Cas"
+    },
+    {
+      "path": "PAD_Stream_V16D2_SGSim_Multi_Realization_Geology_Recipe_and_Control_Space_Design_Authority_Contract.py",
+      "sha256": "0d30fcb704df6d70bfeb172f2c45ff549719c50faf64263b867752e0037d4a27",
+      "score": 8,
+      "snippet": "N_CASE_TRUE_OOD_GEOLOGY_CONTROL_EXPANSION_AUTHORITY_CONTRACT\"/\"PAD_Stream_V16D1_Summary.json\" OUT=ROOT/\"output\"/\"V16_D2_SGSIM_MULTI_REALIZATION_GEOLOGY_RECIPE_CONTROL_SPACE_DESIGN_AUTHORITY_CONTRACT\";OUT.mkdir(parents=True,exist_ok=True) def main(): print(\"=\"*78);print(\"PAD-Stream V16D-2\") print(\"SGSim Multi-Realization Geology Recipe and C | class\":{ \"method\":\"sequential Gaussian simulation (SGSim)\", \"stationarity_class\":\"same as Foundation Case 0001\", \"variogram_vertical_range_ft\":15.0, \"azimuth_deg\":30.0, \"continuity_and_variogram_parameters\":\"MUST BE BOUND TO THE CASE-0001 SOURCE RECIPE BEFORE GENERATION; D2 DOES NOT GUESS UNRECOVERED SGeMS PARAMETERS\", \"realization_rul | an simulation (SGSim)\", \"stationarity_class\":\"same as Foundation Case 0001\", \"variogram_vertical_range_ft\":15.0, \"azimuth_deg\":30.0, \"continuity_and_variogram_parameters\":\"MUST BE BOUND TO THE CASE-0001 SOURCE RECIPE BEFORE GENERATION; D2 DOES NOT GUESS UNRECOVERED SGeMS PARAMETERS\", \"realization_rule\":\"independent stochastic seed per | RECIPE BEFORE GENERATION; D2 DOES NOT GUESS UNRECOVERED SGeMS PARAMETERS\", \"realization_rule\":\"independent stochastic seed per geology_id; seed registry frozen before generation\"}, \"property_transform\":{ \"permeability_transform\":\"same frozen Case-0001 Gaussian-to-permeability transform implementation\", \"permeability_support_mD\":[50.0,1"
+    },
+    {
+      "path": "output\\V16_D2_SGSIM_MULTI_REALIZATION_GEOLOGY_RECIPE_CONTROL_SPACE_DESIGN_AUTHORITY_CONTRACT\\PAD_Stream_V16D2_Summary.json",
+      "sha256": "2943e1833732e2369c69dfc2e3308a0266d6990268b44c23cbda257063601400",
+      "score": 8,
+      "snippet": "{ \"milestone\": \"V16D-2\", \"status\": \"V16D_SGSIM_MULTI_REALIZATION_EXPERIMENT_DESIGN_FROZEN_EXACT_CASE0001_GEOSTATISTICAL_RECIPE_BINDING_REQUIRED\", \"recipe\": { \"grid\": { \"nx\": 50, \"ny\": 50, \"nz\": 15, \"dx_ft\": 20.0, \"dy_ft\": 20.0, | \"method\": \"sequential Gaussian simulation (SGSim)\", \"stationarity_class\": \"same as Foundation Case 0001\", \"variogram_vertical_range_ft\": 15.0, \"azimuth_deg\": 30.0, \"continuity_and_variogram_parameters\": \"MUST BE BOUND TO THE CASE-0001 SOURCE RECIPE BEFORE GENERATION; D2 DOES NOT GUESS UNRECOVERED SGeMS PARAMETERS\", \" | (SGSim)\", \"stationarity_class\": \"same as Foundation Case 0001\", \"variogram_vertical_range_ft\": 15.0, \"azimuth_deg\": 30.0, \"continuity_and_variogram_parameters\": \"MUST BE BOUND TO THE CASE-0001 SOURCE RECIPE BEFORE GENERATION; D2 DOES NOT GUESS UNRECOVERED SGeMS PARAMETERS\", \"realization_rule\": \"independent stochasti | E BEFORE GENERATION; D2 DOES NOT GUESS UNRECOVERED SGeMS PARAMETERS\", \"realization_rule\": \"independent stochastic seed per geology_id; seed registry frozen before generation\" }, \"property_transform\": { \"permeability_transform\": \"same frozen Case-0001 Gaussian-to-permeability transform implementation\", \"permeability_s"
+    },
+    {
+      "path": "output\\V15_SG7E1R16\\V15SG7E1R16_L2_Creation_Evaluation_Source_Trace.csv",
+      "sha256": "181aac20a03fa8055942f0d8b2bc37a52e9c6b13c3ac314a8f150a577e2155e2",
+      "score": 7,
+      "snippet": "\"\"next_milestone\"\": ( \"\"V15-SG7 - Buckley-Leverett transport \"\" \"\"on SGSim streamline TOF coordinates\"\" ), } \",terminal_semantics:tau_end;xi_semantics:xi;tof_semantics:TOF;tof_semantics:tau_end;tof_semantics:TOF C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v | ;multi_time_semantics:times_days C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG5C_Seed_Density_Convergence.py,3116,\"\"\"maximum_covered_grid_L1\"\",\",\" plot_metric( case_rows, \"\"N0_projection_MAE_1000d\"\", \"\"N=0 projection MAE at 1000 days\"\", \"\"V15SG5C_UnsupportedProjection_v | ected_pred.astype(\",multi_time_semantics:times_days C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\transform_sgsim_perm.py,70,if not path.exists():,\" line 1: property name remaining lines: one value per grid cell SGeMS ordering is assumed to be: X fastest, then Y, then Z. Therefore reshaping to (NZ, NY, N"
+    },
+    {
+      "path": "output\\V15_SG7E1R6\\V15SG7E1R6_Function_Caller_Inventory.csv",
+      "sha256": "69a58ef178ff568f3a53df3bf92f841f8b607cb4ecc276249ac83eaa61a0af4c",
+      "score": 7,
+      "snippet": "\",{},\"c3s.get(\"\"simulator\"\", {})\" C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG1_SGSim_Geology_Integration.py,40,OUTPUT_DIR.mkdir,mkdir,[],\"{\"\"parents\"\": \"\"True\"\", \"\"exist_ok\"\": \"\"True\"\"}\",\"OUTPUT_DIR.mkdir(parents=True, exist_ok=True)\" C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\P | Conservative_Graph_Mapback_Deployment\\PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment.py,70,np.random.seed,seed,\"[\"\"seed\"\"]\",{},np.random.seed(seed) C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\dependencies\\PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment\\PAD_Stream_V15E3_Sequential_Co | source, destination, )\" C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\transform_sgsim_perm.py,50,OUTPUT_DIR.mkdir,mkdir,[],\"{\"\"parents\"\": \"\"True\"\", \"\"exist_ok\"\": \"\"True\"\"}\",\"OUTPUT_DIR.mkdir(parents=True, exist_ok=True)\" C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\transform_sgsim_perm."
+    },
+    {
+      "path": "output\\V15_SG7E1R6\\V15SG7E1R6_Function_Definition_Inventory.csv",
+      "sha256": "ab64cbe08e822185106ab78f158a606adcc3be18d66828d733dfdbfd9aa4e872",
+      "score": 7,
+      "snippet": "t(json.dumps(summary, indent=2))\" C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG1_SGSim_Geology_Integration.py,128,cell_center_x,cell_center_x,i,\"def cell_center_x(i): \"\"\"\"\"\"X coordinate of Cartesian cell center in ft.\"\"\"\"\"\" return (i + 0.5) * DX_FT\" C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_ | equential_Conservative_Graph_Mapback_Deployment\\PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment.py,69,seed_everything,seed_everything,seed,\"def seed_everything(seed: int = SEED) -> None: np.random.seed(seed) torch.manual_seed(seed) torch.set_num_threads(max(1, min(8, os.cpu_count() or 1))) try: torch. | in new_rows ) checks = [ ( \" C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\transform_sgsim_perm.py,56,load_sgems_gaussian,load_sgems_gaussian,path,\"def load_sgems_gaussian(path: Path) -> np.ndarray: \"\"\"\"\"\" Read the exported SGeMS Gaussian realization. The SGeMS CSV contains: line 1: property n"
+    },
+    {
+      "path": "output\\V15_SG7E1R7\\V15SG7E1R7_Unresolved_Container_Provenance.csv",
+      "sha256": "6f20c226a9a7284d6cb772357328ed5f2ba948201919c2762ba280071395ae10",
+      "score": 7,
+      "snippet": "\", \"\"sha256\"\", \"\"bytes\"\"])\",,csv, C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG1_SGSim_Geology_Integration.py,37,INPUT_PERM_FILE,\"ROOT / \"\"SGSIM_50x50x15_PERM_MD.csv\"\"\",,csv, C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG1_SGSim_Geology_Integration.py,169,values,\"np.l | khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG5_Exact_Pollock_Streamlines.py,794,position,\"seed[ \"\"position_m\"\" ].copy()\",,copy, C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG5_Exact_Pollock_Streamlines.py,802,points,\"[ position.copy() ]\",,copy, C:\\User | ].keys() ), )\",,csv, C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\transform_sgsim_perm.py,47,INPUT_FILE,\"ROOT / \"\"SGSIM_50x50x15_GAUSS.csv\"\"\",,csv, C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\transform_sgsim_perm.py,52,PERM_ONLY_FILE,\"ROOT / \"\"SGSIM_50x50x15_PERM_MD.csv\"\"\",,csv, C:"
+    },
+    {
+      "path": "output\\V15_SG7E1R26E\\V15SG7E1R26E_Runtime_Function_Candidate_Audit.csv",
+      "sha256": "2e850709767e05ca5932f2f2e7107d210062dcd7ed965710f62fc81e7ad343c7",
+      "score": 6,
+      "snippet": "9,206,0,False,85 C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3B_Canonical_vs_SGSim_Input_Support_Transfer_Density_Audit.py,main,150,,0,0,0,34,308,63,0,False,85 C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3C_Conditional_Feature_Target_Scaling_Transfer_Audit.py | ,path,0,0,0,11,20,23,2,False,120 C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG5C_Seed_Density_Convergence.py,collect_case_metrics,1427,workspace;density,0,0,0,26,31,9,1,False,117 C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B4_Reference_PIRNN_Training.py,validation | n.py,extract_metrics,638,row,0,0,0,4,0,0,1,False,30 C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\transform_sgsim_perm.py,print_statistics,123,z;k,0,0,0,0,32,0,0,False,30 C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG3_FiveSpot_Pressure_Solve.py,load_face_permeabilities,236,,0,0,0,0,6,0,1,False,28 C"
+    },
+    {
+      "path": "output\\V15_SG7E1R7\\V15SG7E1R7_Function_Return_Trace.csv",
+      "sha256": "2d7d17901a6e39e33405be577898901e8c0f9a088502d8c6e1c8fa8b24e527e1",
+      "score": 6,
+      "snippet": "R_Sequential_Audit.csv\"\", ]\", C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG1_SGSim_Geology_Integration.py,cell_center_x,128,130,i,(i + 0.5) * DX_FT, C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG1_SGSim_Geology_Integration.py,cell_center_y,133,135,j,(j + 0.5) * DY | C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG5_Exact_Pollock_Streamlines.py,face_seed_positions,654,738,face_info,seeds, C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG5_Exact_Pollock_Streamlines.py,build_seeds,741,779,qx;qy;qz,\"faces, seeds\", C:\\Users\\khali\\PycharmPr | erence\"\", ], ), }\", C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\transform_sgsim_perm.py,load_sgems_gaussian,56,83,path,\"values.reshape((NZ, NY, NX), order=\"\"C\"\")\", C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\transform_sgsim_perm.py,transform_to_permeability,86,120,z,\"u, k\","
+    },
+    {
+      "path": "PAD_Stream_V15SG1_SGSim_Geology_Integration.py",
+      "sha256": "c11242da209c0869bbb64cde0fec7f9f5d3fbb4d8117ab526a0917567923b722",
+      "score": 5,
+      "snippet": ".pyplot as plt # ====================================================================== # PAD-Stream Version 15-SG1 # SGSim Geological Model Integration # # PURPOSE # ------- # 1. Load the finalized 50 x 50 x 15 SGSim permeability realization. # 2. Preserve SGeMS X-fastest / Y / Z ordering. # 3. Construct directional permeability: # Kx"
+    },
+    {
+      "path": "output\\V15_SG7E1R26IR19B\\V15SG7E1R26IR19B_Runtime_Environment_File_Inventory.csv",
+      "sha256": "dc468af69c194cad1322cb2998d3c036164e659bbb94a27373dfb50ee210ce20",
+      "score": 5,
+      "snippet": "TABLE.py,PYTHON_SOURCE,45069,True C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG1_SGSim_Geology_Integration.py,PYTHON_SOURCE,24327,True C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG2_Anisotropic_Transmissibility.py,PYTHON_SOURCE,19040,True C:\\Users\\khali\\PycharmProjec | 19460,True C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\.venv\\Lib\\site-packages\\keras\\src\\random\\seed_generator.py,PYTHON_SOURCE,6301,True C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\.venv\\Lib\\site-packages\\keras\\src\\random\\seed_generator_test.py,PYTHON_SOURCE,4064,True C:\\Users\\khali\\PycharmProj | Portable_v2\\RUN_V15G0_WINDOWS.bat,LAUNCHER,285,True C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\transform_sgsim_perm.py,PYTHON_SOURCE,9529,True"
+    },
+    {
+      "path": "transform_sgsim_perm.py",
+      "sha256": "98a85f5bc1c1bab3a460e8a2efb2acfe3c589fd1a52f8798990f9484ca0ccbb1",
+      "score": 5,
+      "snippet": "yplot as plt from scipy.stats import norm # ============================================================ # PAD-Stream SGSim permeability transformation # ============================================================ # --------------------------- # Grid definition # --------------------------- NX = 50 NY = 50 NZ = 15 DX_FT = 20.0 DY_FT = 20."
+    },
+    {
+      "path": ".venv\\Lib\\site-packages\\keras\\src\\backend\\numpy\\image.py",
+      "sha256": "e0ad440bd56ec7ceaab48647ee8b141082335bd9f7567ab879ec52eba82cee39",
+      "score": 4,
+      "snippet": "y as np from keras.src import backend from keras.src.backend.numpy.core import convert_to_tensor from keras.src.random.seed_generator import draw_seed from keras.src.utils.module_utils import scipy RESIZE_INTERPOLATIONS = ( \"bilinear\", \"nearest\", \"lanczos3\", \"lanczos5\", \"bicubic\", ) AFFINE_TRANSFORM_INTERPOLATIONS = { #"
+    },
+    {
+      "path": ".venv\\Lib\\site-packages\\keras\\src\\ops\\image.py",
+      "sha256": "3eb15b5ebb961ae6bc1e182f5376149f94d6e34131bb749c0188c006d4d6fa8a",
+      "score": 4,
+      "snippet": "20.0, sigma=5.0, interpolation=\"bilinear\", fill_mode=\"reflect\", fill_value=0.0, seed=None, data_format=None, *, name=None, ): super().__init__(name=name) self.alpha = alpha self.sigma = sigma self.interpolation = interpolation self.fill"
+    },
+    {
+      "path": ".venv\\Lib\\site-packages\\keras\\src\\ops\\image_test.py",
+      "sha256": "eb9e5cb8366e5278c5ed94666937fd218978999555502c1719a1e15bdadf1764",
+      "score": 4,
+      "snippet": "images, alpha=20.0, sigma=5.0, interpolation=\"bilinear\", fill_mode=\"reflect\", fill_value=0.0, seed=None, data_format=None, ): data_format = backend.standardize_data_format(data_format) images = np.asarray(images) input_dtype = images.dtype alpha = np.asarray(alpha, dtype=input_dtype) sigma ="
+    },
+    {
+      "path": ".venv\\Lib\\site-packages\\matplotlib\\axes\\_axes.py",
+      "sha256": "f246237d5c9edf1b8993b2cd1fa5dccb8831e091fd721b66503e258156711cad",
+      "score": 4,
+      "snippet": ".. plot:: import numpy import matplotlib.pyplot as plt np.random.seed(19680801) n= 300 x = np.random.standard_normal(n) y = np.random.standard_normal(n) fig, ax = plt.subplots(figsize=(4, 4)) h = ax.hexbin(x, y, g"
+    },
+    {
+      "path": ".venv\\Lib\\site-packages\\matplotlib\\tests\\test_colors.py",
+      "sha256": "e2604de4c8e80ff407a3b3fdf1c32699e54380a6a3bddfb85a816462e1238c6e",
+      "score": 4,
+      "snippet": "uld be mathematically equivalent. Illuminates a cone from a range of angles. \"\"\" def alternative_hillshade(azimuth, elev, z): illum = _sph2cart(*_azimuth2math(azimuth, elev)) illum = np.array(illum) dy, dx = np.gradient(-z) dy = -dy dz = np.ones_like(dy) normals = np.dstack([dx, dy, d | n(100) * 10 + 2 assert_array_equal(cmshould(mynorm(x)), cmref(refnorm(x))) def test_CenteredNorm(): np.random.seed(0) # Assert equivalence to symmetrical Normalize. x = np.random.normal(size=100) x_maxabs = np.max(np.abs(x)) norm_ref = mcolors.Normalize(vmin=-x_maxabs, vmax=x_maxabs) norm = mcolors.CenteredNorm("
+    },
+    {
+      "path": ".venv\\Lib\\site-packages\\pandas\\core\\generic.py",
+      "sha256": "f58ee02e38dbf1acc2667ad75e4a3fcee155d01fed48d68c4175f4f1af3863c7",
+      "score": 4,
+      "snippet": "ke, BitGenerator, np.random.RandomState, np.random.Generator, optional If int, array-like, or BitGenerator, seed for random number generator. If np.random.RandomState or np.random.Generator, use as given. Default ``None`` results in sampling with the current state of np.random. axis : {0 or 'index',"
+    },
+    {
+      "path": ".venv\\Lib\\site-packages\\pandas\\plotting\\_core.py",
+      "sha256": "bcbef7438a2418596ed5dce4300a6d155b42db84deae4c774ec63aa8aadf9031",
+      "score": 4,
+      "snippet": "df.boxplot()`` or indicating the columns to be used: .. plot:: :context: close-figs >>> np.random.seed(1234) >>> df = pd.DataFrame( ... np.random.randn(10, 4), columns=[\"Col1\", \"Col2\", \"Col3\", \"Col4\"] ... ) >>> boxplot = df.boxplot(column=[\"Col1\", \"Col2\", \"Col3\"]) # doctest: +SKIP"
+    },
+    {
+      "path": ".venv\\Lib\\site-packages\\pygments\\lexers\\_asy_builtins.py",
+      "sha256": "ce0e787c6860cd65d0524ebea99e8e5b91932fd7783ab9c1f12250923ac3d31b",
+      "score": 4,
+      "snippet": "at', 'autoscale', 'autoscale3', 'axes', 'axes3', 'axialshade', 'axis', 'axiscoverage', 'azimuth', 'babel', 'background', 'bangles', 'bar', 'barmarksize', 'barsize', 'basealign', 'baseline', 'bbox', 'beep', 'begin', 'beginclip', 'begingroup', 'beginpoint',"
+    }
+  ],
+  "gates": {
+    "D2_bound": true,
+    "local_source_search_completed": true,
+    "candidate_inventory_written": true,
+    "numerical_similarity_not_used": true,
+    "no_missing_parameter_invention": true,
+    "no_new_realization_generated": true,
+    "exact_executable_recipe_bound": true
+  },
+  "generation_authorized": false,
+  "next_milestone": "V16D-4 \u2014 Predeclared SGSim Seed Registry and Case 0002+ Generation Contract"
+}

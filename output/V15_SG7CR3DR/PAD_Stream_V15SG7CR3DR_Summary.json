@@ -1,0 +1,14 @@
+{
+  "milestone": "V15-SG7C-R3D-R",
+  "status": "FROZEN_DEPLOYMENT_CALIBRATION_CONTRACT_READY",
+  "validation_passed": true,
+  "training_performed": false,
+  "frozen_model_modified": false,
+  "failed_R3D_assumption_reproduced": true,
+  "front_shell_required_correction_MAE": 0.009261960129912362,
+  "very_long_TOF_required_correction_MAE": 0.0047112654138375,
+  "front_correction_sign_agreement": 1.0,
+  "ideal_front_error_reduction_fraction": 0.9999979042061549,
+  "recommendation": "Proceed to controlled SG7C-R3E residual calibration. Keep SG7B-11 frozen. Permit material front correction only toward the validated canonical target and require the complete SG7B-10S/15R front outcome contract plus new directionality/overshoot safeguards.",
+  "next_milestone": "V15-SG7C-R3E \u2014 Controlled Frozen-Model Deployment Calibration"
+}

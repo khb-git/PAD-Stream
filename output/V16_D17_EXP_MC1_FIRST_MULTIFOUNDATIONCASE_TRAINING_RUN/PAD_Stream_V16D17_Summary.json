@@ -1,0 +1,22 @@
+{
+  "milestone": "V16D-17",
+  "experiment": "EXP-MC1",
+  "seed": 161501,
+  "epochs_executed": 63,
+  "best_epoch": 38,
+  "best_raw_val_MSE": 1.651867205509916e-05,
+  "best_checkpoint_validation": {
+    "loss": 1.651867205509916e-05,
+    "mae": 0.0018364625284448266
+  },
+  "runtime_seconds": 25018.05412006378,
+  "checkpoint": {
+    "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D17_EXP_MC1_FIRST_MULTIFOUNDATIONCASE_TRAINING_RUN\\V16D17_EXP_MC1_Best.weights.h5",
+    "sha256": "a6bc919871a5c8726a964e9d8dd88dd366596f2884b880502c233ba225249ac9"
+  },
+  "architecture_sha256": "57420aca3f13492fb68a10aa6141b7784772a3b225361b25b59bf2b6d80b12cc",
+  "locked_OOD_opened": false,
+  "locked_OOD_evaluated": false,
+  "status": "V16D_EXP_MC1_MULTIFOUNDATIONCASE_PREDICTIVE_BASELINE_TRAINED_BEST_VALIDATION_CHECKPOINT_FROZEN_LOCKED_OOD_FINAL_EVALUATION_AUTHORIZED",
+  "next_milestone": "V16D-18 \u2014 EXP-MC1 Locked Case-Level OOD Final Evaluation (One Touch)"
+}

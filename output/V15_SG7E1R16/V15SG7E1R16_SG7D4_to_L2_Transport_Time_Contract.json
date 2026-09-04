@@ -1,0 +1,34 @@
+{
+  "milestone": "V15-SG7E1R16",
+  "status": "SG7D4_L2_TRANSPORT_STATE_IS_MULTI_TIME",
+  "diagnosis": "FROZEN_L2_LINEAGE_CONTAINS_MULTIPLE_PHYSICAL_TIME_STATES",
+  "transport_state": {
+    "classification": "MULTI_TIME_TRANSPORT_STATE",
+    "resolved_physical_time_days": null,
+    "explicit_physical_time_candidates": [
+      100.0,
+      250.0,
+      500.0
+    ],
+    "has_terminal_semantics": true,
+    "has_xi_semantics": true,
+    "has_tof_semantics": true,
+    "has_normalized_semantics": true,
+    "has_multi_time_semantics": true
+  },
+  "numerical_lineage": {
+    "SG7D6_grid_sha256": "6bf6661e2344d51c54df4689758a1998952454e0bc13797b8e4da57824cf9522",
+    "SG7D4_grid_sha256": "6bf6661e2344d51c54df4689758a1998952454e0bc13797b8e4da57824cf9522",
+    "SG7D4_to_SG7D6_exact_hash_match": true
+  },
+  "constraints": {
+    "candidate_performance_used": false,
+    "physical_time_assigned_by_similarity": false,
+    "SG7E_gate_evaluated": false,
+    "threshold_changed": false,
+    "posthoc_alignment": false,
+    "deployment_correction_performed": false
+  },
+  "recommendation": "The L2 lineage is multi-time rather than a single untimed snapshot. Reconstruct the per-time SG7D map-back sequence from the corresponding L2 states and preserve time labels before evaluating historical SG7E gates.",
+  "next_milestone": "V15-SG7E1R17 \u2014 Multi-Time L2-to-Grid Deployment Reconstruction Audit"
+}

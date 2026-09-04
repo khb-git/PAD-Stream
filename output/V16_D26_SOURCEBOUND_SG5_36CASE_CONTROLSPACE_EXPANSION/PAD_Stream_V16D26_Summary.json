@@ -1,0 +1,50 @@
+{
+  "milestone": "V16D-26",
+  "status": "V16D_D26_SG5_BINDING_BLOCKED",
+  "D25_sha256": "55c5831bf0f0166355ec3542a221280bededf08004700ffedf13a7ae56538e45",
+  "SG5": {
+    "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG5_Exact_Pollock_Streamlines.py",
+    "sha256": "2989fe58d1fd78fe9f9c03176dbb3ff066faf359f7edaf028cbdc0fea85135f2",
+    "source_evidenced_hashes": []
+  },
+  "prior_runner_candidates": [
+    {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V16D8B_Full_Case0002_0025_SourceBound_SG5_Pollock_Ensemble_Execution.py",
+      "sha256": "f8669eb3dd9f5b886dc7cde5e4c26b0c85c1a1967386901a76d51301ed9a32ec",
+      "evidence": [
+        "R1=ROOT/\"output\"/\"V16_D8R1_EXACT_SG5_SEED_CONTAINER_ADAPTER_REPAIR_CASE0002_POLLOCK_PILOT\"/\"PAD_Stream_V16D8R1_Summary.json\"",
+        "SG5=ROOT/\"PAD_Stream_V15SG5_Exact_Pollock_Streamlines.py\"",
+        "OUT=ROOT/\"output\"/\"V16_D8B_FULL_CASE0002_0025_SOURCEBOUND_SG5_POLLOCK_ENSEMBLE\"",
+        "s=importlib.util.spec_from_file_location(\"v16d8b_sg5\",SG5)",
+        "print(\"Full Case 0002-0025 Source-Bound SG5 Pollock Ensemble Execution\");print(\"=\"*78)",
+        "if r[\"status\"]!=\"V16D_CASE0002_SOURCEBOUND_SG5_POLLOCK_PILOT_CERTIFIED_FULL_24CASE_POLLOCK_EXECUTION_AUTHORIZED\":raise RuntimeError(\"D8R1 mismatch\")",
+        "if sha(SG5)!=r[\"SG5_sha256\"]:raise RuntimeError(\"SG5 hash changed\")",
+        "D8B REPEATS THE CERTIFIED D8R1 SOURCE-NATIVE SG5 PATH FOR ALL 24 CASES:",
+        "construct_face_pore_velocities",
+        "build_seeds -> (faces, seeds)",
+        "trace_streamlines",
+        "validate_streamlines",
+        "THE SOURCE SG5 VALIDATION CONTRACT IS THE CASE-LEVEL AUTHORITY.",
+        "vx,vy,vz=sg5.construct_face_pore_velocities(qx,qy,qz)[:3]",
+        "faces,seeds=sg5.build_seeds(qx,qy,qz)",
+        "streams=sg5.trace_streamlines(seeds,vx,vy,vz)",
+        "validation=sg5.validate_streamlines(faces,seeds,streams)",
+        "gates={\"D8R1_bound\":True,\"SG5_hash_exact\":True,\"all_24_attempted\":len(recs)==24,",
+        "status=\"V16D_CASE0002_0025_SOURCEBOUND_SG5_POLLOCK_ENSEMBLE_CERTIFIED_READY_FOR_MULTICASE_TRAVELTIME_HIERARCHY\" if ok else \"V16D_MULTICASE_SG5_POLLOCK_ENSEMBLE_HAS_DOCUMENTED_FAILURES\""
+      ]
+    }
+  ],
+  "flow_artifact_count": 36,
+  "gates": {
+    "D25_SHA_exact": true,
+    "SG5_exists": true,
+    "D25_status_authorizes_Pollock": true,
+    "prior_SG5_runner_found": true,
+    "SG5_hash_source_bound": false,
+    "D25_36_flow_artifacts_exist": true,
+    "36_unique_flow_artifacts": true,
+    "no_transport_executed_in_D26_binding": true,
+    "no_training": true
+  },
+  "next_milestone": "Resolve SG5 source/hash or D25 artifact binding; do not execute Pollock."
+}

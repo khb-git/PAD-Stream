@@ -1,0 +1,365 @@
+{
+  "milestone": "V16D-31D",
+  "status": "V16D_CONTROLSPACE_LOCKED_OOD_ONE_TOUCH_FINAL_EVALUATION_CONTRACT_FROZEN_OOD_REMAINS_SEALED_LEARNING_DATASET_ASSEMBLY_AUTHORIZED",
+  "upstream_sha256": {
+    "D31_summary": "107e2c5cedf9ac9fcebfea27d3290c84be9c0d0ae46f5cd6c0dce37fa0b5e33d",
+    "D31A_summary": "ccc6dbb748c8ffd465b5c0e7c40291b4a04a91957a554a68360957ffb8a5edc4",
+    "D31A_manifest": "b59d62bb839477b4158774c845b680b32a21543e9762645e95513f092992545b",
+    "D31B_summary": "87fe0042da478221f51210461d523e0d9c564996cd88756c99016b6ae57a7ba9",
+    "D31B_manifest": "39adcee9baf710a3e9910a88b999a82aaf237d4601c995a387b040798e0fe163",
+    "D31C_contract": "f08b7258dc645a6f866683200a0ff35cc7917a373fe27caec525152c65c2e153",
+    "D31C_summary": "2d4afc02fd0bd8213e195d5a00a6cbf1151fa3d5e6a83578520a99ba96c69b3e",
+    "D31CR1_manifest": "6e4fac63b6dcd8dad4e1675cd2d856811ffcf9231dadc50104349471da9df9a6",
+    "D31CR1_summary": "91d83cc1588d8ec54d1a3903128c9dbbcc4aedb7f82c554e590143372f855092"
+  },
+  "sealed_OOD_artifact_inventory": [
+    {
+      "case_id": "V16D_Foundation_Case_0029_R350_B1800",
+      "artifact_path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R350_B1800_Stage4_Transport.npz",
+      "artifact_sha256": "42379eca6af7e53ae585b42cec6a5dc7056c07598bcd87686ee0e69b3aee40d1",
+      "hash_verified_without_np_load": true,
+      "target_array_opened_in_D31D": false
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0029_R350_B2000",
+      "artifact_path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R350_B2000_Stage4_Transport.npz",
+      "artifact_sha256": "cd9acbf7b60ffb35053203070b8bf4c7572e48c48a0837b0f77adf2192aa11e5",
+      "hash_verified_without_np_load": true,
+      "target_array_opened_in_D31D": false
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0029_R350_B2200",
+      "artifact_path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R350_B2200_Stage4_Transport.npz",
+      "artifact_sha256": "7ecd25e7bc510de34ba0914dedf6048c552ea2425c31507916cd0fe87f75acdc",
+      "hash_verified_without_np_load": true,
+      "target_array_opened_in_D31D": false
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0029_R500_B1800",
+      "artifact_path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R500_B1800_Stage4_Transport.npz",
+      "artifact_sha256": "c2fe1343e632111e99b59f2ecb853f38451d33bfe71401920532d9280529393a",
+      "hash_verified_without_np_load": true,
+      "target_array_opened_in_D31D": false
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0029_R500_B2000",
+      "artifact_path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R500_B2000_Stage4_Transport.npz",
+      "artifact_sha256": "ee706e4ea371ee1478275a7c9bbb161c229d8f90423d634597192f0251baff92",
+      "hash_verified_without_np_load": true,
+      "target_array_opened_in_D31D": false
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0029_R500_B2200",
+      "artifact_path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R500_B2200_Stage4_Transport.npz",
+      "artifact_sha256": "8cd6a8e2125cac3566a3a95451bdf42a801f65a35afef4dd80a9b0c8bcb28b47",
+      "hash_verified_without_np_load": true,
+      "target_array_opened_in_D31D": false
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0029_R650_B1800",
+      "artifact_path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R650_B1800_Stage4_Transport.npz",
+      "artifact_sha256": "439a7db589964954b0261624982d88d8a40aec1efdf5229c4978b15b641f14aa",
+      "hash_verified_without_np_load": true,
+      "target_array_opened_in_D31D": false
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0029_R650_B2000",
+      "artifact_path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R650_B2000_Stage4_Transport.npz",
+      "artifact_sha256": "5b73c369547cd92bbc9f5214d617c139ce0cd7723cfa84f8aae58239c7479912",
+      "hash_verified_without_np_load": true,
+      "target_array_opened_in_D31D": false
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0029_R650_B2200",
+      "artifact_path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R650_B2200_Stage4_Transport.npz",
+      "artifact_sha256": "ce24247f4752c1113c765e3669d34eef4003dbfb8280ddea1473ac904207610b",
+      "hash_verified_without_np_load": true,
+      "target_array_opened_in_D31D": false
+    }
+  ],
+  "evaluation_contract": {
+    "contract_id": "V16D_CONTROLSPACE_LOCKED_OOD_ONE_TOUCH_FINAL_EVALUATION_1.0",
+    "milestone": "V16D-31D",
+    "scientific_role": "Pre-registered final evaluation protocol for the unseen geology0029 control-space LOCKED_OOD_TEST partition.",
+    "generalization_unit": "complete Foundation Case = one geology realization + one rate/BHP control pair",
+    "locked_OOD_identity": {
+      "partition": "LOCKED_OOD_TEST",
+      "geology": "0029",
+      "case_ids": [
+        "V16D_Foundation_Case_0029_R350_B1800",
+        "V16D_Foundation_Case_0029_R350_B2000",
+        "V16D_Foundation_Case_0029_R350_B2200",
+        "V16D_Foundation_Case_0029_R500_B1800",
+        "V16D_Foundation_Case_0029_R500_B2000",
+        "V16D_Foundation_Case_0029_R500_B2200",
+        "V16D_Foundation_Case_0029_R650_B1800",
+        "V16D_Foundation_Case_0029_R650_B2000",
+        "V16D_Foundation_Case_0029_R650_B2200"
+      ],
+      "rates_tpd": [
+        350,
+        500,
+        650
+      ],
+      "producer_bhp_psi": [
+        1800,
+        2000,
+        2200
+      ],
+      "target_days": [
+        30,
+        60,
+        100,
+        150,
+        250,
+        365,
+        500,
+        750,
+        1000
+      ],
+      "target_shape_each": [
+        9,
+        1078,
+        201
+      ],
+      "expected_predictor_shape_each": [
+        9,
+        1078,
+        201,
+        9
+      ],
+      "sealed_manifest_sha256": "6e4fac63b6dcd8dad4e1675cd2d856811ffcf9231dadc50104349471da9df9a6",
+      "sealed_summary_sha256": "91d83cc1588d8ec54d1a3903128c9dbbcc4aedb7f82c554e590143372f855092"
+    },
+    "preconditions_before_any_OOD_target_array_may_be_opened": {
+      "single_model_only": true,
+      "architecture_must_be_frozen_by_SHA256": true,
+      "checkpoint_must_be_frozen_by_SHA256": true,
+      "predictor_feature_order_must_be_frozen": true,
+      "TRAIN_only_normalization_authority_must_be_frozen_by_SHA256": true,
+      "normalization_fit_may_use": [
+        "TRAIN"
+      ],
+      "normalization_transform_only": [
+        "VALIDATION",
+        "LOCKED_OOD_TEST"
+      ],
+      "checkpoint_selection_may_use": [
+        "VALIDATION"
+      ],
+      "checkpoint_selection_may_not_use": [
+        "LOCKED_OOD_TEST"
+      ],
+      "model_selection_complete_before_opening": true,
+      "validation_metrics_frozen_before_opening": true,
+      "final_evaluator_source_must_be_frozen_by_SHA256_before_execution": true,
+      "all_9_OOD_artifact_hashes_must_match_this_contract": true
+    },
+    "one_touch_semantics": {
+      "preflight_before_opening": "All model/checkpoint/normalization/predictor/OOD artifact hashes must pass before any OOD target np.load.",
+      "opening_marker": "Immediately before loading the first OOD Y_transport array, the future evaluator must atomically create OOD_OPENED.lock.",
+      "rerun_rule": "If OOD_OPENED.lock exists, the final evaluator must refuse to run again under this experiment.",
+      "failure_after_opening": "A failure after OOD_OPENED.lock consumes the one-touch evaluation; it may be audited but not repeated or tuned against.",
+      "output_directory_rule": "The future final-evaluation output directory must be new and empty before the opening marker is created.",
+      "one_checkpoint": "Exactly one frozen validation-selected checkpoint is evaluated.",
+      "no_candidate_comparison": "No architecture/checkpoint/candidate ranking is permitted on OOD."
+    },
+    "prediction_semantics": {
+      "input_unit": "one streamline sequence of 201 Pollock nodes",
+      "prediction_target": "Stage-4 saturation Sw",
+      "prediction_shape_per_case": [
+        9,
+        1078,
+        201
+      ],
+      "Pollock_role": "AUTHORITATIVE_KINEMATICS",
+      "M_face_role": "PHYSICS_SIDECAR_NOT_PREDICTOR",
+      "FMM_ADV_role": "AUXILIARY_PREDICTORS_ONLY_IF_ALREADY_FROZEN_IN_FEATURE_ORDER",
+      "no_OOD_adaptation": true
+    },
+    "predeclared_final_metrics": {
+      "primary_aggregate": [
+        "MSE = mean((P-Y)^2) over all 9 cases, 9 times, 1078 streamlines, 201 nodes",
+        "RMSE = sqrt(MSE)",
+        "MAE = mean(abs(P-Y))"
+      ],
+      "secondary_aggregate": [
+        "mean_signed_error = mean(P-Y)",
+        "max_abs_error = max(abs(P-Y))",
+        "prediction_min",
+        "prediction_max"
+      ],
+      "case_level": [
+        "MSE",
+        "RMSE",
+        "MAE",
+        "mean_signed_error",
+        "max_abs_error",
+        "prediction_min",
+        "prediction_max"
+      ],
+      "time_resolved": {
+        "times_days": [
+          30,
+          60,
+          100,
+          150,
+          250,
+          365,
+          500,
+          750,
+          1000
+        ],
+        "metrics": [
+          "MSE",
+          "RMSE",
+          "MAE",
+          "max_abs_error"
+        ],
+        "aggregation": "all 9 OOD control cases x 1078 streamlines x 201 nodes at each predeclared time"
+      },
+      "control_resolved": {
+        "by_injection_rate_tpd": [
+          350,
+          500,
+          650
+        ],
+        "by_producer_bhp_psi": [
+          1800,
+          2000,
+          2200
+        ],
+        "metrics": [
+          "RMSE",
+          "MAE"
+        ],
+        "purpose": "predeclared descriptive control-space generalization audit; never used for model selection or retraining"
+      },
+      "prediction_physics_diagnostics": [
+        "fraction predictions below frozen Swc",
+        "fraction predictions above frozen 1-Sor",
+        "maximum lower-bound violation",
+        "maximum upper-bound violation",
+        "injector-node absolute error versus frozen injection boundary",
+        "temporal_negative_fraction using threshold -1e-8",
+        "spatial_positive_fraction using threshold +1e-8"
+      ],
+      "validation_generalization_gap": [
+        "OOD_RMSE / frozen_validation_RMSE",
+        "OOD_MAE / frozen_validation_MAE"
+      ],
+      "metric_precision": "accumulate error sums in float64 even if model prediction tensors are float32",
+      "missing_or_nonfinite_policy": "Any missing, shape-mismatched, or nonfinite prediction/target blocks make the one-touch evaluation INVALID; no adaptive repair or re-evaluation is permitted after opening."
+    },
+    "claim_policy": {
+      "OOD_is_final_test_not_tuning_signal": true,
+      "no_new_OOD_threshold_invention": true,
+      "no_pass_fail_threshold_fitted_to_OOD": true,
+      "validation_derived_claim_threshold_if_any": "must be frozen before OOD opening in the model/checkpoint freeze",
+      "report_results_even_if_poor": true,
+      "no_result_suppression": true,
+      "no_case_exclusion": true,
+      "no_time_exclusion": true,
+      "no_streamline_exclusion": true,
+      "no_node_exclusion": true,
+      "no_control_exclusion": true,
+      "no_deduplication": true
+    },
+    "post_opening_firewall": {
+      "retraining_same_experiment": "PROHIBITED",
+      "checkpoint_change": "PROHIBITED",
+      "architecture_change": "PROHIBITED",
+      "feature_change": "PROHIBITED",
+      "normalization_change": "PROHIBITED",
+      "loss_change": "PROHIBITED",
+      "hyperparameter_change": "PROHIBITED",
+      "threshold_tuning": "PROHIBITED",
+      "case_reweighting": "PROHIBITED",
+      "control_reweighting": "PROHIBITED",
+      "OOD_informed_model_selection": "PROHIBITED",
+      "allowed_after_opening": "scientific interpretation and explicitly labeled post-OOD diagnostics using the same frozen predictions/checkpoint; any new learning experiment requires a new independently locked test set"
+    },
+    "execution_in_D31D": {
+      "model_training": false,
+      "model_inference": false,
+      "validation_evaluation": false,
+      "OOD_target_np_load": false,
+      "OOD_model_evaluation": false,
+      "OOD_statistics": false,
+      "contract_freeze_only": true
+    },
+    "future_required_binding": {
+      "note": "D31D intentionally does not invent or bind a checkpoint that does not yet exist for the new control-space learning experiment.",
+      "must_be_bound_before_one_touch": [
+        "training dataset registry SHA-256",
+        "predictor feature-order contract SHA-256",
+        "TRAIN-only normalization statistics SHA-256",
+        "model architecture SHA-256",
+        "selected checkpoint SHA-256",
+        "validation-selection summary SHA-256",
+        "final evaluator source SHA-256"
+      ]
+    }
+  },
+  "gates": {
+    "D31_summary_SHA_exact": true,
+    "D31A_summary_SHA_exact": true,
+    "D31A_manifest_SHA_exact": true,
+    "D31B_summary_SHA_exact": true,
+    "D31B_manifest_SHA_exact": true,
+    "D31C_contract_SHA_exact": true,
+    "D31C_summary_SHA_exact": true,
+    "D31CR1_manifest_SHA_exact": true,
+    "D31CR1_summary_SHA_exact": true,
+    "D31CR1_status_authorizes_contract": true,
+    "D31CR1_certified_cases_9": true,
+    "D31CR1_partition_locked_OOD": true,
+    "D31CR1_geology0029": true,
+    "D31CR1_manifest_hash_record_matches": true,
+    "D31CR1_generation_sealed": true,
+    "D31CR1_no_training_use": true,
+    "D31CR1_no_tuning_use": true,
+    "D31CR1_no_normalization_use": true,
+    "D31CR1_no_selection_use": true,
+    "manifest_status_CERTIFIED_SEALED": true,
+    "manifest_partition_LOCKED_OOD_TEST": true,
+    "manifest_geology0029": true,
+    "manifest_count_9": true,
+    "manifest_rates_exact": true,
+    "manifest_BHP_exact": true,
+    "manifest_target_days_exact": true,
+    "manifest_Y_shape_exact": true,
+    "manifest_case_ids_exact": true,
+    "manifest_sealed_true": true,
+    "manifest_not_opened_for_model_evaluation": true,
+    "manifest_future_opening_rule": true,
+    "all_9_case_artifact_SHA_exact": true,
+    "all_9_case_status_CERTIFIED": true,
+    "all_9_case_partition_locked_OOD": true,
+    "no_OOD_np_load_in_D31D": true,
+    "no_OOD_target_statistics_in_D31D": true,
+    "one_touch_rule_frozen": true,
+    "OOD_open_marker_required": true,
+    "rerun_after_open_prohibited": true,
+    "single_checkpoint_only": true,
+    "validation_selection_only": true,
+    "TRAIN_only_normalization": true,
+    "OOD_transform_only": true,
+    "metrics_predeclared_before_model_training": true,
+    "case_level_metrics_predeclared": true,
+    "time_resolved_metrics_predeclared": true,
+    "control_resolved_metrics_predeclared": true,
+    "physics_diagnostics_predeclared": true,
+    "no_OOD_threshold_fitting": true,
+    "no_OOD_model_selection": true,
+    "no_OOD_retraining": true,
+    "no_deduplication": true,
+    "no_case_time_streamline_node_exclusion": true,
+    "poor_results_must_be_reported": true,
+    "no_model_training_in_D31D": true,
+    "no_model_inference_in_D31D": true,
+    "no_OOD_evaluation_in_D31D": true,
+    "contract_only": true
+  },
+  "next_milestone": "V16D-32 \u2014 Control-space 36-case Stage-4 learning dataset assembly + TRAIN-only normalization contract"
+}

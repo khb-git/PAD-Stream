@@ -1,0 +1,33 @@
+{
+  "milestone": "V16D-29",
+  "status": "V16D_D10C_FMM_ADV_EXACT_EXECUTION_LINEAGE_BOUND_36CASE_D29R1_EXECUTION_AUTHORIZED",
+  "report_sha256": "874309b0bb0bb3aabd89ab04abf058830b8bc2a76b1afd3a56031aa031881462",
+  "gates": {
+    "D28R1_SHA_exact": true,
+    "D10C_exists": true,
+    "FMM_source_SHA_exact": true,
+    "B7_source_SHA_exact": true,
+    "SG5_source_SHA_exact": true,
+    "D28R1_status_authorizes_FMM_ADV": true,
+    "D10C_has_construct_face_pore_velocities_qx_qy_qz_": true,
+    "D10C_has_cx_cy_cz_cv_vx_vy_vz_": true,
+    "D10C_has_speed_np_sqrt_cx_cx_cy_cy_cz_cz_": true,
+    "D10C_has_bind_injector_sources_qx_qy_qz_": true,
+    "D10C_has_fast_marching_3d_speed_sm_6_096_6_096_1_2192_": true,
+    "D10C_has_aW_np_maximum_cx_0_dx": true,
+    "D10C_has_aE_np_maximum_cx_0_dx": true,
+    "D10C_has_aS_np_maximum_cy_0_dy": true,
+    "D10C_has_aN_np_maximum_cy_0_dy": true,
+    "D10C_has_aB_np_maximum_cz_0_dz": true,
+    "D10C_has_aT_np_maximum_cz_0_dz": true,
+    "D10C_has_runpy_run_path_str_B7_SRC_run_name_main_": true,
+    "D10C_binds_exact_source_hashes": true,
+    "Pollock_remains_authoritative_reference": true,
+    "FMM_auxiliary_scalar_role": true,
+    "ADV_auxiliary_directional_role": true,
+    "no_execution_in_D29": true,
+    "no_transport": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-29-R1 \u2014 Execute exact D10C-derived FMM/ADV hierarchy across all 36 control-space Foundation Cases"
+}

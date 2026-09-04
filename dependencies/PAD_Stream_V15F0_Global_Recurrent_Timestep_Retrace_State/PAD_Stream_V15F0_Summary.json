@@ -1,0 +1,82 @@
+{
+  "version": "15F-0",
+  "status": "PASS",
+  "description": "Global GRU state with screened adaptive-timestep and streamline-retrace proposals",
+  "integrity_gates_passed": 17,
+  "integrity_gates_total": 17,
+  "deployment_gates_passed": 10,
+  "deployment_gates_total": 10,
+  "diagnostic_gates_passed": 4,
+  "diagnostic_gates_total": 4,
+  "deployment_approved": true,
+  "model": {
+    "dense_feature_dim": 19,
+    "snapshot_feature_dim": 26,
+    "hidden_dim": 32,
+    "retrace_hidden_dim": 32,
+    "dropout": 0.1,
+    "trainable_parameters": 7892
+  },
+  "calibration": {
+    "timestep_blend_alpha": 0.87,
+    "dense_state_distance_threshold": 1.4502025870436923,
+    "snapshot_state_distance_threshold": 2.3801347762254115,
+    "retrace_conservative_margin": 0.05187230719423294,
+    "retrace_risk_threshold": 0.18
+  },
+  "metrics": {
+    "dense_steps": 350,
+    "retrace_snapshots": 24,
+    "trainable_parameters": 7892,
+    "best_epoch": 420,
+    "best_validation_loss": 0.015111190266907215,
+    "validation_persistence_timestep_rmse_days": 0.28494459472801337,
+    "validation_screened_timestep_rmse_days": 0.14276233591642346,
+    "test_persistence_timestep_rmse_days": 0.2928626401753787,
+    "test_raw_timestep_rmse_days": 0.17109626677507017,
+    "test_screened_timestep_rmse_days": 0.18999268841577985,
+    "test_screened_timestep_mae_days": 0.06819624136121738,
+    "test_timestep_rmse_reduction_fraction": 0.351256656356017,
+    "test_timestep_mean_absolute_relative_error": 0.05081354072129198,
+    "test_timestep_aggressive_overshoot_fraction": 0.0,
+    "timestep_selected_steps": 323,
+    "timestep_fallback_steps": 27,
+    "test_retrace_fraction_rmse": 0.06530209980681838,
+    "all_retrace_fraction_rmse": 0.03991113456869028,
+    "unsafe_cache_only_decisions": 0,
+    "full_family_retraces_avoided": 6,
+    "full_family_retrace_avoidance_fraction": 0.25,
+    "full_family_retraces_selected": 18,
+    "retrace_ood_fallbacks": 5,
+    "restart_day": 194.65271425247192,
+    "restart_hidden_sequence_max_abs_difference": 0.0,
+    "restart_timestep_max_abs_difference": 0.0,
+    "restart_retrace_max_abs_difference": 0.0,
+    "checkpoint_reload_timestep_max_abs_difference": 0.0,
+    "checkpoint_reload_retrace_max_abs_difference": 0.0
+  },
+  "rollout_contract": "accepted-step diagnostics -> GRU state -> timestep/retrace proposal -> uncertainty screen -> classical timestep controller and exact path-cache/Pollock authority",
+  "handoff": {
+    "next_milestone": "15F-1",
+    "next_scope": "breakthrough and well-control recurrent memory",
+    "preserved_15e3_diagnostics": [
+      "producer gas cut",
+      "breakthrough timing"
+    ]
+  },
+  "limitations": [
+    "The single controlled 365-day trajectory is a prototype-scale recurrent dataset; field-scale diversity is deferred.",
+    "The learned timestep is a proposal only; the classical adaptive acceptance/retry controller remains mandatory.",
+    "The learned retrace output schedules cache-only versus full-family work; exact per-path cache and Pollock correction remain mandatory.",
+    "Breakthrough and well-control memory are excluded and deferred to Version 15F-1.",
+    "Explicit nonlinear-difficulty memory is deferred to Version 15F-2."
+  ],
+  "source_hashes": {
+    "dense_audit": "782cb71fd7f631a1f72f94e44216cbcb797426f4988b347e68dc257d15aac97b",
+    "path_cache_audit": "bde5033c04fb002908ac51e0d0e0af8795c6b0f6b1ce268845218072cef0600e",
+    "c3_summary": "39cfb6feee7d320aaf7950bbd4f0b1aa1fa197b8f31053152766fda763a2afe9",
+    "e3_snapshot_audit": "89bed30b3486aa82f86962eb556963d0c1116651c01c9acea54bb21564a659b1",
+    "e3_summary": "51a631cab3df6752e3374b5f489c4b85e7846bdabc0730ac2d34614818164853",
+    "e3_package_zip": "c26e4ad45b2c6934de097e761ca5ae4056ebfa55d9ed4673308189b5a93e0042"
+  }
+}

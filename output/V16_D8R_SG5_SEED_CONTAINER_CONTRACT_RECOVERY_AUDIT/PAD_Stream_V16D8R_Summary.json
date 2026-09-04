@@ -1,0 +1,51 @@
+{
+  "milestone": "V16D-8R",
+  "status": "V16D_SG5_SEED_CONTAINER_CONTRACT_RECOVERED_D8A_ADAPTER_REPAIR_CAN_PROCEED",
+  "SG5_sha256": "2989fe58d1fd78fe9f9c03176dbb3ff066faf359f7edaf028cbdc0fea85135f2",
+  "facts": {
+    "build_seeds_uses_extend": false,
+    "build_seeds_uses_append": true,
+    "trace_one_expects_mapping_seed": true,
+    "main_build_variable": "seeds",
+    "main_trace_first_argument": "seeds",
+    "main_passes_build_output_directly": true
+  },
+  "function_lines": {
+    "face_seed_positions": [
+      654,
+      738
+    ],
+    "build_seeds": [
+      741,
+      779
+    ],
+    "trace_one_streamline": [
+      786,
+      1142
+    ],
+    "trace_streamlines": [
+      1149,
+      1189
+    ],
+    "main": [
+      1991,
+      2175
+    ]
+  },
+  "gates": {
+    "D8_bound": true,
+    "SG5_hash_exact": true,
+    "build_seeds_source_recovered": true,
+    "trace_one_source_recovered": true,
+    "trace_streamlines_source_recovered": true,
+    "main_source_recovered": true,
+    "trace_one_seed_mapping_expectation_bound": true,
+    "main_build_seeds_call_bound": true,
+    "main_trace_streamlines_call_bound": true,
+    "no_retrace": true,
+    "no_source_modification": true,
+    "no_transport": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-8R1 \u2014 Exact SG5 Seed-Container Adapter Repair and Case 0002 Pollock Pilot"
+}

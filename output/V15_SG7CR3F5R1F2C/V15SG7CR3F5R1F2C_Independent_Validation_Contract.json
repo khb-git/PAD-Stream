@@ -1,0 +1,18 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1F2C",
+  "status": "CROSSING_LOCAL_CANDIDATE_INDEPENDENT_VALIDATION_FAILED",
+  "diagnosis": "L2_FAILS_ONE_OR_MORE_INDEPENDENT_DEPLOYMENT_GATES",
+  "training_performed": false,
+  "candidate_recalibrated": false,
+  "candidate_frozen": false,
+  "X08_support_geometry_changed": false,
+  "gate_changed": false,
+  "reconstruction_pass": false,
+  "gamma_reconstruction_pass": false,
+  "failed_gates": [
+    "reconstruction_state_closure",
+    "reconstruction_gamma_closure"
+  ],
+  "recommendation": "Do not freeze L2. Audit only the independently failed gates or reconstruction closure before changing any candidate geometry, gamma, or threshold.",
+  "next_milestone": "V15-SG7C-R3F5-R1F2CR \u2014 Independent Validation Failure Audit"
+}

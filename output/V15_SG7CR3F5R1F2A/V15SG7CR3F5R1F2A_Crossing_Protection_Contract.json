@@ -1,0 +1,21 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1F2A",
+  "status": "CROSSING_DISTANCE_PROTECTION_CONTRACT_READY",
+  "diagnosis": "LOCAL_CROSSING_GUARD_UNLOCKS_SUFFICIENT_SAFE_RESIDUAL",
+  "training_performed": false,
+  "correction_performed": false,
+  "X08_support_geometry_changed": false,
+  "K5_field_changed": false,
+  "gate_changed": false,
+  "historical_value_shell": [
+    0.2,
+    0.3
+  ],
+  "median_xi_spacing": 0.004999995231628418,
+  "minimum_design_guard_half_width": 0.009999990463256836,
+  "selected_guard_half_width": 0.029999971389770508,
+  "selected_guard_half_width_cells": 6.0,
+  "selection_rule": "largest conservative >=2-cell crossing-distance guard that leaves all four unchanged mean-bias gates theoretically reachable",
+  "recommendation": "Replace the broad saturation-value front shell in the next controlled correction with the selected crossing-distance guard. Protect only the SG7A/canonical S=0.21 crossing neighborhood, keep X08 support locked, and apply bounded truth-directed correction only outside that guard. The selected guard is the largest conservative candidate that still leaves enough residual capacity to satisfy all four unchanged mean-bias gates.",
+  "next_milestone": "V15-SG7C-R3F5-R1F2B \u2014 Controlled Crossing-Local Residual Correction"
+}

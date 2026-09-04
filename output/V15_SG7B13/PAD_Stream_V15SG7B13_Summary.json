@@ -1,0 +1,17 @@
+{
+  "milestone": "V15-SG7B-13",
+  "status": "TOF_CONDITIONED_CANDIDATE_NOMINATED",
+  "starting_frozen_model": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B11\\V15SG7B_FRONT_AWARE_FROZEN_Model.keras",
+  "starting_frozen_sha256": "28c3e555f1ea9e128bddc6c021c5b3648699ba7a33125b3b40a6556990fa9141",
+  "experiments_run": [
+    "E0",
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5"
+  ],
+  "candidate_nominated": true,
+  "recommendation": "A controlled SG7B-13 candidate satisfies the local SG7B-11 state/front preservation screen and every SG7B-12 TOF-bias gate. Do not freeze it here. Proceed to independent candidate validation with canonical physics and the complete preservation contract.",
+  "next_milestone": "V15-SG7B-14 \u2014 Independent TOF-Conditioned Candidate Validation"
+}

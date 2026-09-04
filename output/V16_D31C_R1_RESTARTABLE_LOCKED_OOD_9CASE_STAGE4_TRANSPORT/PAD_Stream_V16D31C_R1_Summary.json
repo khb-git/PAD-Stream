@@ -1,0 +1,18 @@
+{
+  "milestone": "V16D-31C-R1",
+  "status": "V16D_LOCKED_OOD_9CASE_STAGE4_TRANSPORT_GENERATED_CERTIFIED_RESTARTABLE_SEALED_FINAL_OOD_EVALUATION_CONTRACT_AUTHORIZED",
+  "certified_cases": 9,
+  "partition": "LOCKED_OOD_TEST",
+  "geology": "0029",
+  "manifest_sha256": "6e4fac63b6dcd8dad4e1675cd2d856811ffcf9231dadc50104349471da9df9a6",
+  "D31C_contract_sha256": "f08b7258dc645a6f866683200a0ff35cc7917a373fe27caec525152c65c2e153",
+  "D31C_summary_sha256": "2d4afc02fd0bd8213e195d5a00a6cbf1151fa3d5e6a83578520a99ba96c69b3e",
+  "TRAIN_unchanged": true,
+  "VALIDATION_unchanged": true,
+  "OOD_generation_sealed": true,
+  "OOD_targets_not_used_for_training": true,
+  "OOD_targets_not_used_for_tuning": true,
+  "OOD_targets_not_used_for_normalization": true,
+  "OOD_targets_not_used_for_selection": true,
+  "next_milestone": "V16D-31D \u2014 Frozen one-touch final locked-OOD evaluation contract"
+}

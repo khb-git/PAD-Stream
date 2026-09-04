@@ -1,0 +1,53 @@
+{
+  "experiment_id": "V16E-BLREP-COMP-XPU-001",
+  "classification": "FRAMEWORK_EQUIVALENT_XPU_REPRODUCTION",
+  "source": {
+    "path": "pi_rnn_stage2_compressible_godunov.py",
+    "sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397"
+  },
+  "upstream_E1B1_XPU_R1": {
+    "summary_sha256": "a92cad56025ff276146793206367ac1adc13fbbd5f7fb22d8bc5ad8d85ac3ac7",
+    "checkpoint_sha256": "535e106b59a8064979f525290882fc3280e79fa1d27cdb73edcc9805f6932bc4"
+  },
+  "framework": {
+    "name": "PyTorch XPU",
+    "version": "2.14.0+xpu",
+    "model_eval_used_for_inference": true,
+    "bitwise_TensorFlow_equivalence_claimed": false
+  },
+  "artifacts": {
+    "dataset": {
+      "path": "output\\V16_E1B_XPU_DATASETS\\V16E_STAGE2_COMPRESSIBLE_GODUNOV_DATASET_SEED1337.npz",
+      "sha256": "46f10f00ff6dc48f7b2b936bd7d602e6435f72f8410138c5aad0dd4add555f1c"
+    },
+    "port_protocol": {
+      "path": "output\\V16_E1B_XPU_NATIVE_BL_REPRODUCTIONS\\V16E-BLREP-COMP-XPU-001\\V16E_BLREP_COMP_XPU_001_Framework_Port_Protocol.json",
+      "sha256": "28cf1fdc7cc1faa3f2183eecc137c6a547c1a593cb7348baaa786f24c1a4ff5b"
+    },
+    "checkpoint": {
+      "path": "output\\V16_E1B_XPU_NATIVE_BL_REPRODUCTIONS\\V16E-BLREP-COMP-XPU-001\\V16E_BLREP_COMP_XPU_001.pt",
+      "sha256": "f2239f21603e01a2c80abbb18a787c6b0861959683d99d31261c495ad087f3d0"
+    },
+    "config": {
+      "path": "output\\V16_E1B_XPU_NATIVE_BL_REPRODUCTIONS\\V16E-BLREP-COMP-XPU-001\\V16E_BLREP_COMP_XPU_001_Config.json",
+      "sha256": "40ecaaf0876940b4ea5a6158cd6628df452b993e45821773fa9a82cb463d0e5c"
+    },
+    "history": {
+      "path": "output\\V16_E1B_XPU_NATIVE_BL_REPRODUCTIONS\\V16E-BLREP-COMP-XPU-001\\V16E_BLREP_COMP_XPU_001_Training_History.json",
+      "sha256": "3ad1bb77c7b65dcba4db9206b3ffa77f53a10c5f7ba268a065cf23376ea00d7d"
+    },
+    "metrics": {
+      "path": "output\\V16_E1B_XPU_NATIVE_BL_REPRODUCTIONS\\V16E-BLREP-COMP-XPU-001\\V16E_BLREP_COMP_XPU_001_Metrics.json",
+      "sha256": "81fc2e7587f1005445f789d1e9b2e0eb7cbb8a0719a3b9768a692c9e6e124723"
+    }
+  },
+  "firewall": {
+    "OOD_claim": false,
+    "TOF": false,
+    "mixed_precision": false,
+    "PhysicsNeMo": false,
+    "numeric_threshold_invented": false,
+    "EXP_CS1_retraining": false,
+    "geology0029_reopening": false
+  }
+}

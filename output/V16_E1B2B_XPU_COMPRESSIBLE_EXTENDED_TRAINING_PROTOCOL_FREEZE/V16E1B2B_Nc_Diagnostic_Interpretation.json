@@ -1,0 +1,17 @@
+{
+  "milestone": "V16E-1B2B-XPU",
+  "source_audit_sha256": "44906c63200587e0200b209720dd1e3950708e8089ee90fc8f1476b9a7b29045",
+  "frozen_observations": {
+    "holdout_MAE_Nc030_to_Nc000_ratio": 2.248350958328951,
+    "case1_full_domain_MAE_Nc030_to_Nc000_ratio": 2.3249750868261194,
+    "case1_front_excluded_MAE_Nc030_to_Nc000_ratio": 2.433533620478226,
+    "front_position_error_behavior": "does not worsen with Nc in audited cases"
+  },
+  "scientific_interpretation": "High-Nc degradation is a profile/fan approximation issue rather than a numerical-front localization issue. The first controlled hypothesis is undertraining because the frozen Stage-2 source identifies a rising Nc MAE trend as potentially underweighted or undertrained conditioning, and the 400-epoch XPU history continued improving late in training.",
+  "not_concluded": [
+    "Nc loss weighting is definitely wrong",
+    "architecture is inadequate",
+    "travel-time transform is wrong",
+    "Godunov front definition is wrong"
+  ]
+}

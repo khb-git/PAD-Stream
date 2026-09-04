@@ -1,0 +1,11 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1A2R3",
+  "status": "SUPPORTED_RESIDUAL_PROVENANCE_ISOLATED",
+  "diagnosis": "LIKELY_CHECKPOINT_OR_COEFFICIENT_FIELD_PROVENANCE_DRIFT",
+  "training_performed": false,
+  "support_extension_calibrated": false,
+  "gate_changed": false,
+  "resolved": false,
+  "recommendation": "The algebra is exact and the discrepancy is tiny, but coefficient summary provenance does not fully match or is unavailable. Do not calibrate yet. Resolve the exact B4 coefficient/checkpoint identity that produced the historical scalar.",
+  "next_milestone": "V15-SG7C-R3F5-R1A2R4 \u2014 B4 Coefficient / Checkpoint Provenance Audit"
+}

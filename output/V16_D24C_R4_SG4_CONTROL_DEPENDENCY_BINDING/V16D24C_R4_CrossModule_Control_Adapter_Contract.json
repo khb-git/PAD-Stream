@@ -1,0 +1,78 @@
+{
+  "contract": {
+    "id": "V16D_SG3_SG4_CROSSMODULE_CONTROL_ADAPTER_1.0",
+    "controls": {
+      "CO2_MASS_RATE_TONNES_DAY": [
+        350.0,
+        500.0,
+        650.0
+      ],
+      "PRODUCER_BHP_PSI": [
+        1800.0,
+        2000.0,
+        2200.0
+      ]
+    },
+    "rule": "For every non-reference control execution, derive BOTH SG3 and SG4 source copies from their SHA-bound frozen sources and alter only each module's exact two base-control assignment lines. Derived rate/BHP quantities remain source-computed.",
+    "reference_rule": "500/2000 must reproduce unmodified SG3+SG4 path exactly on identical geology.",
+    "validation_rule": "Conservation compares SG4 divergence against SG4 expected well source generated under the SAME rate/BHP controls used by SG3 pressure assembly.",
+    "immutable": [
+      "frozen SG3",
+      "frozen SG4",
+      "SG2",
+      "matrix assembly",
+      "pressure solve",
+      "gravity",
+      "fluid properties",
+      "well geometry/completions",
+      "well-index algebra",
+      "flux reconstruction equations",
+      "conservation thresholds"
+    ],
+    "prohibited": [
+      "patch derived quantities directly",
+      "relax conservation gates",
+      "use locked geology0029 during pilot",
+      "execute 36-case batch before R5 pilot passes"
+    ]
+  },
+  "SG3_assignments": {
+    "PRODUCER_BHP_PSI": {
+      "line": 122,
+      "value": 2000.0
+    },
+    "CO2_MASS_RATE_TONNES_DAY": {
+      "line": 132,
+      "value": 500.0
+    }
+  },
+  "SG4_assignments": {
+    "CO2_MASS_RATE_TONNES_DAY": {
+      "line": 113,
+      "value": 500.0
+    },
+    "PRODUCER_BHP_PSI": {
+      "line": 123,
+      "value": 2000.0
+    }
+  },
+  "SG4_consumers": {
+    "construct_expected_well_rates": {
+      "line": 411,
+      "controls": [
+        "PRODUCER_BHP_PA"
+      ]
+    }
+  },
+  "gates": {
+    "R3_SHA_exact": true,
+    "SG3_SHA_exact": true,
+    "SG4_SHA_exact": true,
+    "SG3_two_base_controls_bound": true,
+    "SG4_two_base_controls_bound": true,
+    "SG4_reference_values_match_SG3": true,
+    "construct_expected_well_rates_consumes_control_chain": true,
+    "SG3_exact_two_patch_lines": true,
+    "SG4_exact_two_patch_lines": true
+  }
+}

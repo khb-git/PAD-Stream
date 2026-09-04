@@ -1,0 +1,115 @@
+{
+  "milestone": "V16D-30",
+  "status": "V16D_STAGE4_CONTROLSPACE_TRANSPORT_LINEAGE_EXACTLY_BOUND_ONE_TRAIN_PILOT_GENERATION_AUTHORIZED",
+  "upstream": {
+    "D27": {
+      "path": "output\\V16_D27_36CASE_SG6_STYLE_201NODE_POLLOCK_TRANSPORT_COORDINATES\\PAD_Stream_V16D27_Summary.json",
+      "expected_sha256": "6c10ede5895bed51a9324ff8503ec3dffbf8b3d908cc077bdfb476dc65a822f1",
+      "actual_sha256": "6c10ede5895bed51a9324ff8503ec3dffbf8b3d908cc077bdfb476dc65a822f1"
+    },
+    "D28": {
+      "path": "output\\V16_D28_R1_36CASE_D9R1_CONSERVATIVE_FACE_METRIC_EXPANSION\\PAD_Stream_V16D28_R1_Summary.json",
+      "expected_sha256": "3f7664b8b9b2d5a11dc24e1d3528d9a373a606295c7ef39937aff35a4c071f4c",
+      "actual_sha256": "3f7664b8b9b2d5a11dc24e1d3528d9a373a606295c7ef39937aff35a4c071f4c"
+    },
+    "D29": {
+      "path": "output\\V16_D29_R1_EXACT_D10C_DERIVED_FMM_ADV_36CASE_CONTROLSPACE_EXECUTION\\PAD_Stream_V16D29_R1_Summary.json",
+      "expected_sha256": "18c05132c5206431d2562cbf0341915ebba07bc79311e71ec129f5b84fc2788c",
+      "actual_sha256": "18c05132c5206431d2562cbf0341915ebba07bc79311e71ec129f5b84fc2788c"
+    }
+  },
+  "historical_D12_sha256": "8d4c8bad2f31879a4098f054cb7b614a282cdd281f6217732e6699ae9b6d4fe4",
+  "bindings": {
+    "C17_exact": {
+      "path": "PAD_Stream_V16C17_Production_Source_Authentic_Y_Transport_Tensor_Generation_and_Certification.py",
+      "sha256": "1d357be446103cb554c4759948347d2876235b7c630c64cd826801cbfc61dd4f"
+    },
+    "Stage4": {
+      "path": "pi_rnn_stage4_full_godunov.py",
+      "sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a"
+    },
+    "C14": {
+      "path": "PAD_Stream_V16C14_Production_Full_Physics_Transport_Parameter_Authority_Contract.py",
+      "sha256": "cd3b45b72ae2dc7d6906aad7323522d467234ba81a7b641fd323ddc3df3bb419"
+    },
+    "C15": {
+      "path": "PAD_Stream_V16C15_Production_Physical_Target_Time_Schedule_Authority_Contract.py",
+      "sha256": "425cbb9908069d9231b6a0da6d9c8869d4291a0a3f85ae603707582141fd8ae1"
+    }
+  },
+  "C17_source_sha256": "1d357be446103cb554c4759948347d2876235b7c630c64cd826801cbfc61dd4f",
+  "C17_Y_authority_sha256": "d2a7ba92660dfc0ccf08a5f37b1c9519be000e4f42167ad4417e889be0015f63",
+  "C17_Y_local_matches": [
+    "output\\V16_C17_PRODUCTION_SOURCE_AUTHENTIC_Y_TRANSPORT_TENSOR_GENERATION_CERTIFICATION\\V16C17_Production_Source_Authentic_Y_Transport.npz"
+  ],
+  "transport_contract": {
+    "version": "V16D_STAGE4_CONTROLSPACE_TRANSPORT_CONTRACT_1.0",
+    "target_days": [
+      30,
+      60,
+      100,
+      150,
+      250,
+      365,
+      500,
+      750,
+      1000
+    ],
+    "Y_shape_per_case": [
+      9,
+      1078,
+      201
+    ],
+    "time_mapping": "eta_i(t)=86400*t_days/pollock_tau_end_s[i]",
+    "kinematics": "Pollock authoritative; do not stack exp(Nc*xD)",
+    "compressibility": "Nc is frozen Stage-4 metadata/source semantics only",
+    "capillary": "use D28-R1 M_face_dtheta_dxD; node M sidecar only",
+    "outlet_capillary_BC": "held-value identity row; not Neumann",
+    "FMM_ADV": "auxiliary only; neither changes source-authentic Y",
+    "controls": {
+      "rate_tpd": [
+        350,
+        500,
+        650
+      ],
+      "bhp_psi": [
+        1800,
+        2000,
+        2200
+      ],
+      "rule": "controls act through Foundation-Case flow/kinematics; do not invent a new Stage-4 control law"
+    },
+    "split": {
+      "TRAIN": "0026-0027 (18)",
+      "VALIDATION": "0028 (9)",
+      "LOCKED_OOD_TEST": "0029 (9)"
+    },
+    "pilot": "one TRAIN case before 36-case transport generation"
+  },
+  "gates": {
+    "D27_SHA_exact": true,
+    "D27_36_cases": true,
+    "D28_SHA_exact": true,
+    "D28_36_cases": true,
+    "D29_SHA_exact": true,
+    "D29_36_cases": true,
+    "historical_D12_exists": true,
+    "exact_C17_source_SHA_unique": true,
+    "Stage4_candidate_bound": true,
+    "C14_candidate_bound": true,
+    "C15_candidate_bound": true,
+    "Pollock_primary": true,
+    "M_face_primary": true,
+    "node_M_sidecar_only": true,
+    "legacy_exp_Nc_xD_not_reintroduced": true,
+    "FMM_ADV_auxiliary_only": true,
+    "split_preserved": true,
+    "one_TRAIN_pilot_first": true,
+    "no_transport": true,
+    "no_training": true,
+    "no_fitting": true,
+    "no_threshold_relaxation": true,
+    "locked_OOD_not_evaluated": true
+  },
+  "next_milestone": "V16D-30-R1 \u2014 one TRAIN source-authentic 9-time Stage-4 transport supervision pilot"
+}

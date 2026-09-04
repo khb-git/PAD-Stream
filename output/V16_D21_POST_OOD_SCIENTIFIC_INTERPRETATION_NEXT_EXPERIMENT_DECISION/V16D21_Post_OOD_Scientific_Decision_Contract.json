@@ -1,0 +1,62 @@
+{
+  "milestone": "V16D-21",
+  "evidence": {
+    "highest_RMSE_time_days": 60,
+    "highest_RMSE_time": 0.006516206133021334,
+    "highest_RMSE_case": "0021",
+    "highest_RMSE_case_value": 0.005395763033037058,
+    "early_time_RMSE_30_60_100": [
+      0.005069067672907807,
+      0.006516206133021334,
+      0.006459962064275827
+    ],
+    "late_time_RMSE_500_750_1000": [
+      0.0020514166341780494,
+      0.001832919162205844,
+      0.001723124646482177
+    ],
+    "front_RMSE": 0.004006382718737023,
+    "low_RMSE": 0.006488220834397282,
+    "high_RMSE": 0.0010490231629832142,
+    "worst_point": {
+      "abs_error": 0.13418035209178925,
+      "case_id": "0005",
+      "day": 365,
+      "streamline": 1052,
+      "node": 152,
+      "truth": 0.20250867307186127,
+      "prediction": 0.3366890251636505,
+      "signed_error": 0.13418035209178925
+    }
+  },
+  "scientific_interpretation": [
+    "EXP-MC1 generalization error is strongly time-dependent: the largest pooled RMSE occurs at 60 days and errors decline substantially at late times.",
+    "The low-saturation region has the largest regional RMSE, while the high-saturation region is substantially easier.",
+    "The worst point is an overprediction in a low-saturation cell-like streamline location at 365 days, consistent with localized front/tail-position error rather than uniform saturation bias.",
+    "The front region contains most evaluated values and contributes meaningful error, but its pooled RMSE is lower than the low-saturation region.",
+    "These are post-OOD descriptive findings and must not be used to retune or reselect EXP-MC1."
+  ],
+  "decision": {
+    "EXP_MC1": "FROZEN_COMPLETE",
+    "retrain_EXP_MC1": "NOT_AUTHORIZED",
+    "MC2_physics_informed_multicase": "DEFERRED",
+    "next_primary_direction": "CONTROL_SPACE_EXPANSION",
+    "reason": "The principal V16D objective is broader Foundation-Case generalization. MC1 already establishes useful geology-OOD performance; varying controls now tests a new axis of generalization rather than optimizing against the observed OOD set.",
+    "control_space_first_axes": [
+      "CO2 injection rate",
+      "producer BHP"
+    ],
+    "geology_recipe": "keep Recipe1.1 spectral GRF frozen for the first control-space study",
+    "well_geometry": "keep five-spot locations/completions frozen initially",
+    "transport_physics": "keep source-authentic Stage4 semantics frozen",
+    "MC2_future_role": "new independently designed experiment after control-space dataset design; D20 findings may motivate hypotheses but not retroactive MC1 tuning",
+    "foundation_model_claim": "NOT_AUTHORIZED"
+  },
+  "firewall": {
+    "D18_D20_OOD_cases_are_now_observed": true,
+    "do_not_reuse_0005_0018_0021_0022_as_future_locked_test": true,
+    "future_control_space_experiment_requires_new_case_level_split": true,
+    "future_locked_test_must_be_defined_before_target_generation_or_training": true,
+    "no_D20_threshold_or_time_specific_tuning_of_MC1": true
+  }
+}

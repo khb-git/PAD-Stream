@@ -1,0 +1,335 @@
+{
+  "milestone": "V16D-37-R3",
+  "experiment": "EXP-CS1",
+  "package_role": "Immutable final evidence package for the completed V16D control-space recurrent Stage-4 experiment.",
+  "packaging_SHA_correction": {
+    "failed_attempts": [
+      "V16D-37",
+      "V16D-37-R1",
+      "V16D-37-R2"
+    ],
+    "failure_class": "MALFORMED_EXPECTED_D31D_SUMMARY_SHA_LITERAL",
+    "malformed_literal": "a98000f0456f2307fb2f5a6921b1975bdf462dfde43af5fa65de9e5474c676d3e",
+    "malformed_literal_length": 65,
+    "correct_D31D_summary_sha256": "a98000f0456f2307fb2f5a6921b1975bdf462dfde43af5fa65de9e5474c676d3",
+    "correct_literal_length": 64,
+    "scientific_artifacts_affected": false,
+    "OOD_reopened": false,
+    "model_changed": false,
+    "metrics_changed": false,
+    "correction": "Restore exact 64-character D31D summary SHA already used by the frozen upstream D32/D33/D34 lineage and add explicit 64-hex SHA-literal validation."
+  },
+  "experiment_state": {
+    "training_complete": true,
+    "validation_selection_complete": true,
+    "final_locked_OOD_evaluation_complete": true,
+    "geology0029_consumed": true,
+    "post_OOD_interpretation_complete": true,
+    "experiment_closed": true,
+    "further_tuning_under_EXP_CS1": "PROHIBITED",
+    "future_learning_requires_new_independent_locked_test": true
+  },
+  "scientific_firewall": {
+    "TRAIN_geologies": [
+      "0026",
+      "0027"
+    ],
+    "VALIDATION_geology": "0028",
+    "LOCKED_OOD_geology": "0029",
+    "generalization_unit": "complete Foundation Case = geology realization + rate/BHP pair",
+    "control_factorial": {
+      "rates_tpd": [
+        350,
+        500,
+        650
+      ],
+      "producer_bhp_psi": [
+        1800,
+        2000,
+        2200
+      ],
+      "cases_per_geology": 9
+    },
+    "target_days": [
+      30,
+      60,
+      100,
+      150,
+      250,
+      365,
+      500,
+      750,
+      1000
+    ],
+    "no_deduplication": true,
+    "OOD_used_for_training": false,
+    "OOD_used_for_normalization": false,
+    "OOD_used_for_checkpoint_selection": false,
+    "OOD_used_for_tuning": false
+  },
+  "architecture": {
+    "input_sequence_shape": [
+      201,
+      9
+    ],
+    "feature_order": [
+      "xi",
+      "pollock_tau_hat",
+      "adv_tau_hat",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity",
+      "pressure_z",
+      "target_time_hat",
+      "target_eta_sequence"
+    ],
+    "model": "LSTM(64, return_sequences) -> LSTM(64, return_sequences) -> TimeDistributed Dense(1,sigmoid) -> Rescaling[0.2,0.8]",
+    "parameter_count": 52033,
+    "loss": "MSE",
+    "optimizer": "Adam(1e-3)",
+    "seed": 161501,
+    "batch_size": 64,
+    "best_epoch": 73,
+    "checkpoint_sha256": "dc586da13e9fd7ce0b51cc661ba73edc8ab0f897d2f961112944504b13d1ed13",
+    "architecture_sha256": "4304519d7c41b231f300535cef5daacd2525e395413addc883e66e7310096920"
+  },
+  "PAD_Stream_roles": {
+    "SGSim_geology": "heterogeneous dissertation-base geological realization source",
+    "finite_volume_pressure": "exact physics pressure solution / state construction",
+    "Darcy_fluxes": "conservative face fluxes from finite-volume pressure",
+    "Pollock": "AUTHORITATIVE_KINEMATICS for streamline geometry and TOF",
+    "ADV": "AUXILIARY predictor coordinate",
+    "FMM": "NOT a predictor in EXP-CS1",
+    "M_face": "PHYSICS_SIDECAR_NOT_PREDICTOR",
+    "Stage4_recurrent_model": "predicts saturation along 201-node Pollock streamline sequences",
+    "direct_rate_BHP_channels": "absent; controls enter indirectly through the physical state"
+  },
+  "frozen_validation": {
+    "MSE": 1.8982550849500083e-05,
+    "RMSE": 0.004356896928950704,
+    "MAE": 0.001755229556988638
+  },
+  "final_OOD": {
+    "geology": "0029",
+    "cases": 9,
+    "values": 17550918,
+    "MSE": 1.7935869890747634e-05,
+    "RMSE": 0.0042350761375384545,
+    "MAE": 0.0017336927827610116,
+    "mean_signed_error": 0.00028239705125491545,
+    "max_abs_error": 0.13503268361091614,
+    "prediction_min": 0.20023314654827118,
+    "prediction_max": 0.7999467849731445,
+    "RMSE_over_validation_RMSE": 0.9720395516812034,
+    "MAE_over_validation_MAE": 0.9877299387183429,
+    "RMSE_percent_difference_from_validation": -2.7960448318796627,
+    "MAE_percent_difference_from_validation": -1.2270061281657085
+  },
+  "post_OOD_descriptive_findings": {
+    "lowest_RMSE_case": {
+      "case_id": "V16D_Foundation_Case_0029_R650_B2000",
+      "RMSE": 0.003586716866568149,
+      "MAE": 0.0015168946959105462
+    },
+    "highest_RMSE_case": {
+      "case_id": "V16D_Foundation_Case_0029_R350_B1800",
+      "RMSE": 0.005299040797022176,
+      "MAE": 0.0021099813961267117
+    },
+    "time_resolved": {
+      "lowest_RMSE_time_days": 1000,
+      "lowest_RMSE": 0.001461886162845243,
+      "highest_RMSE_time_days": 100,
+      "highest_RMSE": 0.006238274899786138,
+      "early_mid_late_descriptive": {
+        "early_days": [
+          30,
+          60,
+          100
+        ],
+        "mid_days": [
+          150,
+          250,
+          365
+        ],
+        "late_days": [
+          500,
+          750,
+          1000
+        ]
+      },
+      "note": "Time-resolved behavior is reported descriptively from the frozen D35 metrics. It is not used to alter the model."
+    },
+    "injection_rate": {
+      "rows": [
+        {
+          "injection_rate_tpd": 350,
+          "RMSE": 0.004996167938797612,
+          "MAE": 0.002018917935558149,
+          "values": 5850306
+        },
+        {
+          "injection_rate_tpd": 500,
+          "RMSE": 0.003927478224088559,
+          "MAE": 0.0016331664328700609,
+          "values": 5850306
+        },
+        {
+          "injection_rate_tpd": 650,
+          "RMSE": 0.00366344515434364,
+          "MAE": 0.0015489939798548251,
+          "values": 5850306
+        }
+      ],
+      "RMSE_monotonic_decrease_with_rate": true,
+      "MAE_monotonic_decrease_with_rate": true,
+      "RMSE_percent_change_350_to_650": -26.674899658691377,
+      "MAE_percent_change_350_to_650": -23.276030562054963
+    },
+    "producer_BHP": {
+      "rows": [
+        {
+          "producer_bhp_psi": 1800,
+          "RMSE": 0.004454372178418291,
+          "MAE": 0.0017435623222718157,
+          "values": 5850306
+        },
+        {
+          "producer_bhp_psi": 2000,
+          "RMSE": 0.0041562549885500195,
+          "MAE": 0.0016968553516403314,
+          "values": 5850306
+        },
+        {
+          "producer_bhp_psi": 2200,
+          "RMSE": 0.004085550469462966,
+          "MAE": 0.001760660674370888,
+          "values": 5850306
+        }
+      ],
+      "RMSE_monotonic_decrease_with_BHP": true,
+      "MAE_monotonic_decrease_with_BHP": false,
+      "RMSE_percent_change_1800_to_2200": -8.279993098517657,
+      "MAE_percent_change_1800_to_2200": 0.980656204866448
+    },
+    "physics_diagnostics": {
+      "saturation_bounds": {
+        "Swc": 0.2,
+        "one_minus_Sor": 0.8,
+        "fraction_below_Swc": 0.0,
+        "fraction_above_one_minus_Sor": 0.0,
+        "maximum_lower_bound_violation": 0.0,
+        "maximum_upper_bound_violation": 0.0
+      },
+      "injector_boundary": {
+        "frozen_boundary_Sw": 0.8,
+        "mean_absolute_error": 0.0005973000609871622
+      },
+      "temporal_monotonicity": {
+        "threshold": -1e-08,
+        "negative_fraction": 0.016650090610644982,
+        "differences_evaluated": 15600816
+      },
+      "streamline_spatial_monotonicity": {
+        "threshold": 1e-08,
+        "positive_fraction": 0.04896126800888705,
+        "differences_evaluated": 17463600
+      },
+      "note": "Physics diagnostics are interpreted exactly as preregistered. No new post-OOD acceptance threshold is invented."
+    },
+    "use_policy": "DESCRIPTIVE ONLY \u2014 no EXP-CS1 model change or retest permitted"
+  },
+  "claim_boundary": {
+    "supported": "Within this frozen experiment, the recurrent Stage-4 model generalized from TRAIN geologies 0026-0027, through validation geology0028, to independently locked geology0029 across all nine predeclared rate/BHP controls without aggregate RMSE or MAE degradation relative to the frozen validation reference.",
+    "not_supported": "A universal claim of geological generalization across arbitrary reservoir realizations is not established by one independently locked OOD geology."
+  },
+  "immutable_lineage": {
+    "D31D_contract": {
+      "path": "output\\V16_D31D_FROZEN_ONE_TOUCH_FINAL_LOCKED_OOD_EVALUATION_CONTRACT\\V16D31D_OneTouch_Final_Locked_OOD_Evaluation_Contract.json",
+      "sha256": "7c664db19c041d3a611cbbc94de03a501a70f38922c62fd044cde1016d03228d"
+    },
+    "D31D_summary": {
+      "path": "output\\V16_D31D_FROZEN_ONE_TOUCH_FINAL_LOCKED_OOD_EVALUATION_CONTRACT\\PAD_Stream_V16D31D_Summary.json",
+      "sha256": "a98000f0456f2307fb2f5a6921b1975bdf462dfde43af5fa65de9e5474c676d3"
+    },
+    "D32_registry": {
+      "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\V16D32_Frozen_36Case_Learning_Dataset_Registry.json",
+      "sha256": "9429b239626fbfc8fe8569a2214a79a7abd5e40fbc38ac9112ba236e547fb90d"
+    },
+    "D32_feature_contract": {
+      "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\V16D32_ControlSpace_C20_9Channel_Predictor_Contract.json",
+      "sha256": "6f3301a57281ab2b5d44ffe044758c4707a9a489b2ceaff13867b5f55285b23a"
+    },
+    "D32_normalization": {
+      "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\V16D32_TRAIN_Only_Normalization_Statistics.json",
+      "sha256": "dcda1cf01fa30bd1cd947a500de73295037d6ca2b492725edd050c0ff7c3bfd9"
+    },
+    "D32_predictor_manifest": {
+      "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\V16D32_36Case_Predictor_Manifest.json",
+      "sha256": "70171305a74d512903b5ae75386a86d3110d5f90d9aee99640e858660610d8ee"
+    },
+    "D33_protocol": {
+      "path": "output\\V16_D33_CONTROLSPACE_RECURRENT_STAGE4_EXECUTABLE_TRAINING_PROTOCOL_FREEZE\\V16D33_EXP_CS1_ControlSpace_Executable_Training_Protocol_1.0.json",
+      "sha256": "e12219bdfe85fdbc2de30e348df609ff9bc91a652500a65f053dc6b64b4f9f4a"
+    },
+    "D33R1R2_training_summary": {
+      "path": "output\\V16_D33_R1_EXP_CS1_CONTROLSPACE_RECURRENT_STAGE4_TRAINING_RUN\\PAD_Stream_V16D33_R1_R2_Summary.json",
+      "sha256": "c16208c88b3dcc8083987f56c594eb42994b8ba3b91d88aeb1f44d2e2bacfb02"
+    },
+    "D33R1R2_repair_report": {
+      "path": "output\\V16_D33_R1_EXP_CS1_CONTROLSPACE_RECURRENT_STAGE4_TRAINING_RUN\\V16D33R1R2_PostTraining_Serialization_Repair_Report.json",
+      "sha256": "fe0748743112a78e2b8f0c6bcb4fa368e2b5aee915ded37d8d5e64db0f374eeb"
+    },
+    "D34_binding_contract": {
+      "path": "output\\V16_D34_EXP_CS1_FINAL_ONE_TOUCH_OOD_EVALUATOR_BINDING_CONTRACT\\V16D34_EXP_CS1_Final_OneTouch_OOD_Evaluator_Binding_Contract.json",
+      "sha256": "6c21c825355211ae5470922143f78154ca32d8349ee6a61c89f29648a1845cef"
+    },
+    "D35_final_OOD_results": {
+      "path": "output\\V16_D35_EXP_CS1_ONE_TOUCH_FINAL_LOCKED_OOD_EVALUATION\\V16D35_EXP_CS1_Final_Locked_OOD_Results.json",
+      "sha256": "ecc8f4d7f54dc1603072b17d763113f3963f3aae8afd0d6e1f9d2af847d9388e"
+    },
+    "D35_final_OOD_summary": {
+      "path": "output\\V16_D35_EXP_CS1_ONE_TOUCH_FINAL_LOCKED_OOD_EVALUATION\\PAD_Stream_V16D35_Summary.json",
+      "sha256": "2cbbd396bdbdffd27a199ffec3db99d5bf6837f2eb4a1a3c63c5addf2eba117b"
+    },
+    "D35_opening_lock": {
+      "path": "output\\V16_D35_EXP_CS1_ONE_TOUCH_FINAL_LOCKED_OOD_EVALUATION\\OOD_OPENED.lock",
+      "sha256": "e5cc11a9e33edf9c1d112c9cedaf21e7d8b7b49cb415535ba20781edaea9fec8"
+    },
+    "D36R1_interpretation": {
+      "path": "output\\V16_D36_R1_EXP_CS1_POST_OOD_SCIENTIFIC_INTERPRETATION_AND_CLOSURE_RECOVERY\\V16D36R1_EXP_CS1_Post_OOD_Interpretation.json",
+      "sha256": "f9676cbef3e8bbca712849382be7a3d72de2d0a8473a5f1f5ce9d0da70514d83"
+    },
+    "D36R1_summary": {
+      "path": "output\\V16_D36_R1_EXP_CS1_POST_OOD_SCIENTIFIC_INTERPRETATION_AND_CLOSURE_RECOVERY\\PAD_Stream_V16D36R1_Summary.json",
+      "sha256": "97715eb176da2013a6b3b5e355d55239d8a6157be7d6b65eef981c8381e92973"
+    },
+    "D36R1_case_metrics": {
+      "path": "output\\V16_D36_R1_EXP_CS1_POST_OOD_SCIENTIFIC_INTERPRETATION_AND_CLOSURE_RECOVERY\\V16D36R1_Case_Level_OOD_Metrics.csv",
+      "sha256": "7155f051a7e6f5e5b7c7334244d8b302967b4ea7a31648b847a14fe8f6e0b1bb"
+    },
+    "D36R1_time_metrics": {
+      "path": "output\\V16_D36_R1_EXP_CS1_POST_OOD_SCIENTIFIC_INTERPRETATION_AND_CLOSURE_RECOVERY\\V16D36R1_Time_Resolved_OOD_Metrics.csv",
+      "sha256": "6a891ea69596fb20db40bd2ead9d2526ef74e4828f1ae341d85b3e8f2ad4c5fa"
+    },
+    "D36R1_rate_metrics": {
+      "path": "output\\V16_D36_R1_EXP_CS1_POST_OOD_SCIENTIFIC_INTERPRETATION_AND_CLOSURE_RECOVERY\\V16D36R1_Rate_Resolved_OOD_Metrics.csv",
+      "sha256": "b1f3ca756d9e7163c8686bad56214fc715a53599642a32cd77b0e4c286f6cbab"
+    },
+    "D36R1_BHP_metrics": {
+      "path": "output\\V16_D36_R1_EXP_CS1_POST_OOD_SCIENTIFIC_INTERPRETATION_AND_CLOSURE_RECOVERY\\V16D36R1_BHP_Resolved_OOD_Metrics.csv",
+      "sha256": "2aa91a800e02fe824b2027731497a54a7047ca1c60de8bd2bd005600d4197607"
+    }
+  },
+  "execution_in_D37": {
+    "TensorFlow_import": false,
+    "model_loaded": false,
+    "checkpoint_loaded": false,
+    "NPZ_loaded": false,
+    "OOD_array_reopened": false,
+    "inference": false,
+    "training": false,
+    "tuning": false,
+    "read_only_archival_integration": true
+  }
+}

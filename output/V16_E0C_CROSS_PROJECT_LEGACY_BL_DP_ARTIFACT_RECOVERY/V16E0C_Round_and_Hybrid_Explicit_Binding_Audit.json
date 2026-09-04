@@ -1,0 +1,70 @@
+{
+  "milestone": "V16E-0C",
+  "round_binding_rule": "Only explicit historical round self-identification may bind Round 1/2/3. Stage 1/2/3/4 physics labels are never substituted.",
+  "Round_bindings": {
+    "Round_1": {
+      "status": "UNBOUND_NO_EXPLICIT_SOURCE",
+      "bound_source_sha256": null,
+      "candidate_count": 0,
+      "candidates": []
+    },
+    "Round_2": {
+      "status": "UNBOUND_MULTIPLE_DISTINCT_EXPLICIT_SOURCES",
+      "bound_source_sha256": null,
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "path": "PAD_Stream_V15G0_Windows_Portable_v2/pi_rnn_stage3_capillary.py",
+          "name": "pi_rnn_stage3_capillary.py",
+          "sha256": "dab8eade38ac08c819ac27d803c8f1bceca9722c4c37e82977dbef6e6232ae0f",
+          "size_bytes": 100124,
+          "explicit_round_patterns": [
+            "\\br2\\b"
+          ],
+          "checkpoint_references": [
+            "Saved weights to pi_rnn_stage3_capillary_v9.weights.h5",
+            "pi_rnn_stage3_capillary_v9.weights.h5"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15G0_Windows_Portable_v2/pi_rnn_stage4_full_godunov.py",
+          "name": "pi_rnn_stage4_full_godunov.py",
+          "sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+          "size_bytes": 103888,
+          "explicit_round_patterns": [
+            "\\br2\\b"
+          ],
+          "checkpoint_references": [
+            "Saved weights to pi_rnn_stage4_full_godunov.weights.h5",
+            "pi_rnn_stage4_full_godunov.weights.h5"
+          ]
+        }
+      ]
+    },
+    "Round_3": {
+      "status": "UNBOUND_NO_EXPLICIT_SOURCE",
+      "bound_source_sha256": null,
+      "candidate_count": 0,
+      "candidates": []
+    }
+  },
+  "all_round_sources_bound": false,
+  "Hybrid_DP": {
+    "source_status": "UNBOUND_NO_EXPLICIT_HYBRID_SOURCE",
+    "bound_source_sha256": null,
+    "checkpoint_status": "UNBOUND_NO_HYBRID_CHECKPOINT_FILE",
+    "bound_checkpoint_sha256": null,
+    "candidates": []
+  },
+  "Hybrid_DP_source_bound": false,
+  "Hybrid_DP_checkpoint_bound": false,
+  "adapter_readiness": {
+    "BL_physics_sources": true,
+    "BL_stage_checkpoints": false,
+    "DP_physics": false,
+    "Round_1_2_3_sources": false,
+    "Hybrid_DP_source": false,
+    "Hybrid_DP_checkpoint": false
+  },
+  "rule": "Missing learned artifacts stay missing; no retraining or role reassignment is performed to satisfy inventory."
+}

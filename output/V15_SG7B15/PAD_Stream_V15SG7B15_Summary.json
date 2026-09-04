@@ -1,0 +1,11 @@
+{
+  "milestone": "V15-SG7B-15",
+  "status": "FRONT_PRESERVING_TOF_REFINEMENT_CONTRACT_INCOMPLETE",
+  "validation_passed": false,
+  "training_performed": false,
+  "incoming_diagnosis": "TOF_REFINEMENT_FRONT_PRESERVATION_TRADEOFF",
+  "mean_SG7B13_conditioned_front_gap": 0.0008202547729015342,
+  "required_conditioned_front_gap": 0.0005331237,
+  "recommendation": "Do not train until the SG7B-15 design contract validates.",
+  "next_milestone": "V15-SG7B-15R \u2014 Front-Preserving TOF Contract Repair"
+}

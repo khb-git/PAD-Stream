@@ -1,0 +1,193 @@
+{
+  "milestone": "V15-SG1",
+  "description": "SGSim Geological Model Integration",
+  "status": "PASS",
+  "input_file": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\SGSIM_50x50x15_PERM_MD.csv",
+  "grid": {
+    "nx": 50,
+    "ny": 50,
+    "nz": 15,
+    "cells": 37500,
+    "dx_ft": 20.0,
+    "dy_ft": 20.0,
+    "dz_ft": 4.0,
+    "lx_ft": 1000.0,
+    "ly_ft": 1000.0,
+    "lz_ft": 60.0
+  },
+  "permeability_md": {
+    "min": 50.00000783,
+    "max": 997.8730371,
+    "mean": 357.8510903214352,
+    "median": 334.2443778,
+    "p10": 75.325787483,
+    "p90": 646.007228405
+  },
+  "background_md": {
+    "cells": 25000,
+    "min": 50.00000783,
+    "max": 699.83688097,
+    "mean": 299.3953716266416,
+    "median": 262.983579185
+  },
+  "injection_unit_md": {
+    "cells": 12500,
+    "min": 300.00160153,
+    "max": 997.8730371,
+    "mean": 474.76252771102236,
+    "median": 396.24951117499995
+  },
+  "directional_permeability_md": {
+    "kx_min": 50.00000783,
+    "kx_max": 997.8730371,
+    "ky_min": 50.00000783,
+    "ky_max": 997.8730371,
+    "kz_min": 5.000000783000001,
+    "kz_max": 99.78730371,
+    "kv_kh_ratio": 0.1
+  },
+  "porosity": {
+    "min": 0.2,
+    "max": 0.2,
+    "mean": 0.2
+  },
+  "initial_pressure_psi": {
+    "min": 2500.0,
+    "max": 2500.0,
+    "mean": 2500.0
+  },
+  "injection_background_mean_k_ratio": 1.585737699055251,
+  "injection_unit": {
+    "physical_layers": "6-10",
+    "python_k_indices": "5:10",
+    "thickness_ft": 20.0
+  },
+  "boundary_conditions": {
+    "external_faces": "NO_FLOW",
+    "top": "NO_FLOW",
+    "bottom": "NO_FLOW"
+  },
+  "injector": {
+    "name": "INJECTOR",
+    "type": "injector",
+    "i": 24,
+    "j": 24,
+    "x_ft": 490.0,
+    "y_ft": 490.0,
+    "completion_k_zero_based": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "completion_layers_one_based": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "control": "RATE_CONTROLLED_RATE_TBD_IN_SG3"
+  },
+  "producers": {
+    "PROD_SW": {
+      "name": "PROD_SW",
+      "type": "producer",
+      "i": 4,
+      "j": 4,
+      "x_ft": 90.0,
+      "y_ft": 90.0,
+      "completion_k_zero_based": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "completion_layers_one_based": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "control": "FIXED_BHP",
+      "bhp_psi": 2000.0
+    },
+    "PROD_SE": {
+      "name": "PROD_SE",
+      "type": "producer",
+      "i": 45,
+      "j": 4,
+      "x_ft": 910.0,
+      "y_ft": 90.0,
+      "completion_k_zero_based": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "completion_layers_one_based": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "control": "FIXED_BHP",
+      "bhp_psi": 2000.0
+    },
+    "PROD_NW": {
+      "name": "PROD_NW",
+      "type": "producer",
+      "i": 4,
+      "j": 45,
+      "x_ft": 90.0,
+      "y_ft": 910.0,
+      "completion_k_zero_based": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "completion_layers_one_based": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "control": "FIXED_BHP",
+      "bhp_psi": 2000.0
+    },
+    "PROD_NE": {
+      "name": "PROD_NE",
+      "type": "producer",
+      "i": 45,
+      "j": 45,
+      "x_ft": 910.0,
+      "y_ft": 910.0,
+      "completion_k_zero_based": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "completion_layers_one_based": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "control": "FIXED_BHP",
+      "bhp_psi": 2000.0
+    }
+  },
+  "pressure_solve_performed": false,
+  "next_milestone": "V15-SG2 - 3D anisotropic finite-volume transmissibilities"
+}

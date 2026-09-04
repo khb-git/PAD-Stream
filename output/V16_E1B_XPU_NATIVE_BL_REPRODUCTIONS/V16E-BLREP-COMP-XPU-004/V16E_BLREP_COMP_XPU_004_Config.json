@@ -1,0 +1,35 @@
+{
+  "milestone": "V16E-1B2J-XPU",
+  "experiment_id": "V16E-BLREP-COMP-XPU-004",
+  "framework": "PyTorch XPU",
+  "pytorch_version": "2.14.0+xpu",
+  "device": "xpu",
+  "runner_sha256": "fcc4074863a46f6b8d356a01ff0b4b2182d0ffa3ebc9b3fd053e35282f897a4c",
+  "Stage2_source_sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+  "B2I_protocol_sha256": "34d022c94271326132e34c6603c34c9477e5b111a6cb267b69cc472dc3b595f1",
+  "dataset_sha256": "46f10f00ff6dc48f7b2b936bd7d602e6435f72f8410138c5aad0dd4add555f1c",
+  "comparison_baseline": "V16E-BLREP-COMP-XPU-002",
+  "scientific_change": {
+    "sequence_features": [
+      "xi",
+      "eta"
+    ],
+    "eta_definition": "y(xi*xD_star;Nc)/y(xD_star;Nc)",
+    "raw_p11_scaled": false,
+    "physical_Nc_unchanged": true
+  },
+  "input_features": 2,
+  "raw_param_dim": 11,
+  "first_LSTM_input_width": 13,
+  "epochs": 800,
+  "seed": 1337,
+  "hidden": 64,
+  "layers": 2,
+  "logical_batch": 8192,
+  "microbatch": 2048,
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "Adam_foreach": false,
+  "mixed_precision": false,
+  "B3_authorized": false
+}

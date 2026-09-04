@@ -1,0 +1,17 @@
+{
+  "milestone": "V16D-24C-R4",
+  "status": "V16D_SG3_SG4_CROSSMODULE_CONTROL_ADAPTER_1_0_FROZEN_MATCHED_CONTROL_R5_PILOT_AUTHORIZED",
+  "contract_sha256": "bfb39b100a6f9577fb6e0ad4f7561e36ee0945e9397804d335618c8112e522d4",
+  "gates": {
+    "R3_SHA_exact": true,
+    "SG3_SHA_exact": true,
+    "SG4_SHA_exact": true,
+    "SG3_two_base_controls_bound": true,
+    "SG4_two_base_controls_bound": true,
+    "SG4_reference_values_match_SG3": true,
+    "construct_expected_well_rates_consumes_control_chain": true,
+    "SG3_exact_two_patch_lines": true,
+    "SG4_exact_two_patch_lines": true
+  },
+  "next_milestone": "V16D-24C-R5 \u2014 Re-run geology0026 350/1800 TRAIN pilot with matched SG3+SG4 source-preserving controls"
+}

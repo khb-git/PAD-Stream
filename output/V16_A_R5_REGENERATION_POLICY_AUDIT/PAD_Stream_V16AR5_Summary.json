@@ -1,0 +1,11 @@
+{
+  "milestone": "V16A-R5",
+  "status": "V16A_SOURCE_AUTHENTIC_REGENERATION_NOT_YET_AUTHORIZED",
+  "diagnosis": "ONE_OR_MORE_REQUIRED_SG3_SG4_FROZEN_INPUT_OR_SOURCE_RECIPE_COMPONENTS_ARE_NOT_YET_UNIQUE",
+  "pressure_recipe_ready": false,
+  "flux_recipe_ready": true,
+  "producer_identity_bindable_without_retrace": true,
+  "regeneration_authorized": false,
+  "recommendation": "Do not rerun frozen physics. Audit only the unresolved SG3 pressure recipe, SG4 flux recipe, or frozen input-control provenance.",
+  "next_milestone": "V16A-R6 \u2014 Residual Regeneration Recipe Binding Audit"
+}

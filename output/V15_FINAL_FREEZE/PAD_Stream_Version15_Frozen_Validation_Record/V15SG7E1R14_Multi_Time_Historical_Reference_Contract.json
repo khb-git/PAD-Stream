@@ -1,0 +1,84 @@
+{
+  "milestone": "V15-SG7E1R14",
+  "status": "SG7E_MULTI_TIME_HISTORICAL_REFERENCE_CONTRACT_RECONSTRUCTED",
+  "diagnosis": "FOUR_TIME_SG7A_CORRECTED_REFERENCE_SET_PERSISTED_WITH_AGGREGATION_SEMANTICS",
+  "historical_reference": {
+    "artifact_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7E\\V15SG7E_Plume_Coverage_Validation.npz",
+    "key": "SG7A_corrected",
+    "shape": [
+      4,
+      15,
+      50,
+      50
+    ],
+    "sha256": "e3d4bef65753a2d0dd65414db04416cc3cb89408578411109384617847b31bce",
+    "times_days": [
+      100.0,
+      250.0,
+      500.0,
+      1000.0
+    ],
+    "times_sha256": "8d7b7de1173f6ec1ec171c5f13c90f6b9d2d09755d168c025ca86472411fc6e6",
+    "plume_threshold": 0.5,
+    "plume_mask_sha256": "9b720bb1d99af1734fd0aa0131f6562897df6e4e2bc41fe3e8c5cc6a7d62be77"
+  },
+  "per_time_snapshots": [
+    {
+      "snapshot_index": 0,
+      "time_days": 100.0,
+      "saturation_sha256": "6135585d5dadd02f6ba2bcd2dd860c9a681d006526823c4e391e40f9f7f9ddd6",
+      "plume_mask_sha256": "08458e742f2866096346e56ff69fb3c9be183b68623d09cd518778326dfe180b",
+      "shape": "(15, 50, 50)",
+      "dtype": "float64"
+    },
+    {
+      "snapshot_index": 1,
+      "time_days": 250.0,
+      "saturation_sha256": "5c429605292ae4193c087fae8fa6a9e28df171e2785757d94196b115d42cab8b",
+      "plume_mask_sha256": "1c21e1f4f341033c10135bf0331c46cd268b23ce601807430ee3090b0aa4d0f6",
+      "shape": "(15, 50, 50)",
+      "dtype": "float64"
+    },
+    {
+      "snapshot_index": 2,
+      "time_days": 500.0,
+      "saturation_sha256": "75edb4c2497fcb4cd6c61fceacc25287cf2340b380fab72392c66f399c0dc8bf",
+      "plume_mask_sha256": "28bc860b3eb3d56659c80017ed95f09adfc39db64a0128c1e44527ffc71aab8a",
+      "shape": "(15, 50, 50)",
+      "dtype": "float64"
+    },
+    {
+      "snapshot_index": 3,
+      "time_days": 1000.0,
+      "saturation_sha256": "0612e5890d7dcb0d62ea85ca338681cadd9c16904cf1ea534b1a80a4b45739cd",
+      "plume_mask_sha256": "29a3e488b53b789921bd03147571081b1f150531e6e77361e093d3ae210a0776",
+      "shape": "(15, 50, 50)",
+      "dtype": "float64"
+    }
+  ],
+  "aggregation": {
+    "mode": "PER_TIME_ALL_REQUIRED",
+    "evidence": [
+      "all_semantics"
+    ],
+    "resolved": true
+  },
+  "frozen_SG7D6_compatibility": {
+    "artifact_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7D6\\frozen_full_grid\\V15SG7D6_P4_Frozen_Full_Grid_Deployment_Candidate.npz",
+    "grid_shape": [
+      15,
+      50,
+      50
+    ],
+    "time_keys": [],
+    "explicit_time_compatibility_resolved": false
+  },
+  "constraints": {
+    "candidate_performance_used": false,
+    "threshold_changed": false,
+    "posthoc_alignment": false,
+    "deployment_correction_performed": false
+  },
+  "recommendation": "The exact four-time historical SG7E reference set is reconstructed and persisted with immutable hashes, unchanged S=0.5 plume masks, and recovered multi-time aggregation semantics. Before evaluating frozen SG7D6, resolve the physical time identity of its single 15x50x50 field if not already explicit. Do not compare one untimed grid against all four historical snapshots by assumption.",
+  "next_milestone": "V15-SG7E1R15 \u2014 Frozen SG7D6 Physical-Time Identity / Multi-Time Compatibility Audit"
+}

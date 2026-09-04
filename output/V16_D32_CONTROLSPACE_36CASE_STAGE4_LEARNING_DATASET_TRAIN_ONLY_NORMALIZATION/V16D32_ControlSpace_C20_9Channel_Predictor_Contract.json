@@ -1,0 +1,88 @@
+{
+  "contract_id": "V16D_CONTROLSPACE_C20_9CHANNEL_PREDICTOR_CONTRACT_1.0",
+  "milestone": "V16D-32",
+  "feature_order": [
+    "xi",
+    "pollock_tau_hat",
+    "adv_tau_hat",
+    "log10_Kh",
+    "log10_Kz_over_Kh",
+    "porosity",
+    "pressure_z",
+    "target_time_hat",
+    "target_eta_sequence"
+  ],
+  "shape_per_case": [
+    9,
+    1078,
+    201,
+    9
+  ],
+  "sequence_axis": "201 frozen Pollock transport-coordinate nodes",
+  "time_axis_days": [
+    30.0,
+    60.0,
+    100.0,
+    150.0,
+    250.0,
+    365.0,
+    500.0,
+    750.0,
+    1000.0
+  ],
+  "channel_semantics": {
+    "xi": "frozen common 0-1 Pollock sequence coordinate",
+    "pollock_tau_hat": "pollock_tau_s / pollock_tau_end_s",
+    "adv_tau_hat": "D29-R1 directional ADV travel time sampled at each Pollock node by containing cell, divided by pollock_tau_end_s",
+    "log10_Kh": "log10(sqrt(Kx*Ky)) sampled at each Pollock node",
+    "log10_Kz_over_Kh": "log10(Kz/sqrt(Kx*Ky)) sampled at each Pollock node",
+    "porosity": "D23 Recipe1.1 porosity sampled at each Pollock node",
+    "pressure_z": "D25 pressure_psi sampled raw, then z-scored using TRAIN-only global channel statistics",
+    "target_time_hat": "target_days / 1000",
+    "target_eta_sequence": "86400 * target_days / pollock_tau_end_s, broadcast over nodes"
+  },
+  "sampling_contract": {
+    "grid_shape_zyx": [
+      15,
+      50,
+      50
+    ],
+    "cell_size_m_xyz": [
+      6.096,
+      6.096,
+      1.2192
+    ],
+    "rule": "containing Cartesian cell at exact frozen Pollock XYZ; no interpolation",
+    "boundary_policy": "floor coordinate/cell-size then clip to valid final cell index; outside-domain tolerance 1e-8 m"
+  },
+  "control_encoding": {
+    "direct_rate_channel": false,
+    "direct_BHP_channel": false,
+    "rule": "rate/BHP act through the already-frozen physical case state: pressure, Pollock/ADV travel times, and eta; no new Stage-4 control law or direct channel is invented"
+  },
+  "physics_hierarchy": {
+    "Pollock": "AUTHORITATIVE_KINEMATICS",
+    "ADV": "AUXILIARY_DIRECTIONAL_PREDICTOR",
+    "FMM": "NOT_IN_C20_9CHANNEL_PREDICTOR",
+    "M_face": "PHYSICS_SIDECAR_NOT_PREDICTOR"
+  },
+  "normalization": {
+    "fit": "TRAIN_ONLY",
+    "validation": "TRANSFORM_ONLY",
+    "locked_OOD": "TRANSFORM_ONLY",
+    "statistics_file": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\V16D32_TRAIN_Only_Normalization_Statistics.json",
+    "statistics_sha256": "dcda1cf01fa30bd1cd947a500de73295037d6ca2b492725edd050c0ff7c3bfd9"
+  },
+  "prohibited": [
+    "validation normalization fitting",
+    "OOD normalization fitting",
+    "Y target use for predictor statistics",
+    "M_face predictor insertion",
+    "direct rate/BHP channel insertion without a new prospective contract",
+    "case selection",
+    "streamline selection",
+    "OOD adaptation",
+    "model training in D32",
+    "model selection in D32"
+  ]
+}

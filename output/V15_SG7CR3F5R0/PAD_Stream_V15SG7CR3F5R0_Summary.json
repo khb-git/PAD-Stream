@@ -1,0 +1,11 @@
+{
+  "milestone": "V15-SG7C-R3F5-R0",
+  "status": "SUPPORT_METRIC_RECONCILIATION_INCOMPLETE",
+  "diagnosis": "AUTHORITATIVE_SUPPORT_METRIC_NOT_YET_RECONSTRUCTED",
+  "training_performed": false,
+  "model_parameters_changed": false,
+  "gate_changed": false,
+  "support_extension_calibrated": false,
+  "recommendation": "None of the candidate numerical definitions reproduces the authoritative 49.5478% support closely enough. Use the saved source-definition evidence to reconstruct the exact R3F4/R3D formula before any support extension calibration. Do not anchor by scale.",
+  "next_milestone": "V15-SG7C-R3F5-R0A \u2014 Exact Authoritative Support Formula Extraction"
+}

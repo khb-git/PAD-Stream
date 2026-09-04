@@ -1,0 +1,57 @@
+{
+  "milestone": "V15-SG7E1R13",
+  "status": "SG7E_HISTORICAL_REFERENCE_IS_MULTI_TIME_CONTRACT",
+  "diagnosis": "AUTHORITATIVE_SG7E_REFERENCE_METRICS_CONSUME_ALL_PERSISTED_SNAPSHOTS",
+  "reference_key": "SG7A_corrected",
+  "artifact": {
+    "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7E\\V15SG7E_Plume_Coverage_Validation.npz",
+    "shape": [
+      4,
+      15,
+      50,
+      50
+    ],
+    "array_sha256": "e3d4bef65753a2d0dd65414db04416cc3cb89408578411109384617847b31bce"
+  },
+  "time_axis": {
+    "key": "times_days",
+    "values_days": [
+      100.0,
+      250.0,
+      500.0,
+      1000.0
+    ]
+  },
+  "correspondence": {
+    "metric_table_count": 58,
+    "matched_metric_row_count": 21734,
+    "reference_semantic_counts_by_snapshot": [
+      5409,
+      5409,
+      5409,
+      5409
+    ],
+    "positive_snapshot_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "selected_snapshot_index": null,
+    "selected_time_days": null
+  },
+  "plume_threshold": {
+    "value": 0.5,
+    "changed": false
+  },
+  "constraints": {
+    "candidate_performance_used": false,
+    "threshold_changed": false,
+    "posthoc_alignment": false,
+    "deployment_correction_performed": false,
+    "reference_field_reconstructed": false,
+    "reference_field_frozen": false
+  },
+  "recommendation": "Do not force one snapshot. Persisted metric correspondence indicates that the historical SG7E reference contract is multi-time across all four SG7A_corrected snapshots. The next milestone must reconstruct/persist the complete four-time reference set and define how the frozen SG7D6 field is compared against the historical multi-time acceptance contract without changing any gate.",
+  "next_milestone": "V15-SG7E1R14 \u2014 Multi-Time Historical Reference Reconstruction / Contract Audit"
+}

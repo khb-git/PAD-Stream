@@ -1,0 +1,35 @@
+{
+  "milestone": "V16B-7",
+  "status": "V16B_DIRECTIONAL_ADVECTIVE_TRAVEL_TIME_SOLVE_COMPLETE",
+  "governing_equation": "v(x) dot grad(tau_ADV) = 1",
+  "boundary_policy": "V16B6A_NO_FLOW_EXTERNAL_BOUNDARY_PROJECTED_OPERATOR",
+  "external_tau_value": null,
+  "solver": "scipy.sparse.linalg.spsolve",
+  "statistics": {
+    "finite_cells": 37500,
+    "total_cells": 37500,
+    "min_days": 0.0,
+    "median_days": 223.48208981513065,
+    "mean_days": 293.4439046551408,
+    "max_days": 4996.618288842583,
+    "negative_cells": 0,
+    "nonpositive_non_source_cells": 0,
+    "max_abs_source_tau_s": 0.0
+  },
+  "residual": {
+    "relative_L2": 8.935923261052864e-15,
+    "maximum_absolute": 3.410605131648481e-13
+  },
+  "causality": {
+    "checked": 37495,
+    "violations": 0,
+    "fraction": 1.0,
+    "maximum_violation_s": 0.0
+  },
+  "numerical_artifact": {
+    "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_B7_CONTROLLED_DIRECTIONAL_ADVECTIVE_TRAVEL_TIME_SOLVE\\V16B7_Directional_Advective_Travel_Time.npz",
+    "sha256": "b69fe2d895e244d458a95ce7c6ca485f682ee7a3ea1d4c757d924e0ed519e3f2"
+  },
+  "recommendation": "Freeze the untuned directional travel-time solution. Proceed to V16B-8 for an independent directional-advective vs isotropic-FMM vs Pollock TOF comparison. Do not recalibrate any field.",
+  "next_milestone": "V16B-8 \u2014 Independent Directional / FMM / Pollock TOF Comparison"
+}

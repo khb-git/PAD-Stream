@@ -1,0 +1,13 @@
+{
+  "milestone": "V16A-R1",
+  "status": "V16A_COMPONENT_BINDING_REMAINS_INCOMPLETE",
+  "diagnosis": "ONE_OR_MORE_REQUIRED_COMPONENTS_REMAIN_AMBIGUOUS_OR_NOT_FOUND_WITHIN_THEIR_ORIGINAL_SG1_SG6_OWNER_LINEAGE",
+  "resolution_counts": {
+    "exactly_persisted": 0,
+    "source_defined_not_persisted": 10,
+    "ambiguous_within_owner": 0,
+    "not_found": 2
+  },
+  "recommendation": "Do not run Fast Marching. Audit only the ambiguous/not-found component rows and their exact SG1-SG6 source/output lineage.",
+  "next_milestone": "V16A-R2 \u2014 Residual Original-Milestone Component Lineage Audit"
+}

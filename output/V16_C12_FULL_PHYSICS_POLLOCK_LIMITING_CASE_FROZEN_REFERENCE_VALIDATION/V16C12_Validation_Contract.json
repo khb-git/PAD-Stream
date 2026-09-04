@@ -1,0 +1,39 @@
+{
+  "milestone": "V16C-12",
+  "status": "V16C_LIMITING_CASE_HIERARCHY_VALIDATED_FROZEN_V15_100D_REFERENCE_BINDING_REQUIRED",
+  "diagnosis": "THE_V16_SOLVER_LIMITING_CASE_HIERARCHY_IS_SOURCE_AUTHENTIC_BUT_THE_FROZEN_V15_100D_REFERENCE_CANNOT_YET_BE_UNIQUELY_CERTIFIED_FROM_LOCAL_PROVENANCE",
+  "limiting_case_contract": [
+    {
+      "limit": "Nc=0",
+      "expected": "Stage-3 capillary nesting",
+      "source_bound": true,
+      "V16_interpretation": "Nc metadata may be zero; Pollock kinematics unchanged"
+    },
+    {
+      "limit": "finite Pe_c",
+      "expected": "capillary diffusion active",
+      "source_bound": true,
+      "V16_interpretation": "C7 transformed capillary operator retained"
+    },
+    {
+      "limit": "Pe_c -> infinity",
+      "expected": "capillary coefficient phi/Pe_c -> 0",
+      "source_bound": true,
+      "V16_interpretation": "reduces algebraically to Pollock-coordinate conservative advection"
+    },
+    {
+      "limit": "constant state",
+      "expected": "preserved",
+      "source_bound": true,
+      "V16_interpretation": "already numerically demonstrated in C11"
+    }
+  ],
+  "candidate_count": 98,
+  "certified_reference_count": 6,
+  "frozen_V15_100d_reference_path": null,
+  "frozen_V15_100d_reference_sha256": null,
+  "numerical_cross_comparison_executed": false,
+  "Y_generation_authorized": false,
+  "recommendation": "Freeze the C12 limiting-case result. Do not compare by numerical closeness and do not relabel a candidate. Perform a dedicated provenance audit to bind the exact frozen V15 100-day reference/SG7D6 authority.",
+  "next_milestone": "V16C-12R \u2014 Frozen V15 100-Day Reference Provenance Binding Audit"
+}

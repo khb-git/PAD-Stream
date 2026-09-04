@@ -1,0 +1,1164 @@
+{
+  "milestone": "V16D-12",
+  "status": "V16D_STAGE4_MULTICASE_TRANSPORT_LINEAGE_BOUND_CASE0002_SOURCEAUTHENTIC_PILOT_IMPLEMENTATION_AUTHORIZED",
+  "D11A_sha256": "2801de07499ff99dcd6a7dd057848196b752d6913a524ec2e76c59027f4ba7f4",
+  "frozen_case0002_partition": {
+    "case_id": "V16D_Foundation_Case_0002",
+    "partition": "TRAIN",
+    "split_seed": "161101",
+    "assignment_basis": "SHA256(seed:case_id); no physics/transport/performance ranking"
+  },
+  "source_bindings": {
+    "C17": {
+      "path": "PAD_Stream_V16C17_Production_Source_Authentic_Y_Transport_Tensor_Generation_and_Certification.py",
+      "sha256": "1d357be446103cb554c4759948347d2876235b7c630c64cd826801cbfc61dd4f",
+      "suffix": ".py",
+      "functions": [
+        {
+          "name": "sha",
+          "line": 28,
+          "args": [
+            "p"
+          ]
+        },
+        {
+          "name": "lj",
+          "line": 33,
+          "args": [
+            "p"
+          ]
+        },
+        {
+          "name": "sj",
+          "line": 36,
+          "args": [
+            "p",
+            "x"
+          ]
+        },
+        {
+          "name": "sc",
+          "line": 37,
+          "args": [
+            "p",
+            "rows"
+          ]
+        },
+        {
+          "name": "relperm",
+          "line": 45,
+          "args": [
+            "S",
+            "p"
+          ]
+        },
+        {
+          "name": "fw",
+          "line": 48,
+          "args": [
+            "S",
+            "p"
+          ]
+        },
+        {
+          "name": "dshape",
+          "line": 50,
+          "args": [
+            "S",
+            "p",
+            "lmb"
+          ]
+        },
+        {
+          "name": "max_dfw",
+          "line": 56,
+          "args": [
+            "p"
+          ]
+        },
+        {
+          "name": "tri",
+          "line": 59,
+          "args": [
+            "lower",
+            "diag",
+            "upper",
+            "rhs"
+          ]
+        },
+        {
+          "name": "adv",
+          "line": 67,
+          "args": [
+            "S",
+            "dt",
+            "cv",
+            "p"
+          ]
+        },
+        {
+          "name": "cap",
+          "line": 75,
+          "args": [
+            "Sadv",
+            "dt",
+            "phi",
+            "Pec",
+            "lmb",
+            "M",
+            "Mf",
+            "cv",
+            "dth",
+            "p"
+          ]
+        },
+        {
+          "name": "import_c11",
+          "line": 84,
+          "args": []
+        },
+        {
+          "name": "main",
+          "line": 87,
+          "args": []
+        },
+        {
+          "name": "raw",
+          "line": 52,
+          "args": [
+            "E",
+            "X"
+          ]
+        },
+        {
+          "name": "val",
+          "line": 120,
+          "args": [
+            "k"
+          ]
+        }
+      ]
+    },
+    "C10": {
+      "path": "PAD_Stream_V16C10_Conservative_201_Node_Pollock_Coordinate_Full_Physics_Operator_Construction.py",
+      "sha256": "c6b112e419263826b1f41db7013273873edd7343fed09e77a142968dd16deabc",
+      "suffix": ".py",
+      "functions": [
+        {
+          "name": "sha",
+          "line": 32,
+          "args": [
+            "p"
+          ]
+        },
+        {
+          "name": "loadj",
+          "line": 38,
+          "args": [
+            "p"
+          ]
+        },
+        {
+          "name": "savej",
+          "line": 39,
+          "args": [
+            "p",
+            "x"
+          ]
+        },
+        {
+          "name": "save_csv",
+          "line": 41,
+          "args": [
+            "p",
+            "rows"
+          ]
+        },
+        {
+          "name": "main",
+          "line": 49,
+          "args": []
+        }
+      ]
+    },
+    "C11": {
+      "path": "PAD_Stream_V16C11_Executable_Conservative_Full_Physics_Pollock_Transport_Solver_Assembly_and_Diagnostic_Validation.py",
+      "sha256": "cf3f4f124ae08d928471f2ec14a6bd269ac5362d6008011fcacd59190d215c3d",
+      "suffix": ".py",
+      "functions": [
+        {
+          "name": "sha",
+          "line": 34,
+          "args": [
+            "p"
+          ]
+        },
+        {
+          "name": "loadj",
+          "line": 41,
+          "args": [
+            "p"
+          ]
+        },
+        {
+          "name": "savej",
+          "line": 42,
+          "args": [
+            "p",
+            "x"
+          ]
+        },
+        {
+          "name": "save_csv",
+          "line": 44,
+          "args": [
+            "p",
+            "rows"
+          ]
+        },
+        {
+          "name": "relperm",
+          "line": 57,
+          "args": [
+            "S",
+            "p"
+          ]
+        },
+        {
+          "name": "fw",
+          "line": 65,
+          "args": [
+            "S",
+            "p"
+          ]
+        },
+        {
+          "name": "dshape",
+          "line": 69,
+          "args": [
+            "S",
+            "p",
+            "lambda_bc"
+          ]
+        },
+        {
+          "name": "max_dfw",
+          "line": 79,
+          "args": [
+            "p"
+          ]
+        },
+        {
+          "name": "batched_tridiagonal",
+          "line": 84,
+          "args": [
+            "lower",
+            "diag",
+            "upper",
+            "rhs"
+          ]
+        },
+        {
+          "name": "capillary_implicit",
+          "line": 98,
+          "args": [
+            "Sadv",
+            "dt",
+            "phi",
+            "Pe_c",
+            "lambda_bc",
+            "M",
+            "M_face",
+            "cv",
+            "dtheta",
+            "p"
+          ]
+        },
+        {
+          "name": "advective_step",
+          "line": 133,
+          "args": [
+            "S",
+            "dt",
+            "cv",
+            "p"
+          ]
+        },
+        {
+          "name": "main",
+          "line": 153,
+          "args": []
+        },
+        {
+          "name": "raw",
+          "line": 72,
+          "args": [
+            "Sev",
+            "Sv"
+          ]
+        }
+      ]
+    },
+    "C14": {
+      "path": "PAD_Stream_V16C14_Production_Full_Physics_Transport_Parameter_Authority_Contract.py",
+      "sha256": "cd3b45b72ae2dc7d6906aad7323522d467234ba81a7b641fd323ddc3df3bb419",
+      "suffix": ".py",
+      "functions": [
+        {
+          "name": "loadj",
+          "line": 19,
+          "args": [
+            "p"
+          ]
+        },
+        {
+          "name": "savej",
+          "line": 22,
+          "args": [
+            "p",
+            "x"
+          ]
+        },
+        {
+          "name": "save_csv",
+          "line": 23,
+          "args": [
+            "p",
+            "rows"
+          ]
+        },
+        {
+          "name": "sha",
+          "line": 30,
+          "args": [
+            "p"
+          ]
+        },
+        {
+          "name": "find_stage4",
+          "line": 36,
+          "args": []
+        },
+        {
+          "name": "source_semantics",
+          "line": 50,
+          "args": [
+            "text"
+          ]
+        },
+        {
+          "name": "main",
+          "line": 63,
+          "args": []
+        },
+        {
+          "name": "has",
+          "line": 51,
+          "args": []
+        }
+      ]
+    },
+    "C15": {
+      "path": "PAD_Stream_V16C15_Production_Physical_Target_Time_Schedule_Authority_Contract.py",
+      "sha256": "425cbb9908069d9231b6a0da6d9c8869d4291a0a3f85ae603707582141fd8ae1",
+      "suffix": ".py",
+      "functions": [
+        {
+          "name": "lj",
+          "line": 8,
+          "args": [
+            "p"
+          ]
+        },
+        {
+          "name": "sj",
+          "line": 9,
+          "args": [
+            "p",
+            "x"
+          ]
+        },
+        {
+          "name": "sc",
+          "line": 10,
+          "args": [
+            "p",
+            "rows"
+          ]
+        },
+        {
+          "name": "pollock",
+          "line": 14,
+          "args": []
+        },
+        {
+          "name": "main",
+          "line": 25,
+          "args": []
+        }
+      ]
+    },
+    "Stage4": {
+      "path": "pi_rnn_stage4_full_godunov.py",
+      "sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+      "suffix": ".py",
+      "functions": [
+        {
+          "name": "validate_params",
+          "line": 472,
+          "args": [
+            "p"
+          ]
+        },
+        {
+          "name": "calculate_relative_permeability_np",
+          "line": 492,
+          "args": [
+            "sw_local",
+            "so_local",
+            "p"
+          ]
+        },
+        {
+          "name": "fractional_flow_np",
+          "line": 505,
+          "args": [
+            "Sw",
+            "p",
+            "eps"
+          ]
+        },
+        {
+          "name": "dfw_dsw_np",
+          "line": 515,
+          "args": [
+            "Sw",
+            "p"
+          ]
+        },
+        {
+          "name": "welge_tangent",
+          "line": 521,
+          "args": [
+            "Sw_grid",
+            "fw",
+            "swc",
+            "eps"
+          ]
+        },
+        {
+          "name": "calculate_x_sw",
+          "line": 540,
+          "args": [
+            "i_w",
+            "t",
+            "phi",
+            "A",
+            "derivative"
+          ]
+        },
+        {
+          "name": "profile_at_time",
+          "line": 544,
+          "args": [
+            "t_days",
+            "p",
+            "Sw_grid",
+            "add_plateau_points"
+          ]
+        },
+        {
+          "name": "breakthrough_time_days",
+          "line": 586,
+          "args": [
+            "p",
+            "Sw_grid"
+          ]
+        },
+        {
+          "name": "Y_L",
+          "line": 607,
+          "args": [
+            "nc"
+          ]
+        },
+        {
+          "name": "xfront_from_tD",
+          "line": 615,
+          "args": [
+            "t_D",
+            "slope_star",
+            "nc"
+          ]
+        },
+        {
+          "name": "append_logM",
+          "line": 627,
+          "args": [
+            "p_arr"
+          ]
+        },
+        {
+          "name": "d_shape_np",
+          "line": 641,
+          "args": [
+            "Sw",
+            "p",
+            "lambda_bc"
+          ]
+        },
+        {
+          "name": "pec_from_cap_props",
+          "line": 657,
+          "args": [
+            "p",
+            "Pe_psi",
+            "lambda_bc",
+            "k_mD"
+          ]
+        },
+        {
+          "name": "default_nx_for_pec",
+          "line": 676,
+          "args": [
+            "Pe_c"
+          ]
+        },
+        {
+          "name": "solve_capillary_snapshots",
+          "line": 681,
+          "args": [
+            "p",
+            "lambda_bc",
+            "Pe_c",
+            "times_days",
+            "nx",
+            "cfl",
+            "nc"
+          ]
+        },
+        {
+          "name": "front_mid_crossing",
+          "line": 776,
+          "args": [
+            "xD",
+            "S",
+            "Sw_star",
+            "swc"
+          ]
+        },
+        {
+          "name": "adaptive_grid",
+          "line": 791,
+          "args": [
+            "xD_solver",
+            "Sw_solver",
+            "n_points",
+            "alpha"
+          ]
+        },
+        {
+          "name": "grid_from_conditioning",
+          "line": 811,
+          "args": [
+            "xD_front",
+            "inv_pec",
+            "n_points",
+            "amp"
+          ]
+        },
+        {
+          "name": "build_capillary_profiles",
+          "line": 848,
+          "args": [
+            "times_days",
+            "p",
+            "Pe_c",
+            "lambda_bc",
+            "nc",
+            "n_seq",
+            "alpha",
+            "nx"
+          ]
+        },
+        {
+          "name": "build_model",
+          "line": 900,
+          "args": [
+            "input_features",
+            "param_dim",
+            "hidden",
+            "layers"
+          ]
+        },
+        {
+          "name": "fractional_flow_tf_param",
+          "line": 961,
+          "args": [
+            "S",
+            "p_vec",
+            "params_fixed",
+            "eps"
+          ]
+        },
+        {
+          "name": "d_shape_tf",
+          "line": 993,
+          "args": [
+            "S",
+            "p_vec",
+            "params_fixed"
+          ]
+        },
+        {
+          "name": "make_anchors_from_truth",
+          "line": 1021,
+          "args": [
+            "x_seq",
+            "Sw_true",
+            "swc",
+            "sor",
+            "Sw_star"
+          ]
+        },
+        {
+          "name": "data_loss",
+          "line": 1056,
+          "args": [
+            "S_pred",
+            "S_true"
+          ]
+        },
+        {
+          "name": "injector_bc_loss",
+          "line": 1061,
+          "args": [
+            "S_pred",
+            "p_vec"
+          ]
+        },
+        {
+          "name": "outlet_bc_loss",
+          "line": 1069,
+          "args": [
+            "S_pred",
+            "S_true"
+          ]
+        },
+        {
+          "name": "pde_residual_loss",
+          "line": 1076,
+          "args": [
+            "model",
+            "x_seq",
+            "p_vec",
+            "params_fixed",
+            "rel_dt"
+          ]
+        },
+        {
+          "name": "shape_loss",
+          "line": 1183,
+          "args": [
+            "S_pred",
+            "S_true"
+          ]
+        },
+        {
+          "name": "monotonicity_loss",
+          "line": 1191,
+          "args": [
+            "S_pred"
+          ]
+        },
+        {
+          "name": "mass_balance_loss",
+          "line": 1198,
+          "args": [
+            "S_pred",
+            "S_true",
+            "x_seq"
+          ]
+        },
+        {
+          "name": "anchor_loss",
+          "line": 1213,
+          "args": [
+            "S_pred",
+            "idxs_tf",
+            "targs_tf"
+          ]
+        },
+        {
+          "name": "generate_param_grid",
+          "line": 1231,
+          "args": [
+            "base_p",
+            "no_vals",
+            "nw_vals",
+            "sor_vals",
+            "swc_vals",
+            "mu_o_vals",
+            "mu_w_vals",
+            "phi_vals"
+          ]
+        },
+        {
+          "name": "build_multi_case_arrays",
+          "line": 1278,
+          "args": [
+            "param_list",
+            "pec_vals",
+            "lambda_vals",
+            "nc_vals",
+            "num_times",
+            "t_min_days",
+            "n_seq",
+            "alpha",
+            "max_cases",
+            "seed",
+            "verbose_every"
+          ]
+        },
+        {
+          "name": "make_tf_datasets_from_arrays",
+          "line": 1362,
+          "args": [
+            "x_all",
+            "Sw_all",
+            "p_vec_all",
+            "tD_all",
+            "anchor_idxs_all",
+            "anchor_targs_all",
+            "train_frac",
+            "batch_size",
+            "shuffle_buffer",
+            "seed"
+          ]
+        },
+        {
+          "name": "train_pi_rnn_from_dataset_with_history",
+          "line": 1395,
+          "args": [
+            "model",
+            "params_fixed",
+            "train_ds",
+            "epochs",
+            "lambdas",
+            "lambda_anchor",
+            "lambda_tip",
+            "lambda_mono",
+            "lambda_mass",
+            "lambda_curv",
+            "lr",
+            "log_every",
+            "phys_warmup_epochs"
+          ]
+        },
+        {
+          "name": "plot_training_convergence",
+          "line": 1498,
+          "args": [
+            "history",
+            "lambdas",
+            "save_path",
+            "figsize"
+          ]
+        },
+        {
+          "name": "conditioning_vector_np",
+          "line": 1563,
+          "args": [
+            "p_case",
+            "t_D",
+            "xD_front",
+            "Sw_star",
+            "inv_pec",
+            "lambda_bc",
+            "nc"
+          ]
+        },
+        {
+          "name": "predict_profile",
+          "line": 1574,
+          "args": [
+            "model",
+            "p_case",
+            "t_days",
+            "Pe_c",
+            "lambda_bc",
+            "nc",
+            "nx_ref"
+          ]
+        },
+        {
+          "name": "plot_profile",
+          "line": 1616,
+          "args": [
+            "res"
+          ]
+        },
+        {
+          "name": "evaluate_times_case",
+          "line": 1635,
+          "args": [
+            "model",
+            "p_case",
+            "times",
+            "Pe_c",
+            "lambda_bc",
+            "nc"
+          ]
+        },
+        {
+          "name": "make_case_from_values",
+          "line": 1659,
+          "args": [
+            "base_p",
+            "no",
+            "nw",
+            "swc",
+            "sor",
+            "mu_w",
+            "mu_o",
+            "phi"
+          ]
+        },
+        {
+          "name": "sharp_limit_test",
+          "line": 1673,
+          "args": [
+            "model",
+            "p_case",
+            "t_days",
+            "lambda_bc",
+            "inv_pec_seq"
+          ]
+        },
+        {
+          "name": "in_sample_check",
+          "line": 1735,
+          "args": [
+            "model",
+            "npz_path",
+            "n_rows",
+            "seed"
+          ]
+        },
+        {
+          "name": "compute_residuals_over_times",
+          "line": 1785,
+          "args": [
+            "model",
+            "p_case",
+            "times",
+            "Pe_c",
+            "lambda_bc",
+            "nc",
+            "n_x"
+          ]
+        },
+        {
+          "name": "plot_diagnostic_panels",
+          "line": 1846,
+          "args": [
+            "model",
+            "p_case",
+            "times",
+            "Pe_c",
+            "lambda_bc",
+            "nc",
+            "case_name",
+            "save_path",
+            "figsize"
+          ]
+        },
+        {
+          "name": "build_supplemental_slab",
+          "line": 2024,
+          "args": [
+            "base_p",
+            "seed",
+            "n_rock",
+            "pec_vals",
+            "lambda_vals",
+            "nc_vals",
+            "n_seq",
+            "alpha"
+          ]
+        },
+        {
+          "name": "swi",
+          "line": 323,
+          "args": [
+            "self"
+          ]
+        },
+        {
+          "name": "span",
+          "line": 327,
+          "args": [
+            "self"
+          ]
+        },
+        {
+          "name": "viscosity_ratio",
+          "line": 330,
+          "args": [
+            "self"
+          ]
+        },
+        {
+          "name": "validate",
+          "line": 333,
+          "args": [
+            "self"
+          ]
+        },
+        {
+          "name": "C_day_inv",
+          "line": 352,
+          "args": [
+            "self"
+          ]
+        },
+        {
+          "name": "tD",
+          "line": 355,
+          "args": [
+            "self",
+            "t_days"
+          ]
+        },
+        {
+          "name": "PV_rb",
+          "line": 358,
+          "args": [
+            "self"
+          ]
+        },
+        {
+          "name": "PV_STB",
+          "line": 361,
+          "args": [
+            "self",
+            "bw"
+          ]
+        },
+        {
+          "name": "validate",
+          "line": 364,
+          "args": [
+            "self"
+          ]
+        },
+        {
+          "name": "validate",
+          "line": 404,
+          "args": [
+            "self"
+          ]
+        },
+        {
+          "name": "validate",
+          "line": 426,
+          "args": [
+            "self"
+          ]
+        },
+        {
+          "name": "as_ml_dict",
+          "line": 431,
+          "args": [
+            "self"
+          ]
+        },
+        {
+          "name": "conditioning_header",
+          "line": 443,
+          "args": [
+            "self"
+          ]
+        },
+        {
+          "name": "param_dim",
+          "line": 446,
+          "args": [
+            "self"
+          ]
+        },
+        {
+          "name": "C",
+          "line": 449,
+          "args": [
+            "self"
+          ]
+        },
+        {
+          "name": "PV_rb",
+          "line": 452,
+          "args": [
+            "self"
+          ]
+        },
+        {
+          "name": "PV_STB",
+          "line": 455,
+          "args": [
+            "self"
+          ]
+        },
+        {
+          "name": "tD",
+          "line": 458,
+          "args": [
+            "self",
+            "t_days"
+          ]
+        },
+        {
+          "name": "raw",
+          "line": 647,
+          "args": [
+            "Se_val",
+            "Sw_val"
+          ]
+        },
+        {
+          "name": "repeat_params",
+          "line": 905,
+          "args": [
+            "args"
+          ]
+        },
+        {
+          "name": "normalize_params",
+          "line": 922,
+          "args": [
+            "p"
+          ]
+        },
+        {
+          "name": "add_relative_coordinate",
+          "line": 932,
+          "args": [
+            "args"
+          ]
+        },
+        {
+          "name": "range_map",
+          "line": 949,
+          "args": [
+            "args"
+          ]
+        },
+        {
+          "name": "_expand",
+          "line": 971,
+          "args": [
+            "idx"
+          ]
+        },
+        {
+          "name": "xf_at",
+          "line": 1105,
+          "args": [
+            "fac"
+          ]
+        },
+        {
+          "name": "p_at",
+          "line": 1110,
+          "args": [
+            "fac"
+          ]
+        },
+        {
+          "name": "_make_ds",
+          "line": 1375,
+          "args": [
+            "sub_idx",
+            "shuffle"
+          ]
+        },
+        {
+          "name": "crossing",
+          "line": 1708,
+          "args": [
+            "level"
+          ]
+        },
+        {
+          "name": "crossing",
+          "line": 1767,
+          "args": [
+            "S"
+          ]
+        }
+      ]
+    }
+  },
+  "exact_C17_Y_artifact_sha": "d2a7ba92660dfc0ccf08a5f37b1c9519be000e4f42167ad4417e889be0015f63",
+  "exact_C17_Y_artifact_survives_locally": [
+    "output\\V16_C17_PRODUCTION_SOURCE_AUTHENTIC_Y_TRANSPORT_TENSOR_GENERATION_CERTIFICATION\\V16C17_Production_Source_Authentic_Y_Transport.npz"
+  ],
+  "case0002_pilot_contract": {
+    "case_id": "V16D_Foundation_Case_0002",
+    "partition": "TRAIN",
+    "input_authorities": {
+      "pollock_C7_201node": "output\\V16_D9R1_FULL_CASE0002_0025_201NODE_POLLOCK_C7_FACE_METRIC\\cases\\V16D_Foundation_Case_0002_Pollock_201Node_C7_FaceMetric.npz",
+      "travel_time_hierarchy": "output\\V16_D10C_FULL_CASE0002_0025_FMM_ADV_TRAVELTIME_HIERARCHY\\cases\\V16D_Foundation_Case_0002_FMM_ADV_Pollock_Hierarchy.npz"
+    },
+    "target_days": [
+      30,
+      60,
+      100,
+      150,
+      250,
+      365,
+      500,
+      750,
+      1000
+    ],
+    "output_shape": [
+      9,
+      1078,
+      201
+    ],
+    "target_semantics": "Y[t,i,j] = Sw on streamline i at canonical Pollock theta_j and physical target time t",
+    "time_mapping": "eta_i(t)=86400*t_days/tau_end_s",
+    "kinematics": "Pollock authoritative; do not multiply by exp(Nc*xD)",
+    "compressibility": "Nc=0.1 retained as Stage-4 metadata/source semantics only",
+    "capillary_metric": "Use D9R1 M_face directly in conservative capillary operator",
+    "outlet_capillary_BC": "held-value identity row; not Neumann",
+    "FMM_ADV": "auxiliary conditioning only; neither changes source-authentic transport targets",
+    "acceptance_policy": "pilot must pass bounds, finite, convergence/residual, conservation, time mapping, no case/streamline selection",
+    "forbidden": [
+      "using validation/test to tune solver",
+      "fitting physics to Pollock/FMM/ADV",
+      "changing Stage-4 parameters",
+      "using node M instead of M_face in conservative capillary term",
+      "regenerating or relabeling unavailable V15 later-time deployment states"
+    ]
+  },
+  "gates": {
+    "D11A_exact_provenance_bound": true,
+    "D11_split_bound": true,
+    "Case0002_is_frozen_train_case": true,
+    "D9R1_case0002_present": true,
+    "D10C_case0002_present": true,
+    "Stage4_source_candidate_bound": true,
+    "C17_authority_candidate_bound": true,
+    "C10_operator_candidate_bound": true,
+    "C11_solver_candidate_bound": true,
+    "C14_design_candidate_bound": true,
+    "C15_time_candidate_bound": true,
+    "C17_exact_Y_artifact_optional_not_required": true,
+    "Pollock_primary": true,
+    "M_face_primary_for_capillary": true,
+    "no_transport_executed": true,
+    "no_training": true,
+    "locked_OOD_test_untouched": true
+  },
+  "next_milestone": "V16D-12A \u2014 Case0002 Source-Authentic 9-Time Stage-4 Transport Supervision Pilot"
+}

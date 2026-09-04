@@ -1,0 +1,15 @@
+{
+  "milestone": "V16D-24",
+  "status": "V16D_SG2_SG3_SG4_EXACT_SOURCES_AND_CONTROL_EVIDENCE_BOUND_VERSIONED_CONTROL_ADAPTER_CONTRACT_AUTHORIZED",
+  "report_sha256": "693e9f852c0791de276affe8c4d560257f33e58e1b020df5c246bd05b5346ac2",
+  "gates": {
+    "D23_SHA_exact": true,
+    "SG2_unique_exact_source": true,
+    "SG3_unique_exact_source": true,
+    "SG4_unique_exact_source": true,
+    "SG3_rate_evidence_found": true,
+    "SG3_BHP_evidence_found": true,
+    "no_unproven_parameter_mutation": true
+  },
+  "next_milestone": "V16D-24A \u2014 Freeze Source-Preserving SG3 Injection-Rate/BHP Adapter, Then Execute 36-Case Flow Ensemble"
+}

@@ -1,0 +1,20 @@
+{
+  "milestone": "V16D-19",
+  "status": "V16D_EXP_MC1_MULTICASE_CASELEVEL_OOD_GENERALIZATION_BASELINE_FROZEN_POST_OOD_STRUCTURAL_DIAGNOSTIC_CONTRACT_AUTHORIZED",
+  "interpretation_sha256": "26260e510ab2c7818265823a267d693f7f24f338188d54b2c155bacef44cf4b2",
+  "gates": {
+    "D17_SHA_exact": true,
+    "D18_SHA_exact": true,
+    "D18_one_touch_true": true,
+    "four_OOD_cases_present": true,
+    "finite_metrics": true,
+    "no_retraining": true,
+    "no_OOD_adaptation": true,
+    "no_model_selection": true,
+    "no_threshold_tuning": true,
+    "MC1_frozen_as_baseline": true,
+    "foundation_model_claim_not_authorized": true,
+    "MC2_not_trained": true
+  },
+  "next_milestone": "V16D-20 \u2014 Frozen EXP-MC1 OOD Structural / Front / Time-Resolved Diagnostic Contract and Audit"
+}

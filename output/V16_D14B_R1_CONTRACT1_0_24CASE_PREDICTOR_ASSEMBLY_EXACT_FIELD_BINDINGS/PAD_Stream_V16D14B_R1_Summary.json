@@ -1,0 +1,25 @@
+{
+  "milestone": "V16D-14B-R1",
+  "status": "V16D_24CASE_C20_PREDICTOR_TENSORS_ASSEMBLED_CONTRACT1_0_EXACT_D6_D7B_BINDINGS_TRAIN_ONLY_NORMALIZATION_FROZEN",
+  "normalization_statistics_sha256": "7887daa54e6bebf2740a105b59207484e87b9b1ea8b84f6b9b79b1a5119e3d26",
+  "predictor_manifest_sha256": "4fb805913fc02b5bb21f658358e26e1759e44def00055b8ca6dc04359fcf23f7",
+  "gates": {
+    "AR3_summary_SHA_exact": true,
+    "AR3_sampling_contract_SHA_exact": true,
+    "BR3R1_pressure_binding_SHA_exact": true,
+    "D14_source_schema_SHA_exact": true,
+    "exact_24_cases": true,
+    "exact_16_4_4_split": true,
+    "feature_order_exact": true,
+    "all_predictor_artifacts_exist": true,
+    "TRAIN_only_normalization_fit": true,
+    "validation_transform_only": true,
+    "locked_OOD_transform_only": true,
+    "no_target_Y_read": true,
+    "M_face_not_predictor": true,
+    "no_physics_rerun": true,
+    "no_training": true,
+    "no_model_selection": true
+  },
+  "next_milestone": "V16D-15 \u2014 Multi-Foundation-Case Learning Dataset Freeze and Training Protocol Authority Contract"
+}

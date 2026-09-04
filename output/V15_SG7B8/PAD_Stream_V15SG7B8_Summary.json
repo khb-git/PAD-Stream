@@ -1,0 +1,47 @@
+{
+  "milestone": "V15-SG7B-8",
+  "description": "Frozen PI-RNN early-front shape audit",
+  "source_workspace": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11",
+  "training_performed": false,
+  "model_parameters_changed": false,
+  "architecture_changed": false,
+  "seed_density_changed": false,
+  "mapback_operator_changed": false,
+  "validation_threshold_changed": false,
+  "front_contract": {
+    "threshold": 0.21,
+    "low_level": 0.21,
+    "mid_level": 0.25,
+    "high_level": 0.3
+  },
+  "100_day": {
+    "time_days": 100.0,
+    "streamlines": 2662,
+    "SG7A_threshold_crossings": 992,
+    "PI_RNN_threshold_crossings": 0,
+    "SG7A_near_threshold_profiles": 210,
+    "PI_RNN_near_threshold_profiles": 0,
+    "PI_RNN_threshold_gap_mean": 0.116524824956411,
+    "PI_RNN_threshold_gap_P90": 0.21295556366443635,
+    "SG7A_threshold_gap_mean": 0.11557037468628678,
+    "width_ratio_mean": NaN,
+    "width_ratio_P50": NaN,
+    "width_ratio_P90": NaN,
+    "slope_ratio_mean": 1.6679706345389027,
+    "slope_ratio_P50": 2.0313684302362796,
+    "slope_ratio_P10": 0.8808200995511553,
+    "profile_L1_mean": 0.00409120889058442,
+    "profile_L1_P90": 0.010973217872544487
+  },
+  "diagnostic_flags": {
+    "SG7A_front_PI_RNN_none": true,
+    "threshold_gap_large": true,
+    "front_width_oversmoothed": false,
+    "front_slope_too_weak": false,
+    "continuous_state_good": true
+  },
+  "diagnosis": "THRESHOLD_AVOIDANCE",
+  "recommendation": "The frozen PI-RNN remains systematically separated from the S=0.21 front threshold despite good continuous-state accuracy. Design a targeted front-location / threshold-crossing loss.",
+  "audit_passed": true,
+  "next_milestone": "V15-SG7B-9 \u2014 Front-Aware PI-RNN Targeted Refinement Design"
+}

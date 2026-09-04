@@ -1,0 +1,29 @@
+{
+  "milestone": "V15-SG7D-R2",
+  "description": "Support-aware raw map-back reconstruction audit",
+  "training_performed": false,
+  "model_changed": false,
+  "seed_density_changed": false,
+  "raw_mapback_changed": false,
+  "projection_changed": false,
+  "plume_threshold_changed": false,
+  "primary_time_days": 100.0,
+  "support_count_field": "subsegment_count",
+  "support_weight_field": "coverage_weight_m3",
+  "100_day": {
+    "total_false_positives": 3752,
+    "total_false_negatives": 2,
+    "low_support_false_positive_share": 0.09168443496801706,
+    "high_support_false_positive_share": 0.69136460554371,
+    "near_threshold_false_positive_share": 0.017057569296375266
+  },
+  "diagnostic_flags": {
+    "low_support_dominated": false,
+    "high_support_material": true,
+    "threshold_dominated": false
+  },
+  "diagnosis": "HIGH_SUPPORT_AVERAGING_OR_THRESHOLD_EFFECT",
+  "recommendation": "The residual false positives are not explained by low support alone. Inspect within-cell streamline-state dispersion and cell averaging before any algorithmic change.",
+  "validation_passed": true,
+  "next_milestone": "V15-SG7D-R2C \u2014 Within-Cell Streamline-State Dispersion Audit"
+}

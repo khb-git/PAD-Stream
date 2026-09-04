@@ -1,0 +1,32 @@
+{
+  "milestone": "V15-SG7C-R3F2A",
+  "status": "FRONT_CORRECTION_GEOMETRY_TOPOLOGY_AUDIT_COMPLETE",
+  "incoming_diagnosis": "FRONT_CAPACITY_TOPOLOGY_TRADEOFF_CONFIRMED",
+  "primary_reference_experiment": "F3",
+  "diagnosis": "MIXED_FRONT_GEOMETRY_FAILURE",
+  "flags": {
+    "crossing_displacement_material": true,
+    "front_width_distortion_material": true,
+    "wrong_direction_correction_material": true,
+    "overshoot_material": true
+  },
+  "primary_metrics": {
+    "experiment": "F3",
+    "recovered_fronts": 965,
+    "truth_front_count": 992,
+    "mean_shift_vs_truth_xi": 0.17814453663767213,
+    "P90_shift_vs_truth_xi": 0.34304282068909514,
+    "mean_shift_vs_frozen_xi": 0.15927809159391054,
+    "P90_shift_vs_frozen_xi": 0.327034595557259,
+    "front_wrong_direction_fraction": 0.26061761901268976,
+    "front_sign_agreement": 0.7393823809873102,
+    "front_overshoot_fraction": 0.35663463654368077,
+    "front_width_MAE_xi": 0.1861679974819317,
+    "front_width_ratio_median": 1.3135493845529902,
+    "front_width_ratio_abs_error_P90": 0.9259751522357856,
+    "front_gradient_MAE": 0.9886277832873657,
+    "front_gradient_ratio_median": 0.04723076582051075
+  },
+  "recommendation": "The topology tradeoff combines displacement, directionality, overshoot, and/or width distortion. Do not add more generic capacity. Design a front-local residual basis whose amplitude, sign, and crossing effect are explicitly controlled.",
+  "next_milestone": "V15-SG7C-R3F3 \u2014 Front-Local Residual Basis Design"
+}

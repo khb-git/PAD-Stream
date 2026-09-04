@@ -1,0 +1,43 @@
+{
+  "microbatch": 4,
+  "success": true,
+  "failure_class": null,
+  "error": null,
+  "optimizer_created": false,
+  "weight_update": false,
+  "dataset_indices": [
+    144,
+    56,
+    0,
+    6
+  ],
+  "physical_Nc_values": [
+    0.0,
+    0.05000000074505806,
+    0.10000000149011612,
+    0.20000000298023224
+  ],
+  "prediction_finite": true,
+  "residual_finite": true,
+  "losses_finite": true,
+  "parameter_gradients_finite": true,
+  "parameter_gradient_tensor_count": 10,
+  "nonzero_gradient_tensor_count": 10,
+  "parameter_gradient_l2_norm": 0.43432005587646083,
+  "weights_exactly_unchanged": true,
+  "checkpoint_SHA_unchanged": true,
+  "checkpoint_sha256": "2b54c6ace6c893916bf55ee54dea2ad55eb3b5239d8e0c0cda21bc9311efca69",
+  "losses": {
+    "data": 4.118943616049364e-05,
+    "physics": 0.008913731202483177,
+    "bc_inj": 3.0377304938156158e-06,
+    "bc_tip": 2.743151071626926e-06,
+    "anchor": 7.368563274212647e-06,
+    "mono": 5.281751036534388e-09,
+    "total": 0.0005894671194255352
+  },
+  "corrected_residual_MSE": 0.008913731202483177,
+  "forward_plus_residual_seconds": 7.224071599999661,
+  "forward_residual_backward_seconds": 23.38904989999901,
+  "peak_xpu_memory_bytes": 158674944
+}

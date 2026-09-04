@@ -1,0 +1,11 @@
+{
+  "milestone": "V16B-6A",
+  "status": "V16B_CLOSED_EXTERNAL_BOUNDARY_OPERATOR_POLICY_RESOLVED",
+  "diagnosis": "FROZEN_SG3_SG4_TOPOLOGY_SUPPORTS_NO_FLOW_OUTER_BOUNDARIES_AND_CELL_CENTERED_EXTERNAL_UPWIND_DEPENDENCIES_ARE_NUMERICAL_OPERATOR_ARTIFACTS",
+  "boundary_policy": "NO_FLOW_EXTERNAL_BOUNDARY",
+  "original_missing_upwind_cells": 3563,
+  "remaining_external_dependencies_after_projection": 0,
+  "zero_diagonal_after_projection": 0,
+  "recommendation": "Freeze the closed-boundary projected coefficient contract. Proceed to V16B-7 for the first controlled directional advective travel-time solve using the projected operator. Do not impose any external tau value.",
+  "next_milestone": "V16B-7 \u2014 Controlled Directional Advective Travel-Time Solve"
+}

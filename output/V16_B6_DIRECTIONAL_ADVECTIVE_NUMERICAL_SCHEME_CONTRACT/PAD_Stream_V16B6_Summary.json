@@ -1,0 +1,12 @@
+{
+  "milestone": "V16B-6",
+  "status": "V16B_DIRECTIONAL_NUMERICAL_SCHEME_BOUNDARY_POLICY_REQUIRED",
+  "diagnosis": "ONE_OR_MORE_NON_SOURCE_BOUNDARY_CELLS_REQUIRE_UPWIND_INFORMATION_FROM_OUTSIDE_THE_DOMAIN",
+  "unknown_count": 37500,
+  "source_count": 5,
+  "estimated_nnz": 146333,
+  "missing_upwind_boundary_cells": 3563,
+  "zero_diagonal_non_source_cells": 0,
+  "recommendation": "Do not solve yet. Define the external-boundary inflow travel-time policy source-authentically before assembling the directional transport system.",
+  "next_milestone": "V16B-6A \u2014 Directional External-Boundary Inflow Policy Audit"
+}

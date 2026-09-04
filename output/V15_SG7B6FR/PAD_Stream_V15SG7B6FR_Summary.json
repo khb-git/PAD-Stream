@@ -1,0 +1,82 @@
+{
+  "milestone": "V15-SG7B-6F-R",
+  "description": "Activity-scaled coupled conservative refinement with epoch-zero checkpoint preservation",
+  "source_model": "V15SG7B6D_Best_Model.keras",
+  "architecture_changed": false,
+  "canonical_truth": "SG7A master_saturation",
+  "corrections_from_SG7B6F": {
+    "activity_scaled_balance_loss": true,
+    "epoch_zero_checkpoint_preserved": true,
+    "lower_learning_rate": true,
+    "tD_test_dataset_field_restored": true
+  },
+  "canonical_physics": {
+    "SG7A_truth_FV_relative_MAE": 0.0006323248,
+    "maximum_allowed_FV_ratio": 50.0,
+    "required_PI_RNN_FV_relative_MAE": 0.031616240000000004,
+    "balance_normalization": "|S_t_SG7A| + |divF_SG7A| + |divG_SG7A| + 1e-4"
+  },
+  "loss_design": {
+    "lambda_data": 1.0,
+    "lambda_balance": 0.25,
+    "lambda_FV": 0.2,
+    "lambda_temporal": 0.025,
+    "lambda_advective": 0.025,
+    "lambda_capillary": 0.025,
+    "lambda_mass": 0.3
+  },
+  "checkpoint_score_weights": {
+    "FV": 3.0,
+    "balance": 1.0,
+    "data": 0.25,
+    "mass": 0.25
+  },
+  "learning_rate_schedule": {
+    "stage_1": 5e-06,
+    "stage_2": 2.5e-06,
+    "stage_3": 1e-06,
+    "stage_2_epoch": 80,
+    "stage_3_epoch": 150
+  },
+  "epoch_zero_validation": {
+    "L1": 0.0008547354373149574,
+    "L2": 0.0018333805492147803,
+    "FV_MAE": 0.14562936127185822,
+    "balance_MAE": 0.008760260418057442,
+    "mass_relative_MAE": 0.0011283384995846774
+  },
+  "epoch_zero_test": {
+    "L1": 0.0007951411535032094,
+    "L2": 0.0016421875916421413,
+    "Linf": 0.043847471475601196,
+    "FV_MAE": 0.14461754262447357,
+    "balance_MAE": 0.006764619145542383,
+    "temporal_MAE": 0.003314370522275567,
+    "advective_MAE": 0.006195276044309139,
+    "capillary_MAE": 0.00417135376483202,
+    "mass_relative_MAE": 0.0009721987550677813
+  },
+  "best_checkpoint": {
+    "epoch": 0,
+    "validation_score": 14.838557642042254,
+    "epoch_zero_retained": true
+  },
+  "best_checkpoint_test": {
+    "L1": 0.0007951411535032094,
+    "L2": 0.0016421875916421413,
+    "Linf": 0.043847471475601196,
+    "FV_MAE": 0.14461754262447357,
+    "FV_RMS": 0.2412508875131607,
+    "FV_ratio_to_SG7A": 228.70768729057212,
+    "balance_MAE": 0.006764619145542383,
+    "temporal_MAE": 0.003314370522275567,
+    "advective_MAE": 0.006195276044309139,
+    "capillary_MAE": 0.00417135376483202,
+    "mass_relative_MAE": 0.0009721987550677813
+  },
+  "balance_improvement_percent": 0.0,
+  "runtime_seconds": 284.58156799990684,
+  "validation_passed": false,
+  "status": "SOURCE_CHECKPOINT_RETAINED",
+  "next_milestone": "Review SG7B-6F-R trajectory before further PI-RNN refinement"
+}

@@ -1,0 +1,47 @@
+{
+  "milestone": "V15-SG7E1R26I-R8",
+  "status": "SG7B10_DEPLOYMENT_PREDICT_MODEL_OBJECT_STILL_AMBIGUOUS",
+  "diagnosis": "EVALUATE_CANDIDATE_MODEL_PARAMETER_REACHES_MULTIPLE_OR_UNRESOLVED_MODEL_LOAD_PATHS",
+  "authoritative_source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B10_Controlled_Front_Aware_Refinement.py",
+  "deployment_predict": {
+    "records": [
+      {
+        "line": 857,
+        "call": "model.predict",
+        "model_expression": "model",
+        "expression": "model.predict(\n        deployment[\"X100\"],\n        batch_size=BATCH_SIZE,\n        verbose=0,\n    )"
+      }
+    ],
+    "model_parameter": "model",
+    "caller_arguments": [
+      "model"
+    ]
+  },
+  "selected_model": {
+    "resolved": false,
+    "artifact": null,
+    "sha256": null,
+    "load_target": null,
+    "path_expression": null
+  },
+  "known_X100_contract": {
+    "shape": [
+      2662,
+      201,
+      2
+    ],
+    "dtype": "float32"
+  },
+  "constraints": {
+    "training_performed": false,
+    "model_parameters_changed": false,
+    "model_predict_executed": false,
+    "X100_changed": false,
+    "threshold_changed": false,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false
+  },
+  "recommendation": "Do not call model.predict. Audit only the evaluate_candidate model caller argument and the relevant SG7B10 load_model path expression(s). Do not select a model by runtime performance or filename similarity.",
+  "next_milestone": "V15-SG7E1R26I-R9 \u2014 Final SG7B10 Model Load-Path Binding Audit"
+}

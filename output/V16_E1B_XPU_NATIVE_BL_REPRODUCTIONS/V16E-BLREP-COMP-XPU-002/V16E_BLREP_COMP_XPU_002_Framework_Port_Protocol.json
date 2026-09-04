@@ -1,0 +1,80 @@
+{
+  "milestone": "V16E-1B2C-XPU",
+  "experiment_id": "V16E-BLREP-COMP-XPU-002",
+  "classification": "PROSPECTIVE_ONE_FACTOR_EXTENDED_TRAINING_REPRODUCTION",
+  "source": {
+    "path": "pi_rnn_stage2_compressible_godunov.py",
+    "sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397"
+  },
+  "teacher": {
+    "type": "conservative compressible finite-volume Godunov",
+    "velocity": "u(x_D)=u_inj*exp(Nc*x_D)",
+    "NX_TRAIN": 1601,
+    "NX_REF": 3201,
+    "n_fan": 64
+  },
+  "conditioning_order": [
+    "no",
+    "nw",
+    "swi",
+    "sor",
+    "mu_w",
+    "mu_o",
+    "phi",
+    "tD",
+    "xD_star",
+    "Sw_star",
+    "Nc"
+  ],
+  "param_dim": 11,
+  "architecture": "xi+p11 -> LSTM64 -> LSTM64 -> Dense1 -> sigmoid range map",
+  "physics_residual": "R=y(xi*xD_star;Nc)-tD*dfw/dSw; y=-expm1(-Nc*x)/Nc with exact Nc=0 limit",
+  "dataset": {
+    "Nc_grid": [
+      0.0,
+      0.05000000074505806,
+      0.10000000149011612,
+      0.20000000298023224,
+      0.30000001192092896
+    ],
+    "max_seeded_case_Nc_combinations": 2400,
+    "seed": 1337,
+    "num_times": 6,
+    "t_min_days": 100.0,
+    "horizon": "0.95*t_BT",
+    "parallel_cpu_scheduling_allowed": true,
+    "parallelization_changes_physics": false
+  },
+  "training": {
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "epochs": 800,
+    "logical_batch": 8192,
+    "default_XPU_microbatch": 2048,
+    "seed": 1337,
+    "mixed_precision": false,
+    "loss_weights": {
+      "data": 1.0,
+      "physics": 0.05,
+      "injector_bc": 5.0,
+      "tip_bc": 5.0,
+      "anchor": 10.0,
+      "monotonicity": 0.2,
+      "shape": 0.0
+    }
+  },
+  "evaluation": {
+    "holdout_semantics": "reproduction development diagnostic split reused after B2A; NOT independent and NOT OOD",
+    "fine_grid_teacher_NX": 3201,
+    "Stage1_nesting_Nc0": true,
+    "Nc_accuracy_sweep": [
+      0.0,
+      0.05,
+      0.1,
+      0.2,
+      0.3
+    ],
+    "numeric_threshold_invented": false
+  },
+  "framework_difference": "PyTorch/XPU is not bitwise TensorFlow. Teacher, conditioning, physics, architecture topology, losses, logical batch and evaluation semantics are frozen."
+}

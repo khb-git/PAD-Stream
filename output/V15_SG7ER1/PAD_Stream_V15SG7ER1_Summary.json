@@ -1,0 +1,27 @@
+{
+  "milestone": "V15-SG7E-R1",
+  "description": "Residual front-to-plume / classification audit",
+  "training_performed": false,
+  "seed_density_changed": false,
+  "mapback_changed": false,
+  "projection_changed": false,
+  "plume_threshold_changed": false,
+  "primary_time_days": 100.0,
+  "plume_threshold": 0.21,
+  "SG7A_numerical_equivalence_tolerance": 1e-06,
+  "SG7A_raw_A_B_Linf": 2.9188162442572718e-08,
+  "SG7A_corrected_A_B_Linf": 2.9183171434965516e-08,
+  "100_day": {
+    "raw_plume_volume_error": 0.16116554925219184,
+    "corrected_plume_volume_error": 0.18152293867255243,
+    "projection_volume_error_change": 0.020357389420360583,
+    "raw_grid_L1": 0.0035412853056281187,
+    "corrected_grid_L1": 0.0048772147183680946,
+    "corrected_inventory_relative_error": 0.018247771976141025,
+    "near_threshold_fraction_pm_0p005": 0.14317333333333335
+  },
+  "diagnosis": "MIXED_RAW_AND_THRESHOLD_EFFECTS",
+  "recommendation": "The 100-day plume-volume discrepancy is already present before conservative projection and is strongly amplified by binary classification near S=0.21 despite small continuous-state and inventory error. Do not modify the PI-RNN or projection. Audit the streamline-to-cell support/reconstruction geometry and adopt continuous plume diagnostics alongside the binary threshold metric.",
+  "validation_passed": true,
+  "next_milestone": "V15-SG7D-R2 \u2014 Support-Aware Raw Map-Back Reconstruction Audit"
+}

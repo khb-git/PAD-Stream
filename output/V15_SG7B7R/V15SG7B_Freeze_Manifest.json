@@ -1,0 +1,78 @@
+{
+  "milestone": "V15-SG7B-7R",
+  "candidate_model": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B6D\\V15SG7B6D_Best_Model.keras",
+  "candidate_model_name": "V15SG7B6D_Best_Model.keras",
+  "candidate_SHA256": "9242af83e9aae6dc91ce215f78bf2a6d539972632d5e5ce759ea1fc83f3c11be",
+  "freeze_passed": true,
+  "frozen_model": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B7R\\V15SG7B_FROZEN_Model.keras",
+  "frozen_SHA256": "9242af83e9aae6dc91ce215f78bf2a6d539972632d5e5ce759ea1fc83f3c11be",
+  "canonical_contract": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B6H\\V15SG7B6H_Canonical_Physics_Contract.json",
+  "canonical_contract_milestone": "V15-SG7B-6H",
+  "canonical_operator_source": "PAD_Stream_V15SG7B6FR_Activity_Scaled_Coupled_Refinement.py",
+  "training_performed": false,
+  "architecture_changed": false,
+  "thresholds_changed": false,
+  "legacy_self_FV_used_as_freeze_gate": false,
+  "freeze_checks": [
+    {
+      "description": "Model loads successfully",
+      "passed": true
+    },
+    {
+      "description": "Predictions finite",
+      "passed": true
+    },
+    {
+      "description": "Canonical physics values finite",
+      "passed": true
+    },
+    {
+      "description": "Saturation lower bound respected",
+      "passed": true
+    },
+    {
+      "description": "Saturation upper bound respected",
+      "passed": true
+    },
+    {
+      "description": "Held-out L1 < 0.020",
+      "passed": true
+    },
+    {
+      "description": "Held-out L2 < 0.030",
+      "passed": true
+    },
+    {
+      "description": "Mass relative MAE < 0.030",
+      "passed": true
+    },
+    {
+      "description": "Canonical mean < 0.500",
+      "passed": true
+    },
+    {
+      "description": "Canonical P90 < 1.000",
+      "passed": true
+    },
+    {
+      "description": "Canonical fraction > 1 < 10.00%",
+      "passed": true
+    },
+    {
+      "description": "Injector-region L1 < 0.015",
+      "passed": true
+    },
+    {
+      "description": "High-gradient/front L1 < 0.030",
+      "passed": true
+    },
+    {
+      "description": "Early-time L1 < 0.020",
+      "passed": true
+    },
+    {
+      "description": "Late-time L1 < 0.025",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "milestone": "V16C-25",
+  "status": "V16C_EXP2_DIFFERENTIABLE_PHYSICS_OBJECTIVE_FROZEN_TRAINING_AUTHORIZED",
+  "contract": {
+    "EXP2_predictor": "UNCHANGED_C20_201x9",
+    "architecture": "UNCHANGED_C21_2xLSTM64_TD_DENSE_BOUNDED_SW",
+    "physics_sidecar": "C7 metric_M_dtheta_dxD; NOT predictor input",
+    "residual": "R=dS/deta + dfw/dtheta - (phi/Pe_c) M d/dtheta[Dtilde(S) M dS/dtheta]",
+    "time_derivative": {
+      "method": "adjacent_frozen_target_time_pairs_same_training_streamline",
+      "formula": "(S_b-S_a)/(eta_b-eta_a)",
+      "spatial_operator_state": "midpoint 0.5*(S_a+S_b)",
+      "pairs_per_streamline": 8,
+      "test_pairs_for_selection": "PROHIBITED"
+    },
+    "spatial_derivative": {
+      "theta_nodes": 201,
+      "interior_mask": "j=1..199",
+      "scheme": "centered node differences with conservative face capillary flux",
+      "boundary_nodes_in_PDE_loss": false
+    },
+    "constitutive": {
+      "nw": 2.0,
+      "no": 2.0,
+      "Swc": 0.2,
+      "Sor": 0.2,
+      "krw_max": 0.8,
+      "kro_max": 0.8,
+      "mu_w_cP": 0.5,
+      "mu_o_cP": 5.0,
+      "phi": 0.2,
+      "Pe_c": 22.0,
+      "lambda_c": 2.0,
+      "Nc": "metadata only; exp(Nc*xD) prohibited"
+    },
+    "loss": {
+      "data": "mean squared Sw error on supervised profiles",
+      "physics": "mean squared interior residual",
+      "R0": 1.0,
+      "lambda_data": 1.0,
+      "lambda_phys": 0.01
+    },
+    "selection": {
+      "monitor": "validation total objective with separately reported validation data and physics terms",
+      "test_locked": true,
+      "no_test_retuning": true
+    },
+    "training_authorized_after_C25": true
+  },
+  "C7_sha256": "5a47ef2a4154291b424e43d1b0e21e30baa0c805c846e9943f62f8b389289e6d",
+  "gates": {
+    "C24_bound": true,
+    "exact_C7_metric_hash_bound": true,
+    "C7_shape_1078x201": true,
+    "predictor_interface_unchanged": true,
+    "architecture_unchanged": true,
+    "C7_metric_sidecar_only": true,
+    "time_derivative_uses_same_streamline_adjacent_times": true,
+    "no_synthetic_time_perturbation": true,
+    "PDE_mask_excludes_inlet_node": true,
+    "PDE_mask_excludes_terminal_node": true,
+    "source_boundary_semantics_not_replaced_by_PDE_mask": true,
+    "Pollock_kinematics_primary": true,
+    "legacy_exp_Nc_xD_prohibited": true,
+    "physics_scale_not_fit_from_EXP1": true,
+    "lambda_phys_predeclared_0p01": true,
+    "test_locked_for_selection": true,
+    "no_training_in_C25": true,
+    "no_EXP2_performance_observed": true
+  },
+  "training_performed": false,
+  "next_milestone": "V16C-26 \u2014 EXP2 Physics-Informed Training Execution, Best-Validation Checkpoint and Locked-Test Evaluation"
+}

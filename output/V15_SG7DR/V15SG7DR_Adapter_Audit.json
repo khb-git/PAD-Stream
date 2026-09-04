@@ -1,0 +1,60 @@
+{
+  "milestone": "V15-SG7D-R",
+  "authoritative_source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11\\PAD_Stream_V15SG7D_Conservative_Streamline_Grid_MapBack.py",
+  "authoritative_workspace": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11",
+  "original_output_dir": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11\\output\\V15_SG7D",
+  "redeployment_output_dir": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7DR",
+  "original_sg7c_file": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11\\output\\V15_SG7C\\SG7C_FROZEN_PIRNN_STREAMLINE_DEPLOYMENT.npz",
+  "front_aware_sg7cr_file": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7CR\\SG7CR_FRONT_AWARE_FROZEN_PIRNN_STREAMLINE_DEPLOYMENT.npz",
+  "prediction_contract_key": "PI_RNN_saturation",
+  "truth_contract_key": "SG7A_saturation",
+  "sg7a_truth_linf_between_A_B": 0.0,
+  "path_replacements": {
+    "OUTPUT_DIR": {
+      "old": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7DR",
+      "new": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7DR"
+    },
+    "MAPBACK_FILE": {
+      "old": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11\\output\\V15_SG7D\\SG7D_CONSERVATIVE_GRID_MAPBACK.npz",
+      "new": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7DR\\SG7D_CONSERVATIVE_GRID_MAPBACK.npz"
+    },
+    "MAPBACK_METRICS_FILE": {
+      "old": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11\\output\\V15_SG7D\\V15SG7D_MapBack_Metrics.csv",
+      "new": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7DR\\V15SG7D_MapBack_Metrics.csv"
+    },
+    "COVERAGE_METRICS_FILE": {
+      "old": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11\\output\\V15_SG7D\\V15SG7D_Coverage_Metrics.csv",
+      "new": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7DR\\V15SG7D_Coverage_Metrics.csv"
+    },
+    "STORAGE_METRICS_FILE": {
+      "old": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11\\output\\V15_SG7D\\V15SG7D_Storage_Metrics.csv",
+      "new": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7DR\\V15SG7D_Storage_Metrics.csv"
+    },
+    "SUMMARY_FILE": {
+      "old": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11\\output\\V15_SG7D\\PAD_Stream_V15SG7D_Summary.json",
+      "new": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7DR\\PAD_Stream_V15SG7D_Summary.json"
+    }
+  },
+  "authoritative_main_completed": true,
+  "standard_mapback_file": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7DR\\SG7DR_FRONT_AWARE_CONSERVATIVE_GRID_MAPBACK.npz",
+  "database_keys": [
+    "times_days",
+    "grid_shape",
+    "dx_m",
+    "dy_m",
+    "dz_m",
+    "porosity",
+    "initial_saturation",
+    "coverage_mask",
+    "coverage_weight_m3",
+    "subsegment_count",
+    "streamline_count",
+    "PI_RNN_raw_grid_saturation",
+    "PI_RNN_corrected_grid_saturation",
+    "SG7A_raw_grid_saturation",
+    "SG7A_corrected_grid_saturation",
+    "absolute_grid_error"
+  ],
+  "all_numeric_arrays_finite": true,
+  "wrapper_validation_passed": true
+}

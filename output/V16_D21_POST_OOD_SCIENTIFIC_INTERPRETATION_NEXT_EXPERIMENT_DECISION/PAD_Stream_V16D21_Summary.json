@@ -1,0 +1,20 @@
+{
+  "milestone": "V16D-21",
+  "status": "V16D_POST_OOD_INTERPRETATION_FROZEN_CONTROL_SPACE_EXPANSION_SELECTED_NEW_INDEPENDENT_CASE_SPLIT_REQUIRED",
+  "decision_contract_sha256": "4fb313ac7ef105f5074a04510af2f62e802ee69f187bcfe1a7625a15fecd2eff",
+  "gates": {
+    "D20_summary_SHA_exact": true,
+    "D20_report_bound": true,
+    "EXP_MC1_remains_frozen": true,
+    "no_retraining_authorized": true,
+    "MC2_not_trained_or_selected": true,
+    "control_space_expansion_selected_as_next_primary_direction": true,
+    "Recipe1_1_geology_frozen_for_first_control_study": true,
+    "five_spot_geometry_frozen_initially": true,
+    "Stage4_transport_semantics_frozen": true,
+    "old_OOD_cases_retired_from_future_locked_test_role": true,
+    "new_future_case_level_split_required": true,
+    "foundation_model_claim_not_authorized": true
+  },
+  "next_milestone": "V16D-22 \u2014 Versioned Injection-Rate / Producer-BHP Control-Space Design and New Foundation-Case Registry Contract"
+}

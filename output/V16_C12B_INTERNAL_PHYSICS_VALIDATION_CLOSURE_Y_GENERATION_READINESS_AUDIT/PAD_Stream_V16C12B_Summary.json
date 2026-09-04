@@ -1,0 +1,14 @@
+{
+  "milestone": "V16C-12B",
+  "status": "V16C_INTERNAL_PHYSICS_VALIDATION_CLOSED_PRE_Y_CONTRACTS_REQUIRED",
+  "diagnosis": "THE_V16_POLLOCK_FULL_PHYSICS_SOLVER_ASSEMBLY_IS_INTERNALLY_VALIDATED_BY_SOURCE_AUTHENTIC_LINEAGE_CONSERVATION_BOUNDARY_DIAGNOSTIC_AND_LIMITING_CASE_EVIDENCE_WHILE_DIRECT_V15_NUMERICAL_CROSS_VALIDATION_IS_FORMALLY_UNAVAILABLE",
+  "internal_solver_validation_closed": true,
+  "direct_V15_numerical_cross_validation": "UNAVAILABLE_BY_PROVENANCE",
+  "physical_time_target_mapping_frozen": false,
+  "production_parameter_authority_frozen": false,
+  "Y_transport_generated": false,
+  "Y_generation_authorized": false,
+  "training_authorized": false,
+  "recommendation": "Freeze C12B as the internal-physics closure. Do not generate Y yet. Next freeze the deterministic physical-time mapping t_days -> eta_i=t/tau_end_i on the 1078x201 Pollock database, including units and per-streamline terminal TOF authority. After that, freeze the production full-physics parameter authority separately.",
+  "next_milestone": "V16C-13 \u2014 Physical-Time-to-Pollock-Normalized-Time Target Mapping Contract"
+}

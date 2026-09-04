@@ -1,0 +1,10 @@
+{
+  "milestone": "V16E-1B2C-XPU-R2",
+  "experiment_id": "V16E-BLREP-COMP-XPU-002",
+  "amendment_sha256": "7fefa284d163de2f9825e31077226889cceea991e12af6a5e6b43d3e795a5ead",
+  "status": "NORMAL_COMPLETION",
+  "Adam_foreach": false,
+  "final_summary_exists": true,
+  "final_summary_sha256": "8ede892568a1e21c989f5c2782a3f0696e00480a0d671771e6fead754a6b9788",
+  "timestamp_unix": 1788495283.0336454
+}

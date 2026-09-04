@@ -1,0 +1,561 @@
+{
+  "milestone": "V16D-10",
+  "status": "V16D_FROZEN_V16B_FMM_ADV_EXECUTION_LINEAGE_BOUND_MULTICASE_ADAPTER_PILOT_AUTHORIZED",
+  "candidate_count": 8,
+  "best_FMM_candidate": {
+    "path": "PAD_Stream_V16B2_Exact_3D_Fast_Marching_Arrival_Time_Baseline.py",
+    "sha256": "0b26e3cdbc41276c53f4778e7eddcddd0cc8ef081ffb495b71df548152e8f049",
+    "fmm_score": 6,
+    "adv_score": 3,
+    "functions": [
+      {
+        "name": "save_csv",
+        "line": 97
+      },
+      {
+        "name": "save_json",
+        "line": 116
+      },
+      {
+        "name": "load_json",
+        "line": 120
+      },
+      {
+        "name": "sha256_file",
+        "line": 124
+      },
+      {
+        "name": "sha256_array",
+        "line": 134
+      },
+      {
+        "name": "load_inputs",
+        "line": 145
+      },
+      {
+        "name": "source_constants",
+        "line": 181
+      },
+      {
+        "name": "bind_grid_spacing",
+        "line": 218
+      },
+      {
+        "name": "divergence_from_faces",
+        "line": 309
+      },
+      {
+        "name": "divergence_from_faces_consistent",
+        "line": 342
+      },
+      {
+        "name": "bind_injector_sources",
+        "line": 368
+      },
+      {
+        "name": "neighbors6",
+        "line": 454
+      },
+      {
+        "name": "accepted_axis_min",
+        "line": 476
+      },
+      {
+        "name": "solve_quadratic_terms",
+        "line": 507
+      },
+      {
+        "name": "local_eikonal_update",
+        "line": 539
+      },
+      {
+        "name": "fast_marching_3d",
+        "line": 605
+      },
+      {
+        "name": "eikonal_residual",
+        "line": 704
+      },
+      {
+        "name": "main",
+        "line": 735
+      },
+      {
+        "name": "xy_unique_count",
+        "line": 403
+      }
+    ],
+    "tokens": {
+      "closed_boundary": false,
+      "source_cells": true,
+      "velocity": true,
+      "residual": true,
+      "causality": true
+    }
+  },
+  "best_ADV_candidate": {
+    "path": "PAD_Stream_V16B6_Directional_Advective_Travel_Time_Numerical_Scheme_Contract.py",
+    "sha256": "fc03e5c9cdeb06a490182d305653a06f4f9d3ddf2a4bd1a80838fc8c89715892",
+    "fmm_score": 2,
+    "adv_score": 7,
+    "functions": [
+      {
+        "name": "save_csv",
+        "line": 117
+      },
+      {
+        "name": "save_json",
+        "line": 135
+      },
+      {
+        "name": "load_json",
+        "line": 139
+      },
+      {
+        "name": "sha256_file",
+        "line": 143
+      },
+      {
+        "name": "main",
+        "line": 151
+      }
+    ],
+    "tokens": {
+      "closed_boundary": false,
+      "source_cells": true,
+      "velocity": true,
+      "residual": true,
+      "causality": true
+    }
+  },
+  "all_candidates": [
+    {
+      "path": "PAD_Stream_V16B1_Fast_Marching_Governing_Metric_Speed_Field_Contract_Audit.py",
+      "sha256": "0b8f3448f4da2a5022c3e1b14041351e925aa564dbced51746954e972ac6ce80",
+      "fmm_score": 3,
+      "adv_score": 2,
+      "functions": [
+        {
+          "name": "save_csv",
+          "line": 137
+        },
+        {
+          "name": "save_json",
+          "line": 155
+        },
+        {
+          "name": "sha256_file",
+          "line": 159
+        },
+        {
+          "name": "sha256_array",
+          "line": 167
+        },
+        {
+          "name": "load_foundation",
+          "line": 178
+        },
+        {
+          "name": "face_to_cell_x",
+          "line": 193
+        },
+        {
+          "name": "face_to_cell_y",
+          "line": 208
+        },
+        {
+          "name": "face_to_cell_z",
+          "line": 223
+        },
+        {
+          "name": "positive_floor",
+          "line": 238
+        },
+        {
+          "name": "main",
+          "line": 252
+        }
+      ],
+      "tokens": {
+        "closed_boundary": false,
+        "source_cells": true,
+        "velocity": true,
+        "residual": true,
+        "causality": false
+      }
+    },
+    {
+      "path": "PAD_Stream_V16B2_Exact_3D_Fast_Marching_Arrival_Time_Baseline.py",
+      "sha256": "0b26e3cdbc41276c53f4778e7eddcddd0cc8ef081ffb495b71df548152e8f049",
+      "fmm_score": 6,
+      "adv_score": 3,
+      "functions": [
+        {
+          "name": "save_csv",
+          "line": 97
+        },
+        {
+          "name": "save_json",
+          "line": 116
+        },
+        {
+          "name": "load_json",
+          "line": 120
+        },
+        {
+          "name": "sha256_file",
+          "line": 124
+        },
+        {
+          "name": "sha256_array",
+          "line": 134
+        },
+        {
+          "name": "load_inputs",
+          "line": 145
+        },
+        {
+          "name": "source_constants",
+          "line": 181
+        },
+        {
+          "name": "bind_grid_spacing",
+          "line": 218
+        },
+        {
+          "name": "divergence_from_faces",
+          "line": 309
+        },
+        {
+          "name": "divergence_from_faces_consistent",
+          "line": 342
+        },
+        {
+          "name": "bind_injector_sources",
+          "line": 368
+        },
+        {
+          "name": "neighbors6",
+          "line": 454
+        },
+        {
+          "name": "accepted_axis_min",
+          "line": 476
+        },
+        {
+          "name": "solve_quadratic_terms",
+          "line": 507
+        },
+        {
+          "name": "local_eikonal_update",
+          "line": 539
+        },
+        {
+          "name": "fast_marching_3d",
+          "line": 605
+        },
+        {
+          "name": "eikonal_residual",
+          "line": 704
+        },
+        {
+          "name": "main",
+          "line": 735
+        },
+        {
+          "name": "xy_unique_count",
+          "line": 403
+        }
+      ],
+      "tokens": {
+        "closed_boundary": false,
+        "source_cells": true,
+        "velocity": true,
+        "residual": true,
+        "causality": true
+      }
+    },
+    {
+      "path": "PAD_Stream_V16B3_Independent_FMM_Pollock_TOF_Comparison.py",
+      "sha256": "e6631d2c10159809db2e25d1dc24642df9eb4654ba3a475607c66a40a9d2ae13",
+      "fmm_score": 2,
+      "adv_score": 0,
+      "functions": [
+        {
+          "name": "save_csv",
+          "line": 108
+        },
+        {
+          "name": "save_json",
+          "line": 126
+        },
+        {
+          "name": "load_json",
+          "line": 130
+        },
+        {
+          "name": "sha256_file",
+          "line": 134
+        },
+        {
+          "name": "sha256_array",
+          "line": 142
+        },
+        {
+          "name": "load_inputs",
+          "line": 151
+        },
+        {
+          "name": "detect_coordinate_units",
+          "line": 187
+        },
+        {
+          "name": "determine_origin",
+          "line": 227
+        },
+        {
+          "name": "trilinear_sample_cell_centered",
+          "line": 295
+        },
+        {
+          "name": "safe_corr",
+          "line": 349
+        },
+        {
+          "name": "comparison_stats",
+          "line": 366
+        },
+        {
+          "name": "main",
+          "line": 395
+        }
+      ],
+      "tokens": {
+        "closed_boundary": false,
+        "source_cells": true,
+        "velocity": true,
+        "residual": true,
+        "causality": false
+      }
+    },
+    {
+      "path": "PAD_Stream_V16B4_FMM_Pollock_Discrepancy_Structure_Directionality_Audit.py",
+      "sha256": "b505e453a689b094c7587bb2b92391c31ae5e532b6a80dec12c1c73729319ff9",
+      "fmm_score": 2,
+      "adv_score": 2,
+      "functions": [
+        {
+          "name": "save_csv",
+          "line": 96
+        },
+        {
+          "name": "save_json",
+          "line": 112
+        },
+        {
+          "name": "load_json",
+          "line": 116
+        },
+        {
+          "name": "sha256_file",
+          "line": 120
+        },
+        {
+          "name": "safe_corr",
+          "line": 128
+        },
+        {
+          "name": "trilinear",
+          "line": 139
+        },
+        {
+          "name": "normalize",
+          "line": 182
+        },
+        {
+          "name": "binned_rows",
+          "line": 187
+        },
+        {
+          "name": "main",
+          "line": 220
+        }
+      ],
+      "tokens": {
+        "closed_boundary": false,
+        "source_cells": false,
+        "velocity": true,
+        "residual": true,
+        "causality": false
+      }
+    },
+    {
+      "path": "PAD_Stream_V16B6_Directional_Advective_Travel_Time_Numerical_Scheme_Contract.py",
+      "sha256": "fc03e5c9cdeb06a490182d305653a06f4f9d3ddf2a4bd1a80838fc8c89715892",
+      "fmm_score": 2,
+      "adv_score": 7,
+      "functions": [
+        {
+          "name": "save_csv",
+          "line": 117
+        },
+        {
+          "name": "save_json",
+          "line": 135
+        },
+        {
+          "name": "load_json",
+          "line": 139
+        },
+        {
+          "name": "sha256_file",
+          "line": 143
+        },
+        {
+          "name": "main",
+          "line": 151
+        }
+      ],
+      "tokens": {
+        "closed_boundary": false,
+        "source_cells": true,
+        "velocity": true,
+        "residual": true,
+        "causality": true
+      }
+    },
+    {
+      "path": "PAD_Stream_V16B7_Controlled_Directional_Advective_Travel_Time_Solve.py",
+      "sha256": "2355f3eecd41bb6571f7ead3ebb1c5d90a1907ae681826159e79463166994c56",
+      "fmm_score": 1,
+      "adv_score": 7,
+      "functions": [
+        {
+          "name": "sha256_file",
+          "line": 41
+        },
+        {
+          "name": "load_json",
+          "line": 49
+        },
+        {
+          "name": "save_json",
+          "line": 53
+        },
+        {
+          "name": "save_csv",
+          "line": 57
+        },
+        {
+          "name": "flat",
+          "line": 73
+        },
+        {
+          "name": "main",
+          "line": 77
+        }
+      ],
+      "tokens": {
+        "closed_boundary": true,
+        "source_cells": true,
+        "velocity": false,
+        "residual": true,
+        "causality": true
+      }
+    },
+    {
+      "path": "PAD_Stream_V16B8_Independent_Directional_FMM_Pollock_TOF_Comparison.py",
+      "sha256": "d7ebacae95ed0c0220027991d79c3b881ce62e821d52ee2003618f386eca4f1b",
+      "fmm_score": 2,
+      "adv_score": 2,
+      "functions": [
+        {
+          "name": "save_csv",
+          "line": 111
+        },
+        {
+          "name": "save_json",
+          "line": 129
+        },
+        {
+          "name": "load_json",
+          "line": 133
+        },
+        {
+          "name": "sha256_file",
+          "line": 137
+        },
+        {
+          "name": "safe_corr",
+          "line": 147
+        },
+        {
+          "name": "trilinear",
+          "line": 164
+        },
+        {
+          "name": "comparison_stats",
+          "line": 211
+        },
+        {
+          "name": "main",
+          "line": 236
+        }
+      ],
+      "tokens": {
+        "closed_boundary": false,
+        "source_cells": false,
+        "velocity": true,
+        "residual": true,
+        "causality": false
+      }
+    },
+    {
+      "path": "PAD_Stream_V16B9_FMM_Directional_Travel_Time_Architecture_Role_Decision.py",
+      "sha256": "901374fdd8c164c82ef1b4930ff6d45349fd60998bc39234a98a7460ab8c9928",
+      "fmm_score": 1,
+      "adv_score": 5,
+      "functions": [
+        {
+          "name": "save_csv",
+          "line": 100
+        },
+        {
+          "name": "load_json",
+          "line": 116
+        },
+        {
+          "name": "save_json",
+          "line": 120
+        },
+        {
+          "name": "sha256_file",
+          "line": 124
+        },
+        {
+          "name": "main",
+          "line": 132
+        }
+      ],
+      "tokens": {
+        "closed_boundary": false,
+        "source_cells": false,
+        "velocity": true,
+        "residual": true,
+        "causality": false
+      }
+    }
+  ],
+  "gates": {
+    "D9R1_prerequisite_declared": true,
+    "candidate_scan_complete": true,
+    "exact_FMM_source_candidate_bound": true,
+    "exact_ADV_source_candidate_bound": true,
+    "no_FMM_execution": true,
+    "no_ADV_execution": true,
+    "no_reimplementation": true,
+    "no_transport": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-10A \u2014 Source-Bound FMM/ADV Adapter and Case 0002 Travel-Time Hierarchy Pilot"
+}

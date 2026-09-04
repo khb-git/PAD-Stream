@@ -1,0 +1,20 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1ER",
+  "status": "R1E_OUTCOME_AUDIT_COMPLETE",
+  "diagnosis": "FRONT_MASKED_EFFECTIVE_BETA_CAPACITY_LIMIT",
+  "training_performed": false,
+  "joint_correction_recalibrated": false,
+  "X08_support_geometry_changed": false,
+  "gate_changed": false,
+  "J5_failed_gates": [
+    "bias_500_1000",
+    "bias_1000_2000",
+    "bias_gt2000",
+    "tail_bias"
+  ],
+  "material_share_gate_passes": true,
+  "front_has_large_margin": true,
+  "configured_cap_overlap_limited": true,
+  "recommendation": "J5 has already passed the material-positive-share gate and retains very large front/profile safety margins. The remaining failures are only mean positive-bias magnitude gates. Configured regional caps are high enough in principle, but the effective beta delivered to the biased populations is reduced by front-core/shell mask overlap. Do not relax any gate and do not alter X08 support. Design a more selective residual corrector that increases effective beta only on non-front slow-TOF/tail nodes while leaving accepted front nodes locked.",
+  "next_milestone": "V15-SG7C-R3F5-R1F0 \u2014 Non-Front Slow-TOF Residual Capacity Design"
+}

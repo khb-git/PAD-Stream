@@ -1,0 +1,14 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1B",
+  "status": "MINIMAL_EXACT_ARRAY_SUPPORT_EXTENSION_NOMINATED",
+  "diagnosis": "UNCHANGED_50_PERCENT_GATE_CROSSED_WITH_BOUNDED_GEOMETRIC_SHOULDER",
+  "training_performed": false,
+  "support_extension_calibrated": true,
+  "SG7B11_modified": false,
+  "R3F4_B4_model_modified": false,
+  "historical_scalar_overwritten": false,
+  "front_error_reduction_gate_changed": false,
+  "selected_experiment": "X08",
+  "recommendation": "A minimal exact-array coefficient extension crosses the unchanged 50% front-error-reduction/support gate without changing SG7B-11, the R3F4 B4 model, or the historical scalar record. Do not freeze or deploy the candidate yet. Independently reconstruct the calibrated saturation field and rerun the clarified deployment front/TOF/topology contracts.",
+  "next_milestone": "V15-SG7C-R3F5-R1C \u2014 Independent Exact-Array Support Extension Validation"
+}

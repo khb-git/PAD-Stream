@@ -1,0 +1,23 @@
+{
+  "milestone": "V16B-2",
+  "status": "V16B_EXACT_3D_FMM_ARRIVAL_TIME_BASELINE_COMPLETE",
+  "diagnosis": "PHYSICAL_GRID_FAST_MARCHING_SOLVE_COVERS_ALL_CELLS_WITH_CAUSAL_FINITE_NONNEGATIVE_ARRIVAL_TIMES",
+  "source_count": 5,
+  "grid_spacing_m": {
+    "dx": 6.096,
+    "dy": 6.096,
+    "dz": 1.2192
+  },
+  "arrival_time_days": {
+    "min": 0.0,
+    "median": 153.33923897601522,
+    "mean": 157.66087754678676,
+    "max": 1319.7004418373147
+  },
+  "output": {
+    "file": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_B2_EXACT_3D_FMM_ARRIVAL_TIME_BASELINE\\V16B2_Exact_3D_FMM_Arrival_Time.npz",
+    "sha256": "7e3a2a3828f2f9188fb33a63f4b049004ec1a4facd8bd462b33041a538dde7f4"
+  },
+  "recommendation": "Freeze the V16B-2 arrival-time baseline. Proceed to V16B-3 for independent FMM-vs-Pollock TOF comparison. Do not recalibrate the FMM speed field using Pollock results.",
+  "next_milestone": "V16B-3 \u2014 Independent FMM / Pollock TOF Comparison"
+}

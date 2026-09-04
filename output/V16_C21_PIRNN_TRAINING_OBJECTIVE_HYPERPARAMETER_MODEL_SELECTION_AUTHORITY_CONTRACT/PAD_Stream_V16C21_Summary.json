@@ -1,0 +1,33 @@
+{
+  "milestone": "V16C-21",
+  "status": "V16C_PIRNN_EXP1_TRAINING_PROTOCOL_FROZEN_TRAINING_AUTHORIZED",
+  "diagnosis": "THE_FIRST_V16_STAGE4_LINEAGE_PIRNN_EXPERIMENT_HAS_A_PREDECLARED_201_NODE_NINE_CHANNEL_ARCHITECTURE_SUPERVISION_OPTIMIZATION_EARLY_STOPPING_AND_VALIDATION_ONLY_MODEL_SELECTION_PROTOCOL",
+  "experiment_id": "V16C_EXP1_REQUIRED_CHANNELS_STAGE4_LINEAGE",
+  "architecture": {
+    "family": "stacked_LSTM_TimeDistributed_Dense_bounded_Sw",
+    "hidden_units": 64,
+    "lstm_layers": 2,
+    "output_units_per_node": 1
+  },
+  "loss": {
+    "primary": "mean_squared_error_on_Sw_all_201_nodes",
+    "weight": 1.0,
+    "additional_training_physics_residual": "NONE_IN_EXP1",
+    "reason": "C17 labels already come from certified full-physics Pollock solver; new differentiable V16 operator loss requires separate validation before promotion"
+  },
+  "optimizer": {
+    "name": "Adam",
+    "learning_rate": 0.001
+  },
+  "batch_size": 64,
+  "max_epochs": 300,
+  "partition_counts": {
+    "train": 6795,
+    "validation": 1458,
+    "test": 1449
+  },
+  "training_authorized": true,
+  "training_performed": false,
+  "recommendation": "Freeze C21. Training is now authorized only under this exact EXP1 protocol. Next execute the training run, preserve the best-validation checkpoint and full history, then evaluate the locked test set and physics diagnostics without retuning.",
+  "next_milestone": "V16C-22 \u2014 PI-RNN EXP1 Training Execution, Best-Validation Checkpoint and Locked-Test Evaluation"
+}

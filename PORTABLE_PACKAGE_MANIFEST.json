@@ -1,0 +1,500 @@
+{
+  "version": "15G-0-portable-windows",
+  "files": [
+    {
+      "path": "CHECK_V15G0_LAYOUT.bat",
+      "sha256": "2523b9ece61f5b70541226deccda85a757e8b077140d3755ed9c2e41f725657f",
+      "size_bytes": 295
+    },
+    {
+      "path": "PAD_Stream_V15G0_End_to_End_PAD_Stream_Integration_PORTABLE.py",
+      "sha256": "6acf9be9b271e008c22dd50de2bf1b858cfee085b9980245d57c45cde6717016",
+      "size_bytes": 44212
+    },
+    {
+      "path": "README_WINDOWS.md",
+      "sha256": "237be6bbc55e7dc57ef5a460a5ecd856710a99c5b0ef75f5cf27ced05f15184d",
+      "size_bytes": 1232
+    },
+    {
+      "path": "RUN_V15G0_WINDOWS.bat",
+      "sha256": "940c340676e6c4448377ad097139f77a5ef981d7aa3096a534c72785e0c1a7e0",
+      "size_bytes": 285
+    },
+    {
+      "path": "__pycache__/PAD_Stream_V15G0_End_to_End_PAD_Stream_Integration_PORTABLE.cpython-313.pyc",
+      "sha256": "13bc7bc32d5156ca55c7b7d52b9d565884be00400793b0c5fc8f386778471ac1",
+      "size_bytes": 56825
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15C3_Sequential_Path_Deployment_Package/PAD_Stream_V15B3R_Sequential_Predict_Screen_Correct_Package/results/PAD_Stream_V15B3R_Sequential_Audit.csv",
+      "sha256": "782cb71fd7f631a1f72f94e44216cbcb797426f4988b347e68dc257d15aac97b",
+      "size_bytes": 158542
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15C3_Sequential_Path_Deployment_Package/PAD_Stream_V15B3R_Sequential_Predict_Screen_Correct_Package/results/PAD_Stream_V15B3R_Summary.json",
+      "sha256": "b8d8bcb24ae0dc7363b60a877fe7d14db1c33a6d6969a79cb915b165723b3bd8",
+      "size_bytes": 11466
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15C3_Sequential_Path_Deployment_Package/PAD_Stream_V15C3_Sequential_Learned_Path_Deployment/PAD_Stream_V15C3_Path_Cache_Audit.csv",
+      "sha256": "bde5033c04fb002908ac51e0d0e0af8795c6b0f6b1ce268845218072cef0600e",
+      "size_bytes": 663810
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15C3_Sequential_Path_Deployment_Package/PAD_Stream_V15C3_Sequential_Learned_Path_Deployment/PAD_Stream_V15C3_Summary.json",
+      "sha256": "39cfb6feee7d320aaf7950bbd4f0b1aa1fa197b8f31053152766fda763a2afe9",
+      "size_bytes": 2523
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/PAD_Stream_V15E3_Dependency_Manifest.json",
+      "sha256": "f82fde1a672ba4eee0998f49500238067d35fd583eaeba798ee916cb2e2b1ce6",
+      "size_bytes": 1648
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/PAD_Stream_V15E3_Per_Path_Rollout_Audit.csv",
+      "sha256": "53cb29f438f70bc52fe48ac3e07fb49a169708a266ba1de1aaed27fdf178d94f",
+      "size_bytes": 508998
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/PAD_Stream_V15E3_Restart_State_Day195.npz",
+      "sha256": "8ff274e94b5554b15ed09c017ad0c513c13bfb4550ead0110ce0928f76a62e92",
+      "size_bytes": 2418
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/PAD_Stream_V15E3_Rollout_Fields.npz",
+      "sha256": "4205a08f70ce409a4a721c9615bd60cd53b4ab117d707eb86288d7bb2337b2ab",
+      "size_bytes": 6319
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment.py",
+      "sha256": "dbbbd34c4deffc8851866685b755c708cf87c8fcd4c8fc2fbcc2d821bd6a559f",
+      "size_bytes": 66266
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/PAD_Stream_V15E3_Sequential_Snapshot_Audit.csv",
+      "sha256": "89bed30b3486aa82f86962eb556963d0c1116651c01c9acea54bb21564a659b1",
+      "size_bytes": 13744
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/PAD_Stream_V15E3_Summary.json",
+      "sha256": "51a631cab3df6752e3374b5f489c4b85e7846bdabc0730ac2d34614818164853",
+      "size_bytes": 4158
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/PAD_Stream_V15E3_Validation_Matrix.csv",
+      "sha256": "ef88de1674491973d47c88f22f51467d9ffed726076d976fa104825abe395f83",
+      "size_bytes": 3068
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/README.md",
+      "sha256": "812600b0d439af19009c8fbbf522e16a7a5ab3c9318ac07182149bb2906671dc",
+      "size_bytes": 2690
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/SHA256SUMS.json",
+      "sha256": "513be92a91780f2f13a5f048801847bc3b150219349bdda0b3b5d8ba0e713cda",
+      "size_bytes": 1868
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/VERIFY_V15E3_PACKAGE.py",
+      "sha256": "484b0ad65cc6eb9b6e631d67fcb999a25c9a3248f32a884d62462f654e1feeee",
+      "size_bytes": 1071
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/plots/500_sequential_grid_accuracy.png",
+      "sha256": "e92b810d07520d02e5e8fa3d008dd9849f29ad75c00cc4f2d61feb4915f2f30d",
+      "size_bytes": 99676
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/plots/501_breakthrough_gas_cut.png",
+      "sha256": "703bf0ad3067feddee0e86adaec890c7fbfd9bbe2eca3f4a2816f87827694082",
+      "size_bytes": 100200
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/plots/502_inventory_error.png",
+      "sha256": "1f2951506d64f1d077a6aa164e11eb230deb3f35b68db87fc658826bb64b7412",
+      "size_bytes": 93957
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/plots/503_uncertainty_screen.png",
+      "sha256": "5055395ab1d162259a60f6ac885cfb2dae80f76971e3ca153713491f52f4e8a2",
+      "size_bytes": 111953
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/plots/504_v15d3_v15e3_comparison.png",
+      "sha256": "db9e8c50bde6c0cf2f3f9c3a4b51fa87e0ff8fbd1e382c7202b638fba3c5edb3",
+      "size_bytes": 46818
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/plots/505_grid_to_path_error.png",
+      "sha256": "37d2491f9c6bdbae83f78e5afe607d1cac6f4ad827bf9b871279abf0035b2be1",
+      "size_bytes": 164140
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/plots/506_deployment_scorecard.png",
+      "sha256": "89e72abfa72266d5649a9352a9b24521ede36a5ee5520802c960f574ade371cd",
+      "size_bytes": 170964
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/PAD_Stream_V15F0_Best_Model.pt",
+      "sha256": "e48232dce22d9d5e5e55360f4ebfb1eb010494e38069867ea53285fec5938ae8",
+      "size_bytes": 40359
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/PAD_Stream_V15F0_Dependency_Manifest.json",
+      "sha256": "97e253e8e3f64a6e4940e7663b573603cb5b7ca962e9ec2bcf0c16e8cb2ff954",
+      "size_bytes": 2156
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/PAD_Stream_V15F0_Feature_Target_Schema.json",
+      "sha256": "eb30deede43cf56568674ba17a70744ed2f42e00257a46169b022fd9f99ac4ab",
+      "size_bytes": 3901
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/PAD_Stream_V15F0_Global_Recurrent_State_Dataset.npz",
+      "sha256": "3a40b9eed1237fdce73a5bf61375b3a07c625850350a71308f54ada7d8357893",
+      "size_bytes": 40171
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State.py",
+      "sha256": "025c1972de3fbc44023c825c8c1bbe7429a03564eb83db049f222320c4425b5e",
+      "size_bytes": 68644
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/PAD_Stream_V15F0_Inference_and_Screen.py",
+      "sha256": "218ac5561a811e6db59c193323617f6b14836427095328a1fd7f8a63a51f9c2d",
+      "size_bytes": 3360
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/PAD_Stream_V15F0_Predictions.npz",
+      "sha256": "a01b2dc06654edbdde01b01109a950bffc9516feb6f42db0ca392610c2a223f1",
+      "size_bytes": 58016
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/PAD_Stream_V15F0_Restart_State_Day195.npz",
+      "sha256": "aa36f9c51f1b20285bef8423b176eea0cf062b68824f7d706b3e15db9d09468f",
+      "size_bytes": 972
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/PAD_Stream_V15F0_Retrace_Metrics.csv",
+      "sha256": "e041c325677def9fce390677217c3cffa959458016c9eca167d099403c6736e5",
+      "size_bytes": 366
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/PAD_Stream_V15F0_Retrace_Sequential_Audit.csv",
+      "sha256": "e4785190eca0c6028ddccfb29c1930e59ba58aad1befde0e8bd4d9afb5fe64e0",
+      "size_bytes": 6361
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/PAD_Stream_V15F0_Summary.json",
+      "sha256": "cd8c4cc18fb79788bed518cdf3f8ce9b4212bb21eeb31cccad2cc68e518f48a3",
+      "size_bytes": 3782
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/PAD_Stream_V15F0_Timestep_Metrics.csv",
+      "sha256": "0e25ea8dd358d26ced64e6e9046946614ffbc794eed8e0c0ac47148847bc284d",
+      "size_bytes": 785
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/PAD_Stream_V15F0_Timestep_Sequential_Audit.csv",
+      "sha256": "df8bb6a9197721656f107f8930761c3552e7941fde0a1d14f07001520c5ec5d0",
+      "size_bytes": 187435
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/PAD_Stream_V15F0_Training_History.csv",
+      "sha256": "31a36e147f8d546dd699fdc8fc25ec1cfbacd740993ba29f2e4b83b0a04c04fc",
+      "size_bytes": 9413
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/PAD_Stream_V15F0_Validation_Matrix.csv",
+      "sha256": "58efa1f4150ccf4e171dcd3cd9f7122a40f575baa04d287c266008be2ecd8e11",
+      "size_bytes": 3850
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/README.md",
+      "sha256": "c0d934c7d160239346b47219ea5a9ca3f86cb3ea62fc8878ddb5e652f3f355eb",
+      "size_bytes": 1901
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/SHA256SUMS.csv",
+      "sha256": "f4e3bc010f2ef1688535c9194e81ae574fb78140341299a40c25d165cd831854",
+      "size_bytes": 2617
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/VERIFY_V15F0_PACKAGE.py",
+      "sha256": "d5d22c742b922554bcc9e336c8dc05f0b213eb977d7c94b60a6bfe3e60aa6c3a",
+      "size_bytes": 1148
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/plots/500_timestep_history.png",
+      "sha256": "7807fa84e0fab20fc2d15f9d31551a1aaaa9c7616e9ce1a374cf5ebe7b0298c7",
+      "size_bytes": 302557
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/plots/501_timestep_rmse.png",
+      "sha256": "3ba2cbf523d34199aea6688e3e464a369a1e8f0cec8370235f0d594723d4fb0c",
+      "size_bytes": 45277
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/plots/502_retrace_risk.png",
+      "sha256": "c1b0508ed233a0d497946b0d1609306c6ac2a844e66c9b1f70914a194a837499",
+      "size_bytes": 151515
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/plots/503_retrace_decisions.png",
+      "sha256": "b170fc240b288ad30b89b771632f25ecdea6d6a9b15afd3eaf5440e3842497cb",
+      "size_bytes": 48082
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/plots/504_global_recurrent_state.png",
+      "sha256": "09501d32277e05866d2da0276cb447af39310940dcb909c852bdc23d2ddf888e",
+      "size_bytes": 117914
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/plots/505_timestep_uncertainty.png",
+      "sha256": "367cad9740f52a3d5f25ff43c4f1db78af0317c4857b25d2acf0a2af707203f0",
+      "size_bytes": 106908
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/plots/506_validation_scorecard.png",
+      "sha256": "551bb67e0bb83ad1d6761df76b75db51a7f1f42bc66792b3f5338b82fc4c2c55",
+      "size_bytes": 172478
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory.py",
+      "sha256": "714870bc963d4c8632af25d71de03dbafe7d8373bb19149e2ef6bf5703b2e9a8",
+      "size_bytes": 65377
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/PAD_Stream_V15F1_Dependency_Manifest.json",
+      "sha256": "d4d93042a84679a27658df5e139cbc9f4f1b931af0956a13d18dc34c66ae2479",
+      "size_bytes": 2993
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/PAD_Stream_V15F1_Feature_Target_Schema.json",
+      "sha256": "5378b9e85345b1c56d79dfb7ad957d8c8978af0e6c3c3bfaf8d5fb748f4dbe8a",
+      "size_bytes": 3835
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/PAD_Stream_V15F1_Inference_and_Well_Screen.py",
+      "sha256": "41213a655ebf1c4f6d34401ba8454871cdcb8d11a8447ef8ac529d9239a2599a",
+      "size_bytes": 3097
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/PAD_Stream_V15F1_Predictions.npz",
+      "sha256": "bf30d7cb23da7cf62178ca071119aa6c00ede4af9ac57b3f0b85e29d1c531322",
+      "size_bytes": 20551
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/PAD_Stream_V15F1_Restart_State_Day195.npz",
+      "sha256": "25937dd78b36f0f6bda642e9e21c28a2a10da77657ab62ae1dc2b13ed87ed095",
+      "size_bytes": 1631
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/PAD_Stream_V15F1_Snapshot_Handoff_Audit.csv",
+      "sha256": "7767292f83b734f18ed613fdb24fcf7b0b2925c872988a44d6954b216ef55809",
+      "size_bytes": 2557
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/PAD_Stream_V15F1_Summary.json",
+      "sha256": "1bd9693bfb70707d346c5e61bacb993b3c8bfd877bdfcb3959834f099bbbfea2",
+      "size_bytes": 5453
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/PAD_Stream_V15F1_Validation_Matrix.csv",
+      "sha256": "4861852e5e202241a5ec374055e88abac5ad4f1bef5aa9d676d63b7401b787e9",
+      "size_bytes": 3472
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/PAD_Stream_V15F1_Well_Memory_Dataset.npz",
+      "sha256": "f49e4caa609650f470cd8bd8eb5bb4e15dfe7817129f48dee4324c69a15000b6",
+      "size_bytes": 113640
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/PAD_Stream_V15F1_Well_Memory_Heads.npz",
+      "sha256": "006f99c4d15cac25d40dd379bccf0754b0e064f3d3347601bf634625dc695b7c",
+      "size_bytes": 5805
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/PAD_Stream_V15F1_Well_Response_Metrics.csv",
+      "sha256": "02ec73b60fb3a2e19ad7744d4c95d41293a29828cc0efd5573739c89899dd12a",
+      "size_bytes": 1664
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/PAD_Stream_V15F1_Well_Response_Sequential_Audit.csv",
+      "sha256": "34483918fcac9529fb34415576a394fb1c773e5661b5dacc58f4fe33dfb483ea",
+      "size_bytes": 137991
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/README.md",
+      "sha256": "b8778b4c9c2383346bd1acd80987cd5a364d9b8fbca939d677407812a0de3354",
+      "size_bytes": 2002
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/SHA256SUMS.csv",
+      "sha256": "9802d3338647c71a4135d5cb96dddf21c9ed1ebeec8f6930fc2fce7410c0435a",
+      "size_bytes": 2445
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/VERIFY_V15F1_PACKAGE.py",
+      "sha256": "708b05d2b0f6bc3619a239c38c3de33b55c90dfa3cbba1eb08ce493ed3381ab3",
+      "size_bytes": 1218
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/plots/500_producer_gas_cut_memory.png",
+      "sha256": "7e4945aa107d9e448b8d3d5c7e282c25636e9b64e73aa28736e3981c423d0f88",
+      "size_bytes": 99198
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/plots/501_breakthrough_hazard.png",
+      "sha256": "144944644a404c15cca0b0fb1553556a16641f84568bd4720b3da235ee94088d",
+      "size_bytes": 84164
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/plots/502_well_control_memory.png",
+      "sha256": "0af5f271ef42f06782542fc81bec2dc2a1ca79c1f76f39f982eadbcaa723ea74",
+      "size_bytes": 82245
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/plots/503_well_warm_start_rmse.png",
+      "sha256": "18945e5754b9f10666113121f97dfacbe60d25c352944ad01d7b4a8f4472be6d",
+      "size_bytes": 54272
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/plots/504_well_memory_uncertainty.png",
+      "sha256": "ca5929e2e18eaa23a12eddb4122499b0ae0ab46b8dbc9825641ad5b590b5ce8c",
+      "size_bytes": 129096
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/plots/505_v15e3_v15f1_gas_cut_handoff.png",
+      "sha256": "a24e40844d621b5cbb7e143dd990959b1a6c8b1d91635b9a234c5cc6d3394c3b",
+      "size_bytes": 149288
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory/plots/506_validation_scorecard.png",
+      "sha256": "d2e08199b2e5841162120985ca6f03332300106baf2127c921ac936f671a33a4",
+      "size_bytes": 166949
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/PAD_Stream_V15F2_Complete_Global_State.npz",
+      "sha256": "9936d1063ac8ea58e2de7d1892249db7a10408119ea2131c338500243a595d8d",
+      "size_bytes": 60424
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/PAD_Stream_V15F2_Dependency_Manifest.json",
+      "sha256": "a297adb4a586b0d6f4d926fa67fddb56193c716c3988706f7daef2c89b02947a",
+      "size_bytes": 3319
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/PAD_Stream_V15F2_Feature_Target_Schema.json",
+      "sha256": "db5b51052e362912d8eed4dca55fd7a7db27cb017b6be27f479c02988a73290c",
+      "size_bytes": 4933
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/PAD_Stream_V15F2_Inference_and_Solver_Screen.py",
+      "sha256": "d34eabaddf296d4ea89879112e215f62bccfaeb2c5d85c5b224f36e9d78868d6",
+      "size_bytes": 2685
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State.py",
+      "sha256": "3b44e9c35211f66bcdc5fe661452e3881550bae2d2d8c5f10c5b4dab0c92c0d4",
+      "size_bytes": 48538
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/PAD_Stream_V15F2_Nonlinear_Difficulty_Dataset.npz",
+      "sha256": "7f7d08a9f6d04830716a4daa16aa003a69885617aacfec77cfbf26aaa760f979",
+      "size_bytes": 135603
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/PAD_Stream_V15F2_Nonlinear_Difficulty_Heads.npz",
+      "sha256": "1373b816ed8b9ba861c96c31a48285e0069050e92a7a6f4eb7ba4b775efeb83b",
+      "size_bytes": 7307
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/PAD_Stream_V15F2_Nonlinear_Difficulty_Metrics.csv",
+      "sha256": "965a98dfb452d923fec6dfeeabf568cbd06b81e14e56c5838c54761f182f5245",
+      "size_bytes": 1244
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/PAD_Stream_V15F2_Nonlinear_Difficulty_Sequential_Audit.csv",
+      "sha256": "ae36f397d3d071f56e46962cfb5e25f241cc06a6f1d9d2965b2371ac66f5506b",
+      "size_bytes": 83768
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/PAD_Stream_V15F2_Predictions.npz",
+      "sha256": "3c1472fbe8b16a3c03fe3e5c881cf6f7f0aa4c12ea3ffc64b10fd1398e0f270a",
+      "size_bytes": 16486
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/PAD_Stream_V15F2_Restart_State_Day195.npz",
+      "sha256": "30242fbc89cdfbcd994e59ab45085856fe3b95b6f8a100e9eb3bf7faf5b991ab",
+      "size_bytes": 2329
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/PAD_Stream_V15F2_Summary.json",
+      "sha256": "4db9311d53eb78afa4986fc7dcf9ffbaf8985a16b38190ac72057a5d1bd8c21e",
+      "size_bytes": 4650
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/PAD_Stream_V15F2_Validation_Matrix.csv",
+      "sha256": "91d19d3d23072a327868fbe0d00279d40f20de783fa58c6807b6f91506dd10c2",
+      "size_bytes": 2229
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/README.md",
+      "sha256": "470992cf9d282b445d78fd6636947d28d773265bb4aebb67e478f7685f4fbaf3",
+      "size_bytes": 1609
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/SHA256SUMS.csv",
+      "sha256": "94dfa7ddf3bbed310bc65758dfa883b5d3a2f1a2fc793b4c4a38dc399d720885",
+      "size_bytes": 2448
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/VERIFY_V15F2_PACKAGE.py",
+      "sha256": "74cc633328c492da453063443f528fa454c8cd0ceffaedd094df0591f2354a80",
+      "size_bytes": 1029
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/plots/500_nonlinear_iterations.png",
+      "sha256": "d5f110ab86dad2e93c7006ccb990ed1ed2396a1880ae28c386758d5588c5424e",
+      "size_bytes": 148140
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/plots/501_pressure_workload.png",
+      "sha256": "48a3f7ee831706a6dd61cb2c5d51d9ff46afc4da92624169e591ab710dc27770",
+      "size_bytes": 167130
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/plots/502_retry_risk.png",
+      "sha256": "06e0c9e153cea7920ae63ebaf6f3b1bed68cdb51e6c3272d52ff9fa211164299",
+      "size_bytes": 236093
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/plots/503_preflight_tier.png",
+      "sha256": "5b5f7b0f99ea94435aaee022f7de4ffbfb42ae6f501485bfc0ce7b768fa07675",
+      "size_bytes": 29197
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/plots/504_workload_rmse.png",
+      "sha256": "3881489d667645857521cda8cdb35ef923425e365e12f327eaf5e78e55dbef11",
+      "size_bytes": 36870
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/plots/505_budget_reduction.png",
+      "sha256": "5aff1f269a9b015e7a6a9db47b95590937708affd207a81b4beee48672031f95",
+      "size_bytes": 39165
+    },
+    {
+      "path": "dependencies/PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State/plots/506_validation_scorecard.png",
+      "sha256": "25dee456911bbcf442873fbf207641a0dee2dcf19c51feda9646272eb7871fb1",
+      "size_bytes": 165213
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "de670d2176ad6e71244cb4525c98d2c5fce62bb136de29efee5e9916b3dc9feb",
+      "size_bytes": 24
+    }
+  ]
+}

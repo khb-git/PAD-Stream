@@ -1,0 +1,25 @@
+{
+  "milestone": "V16D-14AR3",
+  "status": "V16D_STREAMLINE_TO_GRID_SAMPLING_1_0_FROZEN_NEW_VERSIONED_PREDICTOR_ASSEMBLY_AUTHORIZED",
+  "contract_sha256": "32fec4b708108fb708bd40cc0983d4de093516a4a84b90b7ae9c3020a2383181",
+  "gates": {
+    "AR2_SHA_exact": true,
+    "new_contract_explicitly_not_historical": true,
+    "grid_order_frozen": true,
+    "origin_frozen": true,
+    "cell_mapping_frozen": true,
+    "boundary_policy_frozen": true,
+    "raw_K_sampling_frozen": true,
+    "raw_porosity_sampling_frozen": true,
+    "raw_pressure_sampling_frozen": true,
+    "derived_feature_algebra_frozen": true,
+    "TRAIN_only_normalization": true,
+    "validation_transform_only": true,
+    "OOD_transform_only": true,
+    "M_face_sidecar_only": true,
+    "no_target_read": true,
+    "no_fitting": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-14B \u2014 Contract-1.0 24-Case Predictor Assembly + TRAIN-Only Normalization Statistics Freeze"
+}

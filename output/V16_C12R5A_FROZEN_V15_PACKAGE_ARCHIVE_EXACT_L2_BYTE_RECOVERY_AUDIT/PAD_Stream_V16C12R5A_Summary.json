@@ -1,0 +1,16 @@
+{
+  "milestone": "V16C-12R5A",
+  "status": "V16C_EXACT_FROZEN_L2_BYTES_NOT_FOUND_IN_LOCAL_PRESERVED_ARCHIVES",
+  "diagnosis": "NO_SCANNED_LOCAL_ARCHIVE_MEMBER_MATCHES_THE_FORMAL_CERTIFIED_L2_INDEPENDENT_100_SHA256_SO_REGENERATION_REMAINS_PROHIBITED",
+  "archives_scanned": 8,
+  "members_hashed": 398,
+  "L2_hits": 0,
+  "SG7D6_hits": 0,
+  "L2_found": false,
+  "SG7D6_found": false,
+  "extraction_performed": false,
+  "Y_transport_generated": false,
+  "Y_generation_authorized": false,
+  "recommendation": "Do not rerun the PI-RNN and do not select an ambiguous historical candidate. Search external/preserved project copies or the formal V15 freeze package location for the exact L2 SHA-256. If no copy exists, C12A must be reformulated around the surviving SG7D6/historical reference authorities without pretending the missing L2 was recovered.",
+  "next_milestone": "V16C-12R5C \u2014 External/Preserved-Copy Exact L2 Authority Recovery Decision"
+}

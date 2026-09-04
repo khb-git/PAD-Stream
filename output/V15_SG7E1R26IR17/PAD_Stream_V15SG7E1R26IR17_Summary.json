@@ -1,0 +1,11 @@
+{
+  "milestone": "V15-SG7E1R26I-R17",
+  "status": "SG7B16_FROZEN100_CLOSURE_FAILURE_NOT_YET_EXPLAINED_BY_SMALL_ULP_DRIFT",
+  "diagnosis": "ELEMENTWISE_OR_ULP_DISTRIBUTION_EXCEEDS_SMALL_RUNTIME_REPRODUCIBILITY_CLASS",
+  "precision_equivalence_supported": false,
+  "max_ulp_distance": 13,
+  "count_above_R16_envelope": 90,
+  "failed_gates": [],
+  "recommendation": "Do not relax tolerance and do not generate later-time states. Audit only the locations and source-level serialization/runtime differences identified by R17.",
+  "next_milestone": "V15-SG7E1R26I-R18 \u2014 Historical SG7B16 Runtime / Serialization Difference Audit"
+}

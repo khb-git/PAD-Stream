@@ -1,0 +1,15 @@
+{
+  "milestone": "V15-SG7E1R26I-R10",
+  "status": "SG7B10_BOUND_100D_RAW_RUNTIME_CONTROL_EXECUTED_CLOSURE_FAILED",
+  "diagnosis": "CORRECT_MODEL_AND_X100_EXECUTE_BUT_RAW100_DOES_NOT_REPRODUCE_FROZEN100_UNDER_FROZEN_PRECISION_CONTRACT",
+  "runtime_executed": true,
+  "primary_target": "frozen100",
+  "primary_closure_pass": false,
+  "failed_gates": [
+    "raw100_closes_to_frozen100_under_unchanged_precision_envelope"
+  ],
+  "candidate_changed": false,
+  "threshold_changed": false,
+  "recommendation": "Do not generate later-time states. The correct SG7B10 model and X100 now execute. Audit only the historical raw-prediction serialization/postprocessing path between model.predict(... )[:,:,0] and frozen100. Do not change model weights, X100, gamma, guard, or the precision envelope.",
+  "next_milestone": "V15-SG7E1R26I-R11 \u2014 SG7B10 Raw100 Serialization / Postprocessing Closure Audit"
+}

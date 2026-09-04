@@ -1,0 +1,98 @@
+{
+  "milestone": "V16E-0",
+  "contract_id": "PAD_STREAM_COMMON_TRANSPORT_INTERFACE_1.0",
+  "coordinate_system": "total-flow TOF / Pollock streamline",
+  "common_interface": {
+    "state": {
+      "S_profile": {
+        "meaning": "accepted phase-saturation profile on the active transport coordinate",
+        "units": "fraction"
+      },
+      "S_history": {
+        "meaning": "accepted recurrent/history state required by the selected transport branch",
+        "units": "branch-defined; must be explicitly bound before deployment"
+      },
+      "time_s": {
+        "meaning": "current physical time",
+        "units": "s"
+      },
+      "dt_s": {
+        "meaning": "transport update interval",
+        "units": "s"
+      }
+    },
+    "coordinates": {
+      "tau_s": {
+        "meaning": "total-flow time of flight from streamline origin",
+        "units": "s",
+        "authority": "Pollock/physics"
+      },
+      "delta_tau_s": {
+        "meaning": "segment TOF increment",
+        "units": "s",
+        "authority": "Pollock/physics"
+      },
+      "streamline_flux_m3_s": {
+        "meaning": "streamline flux/rate weight",
+        "units": "m^3/s",
+        "authority": "Darcy/streamline allocation"
+      },
+      "xi": {
+        "meaning": "normalized path coordinate used only as an interface coordinate",
+        "units": "dimensionless",
+        "authority": "derived from authoritative path"
+      }
+    },
+    "rock_fluid": {
+      "porosity": "fraction",
+      "relative_permeability_parameters": "explicit named endpoints/exponents; dimensionless",
+      "phase_viscosities_Pa_s": "Pa*s",
+      "phase_densities_kg_m3": "kg/m^3 when required",
+      "compressibility_1_Pa": "1/Pa when required",
+      "capillary_parameters": "explicit units required by the bound Pc model",
+      "residual_saturation_parameters": "fraction"
+    },
+    "heterogeneity": {
+      "layer_id": "integer/category when a layered benchmark is active",
+      "permeability_m2": "m^2",
+      "layer_thickness_m": "m",
+      "layer_bulk_volume_m3": "m^3 when physical PV is required",
+      "layer_pore_volume_m3": "m^3 = porosity * bulk volume",
+      "layer_rate_fraction": "dimensionless; all active layers must sum to 1",
+      "local_PVI": "dimensionless",
+      "DP_coefficient": "dimensionless; exact legacy definition/formula must be source-bound in V16E-0A before adapter coding",
+      "F_Phi_or_Lorenz_descriptor": "dimensionless dynamic heterogeneity descriptor derived from streamline flow/storage capacity",
+      "SGSim_descriptors": "spatial field/connectivity descriptors; never replaced by DP scalar"
+    },
+    "outputs": {
+      "S_updated": "fraction",
+      "path_inventory": "explicit mass/volume basis required by active physics",
+      "outlet_fractional_flow": "dimensionless",
+      "shock_or_front_metrics": "coordinate/time units explicitly reported",
+      "breakthrough_time_s": "s when defined",
+      "uncertainty_or_screen_state": "branch-defined scalar/flag"
+    },
+    "acceptance_authorities": {
+      "teacher_or_transport_residual": "must be within predeclared tolerance",
+      "saturation_bounds": "must satisfy frozen physical limits",
+      "inventory_closure": "must satisfy predeclared local/global closure",
+      "exact_grid_mapping": "conservative map-back remains final accepted state",
+      "fallback": "exact/numerical transport authority when learned proposal fails screen"
+    }
+  },
+  "role_equations": {
+    "incompressible_streamline_BL": "dS/dt + d f(S)/d tau = 0 under a frozen total-flow field",
+    "TOF_definition": "d tau = phi ds / |u_t|",
+    "layer_rate_fraction_reference": "F_l = conductance_or_kh_weight_l / sum_j(conductance_or_kh_weight_j); the exact benchmark weighting must be source-bound before implementation",
+    "local_PVI_identity": "PVI_l = (F_l * q_total * t) / PV_l = F_l * (PV_total/PV_l) * PVI_total",
+    "layer_rate_conservation": "sum_l F_l = 1",
+    "flux_weighted_response": "response_total = sum_l F_l * response_l for flux-weighted producer response",
+    "dynamic_Lorenz_reference": "L_c = 2 * integral_0^1 F(Phi) dPhi - 1, with F/Phi construction source-bound before executable use"
+  },
+  "immutability": {
+    "pressure_authority": "finite-volume",
+    "flux_authority": "conservative Darcy",
+    "kinematics_authority": "exact Pollock",
+    "accepted_state_authority": "physics-screened conservative grid state"
+  }
+}

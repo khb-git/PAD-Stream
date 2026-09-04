@@ -1,0 +1,18 @@
+{
+  "milestone": "V15-SG7E-R",
+  "description": "Front-aware full-grid plume / coverage validation using the accepted 11x11 SG7E implementation",
+  "training_performed": false,
+  "seed_density_changed": false,
+  "mapback_operator_changed": false,
+  "plume_threshold_changed": false,
+  "original_100d_plume_volume_error": 0.18240580167113338,
+  "front_aware_100d_plume_volume_error": 0.18152293867255231,
+  "absolute_improvement": 0.0008828629985810632,
+  "relative_improvement": 0.004840103716507942,
+  "established_volume_gate": 0.1,
+  "original_failure_resolved": false,
+  "validation_passed": false,
+  "status": "FRONT_AWARE_PLUME_VALIDATION_REQUIRES_DIAGNOSIS",
+  "recommendation": "Do not proceed to end-to-end integration. Diagnose the failed SG7E-R gate while retaining the accepted front-aware frozen model and conservative map-back.",
+  "next_milestone": "V15-SG7E-R1 \u2014 Front-Aware Full-Grid Validation Regression Audit"
+}

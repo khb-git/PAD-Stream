@@ -1,0 +1,25 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1A2R4A",
+  "status": "HISTORICAL_B4_CHECKPOINT_IDENTITY_RESOLVED",
+  "diagnosis": "R3F4_B4_BEST_ANY_CHECKPOINT_IS_AUTHORITATIVE_SUPPORT_SOURCE",
+  "training_performed": false,
+  "support_extension_calibrated": false,
+  "gate_changed": false,
+  "historical_scalar_overwritten": false,
+  "identity_resolved": true,
+  "selected_checkpoint": {
+    "filename": "V15SG7CR3F4_B4_Best_Any_Alpha_Model.keras",
+    "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7CR3F4\\experiments\\B4\\V15SG7CR3F4_B4_Best_Any_Alpha_Model.keras",
+    "sha256": "b9a2af574ff3ef5eef6377bbcbd0bd87b6490ff4d938de51f7e1d8ffcd18c0a6",
+    "score": 80,
+    "reasons": "R3F4_best_any_record;R3F4_branch_filename;best_any_filename"
+  },
+  "score_margin": 110,
+  "recommendation": "The historical R3F4-R provenance chain identifies the R3F4 B4 Best-Any checkpoint as the authoritative model source. The legacy SG7B4 artifacts are separate historical models and should not compete with the R3F4 provenance chain. Preserve the historical support scalar unchanged and use the R3F4 B4 Best-Any runtime arrays as the numerical basis for exact-array support extension.",
+  "next_milestone": "V15-SG7C-R3F5-R1B \u2014 Exact-Array Minimal-Support Extension Calibration",
+  "historical_B4_support": {
+    "front_shell_required_residual_sum": 126.26830245109524,
+    "front_shell_supported_residual_sum": 62.56321852706071,
+    "front_shell_residual_coverage_fraction": 0.495478416297645
+  }
+}

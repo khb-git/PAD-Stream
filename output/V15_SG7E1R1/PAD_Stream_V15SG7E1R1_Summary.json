@@ -1,0 +1,13 @@
+{
+  "milestone": "V15-SG7E1R1",
+  "status": "SG7E_REFERENCE_LINEAGE_CONFLICT_REMAINS",
+  "diagnosis": "TOP_HISTORICAL_REFERENCE_LINEAGES_REMAIN_PROVENANCE_TIED",
+  "plume_threshold": 0.5,
+  "distinct_reference_arrays": 7,
+  "reference_resolved": false,
+  "resolution": "TOP_REFERENCE_LINEAGES_REMAIN_TIED",
+  "threshold_changed": false,
+  "candidate_changed": false,
+  "recommendation": "Do not evaluate SG7E gates. The remaining ambiguity is confined to the top historical reference-array lineages. Resolve their source/manifest creation chain and intended truth semantics; do not choose the array that makes the frozen candidate perform best.",
+  "next_milestone": "V15-SG7E1R2 \u2014 Top Reference Lineage Creation-Chain Audit"
+}

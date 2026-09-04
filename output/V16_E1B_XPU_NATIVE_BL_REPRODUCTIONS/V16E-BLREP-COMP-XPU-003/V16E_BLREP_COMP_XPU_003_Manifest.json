@@ -1,0 +1,45 @@
+{
+  "milestone": "V16E-1B2F-XPU",
+  "experiment_id": "V16E-BLREP-COMP-XPU-003",
+  "classification": "FRAMEWORK_EQUIVALENT_ONE_FACTOR_NC_CONDITIONING_SCALE_XPU_REPRODUCTION",
+  "authority": {
+    "runner_sha256": "6170abb221bca66ff6be30bb5c2f7c95637f38218affe2523e5376fe57171e53",
+    "Stage2_sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+    "B2E_protocol_sha256": "58f37ef536f3683772c7e9fb342d5a39bdead660e77205b13cc150f8fc7c3ee3",
+    "dataset_sha256": "46f10f00ff6dc48f7b2b936bd7d602e6435f72f8410138c5aad0dd4add555f1c"
+  },
+  "artifacts": {
+    "port_protocol": {
+      "path": "output\\V16_E1B_XPU_NATIVE_BL_REPRODUCTIONS\\V16E-BLREP-COMP-XPU-003\\V16E_BLREP_COMP_XPU_003_Framework_Port_Protocol.json",
+      "sha256": "e681d1052178cfaf7fdc4da47e82442659dfb82b648d610741db831000bc1211"
+    },
+    "checkpoint": {
+      "path": "output\\V16_E1B_XPU_NATIVE_BL_REPRODUCTIONS\\V16E-BLREP-COMP-XPU-003\\V16E_BLREP_COMP_XPU_003.pt",
+      "sha256": "8657d2d65ad6612511d87b654b9a674523a68b716f706bc04be9f640d82a0797"
+    },
+    "config": {
+      "path": "output\\V16_E1B_XPU_NATIVE_BL_REPRODUCTIONS\\V16E-BLREP-COMP-XPU-003\\V16E_BLREP_COMP_XPU_003_Config.json",
+      "sha256": "68127fb8b75d473a5edb805de373852b6530fa4f2db4df6f295f53b3459a8099"
+    },
+    "history": {
+      "path": "output\\V16_E1B_XPU_NATIVE_BL_REPRODUCTIONS\\V16E-BLREP-COMP-XPU-003\\V16E_BLREP_COMP_XPU_003_Training_History.json",
+      "sha256": "8bbc0efe4f67b8d9e1c7b81d689d2fd39e1381ab0279f143678698a2b10dfc9f"
+    },
+    "metrics": {
+      "path": "output\\V16_E1B_XPU_NATIVE_BL_REPRODUCTIONS\\V16E-BLREP-COMP-XPU-003\\V16E_BLREP_COMP_XPU_003_Metrics.json",
+      "sha256": "2cc643c3cf1379f5d761b947a538aa0a00a96cbd650c638c6fbdab38428c409a"
+    }
+  },
+  "firewall": {
+    "physical_Nc_changed": false,
+    "teacher_changed": false,
+    "physics_residual_changed": false,
+    "loss_weights_changed": false,
+    "architecture_width_or_depth_changed": false,
+    "epochs_changed_vs_COMP_XPU_002": false,
+    "only_model_conditioner_Nc_scaled": true,
+    "OOD_claim": false,
+    "TOF": false,
+    "B3_authorized": false
+  }
+}

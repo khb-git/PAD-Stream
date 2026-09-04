@@ -1,0 +1,37 @@
+{
+  "milestone": "V15-SG7E1R26IR",
+  "status": "SG7B10_DEPLOYMENT_X100_EXECUTABLE_TENSOR_NOT_YET_UNIQUE",
+  "diagnosis": "STRICT_EXECUTABLE_TENSOR_FILTER_DOES_NOT_YET_SELECT_ONE_X100_INPUT",
+  "failure_provenance": {
+    "R26I_exception": "ValueError: Invalid dtype: str1952",
+    "classification": "NONNUMERIC_X100_BINDING"
+  },
+  "model_input_shapes": [
+    [
+      null,
+      2
+    ]
+  ],
+  "X100_binding": {
+    "resolved": false,
+    "artifact": null,
+    "key": null,
+    "shape": null,
+    "dtype": null,
+    "score": null,
+    "margin": 0
+  },
+  "constraints": {
+    "training_performed": false,
+    "model_parameters_changed": false,
+    "gamma_changed": false,
+    "guard_changed": false,
+    "threshold_changed": false,
+    "model_predict_executed": false,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false
+  },
+  "recommendation": "Do not call model.predict. Audit only the top numeric, finite, model-shape-compatible X100 candidates and their SG7B10 save/load lineage. Do not allow string/object arrays.",
+  "next_milestone": "V15-SG7E1R26I-R \u2014 Final Numeric X100 Artifact Lineage Audit"
+}

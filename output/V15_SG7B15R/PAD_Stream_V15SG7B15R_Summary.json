@@ -1,0 +1,13 @@
+{
+  "milestone": "V15-SG7B-15R",
+  "status": "FRONT_PRESERVING_TOF_REFINEMENT_CONTRACT_READY",
+  "validation_passed": true,
+  "training_performed": false,
+  "gate_relaxed": false,
+  "repair_reason": "Display-rounded SG7B-15 conditioned-front-gap constant was compared to the full-precision SG7B-10S contract.",
+  "SG7B15_rounded_gap": 0.0005331237,
+  "SG7B10S_exact_gap": 0.0005331237279179135,
+  "absolute_difference": 2.791791353217582e-11,
+  "recommendation": "Proceed to SG7B-16 using the repaired SG7B-15R contract. The conditioned-front-gap gate now comes directly from SG7B-10S at full precision; no gate was changed or relaxed.",
+  "next_milestone": "V15-SG7B-16 \u2014 Controlled Front-Preserving TOF Refinement"
+}

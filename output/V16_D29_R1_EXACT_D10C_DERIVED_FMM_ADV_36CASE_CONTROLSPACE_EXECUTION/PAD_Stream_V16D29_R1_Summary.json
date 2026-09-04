@@ -1,0 +1,73 @@
+{
+  "milestone": "V16D-29-R1",
+  "status": "V16D_36CASE_FMM_ADV_POLLOCK_TRAVELTIME_HIERARCHY_CERTIFIED_CONTROLSPACE_TRANSPORT_SUPERVISION_EXPANSION_AUTHORIZED",
+  "certified_cases": 36,
+  "split_counts": {
+    "TRAIN": 18,
+    "VALIDATION": 9,
+    "LOCKED_OOD_TEST": 9
+  },
+  "manifest_sha256": "6999ef24343e9f3235e1ce02e62d635fb08ac7442d4235884419e3932eac3b8f",
+  "source_hashes": {
+    "D10C": "5543065571e5a2c0c7d96df0d95ce6203c2c0ee4e933658e63d006709a7da91b",
+    "FMM": "0b26e3cdbc41276c53f4778e7eddcddd0cc8ef081ffb495b71df548152e8f049",
+    "B7": "2355f3eecd41bb6571f7ead3ebb1c5d90a1907ae681826159e79463166994c56",
+    "SG5": "2989fe58d1fd78fe9f9c03176dbb3ff066faf359f7edaf028cbdc0fea85135f2"
+  },
+  "ensemble": {
+    "fmm_median_d": {
+      "min": 121.65415581781598,
+      "median": 161.25134917367862,
+      "max": 239.71457047029722
+    },
+    "fmm_max_d": {
+      "min": 605.4564312551809,
+      "median": 1125.5792983780486,
+      "max": 3437.182038871282
+    },
+    "adv_median_d": {
+      "min": 218.80422538584028,
+      "median": 290.7470029508438,
+      "max": 416.0891901759569
+    },
+    "adv_max_d": {
+      "min": 2622.2486339507127,
+      "median": 5633.365737568323,
+      "max": 85492.8139997293
+    },
+    "pollock_median_d": {
+      "min": 285.3600712116455,
+      "median": 394.19964619194127,
+      "max": 578.7626529071341
+    },
+    "pollock_max_d": {
+      "min": 1468.6150978498065,
+      "median": 2860.6509277655673,
+      "max": 5593.282119645951
+    }
+  },
+  "gates": {
+    "D29_summary_SHA_exact": true,
+    "D10C_SHA_exact": true,
+    "FMM_source_SHA_exact": true,
+    "B7_source_SHA_exact": true,
+    "SG5_source_SHA_exact": true,
+    "flow_case_dir_exists": true,
+    "D28R1_case_dir_exists": true,
+    "D29_status_authorizes_execution": true,
+    "exactly_36_cases_attempted": true,
+    "all_36_certified": true,
+    "all_five_source_cells": true,
+    "split_counts_18_9_9": true,
+    "all_9_controls_per_geology": true,
+    "Pollock_remains_authoritative_reference": true,
+    "FMM_role_auxiliary_scalar_control": true,
+    "ADV_role_auxiliary_directional_field": true,
+    "no_case_or_streamline_selection": true,
+    "no_FMM_ADV_to_Pollock_fitting": true,
+    "no_transport_target_generation": true,
+    "no_training": true,
+    "locked_OOD_physics_generated_not_statistically_evaluated": true
+  },
+  "next_milestone": "V16D-30 \u2014 Source-bound Stage-4 transport supervision expansion contract across the 36 control-space Foundation Cases"
+}

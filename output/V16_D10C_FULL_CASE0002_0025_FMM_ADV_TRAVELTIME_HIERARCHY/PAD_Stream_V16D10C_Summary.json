@@ -1,0 +1,51 @@
+{
+  "milestone": "V16D-10C",
+  "status": "V16D_CASE0002_0025_FMM_ADV_POLLOCK_TRAVELTIME_HIERARCHY_ENSEMBLE_CERTIFIED_READY_FOR_MULTICASE_TRANSPORT_SUPERVISION",
+  "certified_cases": 24,
+  "manifest_sha256": "03efa36354322f533bf5ddd1f7a052f4bb458fb68562a91d7aaa554c5758fded",
+  "gates": {
+    "source_hashes_exact": true,
+    "all_24_attempted": true,
+    "all_24_certified": true,
+    "all_five_source_cells": true,
+    "no_case_replacement": true,
+    "Pollock_remains_authoritative_reference": true,
+    "FMM_role_auxiliary_scalar_control": true,
+    "ADV_role_auxiliary_directional_field": true,
+    "no_transport": true,
+    "no_training": true
+  },
+  "ensemble": {
+    "fmm_median_d": {
+      "min": 155.4296471640395,
+      "median": 162.88321317391473,
+      "max": 170.03070360142186
+    },
+    "fmm_max_d": {
+      "min": 771.5192771432115,
+      "median": 1112.5118223999157,
+      "max": 1629.2361322633299
+    },
+    "adv_median_d": {
+      "min": 284.2562900310865,
+      "median": 288.9458931205374,
+      "max": 296.01442898431844
+    },
+    "adv_max_d": {
+      "min": 2722.6940039747483,
+      "median": 5522.608046155485,
+      "max": 306480.8146626076
+    },
+    "pollock_median_d": {
+      "min": 364.6731702645698,
+      "median": 379.5595013394741,
+      "max": 400.31089050827546
+    },
+    "pollock_max_d": {
+      "min": 1955.2205909007037,
+      "median": 2980.771604614618,
+      "max": 4151.820805357959
+    }
+  },
+  "next_milestone": "V16D-11 \u2014 Multi-Foundation-Case Stage-4 Transport Supervision Generation Contract and Case-Level Split Freeze"
+}

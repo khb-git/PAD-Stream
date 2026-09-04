@@ -1,0 +1,17 @@
+{
+  "milestone": "V15-SG7D4",
+  "candidate": "P4_full_grid",
+  "status": "BACKGROUND_ONLY_FULL_GRID_CANDIDATE_COMPLETE",
+  "candidate_frozen": false,
+  "policy": "P4_MASKED_BACKGROUND_PLUS_SUPPORT",
+  "background_saturation": 0.20072828233242035,
+  "supported_cells": 29107,
+  "unsupported_cells_completed": 8393,
+  "full_grid_numerical_file": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7D4\\V15SG7D4_Completed_Full_Grid.npz",
+  "full_grid_sha256": "5c881046bf7b6bcfb411cffc9a332b6e4705e03f91a3a2438ecb58c2eedf9df5",
+  "SG7D1_sha256": "2cbfb945e1b0b555228776e49b31874f76188bf2e3626b504b682dbad1442721",
+  "frozen_L2_sha256": "63540f125b5124974ad3348103a9c7347aa9d6484240721d64f8a3efe66397b0",
+  "support_mask_preserved": true,
+  "SG7E_threshold_changed": false,
+  "next_milestone": "V15-SG7D5 \u2014 Independent Full-Grid Completion Validation"
+}

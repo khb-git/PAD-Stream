@@ -1,0 +1,324 @@
+{
+  "milestone": "V16E-1B2D-XPU",
+  "classification": "NO_TRAINING_400_VS_800_STAGE2_SCIENTIFIC_COMPARISON",
+  "experiment_1": {
+    "id": "V16E-BLREP-COMP-XPU-001",
+    "epochs": 400,
+    "checkpoint_sha256": "f2239f21603e01a2c80abbb18a787c6b0861959683d99d31261c495ad087f3d0",
+    "B2A_audit_sha256": "44906c63200587e0200b209720dd1e3950708e8089ee90fc8f1476b9a7b29045"
+  },
+  "experiment_2": {
+    "id": "V16E-BLREP-COMP-XPU-002",
+    "epochs": 800,
+    "checkpoint_sha256": "fca205b1981fbbdf15424af8ac8174df88ff7addf99e718548319a81f87d271b",
+    "R2_operational_amendment_sha256": "7fefa284d163de2f9825e31077226889cceea991e12af6a5e6b43d3e795a5ead",
+    "scientific_hyperparameters_changed_vs_B2B": "epochs only; R2 foreach=False was an execution-memory implementation amendment"
+  },
+  "overall_comparison": {
+    "mse": {
+      "COMP_XPU_001": 0.00013586595499267182,
+      "COMP_XPU_002": 0.0001078201276767585,
+      "percent_improvement_positive_is_better": 20.64227739570669
+    },
+    "rmse": {
+      "COMP_XPU_001": 0.011656155240587345,
+      "COMP_XPU_002": 0.010383647127900606,
+      "percent_improvement_positive_is_better": 10.91704842996427
+    },
+    "mae": {
+      "COMP_XPU_001": 0.006501145992014143,
+      "COMP_XPU_002": 0.005723465151256985,
+      "percent_improvement_positive_is_better": 11.962211611805728
+    },
+    "max_abs_error": {
+      "COMP_XPU_001": 0.175897479057312,
+      "COMP_XPU_002": 0.1779181957244873,
+      "percent_improvement_positive_is_better": -1.1488036542677742
+    }
+  },
+  "per_Nc_holdout_comparison": {
+    "0.00": {
+      "mae": {
+        "COMP_XPU_001": 0.003880753880366683,
+        "COMP_XPU_002": 0.003139335662126541,
+        "percent_improvement_positive_is_better": 19.105004880394194
+      },
+      "rmse": {
+        "COMP_XPU_001": 0.007829198613762856,
+        "COMP_XPU_002": 0.006813330110162497,
+        "percent_improvement_positive_is_better": 12.975382969778998
+      },
+      "max_abs_error": {
+        "COMP_XPU_001": 0.10066741704940796,
+        "COMP_XPU_002": 0.10202449560165405,
+        "percent_improvement_positive_is_better": -1.3480812282886272
+      }
+    },
+    "0.05": {
+      "mae": {
+        "COMP_XPU_001": 0.0051626660861074924,
+        "COMP_XPU_002": 0.004541447386145592,
+        "percent_improvement_positive_is_better": 12.032904890625657
+      },
+      "rmse": {
+        "COMP_XPU_001": 0.009179658256471157,
+        "COMP_XPU_002": 0.008125175721943378,
+        "percent_improvement_positive_is_better": 11.48716548118146
+      },
+      "max_abs_error": {
+        "COMP_XPU_001": 0.14237147569656372,
+        "COMP_XPU_002": 0.14397960901260376,
+        "percent_improvement_positive_is_better": -1.1295333620531216
+      }
+    },
+    "0.10": {
+      "mae": {
+        "COMP_XPU_001": 0.0068250079639256,
+        "COMP_XPU_002": 0.0060758269391953945,
+        "percent_improvement_positive_is_better": 10.976998542567157
+      },
+      "rmse": {
+        "COMP_XPU_001": 0.011356281116604805,
+        "COMP_XPU_002": 0.010197875089943409,
+        "percent_improvement_positive_is_better": 10.200575476839951
+      },
+      "max_abs_error": {
+        "COMP_XPU_001": 0.13412272930145264,
+        "COMP_XPU_002": 0.1357221007347107,
+        "percent_improvement_positive_is_better": -1.1924686006525624
+      }
+    },
+    "0.20": {
+      "mae": {
+        "COMP_XPU_001": 0.007789080496877432,
+        "COMP_XPU_002": 0.006933495867997408,
+        "percent_improvement_positive_is_better": 10.984411179509824
+      },
+      "rmse": {
+        "COMP_XPU_001": 0.013289747759699821,
+        "COMP_XPU_002": 0.011865769512951374,
+        "percent_improvement_positive_is_better": 10.714862858921643
+      },
+      "max_abs_error": {
+        "COMP_XPU_001": 0.175897479057312,
+        "COMP_XPU_002": 0.1779181957244873,
+        "percent_improvement_positive_is_better": -1.1488036542677742
+      }
+    },
+    "0.30": {
+      "mae": {
+        "COMP_XPU_001": 0.008725296705961227,
+        "COMP_XPU_002": 0.007819497026503086,
+        "percent_improvement_positive_is_better": 10.38130518632436
+      },
+      "rmse": {
+        "COMP_XPU_001": 0.014954067766666412,
+        "COMP_XPU_002": 0.013348451815545559,
+        "percent_improvement_positive_is_better": 10.736984586226603
+      },
+      "max_abs_error": {
+        "COMP_XPU_001": 0.1545998454093933,
+        "COMP_XPU_002": 0.15595853328704834,
+        "percent_improvement_positive_is_better": -0.8788416793413409
+      }
+    }
+  },
+  "case_comparison": {
+    "case1": {
+      "0.00": {
+        "full_domain_mae": {
+          "COMP_XPU_001": 0.005028286553617438,
+          "COMP_XPU_002": 0.004410178138108034,
+          "percent_improvement_positive_is_better": 12.292625110331585
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_001": 0.0046910909070386145,
+          "COMP_XPU_002": 0.004086402108896593,
+          "percent_improvement_positive_is_better": 12.890153060874027
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_001": 0.0007534191535943247,
+          "COMP_XPU_002": 0.0007534191392897654,
+          "percent_improvement_positive_is_better": 1.8986190097452805e-06
+        }
+      },
+      "0.05": {
+        "full_domain_mae": {
+          "COMP_XPU_001": 0.00335094595368895,
+          "COMP_XPU_002": 0.0031902424257197813,
+          "percent_improvement_positive_is_better": 4.79576603711723
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_001": 0.00299737594148198,
+          "COMP_XPU_002": 0.0028533742968393522,
+          "percent_improvement_positive_is_better": 4.80425703862258
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_001": 0.0006898321891697806,
+          "COMP_XPU_002": 0.0006898321818498494,
+          "percent_improvement_positive_is_better": 1.0611176507123517e-06
+        }
+      },
+      "0.10": {
+        "full_domain_mae": {
+          "COMP_XPU_001": 0.004164938113959211,
+          "COMP_XPU_002": 0.00349998595700387,
+          "percent_improvement_positive_is_better": 15.965475086572994
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_001": 0.0038282979791891434,
+          "COMP_XPU_002": 0.0031703999927827024,
+          "percent_improvement_positive_is_better": 17.185130049510615
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_001": 0.0006451813729724735,
+          "COMP_XPU_002": 0.0006451814011086761,
+          "percent_improvement_positive_is_better": -4.3609756493072226e-06
+        }
+      },
+      "0.20": {
+        "full_domain_mae": {
+          "COMP_XPU_001": 0.008050967377372608,
+          "COMP_XPU_002": 0.0066488623626682584,
+          "percent_improvement_positive_is_better": 17.415360775712386
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_001": 0.007745889114835839,
+          "COMP_XPU_002": 0.006328799922541653,
+          "percent_improvement_positive_is_better": 18.294726031902655
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_001": 0.0006063674054503773,
+          "COMP_XPU_002": 0.0006063673387546129,
+          "percent_improvement_positive_is_better": 1.09992330991484e-05
+        }
+      },
+      "0.30": {
+        "full_domain_mae": {
+          "COMP_XPU_001": 0.011690640966583312,
+          "COMP_XPU_002": 0.010046451679435112,
+          "percent_improvement_positive_is_better": 14.06415004829909
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_001": 0.011415927438998164,
+          "COMP_XPU_002": 0.009737089947186339,
+          "percent_improvement_positive_is_better": 14.706098131604413
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_001": 0.0005758049264079908,
+          "COMP_XPU_002": 0.0005758048696647552,
+          "percent_improvement_positive_is_better": 9.854593620496126e-06
+        }
+      }
+    },
+    "case2": {
+      "0.00": {
+        "full_domain_mae": {
+          "COMP_XPU_001": 0.0038814160436709513,
+          "COMP_XPU_002": 0.0027315370696877053,
+          "percent_improvement_positive_is_better": 29.62524401006283
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_001": 0.003652010856771737,
+          "COMP_XPU_002": 0.0024902267892844302,
+          "percent_improvement_positive_is_better": 31.81217452661922
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_001": 0.00038770600266406106,
+          "COMP_XPU_002": 0.0003877060028899394,
+          "percent_improvement_positive_is_better": -5.826021321693561e-08
+        }
+      },
+      "0.05": {
+        "full_domain_mae": {
+          "COMP_XPU_001": 0.003824311625471476,
+          "COMP_XPU_002": 0.0034898771964558,
+          "percent_improvement_positive_is_better": 8.74495757061758
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_001": 0.0036063519436168815,
+          "COMP_XPU_002": 0.003269839081990699,
+          "percent_improvement_positive_is_better": 9.33111540103008
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_001": 0.00031267679642642374,
+          "COMP_XPU_002": 0.00031267679796550467,
+          "percent_improvement_positive_is_better": -4.922274202196632e-07
+        }
+      },
+      "0.10": {
+        "full_domain_mae": {
+          "COMP_XPU_001": 0.005926924845913082,
+          "COMP_XPU_002": 0.005844499479296894,
+          "percent_improvement_positive_is_better": 1.3906936355540955
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_001": 0.005756830567335115,
+          "COMP_XPU_002": 0.005676156946403475,
+          "percent_improvement_positive_is_better": 1.401354790418726
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_001": 0.0003267580802371504,
+          "COMP_XPU_002": 0.0003267580771291981,
+          "percent_improvement_positive_is_better": 9.511477914632889e-07
+        }
+      },
+      "0.20": {
+        "full_domain_mae": {
+          "COMP_XPU_001": 0.010621252197953067,
+          "COMP_XPU_002": 0.01010790567799473,
+          "percent_improvement_positive_is_better": 4.833201494427077
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_001": 0.010453972988266311,
+          "COMP_XPU_002": 0.009939351444742124,
+          "percent_improvement_positive_is_better": 4.922736495510423
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_001": 0.00029673782623088735,
+          "COMP_XPU_002": 0.0002967378272695938,
+          "percent_improvement_positive_is_better": -3.500418064108202e-07
+        }
+      },
+      "0.30": {
+        "full_domain_mae": {
+          "COMP_XPU_001": 0.0142324517754114,
+          "COMP_XPU_002": 0.013332452959909133,
+          "percent_improvement_positive_is_better": 6.323568347212981
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_001": 0.014059938987803822,
+          "COMP_XPU_002": 0.013154095090505786,
+          "percent_improvement_positive_is_better": 6.442729929936417
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_001": 0.0002581672132928236,
+          "COMP_XPU_002": 0.0002581672125685846,
+          "percent_improvement_positive_is_better": 2.80530985668881e-07
+        }
+      }
+    }
+  },
+  "Nc_response_ratios": {
+    "holdout_Nc030_over_Nc000": {
+      "COMP_XPU_001": 2.248350958328951,
+      "COMP_XPU_002": 2.49081266487008,
+      "percent_ratio_reduction_positive_is_flatter": -10.783979504753756
+    },
+    "case1_full_domain_Nc030_over_Nc000": {
+      "COMP_XPU_001": 2.3249750868261194,
+      "COMP_XPU_002": 2.2780149383591652,
+      "percent_ratio_reduction_positive_is_flatter": 2.0198129749020506
+    },
+    "case1_front_excluded_Nc030_over_Nc000": {
+      "COMP_XPU_001": 2.433533620478226,
+      "COMP_XPU_002": 2.3828026923702668,
+      "percent_ratio_reduction_positive_is_flatter": 2.084661073964933
+    }
+  },
+  "interpretation_policy": "No numeric pass/fail threshold is introduced. Determine whether extra training primarily improves absolute errors, whether the relative high-Nc degradation meaningfully changes, and whether front-excluded behavior supports or rejects undertraining as a sufficient explanation.",
+  "B3_automatically_authorized": false,
+  "no_training": true,
+  "no_OOD": true,
+  "no_TOF": true
+}

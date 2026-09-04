@@ -1,0 +1,113 @@
+{
+  "fit_partition": "TRAIN_ONLY",
+  "fit_cases": [
+    "0020",
+    "0015",
+    "0013",
+    "0004",
+    "0006",
+    "0002",
+    "0023",
+    "0016",
+    "0009",
+    "0019",
+    "0017",
+    "0024",
+    "0003",
+    "0011",
+    "0014",
+    "0007"
+  ],
+  "validation_policy": "TRANSFORM_ONLY",
+  "locked_OOD_policy": "TRANSFORM_ONLY",
+  "feature_order": [
+    "xi",
+    "pollock_tau_hat",
+    "adv_tau_hat",
+    "log10_Kh",
+    "log10_Kz_over_Kh",
+    "porosity",
+    "pressure_z",
+    "target_time_hat",
+    "target_eta_sequence"
+  ],
+  "important_semantics": {
+    "pressure_z": "raw pressure_psi sampled first, then z-scored using TRAIN-only pressure statistics",
+    "M_face": "not a predictor",
+    "Y_targets": "not read by this milestone"
+  },
+  "statistics": {
+    "xi": {
+      "n": 31201632,
+      "mean": 0.5,
+      "std": 0.29011491975882037,
+      "min": 0.0,
+      "max": 1.0,
+      "policy": "ZSCORE_TRAIN_ONLY"
+    },
+    "pollock_tau_hat": {
+      "n": 31201632,
+      "mean": 0.5,
+      "std": 0.29011491975882037,
+      "min": 0.0,
+      "max": 1.0,
+      "policy": "ZSCORE_TRAIN_ONLY"
+    },
+    "adv_tau_hat": {
+      "n": 31201632,
+      "mean": 0.6196133597684105,
+      "std": 0.3861607610992361,
+      "min": 5.705827327763236e-05,
+      "max": 5.267391213266949,
+      "policy": "ZSCORE_TRAIN_ONLY"
+    },
+    "log10_Kh": {
+      "n": 31201632,
+      "mean": 2.677273315205474,
+      "std": 0.2854618431337893,
+      "min": 1.6993389749691354,
+      "max": 2.9999981983347985,
+      "policy": "ZSCORE_TRAIN_ONLY"
+    },
+    "log10_Kz_over_Kh": {
+      "n": 31201632,
+      "mean": -1.0,
+      "std": 0.0,
+      "min": -1.0,
+      "max": -0.9999999999999999,
+      "policy": "CONSTANT_IDENTITY"
+    },
+    "porosity": {
+      "n": 31201632,
+      "mean": 0.20000000000000012,
+      "std": 0.0,
+      "min": 0.2,
+      "max": 0.2,
+      "policy": "CONSTANT_IDENTITY"
+    },
+    "pressure_z": {
+      "n": 31201632,
+      "mean": 2050.3470532116817,
+      "std": 12.21081321159439,
+      "min": 2011.225219710493,
+      "max": 2133.172685130812,
+      "policy": "ZSCORE_TRAIN_ONLY"
+    },
+    "target_time_hat": {
+      "n": 31201632,
+      "mean": 0.35611111111111116,
+      "std": 0.31691023771003685,
+      "min": 0.03,
+      "max": 1.0,
+      "policy": "ZSCORE_TRAIN_ONLY"
+    },
+    "target_eta_sequence": {
+      "n": 31201632,
+      "mean": 0.9576291219646185,
+      "std": 1.015765016561202,
+      "min": 0.007225745379300751,
+      "max": 7.418035717259249,
+      "policy": "ZSCORE_TRAIN_ONLY"
+    }
+  }
+}

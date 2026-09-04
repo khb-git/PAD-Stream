@@ -1,0 +1,99 @@
+{
+  "milestone": "V15-SG7B-7",
+  "description": "Final validation and freeze decision for the reference full-physics PI-RNN",
+  "training_performed": false,
+  "model": "V15SG7B6_Best_Model.keras",
+  "reference_case": {
+    "Nc": 0.1,
+    "Pe_c": 22.0,
+    "lambda_bc": 2.0,
+    "phi": 0.2
+  },
+  "held_out_test": {
+    "L1": 0.0110396733507514,
+    "L2": 0.017113160341978073,
+    "Linf": 0.11870819330215454,
+    "fv_relative_MAE": 0.09501796960830688,
+    "fv_relative_RMS": 0.17667922377586365,
+    "mass_relative_MAE": 0.017925122752785683,
+    "mass_relative_max": 0.05197877436876297,
+    "minimum_prediction": 0.31724801659584045,
+    "maximum_prediction": 0.7807030081748962,
+    "regional_error": {
+      "injector": {
+        "L1": 0.006203319877386093,
+        "L2": 0.00894302036613226,
+        "Linf": 0.06504321098327637
+      },
+      "front": {
+        "L1": 0.018020376563072205,
+        "L2": 0.02722002938389778,
+        "Linf": 0.11483228206634521
+      },
+      "interior": {
+        "L1": 0.010540547780692577,
+        "L2": 0.01582220010459423,
+        "Linf": 0.07392746210098267
+      },
+      "outlet": {
+        "L1": 0.005300463177263737,
+        "L2": 0.010838879272341728,
+        "Linf": 0.11870819330215454
+      }
+    },
+    "regional_fv": {
+      "injector": {
+        "MAE": 0.3629988729953766,
+        "RMS": 0.44223055243492126
+      },
+      "front": {
+        "MAE": 0.348425030708313,
+        "RMS": 0.4570551812648773
+      },
+      "interior": {
+        "MAE": 0.06142141669988632,
+        "RMS": 0.0774393379688263
+      },
+      "outlet": {
+        "MAE": 0.13373924791812897,
+        "RMS": 0.2945524752140045
+      }
+    },
+    "time_bands": {
+      "early": {
+        "L1": 0.006593653000891209,
+        "L2": 0.011464724317193031
+      },
+      "middle": {
+        "L1": 0.005323911551386118,
+        "L2": 0.00822522398084402
+      },
+      "late": {
+        "L1": 0.02120145596563816,
+        "L2": 0.026066960766911507
+      }
+    },
+    "maximum_error_location": {
+      "tD": 0.2366729198168874,
+      "xi": 0.9900000095367432,
+      "truth": 0.2014945149421692,
+      "prediction": 0.32020270824432373
+    }
+  },
+  "SG7A_truth_residual": {
+    "relative_MAE": 0.0006323247504615058,
+    "relative_RMS": 0.011607089041066984
+  },
+  "PI_RNN_to_truth_FV_ratio": 150.26767422745587,
+  "SG7B4_comparison": {
+    "available": true,
+    "SG7B4_L1": 0.016631033271551132,
+    "SG7B4_L2": 0.029911598190665245,
+    "SG7B6_L1": 0.0110396733507514,
+    "SG7B6_L2": 0.017113160341978073,
+    "L1_improvement_percent": 33.62003929343496
+  },
+  "freeze_passed": false,
+  "status": "NOT_FROZEN",
+  "next_milestone": "V15-SG7B-6B - targeted refinement"
+}

@@ -1,0 +1,50 @@
+{
+  "milestone": "V16E-1B2AD-XPU",
+  "authorized_next_milestone": "V16E-1B2AE-XPU",
+  "classification": "COMP_XPU_005_EXECUTION_PREFLIGHT_PROTOCOL_FREEZE",
+  "prospective_experiment": "V16E-BLREP-COMP-XPU-005",
+  "implementation_contract": {
+    "derivative_engine": "CHUNKED_BATCHED_VJP",
+    "cotangent_chunk_size": 16,
+    "microbatch": 128,
+    "logical_batch": 8192,
+    "target_epochs": 800,
+    "scientific_graph_source": "exact frozen B2S corrected Stage-2 graph",
+    "scientific_change": false
+  },
+  "frozen_training_geometry": {
+    "train_profiles": 11520,
+    "microbatches_per_epoch": 90,
+    "logical_batch": 8192,
+    "microbatch": 128,
+    "target_epochs": 800
+  },
+  "diagnostic_projection_from_B2AC_chunk16": {
+    "chunk16_median_seconds": 7.866887500000303,
+    "projected_seconds_per_epoch": 708.0198750000272,
+    "projected_hours_per_epoch": 0.19667218750000756,
+    "projected_days_for_target_epochs": 6.555739583333586,
+    "semantics": "operational diagnostic only; not a runtime promise"
+  },
+  "B2AE_requirements": [
+    "bind the exact chunk-16 derivative implementation",
+    "bind exact source and artifact SHAs",
+    "bind exact COMP-XPU-005 scientific settings",
+    "define fail-closed prospective training runner behavior",
+    "define checkpoint/resume behavior",
+    "define optimizer and gradient-accumulation contract",
+    "define a no-OOD/no-TOF execution preflight",
+    "do not authorize the 800-epoch run unless all execution-preflight gates pass"
+  ],
+  "scientific_firewall": {
+    "training_in_B2AD": false,
+    "optimizer_in_B2AD": false,
+    "optimizer_step_in_B2AD": false,
+    "weight_update_in_B2AD": false,
+    "scientific_settings_changed": false,
+    "OOD": false,
+    "TOF": false,
+    "B3_authorized": false
+  },
+  "COMP_XPU_005_full_training_authorized": false
+}

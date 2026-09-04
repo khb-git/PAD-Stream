@@ -1,0 +1,57 @@
+{
+  "milestone": "V15-SG7B-3",
+  "description": "Reference-case PI-RNN dataset and training design",
+  "status": "PASS",
+  "source": "Frozen V15-SG7A master solution",
+  "reference_physics": {
+    "Nc": 0.1,
+    "Pe_c": 22.0,
+    "lambda_bc": 2.0,
+    "phi": 0.2
+  },
+  "learning_contract": {
+    "input": "[xi, normalized tD]",
+    "output": "S(xi,tD)",
+    "sequence_nodes": 201,
+    "input_features": 2,
+    "output_features": 1,
+    "front_location_input": false,
+    "shock_saturation_input": false,
+    "fourier_features": false,
+    "film": false,
+    "architecture_family": "plain stacked LSTM"
+  },
+  "dataset": {
+    "total_profiles": 801,
+    "profile_length": 201,
+    "total_saturation_values": 161001,
+    "tD_min": 0.0,
+    "tD_max": 11.137549167853525,
+    "tD_normalization_scale": 11.137549167853525
+  },
+  "split": {
+    "strategy": "deterministic repeating contiguous time-block holdout",
+    "block_size": 20,
+    "train_per_block": 14,
+    "validation_per_block": 3,
+    "test_per_block": 3,
+    "train_profiles": 561,
+    "validation_profiles": 120,
+    "test_profiles": 120,
+    "train_fraction": 0.700374531835206,
+    "validation_fraction": 0.149812734082397,
+    "test_fraction": 0.149812734082397
+  },
+  "approved_physics_loss": "V15-SG7B-2 conservative finite-volume residual",
+  "initial_training_loss_design": {
+    "data": true,
+    "finite_volume_physics": true,
+    "boundary": true,
+    "global_mass_balance": true,
+    "front_anchor": false,
+    "shock_anchor": false,
+    "curvature_penalty": false,
+    "monotonicity": false
+  },
+  "next_milestone": "V15-SG7B-4 - reference-case plain-LSTM PI-RNN training"
+}

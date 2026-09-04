@@ -1,0 +1,18 @@
+{
+  "milestone": "V15-SG7B-11",
+  "candidate_source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B10\\experiments\\E2\\V15SG7B10_E2_Best_Model.keras",
+  "candidate_sha256": "28c3e555f1ea9e128bddc6c021c5b3648699ba7a33125b3b40a6556990fa9141",
+  "original_frozen_model": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B7R\\V15SG7B_FROZEN_Model.keras",
+  "original_frozen_sha256": "9242af83e9aae6dc91ce215f78bf2a6d539972632d5e5ce759ea1fc83f3c11be",
+  "original_frozen_overwritten": false,
+  "validation_passed": true,
+  "status": "FRONT_AWARE_PI_RNN_FROZEN",
+  "front_aware_frozen_model": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B11\\V15SG7B_FRONT_AWARE_FROZEN_Model.keras",
+  "front_aware_frozen_sha256": "28c3e555f1ea9e128bddc6c021c5b3648699ba7a33125b3b40a6556990fa9141",
+  "canonical_contract": {
+    "mean_max": 0.5,
+    "P90_max": 1.0,
+    "fraction_gt_1_max": 0.1
+  },
+  "next_milestone": "V15-SG7C-R \u2014 Front-Aware Frozen PI-RNN Redeployment on SGSim Streamlines"
+}

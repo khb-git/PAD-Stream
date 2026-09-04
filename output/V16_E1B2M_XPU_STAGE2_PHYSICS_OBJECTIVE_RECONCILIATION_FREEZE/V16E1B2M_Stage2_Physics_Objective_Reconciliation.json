@@ -1,0 +1,29 @@
+{
+  "milestone": "V16E-1B2M-XPU",
+  "classification": "STAGE2_PHYSICS_OBJECTIVE_RECONCILIATION",
+  "frozen_evidence": {
+    "B2K_comparison_sha256": "68e5f8853d991219e205bd98f757ab25ebeca1d8b957313943fdee86f7b3c755",
+    "B2L_audit_sha256": "341b7e063fbaa76bac1c59e941765da250a9cc7ee7ff3a3bd6856ca04ffce515",
+    "Godunov_teacher_holdout_Nc030_over_Nc000_characteristic_physics_ratio": 49.211873763770534,
+    "COMP_XPU_002_holdout_Nc030_over_Nc000_characteristic_physics_ratio": 2.4409088869391353,
+    "COMP_XPU_004_holdout_Nc030_over_Nc000_characteristic_physics_ratio": 4.509662817143157,
+    "COMP_XPU_004_overall_RMSE_percent_improvement_vs_COMP002": 13.739422767271456,
+    "COMP_XPU_004_overall_MAE_percent_improvement_vs_COMP002": 14.050641143059067
+  },
+  "equation_reconciliation": {
+    "conservative_teacher": "dS/dtD + d[uD*f_w(S)]/dxD = 0, uD=exp(Nc*xD)",
+    "expanded_conservative_teacher": "dS/dtD + uD*f_w'(S)*dS/dxD + Nc*uD*f_w(S) = 0",
+    "retained_characteristic_constraint": "y(xi*xD_star;Nc) - tD*f_w'(S) = 0",
+    "missing_conservative_term_relative_to_simple_characteristic_relation": "Nc*uD*f_w(S)",
+    "Nc0_limit": "The additional conservative term vanishes at Nc=0, consistent with exact Stage-1 nesting of the retained characteristic residual."
+  },
+  "scientific_interpretation": "B2L demonstrates that the conservative Godunov target and retained simple characteristic residual are not mutually zero-residual objectives for Nc>0. The large positive-Nc teacher residual is a property of the frozen objective pair, not solely a neural-network approximation failure. Therefore a model's larger characteristic physics loss at high Nc cannot by itself be interpreted as worse agreement with the conservative governing equation.",
+  "COMP004_interpretation": "COMP-XPU-004 is preserved as the best absolute reproduction branch observed so far. Its high-Nc characteristic physics loss must be interpreted relative to the incompatible teacher/residual pair and must not be mislabeled as a direct conservative-PDE residual.",
+  "prohibited_conclusions": [
+    "COMP-XPU-004 is less physical simply because its high-Nc characteristic loss is larger",
+    "the Godunov teacher is wrong",
+    "the original Stage-2 source should be overwritten",
+    "a new arbitrary Nc loss multiplier is scientifically justified",
+    "B3 is automatically authorized"
+  ]
+}

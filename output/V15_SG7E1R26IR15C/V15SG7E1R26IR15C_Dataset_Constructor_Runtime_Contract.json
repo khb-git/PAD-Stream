@@ -1,0 +1,48 @@
+{
+  "milestone": "V15-SG7E1R26I-R15C",
+  "status": "SG7B16_BASE_DATASET_tD_SCALE_AND_X100_RUNTIME_BINDINGS_RESOLVED",
+  "diagnosis": "EXACT_LOCAL_BASE_CONSTRUCTOR_CLOSES_DATASET_tD_SCALE_AND_DEPLOYMENT_X100_LINEAGE",
+  "creator": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+  "base_assignment": {
+    "line": 3807,
+    "symbol": "base",
+    "expression": "import_module(\n        BASE_SOURCE_FILE,\n        \"pad_stream_sg7b6d_for_sg7b16\",\n    )",
+    "expression_type": "Call"
+  },
+  "base_file": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B6D_Advective_Flux_Refinement.py",
+  "dataset_keys": [
+    "X_test",
+    "X_train",
+    "X_val",
+    "Y_test",
+    "Y_train",
+    "Y_val",
+    "index_test",
+    "index_train",
+    "index_val",
+    "tD_scale",
+    "tD_test",
+    "tD_train",
+    "tD_val",
+    "xi"
+  ],
+  "tD_scale": 11.137549167853525,
+  "workspace": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11",
+  "X100_shape": [
+    2662,
+    201,
+    2
+  ],
+  "X100_sha256": "21e4fb419f9c56242516d7c439da5160cf24b2b6cae4d30666d71de752aed526",
+  "failed_gates": [],
+  "constraints": {
+    "training_performed": false,
+    "model_predict_executed": false,
+    "authority_broadened": false,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false
+  },
+  "recommendation": "The exact SG7B16 local base object now resolves dataset, tD_scale, and deployment X100. Persist these identities and proceed directly to the repaired SG7B16 frozen100 creator 100-day runtime control. Do not reopen creator/model/X100 discovery.",
+  "next_milestone": "V15-SG7E1R26I-R16 \u2014 Repaired SG7B16 Frozen100 Creator Runtime Control"
+}

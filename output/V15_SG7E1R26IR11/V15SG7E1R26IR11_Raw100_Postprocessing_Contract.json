@@ -1,0 +1,226 @@
+{
+  "milestone": "V15-SG7E1R26I-R11",
+  "status": "SG7B10_RAW100_TO_FROZEN100_POSTPROCESSING_PATH_NOT_YET_UNIQUE",
+  "diagnosis": "SOURCE_POSTPROCESSING_AND_FROZEN100_CREATION_RECORDS_EXIST_BUT_NO_SINGLE_DIRECT_CHAIN_IS_YET_EXPLICIT",
+  "authoritative_source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B10_Controlled_Front_Aware_Refinement.py",
+  "raw100_identity": {
+    "sha256": "dd5cbcd4d143496402a281f7a0e93bc72e929e756928ff4529100a2ca64f66cd",
+    "shape": [
+      2662,
+      201
+    ],
+    "dtype": "float32"
+  },
+  "frozen100_identity": {
+    "sha256": "a08c7320a63ace580456191f408a29afde65e0ad3f078846265243e53cd10297",
+    "shape": [
+      2662,
+      201
+    ],
+    "dtype": "float32"
+  },
+  "raw_prediction_assignments": [
+    {
+      "line": 851,
+      "targets": "test_extra",
+      "rhs": "additional_preservation_metrics(\n        dataset[\"X_test\"],\n        test[\"truth\"],\n        test[\"prediction\"],\n    )"
+    },
+    {
+      "line": 857,
+      "targets": "deployment_prediction",
+      "rhs": "model.predict(\n        deployment[\"X100\"],\n        batch_size=BATCH_SIZE,\n        verbose=0,\n    )[:, :, 0]"
+    },
+    {
+      "line": 863,
+      "targets": "front",
+      "rhs": "front_metrics_np(\n        deployment_prediction,\n        deployment[\"truth100\"],\n    )"
+    },
+    {
+      "line": 868,
+      "targets": "gates",
+      "rhs": "{\n        \"finite\": bool(np.all(np.isfinite(deployment_prediction))),\n        \"bounds\": bool(\n            np.min(deployment_prediction) >= base.S_INITIAL - 1.0e-7\n            and np.max(deployment_prediction) <= base.S_INJECTED + 1.0e-7\n        ),\n        \"held_out_L1\": bool(test[\"L1\"] < MAX_TEST_L1),\n        \"held_out_L2\": bool(test[\"L2\"] < MAX_TEST_L2),\n        \"mass\": bool(test[\"mass_relative_MAE\"] < MAX_MASS_RELATIVE_MAE),\n        \"injector\": bool(test[\"injector_L1\"] < MAX_INJECTOR_L1),\n        \"front_L1\": bool(test_extra[\"front_L1\"] < MAX_FRONT_L1),\n        \"early_L1\": bool(test_extra[\"early_L1\"] < MAX_EARLY_L1),\n        \"late_L1\": bool(test_extra[\"late_L1_recomputed\"] < MAX_LATE_L1),\n        \"front_crossings\": bool(front[\"recovered_front_count\"] >= MIN_100D_CROSSINGS),\n        \"conditioned_gap\": bool(\n            front[\"conditioned_threshold_gap_mean\"] <= conditioned_gap_target\n        ),\n        \"profile_100d_L1\": bool(front[\"profile_L1_mean\"] <= MAX_100D_PROFILE_L1),\n        \"local_monotonic\": bool(\n            front[\"local_monotonic_violation\"] <= MAX_LOCAL_MONOTONIC_VIOLATION\n        ),\n    }"
+    }
+  ],
+  "postprocessing_trace": [
+    {
+      "symbol": "test_extra",
+      "line": 851,
+      "rhs": "additional_preservation_metrics(\n        dataset[\"X_test\"],\n        test[\"truth\"],\n        test[\"prediction\"],\n    )",
+      "operation_tags": ""
+    },
+    {
+      "symbol": "test",
+      "line": 841,
+      "rhs": "base.evaluate_split(\n        model,\n        dataset[\"X_test\"],\n        dataset[\"Y_test\"],\n        targets[\"face_test\"],\n        targets[\"div_test\"],\n        xi,\n        tD_scale,\n    )",
+      "operation_tags": ""
+    },
+    {
+      "symbol": "xi",
+      "line": 838,
+      "rhs": "np.asarray(dataset[\"xi\"], dtype=float)",
+      "operation_tags": ""
+    },
+    {
+      "symbol": "tD_scale",
+      "line": 839,
+      "rhs": "float(dataset[\"tD_scale\"][0])",
+      "operation_tags": ""
+    },
+    {
+      "symbol": "deployment_prediction",
+      "line": 857,
+      "rhs": "model.predict(\n        deployment[\"X100\"],\n        batch_size=BATCH_SIZE,\n        verbose=0,\n    )[:, :, 0]",
+      "operation_tags": "CHANNEL_SELECT"
+    },
+    {
+      "symbol": "front",
+      "line": 863,
+      "rhs": "front_metrics_np(\n        deployment_prediction,\n        deployment[\"truth100\"],\n    )",
+      "operation_tags": "FRONT"
+    },
+    {
+      "symbol": "gates",
+      "line": 868,
+      "rhs": "{\n        \"finite\": bool(np.all(np.isfinite(deployment_prediction))),\n        \"bounds\": bool(\n            np.min(deployment_prediction) >= base.S_INITIAL - 1.0e-7\n            and np.max(deployment_prediction) <= base.S_INJECTED + 1.0e-7\n        ),\n        \"held_out_L1\": bool(test[\"L1\"] < MAX_TEST_L1),\n        \"held_out_L2\": bool(test[\"L2\"] < MAX_TEST_L2),\n        \"mass\": bool(test[\"mass_relative_MAE\"] < MAX_MASS_RELATIVE_MAE),\n        \"injector\": bool(test[\"injector_L1\"] < MAX_INJECTOR_L1),\n        \"front_L1\": bool(test_extra[\"front_L1\"] < MAX_FRONT_L1),\n        \"early_L1\": bool(test_extra[\"early_L1\"] < MAX_EARLY_L1),\n        \"late_L1\": bool(test_extra[\"late_L1_recomputed\"] < MAX_LATE_L1),\n        \"front_crossings\": bool(front[\"recovered_front_count\"] >= MIN_100D_CROSSINGS),\n        \"conditioned_gap\": bool(\n            front[\"conditioned_threshold_gap_mean\"] <= conditioned_gap_target\n        ),\n        \"profile_100d_L1\": bool(front[\"profile_L1_mean\"] <= MAX_100D_PROFILE_L1),\n        \"local_monotonic\": bool(\n            front[\"local_monotonic_violation\"] <= MAX_LOCAL_MONOTONIC_VIOLATION\n        ),\n    }",
+      "operation_tags": "FRONT"
+    }
+  ],
+  "frozen100_creation_lineage": [
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "line": 1095,
+      "kind": "ASSIGNMENT",
+      "expression": "frozen_model.predict(\n        deployment[\"X100\"], batch_size=BATCH_SIZE, verbose=0\n    )[:, :, 0]"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 3864,
+      "kind": "ASSIGNMENT",
+      "expression": "frozen_model.predict(\n        deployment[\n            \"X100\"\n        ],\n        batch_size=BATCH_SIZE,\n        verbose=0,\n    )[\n        :,\n        :,\n        0,\n    ]"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 4540,
+      "kind": "SERIALIZATION",
+      "expression": "frozen100.astype(\n                    np.float32\n                )"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3DR_Frozen_Deployment_Calibration_Contract_Repair.py",
+      "line": 263,
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[idx100]"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3ER2_Single_Gate_Calibration_Limiter_Audit.py",
+      "line": 251,
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[idx100]"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F0_Front_State_Focused_Calibration_Refinement_Design.py",
+      "line": 190,
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[idx100]"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F1_Controlled_Front_State_Focused_Calibration_Refinement.py",
+      "line": 344,
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[idx100]"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F2A_Front_Correction_Geometry_Topology_Audit.py",
+      "line": 718,
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[idx100]"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F3_Front_Local_Residual_Basis_Design.py",
+      "line": 288,
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[idx100]"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F4_Controlled_Front_Local_Residual_Basis_Calibration.py",
+      "line": 491,
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[idx100]"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F4R2R_Front_Reference_Crossing_Metric_Reconciliation_Audit.py",
+      "line": 1011,
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[\n            idx100\n        ]"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F4R_Front_Local_Basis_Outcome_Audit.py",
+      "line": 855,
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[idx100]"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F5R1A2_Authoritative_Serialization_Runtime.py",
+      "line": 855,
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[idx100]"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F5R1A2R_Runtime_Shape_Audit.py",
+      "line": 855,
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[idx100]"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F5R1C_Independent_Exact_Array_Support_Extension_Validation.py",
+      "line": 918,
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[\n        idx100\n    ]"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F5R1C_Independent_Exact_Array_Support_Extension_Validation.py",
+      "line": 1324,
+      "kind": "SERIALIZATION",
+      "expression": "frozen100.astype(np.float32)"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F5R1F2C_Independent_Crossing_Local_Candidate_Validation.py",
+      "line": 893,
+      "kind": "SERIALIZATION",
+      "expression": "frozen.astype(np.float32)"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F5R1F2CRR_Precision_Aware_Independent_Validation_Contract_Repair.py",
+      "line": 1377,
+      "kind": "SERIALIZATION",
+      "expression": "frozen.astype(\n                np.float32\n            )"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7E1R26IR10_Bound_SG7B10_100_Day_Runtime_Control.py",
+      "line": 386,
+      "kind": "SERIALIZATION",
+      "expression": "states[\"frozen100\"]"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7E1R26IR11_SG7B10_Raw100_Serialization_Postprocessing_Closure_Audit.py",
+      "line": 433,
+      "kind": "ASSIGNMENT",
+      "expression": "np.asarray(db[\"frozen100\"])"
+    }
+  ],
+  "explicit_creator_rows": [],
+  "constraints": {
+    "training_performed": false,
+    "model_parameters_changed": false,
+    "model_predict_executed": false,
+    "X100_changed": false,
+    "gamma_changed": false,
+    "guard_changed": false,
+    "threshold_changed": false,
+    "operator_selected_by_performance": false,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false
+  },
+  "recommendation": "Do not generate later-time states. Audit only the frozen100 creation/serialization sources listed by R11 and trace their immediate input symbols backward until one direct SG7B10 raw-prediction lineage is reached. Do not choose an operator by numerical error.",
+  "next_milestone": "V15-SG7E1R26I-R12 \u2014 Frozen100 Immediate-Input Lineage Audit"
+}

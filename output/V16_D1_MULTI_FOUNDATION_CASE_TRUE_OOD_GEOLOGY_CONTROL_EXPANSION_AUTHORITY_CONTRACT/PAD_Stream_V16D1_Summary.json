@@ -1,0 +1,72 @@
+{
+  "milestone": "V16D-1",
+  "status": "V16D_MULTI_FOUNDATION_CASE_TRUE_OOD_EXPANSION_ARCHITECTURE_FROZEN_CASE_GENERATION_RECIPE_REQUIRED",
+  "contract": {
+    "unit_of_generalization": "FOUNDATION_CASE",
+    "case_0001_role": "FROZEN_REFERENCE_FOUNDATION_CASE",
+    "required_case_components": [
+      "case_id",
+      "geology_id_and_seed",
+      "grid_geometry",
+      "Kx_Ky_Kz",
+      "porosity",
+      "well_locations_and_completions",
+      "injection_and_production_controls",
+      "pressure",
+      "Qx_Qy_Qz",
+      "Vx_Vy_Vz",
+      "Pollock_streamlines_and_TOF_weights",
+      "FMM_connectivity_context",
+      "ADV_directional_travel_time_context",
+      "C7_Pollock_spatial_metric",
+      "C17_style_source_authentic_transport_targets",
+      "immutable_parameter_and_time_schedule_metadata",
+      "source_hashes_and_provenance"
+    ],
+    "variation_axes": {
+      "geology": "independent SGSim realizations/seeds under a separately frozen geostatistical recipe",
+      "controls": "well/control variants under separately frozen admissible ranges",
+      "physics": "same source-authentic governing hierarchy unless a new versioned contract changes it"
+    },
+    "split_hierarchy": {
+      "inner_case_split": "streamline-group train/validation only inside development cases when required",
+      "case_level_development": "multiple complete Foundation Cases available to model fitting",
+      "case_level_validation": "entire unseen Foundation Cases for architecture/hyperparameter selection",
+      "case_level_test": "entire unseen Foundation Cases touched only after selection",
+      "OOD_definition": "unseen geology and/or unseen control Foundation Cases"
+    },
+    "leakage_prohibitions": [
+      "no streamline from an OOD case may appear in training",
+      "no target time from an OOD case may appear in training",
+      "no normalization statistics may be fit using OOD cases",
+      "no OOD test result may select architecture/loss weight/hyperparameters",
+      "case seeds and control assignments must be frozen before model training"
+    ],
+    "foundation_model_claim_requirements": [
+      "more than one training Foundation Case",
+      "case-level validation",
+      "case-level locked test",
+      "explicit geology/control coverage statement",
+      "no claim beyond tested distribution"
+    ],
+    "immediate_next_step": "freeze the SGSim multi-realization generation recipe and admissible control-space design before creating Case 0002+",
+    "training_authorized": false
+  },
+  "gates": {
+    "C28_bound": true,
+    "case0001_immutable": true,
+    "foundation_case_unit_defined": true,
+    "geology_variation_axis_defined": true,
+    "control_variation_axis_defined": true,
+    "true_OOD_case_level": true,
+    "no_streamline_level_OOD_relabeling": true,
+    "case_level_validation_required": true,
+    "case_level_locked_test_required": true,
+    "OOD_normalization_leakage_prohibited": true,
+    "OOD_selection_leakage_prohibited": true,
+    "multi_case_foundation_claim_requirements_defined": true,
+    "no_case_generation_in_D1": true,
+    "no_training_in_D1": true
+  },
+  "next_milestone": "V16D-2 \u2014 SGSim Multi-Realization Geology Recipe and Control-Space Design Authority Contract"
+}

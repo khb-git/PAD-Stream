@@ -1,0 +1,20 @@
+{
+  "milestone": "V15-SG7D4",
+  "status": "BACKGROUND_ONLY_FULL_GRID_CANDIDATE_COMPLETE",
+  "diagnosis": "FULL_GRID_COMPLETION_PRESERVES_SUPPORTED_PHYSICS_AND_ADDS_NO_PLUME",
+  "policy": "P4_MASKED_BACKGROUND_PLUS_SUPPORT",
+  "completion_rule": "supported -> SG7D1; unsupported -> frozen L2 minimum/background",
+  "background_saturation": 0.20072828233242035,
+  "supported_cells": 29107,
+  "unsupported_cells_completed": 8393,
+  "full_grid_sha256": "5c881046bf7b6bcfb411cffc9a332b6e4705e03f91a3a2438ecb58c2eedf9df5",
+  "supported_cells_changed": false,
+  "conservative_mapback_evidence_changed": false,
+  "interpolation_used": false,
+  "nearest_neighbor_used": false,
+  "unsupported_plume_cells_added": 0,
+  "SG7E_threshold_changed": false,
+  "candidate_frozen": false,
+  "recommendation": "The full 15x50x50 saturation candidate is complete. Every SG7D1-supported cell is unchanged, every unsupported cell is assigned only the frozen background saturation, the support mask and conservative evidence remain intact, and no unsupported plume cells are created. Do not freeze yet. Independently validate the completed field and provenance before SG7E.",
+  "next_milestone": "V15-SG7D5 \u2014 Independent Full-Grid Completion Validation"
+}

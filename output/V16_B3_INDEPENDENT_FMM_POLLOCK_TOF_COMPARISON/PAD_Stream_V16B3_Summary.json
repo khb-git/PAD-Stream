@@ -1,0 +1,16 @@
+{
+  "milestone": "V16B-3",
+  "status": "V16B_INDEPENDENT_FMM_POLLOCK_COMPARISON_COMPLETE",
+  "diagnosis": "GRID_BASED_ISOTROPIC_FMM_AND_TRAJECTORY_BASED_POLLOCK_TOF_HAVE_BEEN_COMPARED_WITHOUT_CROSS_CALIBRATION",
+  "interpretation": "MODERATE_CONNECTIVITY_ORDERING_CONSISTENCY_WITH_DIRECTIONAL_DISCREPANCY",
+  "aligned_all_node_pearson_r": 0.7309777963269188,
+  "aligned_terminal_pearson_r": 0.20316608366649436,
+  "median_terminal_FMM_to_Pollock_ratio": 0.5054942321969669,
+  "FMM_aligned_monotonic_fraction": 0.23840445269016697,
+  "output": {
+    "file": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_B3_INDEPENDENT_FMM_POLLOCK_TOF_COMPARISON\\V16B3_FMM_Pollock_TOF_Comparison.npz",
+    "sha256": "837e446ac71f532395012dabff75fd757db664cb301960f5524e732c3d1b4e58"
+  },
+  "recommendation": "Preserve this untuned comparison as the V16B baseline diagnostic. Proceed to V16B-4 to interpret the discrepancy structure and decide whether an anisotropic/directional arrival-time formulation is warranted. Do not alter the V16B-1 isotropic baseline.",
+  "next_milestone": "V16B-4 \u2014 FMM / Pollock Discrepancy Structure & Directionality Audit"
+}

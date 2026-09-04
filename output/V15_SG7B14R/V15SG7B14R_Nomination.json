@@ -1,0 +1,11 @@
+{
+  "milestone": "V15-SG7B-14R",
+  "status": "NO_EXISTING_SG7B13_CANDIDATE_PASSES_COMPLETE_INDEPENDENT_CONTRACT",
+  "experiment": null,
+  "model": null,
+  "sha256": null,
+  "complete_independent_pass": false,
+  "dominant_failed_gate": "conditioned_front_gap",
+  "dominant_failed_gate_count": 5,
+  "next_milestone": "V15-SG7B-15 \u2014 Front-Preserving TOF Refinement Design"
+}

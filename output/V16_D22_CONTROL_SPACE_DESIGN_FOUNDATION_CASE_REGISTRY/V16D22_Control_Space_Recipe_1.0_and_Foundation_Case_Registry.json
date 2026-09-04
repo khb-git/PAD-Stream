@@ -1,0 +1,445 @@
+{
+  "milestone": "V16D-22",
+  "contract": "V16D_CONTROL_SPACE_RECIPE_1.0",
+  "prospective_design": true,
+  "axes": {
+    "CO2_injection_tonnes_per_day": [
+      350.0,
+      500.0,
+      650.0
+    ],
+    "producer_BHP_psi": [
+      1800.0,
+      2000.0,
+      2200.0
+    ]
+  },
+  "reference_control": {
+    "CO2_injection_tonnes_per_day": 500.0,
+    "producer_BHP_psi": 2000.0
+  },
+  "geology": {
+    "recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1",
+    "new_geology_ids": [
+      "0026",
+      "0027",
+      "0028",
+      "0029"
+    ],
+    "seed_rule": "160400 + (geology_case_id - 2)*7919",
+    "historical_cases_0002_0025_reused": false
+  },
+  "crossing": "complete 3x3 control factorial on every new geology",
+  "split": {
+    "TRAIN_geologies": [
+      "0026",
+      "0027"
+    ],
+    "VALIDATION_geologies": [
+      "0028"
+    ],
+    "LOCKED_OOD_TEST_geologies": [
+      "0029"
+    ],
+    "unit": "complete geology including all 9 control combinations"
+  },
+  "counts": {
+    "TRAIN": 18,
+    "VALIDATION": 9,
+    "LOCKED_OOD_TEST": 9,
+    "TOTAL": 36
+  },
+  "fixed": {
+    "grid": "50x50x15, 20x20x4 ft",
+    "porosity": 0.2,
+    "Kz_over_Kh": 0.1,
+    "well_geometry": "existing five-spot locations and completions",
+    "transport": "source-authentic Stage4 semantics",
+    "target_days": [
+      30,
+      60,
+      100,
+      150,
+      250,
+      365,
+      500,
+      750,
+      1000
+    ]
+  },
+  "interpretation": {
+    "primary_test": "joint unseen-geology generalization across a fully represented control grid",
+    "control_interpolation": "500 t/day and 2000 psi are interior/reference levels",
+    "control_edge_coverage": "350/650 t/day and 1800/2200 psi included prospectively",
+    "extrapolative_control_OOD": "NOT tested by this first 3x3 design",
+    "foundation_model_claim": "NOT AUTHORIZED"
+  },
+  "firewall": {
+    "locked_geology_0029_defined_before_generation": true,
+    "locked_targets_no_training_or_selection": true,
+    "D18_observed_cases_not_reused": true,
+    "no_cherry_picking_or_case_replacement": true
+  },
+  "registry": [
+    {
+      "foundation_case_id": "CS1001",
+      "geology_case_id": "0026",
+      "geology_seed": 350456,
+      "injection_tonnes_per_day": 350.0,
+      "producer_BHP_psi": 1800.0,
+      "partition": "TRAIN",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1002",
+      "geology_case_id": "0026",
+      "geology_seed": 350456,
+      "injection_tonnes_per_day": 350.0,
+      "producer_BHP_psi": 2000.0,
+      "partition": "TRAIN",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1003",
+      "geology_case_id": "0026",
+      "geology_seed": 350456,
+      "injection_tonnes_per_day": 350.0,
+      "producer_BHP_psi": 2200.0,
+      "partition": "TRAIN",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1004",
+      "geology_case_id": "0026",
+      "geology_seed": 350456,
+      "injection_tonnes_per_day": 500.0,
+      "producer_BHP_psi": 1800.0,
+      "partition": "TRAIN",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1005",
+      "geology_case_id": "0026",
+      "geology_seed": 350456,
+      "injection_tonnes_per_day": 500.0,
+      "producer_BHP_psi": 2000.0,
+      "partition": "TRAIN",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1006",
+      "geology_case_id": "0026",
+      "geology_seed": 350456,
+      "injection_tonnes_per_day": 500.0,
+      "producer_BHP_psi": 2200.0,
+      "partition": "TRAIN",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1007",
+      "geology_case_id": "0026",
+      "geology_seed": 350456,
+      "injection_tonnes_per_day": 650.0,
+      "producer_BHP_psi": 1800.0,
+      "partition": "TRAIN",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1008",
+      "geology_case_id": "0026",
+      "geology_seed": 350456,
+      "injection_tonnes_per_day": 650.0,
+      "producer_BHP_psi": 2000.0,
+      "partition": "TRAIN",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1009",
+      "geology_case_id": "0026",
+      "geology_seed": 350456,
+      "injection_tonnes_per_day": 650.0,
+      "producer_BHP_psi": 2200.0,
+      "partition": "TRAIN",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1010",
+      "geology_case_id": "0027",
+      "geology_seed": 358375,
+      "injection_tonnes_per_day": 350.0,
+      "producer_BHP_psi": 1800.0,
+      "partition": "TRAIN",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1011",
+      "geology_case_id": "0027",
+      "geology_seed": 358375,
+      "injection_tonnes_per_day": 350.0,
+      "producer_BHP_psi": 2000.0,
+      "partition": "TRAIN",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1012",
+      "geology_case_id": "0027",
+      "geology_seed": 358375,
+      "injection_tonnes_per_day": 350.0,
+      "producer_BHP_psi": 2200.0,
+      "partition": "TRAIN",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1013",
+      "geology_case_id": "0027",
+      "geology_seed": 358375,
+      "injection_tonnes_per_day": 500.0,
+      "producer_BHP_psi": 1800.0,
+      "partition": "TRAIN",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1014",
+      "geology_case_id": "0027",
+      "geology_seed": 358375,
+      "injection_tonnes_per_day": 500.0,
+      "producer_BHP_psi": 2000.0,
+      "partition": "TRAIN",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1015",
+      "geology_case_id": "0027",
+      "geology_seed": 358375,
+      "injection_tonnes_per_day": 500.0,
+      "producer_BHP_psi": 2200.0,
+      "partition": "TRAIN",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1016",
+      "geology_case_id": "0027",
+      "geology_seed": 358375,
+      "injection_tonnes_per_day": 650.0,
+      "producer_BHP_psi": 1800.0,
+      "partition": "TRAIN",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1017",
+      "geology_case_id": "0027",
+      "geology_seed": 358375,
+      "injection_tonnes_per_day": 650.0,
+      "producer_BHP_psi": 2000.0,
+      "partition": "TRAIN",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1018",
+      "geology_case_id": "0027",
+      "geology_seed": 358375,
+      "injection_tonnes_per_day": 650.0,
+      "producer_BHP_psi": 2200.0,
+      "partition": "TRAIN",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1019",
+      "geology_case_id": "0028",
+      "geology_seed": 366294,
+      "injection_tonnes_per_day": 350.0,
+      "producer_BHP_psi": 1800.0,
+      "partition": "VALIDATION",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1020",
+      "geology_case_id": "0028",
+      "geology_seed": 366294,
+      "injection_tonnes_per_day": 350.0,
+      "producer_BHP_psi": 2000.0,
+      "partition": "VALIDATION",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1021",
+      "geology_case_id": "0028",
+      "geology_seed": 366294,
+      "injection_tonnes_per_day": 350.0,
+      "producer_BHP_psi": 2200.0,
+      "partition": "VALIDATION",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1022",
+      "geology_case_id": "0028",
+      "geology_seed": 366294,
+      "injection_tonnes_per_day": 500.0,
+      "producer_BHP_psi": 1800.0,
+      "partition": "VALIDATION",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1023",
+      "geology_case_id": "0028",
+      "geology_seed": 366294,
+      "injection_tonnes_per_day": 500.0,
+      "producer_BHP_psi": 2000.0,
+      "partition": "VALIDATION",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1024",
+      "geology_case_id": "0028",
+      "geology_seed": 366294,
+      "injection_tonnes_per_day": 500.0,
+      "producer_BHP_psi": 2200.0,
+      "partition": "VALIDATION",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1025",
+      "geology_case_id": "0028",
+      "geology_seed": 366294,
+      "injection_tonnes_per_day": 650.0,
+      "producer_BHP_psi": 1800.0,
+      "partition": "VALIDATION",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1026",
+      "geology_case_id": "0028",
+      "geology_seed": 366294,
+      "injection_tonnes_per_day": 650.0,
+      "producer_BHP_psi": 2000.0,
+      "partition": "VALIDATION",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1027",
+      "geology_case_id": "0028",
+      "geology_seed": 366294,
+      "injection_tonnes_per_day": 650.0,
+      "producer_BHP_psi": 2200.0,
+      "partition": "VALIDATION",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1028",
+      "geology_case_id": "0029",
+      "geology_seed": 374213,
+      "injection_tonnes_per_day": 350.0,
+      "producer_BHP_psi": 1800.0,
+      "partition": "LOCKED_OOD_TEST",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1029",
+      "geology_case_id": "0029",
+      "geology_seed": 374213,
+      "injection_tonnes_per_day": 350.0,
+      "producer_BHP_psi": 2000.0,
+      "partition": "LOCKED_OOD_TEST",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1030",
+      "geology_case_id": "0029",
+      "geology_seed": 374213,
+      "injection_tonnes_per_day": 350.0,
+      "producer_BHP_psi": 2200.0,
+      "partition": "LOCKED_OOD_TEST",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1031",
+      "geology_case_id": "0029",
+      "geology_seed": 374213,
+      "injection_tonnes_per_day": 500.0,
+      "producer_BHP_psi": 1800.0,
+      "partition": "LOCKED_OOD_TEST",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1032",
+      "geology_case_id": "0029",
+      "geology_seed": 374213,
+      "injection_tonnes_per_day": 500.0,
+      "producer_BHP_psi": 2000.0,
+      "partition": "LOCKED_OOD_TEST",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1033",
+      "geology_case_id": "0029",
+      "geology_seed": 374213,
+      "injection_tonnes_per_day": 500.0,
+      "producer_BHP_psi": 2200.0,
+      "partition": "LOCKED_OOD_TEST",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1034",
+      "geology_case_id": "0029",
+      "geology_seed": 374213,
+      "injection_tonnes_per_day": 650.0,
+      "producer_BHP_psi": 1800.0,
+      "partition": "LOCKED_OOD_TEST",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1035",
+      "geology_case_id": "0029",
+      "geology_seed": 374213,
+      "injection_tonnes_per_day": 650.0,
+      "producer_BHP_psi": 2000.0,
+      "partition": "LOCKED_OOD_TEST",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    },
+    {
+      "foundation_case_id": "CS1036",
+      "geology_case_id": "0029",
+      "geology_seed": 374213,
+      "injection_tonnes_per_day": 650.0,
+      "producer_BHP_psi": 2200.0,
+      "partition": "LOCKED_OOD_TEST",
+      "well_geometry": "FROZEN_V15_FIVE_SPOT",
+      "geology_recipe": "V16D_SPECTRAL_ENSEMBLE_RECIPE_1.1"
+    }
+  ]
+}

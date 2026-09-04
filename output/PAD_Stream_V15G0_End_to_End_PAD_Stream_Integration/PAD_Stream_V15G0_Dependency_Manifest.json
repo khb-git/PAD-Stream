@@ -1,0 +1,81 @@
+{
+  "version": "15G-0",
+  "contract": "all upstream learned branches are proposals inside exact predict-screen-correct authorities",
+  "sources": {
+    "b3_summary": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\dependencies\\PAD_Stream_V15C3_Sequential_Path_Deployment_Package\\PAD_Stream_V15B3R_Sequential_Predict_Screen_Correct_Package\\results\\PAD_Stream_V15B3R_Summary.json",
+      "sha256": "b8d8bcb24ae0dc7363b60a877fe7d14db1c33a6d6969a79cb915b165723b3bd8",
+      "bytes": 11466
+    },
+    "b3_audit": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\dependencies\\PAD_Stream_V15C3_Sequential_Path_Deployment_Package\\PAD_Stream_V15B3R_Sequential_Predict_Screen_Correct_Package\\results\\PAD_Stream_V15B3R_Sequential_Audit.csv",
+      "sha256": "782cb71fd7f631a1f72f94e44216cbcb797426f4988b347e68dc257d15aac97b",
+      "bytes": 158542
+    },
+    "c3_summary": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\dependencies\\PAD_Stream_V15C3_Sequential_Path_Deployment_Package\\PAD_Stream_V15C3_Sequential_Learned_Path_Deployment\\PAD_Stream_V15C3_Summary.json",
+      "sha256": "39cfb6feee7d320aaf7950bbd4f0b1aa1fa197b8f31053152766fda763a2afe9",
+      "bytes": 2523
+    },
+    "c3_path_cache": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\dependencies\\PAD_Stream_V15C3_Sequential_Path_Deployment_Package\\PAD_Stream_V15C3_Sequential_Learned_Path_Deployment\\PAD_Stream_V15C3_Path_Cache_Audit.csv",
+      "sha256": "bde5033c04fb002908ac51e0d0e0af8795c6b0f6b1ce268845218072cef0600e",
+      "bytes": 663810
+    },
+    "e3_summary": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\dependencies\\PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment\\PAD_Stream_V15E3_Summary.json",
+      "sha256": "51a631cab3df6752e3374b5f489c4b85e7846bdabc0730ac2d34614818164853",
+      "bytes": 4158
+    },
+    "e3_audit": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\dependencies\\PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment\\PAD_Stream_V15E3_Sequential_Snapshot_Audit.csv",
+      "sha256": "89bed30b3486aa82f86962eb556963d0c1116651c01c9acea54bb21564a659b1",
+      "bytes": 13744
+    },
+    "e3_fields": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\dependencies\\PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment\\PAD_Stream_V15E3_Rollout_Fields.npz",
+      "sha256": "4205a08f70ce409a4a721c9615bd60cd53b4ab117d707eb86288d7bb2337b2ab",
+      "bytes": 6319
+    },
+    "f0_summary": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\dependencies\\PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State\\PAD_Stream_V15F0_Summary.json",
+      "sha256": "cd8c4cc18fb79788bed518cdf3f8ce9b4212bb21eeb31cccad2cc68e518f48a3",
+      "bytes": 3782
+    },
+    "f0_audit": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\dependencies\\PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State\\PAD_Stream_V15F0_Timestep_Sequential_Audit.csv",
+      "sha256": "df8bb6a9197721656f107f8930761c3552e7941fde0a1d14f07001520c5ec5d0",
+      "bytes": 187435
+    },
+    "f0_retrace": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\dependencies\\PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State\\PAD_Stream_V15F0_Retrace_Sequential_Audit.csv",
+      "sha256": "e4785190eca0c6028ddccfb29c1930e59ba58aad1befde0e8bd4d9afb5fe64e0",
+      "bytes": 6361
+    },
+    "f1_summary": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\dependencies\\PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory\\PAD_Stream_V15F1_Summary.json",
+      "sha256": "1bd9693bfb70707d346c5e61bacb993b3c8bfd877bdfcb3959834f099bbbfea2",
+      "bytes": 5453
+    },
+    "f1_audit": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\dependencies\\PAD_Stream_V15F1_Breakthrough_Well_Control_Recurrent_Memory\\PAD_Stream_V15F1_Well_Response_Sequential_Audit.csv",
+      "sha256": "34483918fcac9529fb34415576a394fb1c773e5661b5dacc58f4fe33dfb483ea",
+      "bytes": 137991
+    },
+    "f2_summary": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\dependencies\\PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State\\PAD_Stream_V15F2_Summary.json",
+      "sha256": "4db9311d53eb78afa4986fc7dcf9ffbaf8985a16b38190ac72057a5d1bd8c21e",
+      "bytes": 4650
+    },
+    "f2_audit": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\dependencies\\PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State\\PAD_Stream_V15F2_Nonlinear_Difficulty_Sequential_Audit.csv",
+      "sha256": "ae36f397d3d071f56e46962cfb5e25f241cc06a6f1d9d2965b2371ac66f5506b",
+      "bytes": 83768
+    },
+    "f2_state": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\dependencies\\PAD_Stream_V15F2_Nonlinear_Difficulty_Complete_Global_Recurrent_State\\PAD_Stream_V15F2_Complete_Global_State.npz",
+      "sha256": "9936d1063ac8ea58e2de7d1892249db7a10408119ea2131c338500243a595d8d",
+      "bytes": 60424
+    }
+  }
+}

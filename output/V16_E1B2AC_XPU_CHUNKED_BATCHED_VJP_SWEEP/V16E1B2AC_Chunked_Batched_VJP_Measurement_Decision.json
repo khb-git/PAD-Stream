@@ -1,0 +1,31 @@
+{
+  "milestone": "V16E-1B2AC-XPU",
+  "runtime_successful_chunks": [
+    2,
+    4,
+    8,
+    16,
+    32
+  ],
+  "fully_equivalent_chunks": [
+    2,
+    4,
+    8,
+    16,
+    32
+  ],
+  "performance_measured_chunks": [
+    2,
+    4,
+    8,
+    16,
+    32
+  ],
+  "descriptive_fastest_equivalent_measured_chunk": 16,
+  "candidate_adopted": false,
+  "reason_not_adopted": "B2AC is a measurement milestone only. V16E-1B2AD-XPU must interpret runtime, equivalence, performance, and resource behavior before any implementation is adopted.",
+  "known_full_chunk_64_result": "UR_RESULT_ERROR_OUT_OF_RESOURCES from frozen B2AA",
+  "COMP_XPU_005_full_training_authorized": false,
+  "B3_authorized": false,
+  "next_decision_required": "V16E-1B2AD-XPU \u2014 interpret chunked batched-VJP sweep and freeze the derivative-engine implementation route."
+}

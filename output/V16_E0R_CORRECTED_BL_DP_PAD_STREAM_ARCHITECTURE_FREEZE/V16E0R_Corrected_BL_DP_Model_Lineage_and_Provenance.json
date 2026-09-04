@@ -1,0 +1,175 @@
+{
+  "milestone": "V16E-0R",
+  "scientific_role": "Correct the semantic/provenance interpretation of V16E architecture reconciliation using the actual final BL and Hybrid DP model sources.",
+  "audit_history_policy": {
+    "V16E_0_E0A_E0B_E0C_deleted": false,
+    "V16E_0_E0A_E0B_E0C_rewritten": false,
+    "V16E_0_E0A_E0B_E0C_retained_as_audit_history": true,
+    "superseded_interpretation": "The earlier search treated roadmap Round 1/2/3 labels as separate historical BL model artifacts. Researcher clarification establishes that the authoritative BL progression is the four final physics-phase PI-RNNs: incompressible, compressible, capillary, and full.",
+    "E0D_draft_status": "OBSOLETE_UNEXECUTED_DO_NOT_RUN"
+  },
+  "authoritative_sources": {
+    "BL_FINAL_INCOMPRESSIBLE_PI_RNN": {
+      "path": "pi_rnn_stage1_incompressible.py",
+      "sha256": "98d492e1e4a84e9d2c3ab99a631bf7d21d011b65bdd599e0ab3192d947b36e58",
+      "role": "Final incompressible Buckley-Leverett PI-RNN source",
+      "status": "EXACT_SOURCE_BOUND"
+    },
+    "BL_FINAL_COMPRESSIBLE_PI_RNN": {
+      "path": "pi_rnn_stage2_compressible_godunov.py",
+      "sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+      "role": "Final compressible conservative-Godunov Buckley-Leverett PI-RNN source",
+      "status": "EXACT_SOURCE_BOUND"
+    },
+    "BL_FINAL_CAPILLARY_PI_RNN": {
+      "path": "pi_rnn_stage3_capillary.py",
+      "sha256": "dab8eade38ac08c819ac27d803c8f1bceca9722c4c37e82977dbef6e6232ae0f",
+      "role": "Final capillary Buckley-Leverett PI-RNN source",
+      "status": "EXACT_SOURCE_BOUND"
+    },
+    "BL_FINAL_FULL_PHYSICS_PI_RNN": {
+      "path": "pi_rnn_stage4_full_godunov.py",
+      "sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+      "role": "Final compressible-capillary Buckley-Leverett PI-RNN source",
+      "status": "EXACT_SOURCE_BOUND"
+    },
+    "V14_DP_AND_STREAMLINE_PHYSICS": {
+      "path": "PAD_Stream_CCUS_Physics_Development_v14_Complete_Validation.py",
+      "sha256": "45c3c8a26ff270df8d28dc6e67ed432a3de86255229f7046f5b0f3d1899d27f6",
+      "role": "Validated V14 physics baseline including DP and streamline physics",
+      "status": "EXACT_SOURCE_BOUND"
+    },
+    "DP_HYBRID_10_PARAM": {
+      "path": "PAD_Stream_Dykstra_Parsons_Hybrid_PIRNN_10Param.py",
+      "sha256": "2606f265d97ef1034a7555384daa79e4b3ddddef7c180b8d9f3fc3aedcc8d02f",
+      "role": "10-parameter Hybrid BL-DP PI-RNN integration source",
+      "status": "EXACT_SOURCE_BOUND"
+    },
+    "DP_HYBRID_12_PARAM": {
+      "path": "PAD_Stream_Dykstra_Parsons_Hybrid_PIRNN_12Param.py",
+      "sha256": "21116ddfd67f88585a0fc809075ece00008b09bd1f61536964ff03774ff8aae0",
+      "role": "12-parameter Hybrid BL-DP PI-RNN integration source",
+      "status": "EXACT_SOURCE_BOUND"
+    },
+    "DP_SYNTHETIC_GENERATOR": {
+      "path": "PAD_Stream_Dykstra_Parsons_Synthetic_Formation_Generator.py",
+      "sha256": "9f309f83d3b9d4f057641c545e050ead5e398a748d8aa24502059008336a65b9",
+      "role": "Synthetic N-layer DP formation generator",
+      "status": "EXACT_SOURCE_BOUND"
+    }
+  },
+  "source_fingerprints": {
+    "DP_HYBRID_10_PARAM": {
+      "param_dim = 10": true,
+      "p10 = np.array": true,
+      "shared.krw_max": true,
+      "shared.kro_max": true,
+      "pi_rnn_fan_dp.weights.h5": true
+    },
+    "DP_HYBRID_12_PARAM": {
+      "param_dim = 12": true,
+      "krw_max": true,
+      "kro_max": true,
+      "pi_rnn_fan_dp_12param.weights.h5": true,
+      "12-parameter": true
+    },
+    "DP_SYNTHETIC_GENERATOR": {
+      "def calculate_vdp": true,
+      "def generate_synthetic_formation": true,
+      "n_layers": true,
+      "k_md": true,
+      "generate_homogeneous_formation": true,
+      "generate_heterogeneous_formation": true
+    },
+    "V14_DP_AND_STREAMLINE_PHYSICS": {
+      "class DykstraParsons": true,
+      "Pollock": true,
+      "time-of-flight": true
+    }
+  },
+  "corrected_BL_lineage": {
+    "progression": [
+      "final incompressible BL PI-RNN",
+      "final compressible BL PI-RNN",
+      "final capillary BL PI-RNN",
+      "final full compressible-capillary BL PI-RNN"
+    ],
+    "Round_1_2_3_artifact_recovery_required": false,
+    "meaning": "The four files are final models for successive physics phases, not temporary rounds requiring recovery."
+  },
+  "corrected_DP_lineage": {
+    "eight_layer_reference": {
+      "role": "Controlled validation case used to establish proper DP/layered physics, flow allocation, breakthrough ordering, and composite behavior.",
+      "architectural_layer_count_limit": false
+    },
+    "Hybrid_10_param": {
+      "conditioning_vector": [
+        "no",
+        "nw",
+        "swc",
+        "sor",
+        "mu_w",
+        "mu_o",
+        "phi",
+        "tD",
+        "xD_star",
+        "Sw_star"
+      ],
+      "param_dim": 10,
+      "krw_max_kro_max": "shared/fixed to match the PI-RNN training definition",
+      "absolute_k_md_in_neural_conditioning": false,
+      "absolute_k_md_role": "DP layer physics / k*h flow allocation / heterogeneity"
+    },
+    "Hybrid_12_param": {
+      "conditioning_vector": [
+        "no",
+        "nw",
+        "swc",
+        "sor",
+        "mu_w",
+        "mu_o",
+        "phi",
+        "krw_max",
+        "kro_max",
+        "tD",
+        "xD_star",
+        "Sw_star"
+      ],
+      "param_dim": 12,
+      "relative_permeability_endpoints_conditioned": true,
+      "absolute_k_md_in_neural_conditioning": false,
+      "absolute_k_md_role": "DP layer physics / k*h flow allocation / heterogeneity"
+    },
+    "synthetic_generator": {
+      "arbitrary_N_layer_generation": true,
+      "VDP_calculation": true,
+      "formation_types": [
+        "homogeneous",
+        "heterogeneous",
+        "layered/thief-zone"
+      ],
+      "role": "Expand testing beyond the 8-layer reference case before SGSim."
+    }
+  },
+  "checkpoint_availability": {
+    "legacy_BL_saved_weights_currently_available": false,
+    "legacy_Hybrid_DP_saved_weights_currently_available": false,
+    "source_files_are_authoritative_model_definitions": true,
+    "future_checkpoint_policy": "Any trained checkpoint created now is a NEW V16E reproduction with a new experiment ID, manifest, and SHA. It is not an old checkpoint recovery."
+  },
+  "V16D_relationship": {
+    "EXP_CS1_status": "CLOSED_FROZEN_COMPARISON_BASELINE",
+    "geology0029_status": "CONSUMED_FINAL_TEST",
+    "V16D_role": "Separate PAD-Stream recurrent Stage-4 transport baseline for later identical-state comparison.",
+    "V16D_modified_in_E0R": false
+  },
+  "firewall": {
+    "TensorFlow_import": false,
+    "checkpoint_load": false,
+    "NPZ_load": false,
+    "OOD_reopen": false,
+    "training": false,
+    "inference": false,
+    "adapter_implementation": false
+  }
+}

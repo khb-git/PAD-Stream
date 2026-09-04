@@ -1,0 +1,39 @@
+{
+  "milestone": "V16A-R8A",
+  "status": "V16A_KZ_ANISOTROPY_RATIO_FINAL_BOUND",
+  "diagnosis": "ONE_UNIQUE_SOURCE_AUTHENTIC_VERTICAL_TO_HORIZONTAL_PERMEABILITY_RATIO_IS_SUPPORTED_BY_SG2_PROVENANCE",
+  "SG2_source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG2_Anisotropic_Transmissibility.py",
+  "SG2_sha256": "8dfc3485682830ef854178720d32050b6b2e9d25befa7ee9669993df1e544416",
+  "kz_horizontal_ratio_bound": true,
+  "kz_horizontal_ratio": 0.1,
+  "candidate_ratios": [
+    0.1
+  ],
+  "evidence": [
+    {
+      "source": "constant KV_KH_RATIO multiplication at line 126",
+      "expression": "kz = KV_KH_RATIO * k"
+    },
+    {
+      "source": "persisted SG2 metadata C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG2\\PAD_Stream_V15SG2_Summary.json",
+      "expression": "kz\": \"0.1 *"
+    },
+    {
+      "source": "persisted SG2 metadata C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG2\\PAD_Stream_V15SG2_Summary.json",
+      "expression": "kz\": \"0.1"
+    }
+  ],
+  "constraints": {
+    "foundation_freeze_executed": false,
+    "SG3_rerun": false,
+    "SG4_rerun": false,
+    "velocity_recompute": false,
+    "Pollock_retrace": false,
+    "FMM": false,
+    "model_predict": false,
+    "training": false,
+    "V15_mutation": false
+  },
+  "recommendation": "Patch R8 to consume the R8A bound ratio contract instead of rediscovering the ratio heuristically, then rerun Foundation Case 0001 assembly/freeze.",
+  "next_milestone": "V16A-R8R \u2014 Repaired Foundation Case 0001 Final Assembly / Freeze"
+}

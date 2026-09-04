@@ -1,0 +1,59 @@
+{
+  "version": "15F-1",
+  "sources": {
+    "dense_audit": {
+      "path": "/mnt/data/pad_stream_v15e3/deps/c3/PAD_Stream_V15C3_Sequential_Path_Deployment_Package/PAD_Stream_V15B3R_Sequential_Predict_Screen_Correct_Package/results/PAD_Stream_V15B3R_Sequential_Audit.csv",
+      "sha256": "782cb71fd7f631a1f72f94e44216cbcb797426f4988b347e68dc257d15aac97b",
+      "bytes": 158542
+    },
+    "e3_snapshot_audit": {
+      "path": "/mnt/data/pad_stream_v15e3/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/PAD_Stream_V15E3_Sequential_Snapshot_Audit.csv",
+      "sha256": "89bed30b3486aa82f86962eb556963d0c1116651c01c9acea54bb21564a659b1",
+      "bytes": 13744
+    },
+    "e3_summary": {
+      "path": "/mnt/data/pad_stream_v15e3/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/PAD_Stream_V15E3_Summary.json",
+      "sha256": "51a631cab3df6752e3374b5f489c4b85e7846bdabc0730ac2d34614818164853",
+      "bytes": 4158
+    },
+    "f0_trainer": {
+      "path": "/mnt/data/pad_stream_v15f0/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State.py",
+      "sha256": "025c1972de3fbc44023c825c8c1bbe7429a03564eb83db049f222320c4425b5e",
+      "bytes": 68644
+    },
+    "f0_checkpoint": {
+      "path": "/mnt/data/pad_stream_v15f0/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/PAD_Stream_V15F0_Best_Model.pt",
+      "sha256": "e48232dce22d9d5e5e55360f4ebfb1eb010494e38069867ea53285fec5938ae8",
+      "bytes": 40359
+    },
+    "f0_dataset": {
+      "path": "/mnt/data/pad_stream_v15f0/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/PAD_Stream_V15F0_Global_Recurrent_State_Dataset.npz",
+      "sha256": "3a40b9eed1237fdce73a5bf61375b3a07c625850350a71308f54ada7d8357893",
+      "bytes": 40171
+    },
+    "f0_predictions": {
+      "path": "/mnt/data/pad_stream_v15f0/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/PAD_Stream_V15F0_Predictions.npz",
+      "sha256": "a01b2dc06654edbdde01b01109a950bffc9516feb6f42db0ca392610c2a223f1",
+      "bytes": 58016
+    },
+    "f0_summary": {
+      "path": "/mnt/data/pad_stream_v15f0/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State/PAD_Stream_V15F0_Summary.json",
+      "sha256": "cd8c4cc18fb79788bed518cdf3f8ce9b4212bb21eeb31cccad2cc68e518f48a3",
+      "bytes": 3782
+    },
+    "f0_package_zip": {
+      "path": "/mnt/data/pad_stream_v15f0/PAD_Stream_V15F0_Global_Recurrent_Timestep_Retrace_State.zip",
+      "sha256": "123758ad8a5a61c84334022c5611f9fcc4023a3d9e4147c43498abd97e4f8ca8",
+      "bytes": 1080094
+    },
+    "v14_summary": {
+      "path": "/mnt/data/pad_stream_v15e3/deps/c3/PAD_Stream_V15C3_Sequential_Path_Deployment_Package/PAD_Stream_V15B3R_Sequential_Predict_Screen_Correct_Package/PAD_Stream_V13_Long_Run_Summary.json",
+      "sha256": "af3a5cfa2ee21ea1f0efccc67a71dd9d6c421dcbe58e7a2c091dbccc2fbd50de",
+      "bytes": 491969
+    }
+  },
+  "upstream_status": {
+    "v15e3_status": "PASS",
+    "v15f0_status": "PASS"
+  }
+}

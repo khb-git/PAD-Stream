@@ -1,0 +1,16 @@
+{
+  "milestone": "V16C-12R5C",
+  "status": "V16C_CERTIFIED_L2_AUTHORITY_BYTES_UNAVAILABLE_AFTER_PRESERVED_COPY_SEARCH",
+  "diagnosis": "NO_SEARCHED_PRESERVED_COPY_OR_ARCHIVE_MEMBER_MATCHES_THE_FORMAL_L2_INDEPENDENT_100_SHA256_AND_PI_RNN_REGENERATION_REMAINS_UNAUTHORIZED",
+  "search_roots": 3,
+  "candidate_files_hashed": 3808,
+  "archive_members_hashed": 10506,
+  "L2_exact_hits": 0,
+  "SG7D6_exact_hits": 0,
+  "L2_recovered": false,
+  "SG7D6_recovered": false,
+  "Y_transport_generated": false,
+  "Y_generation_authorized": false,
+  "recommendation": "Close exact L2 byte recovery as unavailable in the searched environment. Do not select an ambiguous historical frozen100 object and do not rerun the PI-RNN. Reformulate C12A around the surviving formal V15 authorities: SG7D6 if recoverable/reconstructible from an authoritative L2 source, and otherwise the historical SG7E 100-day grid reference as validation-only authority. Preserve the missing-L2 limitation explicitly.",
+  "next_milestone": "V16C-12A-R \u2014 Surviving-Authority 100-Day Validation Contract"
+}

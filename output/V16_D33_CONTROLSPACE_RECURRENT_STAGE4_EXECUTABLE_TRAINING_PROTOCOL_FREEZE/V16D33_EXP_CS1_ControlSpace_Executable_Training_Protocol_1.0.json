@@ -1,0 +1,233 @@
+{
+  "protocol_id": "V16D_EXP_CS1_CONTROLSPACE_EXECUTABLE_TRAINING_PROTOCOL_1.0",
+  "milestone": "V16D-33",
+  "experiment": "EXP-CS1",
+  "purpose": "Controlled predictive baseline for joint unseen-geology generalization across the prospectively frozen 3x3 rate/BHP control grid.",
+  "experimental_design": {
+    "comparison_principle": "Hold recurrent architecture/objective fixed relative to the earlier EXP-MC1 baseline; change the physical learning dataset and control-space coverage, not model capacity.",
+    "TRAIN": "18 complete Foundation Cases: geologies 0026-0027, all 3x3 rate/BHP combinations",
+    "VALIDATION": "9 complete Foundation Cases: geology0028, all 3x3 rate/BHP combinations",
+    "LOCKED_OOD_TEST": "9 complete Foundation Cases: geology0029, all 3x3 rate/BHP combinations; unavailable to training/selection and opened only by the separately frozen one-touch evaluation protocol",
+    "generalization_unit": "COMPLETE_FOUNDATION_CASE",
+    "claim_scope": "unseen-geology generalization inside the prospectively frozen 350-650 t/day and 1800-2200 psi control grid; NOT extrapolation beyond control bounds"
+  },
+  "dataset_authority": {
+    "D32_summary_sha256": "ede1f7b506e1ed3256e5392664d9ff38d83850b5e1cbcf4a8d2b4c2295971801",
+    "normalization_sha256": "dcda1cf01fa30bd1cd947a500de73295037d6ca2b492725edd050c0ff7c3bfd9",
+    "feature_contract_sha256": "6f3301a57281ab2b5d44ffe044758c4707a9a489b2ceaff13867b5f55285b23a",
+    "predictor_manifest_sha256": "70171305a74d512903b5ae75386a86d3110d5f90d9aee99640e858660610d8ee",
+    "dataset_registry_sha256": "9429b239626fbfc8fe8569a2214a79a7abd5e40fbc38ac9112ba236e547fb90d",
+    "feature_order": [
+      "xi",
+      "pollock_tau_hat",
+      "adv_tau_hat",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity",
+      "pressure_z",
+      "target_time_hat",
+      "target_eta_sequence"
+    ],
+    "predictor_shape_per_case": [
+      9,
+      1078,
+      201,
+      9
+    ],
+    "target_shape_per_case": [
+      9,
+      1078,
+      201
+    ],
+    "normalization": "immutable TRAIN-only D32 transform"
+  },
+  "seed": 161501,
+  "determinism": {
+    "PYTHONHASHSEED": 161501,
+    "python_random_seed": 161501,
+    "numpy_seed": 161501,
+    "tensorflow_seed": 161501,
+    "request_tensorflow_op_determinism": true,
+    "note": "Hardware/library nondeterminism must be recorded if exact bitwise determinism cannot be achieved; it does not authorize a protocol change."
+  },
+  "model": {
+    "name": "V16D_EXP_CS1",
+    "input_shape": [
+      201,
+      9
+    ],
+    "architecture": [
+      {
+        "layer": "LSTM",
+        "name": "lstm_1",
+        "units": 64,
+        "return_sequences": true
+      },
+      {
+        "layer": "LSTM",
+        "name": "lstm_2",
+        "units": 64,
+        "return_sequences": true
+      },
+      {
+        "layer": "TimeDistributed(Dense)",
+        "name": "td_sigmoid",
+        "units": 1,
+        "activation": "sigmoid"
+      },
+      {
+        "layer": "Rescaling",
+        "name": "bounded_Sw_0p2_0p8",
+        "scale": 0.6,
+        "offset": 0.2
+      }
+    ],
+    "output_shape": [
+      201,
+      1
+    ],
+    "output_physical_bounds": {
+      "Sw_min": 0.2,
+      "Sw_max": 0.8
+    },
+    "architecture_lineage": "C20 / EXP-MC1 two-layer recurrent predictive baseline",
+    "new_architecture_search": false
+  },
+  "objective": {
+    "training_loss": "MSE",
+    "reported_training_metrics": [
+      "MAE"
+    ],
+    "physics_loss": "NONE",
+    "reason": "EXP-CS1 is the controlled predictive baseline. Physics-informed loss variants, if studied later, require a new prospective experiment contract and may not be selected using locked OOD results."
+  },
+  "optimizer": {
+    "name": "Adam",
+    "learning_rate": 0.001,
+    "other_parameters": "TensorFlow/Keras defaults unless explicitly serialized by the future training runner"
+  },
+  "sampling": {
+    "sample_unit": "one (FoundationCase, target_time, streamline) sequence",
+    "sequence_shape": [
+      201,
+      9
+    ],
+    "target_shape": [
+      201,
+      1
+    ],
+    "TRAIN_cases": 18,
+    "VALIDATION_cases": 9,
+    "LOCKED_OOD_cases": 9,
+    "TRAIN_samples": 174636,
+    "VALIDATION_samples": 87318,
+    "case_weighting": "equal per sequence; each case contributes exactly 9x1078 streamline-time sequences",
+    "TRAIN_shuffle": "deterministic shuffle using frozen seed",
+    "VALIDATION_shuffle": false,
+    "batch_size": 64
+  },
+  "loading": {
+    "strategy": "streaming/memory-safe per-case NPZ loading through deterministic generator/tf.data",
+    "do_not_materialize_all_cases_in_RAM": true,
+    "TRAIN_XY_access": "allowed for gradient updates",
+    "VALIDATION_XY_access": "allowed only for validation objective/checkpoint selection",
+    "LOCKED_OOD_XY_access": "PROHIBITED during training/selection",
+    "OOD_paths_may_exist_in_registry": true,
+    "OOD_arrays_may_be_opened": false
+  },
+  "epochs": {
+    "max": 300,
+    "early_stopping": {
+      "monitor": "val_loss",
+      "mode": "min",
+      "patience": 25,
+      "min_delta": 0.0,
+      "restore_best_weights": false
+    }
+  },
+  "checkpoint": {
+    "monitor": "val_loss",
+    "mode": "min",
+    "save_best_only": true,
+    "save_weights_only": true,
+    "selection_authority": "minimum raw VALIDATION MSE",
+    "ties": "retain first checkpoint achieving the minimum under framework callback semantics",
+    "validation_only": true
+  },
+  "postfit": {
+    "reload_best_checkpoint": true,
+    "reloaded_checkpoint_validation_evaluation": true,
+    "freeze_architecture_JSON": true,
+    "freeze_checkpoint_SHA256": true,
+    "freeze_training_history": true,
+    "freeze_validation_selection_summary": true,
+    "LOCKED_OOD_after_training": "REMAINS SEALED",
+    "next_after_successful_training": "freeze final one-touch evaluator source/checkpoint binding before OOD_OPENED.lock may be created"
+  },
+  "failure_policy": {
+    "serialization_failure": "repair/recover already-frozen best weights; do not retrain merely to repair serialization",
+    "OOM": "repair loading/execution without changing model/objective; if batch size must change, freeze D33 revision BEFORE retry",
+    "interruption": "a restart/resume strategy must preserve the exact D33 experiment identity; do not silently change seed, dataset, architecture, optimizer, or validation rule",
+    "training_nan_or_nonfinite": "stop and diagnose; do not inspect OOD and do not relax scientific/data gates",
+    "validation_result_is_poor": "report it; do not open OOD and do not modify this experiment retroactively"
+  },
+  "prohibited": [
+    "OOD-informed tuning",
+    "OOD normalization fit",
+    "OOD feature selection",
+    "OOD architecture selection",
+    "OOD loss design",
+    "OOD early stopping",
+    "OOD checkpoint selection",
+    "OOD threshold tuning",
+    "architecture changes after D33 freeze",
+    "loss changes after D33 freeze",
+    "batch-size changes without a prospective protocol revision",
+    "seed changes after D33 freeze",
+    "case/streamline/time/node exclusion",
+    "direct rate/BHP channel insertion in EXP-CS1",
+    "M_face predictor insertion",
+    "physics loss in EXP-CS1",
+    "retraining solely because validation performance is disappointing"
+  ],
+  "scientific_scope": {
+    "baseline_type": "predictive recurrent Stage-4 surrogate",
+    "Pollock": "authoritative kinematics in predictor construction",
+    "ADV": "auxiliary directional conditioning",
+    "M_face": "physics sidecar, not predictor",
+    "control_space": {
+      "rate_tpd": [
+        350,
+        500,
+        650
+      ],
+      "producer_bhp_psi": [
+        1800,
+        2000,
+        2200
+      ]
+    },
+    "foundation_model_claim": "NOT AUTHORIZED BY D33",
+    "control_extrapolation_claim": "NOT AUTHORIZED"
+  },
+  "OOD_firewall": {
+    "D31D_contract_sha256": "7c664db19c041d3a611cbbc94de03a501a70f38922c62fd044cde1016d03228d",
+    "OOD_geology": "0029",
+    "training_use": false,
+    "normalization_fit": false,
+    "model_selection": false,
+    "checkpoint_selection": false,
+    "threshold_selection": false,
+    "OOD_opened_in_D33": false,
+    "OOD_evaluated_in_D33": false
+  },
+  "execution_in_D33": {
+    "training": false,
+    "model_inference": false,
+    "validation_metric_computation": false,
+    "target_np_load": false,
+    "OOD_np_load": false,
+    "checkpoint_selection": false,
+    "contract_freeze_only": true
+  }
+}

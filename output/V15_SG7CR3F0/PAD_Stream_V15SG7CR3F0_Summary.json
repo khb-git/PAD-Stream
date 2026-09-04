@@ -1,0 +1,11 @@
+{
+  "milestone": "V15-SG7C-R3F0",
+  "status": "FRONT_STATE_REFINEMENT_CONTRACT_READY",
+  "validation_passed": true,
+  "training_performed": false,
+  "SG7B11_modified": false,
+  "ideal_front_error_reduction_fraction": 0.9999979042061549,
+  "required_front_shell_correction_MAE": 0.009261960129912362,
+  "recommendation": "Proceed to controlled R3F1 front-state-focused calibrator refinement. Keep SG7B-11 frozen and retain every existing front, TOF-bias, and calibration safeguard. R3F1 must persist full per-experiment and checkpoint metrics regardless of pass/fail outcome.",
+  "next_milestone": "V15-SG7C-R3F1 \u2014 Controlled Front-State-Focused Calibration Refinement"
+}

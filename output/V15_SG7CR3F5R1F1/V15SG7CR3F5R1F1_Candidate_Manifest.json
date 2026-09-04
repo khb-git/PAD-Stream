@@ -1,0 +1,13 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1F1",
+  "status": "NO_R1F1_NONFRONT_CANDIDATE_PASSES_COMPLETE_CONTRACT",
+  "diagnosis": "NONFRONT_SECOND_STAGE_CORRECTION_REQUIRES_OUTCOME_AUDIT",
+  "X08_support_locked": true,
+  "J5_first_stage_locked": true,
+  "exact_support_fraction": 0.5000056447248766,
+  "selected_experiment": null,
+  "candidate_frozen": false,
+  "model_weights_changed": false,
+  "gate_changed": false,
+  "next_milestone": "V15-SG7C-R3F5-R1F1R \u2014 Non-Front Correction Outcome Audit"
+}

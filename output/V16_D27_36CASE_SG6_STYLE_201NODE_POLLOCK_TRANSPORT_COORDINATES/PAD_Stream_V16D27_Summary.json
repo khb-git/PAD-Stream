@@ -1,0 +1,19 @@
+{
+  "milestone": "V16D-27",
+  "status": "V16D_36CASE_201NODE_POLLOCK_TOF_TRANSPORT_COORDINATE_DATABASE_CERTIFIED_D9R1_METRIC_EXPANSION_AUTHORIZED",
+  "manifest_sha256": "54f4a75953212aef5a5377d809c317611483dcaeba34015fd3c21e016db7538d",
+  "gates": {
+    "D26R2R1_summary_SHA_exact": true,
+    "exactly_36_Pollock_inputs": true,
+    "36_cases_built": true,
+    "all_1078_streamlines": true,
+    "all_201_nodes": true,
+    "all_case_validation_pass": true,
+    "split_counts_18_9_9": true,
+    "Pollock_primary_coordinate": true,
+    "no_FMM_ADV_fit": true,
+    "no_transport_target_generation": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-28 \u2014 Expand certified D9R1 conservative face metric M across all 36 control-space Foundation Cases"
+}

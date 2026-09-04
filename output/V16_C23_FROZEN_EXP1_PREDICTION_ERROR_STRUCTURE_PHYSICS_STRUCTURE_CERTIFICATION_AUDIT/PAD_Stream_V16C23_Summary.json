@@ -1,0 +1,35 @@
+{
+  "milestone": "V16C-23",
+  "status": "V16C_EXP1_FROZEN_PREDICTION_ERROR_AND_STRUCTURAL_PHYSICS_AUDIT_COMPLETE_PDE_RESIDUAL_PENDING",
+  "prediction_sha256": "b0495d1ef6acd58172cb962c4fbf0abc812f6c4e61f030100481ab9290441fb3",
+  "global_error": {
+    "mse": 1.9360864490401794e-05,
+    "rmse": 0.004400098236449022,
+    "mae": 0.0018270660761256494,
+    "max_abs_error": 0.14034636318683624
+  },
+  "structural_physics": {
+    "bound_violation": 0.0,
+    "inlet_mae": 0.006831410632123612,
+    "spatial_positive_fraction": 0.020786749482401657,
+    "temporal_negative_fraction": 0.008146379901733568,
+    "front_index_mae_nodes": 1.572808833678399
+  },
+  "differential_pde_residual_status": "PENDING_EXACT_C7_METRIC_BINDING_NOT_EVALUATED_IN_C23",
+  "gates": {
+    "C22R3_completion_bound": true,
+    "frozen_test_shape_1449x201": true,
+    "predictions_finite": true,
+    "targets_finite": true,
+    "bounded_saturation_output": true,
+    "all_nine_target_times_present": true,
+    "all_test_streamlines_have_nine_times": true,
+    "no_training": true,
+    "no_retuning": true,
+    "no_test_based_model_selection": true,
+    "differential_PDE_residual_not_fabricated_without_exact_metric_binding": true
+  },
+  "training": false,
+  "retuning": false,
+  "next_milestone": "V16C-23A \u2014 Exact C7 Metric-to-C22R3 Locked-Test Binding and Differential Full-Physics Residual Audit"
+}

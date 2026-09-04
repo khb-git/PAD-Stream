@@ -1,0 +1,16 @@
+{
+  "milestone": "V15-SG7C-R3F4-R3E",
+  "status": "MINIMAL_RESIDUAL_SUPPORT_EXTENSION_CONTRACT_READY",
+  "diagnosis": "STRUCTURAL_SUPPORT_CEILING_REPAIR_DESIGNED",
+  "incoming_diagnosis": "BASIS_SUPPORT_CEILING_AT_49P5_PERCENT",
+  "baseline_experiment": "B4",
+  "baseline_front_error_reduction_fraction": 0.4954781984966692,
+  "baseline_front_residual_support_fraction": 0.495478416297645,
+  "front_error_reduction_gate_fraction": 0.5,
+  "front_error_reduction_gate_changed": false,
+  "design_target_fraction": 0.5025,
+  "design_margin_percentage_points": 0.25,
+  "training_performed": false,
+  "recommendation": "Proceed to a controlled minimal-support extension experiment using B4 as the persisted baseline. Extend only the front-local residual support shoulder, keep correction direction and amplitude bounded by the validated canonical residual, and retain every clarified deployment safeguard. Select the smallest extension that exceeds the unchanged 50% front-error-reduction gate and passes the complete contract.",
+  "next_milestone": "V15-SG7C-R3F5 \u2014 Controlled Minimal-Support Extension Calibration"
+}

@@ -1,0 +1,17 @@
+{
+  "milestone": "V15-SG7C-R3F5-R0",
+  "status": "SUPPORT_METRIC_RECONCILIATION_INCOMPLETE",
+  "diagnosis": "AUTHORITATIVE_SUPPORT_METRIC_NOT_YET_RECONSTRUCTED",
+  "training_performed": false,
+  "support_extension_calibrated": false,
+  "authoritative_B4_support_fraction": 0.495478416297645,
+  "closest_metric": "residual_weighted_occupancy_coeff_gt_1e-12",
+  "closest_metric_value": 0.47584889008147807,
+  "closest_metric_absolute_error": 0.019629526216166926,
+  "closest_metric_relative_error": 0.0396173184754329,
+  "matching_metrics": [],
+  "multiplicative_anchor_prohibited": true,
+  "source_definition_occurrences": 17,
+  "recommendation": "None of the candidate numerical definitions reproduces the authoritative 49.5478% support closely enough. Use the saved source-definition evidence to reconstruct the exact R3F4/R3D formula before any support extension calibration. Do not anchor by scale.",
+  "next_milestone": "V15-SG7C-R3F5-R0A \u2014 Exact Authoritative Support Formula Extraction"
+}

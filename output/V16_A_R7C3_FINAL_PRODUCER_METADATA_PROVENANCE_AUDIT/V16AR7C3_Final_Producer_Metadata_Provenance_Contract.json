@@ -1,0 +1,25 @@
+{
+  "milestone": "V16A-R7C3",
+  "status": "V16A_PRODUCER_IDENTITY_NOT_RECOVERABLE_WITHOUT_RETRACE",
+  "diagnosis": "NO_PERSISTED_OR_EXECUTABLY_BOUND_NONRETRACE_PRODUCER_IDENTITY_RULE_REMAINS",
+  "rule": {
+    "status": "PRODUCER_IDENTITY_NOT_RECOVERABLE_WITHOUT_RETRACE_OR_NEW_RULE",
+    "authorized": false,
+    "rule_type": "",
+    "reason": "No persisted producer_id and no exact executable endpoint/cell mapping rule is bound from frozen SG5/SG6 provenance."
+  },
+  "constraints": {
+    "producer_id_reconstructed": false,
+    "nearest_rule_invented": false,
+    "SG3_rerun": false,
+    "SG4_rerun": false,
+    "velocity_recompute": false,
+    "Pollock_retrace": false,
+    "FMM": false,
+    "model_predict": false,
+    "training": false,
+    "V15_mutation": false
+  },
+  "recommendation": "Record producer_id as unavailable from frozen non-retrace provenance. Decide whether Foundation Case 0001 can freeze without producer_id or whether a post-freeze derived connectivity label may be created from existing endpoints under a new V16 rule.",
+  "next_milestone": "V16A-R7E \u2014 Producer Identity Scope Limitation / Foundation Case Freeze Decision"
+}

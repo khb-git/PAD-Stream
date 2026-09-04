@@ -1,0 +1,37 @@
+{
+  "milestone": "V16D-28",
+  "D27_sha256": "6c10ede5895bed51a9324ff8503ec3dffbf8b3d908cc077bdfb476dc65a822f1",
+  "D9R1_source": "PAD_Stream_V16D9R1_Full_Case0002_0025_201Node_Pollock_Coordinate_and_Conservative_C7_Face_Metric_Construction.py",
+  "D9R1_sha256": "5df7178f316fc1fa94ce49eb40ee8318f804bce4d420a17dbc5cd79ab59ab8d4",
+  "frozen_metric_contract": {
+    "theta": "linspace(0,1,201)",
+    "xD": "arc_length / terminal_arc_length",
+    "M_face_dtheta_dxD": "Delta(theta)/Delta(xD), shape (1078,200)",
+    "M_node_sidecar_dtheta_dxD": "endpoint copy; interior arithmetic mean of adjacent M_face, shape (1078,201)",
+    "dxD_dtheta_face": "Delta(xD)/Delta(theta), reciprocal sidecar, shape (1078,200)",
+    "capillary_authority": "M_face only",
+    "node_role": "SIDECAR_ONLY",
+    "prohibited": "clipping/floor/smoothing/fitting/case selection/FMM/ADV/transport/training"
+  },
+  "gates": {
+    "D27_summary_exists": true,
+    "D27_summary_SHA_exact": true,
+    "D9R1_source_exists": true,
+    "D27_status_authorizes_metric_expansion": true,
+    "source_has_TH_np_linspace_0_1_201_": true,
+    "source_has_mf_dth_dx": true,
+    "source_has_mn_0_mf_0_": true,
+    "source_has_mn_1_mf_1_": true,
+    "source_has_mn_1_1_5_mf_1_mf_1_": true,
+    "source_has_invf_dx_dth": true,
+    "source_has_M_face_dtheta_dxD_mf": true,
+    "source_has_M_node_sidecar_dtheta_dxD_mn": true,
+    "source_has_dxD_dtheta_face_invf": true,
+    "source_has_NO_CLIPPING_EPSILON_FLOOR_SMOOTHING_FITTING_CASE": true,
+    "primary_metric_is_face_ratio": true,
+    "reciprocal_is_dx_over_dtheta": true,
+    "node_metric_sidecar_only": true,
+    "future_capillary_uses_face_metric_directly": true,
+    "no_metric_fitting_or_smoothing": true
+  }
+}

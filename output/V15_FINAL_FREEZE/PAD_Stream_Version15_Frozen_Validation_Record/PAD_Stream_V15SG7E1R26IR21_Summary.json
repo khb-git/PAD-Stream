@@ -1,0 +1,17 @@
+{
+  "milestone": "V15-SG7E1R26I-R21",
+  "status": "SG7E_HISTORICAL_REFERENCE_SCOPE_PRESERVED_MULTI_TIME_DEPLOYMENT_SCOPE_LIMITED",
+  "diagnosis": "FOUR_TIME_SG7E_REFERENCE_CONTRACT_IS_VALID_BUT_FROZEN_DEPLOYMENT_LINEAGE_HAS_ONLY_CERTIFIED_100D_STATE_AND_SINGLE_FROZEN_GRID",
+  "certified_deployment_times_days": [
+    100.0
+  ],
+  "uncertified_deployment_times_days": [
+    250.0,
+    500.0,
+    1000.0
+  ],
+  "four_time_deployment_sequence_certified": false,
+  "failed_gates": [],
+  "recommendation": "Freeze this scope decision into Version 15. Preserve SG7E as a historical multi-time reference/acceptance contract and preserve SG7D6/L2_independent_100 as authoritative frozen deployment artifacts. Do not claim a reproducible four-time deployment sequence. The next milestone should close SG7E1 with a final branch disposition / Version 15 freeze-readiness audit.",
+  "next_milestone": "V15-SG7E1R26I-R22 \u2014 SG7E1 Final Branch Disposition / Version 15 Freeze-Readiness Audit"
+}

@@ -1,0 +1,13 @@
+{
+  "milestone": "V16A-R7C",
+  "status": "V16A_PRODUCER_IDENTITY_RULE_STILL_INCOMPLETE",
+  "diagnosis": "SG5_SG6_SOURCE_AND_PERSISTED_ENDPOINT_METADATA_DO_NOT_YET_DEFINE_ONE_EXECUTABLE_NONRETRACE_PRODUCER_CLASSIFICATION_RULE",
+  "producer_rule": {
+    "status": "PRODUCER_CLASSIFICATION_RULE_NOT_YET_EXECUTABLY_BOUND",
+    "reconstruction_authorized": false,
+    "rule_type": "",
+    "reason": "Source semantics and persisted endpoint/grouping metadata do not yet form one executable non-retrace producer-classification contract."
+  },
+  "recommendation": "Do not reconstruct producer_id. Inspect only the R7C source and metadata tables to resolve the missing rule edge.",
+  "next_milestone": "V16A-R7C1 \u2014 Producer Classification Rule Edge Audit"
+}

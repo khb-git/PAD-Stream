@@ -1,0 +1,47 @@
+{
+  "milestone": "V16C-28",
+  "status": "V16C_TRANSPORT_LEARNING_BRANCH_FROZEN_EXP1_EXP2_TRADEOFF_CERTIFIED_FORWARD_OOD_CASE_EXPANSION_REQUIRED",
+  "decision": {
+    "EXP1": {
+      "role": "FROZEN_SUPERVISED_PREDICTIVE_BASELINE",
+      "promotion": "RETAIN",
+      "reason": "lower locked-test saturation error"
+    },
+    "EXP2": {
+      "role": "FROZEN_FIRST_PHYSICS_INFORMED_CONTROLLED_EXPERIMENT",
+      "promotion": "RETAIN",
+      "reason": "lower differential residual and fewer structural violations"
+    },
+    "observed_tradeoff": {
+      "EXP2_RMSE_change_percent": 138.36504647026848,
+      "EXP2_L2_residual_reduction_percent": 40.06764999185412,
+      "EXP2_spatial_positive_fraction_reduction_percent": 84.36254980079681,
+      "EXP2_temporal_negative_fraction_reduction_percent": 70.17543859649123
+    },
+    "winner": "NOT_DECLARED_BECAUSE_NO_PREDECLARED_COMPOSITE_UTILITY_CRITERION_EXISTS",
+    "foundation_model_claim": "NOT_AUTHORIZED_SINGLE_FOUNDATION_CASE_ONLY",
+    "EXP3_status": "NOT_AUTHORIZED",
+    "EXP3_requirements": [
+      "predeclare a new objective/weight or architecture before training",
+      "do not tune against locked EXP1/EXP2 test results",
+      "validate any changed differentiable residual/operator before training",
+      "preserve C19 split for same-case comparisons",
+      "reserve true OOD evaluation for unseen Foundation Cases/geologies/controls"
+    ],
+    "forward_architecture_decision": "CLOSE V16C SINGLE-CASE TRANSPORT LEARNING BASELINE BRANCH; NEXT BUILD MULTI-FOUNDATION-CASE/OOD DATA AUTHORITY BEFORE FOUNDATION-MODEL CLAIMS OR USE A SEPARATELY PREDECLARED EXP3 RESEARCH BRANCH."
+  },
+  "gates": {
+    "C27_bound": true,
+    "EXP1_role_frozen": true,
+    "EXP2_role_frozen": true,
+    "tradeoff_recorded": true,
+    "no_posthoc_winner": true,
+    "no_retraining": true,
+    "no_retuning": true,
+    "no_new_model_selection": true,
+    "EXP3_not_authorized": true,
+    "no_foundation_model_claim": true,
+    "true_OOD_reserved_for_future_cases": true
+  },
+  "next_milestone": "V16D-1 \u2014 Multi-Foundation-Case and True OOD Geology/Control Expansion Authority Contract"
+}

@@ -1,0 +1,242 @@
+{
+  "milestone": "V16D-14B-R1",
+  "sampling_contract_sha256": "32fec4b708108fb708bd40cc0983d4de093516a4a84b90b7ae9c3020a2383181",
+  "normalization_statistics_sha256": "7887daa54e6bebf2740a105b59207484e87b9b1ea8b84f6b9b79b1a5119e3d26",
+  "split": {
+    "TRAIN": [
+      "0020",
+      "0015",
+      "0013",
+      "0004",
+      "0006",
+      "0002",
+      "0023",
+      "0016",
+      "0009",
+      "0019",
+      "0017",
+      "0024",
+      "0003",
+      "0011",
+      "0014",
+      "0007"
+    ],
+    "VALIDATION": [
+      "0010",
+      "0025",
+      "0008",
+      "0012"
+    ],
+    "LOCKED_OOD_TEST": [
+      "0005",
+      "0018",
+      "0021",
+      "0022"
+    ]
+  },
+  "feature_order": [
+    "xi",
+    "pollock_tau_hat",
+    "adv_tau_hat",
+    "log10_Kh",
+    "log10_Kz_over_Kh",
+    "porosity",
+    "pressure_z",
+    "target_time_hat",
+    "target_eta_sequence"
+  ],
+  "cases": [
+    {
+      "case_id": "0020",
+      "partition": "TRAIN",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0020_Predictors_RAW.npz",
+      "raw_sha256": "5e5a6b0bef49cbf97d04569d605bfa9e507ee2f13313f64ab1bb1cd43c957786",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0020_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "8d59fef7fa45c3479b9db4824310ea01d305fb79cbf4405bb528cb9ed94189bd"
+    },
+    {
+      "case_id": "0015",
+      "partition": "TRAIN",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0015_Predictors_RAW.npz",
+      "raw_sha256": "f2e9f90a8e1d9fae13ad6a8af28d4a9b23cf7c06e68dcaa1634d63dbba567acb",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0015_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "856d6bfdbe686430236252c40e25d48f1f101661a060dcb8737ece7a51bccc4d"
+    },
+    {
+      "case_id": "0013",
+      "partition": "TRAIN",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0013_Predictors_RAW.npz",
+      "raw_sha256": "6877fa4bad0f4c4a4c3c24b6b5c562fc0319f66d898c08173cf6080c6098884d",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0013_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "fa95afad2a27b8f923ac1bab2b2c82b9d15f17a42672b2b5d739e63ac55107bd"
+    },
+    {
+      "case_id": "0004",
+      "partition": "TRAIN",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0004_Predictors_RAW.npz",
+      "raw_sha256": "a8877ff4ef370fc402883f6577ef8bb1cde3b18b88f5e75cabd55ca55b538107",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0004_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "62648f84142226a3bebd50823523f0b2fd9222b3baeda97b905b2141f2c45a17"
+    },
+    {
+      "case_id": "0006",
+      "partition": "TRAIN",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0006_Predictors_RAW.npz",
+      "raw_sha256": "15ac5322e693b59b7c1fd0de40be5c0946ac97f2aafc5fad6dd5bc179f4e73e9",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0006_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "face017e60fb80141f1b23e68229ac5cf32631fbe9f8f725560090aba2d66937"
+    },
+    {
+      "case_id": "0002",
+      "partition": "TRAIN",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0002_Predictors_RAW.npz",
+      "raw_sha256": "d8811fc17abb9085892bf02d93fa87715c692a512eead2cab9e1e00552d03c39",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0002_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "85cda06c3ba85a9f99e67f126f8a944d5730004d617c692223441f1f21f50f32"
+    },
+    {
+      "case_id": "0023",
+      "partition": "TRAIN",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0023_Predictors_RAW.npz",
+      "raw_sha256": "7a826a314025339063252a3b171973011cf1ab08e701b547511c04f387b5c5c8",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0023_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "5a7d13a2f5680750d050decacad1e22337d825ac75f6c5b8b17c79c3d1428ffb"
+    },
+    {
+      "case_id": "0016",
+      "partition": "TRAIN",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0016_Predictors_RAW.npz",
+      "raw_sha256": "1d7a6f682a332bcc6a68bfc1f3d300c16256b05f70b9fc6b69426503d1c33ec5",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0016_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "4437884aa1523aa13f2f0eb0671859e8b5f9b29d78ec03fab1a322c3c868d788"
+    },
+    {
+      "case_id": "0009",
+      "partition": "TRAIN",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0009_Predictors_RAW.npz",
+      "raw_sha256": "be3bfe03be3f18c73faa6c7762532e96c2c8f52b8d550d0169ef24911a896f3a",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0009_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "77f304ad7e62ecac48d7d7b52b441644d4a97cf4b3941f675a1e279381d4c2a4"
+    },
+    {
+      "case_id": "0019",
+      "partition": "TRAIN",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0019_Predictors_RAW.npz",
+      "raw_sha256": "3cf84c8aec45a334c9aa0e26c6770e1226ab5a7ee301a106b59fb616f43794cc",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0019_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "528751606c54e99ad0a1d5f4d6c44faf6888ac8d2d593a4713f3de238fe3859b"
+    },
+    {
+      "case_id": "0017",
+      "partition": "TRAIN",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0017_Predictors_RAW.npz",
+      "raw_sha256": "9ed98d102a28934a09c513f785126493b3641de9a7599953121431d35654e766",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0017_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "740fda012bb95f2b9e836261bfa14d359fa9c663b6f41b602379194435cff18a"
+    },
+    {
+      "case_id": "0024",
+      "partition": "TRAIN",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0024_Predictors_RAW.npz",
+      "raw_sha256": "bfff4a61f797684c0d88be02546519100ca7a03e8cac5091075423b0fc4bf7eb",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0024_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "a0103eb103d9904fed81493d2cde2ed8206d6c4a330ac78ff50cf45f301f3209"
+    },
+    {
+      "case_id": "0003",
+      "partition": "TRAIN",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0003_Predictors_RAW.npz",
+      "raw_sha256": "f1e8ba6fe117984c75493b47aa05d6d9fef23fd013ec372e788e39c5b0343a8c",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0003_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "e818ebd4f54de431d9dbb0febea1a284a1e3a53f5167b9458546057ad5eeb123"
+    },
+    {
+      "case_id": "0011",
+      "partition": "TRAIN",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0011_Predictors_RAW.npz",
+      "raw_sha256": "7672541250538a1c5e1d7f976f8d16a8c62a240c718fc25948e710f38baf33ca",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0011_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "e5cbe784710dd0195ed680858459495af671def3a699bd8e50e683eb57d199a2"
+    },
+    {
+      "case_id": "0014",
+      "partition": "TRAIN",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0014_Predictors_RAW.npz",
+      "raw_sha256": "1c659c9414b64635f464bfbf0c6d0676d1116ee3762198787ea59b20768112f1",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0014_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "4c81e392726bf8f744dd45be4ef31baf077f8e55c036d0d47a5c22027c966ece"
+    },
+    {
+      "case_id": "0007",
+      "partition": "TRAIN",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0007_Predictors_RAW.npz",
+      "raw_sha256": "4d6316bb5eec4218b6c0cfef5a1673c01b521dfa108353f8e577bf39f6c9eee1",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0007_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "03f562456fcab4b106903419c2298cc76f07b8ad0863ac5d2cb4ec0654a802bc"
+    },
+    {
+      "case_id": "0010",
+      "partition": "VALIDATION",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0010_Predictors_RAW.npz",
+      "raw_sha256": "f8e9e6979c2d672486e4965552d5ca0cff88dc095e37e8ff2f89489ce06b6feb",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0010_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "eeca4700eaa4bff7fca0ba043ac5988e4fa060332408301120fae639ac6acd02"
+    },
+    {
+      "case_id": "0025",
+      "partition": "VALIDATION",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0025_Predictors_RAW.npz",
+      "raw_sha256": "d7eda280fe541ae9fc1efad70d5e979c8fb29e1591a2d7c7c37096236be6380c",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0025_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "bcf23a07793f5186480712ccbf1e295a93fa0f11ed307f8292c0d02dbf63ac00"
+    },
+    {
+      "case_id": "0008",
+      "partition": "VALIDATION",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0008_Predictors_RAW.npz",
+      "raw_sha256": "356001e7c7c686e2a448f4b5d31b15053da15e471ca72555d931c6d43b544766",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0008_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "f69e91fc9b2f2361d5775849a2a16eb8cd3b8e868f386f83bda4a737f29d22d3"
+    },
+    {
+      "case_id": "0012",
+      "partition": "VALIDATION",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0012_Predictors_RAW.npz",
+      "raw_sha256": "f0061f1f57a76ff9614155828624f9bb607095f21179103d715177791c3b7f02",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0012_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "87b561cb06523e8656a733f86b9b400ed2c8f40f905755b5bfde30a77bc7e391"
+    },
+    {
+      "case_id": "0005",
+      "partition": "LOCKED_OOD_TEST",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0005_Predictors_RAW.npz",
+      "raw_sha256": "2395dd26c0a2c48b6ecf9d0d593559dae545639e99ed3bb40763cfabf93ee4b3",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0005_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "795b46758c0192e7aeea04a4c5124b52e65327d339e08b4528001ef274b8ba54"
+    },
+    {
+      "case_id": "0018",
+      "partition": "LOCKED_OOD_TEST",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0018_Predictors_RAW.npz",
+      "raw_sha256": "76807356eddcd5b0481666add1945138dac17f3cff82016e46c6e46dbf3fab97",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0018_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "254149b3ecc4f7ab9e68299df27beae5bf843d4409b2592802a60a43d40135b5"
+    },
+    {
+      "case_id": "0021",
+      "partition": "LOCKED_OOD_TEST",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0021_Predictors_RAW.npz",
+      "raw_sha256": "03068b6dd6533bde44c88d9fe264104f4687583691091fea13c74ab2fdcca1c8",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0021_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "93816dbb49cf5bdcc925eef8166dabb9cdd27a7585eda37fe65eaefe2b420ac1"
+    },
+    {
+      "case_id": "0022",
+      "partition": "LOCKED_OOD_TEST",
+      "raw_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0022_Predictors_RAW.npz",
+      "raw_sha256": "e58da994bf57fea78076979811583a87d83eabe7710e49f156148776e94b2368",
+      "normalized_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D14B_R1_CONTRACT1_0_24CASE_PREDICTOR_ASSEMBLY_EXACT_FIELD_BINDINGS\\cases\\V16D14B_R1_Case_0022_Predictors_NORMALIZED.npz",
+      "normalized_sha256": "22753b6a6a41ea5f82f2d7c9913154d9caf16f50683c743a8611da9223be5678"
+    }
+  ]
+}

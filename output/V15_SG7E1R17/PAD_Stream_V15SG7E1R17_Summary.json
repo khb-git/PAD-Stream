@@ -1,0 +1,11 @@
+{
+  "milestone": "V15-SG7E1R17",
+  "status": "MULTI_TIME_L2_STATE_COVERAGE_INCOMPLETE",
+  "diagnosis": "ONE_OR_MORE_HISTORICAL_SG7E_TIMES_LACK_UNIQUE_PERSISTED_L2_STATE",
+  "all_four_unique_states_available": false,
+  "mapback_replay_inputs_available": true,
+  "candidate_changed": false,
+  "threshold_changed": false,
+  "recommendation": "Do not fabricate missing deployment states and do not evaluate SG7E gates. Audit the L2 evaluation source for the missing required times and determine whether those states can be deterministically regenerated from the frozen model and existing inputs without retraining.",
+  "next_milestone": "V15-SG7E1R18 \u2014 Missing L2 Physical-Time State Deterministic-Regeneration Audit"
+}

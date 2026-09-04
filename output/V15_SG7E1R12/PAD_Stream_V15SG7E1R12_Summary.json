@@ -1,0 +1,14 @@
+{
+  "milestone": "V15-SG7E1R12",
+  "status": "SG7E_HISTORICAL_REFERENCE_SNAPSHOT_NOT_YET_RESOLVED",
+  "diagnosis": "ARTIFACT_IDENTITY_RESOLVED_BUT_HISTORICAL_TIME_SELECTOR_REMAINS_AMBIGUOUS",
+  "artifact_resolved": true,
+  "snapshot_resolved": false,
+  "selected_artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7E\\V15SG7E_Plume_Coverage_Validation.npz",
+  "selected_snapshot_index": null,
+  "selected_time_days": null,
+  "candidate_changed": false,
+  "threshold_changed": false,
+  "recommendation": "Do not reconstruct the reference field yet. The artifact identity is fixed, but the source does not yet provide one unique snapshot selector. Audit only the authoritative metric loop, saved per-time metric rows, and times_days ordering associated with SG7A_corrected.",
+  "next_milestone": "V15-SG7E1R13 \u2014 Per-Time Metric / Snapshot Correspondence Audit"
+}

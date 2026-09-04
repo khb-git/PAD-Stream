@@ -1,0 +1,31 @@
+{
+  "milestone": "V16D-24C-R5",
+  "status": "V16D_D24C_R5_MATCHED_CONTROL_PILOT_BLOCKED",
+  "controls": {
+    "rate_tonnes_day": 350.0,
+    "producer_BHP_psi": 1800.0
+  },
+  "artifact_sha256": "532afb53592beb52529cefc79b7afc66889a3f272279b455cba8598c66d56b01",
+  "derived_SG3_sha256": "38e85ac8fc1af414af5979a3491914aad7dd17faff93a2e3e9b0965723404346",
+  "derived_SG4_sha256": "4d1e3039c23789c866c0f2c744a9958abf1c83837faaa036e13a08a350f6f22b",
+  "local_conservation_relative_L2": 3.1833880066490033e-12,
+  "global_conservation_relative_mismatch": 1.0000484884817815,
+  "gates": {
+    "R4_SHA_exact": true,
+    "SG2_SHA_exact": true,
+    "SG3_SHA_exact": true,
+    "SG4_SHA_exact": true,
+    "case0026_exists": true,
+    "SG3_only_lines_122_132": true,
+    "SG4_only_lines_113_123": true,
+    "frozen_sources_still_exact": true,
+    "matched_rate_controls": true,
+    "matched_bhp_controls": true,
+    "finite": true,
+    "shapes": true,
+    "local_conservation_rel_L2_le_1e_9": true,
+    "global_conservation_rel_le_1e_9": false,
+    "locked_0029_not_used": true
+  },
+  "next_milestone": "Diagnose matched-control conservation failure; do not batch."
+}

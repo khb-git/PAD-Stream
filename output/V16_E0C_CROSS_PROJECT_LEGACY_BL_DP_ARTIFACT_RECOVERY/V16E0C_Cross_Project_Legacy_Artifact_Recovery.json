@@ -1,0 +1,73 @@
+{
+  "milestone": "V16E-0C",
+  "search_roots": [
+    "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2",
+    "C:\\Users\\khali\\PycharmProjects"
+  ],
+  "search_scope": "current portable PAD-Stream project plus parent/sibling PyCharm projects",
+  "stage_checkpoint_recovery": {
+    "BL_STAGE1_INCOMPRESSIBLE_PI_RNN": {
+      "source_name": "pi_rnn_stage1_incompressible.py",
+      "source_sha256": "98d492e1e4a84e9d2c3ab99a631bf7d21d011b65bdd599e0ab3192d947b36e58",
+      "expected_checkpoint_name": "pi_rnn_fan_multicase_corey.weights.h5",
+      "checkpoint_matches": [],
+      "checkpoint_match_count": 0,
+      "checkpoint_bound_unique": false,
+      "expected_config_name": "pi_rnn_fan_multicase_corey_config.json",
+      "config_matches": [],
+      "config_match_count": 0
+    },
+    "BL_STAGE2_COMPRESSIBLE_GODUNOV_PI_RNN": {
+      "source_name": "pi_rnn_stage2_compressible_godunov.py",
+      "source_sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+      "expected_checkpoint_name": "pi_rnn_fan_stage2_godunov.weights.h5",
+      "checkpoint_matches": [],
+      "checkpoint_match_count": 0,
+      "checkpoint_bound_unique": false,
+      "expected_config_name": "pi_rnn_fan_stage2_godunov_config.json",
+      "config_matches": [],
+      "config_match_count": 0
+    },
+    "BL_STAGE3_CAPILLARY_PI_RNN": {
+      "source_name": "pi_rnn_stage3_capillary.py",
+      "source_sha256": "dab8eade38ac08c819ac27d803c8f1bceca9722c4c37e82977dbef6e6232ae0f",
+      "expected_checkpoint_name": "pi_rnn_stage3_capillary_v9.weights.h5",
+      "checkpoint_matches": [],
+      "checkpoint_match_count": 0,
+      "checkpoint_bound_unique": false,
+      "expected_config_name": "pi_rnn_stage3_capillary_v9_config.json",
+      "config_matches": [],
+      "config_match_count": 0
+    },
+    "BL_STAGE4_FULL_COMPRESSIBLE_CAPILLARY_PI_RNN": {
+      "source_name": "pi_rnn_stage4_full_godunov.py",
+      "source_sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+      "expected_checkpoint_name": "pi_rnn_stage4_full_godunov.weights.h5",
+      "checkpoint_matches": [],
+      "checkpoint_match_count": 0,
+      "checkpoint_bound_unique": false,
+      "expected_config_name": "pi_rnn_stage4_full_godunov_config.json",
+      "config_matches": [],
+      "config_match_count": 0
+    }
+  },
+  "all_stage_checkpoints_bound": false,
+  "any_stage_checkpoint_recovered": false,
+  "DP_8_layer_physics_recovery": {
+    "candidate_count": 0,
+    "valid_candidate_count": 0,
+    "unique_valid_content_hash_count": 0,
+    "status": "UNBOUND_NO_VALID_SOURCE",
+    "bound_sha256": null,
+    "candidates": []
+  },
+  "execution": {
+    "TensorFlow_import": false,
+    "checkpoint_deserialization": false,
+    "NPZ_load": false,
+    "OOD_reopen": false,
+    "training": false,
+    "inference": false,
+    "hash_and_text_fingerprint_only": true
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "source_artifact": "output\\V16_D24C_R5_MATCHED_SG3_SG4_0026_TRAIN_PILOT\\V16D24CR5_Geology0026_TRAIN_350tpd_1800psi_MatchedFlow.npz",
+  "source_artifact_sha256": "532afb53592beb52529cefc79b7afc66889a3f272279b455cba8598c66d56b01",
+  "controls": {
+    "geology": "0026",
+    "split": "TRAIN",
+    "injection_tonnes_day": 350.0,
+    "producer_BHP_psi": 1800.0
+  },
+  "metrics": {
+    "local_relative_L2": 3.1833880066490033e-12,
+    "absolute_global_residual_m3_s": 1.2297942659707777e-14,
+    "gross_well_throughput_m3_s": 0.011574074074061774,
+    "injection_m3_s": 0.005787037037037037,
+    "production_m3_s": 0.005787037037024738,
+    "net_well_source_m3_s": 1.2297996822285828e-14,
+    "global_gross_scaled": 1.0625422457998811e-12,
+    "global_throughput_scaled": 2.125084491597504e-12,
+    "well_balance_relative": 2.125150055931613e-12
+  },
+  "gates": {
+    "R6_SHA_exact": true,
+    "R5_SHA_exact": true,
+    "R5_artifact_exists": true,
+    "local_rel_L2_le_1e_9": true,
+    "global_gross_scaled_le_1e_9": true,
+    "global_throughput_scaled_le_1e_9": true,
+    "balanced_injection_production_rel_le_1e_9": true,
+    "net_source_near_zero": true
+  }
+}

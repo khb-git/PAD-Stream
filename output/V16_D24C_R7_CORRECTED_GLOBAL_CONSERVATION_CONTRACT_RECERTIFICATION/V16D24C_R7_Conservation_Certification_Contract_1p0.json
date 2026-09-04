@@ -1,0 +1,15 @@
+{
+  "id": "V16D_CONSERVATION_CERTIFICATION_1.0",
+  "local_metric": "||div(Q)-q_well||_2 / ||q_well||_2",
+  "local_threshold": 1e-09,
+  "global_primary_metric": "|sum(div(Q)-q_well)| / sum(|q_well|)",
+  "global_primary_threshold": 1e-09,
+  "global_secondary_metric": "|sum(div(Q)-q_well)| / max(Q_injection,Q_production)",
+  "global_secondary_threshold": 1e-09,
+  "well_balance_metric": "|Q_injection-Q_production| / max(Q_injection,Q_production)",
+  "well_balance_threshold": 1e-09,
+  "deprecated_metric": "|sum(div(Q)-q_well)| / |sum(q_well)|",
+  "deprecated_reason": "For balanced closed/no-flow systems sum(q_well) is physically approximately zero, so the denominator is ill-conditioned. It must not be used as a certification denominator.",
+  "scope": "Prospective V16D control-space flow certification. Does not rewrite historical V15/earlier V16 results.",
+  "physics": "No governing equation, solver, flux, well, or tolerance was altered; only the dimensionless global normalization is corrected."
+}

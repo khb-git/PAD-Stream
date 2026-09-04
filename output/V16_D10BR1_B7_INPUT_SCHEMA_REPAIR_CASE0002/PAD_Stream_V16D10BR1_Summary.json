@@ -1,0 +1,38 @@
+{
+  "milestone": "V16D-10BR1",
+  "status": "V16D_CASE0002_FMM_ADV_POLLOCK_HIERARCHY_CERTIFIED_D10C_FULL_24CASE_EXECUTION_AUTHORIZED",
+  "B7_tau_key": "tau_adv_s",
+  "metrics": {
+    "FMM_days": [
+      0.0,
+      159.61543221337504,
+      1249.785919738197
+    ],
+    "ADV_days": [
+      0.0,
+      295.2711049224986,
+      2722.6940039747483
+    ],
+    "Pollock_terminal_days": [
+      156.2417494128257,
+      371.1546458926351,
+      2952.033443562314
+    ]
+  },
+  "artifact_sha256": "995600b93761bf293939eedf0502e1a9ea08b91197376bba087ba43eeb7652d3",
+  "gates": {
+    "D10BR_failure_is_schema_only": true,
+    "source_hashes_exact": true,
+    "five_source_cells": true,
+    "FMM_finite": true,
+    "FMM_source_zero": true,
+    "B7_exact_schema_keys_used": true,
+    "ADV_finite": true,
+    "ADV_source_zero": true,
+    "ADV_nonnegative": true,
+    "Pollock_reference_1078": true,
+    "no_transport": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-10C \u2014 Full Case0002-0025 Source-Bound FMM/ADV Travel-Time Hierarchy Execution"
+}

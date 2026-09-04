@@ -1,0 +1,40 @@
+{
+  "milestone": "V16D-14AR",
+  "status": "V16D_STREAMLINE_SAMPLING_SOURCE_NOT_UNIQUELY_BOUND_MANUAL_PROVENANCE_NARROWING_REQUIRED",
+  "candidate_count": 3,
+  "coherent_executable_count": 3,
+  "coherent_sources": [
+    {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V16B1_Fast_Marching_Governing_Metric_Speed_Field_Contract_Audit.py",
+      "sha256": "0b8f3448f4da2a5022c3e1b14041351e925aa564dbced51746954e972ac6ce80",
+      "functions": [
+        "main"
+      ]
+    },
+    {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V16B4_FMM_Pollock_Discrepancy_Structure_Directionality_Audit.py",
+      "sha256": "b505e453a689b094c7587bb2b92391c31ae5e532b6a80dec12c1c73729319ff9",
+      "functions": [
+        "main"
+      ]
+    },
+    {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V16C2_Multi_Coordinate_Streamline_Transport_Database_Assembly.py",
+      "sha256": "315a25cab35c1da6d58fa9bb8254eecb55dbe0abca71f112ac319f123ea7cea6",
+      "functions": [
+        "main"
+      ]
+    }
+  ],
+  "gates": {
+    "D14A_registry_SHA_exact": true,
+    "source_candidates_found": true,
+    "executable_sampling_function_found": true,
+    "unique_coherent_source": false,
+    "no_numerical_closeness_selection": true,
+    "no_fitting": true,
+    "no_OOD_target_read": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-14AR1 \u2014 Sampling Source Candidate Disambiguation Audit"
+}

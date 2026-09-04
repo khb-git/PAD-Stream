@@ -1,0 +1,82 @@
+{
+  "milestone": "V16D-5A",
+  "status": "V16D_RECIPE1P0_NATIVE_SPECTRAL_COVARIANCE_EMBEDDING_CERTIFIED_ENSEMBLE_GEOLOGY_GENERATION_AUTHORIZED",
+  "spectral": {
+    "min_eigenvalue": 0.12488897382267151,
+    "negative_mode_fraction": 0.0,
+    "projection_active": false,
+    "relative_projection_energy": 0.0
+  },
+  "covariance_checks": {
+    "x_1cell": {
+      "target": 0.7408182206817179,
+      "kernel": 0.7408182206817179,
+      "abs_error": 0.0
+    },
+    "x_5cell": {
+      "target": 0.22313016014842982,
+      "kernel": 0.22313016014842982,
+      "abs_error": 0.0
+    },
+    "x_10cell": {
+      "target": 0.049787068367863944,
+      "kernel": 0.049787068367863944,
+      "abs_error": 0.0
+    },
+    "y_1cell": {
+      "target": 0.7408182206817179,
+      "kernel": 0.7408182206817179,
+      "abs_error": 0.0
+    },
+    "y_5cell": {
+      "target": 0.22313016014842982,
+      "kernel": 0.22313016014842982,
+      "abs_error": 0.0
+    },
+    "y_10cell": {
+      "target": 0.049787068367863944,
+      "kernel": 0.049787068367863944,
+      "abs_error": 0.0
+    },
+    "z_1cell": {
+      "target": 0.44932896411722156,
+      "kernel": 0.44932896411722156,
+      "abs_error": 0.0
+    },
+    "z_2cell": {
+      "target": 0.20189651799465538,
+      "kernel": 0.20189651799465538,
+      "abs_error": 0.0
+    },
+    "z_3cell": {
+      "target": 0.09071795328941247,
+      "kernel": 0.09071795328941247,
+      "abs_error": 0.0
+    },
+    "xyz_1cell": {
+      "target": 0.4043240923571181,
+      "kernel": 0.4043240923571181,
+      "abs_error": 0.0
+    }
+  },
+  "max_covariance_abs_error": 0.0,
+  "fft_roundtrip_max_error": 1.6653345369377348e-16,
+  "gates": {
+    "D5_bound": true,
+    "R3_bound": true,
+    "native_embedding_positive_semidefinite": true,
+    "negative_mode_fraction_zero": true,
+    "spectral_projection_inactive": true,
+    "projection_energy_zero": true,
+    "kernel_matches_declared_covariance": true,
+    "fft_roundtrip_kernel": true,
+    "no_single_realization_acceptance_gate": true,
+    "no_seed_change": true,
+    "no_recipe_change": true,
+    "no_generation_of_ensemble": true,
+    "no_flow": true,
+    "no_transport": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-6 \u2014 Frozen Registry Case 0002-0025 Ensemble Geology Generation and Certification"
+}

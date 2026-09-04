@@ -1,0 +1,15 @@
+{
+  "milestone": "V16D-24C-R3",
+  "status": "V16D_SOURCEPATCH_SEMANTICS_CORRECT_SG4_CONTROL_DEPENDENCY_EVIDENCE_EXTRACTED_R4_ADAPTER_AUDIT_AUTHORIZED",
+  "report_sha256": "2c969375dc70bfe5550547f9af78aade639876a78cdeb53d140e0bac9eb8d152",
+  "gates": {
+    "R2_SHA_exact": true,
+    "SG3_SHA_exact": true,
+    "SG4_SHA_exact": true,
+    "semantic_diff_exactly_lines_122_132": true,
+    "only_authorized_assignments_changed": true,
+    "SG4_expected_well_function_found": true,
+    "conservation_failure_treated_as_cross_module_control_mismatch_not_physics_failure": true
+  },
+  "next_milestone": "V16D-24C-R4 \u2014 Bind exact SG4 well-source control dependencies and freeze source-preserving cross-module control adapter"
+}

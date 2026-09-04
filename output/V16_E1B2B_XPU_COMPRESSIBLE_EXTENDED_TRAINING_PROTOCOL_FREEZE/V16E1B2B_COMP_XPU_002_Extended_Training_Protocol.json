@@ -1,0 +1,88 @@
+{
+  "milestone": "V16E-1B2B-XPU",
+  "new_experiment_id": "V16E-BLREP-COMP-XPU-002",
+  "classification": "PROSPECTIVE_ONE_FACTOR_EXTENDED_TRAINING_REPRODUCTION",
+  "purpose": "Test undertraining as the first explanation for high-Nc profile degradation.",
+  "one_factor_change": {
+    "field": "epochs",
+    "old": 400,
+    "new": 800
+  },
+  "must_remain_identical": {
+    "Stage2_source_sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+    "dataset_sha256": "46f10f00ff6dc48f7b2b936bd7d602e6435f72f8410138c5aad0dd4add555f1c",
+    "conditioning": [
+      "no",
+      "nw",
+      "swi",
+      "sor",
+      "mu_w",
+      "mu_o",
+      "phi",
+      "tD",
+      "xD_star",
+      "Sw_star",
+      "Nc"
+    ],
+    "param_dim": 11,
+    "hidden": 64,
+    "layers": 2,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "logical_batch": 8192,
+    "XPU_microbatch": 2048,
+    "seed": 1337,
+    "loss_weights": {
+      "data": 1.0,
+      "physics": 0.05,
+      "injector_bc": 5.0,
+      "tip_bc": 5.0,
+      "anchor": 10.0,
+      "monotonicity": 0.2,
+      "shape": 0.0
+    },
+    "Nc_grid": [
+      0.0,
+      0.05,
+      0.1,
+      0.2,
+      0.3
+    ],
+    "NX_TRAIN": 1601,
+    "NX_REF": 3201,
+    "n_fan": 64,
+    "split_seed": 1337,
+    "train_fraction": 0.8
+  },
+  "initialization_policy": {
+    "fresh_model_initialization_required": true,
+    "warm_start_from_COMP_XPU_001_prohibited": true,
+    "reason": "COMP-XPU-001 checkpoint lacks Adam optimizer state; warm-starting with a reset optimizer would add a second intervention."
+  },
+  "evaluation_policy": {
+    "same_source_native_split_reused": true,
+    "split_independent_after_B2A": false,
+    "split_role": "reproduction development diagnostic only; NOT OOD",
+    "repeat_metrics": [
+      "overall reproduction diagnostic MSE/RMSE/MAE/max error",
+      "per-Nc diagnostic MAE/RMSE/max error",
+      "full-domain fine-grid Godunov error",
+      "front-excluded fine-grid Godunov error",
+      "front-position error",
+      "Nc=0 Stage-1 nesting diagnostics",
+      "saturation bounds"
+    ],
+    "numeric_acceptance_threshold": null,
+    "B3_automatic_authorization": false,
+    "decision": "After COMP-XPU-002 completes, compare descriptive trends against COMP-XPU-001. If high-Nc degradation materially persists, freeze a separate conditioning/loss study before B3; do not tune inside COMP-XPU-002."
+  },
+  "firewall": {
+    "OOD_claim": false,
+    "TOF": false,
+    "architecture_change": false,
+    "loss_weight_change": false,
+    "dataset_change": false,
+    "Nc_transform_change": false,
+    "front_definition_change": false
+  }
+}

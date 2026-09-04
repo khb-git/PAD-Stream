@@ -1,0 +1,48 @@
+{
+  "milestone": "V15-SG7E1R26I-R19R",
+  "status": "R19_SELF_REFERENTIAL_BOUNDARY_REJECTED_HISTORICAL_DUAL_IDENTITY_NOT_RETAINED",
+  "diagnosis": "AFTER_EXCLUDING_CURRENT_AUDIT_PRODUCTS_ONE_OR_BOTH_HISTORICAL_IDENTITIES_DISAPPEAR",
+  "r19_original_status_rejected": true,
+  "r19_rejection_reason": "R19 selected the derivative V15_SG7E1R26IR17 precision-audit NPZ as both last creator and first frozen artifact.",
+  "excluded_tokens": [
+    "V15_SG7E1R26IR16",
+    "V15_SG7E1R26IR17",
+    "V15_SG7E1R26IR18",
+    "V15_SG7E1R26IR19",
+    "V15_SG7E1R26IR19R",
+    "V15SG7E1R26IR16",
+    "V15SG7E1R26IR17",
+    "V15SG7E1R26IR18",
+    "V15SG7E1R26IR19",
+    "V15SG7E1R26IR19R"
+  ],
+  "historical_creator_count": 0,
+  "historical_frozen_count": 12,
+  "last_creator": null,
+  "first_frozen_after_creator": null,
+  "earliest_frozen": {
+    "identity_role": "FROZEN100",
+    "artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B10R\\V15SG7B10R_Monotonicity_Audit.npz",
+    "key": "E2_best100",
+    "array_sha256_float32": "a08c7320a63ace580456191f408a29afde65e0ad3f078846265243e53cd10297",
+    "exists": true,
+    "mtime_epoch": 1787623267.8472466,
+    "mtime_iso": "2026-08-25T02:01:07.847247+00:00",
+    "size_bytes": 5308895
+  },
+  "failed_gates": [
+    "historical_creator_identity_remains"
+  ],
+  "constraints": {
+    "training_performed": false,
+    "model_predict_executed": false,
+    "precision_envelope_relaxed": false,
+    "authority_reopened": false,
+    "chronology_used_as_sole_authority": false,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false
+  },
+  "recommendation": "Do not proceed to a transition audit. Revisit R18's definition of historical matches with the corrected exclusion policy.",
+  "next_milestone": "V15-SG7E1R26I-R18R \u2014 Corrected Historical Identity Inventory"
+}

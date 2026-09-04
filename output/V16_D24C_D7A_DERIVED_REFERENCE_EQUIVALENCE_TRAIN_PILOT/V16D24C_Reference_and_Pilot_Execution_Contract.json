@@ -1,0 +1,26 @@
+{
+  "reference_equivalence": {
+    "geology": "0026",
+    "control": {
+      "rate_tonnes_day": 500.0,
+      "producer_BHP_psi": 2000.0
+    },
+    "comparison": "unmodified frozen-SG3 path vs parameterized-adapter path on identical geology0026",
+    "required": "array-level equality/near-machine precision for pressure and Qx/Qy/Qz; same conservation gates"
+  },
+  "new_control_pilot": {
+    "geology": "0026",
+    "split": "TRAIN",
+    "control": {
+      "rate_tonnes_day": 350.0,
+      "producer_BHP_psi": 1800.0
+    },
+    "required": "finite pressure/fluxes, SG3 residual/mass-balance gates, SG4 local/global conservation gates"
+  },
+  "prohibitions": [
+    "no locked geology0029",
+    "no batch36 before pilot",
+    "no physics rewrite",
+    "no numerical fitting"
+  ]
+}

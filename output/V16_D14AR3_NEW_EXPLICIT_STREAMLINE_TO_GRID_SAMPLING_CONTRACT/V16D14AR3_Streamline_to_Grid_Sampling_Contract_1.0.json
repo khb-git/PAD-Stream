@@ -1,0 +1,63 @@
+{
+  "id": "V16D_STREAMLINE_TO_GRID_SAMPLING_1.0",
+  "provenance": "NEW_V16D_CONTRACT_NOT_HISTORICAL_RECOVERY",
+  "grid": {
+    "array_order": "(k,j,i)=(z,y,x)",
+    "nx": 50,
+    "ny": 50,
+    "nz": 15,
+    "dx_m": 6.096,
+    "dy_m": 6.096,
+    "dz_m": 1.2192,
+    "origin": "domain_corner_(0,0,0)",
+    "cell_intervals": "half-open [edge_n,edge_n+1), with domain-max assigned to last cell"
+  },
+  "mapping": {
+    "i": "clip(floor(x/dx_m),0,nx-1)",
+    "j": "clip(floor(y/dy_m),0,ny-1)",
+    "k": "clip(floor(z/dz_m),0,nz-1)",
+    "interpolation": "NONE_NEAREST_CONTAINING_CELL",
+    "boundary_policy": "clip only for exact/roundoff domain-edge coordinates; coordinates materially outside domain are ERROR",
+    "outside_tolerance_m": 1e-08
+  },
+  "raw_sampling": {
+    "Kx_path": "Kx[k,j,i]",
+    "Ky_path": "Ky[k,j,i]",
+    "Kz_path": "Kz[k,j,i]",
+    "porosity_path": "porosity[k,j,i]",
+    "pressure_path": "pressure[k,j,i]"
+  },
+  "derived_features": {
+    "Kh": "sqrt(Kx_path*Ky_path)",
+    "log10_Kh": "log10(Kh)",
+    "log10_Kz_over_Kh": "log10(Kz_path/Kh)",
+    "pressure_z": "TRAIN_ONLY_ZSCORE_OF_pressure_path",
+    "porosity": "raw porosity path; normalization policy determined from TRAIN variance only"
+  },
+  "kinematic_features": {
+    "xi": "common Pollock theta coordinate",
+    "pollock_tau_hat": "pollock_tau_s/pollock_tau_end_s",
+    "adv_tau_hat": "ADV travel time sampled/evaluated on the same 201 Pollock nodes, normalized by pollock_tau_end_s",
+    "target_time_hat": "target_days/1000 days",
+    "target_eta_sequence": "86400*target_days/pollock_tau_end_s broadcast over 201 nodes"
+  },
+  "physics_sidecar": {
+    "M_face": "D9R1/C7 conservative face metric; NOT predictor"
+  },
+  "normalization": {
+    "fit_partition": "TRAIN_CASES_ONLY",
+    "validation": "transform-only",
+    "locked_OOD": "transform-only",
+    "target_Y_used_for_predictor_stats": false,
+    "zero_variance": "constant channel; no divide by zero"
+  },
+  "prohibitions": [
+    "NO historical relabeling",
+    "NO numerical-closeness calibration",
+    "NO interpolation unless future versioned contract",
+    "NO validation/OOD normalization fit",
+    "NO OOD label use for model selection",
+    "NO M_face predictor without new contract"
+  ],
+  "case_scope": "V16D Recipe1.1 Foundation Cases 0002-0025; Case0001 excluded from this multi-case experiment"
+}

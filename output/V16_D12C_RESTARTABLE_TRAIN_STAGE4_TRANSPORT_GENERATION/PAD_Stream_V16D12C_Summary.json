@@ -1,0 +1,113 @@
+{
+  "milestone": "V16D-12C",
+  "status": "V16D_TRAIN_PARTITION_STAGE4_TRANSPORT_SUPERVISION_16_CASES_CERTIFIED_VALIDATION_GENERATION_AUTHORIZED",
+  "manifest_sha256": "85415615a8d752e45085eaff5c4d9b97ecb2c5155d570bc4019ef42221c30264",
+  "cases": [
+    {
+      "case_id": "V16D_Foundation_Case_0020",
+      "status": "CERTIFIED_NEW",
+      "sha256": "e54bb166789ed99e53fb1606e2554735589cd14bcf4c7107b747c35d0fbd6724",
+      "elapsed_seconds": 3363.953798055649
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0015",
+      "status": "CERTIFIED_NEW",
+      "sha256": "e9c9ff4484960a9b478a82f414a1fafbfc12cb4785351d67b508ebdbcbc3a3c9",
+      "elapsed_seconds": 4958.8655478954315
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0013",
+      "status": "CERTIFIED_NEW",
+      "sha256": "3073ec86252372b357f38a3585e0ae7cddc91042575187521b93d610e2edcf08",
+      "elapsed_seconds": 4918.531757354736
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0004",
+      "status": "CERTIFIED_NEW",
+      "sha256": "803f291f520e3f3c9dd16d315a536cbee96d85b897eb5f72727112b7e603e0a5",
+      "elapsed_seconds": 6003.325699806213
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0006",
+      "status": "CERTIFIED_NEW",
+      "sha256": "428782ae8ec5150a64fe04b1c4ee039d8b7fff916015e601b79f5869f557d49f",
+      "elapsed_seconds": 2722.666412591934
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0002",
+      "status": "CERTIFIED_EXISTING_D12AR",
+      "sha256": "211cacb7752c9a11f81d009a6968aeee414d6b5e3df524f0300e5c490ef7ee70",
+      "elapsed_seconds": 0.0
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0023",
+      "status": "CERTIFIED_NEW",
+      "sha256": "0f6b852125ceea10957f951ee961fc741d16e7d0b534cdafb219cefe5eb24c1f",
+      "elapsed_seconds": 2803.804412126541
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0016",
+      "status": "CERTIFIED_NEW",
+      "sha256": "389941d0e05365d9e6ab53048e32735622b5316c7db4dcabd6288ffc57b295ac",
+      "elapsed_seconds": 2478.014447450638
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0009",
+      "status": "CERTIFIED_NEW",
+      "sha256": "958c3b0725be8472032e9776b387577acc7e95fff34acb6561530b87d0547a8c",
+      "elapsed_seconds": 2462.8537187576294
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0019",
+      "status": "CERTIFIED_NEW",
+      "sha256": "efab492cfeab57607dfcee8243bd36880013a0f55508cc45259799cc04e97998",
+      "elapsed_seconds": 3511.7122077941895
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0017",
+      "status": "CERTIFIED_NEW",
+      "sha256": "317ab1c8fac8d3906f2e0d4a06ce194bb3f090f864f8d7abe0ef84f144fe6f71",
+      "elapsed_seconds": 2867.404005765915
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0024",
+      "status": "CERTIFIED_NEW",
+      "sha256": "be308f227ce7604ebcf8a85fdccdd025350a8c5130ad9675b8983eea5a4fd242",
+      "elapsed_seconds": 2441.9296641349792
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0003",
+      "status": "CERTIFIED_NEW",
+      "sha256": "e804b2af4d3d21a8e532dae6abc112dfa73f2ea8644879cc3e844a4d667e837f",
+      "elapsed_seconds": 2582.3552479743958
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0011",
+      "status": "CERTIFIED_NEW",
+      "sha256": "83e07b2a25ef3d80c930a91236ad5872a8d5e79a2417aedebc0649f0c14d9848",
+      "elapsed_seconds": 2087.2334842681885
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0014",
+      "status": "CERTIFIED_NEW",
+      "sha256": "bcdc4d9c45285304995304da2a114d5b2f25efc9d78221d8c24fa3b7c8bbf309",
+      "elapsed_seconds": 2774.3609659671783
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0007",
+      "status": "CERTIFIED_NEW",
+      "sha256": "ad82db2fd1f7d6038a6e6025f760302111c62123a3e6371bab1710386c70d25a",
+      "elapsed_seconds": 2621.094622373581
+    }
+  ],
+  "gates": {
+    "exact_16_train": true,
+    "Case0002_reused_not_recomputed": true,
+    "all_train_certified": true,
+    "restartable_per_case": true,
+    "validation_untouched": true,
+    "locked_OOD_untouched": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-12D \u2014 Restartable VALIDATION-Partition Stage-4 Transport Generation"
+}

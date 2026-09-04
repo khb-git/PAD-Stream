@@ -1,0 +1,136 @@
+{
+  "milestone": "V15-SG7E1R26I-R21",
+  "status": "SG7E_HISTORICAL_REFERENCE_SCOPE_PRESERVED_MULTI_TIME_DEPLOYMENT_SCOPE_LIMITED",
+  "diagnosis": "FOUR_TIME_SG7E_REFERENCE_CONTRACT_IS_VALID_BUT_FROZEN_DEPLOYMENT_LINEAGE_HAS_ONLY_CERTIFIED_100D_STATE_AND_SINGLE_FROZEN_GRID",
+  "reference_time_contract_days": [
+    100.0,
+    250.0,
+    500.0,
+    1000.0
+  ],
+  "certified_deployment_times_days": [
+    100.0
+  ],
+  "uncertified_deployment_times_days": [
+    250.0,
+    500.0,
+    1000.0
+  ],
+  "four_time_deployment_sequence_certified": false,
+  "SG7E_scope": "HISTORICAL_MULTI_TIME_REFERENCE_ACCEPTANCE_CONTRACT",
+  "SG7D6_scope": "AUTHORITATIVE_FROZEN_SINGLE_STATE_DEPLOYMENT_ARTIFACT",
+  "authority_matrix": [
+    {
+      "artifact_or_contract": "SG7A_corrected historical 4-time reference",
+      "authority": "AUTHORITATIVE_REFERENCE",
+      "immutable": true,
+      "may_drive_future_validation": true
+    },
+    {
+      "artifact_or_contract": "Historical S=0.5 plume threshold",
+      "authority": "AUTHORITATIVE_ACCEPTANCE_PARAMETER",
+      "immutable": true,
+      "may_drive_future_validation": true
+    },
+    {
+      "artifact_or_contract": "L2_independent_100",
+      "authority": "AUTHORITATIVE_100D_DEPLOYMENT_STATE",
+      "immutable": true,
+      "may_drive_future_validation": true
+    },
+    {
+      "artifact_or_contract": "SG7D6 frozen full-grid field",
+      "authority": "AUTHORITATIVE_FROZEN_DEPLOYMENT_ARTIFACT",
+      "immutable": true,
+      "may_drive_future_validation": true
+    },
+    {
+      "artifact_or_contract": "250/500/1000-day current-runtime generated states",
+      "authority": "PROHIBITED",
+      "immutable": false,
+      "may_drive_future_validation": false
+    },
+    {
+      "artifact_or_contract": "R20 rejected 250/500 frozen100 relabellings",
+      "authority": "REJECTED",
+      "immutable": false,
+      "may_drive_future_validation": false
+    }
+  ],
+  "prohibited_interpretations": [
+    {
+      "interpretation": "Treat frozen100 as 250-day state",
+      "allowed": false,
+      "reason": "Semantic contradiction; same authoritative 100-day state hash."
+    },
+    {
+      "interpretation": "Treat frozen100 as 500-day state",
+      "allowed": false,
+      "reason": "Semantic contradiction; same authoritative 100-day state hash."
+    },
+    {
+      "interpretation": "Assume SG7D6 represents 1000 days",
+      "allowed": false,
+      "reason": "No persisted physical-time authority."
+    },
+    {
+      "interpretation": "Generate missing later-time states with current TensorFlow runtime",
+      "allowed": false,
+      "reason": "Historical runtime replay is not certified at 100 days."
+    },
+    {
+      "interpretation": "Relax SG7E threshold or R16 precision envelope to recover coverage",
+      "allowed": false,
+      "reason": "Would change frozen acceptance contracts rather than recover provenance."
+    },
+    {
+      "interpretation": "Claim Version 15 frozen deployment is a reproducible four-time SG7E sequence",
+      "allowed": false,
+      "reason": "Later-time deployment coverage is incomplete."
+    }
+  ],
+  "allowed_paths": [
+    {
+      "path_id": "P1",
+      "path": "Freeze SG7E as historical multi-time reference/acceptance contract",
+      "allowed": true,
+      "purpose": "Preserve historical reference validity without fabricating deployment states."
+    },
+    {
+      "path_id": "P2",
+      "path": "Freeze SG7D6 as authoritative single-state deployment artifact",
+      "allowed": true,
+      "purpose": "Preserve completed frozen deployment provenance."
+    },
+    {
+      "path_id": "P3",
+      "path": "Document multi-time deployment reproducibility limitation in Version 15 theory/validation record",
+      "allowed": true,
+      "purpose": "Make the scope boundary explicit and reproducible."
+    },
+    {
+      "path_id": "P4",
+      "path": "Continue PAD-Stream development beyond SG7E without modifying frozen Version 15 artifacts",
+      "allowed": true,
+      "purpose": "Allow future Version 16 / research branch work to address multi-time deployment explicitly."
+    },
+    {
+      "path_id": "P5",
+      "path": "Retroactively regenerate missing later-time states inside frozen V15",
+      "allowed": false,
+      "purpose": "Would break historical freeze and runtime-provenance constraints."
+    }
+  ],
+  "constraints": {
+    "training_performed": false,
+    "model_predict_executed": false,
+    "state_generated": false,
+    "interpolation_used": false,
+    "extrapolation_used": false,
+    "threshold_changed": false,
+    "precision_envelope_changed": false,
+    "runtime_search_broadened": false
+  },
+  "recommendation": "Freeze this scope decision into Version 15. Preserve SG7E as a historical multi-time reference/acceptance contract and preserve SG7D6/L2_independent_100 as authoritative frozen deployment artifacts. Do not claim a reproducible four-time deployment sequence. The next milestone should close SG7E1 with a final branch disposition / Version 15 freeze-readiness audit.",
+  "next_milestone": "V15-SG7E1R26I-R22 \u2014 SG7E1 Final Branch Disposition / Version 15 Freeze-Readiness Audit"
+}

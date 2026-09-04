@@ -1,0 +1,63 @@
+{
+  "milestone": "V16E-1B2AG-XPU",
+  "classification": "AUTHORIZED_COMP_XPU_005_PRODUCTION_RUNNER_CONTRACT",
+  "experiment_id": "V16E-BLREP-COMP-XPU-005",
+  "runner_must_bind": {
+    "dataset_sha256": "46f10f00ff6dc48f7b2b936bd7d602e6435f72f8410138c5aad0dd4add555f1c",
+    "B2S_source_sha256": "4bd70ab33dbf30ef4fd8a12037982724ea1bed6ef90684d326b3de71569e5bea",
+    "B2AC_source_sha256": "59f7ea7b0dc2e901f5a42649691c2dab5f4dfc5d399f953eaab5ba773040cd53",
+    "B2AE_source_sha256": "8bc7eb7f7a927d172bd7438fde719ee3f31c234acc2a167772dc1f6a556d68cc",
+    "B2AF_source_sha256": "ef48eeb3e6d20cde86c5ddd6ab1632590480c58aef74d94369a419750040c29d",
+    "B2AF_results_sha256": "232a27e9f7241915fc6b2febec976b382b28ed1aaeb63f28d5c0f3cce3b68390",
+    "B2AF_scratch_checkpoint_sha256": "2fe57da770711257f6087446543e5a2d230d36a2263a7c5648bcc5bf40475152",
+    "B2AF_summary_sha256": "182fd98351231b58847d391c3cda0554bb257e9753809acb20dc76be99230907",
+    "execution_contract_sha256": "6bf7794f493b95d9922573f24fdee30d1ff9f0caac5a0075d70a9abfa9dae83e",
+    "accumulation_contract_sha256": "fd07af361a788f6cbc2c93faad8a196223dfd9a5894e67e2475e96657a8a5425",
+    "resume_contract_sha256": "ba9f86b236e2276e507988d9c44f96b428c59aa1bedc02575f0c2b09c13bc449"
+  },
+  "fresh_start_gates": [
+    "no production completion artifact exists",
+    "no initializer checkpoint supplied",
+    "fresh seed=1337 model constructed",
+    "fresh model state is not equal to COMP-XPU-004 trained state",
+    "fresh model state is not loaded from B2AF scratch state"
+  ],
+  "resume_gates": [
+    "resume checkpoint experiment_id exact",
+    "resume checkpoint completed_epoch >= 1",
+    "resume checkpoint created by this authorized production runner",
+    "execution contract SHA exact",
+    "accumulation contract SHA exact",
+    "resume contract SHA exact",
+    "dataset SHA exact",
+    "source SHA map exact",
+    "derivative engine exact",
+    "chunk 16 exact",
+    "microbatch 128 exact",
+    "logical batch 8192 exact",
+    "seed 1337 exact"
+  ],
+  "training_fail_closed_on": [
+    "nonfinite loss",
+    "nonfinite accumulated gradient",
+    "nonfinite model parameter after optimizer step",
+    "XPU runtime error",
+    "atomic checkpoint write failure",
+    "authority SHA mismatch",
+    "resume mismatch",
+    "OOD requested",
+    "TOF requested"
+  ],
+  "completion_gates": [
+    "completed_epoch == 800",
+    "optimizer_steps_completed == 1600",
+    "final model parameters finite",
+    "development holdout metrics finite",
+    "checkpoint and artifact hashes written",
+    "OOD_used == False",
+    "TOF_used == False"
+  ],
+  "partial_run_may_be_marked_complete": false,
+  "preserve_last_valid_completed_epoch_checkpoint_on_failure": true,
+  "post_training_next": "Stage-2 scientific closure/comparison milestone before B3"
+}

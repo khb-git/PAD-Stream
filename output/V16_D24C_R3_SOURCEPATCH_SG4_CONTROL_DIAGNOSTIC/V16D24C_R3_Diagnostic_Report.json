@@ -1,0 +1,177 @@
+{
+  "milestone": "V16D-24C-R3",
+  "semantic_source_diffs": [
+    {
+      "line": 122,
+      "old": "PRODUCER_BHP_PSI = 2000.0",
+      "new": "PRODUCER_BHP_PSI = 1800.0"
+    },
+    {
+      "line": 132,
+      "old": "CO2_MASS_RATE_TONNES_DAY = 500.0",
+      "new": "CO2_MASS_RATE_TONNES_DAY = 350.0"
+    }
+  ],
+  "sg4_evidence": [
+    {
+      "line": 113,
+      "text": "CO2_MASS_RATE_TONNES_DAY = 500.0"
+    },
+    {
+      "line": 117,
+      "text": "    CO2_MASS_RATE_TONNES_DAY"
+    },
+    {
+      "line": 123,
+      "text": "PRODUCER_BHP_PSI = 2000.0"
+    },
+    {
+      "line": 124,
+      "text": "PRODUCER_BHP_PA = PRODUCER_BHP_PSI * PSI_TO_PA"
+    },
+    {
+      "line": 411,
+      "text": "def construct_expected_well_rates("
+    },
+    {
+      "line": 418,
+      "text": "    well_source = np.zeros("
+    },
+    {
+      "line": 433,
+      "text": "        well_source["
+    },
+    {
+      "line": 467,
+      "text": "                    - PRODUCER_BHP_PA"
+    },
+    {
+      "line": 472,
+      "text": "            well_source[k, j, i] -= q_prod"
+    },
+    {
+      "line": 491,
+      "text": "        well_source,"
+    },
+    {
+      "line": 505,
+      "text": "    well_source,"
+    },
+    {
+      "line": 523,
+      "text": "        - well_source"
+    },
+    {
+      "line": 535,
+      "text": "        well_source.ravel()"
+    },
+    {
+      "line": 547,
+      "text": "    global_well_source = float("
+    },
+    {
+      "line": 548,
+      "text": "        well_source.sum()"
+    },
+    {
+      "line": 553,
+      "text": "        - global_well_source"
+    },
+    {
+      "line": 565,
+      "text": "        np.abs(well_source) > 0.0"
+    },
+    {
+      "line": 657,
+      "text": "        f\"{global_well_source:.6e} m3/s\""
+    },
+    {
+      "line": 687,
+      "text": "        \"global_well_source_m3_s\":"
+    },
+    {
+      "line": 688,
+      "text": "            float(global_well_source),"
+    },
+    {
+      "line": 971,
+      "text": "    well_source,"
+    },
+    {
+      "line": 978,
+      "text": "        - well_source[k]"
+    },
+    {
+      "line": 1043,
+      "text": "    well_source,"
+    },
+    {
+      "line": 1067,
+      "text": "        OUTPUT_DIR / \"WELL_SOURCE_M3_S.npy\","
+    },
+    {
+      "line": 1068,
+      "text": "        well_source,"
+    },
+    {
+      "line": 1232,
+      "text": "        well_source,"
+    },
+    {
+      "line": 1234,
+      "text": "    ) = construct_expected_well_rates("
+    },
+    {
+      "line": 1270,
+      "text": "            well_source,"
+    },
+    {
+      "line": 1279,
+      "text": "        well_source,"
+    },
+    {
+      "line": 1298,
+      "text": "        well_source,"
+    },
+    {
+      "line": 1321,
+      "text": "    print(\"  WELL_SOURCE_M3_S.npy\")"
+    }
+  ],
+  "sg4_control_refs": [
+    {
+      "line": 113,
+      "text": "CO2_MASS_RATE_TONNES_DAY = 500.0"
+    },
+    {
+      "line": 117,
+      "text": "    CO2_MASS_RATE_TONNES_DAY"
+    },
+    {
+      "line": 123,
+      "text": "PRODUCER_BHP_PSI = 2000.0"
+    },
+    {
+      "line": 124,
+      "text": "PRODUCER_BHP_PA = PRODUCER_BHP_PSI * PSI_TO_PA"
+    },
+    {
+      "line": 467,
+      "text": "                    - PRODUCER_BHP_PA"
+    }
+  ],
+  "diagnosis": {
+    "R2_diff_gate": "false failure caused by newline-normalization mismatch in comparison",
+    "R2_conservation": "SG3 new-control pressure/assembly was compared to SG4 expected-well reconstruction still bound to frozen-control semantics; SG4 must be audited for exact control dependencies before any adapter is changed.",
+    "prohibition": "Do not relax conservation thresholds or batch 36 cases."
+  },
+  "gates": {
+    "R2_SHA_exact": true,
+    "SG3_SHA_exact": true,
+    "SG4_SHA_exact": true,
+    "semantic_diff_exactly_lines_122_132": true,
+    "only_authorized_assignments_changed": true,
+    "SG4_expected_well_function_found": true,
+    "conservation_failure_treated_as_cross_module_control_mismatch_not_physics_failure": true
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "milestone": "V15-SG7E1R26I-R19A",
+  "status": "HISTORICAL_SG7B16_RUNTIME_DETERMINISM_PROVENANCE_INCOMPLETE",
+  "diagnosis": "ONE_OR_MORE_HISTORICAL_RUNTIME_CONTROL_DIMENSIONS_ARE_NOT_PERSISTED_EXPLICITLY",
+  "historical_frozen100_identity_count": 12,
+  "authoritative_source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+  "authoritative_model": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B11\\V15SG7B_FRONT_AWARE_FROZEN_Model.keras",
+  "predict_semantics": [
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 2130,
+      "batch_size_expression": "BATCH_SIZE",
+      "predict_context": "        front_shell_high,\n    )\n\n    pred100 = model.predict(\n        deployment[\n            \"X100\"\n        ],\n        batch_size=BATCH_SIZE,\n        verbose=0,\n    )[\n        :,",
+      "verbose_zero": true
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 3845,
+      "batch_size_expression": "BATCH_SIZE",
+      "predict_context": "\n    frozen_anchor = {\n        split:\n            frozen_model.predict(\n                dataset[\n                    f\"X_{split}\"\n                ].astype(\n                    np.float32\n                ),\n                batch_size=BATCH_SIZE,\n                verbose=0,",
+      "verbose_zero": true
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 3864,
+      "batch_size_expression": "BATCH_SIZE",
+      "predict_context": "        ]\n    }\n\n    frozen100 = frozen_model.predict(\n        deployment[\n            \"X100\"\n        ],\n        batch_size=BATCH_SIZE,\n        verbose=0,\n    )[\n        :,",
+      "verbose_zero": true
+    }
+  ],
+  "keras_metadata": [
+    {
+      "archive": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B11\\V15SG7B_FRONT_AWARE_FROZEN_Model.keras",
+      "member": "metadata.json",
+      "keras_version": "3.15.1",
+      "date_saved": "2026-08-24@19:21:19",
+      "backend": "",
+      "metadata_excerpt": "{\"keras_version\": \"3.15.1\", \"date_saved\": \"2026-08-24@19:21:19\"}"
+    },
+    {
+      "archive": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B11\\V15SG7B_FRONT_AWARE_FROZEN_Model.keras",
+      "member": "config.json",
+      "keras_version": "",
+      "date_saved": "",
+      "backend": "",
+      "metadata_excerpt": "{\"module\": \"keras.src.models.functional\", \"class_name\": \"Functional\", \"config\": {\"name\": \"PAD_Stream_V15SG7B6_PIRNN\", \"trainable\": true, \"layers\": [{\"module\": \"keras.layers\", \"class_name\": \"InputLayer\", \"config\": {\"batch_shape\": [null, 201, 2], \"dtype\": \"float32\", \"sparse\": false, \"ragged\": false, \"name\": \"xi_tD_sequence\", \"optional\": false}, \"registered_name\": null, \"name\": \"xi_tD_sequence\", \"inbound_nodes\": []}, {\"module\": \"keras.layers\", \"class_name\": \"LSTM\", \"config\": {\"name\": \"lstm_1\", \"trainable\": true, \"dtype\": {\"module\": \"keras\", \"class_name\": \"DTypePolicy\", \"config\": {\"name\": \"float32\"}, \"registered_name\": null}, \"return_sequences\": true, \"return_state\": false, \"go_backwards\": false, \"stateful\": false, \"unroll\": false, \"zero_output_for_mask\": false, \"units\": 64, \"activation\": \"tanh\", \"recurrent_activation\": \"sigmoid\", \"use_bias\": true, \"kernel_initializer\": {\"module\": \"keras.initializers\", \"class_name\": \"GlorotUniform\", \"config\": {\"seed\": null, \"input_axes\": null, \"output_axes\": null}, \"registered_name\": null, \"shared_object_id\": 2001811906704}, \"recurrent_initializer\": {\"module\": \"keras.initializers\", \"class_name\": \"Orthogonal\", \"config\": {\"seed\": null, \"gain\": 1.0}, \"registered_name\": null, \"shared_object_id\": 2001839373712}, \"bias_initializer\": {\"module\": \"keras.initializers\", \"class_name\": \"Zeros\", \"config\": {}, \"registered_name\": null, \"shared_object_id\": 2001839415376}, \"unit_forget_bias\": true, \"kernel_regularizer\": null, \"recurrent_regularizer\": null, \"bias_regularizer\": null, \"activity_regularizer\": null, \"kernel_constraint\": null, \"recurrent_constraint\": null, \"bias_constraint\": null, \"dropout\": 0.0, \"recurrent_dropout\": 0.0, \"seed\": null}, \"registered_name\": null, \"build_config\": {\"input_shape\": [null, 201, 2]}, \"name\": \"lstm_1\", \"inbound_nodes\": [{\"args\": [{\"class_name\": \"__keras_tensor__\", \"config\": {\"shape\": [null, 201, 2], \"dtype\": \"float32\", \"keras_history\": [\"xi_tD_sequence\", 0, 0]}}], \"kwargs\": {\"training\": false, \"mask\": null}}]}, {\"module\": \"keras.layers\", \"class_name\": \"LSTM\", \"config\": {\"name\": \"lstm_2\", \"trainable\": true, \"dtype\": {\"module\": \"keras\", \"class_name\": \"DTypePolicy\", \"config\": {\"name\": \"float32\"}, \"registered_name\": null}, \"return_sequences\": true, \"return_state\": false, \"go_backwards\": false, \"stateful\": false, \"unroll\": false, \"zero_output_for_mask\": false, \"units\": 64, \"activation\": \"tanh\", \"recurrent_activation\": \"sigmoid\", \"use_bias\": true, \"kernel_initializer\": {\"module\": \"keras.initializers\", \"class_name\": \"GlorotUniform\", \"config\": {\"seed\": null, \"input_axes\": null, \"output_axes\": null}, \"registered_name\": null, \"shared_object_id\": 2001839776784}, \"recurrent_initializer\": {\"module\": \"keras.initializers\", \"class_name\": \"Orthogonal\", \"config\": {\"seed\": null, \"gain\": 1.0}, \"registered_name\": null, \"shared_object_id\": 2001839776400}, \"bias_initializer\": {\"module\": \"keras.initializers\", \"class_name\": \"Zeros\", \"config\": {}, \"registered_name\": null, \"shared_object_id\": 2001695101712}, \"unit_forget_bias\": true, \"kernel_regularizer\": null, \"recurrent_regularizer\": null, \"bias_regularizer\": null, \"activity_regularizer\": null, \"kernel_constraint\": null, \"recurrent_constraint\": null, \"bias_constraint\": null, \"dropout\": 0.0, \"recurrent_dropout\": 0.0, \"seed\": null}, \"registered_name\": null, \"build_config\": {\"input_shape\": [null, 201, 64]}, \"name\": \"lstm_2\", \"inbound_nodes\": [{\"args\": [{\"class_name\": \"__keras_tensor__\", \"config\": {\"shape\": [null, 201, 64], \"dtype\": \"float32\", \"keras_history\": [\"lstm_1\", 0, 0]}}], \"kwargs\": {\"training\": false, \"mask\": null}}]}, {\"module\": \"keras.layers\", \"class_name\": \"TimeDistributed\", \"config\": {\"name\": \"raw_saturation\", \"trainable\": true, \"dtype\": {\"module\": \"keras\", \"class_name\": \"DTypePolicy\", \"config\": {\"name\": \"float32\"}, \"registered_name\": null}, \"layer\": {\"module\": \"keras.layers\", \"class_name\": \"Dense\", \"config\": {\"name\": \"dense\", \"trainable\": true, \"dtype\": {\"module\": \"keras\", \"class_name\": \"DTypePolicy\", \"config\": {\"name\": \"float32\"}, \"registered_"
+    }
+  ],
+  "historical_runtime_metadata_evidence_count": 9,
+  "comparison": [
+    {
+      "field": "keras_version",
+      "historical_value": "3.15.1",
+      "current_value": "3.15.1",
+      "historical_resolved": true,
+      "same": true
+    },
+    {
+      "field": "tensorflow_version",
+      "historical_value": "",
+      "current_value": "2.21.0",
+      "historical_resolved": false,
+      "same": ""
+    },
+    {
+      "field": "oneDNN",
+      "historical_value": "",
+      "current_value": "",
+      "historical_resolved": false,
+      "same": ""
+    },
+    {
+      "field": "determinism",
+      "historical_value": "\"recommendation\": \"Runtime variable shapes are now available, but no array triplet closes the authoritative B4 support contract exactly. Do not calibrate support. Inspect the top compatibility candidates and identify the deterministic transformation between the runtime residual/support variables and the reported sums.\", | \"recommendation\": \"Runtime variable shapes are now available, but no array triplet closes the authoritative B4 support contract exactly. Do not calibrate support. Inspect the top compatibility candidates and identify the deterministic transformation between the runtime residual/support variables and the reported sums.\",",
+      "current_value": "",
+      "historical_resolved": true,
+      "same": ""
+    },
+    {
+      "field": "OMP_NUM_THREADS",
+      "historical_value": "",
+      "current_value": "",
+      "historical_resolved": false,
+      "same": ""
+    },
+    {
+      "field": "MKL_NUM_THREADS",
+      "historical_value": "",
+      "current_value": "",
+      "historical_resolved": false,
+      "same": ""
+    },
+    {
+      "field": "saved_model_date",
+      "historical_value": "2026-08-24@19:21:19",
+      "current_value": "",
+      "historical_resolved": true,
+      "same": ""
+    },
+    {
+      "field": "keras_backend",
+      "historical_value": "",
+      "current_value": "",
+      "historical_resolved": false,
+      "same": ""
+    }
+  ],
+  "runtime_resolution": {
+    "batch_semantics_resolved": true,
+    "keras_metadata_resolved": true,
+    "explicit_onednn_evidence": false,
+    "explicit_determinism_evidence": true,
+    "explicit_thread_evidence": false,
+    "full_runtime_resolved": false
+  },
+  "constraints": {
+    "training_performed": false,
+    "model_predict_executed": false,
+    "precision_envelope_relaxed": false,
+    "authority_reopened": false,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false
+  },
+  "recommendation": "Do not run an altered-environment replay yet. Audit only unresolved runtime dimensions from SG7B11/SG7B16 parent manifests, package-lock/requirements files, environment captures, and model archive metadata. Do not infer missing oneDNN/thread/determinism settings.",
+  "next_milestone": "V15-SG7E1R26I-R19B \u2014 Missing Historical Runtime Environment Component Audit"
+}

@@ -1,0 +1,33 @@
+{
+  "milestone": "V16E-1B2AG-XPU",
+  "classification": "B2AF_CERTIFIED_PRODUCTION_MECHANICS_INTERPRETATION",
+  "B2AF_execution_status": "CERTIFIED",
+  "certified_rehearsal": {
+    "logical_batch_profiles": 8192,
+    "microbatches": 64,
+    "optimizer_steps": 1,
+    "logical_batch_seconds": 503.66069559999596,
+    "profiles_per_second": 16.264918171232548,
+    "accumulated_gradient_l2_norm": 5.6587003431992615,
+    "logical_batch_mean_total_loss": 1.3266903683543205,
+    "logical_batch_mean_physics_loss": 0.001271868611638638,
+    "model_reload_exact": true,
+    "optimizer_reload_exact": true,
+    "RNG_reload_exact": true
+  },
+  "operational_interpretation": "The adopted chunk-16 corrected derivative engine, profile-weighted logical-batch accumulation, one-step Adam update, atomic checkpoint, and exact state restoration all executed successfully in production-sized scratch geometry.",
+  "diagnostic_projection": {
+    "rehearsal_profiles_per_second": 16.264918171232548,
+    "projected_second_logical_chunk_seconds": 204.6121575874984,
+    "projected_epoch_seconds": 708.2728531874943,
+    "projected_hours_per_epoch": 0.19674245921874842,
+    "projected_days_for_800_epochs": 6.558081973958281,
+    "semantics": "operational diagnostic only; not a runtime promise"
+  },
+  "scratch_checkpoint_role": "PROVENANCE_EVIDENCE_ONLY",
+  "scratch_checkpoint_allowed_as_production_initializer": false,
+  "scratch_checkpoint_allowed_as_production_resume": false,
+  "scientific_model_changed": false,
+  "authorization_decision": "AUTHORIZE_FRESH_COMP_XPU_005_PRODUCTION_RUN",
+  "B3_authorized": false
+}

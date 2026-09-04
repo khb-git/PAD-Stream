@@ -1,0 +1,15 @@
+{
+  "milestone": "V15-SG7E1R24",
+  "status": "L2_100D_DETERMINISTIC_REPLAY_VALIDATION_FAILED",
+  "diagnosis": "BOUND_100D_STATE_DOES_NOT_CLOSE_UNDER_CURRENT_DETERMINISTIC_REPLAY_CONTRACT",
+  "replay_validated": false,
+  "target_key": "L2_independent_100",
+  "target_sha256": "01bb967c07b262836f6c140dd519538db13d9ce5b3bc0f83d52a6164ddcfa950",
+  "best_variant": "V0_float64_base_plus_gamma_residual",
+  "best_Linf": 2.98361850781248e-08,
+  "precision_envelope": 1.1920928955078125e-07,
+  "candidate_changed": false,
+  "threshold_changed": false,
+  "recommendation": "Do not generate 250/500/1000-day states. Audit only the failed R24 replay gates, with emphasis on exact operation order, guard semantics, and float32 serialization. Do not recalibrate gamma, change the guard, alter model weights, or relax tolerance.",
+  "next_milestone": "V15-SG7E1R25 \u2014 Bound 100-Day Replay Failure / Operation-Order Audit"
+}

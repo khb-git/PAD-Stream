@@ -1,0 +1,18 @@
+{
+  "milestone": "V16D-20",
+  "status": "V16D_EXP_MC1_OOD_STRUCTURAL_FRONT_TIME_DIAGNOSTICS_FROZEN_FUTURE_EXPERIMENT_HYPOTHESIS_FORMULATION_AUTHORIZED",
+  "diagnostic_report_sha256": "29533522279f25b6fee5886d40cb62d54e264121ef4bd1acd4878507c2666bba",
+  "gates": {
+    "D19_SHA_exact": true,
+    "checkpoint_SHA_exact": true,
+    "exact_four_OOD_cases": true,
+    "nine_times_audited": true,
+    "front_region_predeclared": true,
+    "finite_diagnostics": true,
+    "no_retraining": true,
+    "no_model_selection": true,
+    "no_threshold_tuning": true,
+    "MC1_unchanged": true
+  },
+  "next_milestone": "V16D-21 \u2014 Post-OOD Scientific Interpretation and Next-Experiment (MC2 / Control-Space Expansion) Decision Contract"
+}

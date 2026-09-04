@@ -1,0 +1,41 @@
+{
+  "version": "15E-3",
+  "dependencies": {
+    "v14_source": {
+      "path": "PAD_Stream_CCUS_Physics_Development_v14_Complete_Validation.py",
+      "sha256": "45c3c8a26ff270df8d28dc6e67ed432a3de86255229f7046f5b0f3d1899d27f6"
+    },
+    "v14_frozen": {
+      "path": "PAD_Stream_Classical_Baseline_v14_FROZEN.zip",
+      "sha256": "48ca93446701269e5d2cac2fdbf469e07e8b05a67285e69ea7f05e026cdd79c0"
+    },
+    "c3_package": {
+      "path": "PAD_Stream_V15C3_Sequential_Path_Deployment_Package.zip",
+      "sha256": "3136c1489a75ca8f9ffbb2bde5a167c2f753fef731c57aa8df6140594e76c2f7"
+    },
+    "d2_package": {
+      "path": "PAD_Stream_V15D2_Physics_Informed_Conservative_Transport.zip",
+      "sha256": "1d57d284cff9d134e94752320393ee5d488f0d09b7c0551c01facab3f2067a21"
+    },
+    "e0_dataset": {
+      "path": "PAD_Stream_V15E0_Mapback_Graph_Dataset.npz",
+      "sha256": "532bb5b5a2d546a81f532670c5a7dc2d818cd91de0d189436c82121785239494"
+    },
+    "e0_operator": {
+      "path": "PAD_Stream_V15E0_Conservative_Mapback_Operator.py",
+      "sha256": "9d8a9f1112e1a33694011023193d7f5cf257608949a91b831380552b1254f972"
+    },
+    "e1_checkpoint": {
+      "path": "PAD_Stream_V15E1_Best_Model.pt",
+      "sha256": "6d5c682d430dc710e8f7f3c22b0387fcd6346859bba56ce5c8227bc81e16cd89"
+    },
+    "e2_trainer": {
+      "path": "PAD_Stream_V15E2_Train_Physics_Informed_Conservative_Graph_Mapback.py",
+      "sha256": "c871c1b70fb2bdc4a2e14cbf6430c06a298f0d27ac98b7dc7df1b1de374664aa"
+    },
+    "e2_checkpoint": {
+      "path": "PAD_Stream_V15E2_Best_Model.pt",
+      "sha256": "87f3580c15c42ed6dcea990c1450d08b585a75e0c1440a7dc0dce29386899605"
+    }
+  }
+}

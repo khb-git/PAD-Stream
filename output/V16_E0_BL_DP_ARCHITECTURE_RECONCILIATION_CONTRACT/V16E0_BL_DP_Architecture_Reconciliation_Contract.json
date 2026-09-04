@@ -1,0 +1,220 @@
+{
+  "milestone": "V16E-0",
+  "branch": "V16E_BL_DP_INTEGRATION",
+  "status_role": "Architecture reconciliation before legacy-model source inventory and before any BL/DP adapter implementation.",
+  "upstream_authority": {
+    "D38_source": {
+      "path": "PAD_Stream_V16D38_Master_ControlSpace_Branch_Freeze_and_Development_Path_Handoff.py",
+      "sha256": "e8172c8203a317827d558823d0347248cd7216af178a779d6ed7738c79363952"
+    },
+    "D38_freeze": {
+      "path": "output\\V16_D38_MASTER_CONTROLSPACE_BRANCH_FREEZE_AND_DEVELOPMENT_HANDOFF\\V16D38_Master_ControlSpace_Branch_Freeze.json",
+      "sha256": "3bbc0c6e6ec8caec10ee475e6cebad4ac7c8fca889e93bc394e62475d0ba9570"
+    },
+    "D38_handoff": {
+      "path": "output\\V16_D38_MASTER_CONTROLSPACE_BRANCH_FREEZE_AND_DEVELOPMENT_HANDOFF\\V16D38_PAD_Stream_Development_Path_Handoff.md",
+      "sha256": "b2b19438afe4e7f622e5f41145d959c68e4839dcd79d9f12c2934e1f330661e8"
+    },
+    "D38_summary": {
+      "path": "output\\V16_D38_MASTER_CONTROLSPACE_BRANCH_FREEZE_AND_DEVELOPMENT_HANDOFF\\PAD_Stream_V16D38_Summary.json",
+      "sha256": "ac7e81b243d407ff5746356da8fabb562781ce6291960e879c7b4f963b307a8a"
+    }
+  },
+  "PAD_Stream_authorities": {
+    "geology": "SGSim/full 3D geological property fields are the spatial heterogeneity representation. Reduced-order DP descriptors never replace the field.",
+    "pressure": "Finite-volume pressure remains the exact flow-state authority.",
+    "flux": "Darcy face fluxes remain conservative and physics-computed.",
+    "kinematics": "Exact 3-D Pollock geometry and total-flow TOF remain authoritative.",
+    "transport_acceptance": "A learned transport prediction is a proposal. Accepted saturation must satisfy the frozen physics residual/bounds/inventory rules.",
+    "map_back": "Conservative path-to-grid map-back remains the accepted 3-D state authority.",
+    "recurrence": "Sequential recurrence uses the accepted unique grid state/history, not an uncorrected path interpolation."
+  },
+  "BL_roles": {
+    "analytical_BL": "Physics teacher for fractional-flow/shock/front behavior where its assumptions apply.",
+    "finite_volume_BL_family": "Numerical teacher family: incompressible, compressible, capillary, and full compressible-capillary transport.",
+    "BL_PI_RNN_family": "Learned transport proposal family to be reproduced first against its original 1-D teachers, then transformed to total-flow TOF without changing constitutive physics.",
+    "V16D_EXP_CS1": "Frozen recurrent control-space Stage-4 evidence baseline. It is a comparison authority only; geology0029 cannot be reused as unseen test."
+  },
+  "DP_roles": {
+    "controlled_reduced_order_benchmark": "Dykstra-Parsons is the interpretable layered heterogeneity bridge between 1-D BL transport and fully spatial stochastic SGSim geology.",
+    "layer_allocator": "DP/layer physics allocates imposed total flow and local pore-volume injection clocks across layers.",
+    "aggregation_benchmark": "Layer breakthrough, recovery/storage, and producer response are aggregated with the physically appropriate flux/PV weighting.",
+    "conditioning_descriptors": "Layer k, h, pore volume, rate share, DP severity, and streamline-native F-Phi/Lorenz descriptors may condition/screen transport.",
+    "not_connectivity_authority": "DP does not replace 3-D pressure/streamline connectivity or SGSim fields."
+  },
+  "common_transport_interface": {
+    "path": "output\\V16_E0_BL_DP_ARCHITECTURE_RECONCILIATION_CONTRACT\\V16E0_Common_Transport_Interface.json",
+    "sha256": "12050e303e9076e34a5a66198e25719007f88bbe4254d3b565f9b8b54cbb147e"
+  },
+  "selector_policy": {
+    "candidate_roles": [
+      "numerical/analytical BL teacher branch",
+      "legacy BL PI-RNN proposal branch",
+      "frozen V16D EXP-CS1 recurrent proposal branch",
+      "Hybrid BL-DP proposal/conditioning branch",
+      "evidence-driven regime selector or hierarchy"
+    ],
+    "canonical_strategy_frozen": false,
+    "reason": "The canonical proposal/selector strategy must be evidence-driven after teacher reproduction and identical-state comparisons.",
+    "forbidden_at_E0": "Do not declare BL PI-RNN, EXP-CS1, or Hybrid DP the final proposal engine by assumption."
+  },
+  "physics_acceptance_policy": {
+    "learned_proposal_direct_acceptance": false,
+    "required": [
+      "transport/teacher residual or exact numerical comparison",
+      "physical saturation bounds",
+      "front/breakthrough diagnostics where applicable",
+      "path/local inventory closure",
+      "conservative map-back/global inventory closure",
+      "safe exact fallback"
+    ]
+  },
+  "heterogeneity_policy": {
+    "Dykstra_Parsons": "controlled layered reduced-order allocation/aggregation benchmark",
+    "SGSim": "full spatial stochastic heterogeneity/connectivity representation",
+    "3D_connectivity": "finite-volume pressure + Darcy flux + Pollock",
+    "forbidden_equivalence": "A scalar DP coefficient may not stand in for 3-D connectivity."
+  },
+  "legacy_inventory_required_before_coding": [
+    {
+      "id": "BL_ANALYTICAL_TEACHER",
+      "required": [
+        "source/path or documented authority",
+        "equations/assumptions",
+        "units",
+        "reference validation outputs"
+      ]
+    },
+    {
+      "id": "BL_FV_INCOMPRESSIBLE",
+      "required": [
+        "source SHA",
+        "inputs",
+        "outputs",
+        "units",
+        "validation status"
+      ]
+    },
+    {
+      "id": "BL_FV_COMPRESSIBLE",
+      "required": [
+        "source SHA",
+        "inputs",
+        "outputs",
+        "units",
+        "validation status"
+      ]
+    },
+    {
+      "id": "BL_FV_CAPILLARY",
+      "required": [
+        "source SHA",
+        "inputs",
+        "outputs",
+        "units",
+        "validation status"
+      ]
+    },
+    {
+      "id": "BL_FV_FULL_COMPRESSIBLE_CAPILLARY",
+      "required": [
+        "source SHA",
+        "inputs",
+        "outputs",
+        "units",
+        "validation status"
+      ]
+    },
+    {
+      "id": "BL_PI_RNN_ROUND_1",
+      "required": [
+        "source SHA",
+        "checkpoint SHA if applicable",
+        "features",
+        "target",
+        "physics loss",
+        "teacher",
+        "training domain",
+        "validation status"
+      ]
+    },
+    {
+      "id": "BL_PI_RNN_ROUND_2",
+      "required": [
+        "source SHA",
+        "checkpoint SHA if applicable",
+        "features",
+        "target",
+        "physics loss",
+        "teacher",
+        "training domain",
+        "validation status"
+      ]
+    },
+    {
+      "id": "BL_PI_RNN_ROUND_3",
+      "required": [
+        "source SHA",
+        "checkpoint SHA if applicable",
+        "features",
+        "target",
+        "physics loss",
+        "teacher",
+        "training domain",
+        "validation status"
+      ]
+    },
+    {
+      "id": "DP_8_LAYER_BENCHMARK",
+      "required": [
+        "source SHA",
+        "layer k/h/phi/PV definitions",
+        "rate-allocation formula",
+        "DP definition",
+        "aggregation formula",
+        "validated benchmark outputs"
+      ]
+    },
+    {
+      "id": "HYBRID_DP_PI_RNN_OR_LAYER_RNN",
+      "required": [
+        "source SHA",
+        "checkpoint SHA if applicable",
+        "layer features",
+        "outputs",
+        "physics/conservation loss",
+        "teacher",
+        "validation status"
+      ]
+    }
+  ],
+  "new_experiment_firewall": {
+    "EXP_CS1_is_frozen_baseline_only": true,
+    "geology0029_may_not_be_claimed_unseen_again": true,
+    "new_model_training_requires_new_protocol": true,
+    "new_locked_test_required_for_new_generalization_claim": true,
+    "old_OOD_results_may_be_used_descriptively": true
+  },
+  "exit_requirements": {
+    "common_interface_frozen": true,
+    "Pollock_authority_preserved": true,
+    "pressure_Darcy_authority_preserved": true,
+    "DP_role_reduced_order_not_spatial_replacement": true,
+    "learned_transport_is_proposal_until_physics_acceptance": true,
+    "conservative_map_back_preserved": true,
+    "accepted_grid_state_is_recurrent_state": true,
+    "canonical_selector_not_prematurely_chosen": true,
+    "legacy_exact_source_inventory_still_required": true,
+    "adapter_coding_authorized_now": false
+  },
+  "execution_in_V16E0": {
+    "TensorFlow_import": false,
+    "model_load": false,
+    "checkpoint_load": false,
+    "NPZ_load": false,
+    "OOD_reopen": false,
+    "training": false,
+    "adapter_coding": false,
+    "architecture_contract_only": true
+  }
+}

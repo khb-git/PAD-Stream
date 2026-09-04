@@ -1,0 +1,44 @@
+{
+  "milestone": "V16D-12DR",
+  "status": "V16D_VALIDATION_PARTITION_STAGE4_TRANSPORT_SUPERVISION_4_CASES_CERTIFIED_LOCKED_OOD_GENERATION_CONTRACT_AUTHORIZED",
+  "manifest_sha256": "14dfabec309c2d024ed970983a03c4f3610caff8f66a845ca5f5ba2318ff867c",
+  "cases": [
+    {
+      "case_id": "V16D_Foundation_Case_0010",
+      "status": "CERTIFIED_NEW",
+      "sha256": "373319c3c49edad6f45f4efb43467de8696198a601e74c67a460f68cf1e5b2ff",
+      "elapsed_seconds": 2577.9775729179382
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0025",
+      "status": "CERTIFIED_NEW",
+      "sha256": "228f5fa1567f2d24107b616abbf6ea5439fdd0a1bdbf9bcc67dd533fa67b8ef1",
+      "elapsed_seconds": 2661.3730478286743
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0008",
+      "status": "CERTIFIED_NEW",
+      "sha256": "41cabd24a81f7b8c805ff48be75b4d1baafaf182ae7e251918507bc5f7f32a53",
+      "elapsed_seconds": 2840.576160430908
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0012",
+      "status": "CERTIFIED_NEW",
+      "sha256": "aba6eabc553f8b83cd619ab12895e237c2c7bcf68e2b34ff3fa98217330f0fd8",
+      "elapsed_seconds": 2497.9172761440277
+    }
+  ],
+  "gates": {
+    "D12C_train_manifest_SHA_exact": true,
+    "D12C_train_status_bound": true,
+    "exact_4_validation": true,
+    "all_validation_certified": true,
+    "restartable_per_case": true,
+    "train_not_recomputed": true,
+    "locked_OOD_untouched": true,
+    "no_normalization_fit": true,
+    "no_model_selection": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-12E \u2014 Locked OOD TEST Transport Generation Final-Evaluation Isolation Contract"
+}

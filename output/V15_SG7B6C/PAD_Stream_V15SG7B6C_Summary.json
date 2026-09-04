@@ -1,0 +1,161 @@
+{
+  "milestone": "V15-SG7B-6C",
+  "description": "Conservative FV residual-component audit for the SG7B-6B PI-RNN",
+  "training_performed": false,
+  "source_model": "V15SG7B6B_Best_Model.keras",
+  "reference_targets": {
+    "SG7A_FV_relative_MAE": 0.0006323248,
+    "SG7B6B_previous_FV_relative_MAE": 0.040849,
+    "freeze_absolute_FV_target": 0.031616240000000004,
+    "freeze_ratio_target": 50.0
+  },
+  "authoritative_dt_multiplier": 1.0,
+  "global_component_differences": {
+    "temporal_MAE": 0.01149759422264766,
+    "advective_MAE": 0.01820586206037144,
+    "capillary_MAE": 0.008710669887953817,
+    "PI_RNN_absolute_residual_MAE": 0.010948448004369548,
+    "PI_RNN_relative_residual_MAE": 0.04050596201583986,
+    "SG7A_relative_residual_MAE": 0.023394234124480558
+  },
+  "dominant_component": {
+    "dominant_component": "ADVECTIVE",
+    "component_MAE": {
+      "TEMPORAL": 0.01149759422264766,
+      "ADVECTIVE": 0.01820586206037144,
+      "CAPILLARY": 0.008710669887953817
+    },
+    "relative_contribution_proxy": {
+      "TEMPORAL": 0.29930641064630925,
+      "ADVECTIVE": 0.4739366445267341,
+      "CAPILLARY": 0.22675694480092465
+    }
+  },
+  "regional": {
+    "injector": {
+      "temporal_difference_MAE": 0.004917278941427052,
+      "advective_difference_MAE": 0.031693698885737115,
+      "capillary_difference_MAE": 0.0325507862019208,
+      "pirnn_residual_MAE": 0.03912375889177286,
+      "pirnn_relative_residual_MAE": 0.19048049163791597
+    },
+    "front": {
+      "temporal_difference_MAE": 0.019749470556348868,
+      "advective_difference_MAE": 0.06430285205566137,
+      "capillary_difference_MAE": 0.053221667019403965,
+      "pirnn_residual_MAE": 0.06304884801849066,
+      "pirnn_relative_residual_MAE": 0.21712784537387614
+    },
+    "interior": {
+      "temporal_difference_MAE": 0.009594397209814313,
+      "advective_difference_MAE": 0.011223035349577077,
+      "capillary_difference_MAE": 0.001702706550429074,
+      "pirnn_residual_MAE": 0.00286240213635308,
+      "pirnn_relative_residual_MAE": 0.014218471790102603
+    },
+    "outlet": {
+      "temporal_difference_MAE": 0.04185021405177575,
+      "advective_difference_MAE": 0.06699813771344205,
+      "capillary_difference_MAE": 0.04953812930657715,
+      "pirnn_residual_MAE": 0.044680518989899574,
+      "pirnn_relative_residual_MAE": 0.11729521450278103
+    }
+  },
+  "time_bands": {
+    "early": {
+      "temporal_difference_MAE": 0.029211799125543888,
+      "advective_difference_MAE": 0.03935667627344232,
+      "capillary_difference_MAE": 0.01446955507681959,
+      "pirnn_relative_residual_MAE": 0.047139606825131374
+    },
+    "middle": {
+      "temporal_difference_MAE": 0.0020852530475668064,
+      "advective_difference_MAE": 0.004131552750326323,
+      "capillary_difference_MAE": 0.002560251315070618,
+      "pirnn_relative_residual_MAE": 0.03799567071995917
+    },
+    "late": {
+      "temporal_difference_MAE": 0.0031957304948322875,
+      "advective_difference_MAE": 0.01112935715734568,
+      "capillary_difference_MAE": 0.009102203271971246,
+      "pirnn_relative_residual_MAE": 0.03638260850242904
+    }
+  },
+  "normalization_audit": {
+    "lowest_1pct_activity": {
+      "fraction_of_points": 0.010033167495854063,
+      "scale_threshold": 0.001809438316996705,
+      "relative_residual_MAE": 0.043794470838177724,
+      "absolute_residual_MAE": 3.457534860489101e-05,
+      "fraction_of_total_relative_residual": 0.010847718198617443
+    },
+    "lowest_5pct_activity": {
+      "fraction_of_points": 0.05,
+      "scale_threshold": 0.002158053734682697,
+      "relative_residual_MAE": 0.027773933867137487,
+      "absolute_residual_MAE": 4.4454117444989726e-05,
+      "fraction_of_total_relative_residual": 0.03428376032184652
+    },
+    "lowest_10pct_activity": {
+      "fraction_of_points": 0.1,
+      "scale_threshold": 0.002596508385512194,
+      "relative_residual_MAE": 0.021263432042895856,
+      "absolute_residual_MAE": 3.968988500961485e-05,
+      "fraction_of_total_relative_residual": 0.052494573600253634
+    },
+    "lowest_25pct_activity": {
+      "fraction_of_points": 0.25,
+      "scale_threshold": 0.003742612168223279,
+      "relative_residual_MAE": 0.01632641070361747,
+      "absolute_residual_MAE": 4.0311976682371366e-05,
+      "fraction_of_total_relative_residual": 0.1007654792721193
+    }
+  },
+  "dt_sensitivity": [
+    {
+      "dt_multiplier": 0.5,
+      "pirnn_relative_FV_MAE": 0.040533373780557325,
+      "pirnn_absolute_FV_MAE": 0.010616327256605648,
+      "PI_RNN_to_SG7A_ratio": 64.10214146362333,
+      "temporal_component_difference_MAE": 0.011472449477292982,
+      "advective_component_difference_MAE": 0.01820586206037144,
+      "capillary_component_difference_MAE": 0.008710669887953817
+    },
+    {
+      "dt_multiplier": 1.0,
+      "pirnn_relative_FV_MAE": 0.04050596201583986,
+      "pirnn_absolute_FV_MAE": 0.010948448004369548,
+      "PI_RNN_to_SG7A_ratio": 64.05879069718577,
+      "temporal_component_difference_MAE": 0.01149759422264766,
+      "advective_component_difference_MAE": 0.01820586206037144,
+      "capillary_component_difference_MAE": 0.008710669887953817
+    },
+    {
+      "dt_multiplier": 2.0,
+      "pirnn_relative_FV_MAE": 0.042653220295219035,
+      "pirnn_absolute_FV_MAE": 0.013888558099041968,
+      "PI_RNN_to_SG7A_ratio": 67.45460607462974,
+      "temporal_component_difference_MAE": 0.01175740834150344,
+      "advective_component_difference_MAE": 0.01820586206037144,
+      "capillary_component_difference_MAE": 0.008710669887953817
+    },
+    {
+      "dt_multiplier": 4.0,
+      "pirnn_relative_FV_MAE": 0.0443422243416909,
+      "pirnn_absolute_FV_MAE": 0.01746979399516635,
+      "PI_RNN_to_SG7A_ratio": 70.12570808813904,
+      "temporal_component_difference_MAE": 0.012373890539517967,
+      "advective_component_difference_MAE": 0.01820586206037144,
+      "capillary_component_difference_MAE": 0.008710669887953817
+    }
+  ],
+  "diagnosis": {
+    "diagnosis": "ADVECTIVE_FLUX_LIMITATION",
+    "recommendation": "The dominant discrepancy is in conservative advective flux. The next refinement should directly emphasize face-flux consistency with SG7A.",
+    "dt_sensitive": false,
+    "low_activity_dominant": false,
+    "dominant_component": "ADVECTIVE"
+  },
+  "status": "AUDIT_COMPLETE",
+  "next_action": "The dominant discrepancy is in conservative advective flux. The next refinement should directly emphasize face-flux consistency with SG7A."
+}

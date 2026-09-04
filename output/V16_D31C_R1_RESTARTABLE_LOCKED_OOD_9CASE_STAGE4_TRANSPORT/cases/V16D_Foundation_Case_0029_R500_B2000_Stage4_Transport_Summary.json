@@ -1,0 +1,37 @@
+{
+  "case_id": "V16D_Foundation_Case_0029_R500_B2000",
+  "partition": "LOCKED_OOD_TEST",
+  "status": "CERTIFIED",
+  "metric_sha256": "241abf91a8827dd021164aa9b3eb8878779dbcb57ad027017c9f08ce9434df02",
+  "artifact_sha256": "ee706e4ea371ee1478275a7c9bbb161c229d8f90423d634597192f0251baff92",
+  "steps": 52215,
+  "elapsed_seconds": 2768.5500848293304,
+  "S_min": 0.20099999999999887,
+  "S_max": 0.799,
+  "adv_max": 1.1877943019347054e-17,
+  "cap_max": 5.329070518200751e-15,
+  "preclip_max": 0.0,
+  "temporal_negative_fraction": 0.0,
+  "spatial_positive_fraction": 0.0,
+  "gates": {
+    "finite": true,
+    "shape": true,
+    "bounds": true,
+    "injector": true,
+    "undershoot": true,
+    "adv_conservation": true,
+    "cap_residual": true,
+    "preclip": true,
+    "temporal": true,
+    "spatial": true
+  },
+  "ood_firewall": {
+    "no_training": true,
+    "no_tuning": true,
+    "no_OOD_normalization": true,
+    "no_selection": true,
+    "no_threshold_relaxation": true,
+    "no_deduplication": true,
+    "no_aggregate_OOD_target_statistics": true
+  }
+}

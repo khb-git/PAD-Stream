@@ -1,0 +1,27 @@
+{
+  "milestone": "V15-SG7B-6C-R",
+  "description": "Reconciliation of SG7A truth finite-volume residual operators",
+  "training_performed": false,
+  "prior_reported_values": {
+    "SG7B7_truth_FV_relative_MAE": 0.0006323248,
+    "SG7B6C_truth_FV_relative_MAE": 0.02339423
+  },
+  "dataset_alignment": {
+    "maximum_saturation_difference": 2.9802234569054065e-08,
+    "maximum_tD_difference": 0.0,
+    "maximum_xi_difference": 2.8610229518832853e-08
+  },
+  "operator_comparison": {
+    "generic_Godunov_search_FV_relative_MAE": 0.0006323247504615058,
+    "positive_velocity_upwind_FV_relative_MAE": 0.0006323247504615058,
+    "maximum_face_flux_difference": 0.0,
+    "mean_profile_maximum_face_flux_difference": 0.0
+  },
+  "canonical_operator": {
+    "name": "GODUNOV_SEARCH",
+    "SG7A_truth_FV_relative_MAE": 0.0006323247504615058
+  },
+  "validation_passed": true,
+  "status": "CANONICAL_OPERATOR_ESTABLISHED",
+  "next_milestone": "V15-SG7B-6D - targeted advective-flux refinement using the canonical operator"
+}

@@ -1,0 +1,23 @@
+{
+  "milestone": "V16A-R3",
+  "status": "V16A_FOUNDATION_EXTRACTION_REQUIRES_ADDITIONAL_PERSISTED_AUTHORITY_RECOVERY",
+  "diagnosis": "ONE_OR_MORE_REQUIRED_COMPONENTS_CANNOT_BE_RECONSTRUCTED_WITHOUT_REEXECUTING_FROZEN_V15_PHYSICS_OR_RUNTIME_STATE",
+  "recoverable_without_new_physics": [
+    "Kx",
+    "Ky",
+    "Kz",
+    "porosity"
+  ],
+  "blocked_components": [
+    "pressure",
+    "Qx",
+    "Qy",
+    "Qz",
+    "Vx",
+    "Vy",
+    "Vz",
+    "producer_id"
+  ],
+  "recommendation": "Do not rerun V15 physics yet. Recover exact persisted downstream copies or frozen serialized parents for the blocked components. Prioritize pressure, Qx/Qy/Qz, and producer_id; velocity can then be resolved from authoritative flux lineage if no exact persisted copy exists.",
+  "next_milestone": "V16A-R4 \u2014 Persisted Pressure / Flux / Producer Authority Recovery Audit"
+}

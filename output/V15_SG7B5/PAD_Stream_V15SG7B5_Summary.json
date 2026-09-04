@@ -1,0 +1,187 @@
+{
+  "milestone": "V15-SG7B-5",
+  "description": "Detailed diagnostic validation of SG7B-4 PI-RNN checkpoints against frozen SG7A truth",
+  "status": "DIAGNOSTIC_COMPLETE",
+  "no_retraining": true,
+  "architecture": {
+    "type": "plain stacked LSTM",
+    "hidden_size": 64,
+    "layers": 2,
+    "fourier_features": false,
+    "film": false,
+    "front_coordinate": false
+  },
+  "best_data_checkpoint": {
+    "L1": 0.016631033271551132,
+    "L2": 0.029911598190665245,
+    "Linf": 0.27293825149536133,
+    "minimum_prediction": 0.44047796726226807,
+    "maximum_prediction": 0.726394772529602,
+    "fv_RMS": 6.477466106414795,
+    "fv_relative_MAE": 0.2645454406738281,
+    "fv_relative_RMS": 0.38348156213760376,
+    "mass_MAE": 0.012650826014578342,
+    "mass_relative_MAE": 0.022875940427184105,
+    "mass_relative_max": 0.10715892910957336,
+    "inlet_MAE": 0.21513327956199646,
+    "outlet_MAE": 0.009362361393868923,
+    "regional_error": {
+      "injector": {
+        "L1": 0.05779750645160675,
+        "L2": 0.0939621850848198,
+        "Linf": 0.27293825149536133
+      },
+      "outlet": {
+        "L1": 0.009055683389306068,
+        "L2": 0.024469492956995964,
+        "Linf": 0.24059808254241943
+      },
+      "high_gradient": {
+        "L1": 0.04893910139799118,
+        "L2": 0.07416123896837234,
+        "Linf": 0.27293825149536133
+      },
+      "interior": {
+        "L1": 0.013154765591025352,
+        "L2": 0.01891232654452324,
+        "Linf": 0.12423664331436157
+      }
+    },
+    "regional_FV": {
+      "injector": {
+        "relative_MAE": 0.7965463995933533,
+        "relative_RMS": 0.8544383645057678
+      },
+      "outlet": {
+        "relative_MAE": 0.35441264510154724,
+        "relative_RMS": 0.45088323950767517
+      },
+      "high_gradient": {
+        "relative_MAE": 0.7416670322418213,
+        "relative_RMS": 0.8092401027679443
+      },
+      "interior": {
+        "relative_MAE": 0.2004670649766922,
+        "relative_RMS": 0.2848120629787445
+      }
+    },
+    "time_bands": {
+      "early": {
+        "L1": 0.0164044126868248,
+        "L2": 0.03509361296892166
+      },
+      "middle": {
+        "L1": 0.008913109079003334,
+        "L2": 0.019302893429994583
+      },
+      "late": {
+        "L1": 0.024575578048825264,
+        "L2": 0.03286255896091461
+      }
+    },
+    "maximum_error_location": {
+      "tD": 0.5429555219328593,
+      "xi": 0.0,
+      "truth": 0.7596633434295654,
+      "prediction": 0.4867250919342041
+    }
+  },
+  "final_checkpoint": {
+    "L1": 0.02241353876888752,
+    "L2": 0.035409510135650635,
+    "Linf": 0.3380764126777649,
+    "minimum_prediction": 0.3002854883670807,
+    "maximum_prediction": 0.7331578135490417,
+    "fv_RMS": 5.6147141456604,
+    "fv_relative_MAE": 0.16106057167053223,
+    "fv_relative_RMS": 0.27871453762054443,
+    "mass_MAE": 0.01840708963572979,
+    "mass_relative_MAE": 0.033014919608831406,
+    "mass_relative_max": 0.08319927006959915,
+    "inlet_MAE": 0.18010251224040985,
+    "outlet_MAE": 0.012242217548191547,
+    "regional_error": {
+      "injector": {
+        "L1": 0.06858190149068832,
+        "L2": 0.0990251749753952,
+        "Linf": 0.3380764126777649
+      },
+      "outlet": {
+        "L1": 0.011909153312444687,
+        "L2": 0.02709382399916649,
+        "Linf": 0.25234168767929077
+      },
+      "high_gradient": {
+        "L1": 0.059033457189798355,
+        "L2": 0.08128755539655685,
+        "Linf": 0.3380764126777649
+      },
+      "interior": {
+        "L1": 0.018579456955194473,
+        "L2": 0.02528243698179722,
+        "Linf": 0.3069247007369995
+      }
+    },
+    "regional_FV": {
+      "injector": {
+        "relative_MAE": 0.8291624188423157,
+        "relative_RMS": 0.8747943043708801
+      },
+      "outlet": {
+        "relative_MAE": 0.20696620643138885,
+        "relative_RMS": 0.330896258354187
+      },
+      "high_gradient": {
+        "relative_MAE": 0.598351001739502,
+        "relative_RMS": 0.6964346170425415
+      },
+      "interior": {
+        "relative_MAE": 0.10465947538614273,
+        "relative_RMS": 0.160713329911232
+      }
+    },
+    "time_bands": {
+      "early": {
+        "L1": 0.023324865847826004,
+        "L2": 0.04127941280603409
+      },
+      "middle": {
+        "L1": 0.010802057571709156,
+        "L2": 0.01870022714138031
+      },
+      "late": {
+        "L1": 0.033113691955804825,
+        "L2": 0.041325684636831284
+      }
+    },
+    "maximum_error_location": {
+      "tD": 0.2366729198168874,
+      "xi": 0.029999999329447746,
+      "truth": 0.6497772932052612,
+      "prediction": 0.31170088052749634
+    }
+  },
+  "training_history": {
+    "available": true,
+    "epochs_completed": 128,
+    "best_data_epoch": 68,
+    "best_data_MSE": 0.0011265653229202144,
+    "physics_weight_at_best_data": 0.029375000000000002,
+    "best_physics_epoch": 119,
+    "best_validation_FV_loss": 0.07057005073875189,
+    "data_MSE_at_best_physics": 0.0018817574600689113,
+    "best_mass_epoch": 24,
+    "best_validation_mass_loss": 4.397715247250744e-05
+  },
+  "diagnosis": {
+    "best_score": 7.266257498413324,
+    "final_score": 5.992634352296591,
+    "physics_improvement_factor": 1.6425214310985186,
+    "data_error_ratio_final_over_best": 1.3476937002602165,
+    "diagnosis": "LOSS_WEIGHTING_OR_TRAINING",
+    "recommendation": "Both checkpoints remain too physics-inconsistent. Retain the plain-LSTM architecture initially, but revise physics weighting, warm-up, and checkpoint selection before testing more complex architecture."
+  },
+  "reference_truth_FV_relative_MAE": 0.002002532,
+  "decision_rule": "Do not change architecture until checkpoint selection and physics-loss balance have been diagnosed from existing training.",
+  "next_action": "Both checkpoints remain too physics-inconsistent. Retain the plain-LSTM architecture initially, but revise physics weighting, warm-up, and checkpoint selection before testing more complex architecture."
+}

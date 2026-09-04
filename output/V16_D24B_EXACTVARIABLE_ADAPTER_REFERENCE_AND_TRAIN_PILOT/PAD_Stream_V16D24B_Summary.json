@@ -1,0 +1,20 @@
+{
+  "milestone": "V16D-24B",
+  "status": "V16D_REFERENCE_PILOT_EXECUTION_BLOCKED_D7_FLOW_RUNNER_BINDING_INCOMPLETE",
+  "report_sha256": "8ca0d0430aa63b7be94b371051989316cdec63fa47e83cef2789e97590540f70",
+  "gates": {
+    "D24A_SHA_exact": true,
+    "SG2_SHA_exact": true,
+    "SG3_SHA_exact": true,
+    "SG4_SHA_exact": true,
+    "geology_0026_exists": true,
+    "SG3_exact_two_control_assignments": true,
+    "SG3_reference_values_exact": true,
+    "reference_patch_byte_identical_to_frozen_SG3": true,
+    "pilot_patch_only_two_assignment_lines": true,
+    "pilot_exactly_two_source_lines_changed": true,
+    "unique_prior_D7_flow_runner_bound": false,
+    "derived_SG3_created_without_mutating_frozen_source": false
+  },
+  "next_milestone": "Inspect D24B runner candidates; bind the exact prior successful D7 flow execution script without reimplementing physics."
+}

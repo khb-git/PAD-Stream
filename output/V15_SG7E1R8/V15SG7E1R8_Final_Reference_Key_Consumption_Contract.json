@@ -1,0 +1,46 @@
+{
+  "milestone": "V15-SG7E1R8",
+  "status": "SG7E_FINAL_REFERENCE_KEY_CONSUMPTION_RESOLVED",
+  "diagnosis": "ALL_AUTHORITATIVE_GATES_CONSUME_SAME_PERSISTED_REFERENCE_KEY",
+  "plume_threshold": {
+    "value": 0.5,
+    "changed": false
+  },
+  "per_gate": [
+    {
+      "gate": "PRIMARY_VOLUME_GATE",
+      "decision": "UNIQUE_REFERENCE_KEY",
+      "selected_key": "SG7A_corrected",
+      "candidate_keys": "PI_RNN_corrected;PI_RNN_raw;SG7A_corrected;SG7A_raw"
+    },
+    {
+      "gate": "FOOTPRINT_IOU_GATE",
+      "decision": "UNIQUE_REFERENCE_KEY",
+      "selected_key": "SG7A_corrected",
+      "candidate_keys": "PI_RNN_corrected;PI_RNN_raw;SG7A_corrected;SG7A_raw"
+    },
+    {
+      "gate": "CENTROID_GATE_CELLS",
+      "decision": "UNIQUE_REFERENCE_KEY",
+      "selected_key": "SG7A_corrected",
+      "candidate_keys": "PI_RNN_corrected;PI_RNN_raw;SG7A_corrected;SG7A_raw"
+    },
+    {
+      "gate": "VERTICAL_EXTENT_GATE_LAYERS",
+      "decision": "UNIQUE_REFERENCE_KEY",
+      "selected_key": "SG7A_corrected",
+      "candidate_keys": "PI_RNN_corrected;PI_RNN_corrected_grid_saturation;PI_RNN_raw;PI_RNN_raw_grid_saturation;SG7A_corrected;SG7A_corrected_grid_saturation;SG7A_raw;SG7A_raw_grid_saturation"
+    }
+  ],
+  "selected_key": "SG7A_corrected",
+  "constraints": {
+    "candidate_performance_used": false,
+    "hit_frequency_used_as_authority": false,
+    "coverage_support_diagnostic_promoted_to_truth": false,
+    "threshold_changed": false,
+    "posthoc_alignment": false,
+    "deployment_correction_performed": false
+  },
+  "recommendation": "All four authoritative SG7E gate consumers resolve to the same historical reference key. Resolve the exact artifact instance and historical time slice before reconstructing and persisting the reference field.",
+  "next_milestone": "V15-SG7E1R9 \u2014 Exact Reference Artifact / Time-Slice Resolution Audit"
+}

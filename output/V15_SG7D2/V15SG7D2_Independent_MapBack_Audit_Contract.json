@@ -1,0 +1,23 @@
+{
+  "milestone": "V15-SG7D2",
+  "status": "INDEPENDENT_MAPBACK_AUDIT_COMPLETE_UNSUPPORTED_CELLS_REMAIN",
+  "diagnosis": "CONSERVATIVE_MAPBACK_VALIDATED_FILL_POLICY_REQUIRED_BEFORE_FULL_GRID_USE",
+  "SG7D1_numerical_sha256": "2cbfb945e1b0b555228776e49b31874f76188bf2e3626b504b682dbad1442721",
+  "frozen_L2_sha256": "63540f125b5124974ad3348103a9c7347aa9d6484240721d64f8a3efe66397b0",
+  "grid_shape": [
+    15,
+    50,
+    50
+  ],
+  "supported_cells": 29107,
+  "unsupported_cells": 8393,
+  "support_fraction": 0.7761866666666667,
+  "independent_support_closure_rel": 5.560842830789266e-15,
+  "independent_sat_measure_closure_rel": 3.363269579081416e-14,
+  "support_component_count": 1,
+  "largest_support_component_fraction": 1.0,
+  "unsupported_cell_policy": "none_applied",
+  "SG7E_threshold_changed": false,
+  "recommendation": "SG7D1 independently closes, the numerator/denominator relation is exact within numerical precision, bounds are preserved, and support topology is well-defined. Because unsupported cells remain, do not threshold or publish a full-grid plume yet. Design and audit an explicit unsupported-cell policy that preserves conservation and does not invent saturation.",
+  "next_milestone": "V15-SG7D3 \u2014 Unsupported-Cell Policy Design / Audit"
+}

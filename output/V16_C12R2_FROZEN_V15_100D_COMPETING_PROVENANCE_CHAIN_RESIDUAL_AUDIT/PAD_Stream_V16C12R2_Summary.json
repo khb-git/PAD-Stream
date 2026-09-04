@@ -1,0 +1,15 @@
+{
+  "milestone": "V16C-12R2",
+  "status": "V16C_FROZEN_V15_100D_COMPETING_PROVENANCE_REMAINS_UNRESOLVED",
+  "diagnosis": "COMPETING_HASHES_CANNOT_BE_SEPARATED_BY_EXPLICIT_FINAL_FREEZE_SG7D6_REFERENCE_AUTHORITY_ALONE",
+  "competing_hash_count": 3,
+  "eligible_hash_count": 3,
+  "strongest_hash_count": 0,
+  "reference_bound": false,
+  "reference_sha256": null,
+  "reference_path": null,
+  "Y_transport_generated": false,
+  "Y_generation_authorized": false,
+  "recommendation": "Do not choose a winner. Use the R2 authority and producer trace tables to audit the exact producer scripts/manifests for the remaining competing hashes. Preserve all candidates until one is explicitly superseded or bound.",
+  "next_milestone": "V16C-12R3 \u2014 Exact V15 Producer/Manifest Supersession Audit"
+}

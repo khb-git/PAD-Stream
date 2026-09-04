@@ -1,0 +1,39 @@
+{
+  "milestone": "V15-SG7C-R2",
+  "description": "Residual streamline-state bias by TOF / front-band audit",
+  "training_performed": false,
+  "model_changed": false,
+  "seed_density_changed": false,
+  "streamline_geometry_changed": false,
+  "mapback_changed": false,
+  "plume_threshold_changed": false,
+  "primary_time_days": 100.0,
+  "global_bias": {
+    "mean": 0.0009375747547039473,
+    "L1": 0.0035313551321113114,
+    "positive_fraction": 0.357868807726955,
+    "material_positive_fraction": 0.24896927832662383
+  },
+  "localization": {
+    "tail_material_share": 0.4899860375035657,
+    "threshold_approach_material_share": 0.007078835557824252,
+    "front_material_share": 0.05470145780473524,
+    "swept_material_share": 0.4482336691338748,
+    "tail_mean_bias": 0.010328912605362393,
+    "front_mean_bias": 0.00579905375605903,
+    "dominant_TOF_band": "500-1000d",
+    "dominant_TOF_share": 0.5724998873992223,
+    "dominant_xi_band": "0.8-1.0",
+    "dominant_xi_share": 0.30451003648265196
+  },
+  "diagnostic_flags": {
+    "tail_dominated": false,
+    "front_dominated": false,
+    "TOF_dominated": true,
+    "broad_bias": false
+  },
+  "diagnosis": "TOF_CONDITIONED_BIAS",
+  "recommendation": "Material positive state bias is concentrated in one terminal-TOF population. Design a TOF-conditioned correction/refinement while preserving the accepted front and canonical-physics contracts.",
+  "validation_passed": true,
+  "next_milestone": "V15-SG7B-12 \u2014 TOF-Conditioned Residual Bias Refinement Design"
+}

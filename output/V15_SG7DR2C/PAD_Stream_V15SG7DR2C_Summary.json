@@ -1,0 +1,27 @@
+{
+  "milestone": "V15-SG7D-R2C",
+  "description": "Within-cell streamline-state dispersion audit",
+  "training_performed": false,
+  "model_changed": false,
+  "seed_density_changed": false,
+  "mapback_changed": false,
+  "projection_changed": false,
+  "plume_threshold_changed": false,
+  "primary_time_days": 100.0,
+  "raw_operator_reproduction": {
+    "support_count_exact": true,
+    "PI_RNN_L1": 9.749781251314042e-17,
+    "PI_RNN_Linf": 1.5543122344752192e-15,
+    "SG7A_L1": 9.798699416328704e-17,
+    "SG7A_Linf": 1.3322676295501878e-15
+  },
+  "100_day_false_positive_dispersion": {
+    "cells": 3752,
+    "mixed_cell_share": 0.22388059701492538,
+    "systematic_mean_offset_share": 0.9989339019189766
+  },
+  "diagnosis": "SYSTEMATIC_STREAMLINE_STATE_OFFSET",
+  "recommendation": "Most false-positive cells show a material PI-RNN upward state shift relative to SG7A without dominant mixed subcell occupancy. Audit the remaining streamline-state bias by TOF/front band before changing the map-back operator.",
+  "validation_passed": true,
+  "next_milestone": "V15-SG7C-R2 \u2014 Residual Streamline-State Bias by TOF Audit"
+}

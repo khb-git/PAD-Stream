@@ -1,0 +1,37 @@
+{
+  "contract_name": "PAD-Stream V15-SG7D Frozen Full-Grid Deployment Contract",
+  "freeze_milestone": "V15-SG7D6",
+  "candidate": "P4_full_grid",
+  "status": "SG7D_FULL_GRID_CANDIDATE_FROZEN",
+  "authoritative_artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7D6\\frozen_full_grid\\V15SG7D6_P4_Frozen_Full_Grid_Deployment_Candidate.npz",
+  "authoritative_sha256": "5c881046bf7b6bcfb411cffc9a332b6e4705e03f91a3a2438ecb58c2eedf9df5",
+  "grid_shape": [
+    15,
+    50,
+    50
+  ],
+  "transport_source": "R1F3 frozen L2",
+  "mapback_source": "SG7D1 conservative segment-weighted map-back",
+  "unsupported_cell_policy": "P4_MASKED_BACKGROUND_PLUS_SUPPORT",
+  "background_saturation": 0.20072828233242035,
+  "support_provenance": {
+    "supported_cells": 29107,
+    "unsupported_cells": 8393,
+    "support_mask_preserved": true,
+    "support_denominator_preserved": true,
+    "support_numerator_preserved": true
+  },
+  "invariants": {
+    "frozen_L2_immutable": true,
+    "SG7D1_supported_cells_immutable": true,
+    "support_mask_immutable": true,
+    "support_denominator_immutable": true,
+    "support_numerator_immutable": true,
+    "background_completion_rule_immutable": true,
+    "interpolation_prohibited": true,
+    "nearest_neighbor_prohibited": true,
+    "SG7E_thresholds_immutable": true
+  },
+  "downstream_use": "Authoritative full-grid saturation input for SG7E deployment validation.",
+  "next_milestone": "V15-SG7E0 \u2014 Frozen Full-Grid Deployment Validation Contract / Baseline Audit"
+}

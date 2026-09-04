@@ -1,0 +1,55 @@
+{
+  "experiment_id": "V16E-BLREP-COMP-XPU-002",
+  "classification": "ONE_FACTOR_800_EPOCH_FRAMEWORK_EQUIVALENT_XPU_REPRODUCTION",
+  "source": {
+    "path": "pi_rnn_stage2_compressible_godunov.py",
+    "sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397"
+  },
+  "upstream_protocol": {
+    "V16E1B2B_summary_sha256": "5795e795c12cd0e512cc7d1f852009117a21bb99aea2c27fca1afd39eaabc29d",
+    "V16E1B2B_protocol_sha256": "f08c9cc8493b91cb8d33fc8e0b1b2d61a53d87b8b1ced4c37fd951c45950db62",
+    "prior_COMP_XPU_001_checkpoint_sha256": "f2239f21603e01a2c80abbb18a787c6b0861959683d99d31261c495ad087f3d0",
+    "prior_B2A_audit_sha256": "44906c63200587e0200b209720dd1e3950708e8089ee90fc8f1476b9a7b29045"
+  },
+  "framework": {
+    "name": "PyTorch XPU",
+    "version": "2.14.0+xpu",
+    "model_eval_used_for_inference": true,
+    "bitwise_TensorFlow_equivalence_claimed": false
+  },
+  "artifacts": {
+    "dataset": {
+      "path": "output\\V16_E1B_XPU_DATASETS\\V16E_STAGE2_COMPRESSIBLE_GODUNOV_DATASET_SEED1337.npz",
+      "sha256": "46f10f00ff6dc48f7b2b936bd7d602e6435f72f8410138c5aad0dd4add555f1c"
+    },
+    "port_protocol": {
+      "path": "output\\V16_E1B_XPU_NATIVE_BL_REPRODUCTIONS\\V16E-BLREP-COMP-XPU-002\\V16E_BLREP_COMP_XPU_002_Framework_Port_Protocol.json",
+      "sha256": "a11a6d527c2d566d690062a6e9d9a247bf9fabd994cc7bb72d5bbe995bfa8ca5"
+    },
+    "checkpoint": {
+      "path": "output\\V16_E1B_XPU_NATIVE_BL_REPRODUCTIONS\\V16E-BLREP-COMP-XPU-002\\V16E_BLREP_COMP_XPU_002.pt",
+      "sha256": "fca205b1981fbbdf15424af8ac8174df88ff7addf99e718548319a81f87d271b"
+    },
+    "config": {
+      "path": "output\\V16_E1B_XPU_NATIVE_BL_REPRODUCTIONS\\V16E-BLREP-COMP-XPU-002\\V16E_BLREP_COMP_XPU_002_Config.json",
+      "sha256": "b80fa49b048c2680f2130f1cee451f55e50b86ccf49b6df89d1472d1f99c1cee"
+    },
+    "history": {
+      "path": "output\\V16_E1B_XPU_NATIVE_BL_REPRODUCTIONS\\V16E-BLREP-COMP-XPU-002\\V16E_BLREP_COMP_XPU_002_Training_History.json",
+      "sha256": "9bf5d1cf6726d4a97867f7f7a953bb1a2a49e62f553f3696673832672f976f9b"
+    },
+    "metrics": {
+      "path": "output\\V16_E1B_XPU_NATIVE_BL_REPRODUCTIONS\\V16E-BLREP-COMP-XPU-002\\V16E_BLREP_COMP_XPU_002_Metrics.json",
+      "sha256": "f17fa9f5d6e5954119dc3e412fc01052b4cfb6173c157ac71ff1aa04b0a0385d"
+    }
+  },
+  "firewall": {
+    "OOD_claim": false,
+    "TOF": false,
+    "mixed_precision": false,
+    "PhysicsNeMo": false,
+    "numeric_threshold_invented": false,
+    "EXP_CS1_retraining": false,
+    "geology0029_reopening": false
+  }
+}

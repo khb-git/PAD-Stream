@@ -1,0 +1,50 @@
+{
+  "milestone": "V16A-R8R",
+  "status": "V16A_FOUNDATION_CASE_0001_FROZEN_COMPLETE",
+  "diagnosis": "ALL_REQUIRED_GEOLOGY_PRESSURE_FLOW_VELOCITY_AND_POLLOCK_REFERENCE_COMPONENTS_ARE_VALID_AND_PACKAGED",
+  "foundation_case": "0001",
+  "geology_metadata": {
+    "SG1_source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG1_SGSim_Geology_Integration.py",
+    "SG2_source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG2_Anisotropic_Transmissibility.py",
+    "perm_csv": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\SGSIM_50x50x15_PERM_MD.csv",
+    "kz_ratio": 0.1,
+    "porosity": 0.2
+  },
+  "kz_horizontal_ratio": 0.1,
+  "kz_ratio_authority": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_A_R8A_KZ_ANISOTROPY_BINDING_REPAIR\\V16AR8A_Kz_Anisotropy_Binding_Contract.json",
+  "required_components": [
+    "Kx",
+    "Ky",
+    "Kz",
+    "porosity",
+    "pressure",
+    "Qx",
+    "Qy",
+    "Qz",
+    "Vx",
+    "Vy",
+    "Vz",
+    "streamline_xyz",
+    "pollock_tof",
+    "streamline_weight"
+  ],
+  "producer_id": {
+    "required": false,
+    "included": false,
+    "status": "UNAVAILABLE_FROM_FROZEN_NONRETRACE_PROVENANCE"
+  },
+  "foundation_npz": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_A_R8R_FOUNDATION_CASE_0001_FREEZE\\PAD_Stream_V16A_Foundation_Case_0001\\V16A_Foundation_Case_0001.npz",
+  "foundation_npz_sha256": "4239e412ca6e2780f108c8eb1b0252e80a56be305bce48cc58e50d6140b86acc",
+  "constraints": {
+    "SG3_rerun": false,
+    "SG4_rerun": false,
+    "velocity_recompute": false,
+    "Pollock_retrace": false,
+    "FMM": false,
+    "model_predict": false,
+    "training": false,
+    "V15_mutation": false
+  },
+  "recommendation": "Close V16A. Preserve Foundation Case 0001 as the immutable post-V15 development base. Begin V16B with the exact Fast Marching physics baseline using this frozen foundation.",
+  "next_stage": "V16B \u2014 Exact Fast Marching Physics Baseline"
+}

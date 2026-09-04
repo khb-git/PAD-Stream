@@ -1,0 +1,51 @@
+{
+  "milestone": "V15-SG7E1R26I-R17",
+  "status": "SG7B16_FROZEN100_CLOSURE_FAILURE_NOT_YET_EXPLAINED_BY_SMALL_ULP_DRIFT",
+  "diagnosis": "ELEMENTWISE_OR_ULP_DISTRIBUTION_EXCEEDS_SMALL_RUNTIME_REPRODUCIBILITY_CLASS",
+  "array_identity": {
+    "creator_sha256": "5e4ddeeef51618002063e459dc69ac1499d4a7517330bfa83587eed864d138df",
+    "frozen_sha256": "a08c7320a63ace580456191f408a29afde65e0ad3f078846265243e53cd10297",
+    "shape": [
+      2662,
+      201
+    ],
+    "dtype": "float32"
+  },
+  "difference": {
+    "total_values": 535062,
+    "exact_equal_values": 525710,
+    "nonzero_values": 9352,
+    "fraction_nonzero": 0.017478348303561084,
+    "mean_abs_difference": 8.730511646611611e-10,
+    "rms_difference": 7.345332306143134e-09,
+    "max_abs_difference": 2.682209014892578e-07,
+    "count_above_R16_envelope": 90,
+    "fraction_above_R16_envelope": 0.00016820480617199502
+  },
+  "ulp": {
+    "max": 13,
+    "mean": 0.027600539750533584,
+    "p99": 1.0,
+    "p999": 3.0
+  },
+  "classification": {
+    "small_ulp_class": false,
+    "sparse_envelope_exceedance": true,
+    "tiny_global_error": true,
+    "precision_equivalence_supported": false
+  },
+  "precision_envelope": 1.1920928955078125e-07,
+  "precision_envelope_changed": false,
+  "constraints": {
+    "training_performed": false,
+    "model_predict_executed": false,
+    "model_parameters_changed": false,
+    "threshold_changed": false,
+    "precision_envelope_relaxed": false,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false
+  },
+  "recommendation": "Do not relax tolerance and do not generate later-time states. Audit only the locations and source-level serialization/runtime differences identified by R17.",
+  "next_milestone": "V15-SG7E1R26I-R18 \u2014 Historical SG7B16 Runtime / Serialization Difference Audit"
+}

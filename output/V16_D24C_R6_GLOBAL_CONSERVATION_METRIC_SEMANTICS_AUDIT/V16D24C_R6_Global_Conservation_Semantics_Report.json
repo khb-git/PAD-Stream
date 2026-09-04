@@ -1,0 +1,171 @@
+{
+  "milestone": "V16D-24C-R6",
+  "accounting": {
+    "sum_divergence_m3_s": -5.963111948670274e-19,
+    "sum_well_source_m3_s": 1.2297996822285828e-14,
+    "sum_residual_m3_s": -1.2297942659707777e-14,
+    "gross_well_source_m3_s": 0.011574074074061774,
+    "injection_m3_s": 0.005787037037037037,
+    "production_m3_s": 0.005787037037024738,
+    "local_relative_L2": 3.1833880066490033e-12,
+    "global_gross_scaled": 1.0625422457998811e-12,
+    "global_throughput_scaled": 2.125084491597504e-12
+  },
+  "diagnosis": "R5 divided the global residual by abs(net well_source). For a balanced no-flow system net source is physically ~0, making that denominator ill-conditioned. This can report O(1) despite machine-small absolute residual. Gross/throughput scaling is the meaningful dimensionless global check.",
+  "frozen_SG4_evidence": [
+    {
+      "line": 21,
+      "text": "# 8. Validate local and global conservation."
+    },
+    {
+      "line": 497,
+      "text": "# CONSERVATION VALIDATION"
+    },
+    {
+      "line": 500,
+      "text": "def validate_conservation("
+    },
+    {
+      "line": 505,
+      "text": "    well_source,"
+    },
+    {
+      "line": 513,
+      "text": "    # For steady conservation:"
+    },
+    {
+      "line": 523,
+      "text": "        - well_source"
+    },
+    {
+      "line": 535,
+      "text": "        well_source.ravel()"
+    },
+    {
+      "line": 543,
+      "text": "    global_divergence = float("
+    },
+    {
+      "line": 544,
+      "text": "        div.sum()"
+    },
+    {
+      "line": 547,
+      "text": "    global_well_source = float("
+    },
+    {
+      "line": 548,
+      "text": "        well_source.sum()"
+    },
+    {
+      "line": 551,
+      "text": "    global_mismatch = ("
+    },
+    {
+      "line": 552,
+      "text": "        global_divergence"
+    },
+    {
+      "line": 553,
+      "text": "        - global_well_source"
+    },
+    {
+      "line": 558,
+      "text": "    global_relative_mismatch = ("
+    },
+    {
+      "line": 559,
+      "text": "        abs(global_mismatch)"
+    },
+    {
+      "line": 565,
+      "text": "        np.abs(well_source) > 0.0"
+    },
+    {
+      "line": 579,
+      "text": "    print(\"V15-SG4 CONSERVATION VALIDATION\")"
+    },
+    {
+      "line": 607,
+      "text": "            \"Local conservation relative L2 error < 1e-8\","
+    },
+    {
+      "line": 611,
+      "text": "            \"Global conservation mismatch < 1e-8 injection rate\","
+    },
+    {
+      "line": 612,
+      "text": "            global_relative_mismatch < 1.0e-8,"
+    },
+    {
+      "line": 661,
+      "text": "        f\"Global relative mismatch   : \""
+    },
+    {
+      "line": 662,
+      "text": "        f\"{global_relative_mismatch:.6e}\""
+    },
+    {
+      "line": 667,
+      "text": "            \"V15-SG4 conservation validation failed.\""
+    },
+    {
+      "line": 690,
+      "text": "        \"global_relative_mismatch\":"
+    },
+    {
+      "line": 691,
+      "text": "            float(global_relative_mismatch),"
+    },
+    {
+      "line": 1012,
+      "text": "        \"Conservation residual (m\u00b3/day)\""
+    },
+    {
+      "line": 1017,
+      "text": "        \"Cell Conservation Residual - Layer 8\""
+    },
+    {
+      "line": 1027,
+      "text": "        / \"V15SG4_ConservationResidual_Layer08.png\","
+    },
+    {
+      "line": 1090,
+      "text": "    conservation,"
+    },
+    {
+      "line": 1135,
+      "text": "        \"conservation\":"
+    },
+    {
+      "line": 1136,
+      "text": "            conservation,"
+    },
+    {
+      "line": 1264,
+      "text": "    conservation = ("
+    },
+    {
+      "line": 1265,
+      "text": "        validate_conservation("
+    },
+    {
+      "line": 1306,
+      "text": "        conservation,"
+    },
+    {
+      "line": 1327,
+      "text": "    print(\"  V15SG4_ConservationResidual_Layer08.png\")"
+    }
+  ],
+  "gates": {
+    "R5_SHA_exact": true,
+    "SG4_SHA_exact": true,
+    "R5_artifact_exists": true,
+    "R5_local_conservation_passed": true,
+    "net_well_source_is_near_zero_relative_to_gross": true,
+    "global_residual_gross_scaled_le_1e_9": true,
+    "global_residual_throughput_scaled_le_1e_9": true,
+    "R5_global_failure_identified_as_denominator_pathology": true
+  }
+}

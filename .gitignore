@@ -1,0 +1,72 @@
+# PAD-Stream local/runtime exclusions
+# Python / IDE
+__pycache__/
+*.py[cod]
+.idea/
+.vscode/
+
+# Local virtual environments
+.venv/
+.venv_*/
+venv/
+env/
+
+# Secrets / credentials
+.env
+.env.*
+*.pem
+*.key
+credentials*.json
+secrets*.json
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Large training/runtime binaries: persist in Google Drive, not ordinary Git
+output/**/*.pt
+output/**/*.pth
+output/**/*.npz
+output/**/*.npy
+output/**/recovery/
+*.ckpt
+
+# Temporary / logs
+*.tmp
+*.log
+
+# Do NOT ignore .ipynb: Colab launch notebooks are version-controlled.
+# ============================================================
+# PAD-Stream generated output policy
+# Git keeps lightweight provenance; Drive keeps heavy artifacts
+# ============================================================
+
+# Ignore everything generated under output by default
+output/**
+
+# Allow Git to traverse output subdirectories
+!output/**/
+
+# Preserve lightweight provenance/documentation
+!output/**/*.json
+!output/**/*.md
+!output/**/*.txt
+
+# Never version generated compute/model/data artifacts
+output/**/*.csv
+output/**/*.pkl
+output/**/*.png
+output/**/*.jpg
+output/**/*.jpeg
+output/**/*.keras
+output/**/*.h5
+output/**/*.zip
+output/**/*.backup
+output/**/*.pre_D10C_backup
+output/**/*.pre_D29R1_backup
+output/**/*.lock
+
+
+# Runtime recovery state must never be version-controlled
+output/**/recovery/**
+

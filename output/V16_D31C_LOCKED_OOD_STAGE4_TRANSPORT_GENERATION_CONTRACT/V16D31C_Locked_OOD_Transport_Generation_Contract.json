@@ -1,0 +1,77 @@
+{
+  "milestone": "V16D-31C",
+  "status": "V16D_LOCKED_OOD_9CASE_STAGE4_TRANSPORT_GENERATION_CONTRACT_FROZEN_RESTARTABLE_SEALED_OOD_PHYSICS_GENERATION_AUTHORIZED",
+  "contract": {
+    "version": "V16D_LOCKED_OOD_TRANSPORT_GENERATION_CONTRACT_1.0",
+    "partition": "LOCKED_OOD_TEST",
+    "geology": "0029",
+    "cases": 9,
+    "rates_tpd": [
+      350,
+      500,
+      650
+    ],
+    "producer_bhp_psi": [
+      1800,
+      2000,
+      2200
+    ],
+    "target_days": [
+      30,
+      60,
+      100,
+      150,
+      250,
+      365,
+      500,
+      750,
+      1000
+    ],
+    "Y_shape_each": [
+      9,
+      1078,
+      201
+    ],
+    "physics": "exact C17 + D28-R1 M_face + Pollock",
+    "restartability": "case-local SHA certification",
+    "sealing": "generation reports certification/hashes only; no target statistics or development use",
+    "future_opening": "requires separately frozen one-touch final OOD evaluation contract",
+    "forbidden": [
+      "training",
+      "tuning",
+      "OOD normalization",
+      "selection",
+      "threshold changes",
+      "deduplication"
+    ]
+  },
+  "gates": {
+    "D31A_SHA_exact": true,
+    "D31BR1_SHA_exact": true,
+    "D31BR1_manifest_SHA_exact": true,
+    "C17_SHA_exact": true,
+    "D28_36_metrics": true,
+    "validation_9_certified": true,
+    "OOD_9": true,
+    "geology0029_only": true,
+    "TRAIN_unchanged": true,
+    "VALIDATION_unchanged": true,
+    "same_9_times": true,
+    "same_shape": true,
+    "same_physics": true,
+    "Pollock_primary": true,
+    "Mface_primary": true,
+    "theta_adapter_only": true,
+    "restartable": true,
+    "no_dedup": true,
+    "no_training": true,
+    "no_tuning": true,
+    "no_OOD_normalization": true,
+    "no_selection": true,
+    "no_threshold_relaxation": true,
+    "no_OOD_statistics_during_generation": true,
+    "sealed_after_generation": true,
+    "contract_only_no_transport": true
+  },
+  "next_milestone": "V16D-31C-R1 \u2014 Restartable sealed geology0029 nine-case Stage-4 transport generation"
+}

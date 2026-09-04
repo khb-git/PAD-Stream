@@ -1,0 +1,1408 @@
+{
+  "milestone": "V16D-10A",
+  "status": "V16D_V16B_FMM_ADV_EXACT_EXECUTION_PATH_BOUND_CASE0002_CONTROLLED_PILOT_AUTHORIZED",
+  "ADV_adapter_mode": "CONTROLLED_MAIN_EXECUTION_CAPTURE",
+  "B7_reads_or_mentions_B6": true,
+  "sources": {
+    "FMM": {
+      "path": "PAD_Stream_V16B2_Exact_3D_Fast_Marching_Arrival_Time_Baseline.py",
+      "sha256": "0b26e3cdbc41276c53f4778e7eddcddd0cc8ef081ffb495b71df548152e8f049",
+      "functions": {
+        "save_csv": {
+          "line": 97,
+          "end": 113,
+          "args": [
+            "path",
+            "rows"
+          ]
+        },
+        "save_json": {
+          "line": 116,
+          "end": 117,
+          "args": [
+            "path",
+            "obj"
+          ]
+        },
+        "load_json": {
+          "line": 120,
+          "end": 121,
+          "args": [
+            "path"
+          ]
+        },
+        "sha256_file": {
+          "line": 124,
+          "end": 131,
+          "args": [
+            "path"
+          ]
+        },
+        "sha256_array": {
+          "line": 134,
+          "end": 142,
+          "args": [
+            "a"
+          ]
+        },
+        "load_inputs": {
+          "line": 145,
+          "end": 178,
+          "args": []
+        },
+        "source_constants": {
+          "line": 181,
+          "end": 215,
+          "args": [
+            "path"
+          ]
+        },
+        "bind_grid_spacing": {
+          "line": 218,
+          "end": 306,
+          "args": []
+        },
+        "divergence_from_faces": {
+          "line": 309,
+          "end": 339,
+          "args": [
+            "Qx",
+            "Qy",
+            "Qz"
+          ]
+        },
+        "divergence_from_faces_consistent": {
+          "line": 342,
+          "end": 365,
+          "args": [
+            "Qx",
+            "Qy",
+            "Qz"
+          ]
+        },
+        "bind_injector_sources": {
+          "line": 368,
+          "end": 451,
+          "args": [
+            "Qx",
+            "Qy",
+            "Qz"
+          ]
+        },
+        "neighbors6": {
+          "line": 454,
+          "end": 473,
+          "args": [
+            "k",
+            "j",
+            "i",
+            "shape"
+          ]
+        },
+        "accepted_axis_min": {
+          "line": 476,
+          "end": 504,
+          "args": [
+            "T",
+            "state",
+            "k",
+            "j",
+            "i",
+            "axis"
+          ]
+        },
+        "solve_quadratic_terms": {
+          "line": 507,
+          "end": 536,
+          "args": [
+            "terms",
+            "slowness"
+          ]
+        },
+        "local_eikonal_update": {
+          "line": 539,
+          "end": 602,
+          "args": [
+            "T",
+            "state",
+            "speed",
+            "k",
+            "j",
+            "i",
+            "dx",
+            "dy",
+            "dz"
+          ]
+        },
+        "fast_marching_3d": {
+          "line": 605,
+          "end": 701,
+          "args": [
+            "speed",
+            "source_mask",
+            "dx",
+            "dy",
+            "dz"
+          ]
+        },
+        "eikonal_residual": {
+          "line": 704,
+          "end": 732,
+          "args": [
+            "T",
+            "speed",
+            "dx",
+            "dy",
+            "dz",
+            "source_mask"
+          ]
+        },
+        "main": {
+          "line": 735,
+          "end": 1334,
+          "args": []
+        },
+        "xy_unique_count": {
+          "line": 403,
+          "end": 404,
+          "args": [
+            "indices"
+          ]
+        }
+      },
+      "relevant_lines": [
+        {
+          "line": 36,
+          "text": "#       div(q) = qx_e - qx_w + qy_n - qy_s + qz_t - qz_b"
+        },
+        {
+          "line": 38,
+          "text": "# Positive-divergence well cells are the source/injector completion cells."
+        },
+        {
+          "line": 47,
+          "text": "#   - recompute velocity physics,"
+        },
+        {
+          "line": 77,
+          "text": "SOURCE_CSV = OUT / \"V16B2_Injector_Source_Set.csv\""
+        },
+        {
+          "line": 97,
+          "text": "def save_csv(path: Path, rows):"
+        },
+        {
+          "line": 116,
+          "text": "def save_json(path: Path, obj):"
+        },
+        {
+          "line": 145,
+          "text": "def load_inputs():"
+        },
+        {
+          "line": 181,
+          "text": "def source_constants(path: Path):"
+        },
+        {
+          "line": 220,
+          "text": "Recover dx, dy, dz from frozen SG1/SG2 source constants."
+        },
+        {
+          "line": 227,
+          "text": "The code does not simply assume these values; it requires source constants."
+        },
+        {
+          "line": 229,
+          "text": "source_candidates = ("
+        },
+        {
+          "line": 236,
+          "text": "for p in source_candidates:"
+        },
+        {
+          "line": 238,
+          "text": "constants = source_constants(p)"
+        },
+        {
+          "line": 265,
+          "text": "\"source\": str(p),"
+        },
+        {
+          "line": 266,
+          "text": "\"source_sha256\": sha256_file(p),"
+        },
+        {
+          "line": 278,
+          "text": "f\"Could not source-authentically bind {axis}.\""
+        },
+        {
+          "line": 299,
+          "text": "f\"Conflicting source-authentic {axis} spacings: \""
+        },
+        {
+          "line": 309,
+          "text": "def divergence_from_faces(Qx, Qy, Qz):"
+        },
+        {
+          "line": 313,
+          "text": "Positive divergence => source / injector."
+        },
+        {
+          "line": 316,
+          "text": "nz, ny, nx_minus_1 = Qx.shape"
+        },
+        {
+          "line": 322,
+          "text": "div[:, :, :-1] += Qx"
+        },
+        {
+          "line": 323,
+          "text": "div[:, :, 1:] -= Qx"
+        },
+        {
+          "line": 330,
+          "text": "# Qy positive points +y:"
+        },
+        {
+          "line": 332,
+          "text": "div[:, :-1, :] += Qy"
+        },
+        {
+          "line": 333,
+          "text": "div[:, 1:, :] -= Qy"
+        },
+        {
+          "line": 336,
+          "text": "div[:-1, :, :] += Qz"
+        },
+        {
+          "line": 337,
+          "text": "div[1:, :, :] -= Qz"
+        },
+        {
+          "line": 342,
+          "text": "def divergence_from_faces_consistent(Qx, Qy, Qz):"
+        },
+        {
+          "line": 347,
+          "text": "nz = Qx.shape[0]"
+        },
+        {
+          "line": 348,
+          "text": "ny = Qy.shape[1] + 1"
+        },
+        {
+          "line": 349,
+          "text": "nx = Qx.shape[2] + 1"
+        },
+        {
+          "line": 354,
+          "text": "div[:, :, :-1] += Qx"
+        },
+        {
+          "line": 355,
+          "text": "div[:, :, 1:] -= Qx"
+        },
+        {
+          "line": 358,
+          "text": "div[:, :-1, :] += Qy"
+        },
+        {
+          "line": 359,
+          "text": "div[:, 1:, :] -= Qy"
+        },
+        {
+          "line": 362,
+          "text": "div[:-1, :, :] += Qz"
+        },
+        {
+          "line": 363,
+          "text": "div[1:, :, :] -= Qz"
+        },
+        {
+          "line": 368,
+          "text": "def bind_injector_sources(Qx, Qy, Qz):"
+        },
+        {
+          "line": 373,
+          "text": "roundoff, source cells are selected from one sign class after determining"
+        },
+        {
+          "line": 376,
+          "text": "Selection uses topology/count/pressure-independent source semantics, not"
+        },
+        {
+          "line": 379,
+          "text": "div = divergence_from_faces_consistent(Qx, Qy, Qz)"
+        },
+        {
+          "line": 384,
+          "text": "raise RuntimeError(\"Flux divergence has no non-zero source/sink cells.\")"
+        },
+        {
+          "line": 396,
+          "text": "f\"Could not identify both source and sink sign classes. \""
+        },
+        {
+          "line": 410,
+          "text": "source_indices = pos"
+        },
+        {
+          "line": 411,
+          "text": "source_sign = \"positive\""
+        },
+        {
+          "line": 413,
+          "text": "source_indices = neg"
+        },
+        {
+          "line": 414,
+          "text": "source_sign = \"negative\""
+        },
+        {
+          "line": 418,
+          "text": "source_indices = pos"
+        },
+        {
+          "line": 419,
+          "text": "source_sign = \"positive\""
+        },
+        {
+          "line": 421,
+          "text": "source_indices = neg"
+        },
+        {
+          "line": 422,
+          "text": "source_sign = \"negative\""
+        },
+        {
+          "line": 425,
+          "text": "\"Injector source sign remains ambiguous from frozen flux divergence.\""
+        },
+        {
+          "line": 429,
+          "text": "source_xy = sorted("
+        },
+        {
+          "line": 430,
+          "text": "{(int(j), int(i)) for _, j, i in source_indices}"
+        },
+        {
+          "line": 433,
+          "text": "if len(source_xy) != 1:"
+        },
+        {
+          "line": 436,
+          "text": "f\"{source_xy}\""
+        },
+        {
+          "line": 439,
+          "text": "source_mask = np.zeros(div.shape, dtype=bool)"
+        },
+        {
+          "line": 441,
+          "text": "for k, j, i in source_indices:"
+        },
+        {
+          "line": 442,
+          "text": "source_mask[int(k), int(j), int(i)] = True"
+        },
+        {
+          "line": 444,
+          "text": "return div, tol, source_indices, source_mask, {"
+        },
+        {
+          "line": 445,
+          "text": "\"source_sign\": source_sign,"
+        },
+        {
+          "line": 450,
+          "text": "\"source_xy_locations\": source_xy,"
+        },
+        {
+          "line": 605,
+          "text": "def fast_marching_3d(speed, source_mask, dx, dy, dz):"
+        },
+        {
+          "line": 614,
+          "text": "source_indices = np.argwhere(source_mask)"
+        },
+        {
+          "line": 616,
+          "text": "if len(source_indices) == 0:"
+        },
+        {
+          "line": 617,
+          "text": "raise RuntimeError(\"FMM source mask is empty.\")"
+        },
+        {
+          "line": 619,
+          "text": "# Multi-source initialization."
+        },
+        {
+          "line": 620,
+          "text": "for k, j, i in source_indices:"
+        },
+        {
+          "line": 630,
+          "text": "for k, j, i in source_indices:"
+        },
+        {
+          "line": 704,
+          "text": "def eikonal_residual(T, speed, dx, dy, dz, source_mask):"
+        },
+        {
+          "line": 727,
+          "text": "& (~source_mask)"
+        },
+        {
+          "line": 750,
+          "text": "NO VELOCITY PHYSICS WILL BE RECOMPUTED."
+        },
+        {
+          "line": 761,
+          "text": ") = load_inputs()"
+        },
+        {
+          "line": 793,
+          "text": "save_csv("
+        },
+        {
+          "line": 816,
+          "text": "save_csv("
+        },
+        {
+          "line": 825,
+          "text": "\"source\": \"resolved source-authentic contract\","
+        },
+        {
+          "line": 826,
+          "text": "\"source_sha256\": \"\","
+        },
+        {
+          "line": 834,
+          "text": "\"source\": \"resolved source-authentic contract\","
+        },
+        {
+          "line": 835,
+          "text": "\"source_sha256\": \"\","
+        },
+        {
+          "line": 843,
+          "text": "\"source\": \"resolved source-authentic contract\","
+        },
+        {
+          "line": 844,
+          "text": "\"source_sha256\": \"\","
+        },
+        {
+          "line": 851,
+          "text": "# Injector source set from frozen conservative Q"
+        },
+        {
+          "line": 853,
+          "text": "Qx = np.asarray(foundation[\"Qx\"], dtype=np.float64)"
+        },
+        {
+          "line": 854,
+          "text": "Qy = np.asarray(foundation[\"Qy\"], dtype=np.float64)"
+        },
+        {
+          "line": 855,
+          "text": "Qz = np.asarray(foundation[\"Qz\"], dtype=np.float64)"
+        },
+        {
+          "line": 860,
+          "text": "source_indices,"
+        },
+        {
+          "line": 861,
+          "text": "source_mask,"
+        },
+        {
+          "line": 862,
+          "text": "source_meta,"
+        },
+        {
+          "line": 863,
+          "text": ") = bind_injector_sources(Qx, Qy, Qz)"
+        },
+        {
+          "line": 865,
+          "text": "source_rows = []"
+        },
+        {
+          "line": 867,
+          "text": "for n, (k, j, i) in enumerate(source_indices):"
+        },
+        {
+          "line": 872,
+          "text": "source_rows.append("
+        },
+        {
+          "line": 874,
+          "text": "\"source_id\": n,"
+        },
+        {
+          "line": 879,
+          "text": "\"source_sign_class\": source_meta[\"source_sign\"],"
+        },
+        {
+          "line": 883,
+          "text": "save_csv(SOURCE_CSV, source_rows)"
+        },
+        {
+          "line": 888,
+          "text": "T_s, final_state, accepted_times = fast_marching_3d("
+        },
+        {
+          "line": 890,
+          "text": "source_mask,"
+        },
+        {
+          "line": 906,
+          "text": "source_mask,"
+        },
+        {
+          "line": 909,
+          "text": "np.savez_compressed("
+        },
+        {
+          "line": 913,
+          "text": "source_mask=source_mask.astype(np.uint8),"
+        }
+      ]
+    },
+    "B6": {
+      "path": "PAD_Stream_V16B6_Directional_Advective_Travel_Time_Numerical_Scheme_Contract.py",
+      "sha256": "fc03e5c9cdeb06a490182d305653a06f4f9d3ddf2a4bd1a80838fc8c89715892",
+      "functions": {
+        "save_csv": {
+          "line": 117,
+          "end": 132,
+          "args": [
+            "path",
+            "rows"
+          ]
+        },
+        "save_json": {
+          "line": 135,
+          "end": 136,
+          "args": [
+            "path",
+            "obj"
+          ]
+        },
+        "load_json": {
+          "line": 139,
+          "end": 140,
+          "args": [
+            "path"
+          ]
+        },
+        "sha256_file": {
+          "line": 143,
+          "end": 148,
+          "args": [
+            "path"
+          ]
+        },
+        "main": {
+          "line": 151,
+          "end": 662,
+          "args": []
+        }
+      },
+      "relevant_lines": [
+        {
+          "line": 19,
+          "text": "#       v(x) \u00c2\u00b7 grad(tau_ADV) = 1"
+        },
+        {
+          "line": 23,
+          "text": "#       tau_ADV = 0"
+        },
+        {
+          "line": 35,
+          "text": "#   - source-cell Dirichlet treatment,"
+        },
+        {
+          "line": 36,
+          "text": "#   - well/source-mask exclusion from transport rows,"
+        },
+        {
+          "line": 43,
+          "text": "# For a cell P with velocity (vx, vy, vz):"
+        },
+        {
+          "line": 45,
+          "text": "#   vx * d(tau)/dx + vy * d(tau)/dy + vz * d(tau)/dz = 1"
+        },
+        {
+          "line": 50,
+          "text": "#       d(tau)/dx ~ (tau_P - tau_W)/dx"
+        },
+        {
+          "line": 52,
+          "text": "#       d(tau)/dx ~ (tau_E - tau_P)/dx"
+        },
+        {
+          "line": 58,
+          "text": "#   aP * tau_P - sum(aN * tau_N) = 1"
+        },
+        {
+          "line": 71,
+          "text": "# Source cells are fixed to tau=0."
+        },
+        {
+          "line": 105,
+          "text": "MATRIX_CSV = OUT / \"V16B6_Sparse_Matrix_Structure_Audit.csv\""
+        },
+        {
+          "line": 106,
+          "text": "SOURCE_CSV = OUT / \"V16B6_Source_Boundary_Contract.csv\""
+        },
+        {
+          "line": 117,
+          "text": "def save_csv(path: Path, rows):"
+        },
+        {
+          "line": 135,
+          "text": "def save_json(path: Path, obj):"
+        },
+        {
+          "line": 192,
+          "text": "source_mask = np.asarray(db[\"source_mask\"], dtype=np.uint8).astype(bool)"
+        },
+        {
+          "line": 200,
+          "text": "raise RuntimeError(\"Cell-centered velocity component shapes do not match.\")"
+        },
+        {
+          "line": 205,
+          "text": "if source_mask.shape != shape:"
+        },
+        {
+          "line": 206,
+          "text": "raise RuntimeError(\"Source mask shape does not match velocity grid.\")"
+        },
+        {
+          "line": 221,
+          "text": "# Boundary-neighbor availability masks."
+        },
+        {
+          "line": 238,
+          "text": "# Out-of-domain upwind dependencies are potential open-boundary issues."
+        },
+        {
+          "line": 248,
+          "text": "non_source = ~source_mask"
+        },
+        {
+          "line": 249,
+          "text": "missing_upwind_non_source = missing_upwind & non_source"
+        },
+        {
+          "line": 251,
+          "text": "zero_diag_non_source = (aP <= 0.0) & non_source"
+        },
+        {
+          "line": 254,
+          "text": "# from any nonzero directional velocity component."
+        },
+        {
+          "line": 255,
+          "text": "positive_diag_fraction = float(np.mean(aP[non_source] > 0.0))"
+        },
+        {
+          "line": 257,
+          "text": "# Structural matrix inventory."
+        },
+        {
+          "line": 267,
+          "text": "non_source_count = int(np.sum(non_source))"
+        },
+        {
+          "line": 268,
+          "text": "source_count = int(np.sum(source_mask))"
+        },
+        {
+          "line": 271,
+          "text": "non_source_count  # diagonal"
+        },
+        {
+          "line": 272,
+          "text": "+ int(np.sum(active_links[non_source]))"
+        },
+        {
+          "line": 273,
+          "text": "+ source_count    # source identity rows"
+        },
+        {
+          "line": 276,
+          "text": "save_csv("
+        },
+        {
+          "line": 296,
+          "text": "\"derivative\": \"(tau_P-tau_W)/dx\","
+        },
+        {
+          "line": 303,
+          "text": "\"derivative\": \"(tau_E-tau_P)/dx\","
+        },
+        {
+          "line": 310,
+          "text": "\"derivative\": \"(tau_P-tau_S)/dy\","
+        },
+        {
+          "line": 317,
+          "text": "\"derivative\": \"(tau_N-tau_P)/dy\","
+        },
+        {
+          "line": 324,
+          "text": "\"derivative\": \"(tau_P-tau_B)/dz\","
+        },
+        {
+          "line": 331,
+          "text": "\"derivative\": \"(tau_T-tau_P)/dz\","
+        },
+        {
+          "line": 334,
+          "text": "save_csv(STENCIL_CSV, stencil_rows)"
+        },
+        {
+          "line": 336,
+          "text": "save_csv("
+        },
+        {
+          "line": 337,
+          "text": "MATRIX_CSV,"
+        },
+        {
+          "line": 340,
+          "text": "\"source_identity_rows\": source_count,"
+        },
+        {
+          "line": 341,
+          "text": "\"transport_rows\": non_source_count,"
+        },
+        {
+          "line": 343,
+          "text": "\"mean_active_upwind_neighbors\": float(np.mean(active_links[non_source])),"
+        },
+        {
+          "line": 344,
+          "text": "\"min_active_upwind_neighbors\": int(np.min(active_links[non_source])),"
+        },
+        {
+          "line": 345,
+          "text": "\"max_active_upwind_neighbors\": int(np.max(active_links[non_source])),"
+        },
+        {
+          "line": 346,
+          "text": "\"positive_diagonal_fraction_non_source\": positive_diag_fraction,"
+        },
+        {
+          "line": 347,
+          "text": "\"zero_diagonal_non_source_cells\": int(np.sum(zero_diag_non_source)),"
+        },
+        {
+          "line": 348,
+          "text": "\"missing_upwind_boundary_cells\": int(np.sum(missing_upwind_non_source)),"
+        },
+        {
+          "line": 352,
+          "text": "source_indices = np.argwhere(source_mask)"
+        },
+        {
+          "line": 353,
+          "text": "source_rows = []"
+        },
+        {
+          "line": 355,
+          "text": "for sid, (k, j, i) in enumerate(source_indices):"
+        },
+        {
+          "line": 356,
+          "text": "source_rows.append({"
+        },
+        {
+          "line": 357,
+          "text": "\"source_id\": sid,"
+        },
+        {
+          "line": 361,
+          "text": "\"boundary_condition\": \"tau_ADV=0\","
+        },
+        {
+          "line": 362,
+          "text": "\"matrix_row\": \"identity\","
+        },
+        {
+          "line": 363,
+          "text": "\"rhs\": 0.0,"
+        },
+        {
+          "line": 366,
+          "text": "save_csv(SOURCE_CSV, source_rows)"
+        },
+        {
+          "line": 371,
+          "text": "\"value\": \"A tau = b\","
+        },
+        {
+          "line": 376,
+          "text": "\"value\": \"scipy.sparse.linalg.spsolve\","
+        },
+        {
+          "line": 385,
+          "text": "\"item\": \"matrix_dtype\","
+        },
+        {
+          "line": 400,
+          "text": "save_csv(SOLVER_CSV, solver_rows)"
+        },
+        {
+          "line": 405,
+          "text": "\"formula\": \"||A tau-b||2 / max(||b||2, tiny)\","
+        },
+        {
+          "line": 410,
+          "text": "\"formula\": \"vx*d_upwind(tau)/dx + vy*d_upwind(tau)/dy + vz*d_upwind(tau)/dz - 1\","
+        },
+        {
+          "line": 414,
+          "text": "\"check\": \"source_zero\","
+        },
+        {
+          "line": 415,
+          "text": "\"formula\": \"max(|tau[source]|)=0\","
+        },
+        {
+          "line": 420,
+          "text": "\"formula\": \"all finite and tau>=0\","
+        },
+        {
+          "line": 425,
+          "text": "\"formula\": \"downstream travel time should not systematically decrease along frozen velocity characteristics\","
+        },
+        {
+          "line": 434,
+          "text": "save_csv(RESIDUAL_CSV, residual_rows)"
+        },
+        {
+          "line": 437,
+          "text": "np.savez_compressed("
+        },
+        {
+          "line": 446,
+          "text": "source_mask=source_mask.astype(np.uint8),"
+        },
+        {
+          "line": 448,
+          "text": "missing_upwind_boundary_mask=missing_upwind_non_source.astype(np.uint8),"
+        },
+        {
+          "line": 461,
+          "text": "# If any exist, execution must pause for a boundary-condition policy audit."
+        },
+        {
+          "line": 462,
+          "text": "open_boundary_blocker = bool(np.any(missing_upwind_non_source))"
+        },
+        {
+          "line": 463,
+          "text": "zero_diag_blocker = bool(np.any(zero_diag_non_source))"
+        },
+        {
+          "line": 467,
+          "text": "(\"governing_equation_v_dot_grad_tau_equals_1_retained\", True),"
+        },
+        {
+          "line": 469,
+          "text": "(\"frozen_cell_centered_velocity_loaded\", True),"
+        },
+        {
+          "line": 472,
+          "text": "(\"source_identity_rows_defined\", source_count > 0),"
+        },
+        {
+          "line": 473,
+          "text": "(\"no_zero_diagonal_non_source_cells\", not zero_diag_blocker),"
+        },
+        {
+          "line": 474,
+          "text": "(\"external_upwind_boundary_dependencies_audited\", True),"
+        },
+        {
+          "line": 488,
+          "text": "save_csv("
+        },
+        {
+          "line": 501,
+          "text": "elif open_boundary_blocker:"
+        },
+        {
+          "line": 502,
+          "text": "status = \"V16B_DIRECTIONAL_NUMERICAL_SCHEME_BOUNDARY_POLICY_REQUIRED\""
+        },
+        {
+          "line": 503,
+          "text": "diagnosis = \"ONE_OR_MORE_NON_SOURCE_BOUNDARY_CELLS_REQUIRE_UPWIND_INFORMATION_FROM_OUTSIDE_THE_DOMAIN\""
+        },
+        {
+          "line": 505,
+          "text": "\"Do not solve yet. Define the external-boundary inflow travel-time policy source-authentically before \""
+        },
+        {
+          "line": 508,
+          "text": "next_ms = \"V16B-6A \u00e2\u20ac\u201d Directional External-Boundary Inflow Policy Audit\""
+        },
+        {
+          "line": 512,
+          "text": "diagnosis = \"FIRST_ORDER_SIGN_AWARE_UPWIND_SPARSE_TRANSPORT_DISCRETIZATION_IS_FULLY_DEFINED_WITHOUT_UNRESOLVED_BOUNDARY_INFLOW\""
+        },
+        {
+          "line": 519,
+          "text": "save_csv("
+        },
+        {
+          "line": 525,
+          "text": "\"source_count\": source_count,"
+        },
+        {
+          "line": 527,
+          "text": "\"missing_upwind_boundary_cells\": int(np.sum(missing_upwind_non_source)),"
+        },
+        {
+          "line": 528,
+          "text": "\"zero_diagonal_non_source_cells\": int(np.sum(zero_diag_non_source)),"
+        },
+        {
+          "line": 538,
+          "text": "\"governing_equation\": \"v dot grad(tau_ADV) = 1\","
+        },
+        {
+          "line": 543,
+          "text": "\"equation_form\": \"aP*tauP - sum(aN*tauN) = 1\","
+        },
+        {
+          "line": 544,
+          "text": "\"source_rows\": \"tau=0 identity rows\","
+        },
+        {
+          "line": 547,
+          "text": "\"matrix_structure\": {"
+        },
+        {
+          "line": 549,
+          "text": "\"source_count\": source_count,"
+        },
+        {
+          "line": 551,
+          "text": "\"missing_upwind_boundary_cells\": int(np.sum(missing_upwind_non_source)),"
+        },
+        {
+          "line": 552,
+          "text": "\"zero_diagonal_non_source_cells\": int(np.sum(zero_diag_non_source)),"
+        },
+        {
+          "line": 555,
+          "text": "\"primary\": \"scipy.sparse.linalg.spsolve\","
+        },
+        {
+          "line": 562,
+          "text": "\"source_zero\","
+        }
+      ]
+    },
+    "B7": {
+      "path": "PAD_Stream_V16B7_Controlled_Directional_Advective_Travel_Time_Solve.py",
+      "sha256": "2355f3eecd41bb6571f7ead3ebb1c5d90a1907ae681826159e79463166994c56",
+      "functions": {
+        "sha256_file": {
+          "line": 41,
+          "end": 46,
+          "args": [
+            "path"
+          ]
+        },
+        "load_json": {
+          "line": 49,
+          "end": 50,
+          "args": [
+            "path"
+          ]
+        },
+        "save_json": {
+          "line": 53,
+          "end": 54,
+          "args": [
+            "path",
+            "obj"
+          ]
+        },
+        "save_csv": {
+          "line": 57,
+          "end": 70,
+          "args": [
+            "path",
+            "rows"
+          ]
+        },
+        "flat": {
+          "line": 73,
+          "end": 74,
+          "args": [
+            "k",
+            "j",
+            "i",
+            "ny",
+            "nx"
+          ]
+        },
+        "main": {
+          "line": 77,
+          "end": 382,
+          "args": []
+        }
+      },
+      "relevant_lines": [
+        {
+          "line": 10,
+          "text": "from scipy.sparse.linalg import spsolve"
+        },
+        {
+          "line": 22,
+          "text": "B6A_DIR = ROOT / \"output\" / \"V16_B6A_DIRECTIONAL_EXTERNAL_BOUNDARY_POLICY_AUDIT\""
+        },
+        {
+          "line": 23,
+          "text": "B6A_NPZ = B6A_DIR / \"V16B6A_Closed_Boundary_Projected_Scheme_Contract.npz\""
+        },
+        {
+          "line": 24,
+          "text": "B6A_CONTRACT = B6A_DIR / \"V16B6A_External_Boundary_Policy_Contract.json\""
+        },
+        {
+          "line": 31,
+          "text": "MATRIX_CSV = OUT / \"V16B7_Linear_System_Audit.csv\""
+        },
+        {
+          "line": 53,
+          "text": "def save_json(path: Path, obj):"
+        },
+        {
+          "line": 57,
+          "text": "def save_csv(path: Path, rows):"
+        },
+        {
+          "line": 85,
+          "text": "V16B-6A CLOSED-BOUNDARY OPERATOR POLICY IS IMMUTABLE."
+        },
+        {
+          "line": 87,
+          "text": "NO EXTERNAL tau VALUE WILL BE IMPOSED."
+        },
+        {
+          "line": 105,
+          "text": "if b6.get(\"status\") != \"V16B_DIRECTIONAL_NUMERICAL_SCHEME_BOUNDARY_POLICY_REQUIRED\":"
+        },
+        {
+          "line": 107,
+          "text": "if b6a.get(\"status\") != \"V16B_CLOSED_EXTERNAL_BOUNDARY_OPERATOR_POLICY_RESOLVED\":"
+        },
+        {
+          "line": 108,
+          "text": "raise RuntimeError(\"V16B-6A closed-boundary policy is not resolved.\")"
+        },
+        {
+          "line": 118,
+          "text": "source_mask = np.asarray(db[\"source_mask\"], dtype=np.uint8).astype(bool)"
+        },
+        {
+          "line": 122,
+          "text": "source_count = int(source_mask.sum())"
+        },
+        {
+          "line": 125,
+          "text": "rhs = np.ones(n, dtype=np.float64)"
+        },
+        {
+          "line": 132,
+          "text": "if source_mask[k, j, i]:"
+        },
+        {
+          "line": 134,
+          "text": "rhs[r] = 0.0"
+        },
+        {
+          "line": 139,
+          "text": "raise RuntimeError(f\"Invalid non-source diagonal at {(k,j,i)}: {diag}\")"
+        },
+        {
+          "line": 156,
+          "text": "A = sparse.csr_matrix((vals, (rows, cols)), shape=(n, n))"
+        },
+        {
+          "line": 162,
+          "text": "print(f\"  Source rows              : {source_count}\")"
+        },
+        {
+          "line": 163,
+          "text": "print(f\"  External tau values      : NONE\")"
+        },
+        {
+          "line": 166,
+          "text": "tau_s_flat = spsolve(A, rhs)"
+        },
+        {
+          "line": 167,
+          "text": "tau_s = tau_s_flat.reshape(nz, ny, nx)"
+        },
+        {
+          "line": 168,
+          "text": "tau_days = tau_s / 86400.0"
+        },
+        {
+          "line": 170,
+          "text": "residual = A @ tau_s_flat - rhs"
+        },
+        {
+          "line": 171,
+          "text": "rel_resid = float(np.linalg.norm(residual) / max(np.linalg.norm(rhs), 1e-300))"
+        },
+        {
+          "line": 174,
+          "text": "finite = np.isfinite(tau_s)"
+        },
+        {
+          "line": 175,
+          "text": "nonnegative = tau_s >= -1e-10"
+        },
+        {
+          "line": 176,
+          "text": "source_zero = np.max(np.abs(tau_s[source_mask])) if source_count else np.inf"
+        },
+        {
+          "line": 179,
+          "text": "# for each non-source row with upstream neighbors, tau_P should not be below"
+        },
+        {
+          "line": 180,
+          "text": "# the minimum upstream tau apart from roundoff."
+        },
+        {
+          "line": 188,
+          "text": "if source_mask[k,j,i]:"
+        },
+        {
+          "line": 191,
+          "text": "if i > 0 and aW[k,j,i] > 0: ups.append(tau_s[k,j,i-1])"
+        },
+        {
+          "line": 192,
+          "text": "if i < nx-1 and aE[k,j,i] > 0: ups.append(tau_s[k,j,i+1])"
+        },
+        {
+          "line": 193,
+          "text": "if j > 0 and aS[k,j,i] > 0: ups.append(tau_s[k,j-1,i])"
+        },
+        {
+          "line": 194,
+          "text": "if j < ny-1 and aN[k,j,i] > 0: ups.append(tau_s[k,j+1,i])"
+        },
+        {
+          "line": 195,
+          "text": "if k > 0 and aB[k,j,i] > 0: ups.append(tau_s[k-1,j,i])"
+        },
+        {
+          "line": 196,
+          "text": "if k < nz-1 and aT[k,j,i] > 0: ups.append(tau_s[k+1,j,i])"
+        },
+        {
+          "line": 199,
+          "text": "diff = min(ups) - tau_s[k,j,i]"
+        },
+        {
+          "line": 200,
+          "text": "tol = max(1e-8, 1e-10 * max(abs(tau_s[k,j,i]), 1.0))"
+        },
+        {
+          "line": 205,
+          "text": "positive_non_source = tau_s[~source_mask] > 0"
+        },
+        {
+          "line": 208,
+          "text": "np.savez_compressed("
+        },
+        {
+          "line": 210,
+          "text": "tau_adv_s=tau_s,"
+        },
+        {
+          "line": 211,
+          "text": "tau_adv_days=tau_days,"
+        },
+        {
+          "line": 212,
+          "text": "source_mask=source_mask.astype(np.uint8),"
+        },
+        {
+          "line": 220,
+          "text": "save_csv(MATRIX_CSV, [{"
+        },
+        {
+          "line": 223,
+          "text": "\"source_rows\": source_count,"
+        },
+        {
+          "line": 224,
+          "text": "\"external_tau_values_imposed\": 0,"
+        },
+        {
+          "line": 225,
+          "text": "\"matrix_finite\": bool(np.all(np.isfinite(A.data))),"
+        },
+        {
+          "line": 226,
+          "text": "\"rhs_finite\": bool(np.all(np.isfinite(rhs))),"
+        },
+        {
+          "line": 232,
+          "text": "\"min_days\": float(np.nanmin(tau_days)),"
+        },
+        {
+          "line": 233,
+          "text": "\"median_days\": float(np.nanmedian(tau_days)),"
+        },
+        {
+          "line": 234,
+          "text": "\"mean_days\": float(np.nanmean(tau_days)),"
+        },
+        {
+          "line": 235,
+          "text": "\"max_days\": float(np.nanmax(tau_days)),"
+        },
+        {
+          "line": 236,
+          "text": "\"negative_cells\": int(np.sum(tau_s < -1e-10)),"
+        },
+        {
+          "line": 237,
+          "text": "\"nonpositive_non_source_cells\": int(np.sum(tau_s[~source_mask] <= 0)),"
+        },
+        {
+          "line": 238,
+          "text": "\"max_abs_source_tau_s\": float(source_zero),"
+        },
+        {
+          "line": 240,
+          "text": "save_csv(STATS_CSV, [stats])"
+        },
+        {
+          "line": 242,
+          "text": "save_csv(RESID_CSV, [{"
+        },
+        {
+          "line": 248,
+          "text": "save_csv(CAUSAL_CSV, [{"
+        },
+        {
+          "line": 257,
+          "text": "(\"V16B6A_closed_boundary_policy_reproduced\", True),"
+        },
+        {
+          "line": 260,
+          "text": "(\"source_rows_retained\", source_count > 0),"
+        },
+        {
+          "line": 261,
+          "text": "(\"no_external_tau_value_imposed\", True),"
+        },
+        {
+          "line": 263,
+          "text": "(\"matrix_and_rhs_finite\", np.all(np.isfinite(A.data)) and np.all(np.isfinite(rhs))),"
+        },
+        {
+          "line": 267,
+          "text": "(\"source_tau_zero\", source_zero < 1e-8),"
+        },
+        {
+          "line": 268,
+          "text": "(\"non_source_tau_positive\", bool(np.all(positive_non_source))),"
+        },
+        {
+          "line": 279,
+          "text": "save_csv(GATES_CSV, [{\"gate\": g, \"passed\": bool(p)} for g,p in gates])"
+        },
+        {
+          "line": 285,
+          "text": "diagnosis = \"CLOSED_BOUNDARY_UPWIND_ADVECTIVE_SYSTEM_SOLVED_WITH_FINITE_NONNEGATIVE_SOURCE_ANCHORED_TRAVEL_TIMES\""
+        },
+        {
+          "line": 297,
+          "text": "save_csv(DECISION_CSV, [{"
+        },
+        {
+          "line": 308,
+          "text": "\"governing_equation\": \"v(x) dot grad(tau_ADV) = 1\","
+        },
+        {
+          "line": 309,
+          "text": "\"boundary_policy\": \"V16B6A_NO_FLOW_EXTERNAL_BOUNDARY_PROJECTED_OPERATOR\","
+        },
+        {
+          "line": 310,
+          "text": "\"external_tau_value\": None,"
+        },
+        {
+          "line": 311,
+          "text": "\"solver\": \"scipy.sparse.linalg.spsolve\","
+        },
+        {
+          "line": 330,
+          "text": "save_json(CONTRACT_JSON, contract)"
+        },
+        {
+          "line": 331,
+          "text": "save_json(SUMMARY_JSON, {"
+        },
+        {
+          "line": 344,
+          "text": "print(f\"  Minimum                  : {np.nanmin(tau_days):.6e} days\")"
+        },
+        {
+          "line": 345,
+          "text": "print(f\"  Median                   : {np.nanmedian(tau_days):.6e} days\")"
+        },
+        {
+          "line": 346,
+          "text": "print(f\"  Mean                     : {np.nanmean(tau_days):.6e} days\")"
+        },
+        {
+          "line": 347,
+          "text": "print(f\"  Maximum                  : {np.nanmax(tau_days):.6e} days\")"
+        },
+        {
+          "line": 373,
+          "text": "for p in [MATRIX_CSV, STATS_CSV, RESID_CSV, CAUSAL_CSV, GATES_CSV, DECISION_CSV]:"
+        }
+      ]
+    }
+  },
+  "gates": {
+    "D10_hash_FMM_exact": true,
+    "D10_hash_B6_exact": true,
+    "B7_exact_source_present": true,
+    "FMM_array_kernel_bound": true,
+    "ADV_scheme_contract_present": true,
+    "ADV_controlled_solver_present": true,
+    "no_FMM_execution": true,
+    "no_ADV_execution": true,
+    "no_reimplementation": true,
+    "no_transport": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-10B \u2014 Case 0002 Source-Authentic FMM/ADV Controlled Pilot"
+}

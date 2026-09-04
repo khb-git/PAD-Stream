@@ -1,0 +1,100 @@
+{
+  "milestone": "V15-SG3",
+  "description": "Unit-consistent five-spot finite-volume pressure solve",
+  "status": "PASS",
+  "grid": {
+    "nx": 50,
+    "ny": 50,
+    "nz": 15,
+    "cells": 37500,
+    "dx_ft": 20.0,
+    "dy_ft": 20.0,
+    "dz_ft": 4.0
+  },
+  "reference_mobility": {
+    "fluid": "initial brine reference",
+    "viscosity_cp": 0.5,
+    "density_kg_m3": 1020.0
+  },
+  "gravity_on": true,
+  "external_boundaries": "NO_FLOW",
+  "injection_control": {
+    "mass_rate_tonnes_day": 500.0,
+    "reference_co2_density_kg_m3": 700.0,
+    "reservoir_volume_rate_m3_day": 714.2857142857142,
+    "completed_layers": "6-10"
+  },
+  "producer_control": {
+    "type": "PEACEMAN_FIXED_BHP",
+    "bhp_psi": 2000.0,
+    "well_radius_ft": 0.25,
+    "skin": 0.0
+  },
+  "pressure_psi": {
+    "min": 2016.037670657893,
+    "max": 2202.4691081505416,
+    "mean": 2053.0052782860766,
+    "median": 2052.5671757425052
+  },
+  "producer_rates": {
+    "PROD_SW": {
+      "m3_s": 0.001409343227473737,
+      "m3_day": 121.76725485373089,
+      "perf_m3_day": [
+        28.547473555950138,
+        23.49704778086514,
+        23.24383684872441,
+        25.03388487413232,
+        21.445011794058882
+      ]
+    },
+    "PROD_SE": {
+      "m3_s": 0.001748786885126041,
+      "m3_day": 151.09518687488995,
+      "perf_m3_day": [
+        23.280669849978544,
+        45.69216101428032,
+        41.69069708454675,
+        22.732439257068112,
+        17.699219669016227
+      ]
+    },
+    "PROD_NW": {
+      "m3_s": 0.0022772966740925355,
+      "m3_day": 196.75843264159508,
+      "perf_m3_day": [
+        44.10273745789581,
+        45.268839644531496,
+        51.96536062187152,
+        32.155145884305234,
+        23.266349032991023
+      ]
+    },
+    "PROD_NE": {
+      "m3_s": 0.00283176898049119,
+      "m3_day": 244.66483991443883,
+      "perf_m3_day": [
+        62.940480240267895,
+        38.77916140422288,
+        47.62445824817116,
+        45.19257653118457,
+        50.12816349059232
+      ]
+    }
+  },
+  "injector_pressure": {
+    "relative_linear_residual": 3.7217241087419416e-14,
+    "mass_balance_error_fraction": 1.4833034800432188e-12,
+    "injector_mean_pressure_psi": 2192.5576080195974,
+    "injector_min_pressure_psi": 2176.3984617287742,
+    "injector_max_pressure_psi": 2202.4691081505416
+  },
+  "sparse_matrix": {
+    "shape": [
+      37500,
+      37500
+    ],
+    "nnz": 254500
+  },
+  "next_milestone": "V15-SG4 - conservative Darcy face fluxes"
+}

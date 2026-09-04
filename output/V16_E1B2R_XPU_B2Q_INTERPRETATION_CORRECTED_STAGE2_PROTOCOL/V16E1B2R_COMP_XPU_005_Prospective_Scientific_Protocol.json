@@ -1,0 +1,52 @@
+{
+  "milestone": "V16E-1B2R-XPU",
+  "prospective_experiment_id": "V16E-BLREP-COMP-XPU-005",
+  "baseline": "V16E-BLREP-COMP-XPU-004",
+  "classification": "ONE_FACTOR_CORRECTED_CONSERVATIVE_STAGE2_PI_RNN_STUDY",
+  "scientific_hypothesis": "Replacing the incompatible algebraic characteristic physics loss with the B2N/B2O-verified conservative moving-fan residual will align the physics-informed objective with the exact conservative Godunov teacher while preserving COMP-XPU-004's best-accuracy architecture.",
+  "one_scientific_change": {
+    "old_physics_loss": "R_char = y(xi*xD_star;Nc) - tD*dfw/dS",
+    "new_physics_loss": "R_cons = N_tD + Xdot*N_X - (xi*Xdot/X)*N_xi + (1/X)*d_xi[exp(Nc*xi*X)*fw(N)]",
+    "front_speed": "Xdot = exp(Nc*X)*sigma_BL",
+    "sigma_BL": "[fw(Sw_star)-fw(swc)]/(Sw_star-swc)",
+    "residual_nodes": "interior fan nodes only"
+  },
+  "must_remain_identical_to_COMP_XPU_004": {
+    "architecture": "[xi,eta] sequence features + raw physical 11-D p11",
+    "Nc_scaling": false,
+    "teacher_dataset": "exact frozen Stage-2 Godunov fan dataset",
+    "epochs": 800,
+    "seed": 1337,
+    "hidden": 64,
+    "layers": 2,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "Adam_foreach": false,
+    "logical_batch": 8192,
+    "mixed_precision": false,
+    "loss_weights": {
+      "data": 1.0,
+      "physics": 0.05,
+      "injector_bc": 5.0,
+      "tip_bc": 5.0,
+      "anchor": 10.0,
+      "monotonicity": 0.2,
+      "shape": 0.0
+    },
+    "development_split": "same frozen seed-1337 80/20 reproduction-development diagnostic split"
+  },
+  "evaluation_requirements_after_training": [
+    "overall reproduction-development metrics",
+    "per-Nc holdout MAE/RMSE/max error",
+    "per-Nc corrected conservative physics loss",
+    "full-domain and front-excluded Godunov diagnostics",
+    "front-position error",
+    "model-to-teacher Nc response gain",
+    "Nc=0 Stage-1 nesting",
+    "saturation bounds",
+    "comparison against COMP-XPU-004 and COMP-XPU-002"
+  ],
+  "training_authorized": false,
+  "reason_training_not_yet_authorized": "Exact corrected residual backward feasibility and operational microbatch have not yet been established on Intel XPU.",
+  "B3_authorized": false
+}

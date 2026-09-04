@@ -1,0 +1,26 @@
+{
+  "milestone": "V16D-13",
+  "status": "V16D_24CASE_STAGE4_SUPERVISION_ENSEMBLE_INTEGRITY_CERTIFIED_TRAIN_ONLY_NORMALIZATION_METHOD_FROZEN_FEATURE_ASSEMBLY_AUTHORIZED",
+  "target_values": 46802448,
+  "registry_sha256": "aad70ac2878fe947ee1f7abebdcbe127c72f160d7fa56651a0cd61fcdf3f1f43",
+  "normalization_contract_sha256": "b19c43f2dc3a3bde3ec32d628c333065cd152291885763b6f07fc993214b3395",
+  "gates": {
+    "TRAIN_manifest_SHA": true,
+    "VALIDATION_manifest_SHA": true,
+    "OOD_manifest_SHA": true,
+    "exact_24": true,
+    "counts_16_4_4": true,
+    "all_targets_certified": true,
+    "unique_artifact_SHA": true,
+    "TRAIN_only_normalization_fit": true,
+    "validation_transform_only": true,
+    "OOD_transform_only": true,
+    "OOD_labels_not_fit": true,
+    "C20_nine_channels_preserved": true,
+    "M_sidecar_not_predictor": true,
+    "no_training": true,
+    "no_selection": true,
+    "no_OOD_evaluation": true
+  },
+  "next_milestone": "V16D-14 \u2014 Source-Bound 24-Case Predictor Tensor Assembly and TRAIN-Only Normalization Statistics Freeze"
+}

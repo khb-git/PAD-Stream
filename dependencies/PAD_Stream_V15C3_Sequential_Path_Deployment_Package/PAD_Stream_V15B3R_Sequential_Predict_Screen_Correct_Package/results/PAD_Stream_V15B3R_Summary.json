@@ -1,0 +1,365 @@
+{
+  "milestone": "15B-3R",
+  "description": "Full sequential 365-day predict-screen-correct pressure deployment",
+  "deployment_accepted": true,
+  "rollout": {
+    "end_time_days": 365.0,
+    "accepted_steps": 350,
+    "rejected_attempts": 57,
+    "learned_candidates_evaluated": 404,
+    "accepted_learned_steps": 199,
+    "accepted_persistence_fallback_steps": 148,
+    "bootstrap_steps": 3,
+    "learned_selection_fraction": 0.5734870317002881,
+    "breakthrough_time_days": 116.16941163352294,
+    "final_producer_gas_cut": 0.8536922959855661,
+    "maximum_mass_error_kg": 7.152557373046875e-07,
+    "maximum_pressure_residual_m3_s": 2.5963681955131407e-10,
+    "mean_raw_candidate_error_mpa": 0.007513464332606432,
+    "mean_persistence_error_mpa": 0.01234169129438263,
+    "mean_selected_guess_error_mpa": 0.007029192822310314,
+    "mean_learned_preflight_change_mpa": 0.007054298408841034,
+    "mean_persistence_preflight_change_mpa": 0.010305703167871619,
+    "mean_screened_preflight_change_mpa": 0.005188370137400633,
+    "screened_preflight_reduction_percent": 49.65535050945816,
+    "cumulative_inference_seconds": 0.7265458420001778,
+    "cumulative_preflight_seconds": 4.679319927004144,
+    "cumulative_exact_correction_seconds": 21.501916487005474,
+    "cumulative_fixed_point_iterations": 4444,
+    "mean_fixed_point_iterations_per_step": 12.697142857142858
+  },
+  "paired_prebreakthrough_control": {
+    "paired_end_time_days": 61.073929946647446,
+    "paired_steps": 63,
+    "learned_selected": 20,
+    "learned_iterations": 910,
+    "persistence_iterations": 928,
+    "state_difference": {
+      "max_pressure_pa": 0.0944966971874237,
+      "relative_pressure_l2": 1.8903589653138343e-09,
+      "max_saturation": 1.1304707470127795e-07,
+      "max_cell_mass_kg": 1.95560921728611,
+      "cumulative_injected_mass_kg": 0.0,
+      "cumulative_produced_mass_kg": 2.967949680056478e-33,
+      "gas_cut": 6.538669526095664e-40
+    },
+    "well_mode_identity": true,
+    "maximum_gas_cut_difference": 6.538669526095664e-40,
+    "restart": {
+      "max_pressure_pa": 0.0,
+      "relative_pressure_l2": 0.0,
+      "max_saturation": 0.0,
+      "max_cell_mass_kg": 0.0,
+      "cumulative_injected_mass_kg": 0.0,
+      "cumulative_produced_mass_kg": 0.0,
+      "gas_cut": 0.0,
+      "feature_history_max_difference": 0.0,
+      "learned_candidate_count_difference": 0,
+      "learned_selection_count_difference": 0
+    },
+    "iteration_reduction_percent": 1.93965517241379
+  },
+  "full_year_persistence_benchmark": {
+    "source": "Version 15B-4 all-persistence safeguarded rollout",
+    "accepted_steps": 341,
+    "cumulative_fixed_point_iterations": 4526,
+    "mean_iterations_per_step": 13.272727272727273,
+    "screened_mean_iterations_per_step": 12.697142857142858,
+    "normalized_iteration_reduction_percent": 4.336594911937375,
+    "breakthrough_time_days": 116.05381299478726
+  },
+  "reference": {
+    "breakthrough_time_days": 115.83062554958596,
+    "checkpoint_zip": "/mnt/data/PAD_Stream_Long_Duration_Checkpoints_v13.zip"
+  },
+  "checkpoint_comparison": [
+    {
+      "day": 30.0,
+      "max_pressure_pa": 1012.3026301376522,
+      "relative_pressure_l2": 1.6517042402784962e-05,
+      "max_saturation": 0.0009110780201060376,
+      "max_cell_mass_kg": 15854.943951471709,
+      "cumulative_injected_mass_kg": 5139.10422064364,
+      "cumulative_produced_mass_kg": 5.645400759607876e-107,
+      "gas_cut": 1.7301568252174286e-113
+    },
+    {
+      "day": 90.0,
+      "max_pressure_pa": 3422.943322394043,
+      "relative_pressure_l2": 5.5062505958443865e-05,
+      "max_saturation": 0.0009710911502978439,
+      "max_cell_mass_kg": 14406.4169478002,
+      "cumulative_injected_mass_kg": 5830.74400806427,
+      "cumulative_produced_mass_kg": 2.191305220293604e-08,
+      "gas_cut": 6.470295244205093e-14
+    },
+    {
+      "day": 180.0,
+      "max_pressure_pa": 8899.579832468182,
+      "relative_pressure_l2": 9.284573056665807e-05,
+      "max_saturation": 0.0009167142530681627,
+      "max_cell_mass_kg": 15662.503932285123,
+      "cumulative_injected_mass_kg": 5830.744007825851,
+      "cumulative_produced_mass_kg": 133140.80866704136,
+      "gas_cut": 4.3573607788616187e-07
+    },
+    {
+      "day": 270.0,
+      "max_pressure_pa": 5740.393669027835,
+      "relative_pressure_l2": 8.416619584579823e-05,
+      "max_saturation": 0.004151230280486251,
+      "max_cell_mass_kg": 69684.17117541842,
+      "cumulative_injected_mass_kg": 5830.744007706642,
+      "cumulative_produced_mass_kg": 102090.22458666563,
+      "gas_cut": 0.000253431355208833
+    },
+    {
+      "day": 365.0,
+      "max_pressure_pa": 9327.028831377625,
+      "relative_pressure_l2": 0.00012025022017524588,
+      "max_saturation": 0.0020816660668775966,
+      "max_cell_mass_kg": 34875.88768792432,
+      "cumulative_injected_mass_kg": 5830.744007587433,
+      "cumulative_produced_mass_kg": 73900.48189622164,
+      "gas_cut": 0.00013642015503601002
+    }
+  ],
+  "restart_identity": {
+    "max_pressure_pa": 0.0,
+    "relative_pressure_l2": 0.0,
+    "max_saturation": 0.0,
+    "max_cell_mass_kg": 0.0,
+    "cumulative_injected_mass_kg": 0.0,
+    "cumulative_produced_mass_kg": 0.0,
+    "gas_cut": 0.0,
+    "feature_history_max_difference": 0.0,
+    "learned_candidate_count_difference": 0,
+    "learned_selection_count_difference": 0
+  },
+  "dependencies": {
+    "v14_sha256": "45c3c8a26ff270df8d28dc6e67ed432a3de86255229f7046f5b0f3d1899d27f6",
+    "v15b2r_checkpoint_sha256": "b45620f53613f48a33093599c1c7ae1d5779266bcd9ed711086164a46dcf2131",
+    "v15b2r_checksums_sha256": "4254539e36aa87f81ace72cdb2debe2648380c3972f2215ac71c87ed66a2f308"
+  },
+  "validation": [
+    {
+      "gate": "completed_365_day_rollout",
+      "category": "mandatory",
+      "passed": true,
+      "value": 365.0,
+      "criterion": "= 365 days"
+    },
+    {
+      "gate": "learned_candidates_generated",
+      "category": "mandatory",
+      "passed": true,
+      "value": 404,
+      "criterion": "> 0"
+    },
+    {
+      "gate": "screen_selects_learned",
+      "category": "mandatory",
+      "passed": true,
+      "value": 199,
+      "criterion": "> 0"
+    },
+    {
+      "gate": "screen_retains_persistence_fallback",
+      "category": "mandatory",
+      "passed": true,
+      "value": 148,
+      "criterion": "> 0"
+    },
+    {
+      "gate": "screen_exercises_both_paths",
+      "category": "mandatory",
+      "passed": true,
+      "value": "{\"learned\": 199, \"fallback\": 148}",
+      "criterion": "both paths"
+    },
+    {
+      "gate": "screened_preflight_below_persistence",
+      "category": "mandatory",
+      "passed": true,
+      "value": "{\"screened\": 0.005188370137400633, \"persistence\": 0.010305703167871619}",
+      "criterion": "screened < persistence"
+    },
+    {
+      "gate": "screened_preflight_reduction_above_40_percent",
+      "category": "mandatory",
+      "passed": true,
+      "value": 49.65535050945816,
+      "criterion": ">= 40%"
+    },
+    {
+      "gate": "sequential_candidate_aggregate_beats_persistence",
+      "category": "mandatory",
+      "passed": true,
+      "value": "{\"learned\": 0.007513464332606432, \"persistence\": 0.01234169129438263}",
+      "criterion": "learned mean < persistence"
+    },
+    {
+      "gate": "paired_prebreakthrough_iteration_reduction",
+      "category": "mandatory",
+      "passed": true,
+      "value": "{\"screened\": 910, \"persistence\": 928}",
+      "criterion": "screened < persistence"
+    },
+    {
+      "gate": "full_year_normalized_iteration_reduction",
+      "category": "mandatory",
+      "passed": true,
+      "value": 4.336594911937375,
+      "criterion": "> 0% versus all-persistence benchmark"
+    },
+    {
+      "gate": "paired_pressure_identity",
+      "category": "mandatory",
+      "passed": true,
+      "value": 0.0944966971874237,
+      "criterion": "< 1 Pa"
+    },
+    {
+      "gate": "paired_saturation_identity",
+      "category": "mandatory",
+      "passed": true,
+      "value": 1.1304707470127795e-07,
+      "criterion": "< 2e-5"
+    },
+    {
+      "gate": "paired_cell_mass_identity",
+      "category": "mandatory",
+      "passed": true,
+      "value": 1.95560921728611,
+      "criterion": "< 400 kg/cell"
+    },
+    {
+      "gate": "paired_well_mode_identity",
+      "category": "mandatory",
+      "passed": true,
+      "value": true,
+      "criterion": "identical"
+    },
+    {
+      "gate": "paired_gas_cut_identity",
+      "category": "mandatory",
+      "passed": true,
+      "value": 6.538669526095664e-40,
+      "criterion": "< 1e-5"
+    },
+    {
+      "gate": "classical_checkpoint_pressure_close",
+      "category": "mandatory",
+      "passed": true,
+      "value": 9327.028831377625,
+      "criterion": "< 20 kPa"
+    },
+    {
+      "gate": "classical_checkpoint_saturation_close",
+      "category": "mandatory",
+      "passed": true,
+      "value": 0.004151230280486251,
+      "criterion": "< 0.01"
+    },
+    {
+      "gate": "classical_checkpoint_cell_mass_close",
+      "category": "mandatory",
+      "passed": true,
+      "value": 69684.17117541842,
+      "criterion": "< 1e5 kg/cell"
+    },
+    {
+      "gate": "breakthrough_close_to_frozen_classical",
+      "category": "mandatory",
+      "passed": true,
+      "value": 0.33878608393698073,
+      "criterion": "< 1 day"
+    },
+    {
+      "gate": "final_gas_cut_close_to_persistence_benchmark",
+      "category": "mandatory",
+      "passed": true,
+      "value": 6.151373287410777e-05,
+      "criterion": "< 0.002"
+    },
+    {
+      "gate": "mass_conservation",
+      "category": "mandatory",
+      "passed": true,
+      "value": 7.152557373046875e-07,
+      "criterion": "< 2e-6 kg"
+    },
+    {
+      "gate": "pressure_residual",
+      "category": "mandatory",
+      "passed": true,
+      "value": 2.5963681955131407e-10,
+      "criterion": "< 1e-9 m3/s"
+    },
+    {
+      "gate": "well_control_mode_diversity",
+      "category": "mandatory",
+      "passed": true,
+      "value": "{\"mass_rate\": 310, \"bhp\": 40}",
+      "criterion": "mass_rate and bhp"
+    },
+    {
+      "gate": "restart_pressure_identity",
+      "category": "mandatory",
+      "passed": true,
+      "value": 0.0,
+      "criterion": "< 1e-8 Pa"
+    },
+    {
+      "gate": "restart_saturation_identity",
+      "category": "mandatory",
+      "passed": true,
+      "value": 0.0,
+      "criterion": "< 1e-14"
+    },
+    {
+      "gate": "restart_mass_identity",
+      "category": "mandatory",
+      "passed": true,
+      "value": 0.0,
+      "criterion": "< 1e-8 kg"
+    },
+    {
+      "gate": "restart_feature_history_identity",
+      "category": "mandatory",
+      "passed": true,
+      "value": 0.0,
+      "criterion": "< 1e-12"
+    },
+    {
+      "gate": "restart_screen_count_identity",
+      "category": "mandatory",
+      "passed": true,
+      "value": 0,
+      "criterion": "= 0"
+    },
+    {
+      "gate": "finite_candidate_audit",
+      "category": "mandatory",
+      "passed": true,
+      "value": true,
+      "criterion": "all finite"
+    },
+    {
+      "gate": "frozen_v14_hash_preserved",
+      "category": "mandatory",
+      "passed": true,
+      "value": "45c3c8a26ff270df8d28dc6e67ed432a3de86255229f7046f5b0f3d1899d27f6",
+      "criterion": "unchanged"
+    },
+    {
+      "gate": "frozen_v15b2r_hash_preserved",
+      "category": "mandatory",
+      "passed": true,
+      "value": "b45620f53613f48a33093599c1c7ae1d5779266bcd9ed711086164a46dcf2131",
+      "criterion": "unchanged"
+    }
+  ],
+  "passed_gates": 31,
+  "total_gates": 31
+}

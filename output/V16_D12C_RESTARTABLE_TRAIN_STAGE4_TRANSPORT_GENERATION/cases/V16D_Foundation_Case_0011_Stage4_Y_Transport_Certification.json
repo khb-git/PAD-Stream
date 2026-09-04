@@ -1,0 +1,31 @@
+{
+  "case_id": "V16D_Foundation_Case_0011",
+  "partition": "TRAIN",
+  "status": "CERTIFIED",
+  "artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D12C_RESTARTABLE_TRAIN_STAGE4_TRANSPORT_GENERATION\\cases\\V16D_Foundation_Case_0011_Stage4_Y_Transport.npz",
+  "sha256": "83e07b2a25ef3d80c930a91236ad5872a8d5e79a2417aedebc0649f0c14d9848",
+  "steps": 40522,
+  "elapsed_seconds": 2087.2334842681885,
+  "S_min": 0.20099999999999826,
+  "S_max": 0.799,
+  "adv_max": 1.3043460354768971e-17,
+  "cap_residual_max": 7.105427357601002e-15,
+  "preclip_max": 0.0,
+  "temporal_negative_fraction": 0.0,
+  "spatial_positive_fraction": 0.0,
+  "gates": {
+    "shape": true,
+    "finite": true,
+    "bounds": true,
+    "injector": true,
+    "undershoot": true,
+    "adv_conservation": true,
+    "cap_residual": true,
+    "preclip": true,
+    "temporal": true,
+    "spatial": true,
+    "Mface_positive": true,
+    "Pollock_primary": true,
+    "no_fit": true
+  }
+}

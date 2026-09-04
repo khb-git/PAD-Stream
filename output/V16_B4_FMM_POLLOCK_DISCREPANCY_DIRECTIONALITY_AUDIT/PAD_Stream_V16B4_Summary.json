@@ -1,0 +1,13 @@
+{
+  "milestone": "V16B-4",
+  "status": "V16B_FMM_POLLOCK_DIRECTIONAL_DISCREPANCY_AUDIT_COMPLETE",
+  "diagnosis": "ISOTROPIC_FMM_SHORTCUT_BIAS_WITH_DIRECTIONAL_ADVECTIVE_PATH_MISMATCH",
+  "directional_extension_warranted": true,
+  "median_terminal_FMM_to_Pollock_ratio": 0.5054942321969669,
+  "median_terminal_error_days": -169.44164429485235,
+  "FMM_negative_step_fraction": 0.1260899814471243,
+  "strongest_abs_error_feature": "mean_speed_m_s",
+  "strongest_abs_error_correlation": -0.7078680206947321,
+  "recommendation": "Preserve the isotropic FMM baseline as the control. Proceed to V16B-5 to design, but not yet solve, a directional/anisotropic arrival-time formulation that respects frozen velocity orientation. Do not tune the original isotropic speed field.",
+  "next_milestone": "V16B-5 \u2014 Directional / Anisotropic Arrival-Time Formulation Design"
+}

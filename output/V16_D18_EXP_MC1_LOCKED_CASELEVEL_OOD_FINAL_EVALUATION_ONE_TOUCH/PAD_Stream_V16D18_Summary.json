@@ -1,0 +1,66 @@
+{
+  "milestone": "V16D-18",
+  "experiment": "EXP-MC1",
+  "one_touch": true,
+  "cases": [
+    {
+      "case_id": "0005",
+      "MSE": 1.5010758170360552e-05,
+      "RMSE": 0.003874371971089063,
+      "MAE": 0.0018742474686863728,
+      "max_abs_error": 0.13418035209178925,
+      "pred_min": 0.20036153495311737,
+      "pred_max": 0.7999367117881775
+    },
+    {
+      "case_id": "0018",
+      "MSE": 1.9062488289029017e-05,
+      "RMSE": 0.004366060958006544,
+      "MAE": 0.0019435415036481959,
+      "max_abs_error": 0.1265564262866974,
+      "pred_min": 0.20028088986873627,
+      "pred_max": 0.7999276518821716
+    },
+    {
+      "case_id": "0021",
+      "MSE": 2.9114258708689267e-05,
+      "RMSE": 0.005395763033037058,
+      "MAE": 0.0021563105543127687,
+      "max_abs_error": 0.13196641206741333,
+      "pred_min": 0.20022408664226532,
+      "pred_max": 0.7999275326728821
+    },
+    {
+      "case_id": "0022",
+      "MSE": 1.2055086011243982e-05,
+      "RMSE": 0.0034720434921302443,
+      "MAE": 0.0016548167331337084,
+      "max_abs_error": 0.10377240180969238,
+      "pred_min": 0.200288787484169,
+      "pred_max": 0.7999447584152222
+    }
+  ],
+  "aggregate": {
+    "MSE": 1.8810647794830704e-05,
+    "RMSE": 0.004337124369306315,
+    "MAE": 0.0019072290649452615,
+    "max_abs_error": 0.13418035209178925,
+    "pred_min": 0.20022408664226532,
+    "pred_max": 0.7999447584152222,
+    "N_values": 7800408
+  },
+  "gates": {
+    "D17_summary_SHA_exact": true,
+    "D17_checkpoint_SHA_exact": true,
+    "exact_locked_OOD_cases": true,
+    "checkpoint_selected_before_OOD": true,
+    "no_OOD_adaptation": true,
+    "no_OOD_normalization_fit": true,
+    "no_OOD_model_selection": true,
+    "no_retraining": true,
+    "finite_metrics": true,
+    "prediction_bounds_respected": true
+  },
+  "status": "V16D_EXP_MC1_LOCKED_CASELEVEL_OOD_FINAL_EVALUATION_COMPLETE_ONE_TOUCH_GENERALIZATION_BASELINE_CERTIFIED",
+  "next_milestone": "V16D-19 \u2014 EXP-MC1 Multi-Case Generalization Audit, Interpretation, and V16D Forward Architecture Decision"
+}

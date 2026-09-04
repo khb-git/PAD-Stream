@@ -1,0 +1,12 @@
+{
+  "milestone": "V16E-1B1-XPU-R1",
+  "experiment_id": "V16E-BLREP-INC-XPU-001",
+  "failure": "oneDNN LSTM on XPU only supports inference mode",
+  "root_cause": "torch.no_grad() disabled gradient recording but the module remained in train mode.",
+  "repair": "Loaded existing checkpoint and called model.eval() before inference.",
+  "training_repeated": false,
+  "weights_modified": false,
+  "checkpoint_sha256_before": "535e106b59a8064979f525290882fc3280e79fa1d27cdb73edcc9805f6932bc4",
+  "checkpoint_sha256_after": "535e106b59a8064979f525290882fc3280e79fa1d27cdb73edcc9805f6932bc4",
+  "checkpoint_unchanged": true
+}

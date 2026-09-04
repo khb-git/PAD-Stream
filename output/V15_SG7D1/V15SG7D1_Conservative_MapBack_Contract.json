@@ -1,0 +1,39 @@
+{
+  "milestone": "V15-SG7D1",
+  "status": "CONSERVATIVE_FROZEN_L2_MAPBACK_COMPLETE",
+  "diagnosis": "SEGMENT_WEIGHTED_MAPBACK_CLOSES_AND_PRESERVES_BOUNDS",
+  "frozen_candidate": {
+    "candidate": "L2",
+    "sha256": "63540f125b5124974ad3348103a9c7347aa9d6484240721d64f8a3efe66397b0",
+    "changed": false
+  },
+  "mapback": {
+    "method": "flow-weighted piecewise-linear segment/cell intersection accumulation",
+    "deposition_measure": "streamline_weight * segment_length_m",
+    "grid_shape": [
+      15,
+      50,
+      50
+    ],
+    "cell_size_m": [
+      6.096,
+      6.096,
+      1.2192
+    ],
+    "coordinate_input_units": "m",
+    "coordinate_origin_shift_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "supported_cells": 29107,
+    "unsupported_cells": 8393,
+    "support_fraction": 0.7761866666666667,
+    "support_closure_rel": 1.032727954289435e-14,
+    "sat_measure_closure_rel": 2.8766688740228284e-14
+  },
+  "unsupported_cell_policy": "explicit_nan_no_fill",
+  "SG7E_threshold_changed": false,
+  "recommendation": "The frozen L2 streamline field has been conservatively accumulated onto the 15x50x50 SGSim grid using streamline flow weights and exact Cartesian segment splitting. Unsupported cells remain explicit. Proceed to SG7D2 for independent map-back conservation, support-distribution, and spatial-plume validation before any unsupported-cell policy or SG7E thresholding.",
+  "next_milestone": "V15-SG7D2 \u2014 Independent Map-Back Conservation / Support Audit"
+}

@@ -1,0 +1,1421 @@
+{
+  "name": "V16D_CONTROLSPACE_STAGE4_LEARNING_DATASET_1.0",
+  "generalization_unit": "COMPLETE_FOUNDATION_CASE",
+  "cases": [
+    {
+      "case_id": "V16D_Foundation_Case_0026_R350_B1800",
+      "geology": "0026",
+      "injection_rate_tpd": 350,
+      "producer_bhp_psi": 1800,
+      "partition": "TRAIN",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0026_R350_B1800_Predictors_RAW.npz",
+        "sha256": "8db1bcd31856789a4bd3910803700b3ec0f16014b8c479160a6c13cd012c9caa",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0026_R350_B1800_Predictors_NORMALIZED.npz",
+        "sha256": "8692b837a7db850dcbb5c8d01c313da1145206423601604f30b6f8900bfc48d4",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31A_RESTARTABLE_TRAIN_18CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0026_R350_B1800_Stage4_Transport.npz",
+        "sha256": "d814fbcaab7dc8a5ea1ce6a06096d3bc0c05abb1077333a569f01e98e57c2028",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0026_R350_B2000",
+      "geology": "0026",
+      "injection_rate_tpd": 350,
+      "producer_bhp_psi": 2000,
+      "partition": "TRAIN",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0026_R350_B2000_Predictors_RAW.npz",
+        "sha256": "4196e1b133841b2fd1071ccdfbb9904407fde319494d651f2ee0e90c478a2494",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0026_R350_B2000_Predictors_NORMALIZED.npz",
+        "sha256": "209fdb250903d5081324bb3d4634a6c2f01dd4dea4749207bf2e19bbf18df3f5",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31A_RESTARTABLE_TRAIN_18CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0026_R350_B2000_Stage4_Transport.npz",
+        "sha256": "8812398c14f1851a43d10415b6436a922d95a4eb5b94a0f9def5405b88aadf46",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0026_R350_B2200",
+      "geology": "0026",
+      "injection_rate_tpd": 350,
+      "producer_bhp_psi": 2200,
+      "partition": "TRAIN",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0026_R350_B2200_Predictors_RAW.npz",
+        "sha256": "ebd99ba7b23a85c3ac078d6c9622103ca26f49cfe261d53c0fffa0c5f3a1fc5d",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0026_R350_B2200_Predictors_NORMALIZED.npz",
+        "sha256": "64736e01c308128a659182ece3d80f27fbff5945dbfc6e158049ff1b717a65d6",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31A_RESTARTABLE_TRAIN_18CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0026_R350_B2200_Stage4_Transport.npz",
+        "sha256": "416149e7c9a7ff6f8614b434d57b0703fb6d1ef25fe63ad46e50a6b49a047d1b",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0026_R500_B1800",
+      "geology": "0026",
+      "injection_rate_tpd": 500,
+      "producer_bhp_psi": 1800,
+      "partition": "TRAIN",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0026_R500_B1800_Predictors_RAW.npz",
+        "sha256": "c76e7c2b52952790467267ec780381868f5c2fe62c9f4445476755f530b64ee6",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0026_R500_B1800_Predictors_NORMALIZED.npz",
+        "sha256": "301a9f0849a2f4e39c22ac88d2b730c89d6394ece1f581e67fb08a76367fbcea",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31A_RESTARTABLE_TRAIN_18CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0026_R500_B1800_Stage4_Transport.npz",
+        "sha256": "0fa06da9480e45a07f37ef626a7ff70236cbf24ba9689a9ae51f43842eb78c18",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0026_R500_B2000",
+      "geology": "0026",
+      "injection_rate_tpd": 500,
+      "producer_bhp_psi": 2000,
+      "partition": "TRAIN",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0026_R500_B2000_Predictors_RAW.npz",
+        "sha256": "47a122a2f7c0b035dd236046f1229a52e687db0e88c61b20c8fb5a53a1688f06",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0026_R500_B2000_Predictors_NORMALIZED.npz",
+        "sha256": "7e5f9d766137107fb9dd9a9ed7130ee7fe7b707c633f593d160b6c3e666ffe95",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31A_RESTARTABLE_TRAIN_18CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0026_R500_B2000_Stage4_Transport.npz",
+        "sha256": "6e7fca41df13d85a61cea56a4e8d0533a4511eb9b34987360e02ae1cc62d243b",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0026_R500_B2200",
+      "geology": "0026",
+      "injection_rate_tpd": 500,
+      "producer_bhp_psi": 2200,
+      "partition": "TRAIN",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0026_R500_B2200_Predictors_RAW.npz",
+        "sha256": "d15e9ded5f57388743ead73b128dc1f2c24661f8ead42bd6b486162d98c93ce7",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0026_R500_B2200_Predictors_NORMALIZED.npz",
+        "sha256": "6b653d759952d6d2c166c043ed2e8afc86440d90f89d879c7fd74bb0b0cd16ae",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31A_RESTARTABLE_TRAIN_18CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0026_R500_B2200_Stage4_Transport.npz",
+        "sha256": "b2a359a5ac7bbd909504845ca3383737e5d67c957407da808d6fede9e36c81c8",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0026_R650_B1800",
+      "geology": "0026",
+      "injection_rate_tpd": 650,
+      "producer_bhp_psi": 1800,
+      "partition": "TRAIN",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0026_R650_B1800_Predictors_RAW.npz",
+        "sha256": "3d7e36feaa952c48a4d3cc9055ccf0d4f3c6c52ead3a7ce57e29993cf3a3020d",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0026_R650_B1800_Predictors_NORMALIZED.npz",
+        "sha256": "3e4fafa2c58f87b214dd2bbbb103f9be4303b31c6962380194ea3c1c1c9a90cc",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31A_RESTARTABLE_TRAIN_18CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0026_R650_B1800_Stage4_Transport.npz",
+        "sha256": "c1b9d712694f00298d50ea8588f1c13c252d9257eeea20f9640469faa097ef56",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0026_R650_B2000",
+      "geology": "0026",
+      "injection_rate_tpd": 650,
+      "producer_bhp_psi": 2000,
+      "partition": "TRAIN",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0026_R650_B2000_Predictors_RAW.npz",
+        "sha256": "66d4f2c2cab69f95982b99a2a5ca94c807522a1ec8a2f12211b41d12cd4966b3",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0026_R650_B2000_Predictors_NORMALIZED.npz",
+        "sha256": "8e7bc3e0294c0355ba23cea9166b1f723c1dde9fb445bfb49a45ef1de5856f6c",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31A_RESTARTABLE_TRAIN_18CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0026_R650_B2000_Stage4_Transport.npz",
+        "sha256": "64968b3529fc10c2fbffffac83b04ddf91f25adaa6b59633ff19d90758d809d3",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0026_R650_B2200",
+      "geology": "0026",
+      "injection_rate_tpd": 650,
+      "producer_bhp_psi": 2200,
+      "partition": "TRAIN",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0026_R650_B2200_Predictors_RAW.npz",
+        "sha256": "a6081dde58d736765cd6f3c2bbfdbb8b522530e43ef50dd67ad5d992b0cafbe6",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0026_R650_B2200_Predictors_NORMALIZED.npz",
+        "sha256": "49ecddc34f077673df11270eb8988ebb985b3de4d47dfb08098209fc617e97c6",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31A_RESTARTABLE_TRAIN_18CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0026_R650_B2200_Stage4_Transport.npz",
+        "sha256": "04f2403c43a2ed65c9ff0ba40a2f2ba95b93c7e6c0c9e21c81ae4054daa4c233",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0027_R350_B1800",
+      "geology": "0027",
+      "injection_rate_tpd": 350,
+      "producer_bhp_psi": 1800,
+      "partition": "TRAIN",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0027_R350_B1800_Predictors_RAW.npz",
+        "sha256": "ed07a3040c91b3359ccb4787e90386bb271c8258e32b6a0eaa5ec0bd94a6b9a8",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0027_R350_B1800_Predictors_NORMALIZED.npz",
+        "sha256": "8e3d786e5c791ff2068562a616aa4d3dd05705aff4cfd74276c5a9e6e21a1320",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31A_RESTARTABLE_TRAIN_18CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0027_R350_B1800_Stage4_Transport.npz",
+        "sha256": "3d97031c37a68b687ed627021f687ee6472e10cba9d007643ea364254ff67924",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0027_R350_B2000",
+      "geology": "0027",
+      "injection_rate_tpd": 350,
+      "producer_bhp_psi": 2000,
+      "partition": "TRAIN",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0027_R350_B2000_Predictors_RAW.npz",
+        "sha256": "3321148cef298eb1f89196100b04252b11295fae73b6b53511268eab0ca81055",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0027_R350_B2000_Predictors_NORMALIZED.npz",
+        "sha256": "e9f274fc88eac26cf0e90c580c246b1a988b47d07e36af61aa9c3e10daa2531c",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31A_RESTARTABLE_TRAIN_18CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0027_R350_B2000_Stage4_Transport.npz",
+        "sha256": "85947942fe1e3efe6f6b1b643b7f4ab5c5e4d85706fed34386289f9c612c7962",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0027_R350_B2200",
+      "geology": "0027",
+      "injection_rate_tpd": 350,
+      "producer_bhp_psi": 2200,
+      "partition": "TRAIN",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0027_R350_B2200_Predictors_RAW.npz",
+        "sha256": "3506f1bcbf923d5431cc6a45357b9e2cbe525aa375cbd451914d0dd461bec332",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0027_R350_B2200_Predictors_NORMALIZED.npz",
+        "sha256": "5a40b01f8925cc7f8c279851811681406dedf6ef7bb9cf165c0af581c6672211",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31A_RESTARTABLE_TRAIN_18CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0027_R350_B2200_Stage4_Transport.npz",
+        "sha256": "2f3da3c2ed9c28dac1e5723d609dd12973777cff540dbcc475b3ca8f5b1e58af",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0027_R500_B1800",
+      "geology": "0027",
+      "injection_rate_tpd": 500,
+      "producer_bhp_psi": 1800,
+      "partition": "TRAIN",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0027_R500_B1800_Predictors_RAW.npz",
+        "sha256": "f587653ddcc2361671310b75cae348e6878f50865e104eba9b871ac6e4f36f38",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0027_R500_B1800_Predictors_NORMALIZED.npz",
+        "sha256": "76dd42fb3c0325fe67af575700af169c2e2a400ea499c5273800b5ee1a8b5d7f",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31A_RESTARTABLE_TRAIN_18CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0027_R500_B1800_Stage4_Transport.npz",
+        "sha256": "2dcaf608cf2399225228431059572b30f2e23a678893099cf7b4c7fbbf6387e7",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0027_R500_B2000",
+      "geology": "0027",
+      "injection_rate_tpd": 500,
+      "producer_bhp_psi": 2000,
+      "partition": "TRAIN",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0027_R500_B2000_Predictors_RAW.npz",
+        "sha256": "e2ba487e07d3284d494cccadde8b7757c5afc2ec2ff2a7a855ac1347be6439b7",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0027_R500_B2000_Predictors_NORMALIZED.npz",
+        "sha256": "a49419b0b81aff50f7a980ea4da5803aa9302e840f0c2416b7ef6cd4d8ec75bf",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31A_RESTARTABLE_TRAIN_18CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0027_R500_B2000_Stage4_Transport.npz",
+        "sha256": "236ab65a2e87f8ef43fa5349e7a7790d78c5f4d925e1f8ddd048f867826db127",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0027_R500_B2200",
+      "geology": "0027",
+      "injection_rate_tpd": 500,
+      "producer_bhp_psi": 2200,
+      "partition": "TRAIN",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0027_R500_B2200_Predictors_RAW.npz",
+        "sha256": "b047d9caf3bece4a926c5920b20abe0fbc3ffedf998080ea7b726e592fbb9606",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0027_R500_B2200_Predictors_NORMALIZED.npz",
+        "sha256": "d1980d8925fe6473d03a364092e168ead81571409fc75b7f6fc76d5b97163050",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31A_RESTARTABLE_TRAIN_18CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0027_R500_B2200_Stage4_Transport.npz",
+        "sha256": "eab7650534aed30e89d3afc4a2b5680c3f6a46b91fedd48074f9d51d742e694b",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0027_R650_B1800",
+      "geology": "0027",
+      "injection_rate_tpd": 650,
+      "producer_bhp_psi": 1800,
+      "partition": "TRAIN",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0027_R650_B1800_Predictors_RAW.npz",
+        "sha256": "a123d37d1d709ae20ba6e01a18ac7ba4dd5af4b034d45eb31c7ec9d67cddedb8",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0027_R650_B1800_Predictors_NORMALIZED.npz",
+        "sha256": "afbaff07880372bf99ff19d10b74b4f7699d58612537034003a53390ab1614fc",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31A_RESTARTABLE_TRAIN_18CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0027_R650_B1800_Stage4_Transport.npz",
+        "sha256": "f1df6125bde5e78545bda916922fb645be26c7144822938c27b9f5dcadc96b98",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0027_R650_B2000",
+      "geology": "0027",
+      "injection_rate_tpd": 650,
+      "producer_bhp_psi": 2000,
+      "partition": "TRAIN",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0027_R650_B2000_Predictors_RAW.npz",
+        "sha256": "75f78cc03c032049c5aa554b953441954dea13efddf8cdeb896b3b23097fc08f",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0027_R650_B2000_Predictors_NORMALIZED.npz",
+        "sha256": "55bd52b50fc298410feb44d123ee208dbf0c78656fb575fa9d6ecf5593caaa24",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31A_RESTARTABLE_TRAIN_18CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0027_R650_B2000_Stage4_Transport.npz",
+        "sha256": "afb08f1ac06a5fe44535d8d46f264b19099ccd5a1a91f90d0b10b090fd8bd304",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0027_R650_B2200",
+      "geology": "0027",
+      "injection_rate_tpd": 650,
+      "producer_bhp_psi": 2200,
+      "partition": "TRAIN",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0027_R650_B2200_Predictors_RAW.npz",
+        "sha256": "1061611a6e9942631cd8d8b7dfcdc00ec14729753273f4de136e0564845cf288",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0027_R650_B2200_Predictors_NORMALIZED.npz",
+        "sha256": "0ccbcd76609d381384c6e4dc4b7d03ad320db81c90525cdd32e31de5849f232e",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31A_RESTARTABLE_TRAIN_18CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0027_R650_B2200_Stage4_Transport.npz",
+        "sha256": "a610cfa80370d542d6aac029c82bab32530b5645d94e845653d1a65679ea4f71",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0028_R350_B1800",
+      "geology": "0028",
+      "injection_rate_tpd": 350,
+      "producer_bhp_psi": 1800,
+      "partition": "VALIDATION",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0028_R350_B1800_Predictors_RAW.npz",
+        "sha256": "1018e3fb9ca9d1a4747cebca36d0ae3b2d0bda76708cd9592e8aad183048e956",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0028_R350_B1800_Predictors_NORMALIZED.npz",
+        "sha256": "a9aa7a9cb8d7bddb531d28704e3efcb624be82d8c7327e872ea2e387d2c4b89e",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31B_R1_RESTARTABLE_VALIDATION_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0028_R350_B1800_Stage4_Transport.npz",
+        "sha256": "91be8ab909c7e55c4268c9c47e317e3df896b0f232a8eba5c1549f81f45dde53",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0028_R350_B2000",
+      "geology": "0028",
+      "injection_rate_tpd": 350,
+      "producer_bhp_psi": 2000,
+      "partition": "VALIDATION",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0028_R350_B2000_Predictors_RAW.npz",
+        "sha256": "fb94bfe1cbb17deba38328985e7747c155588cb63084b91b1120544b87f9e915",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0028_R350_B2000_Predictors_NORMALIZED.npz",
+        "sha256": "5f92af00873a55f8733f4d4bace186b6db7d0cfdf5ce5b6a3373a2ea3234c864",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31B_R1_RESTARTABLE_VALIDATION_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0028_R350_B2000_Stage4_Transport.npz",
+        "sha256": "cde1ab42ee17ecc74278692f4281407f89c21e654bc9da48c6d40b9ba18f0e51",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0028_R350_B2200",
+      "geology": "0028",
+      "injection_rate_tpd": 350,
+      "producer_bhp_psi": 2200,
+      "partition": "VALIDATION",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0028_R350_B2200_Predictors_RAW.npz",
+        "sha256": "133dd4c4fad95959f32b86fcc73aa2c228ae67adc39de23dab2f8556fbbcb054",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0028_R350_B2200_Predictors_NORMALIZED.npz",
+        "sha256": "9905b4e6c788dbdc2007bca231f4cd5a1220488515cf0629e665949923ebc0b0",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31B_R1_RESTARTABLE_VALIDATION_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0028_R350_B2200_Stage4_Transport.npz",
+        "sha256": "9d1ae6413cf49e8917c60fbb9c1453a4c01c17368198da6bfee9ac6df7de8b67",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0028_R500_B1800",
+      "geology": "0028",
+      "injection_rate_tpd": 500,
+      "producer_bhp_psi": 1800,
+      "partition": "VALIDATION",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0028_R500_B1800_Predictors_RAW.npz",
+        "sha256": "2bd0a9188d39b55f7dd3768ae7d6c92310925013cb8764f21ae7d94e0fea1f02",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0028_R500_B1800_Predictors_NORMALIZED.npz",
+        "sha256": "bfd914d6e5a8b672e4c031fbc905d2c35d37b2b4ced178bed1ee46cb208f2820",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31B_R1_RESTARTABLE_VALIDATION_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0028_R500_B1800_Stage4_Transport.npz",
+        "sha256": "57588755af3db634a00e159dd5d74c0a1e4b10ede1c99e52a567a659af4cb1fa",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0028_R500_B2000",
+      "geology": "0028",
+      "injection_rate_tpd": 500,
+      "producer_bhp_psi": 2000,
+      "partition": "VALIDATION",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0028_R500_B2000_Predictors_RAW.npz",
+        "sha256": "3fcd2b81a258e1a58246f0a03b3a0bfebbe2407e9e87f46d8317bb42f4f91ef1",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0028_R500_B2000_Predictors_NORMALIZED.npz",
+        "sha256": "3a4a9d968b5c7c88e73ea78a927f12cba3f1241ec3f31b68e7f4dc6976846fdb",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31B_R1_RESTARTABLE_VALIDATION_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0028_R500_B2000_Stage4_Transport.npz",
+        "sha256": "5bf700a7db4a9cb0b5a9b1fb0f0a32b977995cbb6bdd16963645cd8507bb523d",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0028_R500_B2200",
+      "geology": "0028",
+      "injection_rate_tpd": 500,
+      "producer_bhp_psi": 2200,
+      "partition": "VALIDATION",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0028_R500_B2200_Predictors_RAW.npz",
+        "sha256": "9f731dd370b328edcc1a8c64319604964df9f3c41f04f9d5d97f581a22d53484",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0028_R500_B2200_Predictors_NORMALIZED.npz",
+        "sha256": "3c26b7c4f73dc1f5ab173ba0ca71c66e36ef3d52fd98509db09bb92e97cb3e0f",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31B_R1_RESTARTABLE_VALIDATION_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0028_R500_B2200_Stage4_Transport.npz",
+        "sha256": "8ab9d97e3f73f1fdb2a034ee2cefbf0fc19391f0780c75a65e17fbde33a4dc65",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0028_R650_B1800",
+      "geology": "0028",
+      "injection_rate_tpd": 650,
+      "producer_bhp_psi": 1800,
+      "partition": "VALIDATION",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0028_R650_B1800_Predictors_RAW.npz",
+        "sha256": "4cc6805490f9da0651ff59e2c00db1e88557bfb169e31822f859c1d35d18fedd",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0028_R650_B1800_Predictors_NORMALIZED.npz",
+        "sha256": "c7068316b528e80b610bde083b20785dd45a23424fd497634efa0f151ab70745",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31B_R1_RESTARTABLE_VALIDATION_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0028_R650_B1800_Stage4_Transport.npz",
+        "sha256": "87b1e4ab0e258369b6a54b650ff81d65c8eec892a3b2d5aad3de75e1fea5f32d",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0028_R650_B2000",
+      "geology": "0028",
+      "injection_rate_tpd": 650,
+      "producer_bhp_psi": 2000,
+      "partition": "VALIDATION",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0028_R650_B2000_Predictors_RAW.npz",
+        "sha256": "57014bee09681fefc0979773b3bcb6ad42a24e74507dd1510c4bb63e0fba9d55",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0028_R650_B2000_Predictors_NORMALIZED.npz",
+        "sha256": "d17f61f541b74125fb4a3e580bcf5b4fc02c1abffc62a97093e1abb4be4cae49",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31B_R1_RESTARTABLE_VALIDATION_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0028_R650_B2000_Stage4_Transport.npz",
+        "sha256": "b52b0b43fba85126275ff0fce57fb9eb16274f761ae2f19efc1abb527868c96b",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0028_R650_B2200",
+      "geology": "0028",
+      "injection_rate_tpd": 650,
+      "producer_bhp_psi": 2200,
+      "partition": "VALIDATION",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0028_R650_B2200_Predictors_RAW.npz",
+        "sha256": "814ee6137e8f3649fe53bb39dac34a53b61c3dadaf3a3c798b7838c343aaabc7",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0028_R650_B2200_Predictors_NORMALIZED.npz",
+        "sha256": "3a83a9f75555a82dc31a850a11640256d76f9b48e15a93a283cb14699e9e6e09",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31B_R1_RESTARTABLE_VALIDATION_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0028_R650_B2200_Stage4_Transport.npz",
+        "sha256": "36eabaf737935fc2b1c079408eed1804197d49dd6e0b6c0f49b34234bad0eb82",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0029_R350_B1800",
+      "geology": "0029",
+      "injection_rate_tpd": 350,
+      "producer_bhp_psi": 1800,
+      "partition": "LOCKED_OOD_TEST",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R350_B1800_Predictors_RAW.npz",
+        "sha256": "018f8887ba77852b6be618dcb496fb4fbe5b16db68379ce580ab77e1ecb2c2fa",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R350_B1800_Predictors_NORMALIZED.npz",
+        "sha256": "9f10aed46ee6cfb271ee4769d0fa0895eef8ef6572b40ba63694545e42c116f0",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R350_B1800_Stage4_Transport.npz",
+        "sha256": "42379eca6af7e53ae585b42cec6a5dc7056c07598bcd87686ee0e69b3aee40d1",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0029_R350_B2000",
+      "geology": "0029",
+      "injection_rate_tpd": 350,
+      "producer_bhp_psi": 2000,
+      "partition": "LOCKED_OOD_TEST",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R350_B2000_Predictors_RAW.npz",
+        "sha256": "259ce4e7b4853f693d82955bbb25bf0f6cf57ba4310d37104b70c1399b7c113d",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R350_B2000_Predictors_NORMALIZED.npz",
+        "sha256": "b15fd83495ef605240a9a3aec2a2819edc858ca0c69f2dd4e0b9973e6b8ec9c7",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R350_B2000_Stage4_Transport.npz",
+        "sha256": "cd9acbf7b60ffb35053203070b8bf4c7572e48c48a0837b0f77adf2192aa11e5",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0029_R350_B2200",
+      "geology": "0029",
+      "injection_rate_tpd": 350,
+      "producer_bhp_psi": 2200,
+      "partition": "LOCKED_OOD_TEST",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R350_B2200_Predictors_RAW.npz",
+        "sha256": "775cceb787a65b2165c5450b3096336675ef57af49251fffe413edc4c9249145",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R350_B2200_Predictors_NORMALIZED.npz",
+        "sha256": "8838528549e77a141db1c2da917563383826f5e7449da286bfa39e3313f63bf8",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R350_B2200_Stage4_Transport.npz",
+        "sha256": "7ecd25e7bc510de34ba0914dedf6048c552ea2425c31507916cd0fe87f75acdc",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0029_R500_B1800",
+      "geology": "0029",
+      "injection_rate_tpd": 500,
+      "producer_bhp_psi": 1800,
+      "partition": "LOCKED_OOD_TEST",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R500_B1800_Predictors_RAW.npz",
+        "sha256": "e2c17b01c7d8740fd970fb4a0dee8b29a68fcc277c81683d9ca16ff28eec45a9",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R500_B1800_Predictors_NORMALIZED.npz",
+        "sha256": "8d905fb4203906423b36e3f3794cd5ce4378542dc123bee5bb5baf0ab345fb69",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R500_B1800_Stage4_Transport.npz",
+        "sha256": "c2fe1343e632111e99b59f2ecb853f38451d33bfe71401920532d9280529393a",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0029_R500_B2000",
+      "geology": "0029",
+      "injection_rate_tpd": 500,
+      "producer_bhp_psi": 2000,
+      "partition": "LOCKED_OOD_TEST",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R500_B2000_Predictors_RAW.npz",
+        "sha256": "a243be5c040fa36454768daaee943c5fcab824637a9bbe5cb890a99e18a851ce",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R500_B2000_Predictors_NORMALIZED.npz",
+        "sha256": "9bb5f9bd4ff97eab2b74435376fd30393727775641f682bf9149d9645dcf6ff0",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R500_B2000_Stage4_Transport.npz",
+        "sha256": "ee706e4ea371ee1478275a7c9bbb161c229d8f90423d634597192f0251baff92",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0029_R500_B2200",
+      "geology": "0029",
+      "injection_rate_tpd": 500,
+      "producer_bhp_psi": 2200,
+      "partition": "LOCKED_OOD_TEST",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R500_B2200_Predictors_RAW.npz",
+        "sha256": "ad223c50a7df7acbd020e965748169881750c2eaa861d0bb666d74bab7308492",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R500_B2200_Predictors_NORMALIZED.npz",
+        "sha256": "518e349d42a328f8c37e7ad5f336741284296ec58a27af9409c6766bc840b334",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R500_B2200_Stage4_Transport.npz",
+        "sha256": "8cd6a8e2125cac3566a3a95451bdf42a801f65a35afef4dd80a9b0c8bcb28b47",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0029_R650_B1800",
+      "geology": "0029",
+      "injection_rate_tpd": 650,
+      "producer_bhp_psi": 1800,
+      "partition": "LOCKED_OOD_TEST",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R650_B1800_Predictors_RAW.npz",
+        "sha256": "306ea70bb7a1f3a86d1cdb6f70171c88ead2bce3d1f19ac6f89649de72cf3a20",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R650_B1800_Predictors_NORMALIZED.npz",
+        "sha256": "2c9b715f7d67dba1ab028c98dcc033b56b87b1791cfb57f2380a01830c808951",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R650_B1800_Stage4_Transport.npz",
+        "sha256": "439a7db589964954b0261624982d88d8a40aec1efdf5229c4978b15b641f14aa",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0029_R650_B2000",
+      "geology": "0029",
+      "injection_rate_tpd": 650,
+      "producer_bhp_psi": 2000,
+      "partition": "LOCKED_OOD_TEST",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R650_B2000_Predictors_RAW.npz",
+        "sha256": "7b157819cf4fc5d7f2f94dbef2e5ff073b4e9404fee068cfe3cc236eea74d72a",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R650_B2000_Predictors_NORMALIZED.npz",
+        "sha256": "c503417abd48d36842149a67523f57463c71c9a3d71d2cbdd70d8905ee4f8539",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R650_B2000_Stage4_Transport.npz",
+        "sha256": "5b73c369547cd92bbc9f5214d617c139ce0cd7723cfa84f8aae58239c7479912",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0029_R650_B2200",
+      "geology": "0029",
+      "injection_rate_tpd": 650,
+      "producer_bhp_psi": 2200,
+      "partition": "LOCKED_OOD_TEST",
+      "X_raw": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R650_B2200_Predictors_RAW.npz",
+        "sha256": "79078c8d5024c9642bafb6b165c8bc1771471dabb70a364ed666840992b1dc3b",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "X_normalized": {
+        "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R650_B2200_Predictors_NORMALIZED.npz",
+        "sha256": "bb1beabc5520c36265d77445ca36908d864dfed8197e87c3700b2fed743abe1b",
+        "shape": [
+          9,
+          1078,
+          201,
+          9
+        ]
+      },
+      "Y_stage4": {
+        "path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R650_B2200_Stage4_Transport.npz",
+        "sha256": "ce24247f4752c1113c765e3669d34eef4003dbfb8280ddea1473ac904207610b",
+        "shape_authority": [
+          9,
+          1078,
+          201
+        ],
+        "opened_in_D32": false
+      }
+    }
+  ],
+  "split_counts": {
+    "TRAIN": 18,
+    "VALIDATION": 9,
+    "LOCKED_OOD_TEST": 9
+  },
+  "geology_split": {
+    "TRAIN": [
+      "0026",
+      "0027"
+    ],
+    "VALIDATION": [
+      "0028"
+    ],
+    "LOCKED_OOD_TEST": [
+      "0029"
+    ]
+  },
+  "controls": {
+    "injection_rate_tpd": [
+      350,
+      500,
+      650
+    ],
+    "producer_bhp_psi": [
+      1800,
+      2000,
+      2200
+    ],
+    "complete_factorial_per_geology": true
+  },
+  "target_days": [
+    30.0,
+    60.0,
+    100.0,
+    150.0,
+    250.0,
+    365.0,
+    500.0,
+    750.0,
+    1000.0
+  ],
+  "predictor_shape_per_case": [
+    9,
+    1078,
+    201,
+    9
+  ],
+  "target_shape_per_case": [
+    9,
+    1078,
+    201
+  ],
+  "feature_order": [
+    "xi",
+    "pollock_tau_hat",
+    "adv_tau_hat",
+    "log10_Kh",
+    "log10_Kz_over_Kh",
+    "porosity",
+    "pressure_z",
+    "target_time_hat",
+    "target_eta_sequence"
+  ],
+  "normalization": {
+    "fit_partition": "TRAIN_ONLY",
+    "statistics_path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\V16D32_TRAIN_Only_Normalization_Statistics.json",
+    "statistics_sha256": "dcda1cf01fa30bd1cd947a500de73295037d6ca2b492725edd050c0ff7c3bfd9",
+    "validation": "TRANSFORM_ONLY",
+    "locked_OOD": "TRANSFORM_ONLY"
+  },
+  "target_access_in_D32": {
+    "TRAIN_Y_np_load": false,
+    "VALIDATION_Y_np_load": false,
+    "LOCKED_OOD_Y_np_load": false,
+    "target_binding_method": "manifest-record SHA + direct file SHA only"
+  },
+  "locked_OOD": {
+    "geology": "0029",
+    "manifest_sha256": "6e4fac63b6dcd8dad4e1675cd2d856811ffcf9231dadc50104349471da9df9a6",
+    "one_touch_contract_sha256": "7c664db19c041d3a611cbbc94de03a501a70f38922c62fd044cde1016d03228d",
+    "opened": false,
+    "evaluated": false
+  }
+}

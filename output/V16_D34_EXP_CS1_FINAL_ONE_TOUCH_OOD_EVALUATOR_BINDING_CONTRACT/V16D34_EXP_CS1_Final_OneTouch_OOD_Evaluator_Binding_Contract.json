@@ -1,0 +1,464 @@
+{
+  "milestone": "V16D-34",
+  "contract_id": "V16D_EXP_CS1_FINAL_ONE_TOUCH_OOD_EVALUATOR_BINDING_1.0",
+  "status": "V16D_EXP_CS1_FINAL_ONE_TOUCH_OOD_EVALUATOR_BINDING_FROZEN_OOD_REMAINS_SEALED_FINAL_EVALUATION_EXECUTION_AUTHORIZED",
+  "scientific_role": "Complete the previously preregistered D31D future-required binding after validation-only model/checkpoint selection and before any locked-OOD array is opened.",
+  "frozen_authorities": {
+    "D31D_contract": {
+      "path": "output\\V16_D31D_FROZEN_ONE_TOUCH_FINAL_LOCKED_OOD_EVALUATION_CONTRACT\\V16D31D_OneTouch_Final_Locked_OOD_Evaluation_Contract.json",
+      "sha256": "7c664db19c041d3a611cbbc94de03a501a70f38922c62fd044cde1016d03228d"
+    },
+    "D31D_summary": {
+      "path": "output\\V16_D31D_FROZEN_ONE_TOUCH_FINAL_LOCKED_OOD_EVALUATION_CONTRACT\\PAD_Stream_V16D31D_Summary.json",
+      "sha256": "a98000f0456f2307fb2f5a6921b1975bdf462dfde43af5fa65de9e5474c676d3"
+    },
+    "D32_dataset_registry": {
+      "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\V16D32_Frozen_36Case_Learning_Dataset_Registry.json",
+      "sha256": "9429b239626fbfc8fe8569a2214a79a7abd5e40fbc38ac9112ba236e547fb90d"
+    },
+    "D32_feature_contract": {
+      "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\V16D32_ControlSpace_C20_9Channel_Predictor_Contract.json",
+      "sha256": "6f3301a57281ab2b5d44ffe044758c4707a9a489b2ceaff13867b5f55285b23a"
+    },
+    "D32_normalization": {
+      "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\V16D32_TRAIN_Only_Normalization_Statistics.json",
+      "sha256": "dcda1cf01fa30bd1cd947a500de73295037d6ca2b492725edd050c0ff7c3bfd9"
+    },
+    "D32_predictor_manifest": {
+      "path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\V16D32_36Case_Predictor_Manifest.json",
+      "sha256": "70171305a74d512903b5ae75386a86d3110d5f90d9aee99640e858660610d8ee"
+    },
+    "D33_training_protocol": {
+      "path": "output\\V16_D33_CONTROLSPACE_RECURRENT_STAGE4_EXECUTABLE_TRAINING_PROTOCOL_FREEZE\\V16D33_EXP_CS1_ControlSpace_Executable_Training_Protocol_1.0.json",
+      "sha256": "e12219bdfe85fdbc2de30e348df609ff9bc91a652500a65f053dc6b64b4f9f4a"
+    },
+    "D33R1R2_certified_training_summary": {
+      "path": "output\\V16_D33_R1_EXP_CS1_CONTROLSPACE_RECURRENT_STAGE4_TRAINING_RUN\\PAD_Stream_V16D33_R1_R2_Summary.json",
+      "sha256": "c16208c88b3dcc8083987f56c594eb42994b8ba3b91d88aeb1f44d2e2bacfb02"
+    },
+    "D33R1R2_serialization_repair_report": {
+      "path": "output\\V16_D33_R1_EXP_CS1_CONTROLSPACE_RECURRENT_STAGE4_TRAINING_RUN\\V16D33R1R2_PostTraining_Serialization_Repair_Report.json",
+      "sha256": "fe0748743112a78e2b8f0c6bcb4fa368e2b5aee915ded37d8d5e64db0f374eeb"
+    },
+    "validation_diagnostics": {
+      "path": "output\\V16_D33_R1_EXP_CS1_CONTROLSPACE_RECURRENT_STAGE4_TRAINING_RUN\\V16D33R1_EXP_CS1_Validation_Diagnostics.json",
+      "sha256": "1ffa8e6314ebc1a84ce445f36a187ed9cc67b62a527b6fc6bda7813c09501821"
+    }
+  },
+  "selected_model": {
+    "experiment": "EXP-CS1",
+    "seed": 161501,
+    "architecture": "LSTM64 -> LSTM64 -> TD Dense sigmoid -> Rescaling[0.2,0.8]",
+    "architecture_path": "output\\V16_D33_R1_EXP_CS1_CONTROLSPACE_RECURRENT_STAGE4_TRAINING_RUN\\V16D33R1_EXP_CS1_Model_Architecture.json",
+    "architecture_sha256": "4304519d7c41b231f300535cef5daacd2525e395413addc883e66e7310096920",
+    "checkpoint_path": "output\\V16_D33_R1_EXP_CS1_CONTROLSPACE_RECURRENT_STAGE4_TRAINING_RUN\\V16D33R1_EXP_CS1_Best.weights.h5",
+    "checkpoint_sha256": "dc586da13e9fd7ce0b51cc661ba73edc8ab0f897d2f961112944504b13d1ed13",
+    "selection_partition": "VALIDATION",
+    "selection_authority": "minimum raw VALIDATION MSE",
+    "best_epoch": 73,
+    "single_model_only": true,
+    "single_checkpoint_only": true
+  },
+  "predictor_interface": {
+    "feature_order": [
+      "xi",
+      "pollock_tau_hat",
+      "adv_tau_hat",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity",
+      "pressure_z",
+      "target_time_hat",
+      "target_eta_sequence"
+    ],
+    "shape_per_case": [
+      9,
+      1078,
+      201,
+      9
+    ],
+    "normalization_fit": "TRAIN_ONLY",
+    "validation_normalization": "TRANSFORM_ONLY",
+    "locked_OOD_normalization": "TRANSFORM_ONLY",
+    "Pollock": "AUTHORITATIVE_KINEMATICS",
+    "ADV": "AUXILIARY",
+    "FMM": "NOT_PREDICTOR",
+    "M_face": "PHYSICS_SIDECAR_NOT_PREDICTOR",
+    "direct_rate_channel": false,
+    "direct_BHP_channel": false
+  },
+  "frozen_validation_metrics": {
+    "MSE": 1.8982550849500083e-05,
+    "RMSE": 0.004356896928950704,
+    "MAE": 0.001755229556988638,
+    "mean_signed_error": 0.0003469423389961818,
+    "prediction_min": 0.20024335384368896,
+    "prediction_max": 0.7999473810195923,
+    "values_evaluated": 17550918,
+    "diagnostics_sha256": "1ffa8e6314ebc1a84ce445f36a187ed9cc67b62a527b6fc6bda7813c09501821"
+  },
+  "locked_OOD_inventory": {
+    "partition": "LOCKED_OOD_TEST",
+    "geology": "0029",
+    "rates_tpd": [
+      350,
+      500,
+      650
+    ],
+    "producer_bhp_psi": [
+      1800,
+      2000,
+      2200
+    ],
+    "target_days": [
+      30,
+      60,
+      100,
+      150,
+      250,
+      365,
+      500,
+      750,
+      1000
+    ],
+    "count": 9,
+    "cases": [
+      {
+        "case_id": "V16D_Foundation_Case_0029_R350_B1800",
+        "geology": "0029",
+        "injection_rate_tpd": 350,
+        "producer_bhp_psi": 1800,
+        "X_normalized_path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R350_B1800_Predictors_NORMALIZED.npz",
+        "X_normalized_sha256": "9f10aed46ee6cfb271ee4769d0fa0895eef8ef6572b40ba63694545e42c116f0",
+        "X_shape": [
+          9,
+          1078,
+          201,
+          9
+        ],
+        "Y_stage4_path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R350_B1800_Stage4_Transport.npz",
+        "Y_stage4_sha256": "42379eca6af7e53ae585b42cec6a5dc7056c07598bcd87686ee0e69b3aee40d1",
+        "Y_shape": [
+          9,
+          1078,
+          201
+        ],
+        "hash_verified_without_np_load": true
+      },
+      {
+        "case_id": "V16D_Foundation_Case_0029_R350_B2000",
+        "geology": "0029",
+        "injection_rate_tpd": 350,
+        "producer_bhp_psi": 2000,
+        "X_normalized_path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R350_B2000_Predictors_NORMALIZED.npz",
+        "X_normalized_sha256": "b15fd83495ef605240a9a3aec2a2819edc858ca0c69f2dd4e0b9973e6b8ec9c7",
+        "X_shape": [
+          9,
+          1078,
+          201,
+          9
+        ],
+        "Y_stage4_path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R350_B2000_Stage4_Transport.npz",
+        "Y_stage4_sha256": "cd9acbf7b60ffb35053203070b8bf4c7572e48c48a0837b0f77adf2192aa11e5",
+        "Y_shape": [
+          9,
+          1078,
+          201
+        ],
+        "hash_verified_without_np_load": true
+      },
+      {
+        "case_id": "V16D_Foundation_Case_0029_R350_B2200",
+        "geology": "0029",
+        "injection_rate_tpd": 350,
+        "producer_bhp_psi": 2200,
+        "X_normalized_path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R350_B2200_Predictors_NORMALIZED.npz",
+        "X_normalized_sha256": "8838528549e77a141db1c2da917563383826f5e7449da286bfa39e3313f63bf8",
+        "X_shape": [
+          9,
+          1078,
+          201,
+          9
+        ],
+        "Y_stage4_path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R350_B2200_Stage4_Transport.npz",
+        "Y_stage4_sha256": "7ecd25e7bc510de34ba0914dedf6048c552ea2425c31507916cd0fe87f75acdc",
+        "Y_shape": [
+          9,
+          1078,
+          201
+        ],
+        "hash_verified_without_np_load": true
+      },
+      {
+        "case_id": "V16D_Foundation_Case_0029_R500_B1800",
+        "geology": "0029",
+        "injection_rate_tpd": 500,
+        "producer_bhp_psi": 1800,
+        "X_normalized_path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R500_B1800_Predictors_NORMALIZED.npz",
+        "X_normalized_sha256": "8d905fb4203906423b36e3f3794cd5ce4378542dc123bee5bb5baf0ab345fb69",
+        "X_shape": [
+          9,
+          1078,
+          201,
+          9
+        ],
+        "Y_stage4_path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R500_B1800_Stage4_Transport.npz",
+        "Y_stage4_sha256": "c2fe1343e632111e99b59f2ecb853f38451d33bfe71401920532d9280529393a",
+        "Y_shape": [
+          9,
+          1078,
+          201
+        ],
+        "hash_verified_without_np_load": true
+      },
+      {
+        "case_id": "V16D_Foundation_Case_0029_R500_B2000",
+        "geology": "0029",
+        "injection_rate_tpd": 500,
+        "producer_bhp_psi": 2000,
+        "X_normalized_path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R500_B2000_Predictors_NORMALIZED.npz",
+        "X_normalized_sha256": "9bb5f9bd4ff97eab2b74435376fd30393727775641f682bf9149d9645dcf6ff0",
+        "X_shape": [
+          9,
+          1078,
+          201,
+          9
+        ],
+        "Y_stage4_path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R500_B2000_Stage4_Transport.npz",
+        "Y_stage4_sha256": "ee706e4ea371ee1478275a7c9bbb161c229d8f90423d634597192f0251baff92",
+        "Y_shape": [
+          9,
+          1078,
+          201
+        ],
+        "hash_verified_without_np_load": true
+      },
+      {
+        "case_id": "V16D_Foundation_Case_0029_R500_B2200",
+        "geology": "0029",
+        "injection_rate_tpd": 500,
+        "producer_bhp_psi": 2200,
+        "X_normalized_path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R500_B2200_Predictors_NORMALIZED.npz",
+        "X_normalized_sha256": "518e349d42a328f8c37e7ad5f336741284296ec58a27af9409c6766bc840b334",
+        "X_shape": [
+          9,
+          1078,
+          201,
+          9
+        ],
+        "Y_stage4_path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R500_B2200_Stage4_Transport.npz",
+        "Y_stage4_sha256": "8cd6a8e2125cac3566a3a95451bdf42a801f65a35afef4dd80a9b0c8bcb28b47",
+        "Y_shape": [
+          9,
+          1078,
+          201
+        ],
+        "hash_verified_without_np_load": true
+      },
+      {
+        "case_id": "V16D_Foundation_Case_0029_R650_B1800",
+        "geology": "0029",
+        "injection_rate_tpd": 650,
+        "producer_bhp_psi": 1800,
+        "X_normalized_path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R650_B1800_Predictors_NORMALIZED.npz",
+        "X_normalized_sha256": "2c9b715f7d67dba1ab028c98dcc033b56b87b1791cfb57f2380a01830c808951",
+        "X_shape": [
+          9,
+          1078,
+          201,
+          9
+        ],
+        "Y_stage4_path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R650_B1800_Stage4_Transport.npz",
+        "Y_stage4_sha256": "439a7db589964954b0261624982d88d8a40aec1efdf5229c4978b15b641f14aa",
+        "Y_shape": [
+          9,
+          1078,
+          201
+        ],
+        "hash_verified_without_np_load": true
+      },
+      {
+        "case_id": "V16D_Foundation_Case_0029_R650_B2000",
+        "geology": "0029",
+        "injection_rate_tpd": 650,
+        "producer_bhp_psi": 2000,
+        "X_normalized_path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R650_B2000_Predictors_NORMALIZED.npz",
+        "X_normalized_sha256": "c503417abd48d36842149a67523f57463c71c9a3d71d2cbdd70d8905ee4f8539",
+        "X_shape": [
+          9,
+          1078,
+          201,
+          9
+        ],
+        "Y_stage4_path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R650_B2000_Stage4_Transport.npz",
+        "Y_stage4_sha256": "5b73c369547cd92bbc9f5214d617c139ce0cd7723cfa84f8aae58239c7479912",
+        "Y_shape": [
+          9,
+          1078,
+          201
+        ],
+        "hash_verified_without_np_load": true
+      },
+      {
+        "case_id": "V16D_Foundation_Case_0029_R650_B2200",
+        "geology": "0029",
+        "injection_rate_tpd": 650,
+        "producer_bhp_psi": 2200,
+        "X_normalized_path": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0029_R650_B2200_Predictors_NORMALIZED.npz",
+        "X_normalized_sha256": "bb1beabc5520c36265d77445ca36908d864dfed8197e87c3700b2fed743abe1b",
+        "X_shape": [
+          9,
+          1078,
+          201,
+          9
+        ],
+        "Y_stage4_path": "output\\V16_D31C_R1_RESTARTABLE_LOCKED_OOD_9CASE_STAGE4_TRANSPORT\\cases\\V16D_Foundation_Case_0029_R650_B2200_Stage4_Transport.npz",
+        "Y_stage4_sha256": "ce24247f4752c1113c765e3669d34eef4003dbfb8280ddea1473ac904207610b",
+        "Y_shape": [
+          9,
+          1078,
+          201
+        ],
+        "hash_verified_without_np_load": true
+      }
+    ],
+    "arrays_opened_in_D34": false,
+    "statistics_computed_in_D34": false
+  },
+  "metric_semantics": {
+    "primary_aggregate": {
+      "MSE": "mean((prediction-target)^2) over all 9x9x1078x201 values",
+      "RMSE": "sqrt(primary aggregate MSE)",
+      "MAE": "mean(abs(prediction-target)) over all 9x9x1078x201 values",
+      "accumulation_dtype": "float64"
+    },
+    "secondary_aggregate": [
+      "mean_signed_error",
+      "max_abs_error",
+      "prediction_min",
+      "prediction_max"
+    ],
+    "case_level": [
+      "MSE",
+      "RMSE",
+      "MAE",
+      "mean_signed_error",
+      "max_abs_error",
+      "prediction_min",
+      "prediction_max"
+    ],
+    "time_resolved": {
+      "times_days": [
+        30,
+        60,
+        100,
+        150,
+        250,
+        365,
+        500,
+        750,
+        1000
+      ],
+      "metrics": [
+        "MSE",
+        "RMSE",
+        "MAE",
+        "max_abs_error"
+      ],
+      "aggregation": "all 9 OOD control cases x 1078 streamlines x 201 nodes at each time"
+    },
+    "control_resolved": {
+      "by_injection_rate_tpd": [
+        350,
+        500,
+        650
+      ],
+      "by_producer_bhp_psi": [
+        1800,
+        2000,
+        2200
+      ],
+      "metrics": [
+        "RMSE",
+        "MAE"
+      ],
+      "no_control_weighting_or_exclusion": true
+    },
+    "physics_diagnostics": {
+      "Swc": 0.2,
+      "one_minus_Sor": 0.8,
+      "fraction_below_Swc": "count(prediction < 0.2) / all prediction values",
+      "fraction_above_one_minus_Sor": "count(prediction > 0.8) / all prediction values",
+      "maximum_lower_bound_violation": "max(0, 0.2 - global_prediction_min)",
+      "maximum_upper_bound_violation": "max(0, global_prediction_max - 0.8)",
+      "injector_node": {
+        "node_index": 0,
+        "frozen_injection_boundary_Sw": 0.8,
+        "metric": "mean absolute(prediction[:,:,node0] - 0.8) over all cases/times/streamlines"
+      },
+      "temporal_negative_fraction": {
+        "difference_axis": "target-time axis within each case",
+        "threshold": -1e-08,
+        "metric": "count(diff_time(prediction) < -1e-8) / all adjacent-time prediction differences"
+      },
+      "spatial_positive_fraction": {
+        "difference_axis": "Pollock-node axis within each case/time/streamline",
+        "threshold": 1e-08,
+        "metric": "count(diff_node(prediction) > +1e-8) / all adjacent-node prediction differences"
+      }
+    },
+    "validation_generalization_gap": {
+      "RMSE_ratio": "OOD_RMSE / frozen_validation_RMSE",
+      "MAE_ratio": "OOD_MAE / frozen_validation_MAE",
+      "frozen_validation_RMSE": 0.004356896928950704,
+      "frozen_validation_MAE": 0.001755229556988638
+    },
+    "claim_policy": {
+      "no_OOD_derived_pass_fail_threshold": true,
+      "report_even_if_poor": true,
+      "no_result_suppression": true
+    }
+  },
+  "final_evaluator_source": {
+    "path": "PAD_Stream_V16D35_EXP_CS1_OneTouch_Final_LOCKED_OOD_Evaluation.py",
+    "sha256": "80aeb3db5dcb58651df3b2b4f7d987849d6fde7ee1441f6953bca5f0e7699b6d",
+    "prediction_batch_size": 64,
+    "source_frozen_before_OOD_opening": true,
+    "executed_in_D34": false
+  },
+  "one_touch_execution": {
+    "future_milestone": "V16D-35",
+    "future_output_directory": "output\\V16_D35_EXP_CS1_ONE_TOUCH_FINAL_LOCKED_OOD_EVALUATION",
+    "opening_marker": "output\\V16_D35_EXP_CS1_ONE_TOUCH_FINAL_LOCKED_OOD_EVALUATION\\OOD_OPENED.lock",
+    "opening_marker_must_be_absent_at_D34": true,
+    "opening_rule": "V16D-35 atomically creates OOD_OPENED.lock immediately before the first locked-OOD array load/evaluation.",
+    "rerun_after_open": "PROHIBITED",
+    "failure_after_open_consumes_evaluation": true,
+    "output_directory_new_empty_before_open": true,
+    "exactly_one_checkpoint": "dc586da13e9fd7ce0b51cc661ba73edc8ab0f897d2f961112944504b13d1ed13"
+  },
+  "post_opening_firewall": {
+    "retraining_same_experiment": "PROHIBITED",
+    "checkpoint_change": "PROHIBITED",
+    "architecture_change": "PROHIBITED",
+    "feature_change": "PROHIBITED",
+    "normalization_change": "PROHIBITED",
+    "loss_change": "PROHIBITED",
+    "hyperparameter_change": "PROHIBITED",
+    "threshold_tuning": "PROHIBITED",
+    "case_reweighting": "PROHIBITED",
+    "control_reweighting": "PROHIBITED",
+    "OOD_informed_model_selection": "PROHIBITED",
+    "new_learning_requires_new_independent_locked_test": true
+  },
+  "execution_in_D34": {
+    "TensorFlow_import": false,
+    "model_load": false,
+    "model_inference": false,
+    "OOD_X_np_load": false,
+    "OOD_Y_np_load": false,
+    "OOD_statistics": false,
+    "OOD_OPENED_lock_created": false,
+    "contract_freeze_only": true
+  }
+}

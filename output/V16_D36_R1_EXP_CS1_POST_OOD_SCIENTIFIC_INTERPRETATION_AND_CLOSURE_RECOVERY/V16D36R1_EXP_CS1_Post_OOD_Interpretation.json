@@ -1,0 +1,211 @@
+{
+  "milestone": "V16D-36-R1",
+  "experiment": "EXP-CS1",
+  "scientific_role": "Post-OOD interpretation of the already-consumed final geology0029 test evaluation using only frozen D35 JSON result artifacts.",
+  "recovery_provenance": {
+    "failed_milestone": "V16D-36",
+    "failure_class": "CASE_LEVEL_CSV_SCHEMA_OMITTED_GEOLOGY_FIELD",
+    "failed_source_path": "PAD_Stream_V16D36_EXP_CS1_Post_OOD_Scientific_Interpretation_and_Closure.py",
+    "failed_source_sha256": "e89abd67df2b64620023d78ab3e41bade2e545ea432c5a52717d9819d256190a",
+    "scientific_computation_affected": false,
+    "model_or_OOD_arrays_reopened": false,
+    "repair": "Add geology to case-level CSV fieldnames and use fresh R1 output directory"
+  },
+  "frozen_D35_authorities": {
+    "results_path": "output\\V16_D35_EXP_CS1_ONE_TOUCH_FINAL_LOCKED_OOD_EVALUATION\\V16D35_EXP_CS1_Final_Locked_OOD_Results.json",
+    "results_sha256": "ecc8f4d7f54dc1603072b17d763113f3963f3aae8afd0d6e1f9d2af847d9388e",
+    "summary_path": "output\\V16_D35_EXP_CS1_ONE_TOUCH_FINAL_LOCKED_OOD_EVALUATION\\PAD_Stream_V16D35_Summary.json",
+    "summary_sha256": "2cbbd396bdbdffd27a199ffec3db99d5bf6837f2eb4a1a3c63c5addf2eba117b",
+    "opening_lock_path": "output\\V16_D35_EXP_CS1_ONE_TOUCH_FINAL_LOCKED_OOD_EVALUATION\\OOD_OPENED.lock",
+    "opening_lock_sha256": "e5cc11a9e33edf9c1d112c9cedaf21e7d8b7b49cb415535ba20781edaea9fec8"
+  },
+  "aggregate_OOD": {
+    "MSE": 1.7935869890747634e-05,
+    "RMSE": 0.0042350761375384545,
+    "MAE": 0.0017336927827610116,
+    "mean_signed_error": 0.00028239705125491545,
+    "max_abs_error": 0.13503268361091614,
+    "prediction_min": 0.20023314654827118,
+    "prediction_max": 0.7999467849731445,
+    "values": 17550918
+  },
+  "validation_comparison": {
+    "OOD_RMSE": 0.0042350761375384545,
+    "frozen_validation_RMSE": 0.004356896928950704,
+    "OOD_RMSE_over_validation_RMSE": 0.9720395516812034,
+    "OOD_RMSE_percent_difference_from_validation": -2.7960448318796627,
+    "OOD_MAE": 0.0017336927827610116,
+    "frozen_validation_MAE": 0.001755229556988638,
+    "OOD_MAE_over_validation_MAE": 0.9877299387183429,
+    "OOD_MAE_percent_difference_from_validation": -1.2270061281657085,
+    "interpretation": "The final unseen-geology aggregate error is compared only descriptively with the already-frozen validation reference. No threshold or model decision is made from this comparison."
+  },
+  "case_level_interpretation": {
+    "lowest_RMSE_case": {
+      "case_id": "V16D_Foundation_Case_0029_R650_B2000",
+      "RMSE": 0.003586716866568149,
+      "MAE": 0.0015168946959105462
+    },
+    "highest_RMSE_case": {
+      "case_id": "V16D_Foundation_Case_0029_R350_B1800",
+      "RMSE": 0.005299040797022176,
+      "MAE": 0.0021099813961267117
+    },
+    "lowest_MAE_case": {
+      "case_id": "V16D_Foundation_Case_0029_R650_B1800",
+      "RMSE": 0.0038101986660208746,
+      "MAE": 0.0015008481882846576
+    },
+    "highest_MAE_case": {
+      "case_id": "V16D_Foundation_Case_0029_R350_B1800",
+      "RMSE": 0.005299040797022176,
+      "MAE": 0.0021099813961267117
+    },
+    "RMSE_range": {
+      "min": 0.003586716866568149,
+      "max": 0.005299040797022176,
+      "max_over_min": 1.4774070533458128
+    }
+  },
+  "case_level_descriptive_statistics": {
+    "RMSE_mean_of_case_metrics": 0.004192702778486398,
+    "RMSE_median_of_case_metrics": 0.0038428971639560936,
+    "MAE_mean_of_case_metrics": 0.0017336927827610116,
+    "MAE_median_of_case_metrics": 0.0016292390553692717
+  },
+  "time_resolved_interpretation": {
+    "lowest_RMSE_time_days": 1000,
+    "lowest_RMSE": 0.001461886162845243,
+    "highest_RMSE_time_days": 100,
+    "highest_RMSE": 0.006238274899786138,
+    "early_mid_late_descriptive": {
+      "early_days": [
+        30,
+        60,
+        100
+      ],
+      "mid_days": [
+        150,
+        250,
+        365
+      ],
+      "late_days": [
+        500,
+        750,
+        1000
+      ]
+    },
+    "note": "Time-resolved behavior is reported descriptively from the frozen D35 metrics. It is not used to alter the model."
+  },
+  "control_space_interpretation": {
+    "injection_rate": {
+      "rows": [
+        {
+          "injection_rate_tpd": 350,
+          "RMSE": 0.004996167938797612,
+          "MAE": 0.002018917935558149,
+          "values": 5850306
+        },
+        {
+          "injection_rate_tpd": 500,
+          "RMSE": 0.003927478224088559,
+          "MAE": 0.0016331664328700609,
+          "values": 5850306
+        },
+        {
+          "injection_rate_tpd": 650,
+          "RMSE": 0.00366344515434364,
+          "MAE": 0.0015489939798548251,
+          "values": 5850306
+        }
+      ],
+      "RMSE_monotonic_decrease_with_rate": true,
+      "MAE_monotonic_decrease_with_rate": true,
+      "RMSE_percent_change_350_to_650": -26.674899658691377,
+      "MAE_percent_change_350_to_650": -23.276030562054963
+    },
+    "producer_BHP": {
+      "rows": [
+        {
+          "producer_bhp_psi": 1800,
+          "RMSE": 0.004454372178418291,
+          "MAE": 0.0017435623222718157,
+          "values": 5850306
+        },
+        {
+          "producer_bhp_psi": 2000,
+          "RMSE": 0.0041562549885500195,
+          "MAE": 0.0016968553516403314,
+          "values": 5850306
+        },
+        {
+          "producer_bhp_psi": 2200,
+          "RMSE": 0.004085550469462966,
+          "MAE": 0.001760660674370888,
+          "values": 5850306
+        }
+      ],
+      "RMSE_monotonic_decrease_with_BHP": true,
+      "MAE_monotonic_decrease_with_BHP": false,
+      "RMSE_percent_change_1800_to_2200": -8.279993098517657,
+      "MAE_percent_change_1800_to_2200": 0.980656204866448
+    },
+    "scientific_caution": "These control-space trends are post-OOD descriptive findings. They must not be used to modify EXP-CS1 or to re-evaluate geology0029."
+  },
+  "physics_diagnostic_interpretation": {
+    "saturation_bounds": {
+      "Swc": 0.2,
+      "one_minus_Sor": 0.8,
+      "fraction_below_Swc": 0.0,
+      "fraction_above_one_minus_Sor": 0.0,
+      "maximum_lower_bound_violation": 0.0,
+      "maximum_upper_bound_violation": 0.0
+    },
+    "injector_boundary": {
+      "frozen_boundary_Sw": 0.8,
+      "mean_absolute_error": 0.0005973000609871622
+    },
+    "temporal_monotonicity": {
+      "threshold": -1e-08,
+      "negative_fraction": 0.016650090610644982,
+      "differences_evaluated": 15600816
+    },
+    "streamline_spatial_monotonicity": {
+      "threshold": 1e-08,
+      "positive_fraction": 0.04896126800888705,
+      "differences_evaluated": 17463600
+    },
+    "note": "Physics diagnostics are interpreted exactly as preregistered. No new post-OOD acceptance threshold is invented."
+  },
+  "scientific_conclusions": [
+    "The final unseen geology0029 aggregate RMSE is 2.796% lower than the frozen validation RMSE.",
+    "The final unseen geology0029 aggregate MAE is 1.227% lower than the frozen validation MAE.",
+    "All nine predeclared rate/BHP cases are retained in the final result; no case, time, streamline, node, or control was excluded.",
+    "Control-resolved behavior and time/physics diagnostics are descriptive post-OOD observations only and cannot be used to change EXP-CS1.",
+    "EXP-CS1 is scientifically closed. Any new learning experiment requires a newly and independently locked test set."
+  ],
+  "experiment_closure": {
+    "EXP_CS1_training_closed": true,
+    "geology0029_consumed": true,
+    "geology0029_may_not_be_reused_as_unseen_test": true,
+    "same_experiment_retraining": "PROHIBITED",
+    "same_experiment_checkpoint_change": "PROHIBITED",
+    "same_experiment_architecture_change": "PROHIBITED",
+    "same_experiment_feature_change": "PROHIBITED",
+    "same_experiment_normalization_change": "PROHIBITED",
+    "same_experiment_threshold_tuning": "PROHIBITED",
+    "same_experiment_OOD_informed_selection": "PROHIBITED",
+    "future_new_learning_experiment_requires_new_locked_test": true
+  },
+  "execution_in_D36": {
+    "TensorFlow_import": false,
+    "checkpoint_loaded": false,
+    "model_inference": false,
+    "NPZ_loaded": false,
+    "OOD_arrays_reopened": false,
+    "predictions_recomputed": false,
+    "training": false,
+    "tuning": false,
+    "read_only_D35_JSON_interpretation": true
+  }
+}

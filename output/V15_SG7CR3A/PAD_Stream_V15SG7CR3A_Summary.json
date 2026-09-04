@@ -1,0 +1,16 @@
+{
+  "milestone": "V15-SG7C-R3A",
+  "status": "DEPLOYMENT_TOF_COORDINATE_MODEL_TRANSFER_AUDIT_COMPLETE",
+  "incoming_diagnosis": "COUPLED_DEPLOYMENT_TRANSFER_MISMATCH",
+  "diagnosis": "TRANSFER_MISMATCH_NOT_EXPLAINED_BY_SIMPLE_TD_SUPPORT_SHIFT",
+  "coordinate_reproduction_pass": true,
+  "frozen_domain_pass": true,
+  "tD_scale": 11.137549,
+  "max_deployed_tD": 7.661475420631019,
+  "max_normalized_input": 0.687896001232499,
+  "fraction_normalized_input_lt_0p05": 0.3539631855747558,
+  "corr_log10_tauend_bias_100d": 0.9287229868091106,
+  "corr_normalized_input_bias_100d": -0.7969984436382045,
+  "recommendation": "The tD mapping is numerically consistent, but the observed residual cannot be explained by a simple low-input support shift alone. Audit the canonical training density, time normalization, and conditional feature construction jointly.",
+  "next_milestone": "V15-SG7C-R3B \u2014 Canonical-vs-SGSim Input-Support / Transfer-Density Audit"
+}

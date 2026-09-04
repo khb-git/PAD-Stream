@@ -1,0 +1,15 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1F2C-R",
+  "candidate": "L2",
+  "status": "CROSSING_LOCAL_CANDIDATE_FREEZE_READY",
+  "freeze_ready": true,
+  "candidate_frozen": false,
+  "selected_guard_half_width": 0.029999971389770508,
+  "exact_support_fraction": 0.5000056447248766,
+  "gamma_precision_aware_envelope": 2.9802322387695312e-08,
+  "state_precision_aware_envelope": 1.1920928955078125e-07,
+  "failed_gates": [],
+  "model_weights_changed": false,
+  "physics_gate_changed": false,
+  "next_milestone": "V15-SG7C-R3F5-R1F3 \u2014 Crossing-Local Candidate Freeze / Provenance Manifest"
+}

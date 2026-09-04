@@ -1,0 +1,48 @@
+{
+  "milestone": "V15-SG7B-6B",
+  "description": "Targeted physics-dominant fine-tuning of the SG7B-6 reference PI-RNN",
+  "source_model": "V15SG7B6_Best_Model.keras",
+  "architecture_changed": false,
+  "architecture": {
+    "type": "plain stacked LSTM",
+    "fourier_features": false,
+    "film": false,
+    "front_coordinate": false
+  },
+  "physics_target": {
+    "SG7A_truth_FV_relative_MAE": 0.0006323248,
+    "maximum_allowed_ratio": 50.0,
+    "required_PI_RNN_FV_relative_MAE": 0.031616240000000004
+  },
+  "fine_tuning": {
+    "epochs_requested": 250,
+    "best_epoch": 247,
+    "runtime_seconds": 1398.0094739999622,
+    "physics_loss_weight": 0.2,
+    "learning_rate_stage_1": 0.0001,
+    "learning_rate_stage_2": 5e-05,
+    "learning_rate_stage_3": 2.5e-05
+  },
+  "pre_finetuning_test": {
+    "L1": 0.0110396733507514,
+    "FV_relative_MAE": 0.09501796960830688,
+    "mass_relative_MAE": 0.017925118319461412
+  },
+  "post_finetuning_test": {
+    "L1": 0.00540482671931386,
+    "L2": 0.008547622710466385,
+    "Linf": 0.05163782835006714,
+    "FV_relative_MAE": 0.040849000215530396,
+    "FV_relative_RMS": 0.14550136029720306,
+    "FV_ratio_to_SG7A": 64.60129385330197,
+    "mass_relative_MAE": 0.00888356515389351,
+    "mass_relative_max": 0.026050639352490544,
+    "injector_L1": 0.005891804583370686,
+    "late_time_L1": 0.008740445598959923,
+    "minimum_prediction": 0.23800723254680634,
+    "maximum_prediction": 0.7785978317260742
+  },
+  "validation_passed": false,
+  "status": "TARGET_NOT_REACHED",
+  "next_milestone": "Review SG7B-6B physics optimization before changing architecture"
+}

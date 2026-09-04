@@ -1,0 +1,38 @@
+{
+  "milestone": "V16B-5",
+  "status": "V16B_DIRECTIONAL_ADVECTIVE_TRAVEL_TIME_FORMULATION_READY",
+  "diagnosis": "ADVECTIVE_TRAVEL_TIME_PDE_IS_THE_PARAMETER_FREE_DIRECTIONAL_EXTENSION_CONSISTENT_WITH_FROZEN_VELOCITY_CHARACTERISTICS",
+  "selected_formulation": {
+    "candidate": "D3",
+    "name": "ADVECTIVE_TRAVEL_TIME_EQUATION",
+    "equation": "v(x) dot grad(tau_ADV) = 1",
+    "boundary_condition": "tau_ADV=0 on frozen injector completion source set",
+    "characteristics": "dx/dt=v(x)",
+    "new_fitted_parameter": false
+  },
+  "baseline_separation": {
+    "isotropic_FMM": "frozen control",
+    "directional_advective": "new unsolved branch",
+    "Pollock": "frozen independent trajectory reference"
+  },
+  "numerical_requirements": [
+    "upwind_directionality",
+    "physical_grid_spacing",
+    "causal_ordering_or_convergent_sweeping",
+    "multi-source_injector_boundary",
+    "no_crossflow_diffusion_added",
+    "independent_residual_check",
+    "comparison_to_Pollock_deferred_until_after_solution_freeze"
+  ],
+  "constraints": {
+    "directional_PDE_solved": false,
+    "FMM_rerun": false,
+    "FMM_speed_changed": false,
+    "Pollock_retrace": false,
+    "SG3_SG4_rerun": false,
+    "model_predict": false,
+    "training": false
+  },
+  "recommendation": "Freeze this governing-equation design. Proceed to V16B-6 to design the exact numerical discretization and causal solution strategy for v dot grad(tau)=1. Do not solve it until the numerical contract is fixed.",
+  "next_milestone": "V16B-6 \u2014 Directional Advective Travel-Time Numerical Scheme Contract"
+}

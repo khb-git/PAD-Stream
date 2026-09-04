@@ -1,0 +1,37 @@
+{
+  "milestone": "V16D-28-R1",
+  "status": "V16D_36CASE_D9R1_CONSERVATIVE_C7_FACE_METRIC_ENSEMBLE_CERTIFIED_FMM_ADV_CONTROLSPACE_EXPANSION_AUTHORIZED",
+  "cases": 36,
+  "total_streamlines": 38808,
+  "nodes_per_streamline": 201,
+  "faces_per_streamline": 200,
+  "C7_primary_metric": "M_face=Delta(theta)/Delta(xD)",
+  "C7_node_metric_role": "SIDECAR_ONLY",
+  "D9R1_source_sha256": "5df7178f316fc1fa94ce49eb40ee8318f804bce4d420a17dbc5cd79ab59ab8d4",
+  "manifest_sha256": "c61509bfd503ee36d8a6a6c2bcf56746e81fb165b6fab2a61ab6ea11ad95ca81",
+  "ensemble": {
+    "M_face_global_min": 0.03570600995637585,
+    "M_face_global_max": 25.191923250303077
+  },
+  "gates": {
+    "D28_summary_SHA_exact": true,
+    "D9R1_source_SHA_exact": true,
+    "D26_Pollock_case_dir_exists": true,
+    "D27_transport_case_dir_exists": true,
+    "D28_status_authorizes_execution": true,
+    "exactly_36_source_Pollock_artifacts": true,
+    "36_cases_built": true,
+    "all_36_certified": true,
+    "total_38808_streamlines": true,
+    "canonical_201_nodes": true,
+    "conservative_200_face_metric": true,
+    "all_face_metrics_positive": true,
+    "split_counts_18_9_9": true,
+    "no_case_or_streamline_selection": true,
+    "no_clipping_floor_smoothing_fitting": true,
+    "no_FMM_ADV": true,
+    "no_transport_target_generation": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-29 \u2014 Source-bound FMM/ADV travel-time hierarchy expansion across all 36 control-space Foundation Cases"
+}

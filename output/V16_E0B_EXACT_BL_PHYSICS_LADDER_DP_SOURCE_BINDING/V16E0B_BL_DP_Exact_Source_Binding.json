@@ -1,0 +1,169 @@
+{
+  "milestone": "V16E-0B",
+  "binding_role": "Exact source binding for BL physics ladder and canonical DP physics benchmark; learned historical maturity labels remain separate.",
+  "upstream_E0A": {
+    "source_sha256": "846cf8c278d9140e38ec11703e97ddd258d98465a7a66039a9b4838b3c74354e",
+    "inventory_sha256": "c82aa3f5cb87cfd2df5b71cdecae104f0a452394a9067a3ca3671e4db04d36b6",
+    "candidates_sha256": "6b44904270f8e8f8a81b0f6e317e5628d06a8026e59ef219237440551e641a76",
+    "role_report_sha256": "c04de232461fd7fa12cca8411bc8d334203c1842e3040f6cefe1abbeb26edc1b",
+    "summary_sha256": "02fad1b3c3be2fba02fecff150ce5df1260d081ea2ed066f415763a4b6f22b0e"
+  },
+  "BL_physics_ladder": {
+    "BL_STAGE1_INCOMPRESSIBLE_PI_RNN": {
+      "binding_id": "BL_STAGE1_INCOMPRESSIBLE_PI_RNN",
+      "role": "Incompressible/multi-case Buckley-Leverett PI-RNN physics-ladder source",
+      "expected_filename": "pi_rnn_stage1_incompressible.py",
+      "source_match_count": 1,
+      "source_bound": true,
+      "source": {
+        "path": "pi_rnn_stage1_incompressible.py",
+        "sha256": "98d492e1e4a84e9d2c3ab99a631bf7d21d011b65bdd599e0ab3192d947b36e58",
+        "size_bytes": 54846
+      },
+      "fingerprint_gates": {
+        "Physics-Informed Recurrent Neural Network for Buckley-Leverett Displacement": true,
+        "tensorflow": true,
+        "lambda_phys": true,
+        "fractional": true,
+        "source_references_expected_weight_basename": true,
+        "source_references_expected_config_basename": true
+      },
+      "expected_weight_basename": "pi_rnn_fan_multicase_corey.weights.h5",
+      "expected_config_basename": "pi_rnn_fan_multicase_corey_config.json",
+      "weight_artifacts": [],
+      "config_artifacts": [],
+      "checkpoint_present": false,
+      "config_present": false,
+      "checkpoint_status": "EXPECTED_BY_SOURCE_BUT_NOT_PRESENT_LOCALLY"
+    },
+    "BL_STAGE2_COMPRESSIBLE_GODUNOV_PI_RNN": {
+      "binding_id": "BL_STAGE2_COMPRESSIBLE_GODUNOV_PI_RNN",
+      "role": "Conservative-form compressible Godunov Buckley-Leverett PI-RNN",
+      "expected_filename": "pi_rnn_stage2_compressible_godunov.py",
+      "source_match_count": 1,
+      "source_bound": true,
+      "source": {
+        "path": "pi_rnn_stage2_compressible_godunov.py",
+        "sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+        "size_bytes": 75733
+      },
+      "fingerprint_gates": {
+        "STAGE 2 GODUNOV VARIANT": true,
+        "CONSERVATIVE form": true,
+        "CompressibleBLSolver": true,
+        "tensorflow": true,
+        "source_references_expected_weight_basename": true,
+        "source_references_expected_config_basename": true
+      },
+      "expected_weight_basename": "pi_rnn_fan_stage2_godunov.weights.h5",
+      "expected_config_basename": "pi_rnn_fan_stage2_godunov_config.json",
+      "weight_artifacts": [],
+      "config_artifacts": [],
+      "checkpoint_present": false,
+      "config_present": false,
+      "checkpoint_status": "EXPECTED_BY_SOURCE_BUT_NOT_PRESENT_LOCALLY"
+    },
+    "BL_STAGE3_CAPILLARY_PI_RNN": {
+      "binding_id": "BL_STAGE3_CAPILLARY_PI_RNN",
+      "role": "Capillary Buckley-Leverett PI-RNN with advection-diffusion PDE residual",
+      "expected_filename": "pi_rnn_stage3_capillary.py",
+      "source_match_count": 1,
+      "source_bound": true,
+      "source": {
+        "path": "pi_rnn_stage3_capillary.py",
+        "sha256": "dab8eade38ac08c819ac27d803c8f1bceca9722c4c37e82977dbef6e6232ae0f",
+        "size_bytes": 100124
+      },
+      "fingerprint_gates": {
+        "STAGE 3: CAPILLARY PRESSURE ONLY": true,
+        "pde_residual_loss": true,
+        "implicit": true,
+        "tensorflow": true,
+        "source_references_expected_weight_basename": true,
+        "source_references_expected_config_basename": true
+      },
+      "expected_weight_basename": "pi_rnn_stage3_capillary_v9.weights.h5",
+      "expected_config_basename": "pi_rnn_stage3_capillary_v9_config.json",
+      "weight_artifacts": [],
+      "config_artifacts": [],
+      "checkpoint_present": false,
+      "config_present": false,
+      "checkpoint_status": "EXPECTED_BY_SOURCE_BUT_NOT_PRESENT_LOCALLY"
+    },
+    "BL_STAGE4_FULL_COMPRESSIBLE_CAPILLARY_PI_RNN": {
+      "binding_id": "BL_STAGE4_FULL_COMPRESSIBLE_CAPILLARY_PI_RNN",
+      "role": "Full compressible-capillary Godunov Buckley-Leverett PI-RNN source",
+      "expected_filename": "pi_rnn_stage4_full_godunov.py",
+      "source_match_count": 1,
+      "source_bound": true,
+      "source": {
+        "path": "pi_rnn_stage4_full_godunov.py",
+        "sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+        "size_bytes": 103888
+      },
+      "fingerprint_gates": {
+        "pi_rnn_stage4_full_godunov.weights.h5": true,
+        "Pe_c": true,
+        "Nc": true,
+        "tensorflow": true,
+        "source_references_expected_weight_basename": true,
+        "source_references_expected_config_basename": true
+      },
+      "expected_weight_basename": "pi_rnn_stage4_full_godunov.weights.h5",
+      "expected_config_basename": "pi_rnn_stage4_full_godunov_config.json",
+      "weight_artifacts": [],
+      "config_artifacts": [],
+      "checkpoint_present": false,
+      "config_present": false,
+      "checkpoint_status": "EXPECTED_BY_SOURCE_BUT_NOT_PRESENT_LOCALLY"
+    }
+  },
+  "DP_8_layer_physics": {
+    "binding_id": "DP_8_LAYER_CANONICAL_PHYSICS_BENCHMARK",
+    "expected_filename": "PAD_Stream_CCUS_Physics_Development_v14_Complete_Validation.py",
+    "source_match_count": 0,
+    "source_bound": false,
+    "source": null,
+    "fingerprint_gates": {},
+    "scientific_role": "Controlled 8-layer no-crossflow Dykstra-Parsons physics benchmark for rate allocation, local PVI, breakthrough ordering, and flux-weighted aggregation."
+  },
+  "legacy_round_policy": {
+    "Round_1": {
+      "definition": "Earliest validated PI-RNN",
+      "source_binding": null,
+      "checkpoint_binding": null
+    },
+    "Round_2": {
+      "definition": "Expanded/conditioned PI-RNN",
+      "source_binding": null,
+      "checkpoint_binding": null
+    },
+    "Round_3": {
+      "definition": "Most complete BL PI-RNN",
+      "source_binding": null,
+      "checkpoint_binding": null
+    },
+    "rule": "Physics Stage 1/2/3/4 labels are not substituted for Round 1/2/3 maturity labels without direct historical evidence."
+  },
+  "learned_hybrid_DP_candidates": [
+    {
+      "path": "PAD_Stream_V16D38_Master_ControlSpace_Branch_Freeze_and_Development_Path_Handoff.py",
+      "sha256": "e8172c8203a317827d558823d0347248cd7216af178a779d6ed7738c79363952",
+      "size_bytes": 19943,
+      "tensorflow_or_keras": true,
+      "recurrent": true,
+      "DP_or_layer_heterogeneity": true
+    }
+  ],
+  "checkpoint_policy": {
+    "E0A_checkpoint_candidates": 0,
+    "stage_expected_weight_files": {
+      "BL_STAGE1_INCOMPRESSIBLE_PI_RNN": "pi_rnn_fan_multicase_corey.weights.h5",
+      "BL_STAGE2_COMPRESSIBLE_GODUNOV_PI_RNN": "pi_rnn_fan_stage2_godunov.weights.h5",
+      "BL_STAGE3_CAPILLARY_PI_RNN": "pi_rnn_stage3_capillary_v9.weights.h5",
+      "BL_STAGE4_FULL_COMPRESSIBLE_CAPILLARY_PI_RNN": "pi_rnn_stage4_full_godunov.weights.h5"
+    },
+    "rule": "Expected checkpoint names extracted from source are not treated as trained checkpoint identities unless the actual file exists and is SHA-bound."
+  },
+  "adapter_coding_authorized": false
+}

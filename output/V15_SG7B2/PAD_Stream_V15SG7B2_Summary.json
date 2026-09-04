@@ -1,0 +1,33 @@
+{
+  "milestone": "V15-SG7B-2",
+  "description": "Conservative PI-RNN physics residual verification against frozen SG7A truth",
+  "status": "PASS",
+  "source": "Frozen V15-SG7A master transport solution",
+  "grid": {
+    "xi_nodes": 201,
+    "time_snapshots": 801,
+    "solution_shape": [
+      801,
+      201
+    ]
+  },
+  "physics": {
+    "Nc": 0.1,
+    "Pe_c": 22.0,
+    "lambda_bc": 2.0,
+    "phi": 0.2,
+    "velocity": "uD = exp(Nc xi)",
+    "primary_residual": "dS/dtD + div(F_Godunov) - div(G_capillary)",
+    "diagnostic_residual": "dS/dtD + uD(df/dxi + Nc f) - (phi/Pe_c)d/dxi[D_tilde dS/dxi]"
+  },
+  "validation": {
+    "mean_fv_relative_residual": 0.002002531802784599,
+    "median_fv_relative_residual": 4.2246350330753226e-05,
+    "mean_interior_fv_relative_residual": 0.001905811600767848,
+    "mean_absolute_integrated_fv_residual": 0.0002365879427416849,
+    "mean_signed_integrated_fv_residual": 7.909744832144666e-05,
+    "mean_strong_form_relative_residual": 0.5497204732309457
+  },
+  "training_decision": "If PASS, the conservative finite-volume residual is approved as the primary SG7B PI-RNN physics loss.",
+  "next_milestone": "V15-SG7B-3 - reference-case PI-RNN dataset and training design"
+}

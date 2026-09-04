@@ -1,0 +1,32 @@
+{
+  "milestone": "V15-SG7E1R21R",
+  "status": "R21_SERIALIZER_BINDING_REJECTED_BY_SEMANTIC_ROLE_AUDIT",
+  "diagnosis": "GUARD_MASK_OR_AUXILIARY_FIELD_CANNOT_BE_AUTHORITATIVE_100D_DEPLOYMENT_STATE",
+  "selected_key": "guard_mask",
+  "selected_sha256": "f0bcfc1dcf192ffaac6850091e5bb64b48d52a6964daa21ef8eaf57f715e01f1",
+  "binding_semantically_valid": false,
+  "contradiction_reason": "R21_SELECTED_KEY_HAS_NON_DEPLOYMENT_ROLE_AUXILIARY_MASK;R21_USED_FALLBACK_WITH_NO_EVALUATOR_SEED_SYMBOLS",
+  "state_like_candidates": [
+    {
+      "key": "frozen100",
+      "sha256": "a08c7320a63ace580456191f408a29afde65e0ad3f078846265243e53cd10297"
+    },
+    {
+      "key": "K5_100",
+      "sha256": "a460c076f464e5c9629802944d356dd213d7b65f234539112e785f34a93260af"
+    },
+    {
+      "key": "L2_independent_100",
+      "sha256": "01bb967c07b262836f6c140dd519538db13d9ce5b3bc0f83d52a6164ddcfa950"
+    }
+  ],
+  "constraints": {
+    "training_performed": false,
+    "model_parameters_changed": false,
+    "new_state_generated": false,
+    "SG7E_gate_evaluated": false,
+    "threshold_changed": false
+  },
+  "recommendation": "Reject the R21 guard_mask binding. Do not perform replay closure against it. Trace the actual deployed saturation/state variable across the final R1F2C/R1F3 caller-return boundary, restricting candidates to state-like arrays and excluding truth, masks, gamma, coefficient, and guard fields.",
+  "next_milestone": "V15-SG7E1R22 \u2014 Cross-Function Deployment-State Return / Caller Binding Audit"
+}

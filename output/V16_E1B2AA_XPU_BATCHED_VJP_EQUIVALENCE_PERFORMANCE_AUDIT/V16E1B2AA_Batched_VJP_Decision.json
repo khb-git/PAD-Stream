@@ -1,0 +1,10 @@
+{
+  "milestone": "V16E-1B2AA-XPU",
+  "batched_vjp_adoptable": false,
+  "reason": "is_grads_batched=True path produced a runtime failure on the frozen Intel-XPU/LSTM graph.",
+  "runtime_error": "RuntimeError: level_zero backend failed with error: 40 (UR_RESULT_ERROR_OUT_OF_RESOURCES)",
+  "fallback_used": false,
+  "next_decision_required": "V16E-1B2AB-XPU must interpret the exact runtime incompatibility and select the next equivalence-preserving implementation route.",
+  "COMP_XPU_005_full_training_authorized": false,
+  "B3_authorized": false
+}

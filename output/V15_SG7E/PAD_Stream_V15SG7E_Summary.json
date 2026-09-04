@@ -1,0 +1,35 @@
+{
+  "milestone": "V15-SG7E",
+  "description": "Full-grid plume morphology, coverage, projection-dependence, and seed-density validation",
+  "training_performed": false,
+  "mapback_modified": false,
+  "seed_density_modified": false,
+  "source": "V15-SG7D",
+  "coverage": {
+    "covered_cells": 20462,
+    "total_cells": 37500,
+    "direct_cell_coverage_fraction": 0.5456533333333333,
+    "minimum_layer_coverage": 0.3712,
+    "maximum_layer_coverage": 0.62,
+    "minimum_SG7A_plume_direct_coverage": 0.49866117404737387
+  },
+  "plume_agreement": {
+    "minimum_footprint_IoU": 1.0,
+    "maximum_plume_volume_relative_error": 0.1034279829336471,
+    "maximum_centroid_distance_cells": 0.07841157466073462,
+    "morphology_pass": false
+  },
+  "projection_dependence": {
+    "maximum_PI_RNN_projection_MAE": 0.1445582545517883,
+    "maximum_fraction_cells_deltaS_gt_0p05": 0.4543466666666667,
+    "status": "DIAGNOSTIC_ONLY_IN_SG7E"
+  },
+  "streamline_support": {
+    "required_direct_plume_fraction": 0.8,
+    "all_times_pass": false,
+    "seed_density_decision": "PLUME_RECONSTRUCTION_REQUIRES_DIAGNOSIS"
+  },
+  "validation_passed": false,
+  "status": "FULL_GRID_PLUME_VALIDATION_FAIL",
+  "next_milestone": "Diagnose SG7E plume morphology discrepancy before changing seed density"
+}

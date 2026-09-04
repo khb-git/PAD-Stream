@@ -1,0 +1,326 @@
+{
+  "milestone": "V16E-1B2G-XPU",
+  "classification": "NO_TRAINING_COMP002_VS_COMP003_NC_CONDITIONING_SCALE_COMPARISON",
+  "experiment_1": {
+    "id": "V16E-BLREP-COMP-XPU-002",
+    "epochs": 800,
+    "conditioner_Nc": "raw physical Nc",
+    "checkpoint_sha256": "fca205b1981fbbdf15424af8ac8174df88ff7addf99e718548319a81f87d271b"
+  },
+  "experiment_2": {
+    "id": "V16E-BLREP-COMP-XPU-003",
+    "epochs": 800,
+    "conditioner_Nc": "physical Nc / 0.30",
+    "physical_Nc_changed": false,
+    "checkpoint_sha256": "8657d2d65ad6612511d87b654b9a674523a68b716f706bc04be9f640d82a0797"
+  },
+  "overall_comparison": {
+    "mse": {
+      "COMP_XPU_002": 0.0001078201276767585,
+      "COMP_XPU_003": 9.908206605662902e-05,
+      "percent_improvement_positive_is_better": 8.104295374538898
+    },
+    "rmse": {
+      "COMP_XPU_002": 0.010383647127900606,
+      "COMP_XPU_003": 0.009953997491291075,
+      "percent_improvement_positive_is_better": 4.137752673191997
+    },
+    "mae": {
+      "COMP_XPU_002": 0.005723465151256985,
+      "COMP_XPU_003": 0.0051936783724360995,
+      "percent_improvement_positive_is_better": 9.256399136186474
+    },
+    "max_abs_error": {
+      "COMP_XPU_002": 0.1779181957244873,
+      "COMP_XPU_003": 0.17798423767089844,
+      "percent_improvement_positive_is_better": -0.03711927616071441
+    }
+  },
+  "per_Nc_holdout_comparison": {
+    "0.00": {
+      "mae": {
+        "COMP_XPU_002": 0.003139335662126541,
+        "COMP_XPU_003": 0.002815904328599572,
+        "percent_improvement_positive_is_better": 10.302540675369553
+      },
+      "rmse": {
+        "COMP_XPU_002": 0.006813330110162497,
+        "COMP_XPU_003": 0.006620569620281458,
+        "percent_improvement_positive_is_better": 2.829167041143723
+      },
+      "max_abs_error": {
+        "COMP_XPU_002": 0.10202449560165405,
+        "COMP_XPU_003": 0.1018977165222168,
+        "percent_improvement_positive_is_better": 0.1242633729180627
+      }
+    },
+    "0.05": {
+      "mae": {
+        "COMP_XPU_002": 0.004541447386145592,
+        "COMP_XPU_003": 0.004081197082996368,
+        "percent_improvement_positive_is_better": 10.134440939540337
+      },
+      "rmse": {
+        "COMP_XPU_002": 0.008125175721943378,
+        "COMP_XPU_003": 0.00790003314614296,
+        "percent_improvement_positive_is_better": 2.770925620628538
+      },
+      "max_abs_error": {
+        "COMP_XPU_002": 0.14397960901260376,
+        "COMP_XPU_003": 0.14387357234954834,
+        "percent_improvement_positive_is_better": 0.07364700028192023
+      }
+    },
+    "0.10": {
+      "mae": {
+        "COMP_XPU_002": 0.0060758269391953945,
+        "COMP_XPU_003": 0.005430726334452629,
+        "percent_improvement_positive_is_better": 10.617494724564922
+      },
+      "rmse": {
+        "COMP_XPU_002": 0.010197875089943409,
+        "COMP_XPU_003": 0.00977721530944109,
+        "percent_improvement_positive_is_better": 4.124974828502765
+      },
+      "max_abs_error": {
+        "COMP_XPU_002": 0.1357221007347107,
+        "COMP_XPU_003": 0.13574111461639404,
+        "percent_improvement_positive_is_better": -0.014009421885176319
+      }
+    },
+    "0.20": {
+      "mae": {
+        "COMP_XPU_002": 0.006933495867997408,
+        "COMP_XPU_003": 0.006309857591986656,
+        "percent_improvement_positive_is_better": 8.994571971828064
+      },
+      "rmse": {
+        "COMP_XPU_002": 0.011865769512951374,
+        "COMP_XPU_003": 0.011364691890776157,
+        "percent_improvement_positive_is_better": 4.222883493803712
+      },
+      "max_abs_error": {
+        "COMP_XPU_002": 0.1779181957244873,
+        "COMP_XPU_003": 0.17798423767089844,
+        "percent_improvement_positive_is_better": -0.03711927616071441
+      }
+    },
+    "0.30": {
+      "mae": {
+        "COMP_XPU_002": 0.007819497026503086,
+        "COMP_XPU_003": 0.007230566814541817,
+        "percent_improvement_positive_is_better": 7.531561300748287
+      },
+      "rmse": {
+        "COMP_XPU_002": 0.013348451815545559,
+        "COMP_XPU_003": 0.012694054283201694,
+        "percent_improvement_positive_is_better": 4.902422703296239
+      },
+      "max_abs_error": {
+        "COMP_XPU_002": 0.15595853328704834,
+        "COMP_XPU_003": 0.155861496925354,
+        "percent_improvement_positive_is_better": 0.0622193346200149
+      }
+    }
+  },
+  "case_comparison": {
+    "case1": {
+      "0.00": {
+        "full_domain_mae": {
+          "COMP_XPU_002": 0.004410178138108034,
+          "COMP_XPU_003": 0.003079732012733222,
+          "percent_improvement_positive_is_better": 30.167627785338702
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_002": 0.004086402108896593,
+          "COMP_XPU_003": 0.002742822882549824,
+          "percent_improvement_positive_is_better": 32.87927106883668
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_002": 0.0007534191392897654,
+          "COMP_XPU_003": 0.0007534191410067462,
+          "percent_improvement_positive_is_better": -2.2789183798583653e-07
+        }
+      },
+      "0.05": {
+        "full_domain_mae": {
+          "COMP_XPU_002": 0.0031902424257197813,
+          "COMP_XPU_003": 0.0024968401930748267,
+          "percent_improvement_positive_is_better": 21.735095334910465
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_002": 0.0028533742968393522,
+          "COMP_XPU_003": 0.0021579672045392,
+          "percent_improvement_positive_is_better": 24.371394004300317
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_002": 0.0006898321818498494,
+          "COMP_XPU_003": 0.0006898321913248319,
+          "percent_improvement_positive_is_better": -1.373519919755351e-06
+        }
+      },
+      "0.10": {
+        "full_domain_mae": {
+          "COMP_XPU_002": 0.00349998595700387,
+          "COMP_XPU_003": 0.0034574467335158556,
+          "percent_improvement_positive_is_better": 1.2154112619477397
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_002": 0.0031703999927827024,
+          "COMP_XPU_003": 0.0031349212835946995,
+          "percent_improvement_positive_is_better": 1.1190609787020187
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_002": 0.0006451814011086761,
+          "COMP_XPU_003": 0.0006451814018360391,
+          "percent_improvement_positive_is_better": -1.127377582512676e-07
+        }
+      },
+      "0.20": {
+        "full_domain_mae": {
+          "COMP_XPU_002": 0.0066488623626682584,
+          "COMP_XPU_003": 0.006263904250741332,
+          "percent_improvement_positive_is_better": 5.789834274331987
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_002": 0.006328799922541653,
+          "COMP_XPU_003": 0.005947681915992046,
+          "percent_improvement_positive_is_better": 6.02196326656112
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_002": 0.0006063673387546129,
+          "COMP_XPU_003": 0.0006063673648258644,
+          "percent_improvement_positive_is_better": -4.29958044046814e-06
+        }
+      },
+      "0.30": {
+        "full_domain_mae": {
+          "COMP_XPU_002": 0.010046451679435112,
+          "COMP_XPU_003": 0.009612942633289467,
+          "percent_improvement_positive_is_better": 4.315046346492955
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_002": 0.009737089947186339,
+          "COMP_XPU_003": 0.009301105750422764,
+          "percent_improvement_positive_is_better": 4.477561562318297
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_002": 0.0005758048696647552,
+          "COMP_XPU_003": 0.0005758048766327322,
+          "percent_improvement_positive_is_better": -1.2101281777487815e-06
+        }
+      }
+    },
+    "case2": {
+      "0.00": {
+        "full_domain_mae": {
+          "COMP_XPU_002": 0.0027315370696877053,
+          "COMP_XPU_003": 0.0028644487535635556,
+          "percent_improvement_positive_is_better": -4.8658202500999215
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_002": 0.0024902267892844302,
+          "COMP_XPU_003": 0.002633967834648388,
+          "percent_improvement_positive_is_better": -5.772207012730022
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_002": 0.0003877060028899394,
+          "COMP_XPU_003": 0.00038770601397369723,
+          "percent_improvement_positive_is_better": -2.8588048015402046e-06
+        }
+      },
+      "0.05": {
+        "full_domain_mae": {
+          "COMP_XPU_002": 0.0034898771964558,
+          "COMP_XPU_003": 0.0029337627423104322,
+          "percent_improvement_positive_is_better": 15.935072291659393
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_002": 0.003269839081990699,
+          "COMP_XPU_003": 0.002716962142703271,
+          "percent_improvement_positive_is_better": 16.908383728499356
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_002": 0.00031267679796550467,
+          "COMP_XPU_003": 0.00031267680725397483,
+          "percent_improvement_positive_is_better": -2.970629809138819e-06
+        }
+      },
+      "0.10": {
+        "full_domain_mae": {
+          "COMP_XPU_002": 0.005844499479296894,
+          "COMP_XPU_003": 0.0050862673279683576,
+          "percent_improvement_positive_is_better": 12.973431754326267
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_002": 0.005676156946403475,
+          "COMP_XPU_003": 0.004916896639235262,
+          "percent_improvement_positive_is_better": 13.376309258842719
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_002": 0.0003267580771291981,
+          "COMP_XPU_003": 0.000326758068357187,
+          "percent_improvement_positive_is_better": 2.6845583097287833e-06
+        }
+      },
+      "0.20": {
+        "full_domain_mae": {
+          "COMP_XPU_002": 0.01010790567799473,
+          "COMP_XPU_003": 0.009045273767941018,
+          "percent_improvement_positive_is_better": 10.512879165138036
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_002": 0.009939351444742124,
+          "COMP_XPU_003": 0.008865203631475648,
+          "percent_improvement_positive_is_better": 10.80702115463173
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_002": 0.0002967378272695938,
+          "COMP_XPU_003": 0.00029673782699829736,
+          "percent_improvement_positive_is_better": 9.142630808832341e-08
+        }
+      },
+      "0.30": {
+        "full_domain_mae": {
+          "COMP_XPU_002": 0.013332452959909133,
+          "COMP_XPU_003": 0.012299627312450753,
+          "percent_improvement_positive_is_better": 7.746703855352803
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_002": 0.013154095090505786,
+          "COMP_XPU_003": 0.012100458160236178,
+          "percent_improvement_positive_is_better": 8.009953729391011
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_002": 0.0002581672125685846,
+          "COMP_XPU_003": 0.00025816721868858255,
+          "percent_improvement_positive_is_better": -2.3705558477790825e-06
+        }
+      }
+    }
+  },
+  "Nc_response_ratios": {
+    "holdout_Nc030_over_Nc000": {
+      "COMP_XPU_002": 2.49081266487008,
+      "COMP_XPU_003": 2.567760112126316,
+      "percent_ratio_reduction_positive_is_flatter": -3.0892506827786548
+    },
+    "case1_full_domain_Nc030_over_Nc000": {
+      "COMP_XPU_002": 2.2780149383591652,
+      "COMP_XPU_003": 3.121356856227924,
+      "percent_ratio_reduction_positive_is_flatter": -37.02091253520097
+    },
+    "case1_front_excluded_Nc030_over_Nc000": {
+      "COMP_XPU_002": 2.3828026923702668,
+      "COMP_XPU_003": 3.3910704951448167,
+      "percent_ratio_reduction_positive_is_flatter": -42.314363921235405
+    }
+  },
+  "interpretation_policy": "No numeric pass/fail threshold is introduced. Determine whether Nc conditioner scaling improves absolute error and whether it meaningfully flattens the relative high-Nc response in the general holdout and front-excluded diagnostics.",
+  "B3_automatically_authorized": false,
+  "no_training": true,
+  "no_optimizer": true,
+  "no_weight_update": true,
+  "no_OOD": true,
+  "no_TOF": true
+}

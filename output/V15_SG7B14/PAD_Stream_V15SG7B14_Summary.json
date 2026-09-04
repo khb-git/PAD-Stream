@@ -1,0 +1,30 @@
+{
+  "milestone": "V15-SG7B-14",
+  "status": "TOF_CONDITIONED_CANDIDATE_VALIDATION_FAILED",
+  "validation_passed": false,
+  "candidate_sha256": "db9e8bd83329c7fa1e87d3577079718cf06b9f0be09fa44b46faf98cb94ffeed",
+  "new_frozen_sha256": null,
+  "canonical_metrics": {
+    "mean": 0.3485032828094414,
+    "P90": 0.8858964472957226,
+    "fraction_gt_1": 0.08051409618573797
+  },
+  "front_metrics": {
+    "truth_front_count": 992,
+    "recovered_front_count": 960,
+    "conditioned_threshold_gap_mean": 0.000842168544449152,
+    "profile_L1_mean": 0.0032969978442159765
+  },
+  "bias_metrics": {
+    "bias_500_1000": -0.0015505418860341093,
+    "bias_1000_2000": 0.0005288577825167986,
+    "bias_gt2000": 0.0007179345720478911,
+    "tail_bias": 0.004637864999025761,
+    "material_share_500_1000": 0.18828184835333164,
+    "global_mean_bias": -0.0018219582354927386,
+    "global_L1": 0.0032969978442159765
+  },
+  "shape_preserved": false,
+  "recommendation": "Do not freeze or redeploy the SG7B-13 candidate. Keep the SG7B-11 front-aware frozen model authoritative and diagnose the failed independent preservation, canonical, shape, or TOF-bias gates.",
+  "next_milestone": "V15-SG7B-14R \u2014 Independent TOF-Conditioned Candidate Regression Audit"
+}

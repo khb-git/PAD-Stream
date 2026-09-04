@@ -1,0 +1,30 @@
+{
+  "milestone": "V15-SG7C-R3F4-R3E",
+  "contract_type": "MINIMAL_RESIDUAL_SUPPORT_EXTENSION_DESIGN",
+  "incoming_diagnosis": "BASIS_SUPPORT_CEILING_AT_49P5_PERCENT",
+  "baseline_experiment": "B4",
+  "baseline_front_error_reduction_fraction": 0.4954781984966692,
+  "baseline_front_residual_support_fraction": 0.495478416297645,
+  "front_error_reduction_gate_fraction": 0.5,
+  "front_error_reduction_gate_changed": false,
+  "design_margin_percentage_points": 0.25,
+  "design_target_fraction": 0.5025,
+  "exact_gate_deficit_fraction": 0.004521801503330813,
+  "design_support_deficit_fraction": 0.00702180150333076,
+  "support_extension_form": "G_extended = clip(G_existing + eta * G_shoulder, 0, 1)",
+  "residual_form": "deltaS = alpha(features) * (S_canonical - S_frozen) * G_extended",
+  "alpha_bounds": [
+    0.0,
+    1.0
+  ],
+  "canonical_residual_direction_retained": true,
+  "canonical_residual_amplitude_bound_retained": true,
+  "SG7B11_frozen": true,
+  "SG7A_canonical_physics_authority_retained": true,
+  "frozen_relative_displacement_role": "IMMUTABLE_REGRESSION_DIAGNOSTIC",
+  "historical_gate_thresholds_changed": false,
+  "map_back_changed": false,
+  "SG7E_threshold_changed": false,
+  "training_performed": false,
+  "next_milestone": "V15-SG7C-R3F5 \u2014 Controlled Minimal-Support Extension Calibration"
+}

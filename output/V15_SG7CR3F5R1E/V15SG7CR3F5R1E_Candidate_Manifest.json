@@ -1,0 +1,13 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1E",
+  "status": "NO_R1E_JOINT_CANDIDATE_PASSES_COMPLETE_CONTRACT",
+  "diagnosis": "JOINT_TOF_CORRECTION_REQUIRES_OUTCOME_AUDIT",
+  "X08_support_locked": true,
+  "exact_support_fraction": 0.5000056447248766,
+  "support_gate": 0.5,
+  "selected_experiment": null,
+  "candidate_frozen": false,
+  "model_weights_changed": false,
+  "gate_changed": false,
+  "next_milestone": "V15-SG7C-R3F5-R1ER \u2014 Joint Reconciliation Outcome Audit"
+}

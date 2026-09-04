@@ -1,0 +1,43 @@
+{
+  "version": "15F-0",
+  "sources": {
+    "dense_audit": {
+      "path": "/mnt/data/pad_stream_v15e3/deps/c3/PAD_Stream_V15C3_Sequential_Path_Deployment_Package/PAD_Stream_V15B3R_Sequential_Predict_Screen_Correct_Package/results/PAD_Stream_V15B3R_Sequential_Audit.csv",
+      "sha256": "782cb71fd7f631a1f72f94e44216cbcb797426f4988b347e68dc257d15aac97b",
+      "bytes": 158542
+    },
+    "path_cache_audit": {
+      "path": "/mnt/data/pad_stream_v15e3/deps/c3/PAD_Stream_V15C3_Sequential_Path_Deployment_Package/PAD_Stream_V15C3_Sequential_Learned_Path_Deployment/PAD_Stream_V15C3_Path_Cache_Audit.csv",
+      "sha256": "bde5033c04fb002908ac51e0d0e0af8795c6b0f6b1ce268845218072cef0600e",
+      "bytes": 663810
+    },
+    "c3_summary": {
+      "path": "/mnt/data/pad_stream_v15e3/deps/c3/PAD_Stream_V15C3_Sequential_Path_Deployment_Package/PAD_Stream_V15C3_Sequential_Learned_Path_Deployment/PAD_Stream_V15C3_Summary.json",
+      "sha256": "39cfb6feee7d320aaf7950bbd4f0b1aa1fa197b8f31053152766fda763a2afe9",
+      "bytes": 2523
+    },
+    "e3_snapshot_audit": {
+      "path": "/mnt/data/pad_stream_v15e3/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/PAD_Stream_V15E3_Sequential_Snapshot_Audit.csv",
+      "sha256": "89bed30b3486aa82f86962eb556963d0c1116651c01c9acea54bb21564a659b1",
+      "bytes": 13744
+    },
+    "e3_summary": {
+      "path": "/mnt/data/pad_stream_v15e3/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment/PAD_Stream_V15E3_Summary.json",
+      "sha256": "51a631cab3df6752e3374b5f489c4b85e7846bdabc0730ac2d34614818164853",
+      "bytes": 4158
+    },
+    "e3_package_zip": {
+      "path": "/mnt/data/pad_stream_v15e3/PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment.zip",
+      "sha256": "c26e4ad45b2c6934de097e761ca5ae4056ebfa55d9ed4673308189b5a93e0042",
+      "bytes": 932559
+    }
+  },
+  "state_files": {
+    "count": 25,
+    "directory": "/mnt/data/pad_stream_v15e3/deps/c3/PAD_Stream_V15C3_Sequential_Path_Deployment_Package/PAD_Stream_V15C3_Sequential_Learned_Path_Deployment/sequential_states"
+  },
+  "upstream_status": {
+    "v15c3_status": "PASS",
+    "v15e3_status": "PASS"
+  }
+}

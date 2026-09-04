@@ -1,0 +1,275 @@
+{
+  "milestone": "V15-SG7C-R3F3",
+  "status": "FRONT_LOCAL_RESIDUAL_BASIS_CONTRACT_READY",
+  "training_performed": false,
+  "SG7B11_modified": false,
+  "incoming_diagnosis": "MIXED_FRONT_GEOMETRY_FAILURE",
+  "basis_equation": "deltaS_local = alpha(features) * (S_canonical - S_frozen) * G(xi-xi_front)",
+  "alpha_bounds": [
+    0.0,
+    1.0
+  ],
+  "basis_families": [
+    {
+      "basis": "G1_gaussian_narrow",
+      "kind": "gaussian",
+      "support_width": 0.015,
+      "residual_direction": "canonical target - frozen",
+      "amplitude_rule": "alpha in [0,1]",
+      "crossing_control": "explicit front-shift gate",
+      "shape_control": "compact smooth support",
+      "overshoot_control": "alpha<=1 relative to canonical residual"
+    },
+    {
+      "basis": "G2_gaussian_medium",
+      "kind": "gaussian",
+      "support_width": 0.03,
+      "residual_direction": "canonical target - frozen",
+      "amplitude_rule": "alpha in [0,1]",
+      "crossing_control": "explicit front-shift gate",
+      "shape_control": "compact smooth support",
+      "overshoot_control": "alpha<=1 relative to canonical residual"
+    },
+    {
+      "basis": "G3_gaussian_wide",
+      "kind": "gaussian",
+      "support_width": 0.05,
+      "residual_direction": "canonical target - frozen",
+      "amplitude_rule": "alpha in [0,1]",
+      "crossing_control": "explicit front-shift gate",
+      "shape_control": "compact smooth support",
+      "overshoot_control": "alpha<=1 relative to canonical residual"
+    },
+    {
+      "basis": "G4_cosine_narrow",
+      "kind": "raised_cosine",
+      "support_width": 0.03,
+      "residual_direction": "canonical target - frozen",
+      "amplitude_rule": "alpha in [0,1]",
+      "crossing_control": "explicit front-shift gate",
+      "shape_control": "compact smooth support",
+      "overshoot_control": "alpha<=1 relative to canonical residual"
+    },
+    {
+      "basis": "G5_cosine_medium",
+      "kind": "raised_cosine",
+      "support_width": 0.05,
+      "residual_direction": "canonical target - frozen",
+      "amplitude_rule": "alpha in [0,1]",
+      "crossing_control": "explicit front-shift gate",
+      "shape_control": "compact smooth support",
+      "overshoot_control": "alpha<=1 relative to canonical residual"
+    }
+  ],
+  "preview_metrics": [
+    {
+      "basis": "G1_gaussian_narrow",
+      "kind": "gaussian",
+      "width_parameter": 0.015,
+      "alpha_preview": 0.75,
+      "mean_profile_error_reduction": 0.037727889876859225,
+      "P90_front_shift_xi": 0.004483835372504075,
+      "mean_sign_agreement": 1.0,
+      "mean_overshoot_fraction": 0.0
+    },
+    {
+      "basis": "G2_gaussian_medium",
+      "kind": "gaussian",
+      "width_parameter": 0.03,
+      "alpha_preview": 0.75,
+      "mean_profile_error_reduction": 0.07625684234238865,
+      "P90_front_shift_xi": 0.004234724106367682,
+      "mean_sign_agreement": 1.0,
+      "mean_overshoot_fraction": 0.0
+    },
+    {
+      "basis": "G3_gaussian_wide",
+      "kind": "gaussian",
+      "width_parameter": 0.05,
+      "alpha_preview": 0.75,
+      "mean_profile_error_reduction": 0.1267428334595144,
+      "P90_front_shift_xi": 0.0041386847103849714,
+      "mean_sign_agreement": 1.0,
+      "mean_overshoot_fraction": 0.0
+    },
+    {
+      "basis": "G4_cosine_narrow",
+      "kind": "raised_cosine",
+      "width_parameter": 0.03,
+      "alpha_preview": 0.75,
+      "mean_profile_error_reduction": 0.030117975913903385,
+      "P90_front_shift_xi": 0.004649669753495912,
+      "mean_sign_agreement": 1.0,
+      "mean_overshoot_fraction": 0.0
+    },
+    {
+      "basis": "G5_cosine_medium",
+      "kind": "raised_cosine",
+      "width_parameter": 0.05,
+      "alpha_preview": 0.75,
+      "mean_profile_error_reduction": 0.05010914387624553,
+      "P90_front_shift_xi": 0.0043166123882714125,
+      "mean_sign_agreement": 1.0,
+      "mean_overshoot_fraction": 0.0
+    }
+  ],
+  "regions": [
+    {
+      "region": "R0_nonfront",
+      "definition": "|xi-xi_front| > 0.10",
+      "basis_activity": "OFF",
+      "purpose": "preserve frozen deployment away from front"
+    },
+    {
+      "region": "R1_outer_front",
+      "definition": "0.05 < |xi-xi_front| <= 0.10",
+      "basis_activity": "WEAK",
+      "purpose": "smooth taper into frozen solution"
+    },
+    {
+      "region": "R2_front_shell",
+      "definition": "0.01 < |xi-xi_front| <= 0.05",
+      "basis_activity": "PRIMARY",
+      "purpose": "recover missing front-state correction"
+    },
+    {
+      "region": "R3_crossing_core",
+      "definition": "|xi-xi_front| <= 0.01",
+      "basis_activity": "CONSTRAINED",
+      "purpose": "preserve S=0.21 crossing position"
+    }
+  ],
+  "objective": [
+    {
+      "term": "L_front_state",
+      "definition": "L1(S_cal,S_target) inside front shell",
+      "role": "reach >=50% front-shell error reduction"
+    },
+    {
+      "term": "L_alpha_bounds",
+      "definition": "alpha in [0,1]",
+      "role": "guarantee no residual sign inversion / amplitude overshoot"
+    },
+    {
+      "term": "L_crossing",
+      "definition": "|xi_front_cal - xi_front_target|",
+      "role": "preserve threshold position"
+    },
+    {
+      "term": "L_moment",
+      "definition": "first moment of deltaS around front",
+      "role": "avoid systematic front translation"
+    },
+    {
+      "term": "L_width",
+      "definition": "front width mismatch",
+      "role": "avoid broadening/compression"
+    },
+    {
+      "term": "L_gradient",
+      "definition": "local gradient mismatch",
+      "role": "preserve front morphology"
+    },
+    {
+      "term": "L_nonfront_anchor",
+      "definition": "deltaS -> 0 outside local basis support",
+      "role": "protect nonfront / TOF behavior"
+    }
+  ],
+  "preservation_gates": [
+    {
+      "gate": "front_error_reduction",
+      "limit": ">= 50%",
+      "authority": "R3D-R / R3F0"
+    },
+    {
+      "gate": "recovered_fronts",
+      "limit": ">= 744",
+      "authority": "SG7B-10S"
+    },
+    {
+      "gate": "conditioned_front_gap",
+      "limit": "<= 5.33123727917913484e-04",
+      "authority": "SG7B-10S"
+    },
+    {
+      "gate": "100d_profile_L1",
+      "limit": "<= 4.50032942291447424e-03",
+      "authority": "SG7B-10S"
+    },
+    {
+      "gate": "mean_front_xi_shift",
+      "limit": "<= 2.000000e-03",
+      "authority": "SG7B-15R"
+    },
+    {
+      "gate": "P90_front_xi_shift",
+      "limit": "<= 5.000000e-03",
+      "authority": "SG7B-15R"
+    },
+    {
+      "gate": "front_sign_agreement",
+      "limit": ">= 95.0%",
+      "authority": "R3D-R"
+    },
+    {
+      "gate": "front_overshoot_fraction",
+      "limit": "<= 5.0%",
+      "authority": "R3D-R"
+    },
+    {
+      "gate": "500-1000d bias",
+      "limit": "|bias| <= 2.500e-03",
+      "authority": "SG7B-12"
+    },
+    {
+      "gate": "1000-2000d bias",
+      "limit": "|bias| <= 4.500e-03",
+      "authority": "SG7B-12"
+    },
+    {
+      "gate": ">2000d bias",
+      "limit": "|bias| <= 5.000e-03",
+      "authority": "SG7B-12"
+    }
+  ],
+  "experiment_matrix": [
+    {
+      "experiment": "B0",
+      "description": "Frozen SG7B-11 control",
+      "basis": "none",
+      "learned_quantity": "none"
+    },
+    {
+      "experiment": "B1",
+      "description": "Narrow Gaussian residual fraction",
+      "basis": "G1_gaussian_narrow",
+      "learned_quantity": "alpha(tD,tau_end)"
+    },
+    {
+      "experiment": "B2",
+      "description": "Medium Gaussian residual fraction",
+      "basis": "G2_gaussian_medium",
+      "learned_quantity": "alpha(tD,tau_end)"
+    },
+    {
+      "experiment": "B3",
+      "description": "Raised-cosine residual fraction",
+      "basis": "G4_cosine_narrow",
+      "learned_quantity": "alpha(tD,tau_end)"
+    },
+    {
+      "experiment": "B4",
+      "description": "Two-scale front-local residual basis",
+      "basis": "G1 + G2",
+      "learned_quantity": "alpha1, alpha2 with alpha_total<=1"
+    },
+    {
+      "experiment": "B5",
+      "description": "Crossing-constrained two-scale basis",
+      "basis": "G1 + G2 + crossing moment guard",
+      "learned_quantity": "bounded alpha1, alpha2"
+    }
+  ],
+  "next_milestone": "V15-SG7C-R3F4 \u2014 Controlled Front-Local Residual Basis Calibration"
+}

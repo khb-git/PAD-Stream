@@ -1,0 +1,18 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1C",
+  "status": "EXACT_ARRAY_SUPPORT_EXTENSION_VALIDATION_FAILED",
+  "diagnosis": "X08_FAILS_ONE_OR_MORE_INDEPENDENT_DEPLOYMENT_GATES",
+  "training_performed": false,
+  "support_extension_recalibrated": false,
+  "candidate_frozen": false,
+  "independent_validation_pass": false,
+  "failed_authoritative_gates": [
+    "bias_500_1000",
+    "bias_1000_2000",
+    "bias_gt2000",
+    "tail_bias",
+    "material_positive_share_500_1000"
+  ],
+  "recommendation": "Do not freeze or deploy X08. The support gate itself is crossed, but one or more independent clarified deployment gates failed. Audit only those failed gates before altering support geometry.",
+  "next_milestone": "V15-SG7C-R3F5-R1CR \u2014 Exact-Array Independent Validation Failure Audit"
+}

@@ -1,0 +1,38 @@
+{
+  "milestone": "V16C-7A",
+  "status": "V16C_COMPRESSIBILITY_AUTHORITY_SEPARATION_INCOMPLETE",
+  "diagnosis": "ONE_OR_MORE_NC_UD_SOURCE_OR_AUTHORITY_GATES_FAILED",
+  "source_evidence": {
+    "stage2": {
+      "stage": 2,
+      "source": "pi_rnn_stage2_compressible_godunov.py",
+      "sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+      "sha_matches": true,
+      "Nc_density_ratio_semantics": false,
+      "uD_exp_Nc_xD_semantics": true,
+      "conservative_variable_velocity_semantics": true,
+      "transformed_front_semantics": true,
+      "density_like_tokens": "Density;density"
+    },
+    "stage4": {
+      "stage": 4,
+      "source": "pi_rnn_stage4_full_godunov.py",
+      "sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+      "sha_matches": true,
+      "Nc_density_ratio_semantics": true,
+      "uD_exp_Nc_xD_semantics": true,
+      "conservative_variable_velocity_semantics": true,
+      "transformed_front_semantics": true,
+      "density_like_tokens": "Density;density;rho_i;rho_inj"
+    }
+  },
+  "authority": {
+    "Pollock_TOF": "authoritative frozen multidimensional kinematics",
+    "Stage4_Nc": "source-authentic legacy density-ratio compressibility parameter",
+    "Stage4_uD": "legacy 1-D kinematic closure; not stacked on Pollock TOF",
+    "future_constitutive_compressibility": "only if separately source-defined; none invented in C7A"
+  },
+  "C7_metric_sha256": "5a47ef2a4154291b424e43d1b0e21e30baa0c805c846e9943f62f8b389289e6d",
+  "recommendation": "Do not generate Y. Audit only failed C7A gates.",
+  "next_milestone": "V16C-7A-R \u2014 Compressibility Authority Residual Audit"
+}

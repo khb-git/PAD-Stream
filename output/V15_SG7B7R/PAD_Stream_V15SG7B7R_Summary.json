@@ -1,0 +1,53 @@
+{
+  "milestone": "V15-SG7B-7R",
+  "description": "Independent final PI-RNN freeze validation",
+  "candidate": "V15SG7B6D_Best_Model.keras",
+  "candidate_SHA256": "9242af83e9aae6dc91ce215f78bf2a6d539972632d5e5ce759ea1fc83f3c11be",
+  "canonical_contract": "V15-SG7B-6H",
+  "training_performed": false,
+  "architecture_changed": false,
+  "thresholds_changed": false,
+  "state": {
+    "L1": 0.000795141443309536,
+    "L2": 0.0016421880975737806,
+    "Linf": 0.04384746610092827,
+    "minimum_prediction": 0.2272585779428482,
+    "maximum_prediction": 0.7758201360702515,
+    "mass_relative_MAE": 0.0009721994293216098,
+    "mass_relative_MAX": 0.005216970810272727
+  },
+  "canonical_physics": {
+    "mean": 0.34135178188694476,
+    "RMS": 0.6449054215314158,
+    "P50": 0.17081897209486058,
+    "P90": 0.8684100685604511,
+    "P95": 1.249248639581743,
+    "P99": 2.7066705475121355,
+    "MAX": 13.34436591392511,
+    "fraction_gt_1": 0.08051409618573797,
+    "fraction_gt_2": 0.021102819237147595,
+    "absolute_deltaR_MAE": 0.006764619367647565
+  },
+  "regional": {
+    "injector_L1": 0.002799964114268303,
+    "front_L1": 0.002030499328409261,
+    "interior_L1": 0.0004962873891896933,
+    "outlet_L1": 0.0005090418776528354,
+    "front_fraction": 0.20398009950248755
+  },
+  "time_bands": {
+    "early_L1": 0.0010731381652339688,
+    "middle_L1": 0.0005261567713336264,
+    "late_L1": 0.0007861293933610127
+  },
+  "legacy_diagnostic": {
+    "PI_RNN_self_FV_MAE": 0.14461754988323947,
+    "SG7A_self_FV_MAE": 0.0006323191893238511,
+    "legacy_ratio": 228.70972813252956,
+    "used_as_freeze_gate": false
+  },
+  "freeze_passed": true,
+  "status": "V15_SG7B_PIRNN_FROZEN",
+  "frozen_model": "V15SG7B_FROZEN_Model.keras",
+  "frozen_SHA256": "9242af83e9aae6dc91ce215f78bf2a6d539972632d5e5ce759ea1fc83f3c11be"
+}

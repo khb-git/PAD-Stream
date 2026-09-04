@@ -1,0 +1,43 @@
+{
+  "milestone": "V15-SG7E1R15",
+  "status": "SG7D6_PHYSICAL_TIME_IDENTITY_NOT_RESOLVED",
+  "diagnosis": "FROZEN_SINGLE_GRID_HAS_NO_AUTHORITATIVE_TIME_ASSIGNMENT",
+  "historical_reference": {
+    "times_days": [
+      100.0,
+      250.0,
+      500.0,
+      1000.0
+    ],
+    "aggregation": "PER_TIME_ALL_REQUIRED"
+  },
+  "frozen_SG7D6": {
+    "artifact_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7D6\\frozen_full_grid\\V15SG7D6_P4_Frozen_Full_Grid_Deployment_Candidate.npz",
+    "file_sha256": "5c881046bf7b6bcfb411cffc9a332b6e4705e03f91a3a2438ecb58c2eedf9df5",
+    "grid_key": "saturation_grid_full",
+    "grid_shape": [
+      15,
+      50,
+      50
+    ],
+    "grid_sha256": "6bf6661e2344d51c54df4689758a1998952454e0bc13797b8e4da57824cf9522",
+    "internal_time_keys": []
+  },
+  "time_provenance": {
+    "resolved": false,
+    "selected_time_days": null,
+    "provenance_reference_time_candidates": [],
+    "hash_match_time_candidates": [],
+    "all_supported_time_candidates": []
+  },
+  "constraints": {
+    "physical_time_assigned_by_similarity": false,
+    "candidate_performance_used": false,
+    "SG7E_gate_evaluated": false,
+    "threshold_changed": false,
+    "posthoc_alignment": false,
+    "deployment_correction_performed": false
+  },
+  "recommendation": "Do not evaluate SG7E gates. The frozen SG7D6 field remains temporally unlabelled relative to the four-time historical contract. Trace the SG7D4 completion source back to the frozen L2 streamline state and identify the exact transport time that produced the mapped full-grid field. Do not assign 100, 250, 500, or 1000 days by similarity or candidate performance.",
+  "next_milestone": "V15-SG7E1R16 \u2014 SG7D4-to-L2 Transport-Time Lineage Audit"
+}

@@ -1,0 +1,50 @@
+{
+  "milestone": "V16E-1B1-XPU",
+  "experiment_id": "V16E-BLREP-INC-XPU-001",
+  "protocol_timing": "Written before analytical dataset evaluation/training results.",
+  "classification": "FRAMEWORK_EQUIVALENT_ACCELERATION_PORT",
+  "not_claimed": [
+    "bitwise TensorFlow reproduction",
+    "historical checkpoint recovery",
+    "OOD experiment",
+    "TOF model",
+    "PhysicsNeMo model"
+  ],
+  "frozen_scientific_equivalence": {
+    "source_sha256": "98d492e1e4a84e9d2c3ab99a631bf7d21d011b65bdd599e0ab3192d947b36e58",
+    "teacher": "analytical Buckley-Leverett rarefaction + Welge tangent/shock",
+    "coordinate": "xi = xD/xD_star",
+    "conditioning_order": [
+      "no",
+      "nw",
+      "swi",
+      "sor",
+      "mu_w",
+      "mu_o",
+      "phi",
+      "tD",
+      "xD_star",
+      "Sw_star"
+    ],
+    "conditioning_dim": 10,
+    "architecture": "sequence xi + repeated p10 -> LSTM64 -> LSTM64 -> Dense1 -> sigmoid range map [swc,1-sor]",
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "logical_batch_size": 8192,
+    "gradient_accumulation": "XPU microbatches are sample-weighted and accumulated before one optimizer step per logical batch.",
+    "epochs": 400,
+    "seed": 1337,
+    "mixed_precision": false,
+    "loss_weights": {
+      "data": 1.0,
+      "physics": 0.05,
+      "injector_bc": 5.0,
+      "tip_bc": 5.0,
+      "anchor": 10.0,
+      "monotonicity": 0.2,
+      "shape": 0.0
+    }
+  },
+  "framework_difference": "PyTorch XPU kernels and Keras/TensorFlow kernels are not expected to be bitwise identical. This branch tests scientific/model equivalence under the same frozen equations and architecture.",
+  "acceptance_policy": "No numerical cutoff invented. Require successful full run, finite source-native metrics, saturation bounds, source-case diagnostics, XPU execution, and immutable artifact hashes."
+}

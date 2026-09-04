@@ -1,0 +1,11 @@
+{
+  "milestone": "V15-SG7E1R26I-R12",
+  "status": "FROZEN100_IMMEDIATE_INPUT_DIRECT_MODEL_PREDICT_CONFLICT",
+  "diagnosis": "MULTIPLE_HISTORICAL_FROZEN100_CREATORS_DIRECTLY_CONSUME_FROZEN_MODEL_PREDICTIONS",
+  "direct_predict_records": 2,
+  "direct_time_slice_records": 12,
+  "candidate_changed": false,
+  "threshold_changed": false,
+  "recommendation": "Audit only the direct frozen-model creator lineages using model artifact hashes, deployment workspace identities, and parent milestone provenance. Do not choose by numerical closeness.",
+  "next_milestone": "V15-SG7E1R26I-R13 \u2014 Direct Frozen100 Creator Lineage Conflict Audit"
+}

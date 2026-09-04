@@ -1,0 +1,460 @@
+{
+  "milestone": "V15-SG7E1R26I-R13",
+  "status": "FROZEN100_DIRECT_CREATOR_LINEAGE_RESOLVED",
+  "diagnosis": "ONE_DIRECT_FROZEN100_CREATOR_HAS_STRONGER_DOWNSTREAM_CR3_R1F_OR_MANIFEST_PROVENANCE",
+  "candidate_creators": [
+    "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+    "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py"
+  ],
+  "creator_identity": [
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "source_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "source_sha256": "9635bcb005fb63a91942f6375518994a091d7c63f42e7c8a065a3e072bec501b",
+      "frozen100_assignment_count": 1,
+      "frozen_model_load_count": 1,
+      "workspace_record_count": 2,
+      "X100_lineage_record_count": 11,
+      "serialization_record_count": 1
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "source_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "source_sha256": "8a6e68c8e915104c035eadf93f85ea104c9b42ee840c6847082311e74947efe7",
+      "frozen100_assignment_count": 1,
+      "frozen_model_load_count": 1,
+      "workspace_record_count": 2,
+      "X100_lineage_record_count": 11,
+      "serialization_record_count": 2
+    }
+  ],
+  "model_lineage": [
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "line": 1086,
+      "target": "frozen_model",
+      "path_expression": "SG7B11_FROZEN_MODEL",
+      "full_expression": "tf.keras.models.load_model(SG7B11_FROZEN_MODEL)"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "load_line": 1086,
+      "load_target": "frozen_model",
+      "path_expression": "SG7B11_FROZEN_MODEL",
+      "resolved_expression": "ROOT / \"output\" / \"V15_SG7B11\"\n    / \"V15SG7B_FRONT_AWARE_FROZEN_Model.keras\"",
+      "artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B11\\V15SG7B_FRONT_AWARE_FROZEN_Model.keras",
+      "filename": "V15SG7B_FRONT_AWARE_FROZEN_Model.keras",
+      "sha256": "28c3e555f1ea9e128bddc6c021c5b3648699ba7a33125b3b40a6556990fa9141",
+      "match_basis": "EXACT_FILENAME_IN_SOURCE_EXPRESSION"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 3839,
+      "target": "frozen_model",
+      "path_expression": "SG7B11_FROZEN_MODEL",
+      "full_expression": "tf.keras.models.load_model(\n        SG7B11_FROZEN_MODEL\n    )"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "load_line": 3839,
+      "load_target": "frozen_model",
+      "path_expression": "SG7B11_FROZEN_MODEL",
+      "resolved_expression": "ROOT / \"output\" / \"V15_SG7B11\"\n    / \"V15SG7B_FRONT_AWARE_FROZEN_Model.keras\"",
+      "artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B11\\V15SG7B_FRONT_AWARE_FROZEN_Model.keras",
+      "filename": "V15SG7B_FRONT_AWARE_FROZEN_Model.keras",
+      "sha256": "28c3e555f1ea9e128bddc6c021c5b3648699ba7a33125b3b40a6556990fa9141",
+      "match_basis": "EXACT_FILENAME_IN_SOURCE_EXPRESSION"
+    }
+  ],
+  "workspace_lineage": [
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "line": 81,
+      "symbol": "DEFAULT_DEPLOYMENT_WORKSPACE",
+      "expression": "ROOT.parent / f\"{ROOT.name}_SG5C_seed_11x11\""
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "line": 1081,
+      "symbol": "workspace",
+      "expression": "Path(args.workspace).resolve()"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 107,
+      "symbol": "DEFAULT_DEPLOYMENT_WORKSPACE",
+      "expression": "ROOT.parent / f\"{ROOT.name}_SG5C_seed_11x11\""
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 3826,
+      "symbol": "workspace",
+      "expression": "Path(\n        args.workspace\n    ).resolve()"
+    }
+  ],
+  "X100_lineage": [
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "line": 333,
+      "kind": "ASSIGNMENT",
+      "lhs": "X100",
+      "rhs": "np.zeros((nsl, nn, 2), dtype=np.float32)"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "line": 334,
+      "kind": "ASSIGNMENT",
+      "lhs": "X100[:, :, 0]",
+      "rhs": "xi[None, :]"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "line": 335,
+      "kind": "ASSIGNMENT",
+      "lhs": "X100[:, :, 1]",
+      "rhs": "normalized[:, None].astype(np.float32)"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "line": 579,
+      "kind": "ASSIGNMENT",
+      "lhs": "ds",
+      "rhs": "tf.data.Dataset.from_tensor_slices((\n        deployment[\"X100\"].astype(np.float32),\n        Y,\n        tau,\n        A,\n    ))"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "line": 727,
+      "kind": "ASSIGNMENT",
+      "lhs": "pred100",
+      "rhs": "model.predict(\n        deployment[\"X100\"], batch_size=BATCH_SIZE, verbose=0\n    )[:, :, 0]"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "line": 1095,
+      "kind": "ASSIGNMENT",
+      "lhs": "frozen100",
+      "rhs": "frozen_model.predict(\n        deployment[\"X100\"], batch_size=BATCH_SIZE, verbose=0\n    )[:, :, 0]"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "line": 579,
+      "kind": "CALL",
+      "lhs": "",
+      "rhs": "tf.data.Dataset.from_tensor_slices((\n        deployment[\"X100\"].astype(np.float32),\n        Y,\n        tau,\n        A,\n    ))"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "line": 1082,
+      "kind": "CALL",
+      "lhs": "",
+      "rhs": "load_deployment_database(\n        workspace, float(dataset[\"tD_scale\"][0])\n    )"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "line": 727,
+      "kind": "CALL",
+      "lhs": "",
+      "rhs": "model.predict(\n        deployment[\"X100\"], batch_size=BATCH_SIZE, verbose=0\n    )"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "line": 1095,
+      "kind": "CALL",
+      "lhs": "",
+      "rhs": "frozen_model.predict(\n        deployment[\"X100\"], batch_size=BATCH_SIZE, verbose=0\n    )"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "line": 580,
+      "kind": "CALL",
+      "lhs": "",
+      "rhs": "deployment[\"X100\"].astype(np.float32)"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 521,
+      "kind": "ASSIGNMENT",
+      "lhs": "X100",
+      "rhs": "np.zeros(\n        (\n            n_streamlines,\n            n_nodes,\n            2,\n        ),\n        dtype=np.float32,\n    )"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 530,
+      "kind": "ASSIGNMENT",
+      "lhs": "X100[:, :, 0]",
+      "rhs": "xi[None, :]"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 532,
+      "kind": "ASSIGNMENT",
+      "lhs": "X100[:, :, 1]",
+      "rhs": "(\n        normalized_tD100[:, None]\n    ).astype(np.float32)"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 1894,
+      "kind": "ASSIGNMENT",
+      "lhs": "ds",
+      "rhs": "tf.data.Dataset.from_tensor_slices(\n        (\n            deployment[\n                \"X100\"\n            ].astype(\n                np.float32\n            ),\n            Y,\n            tau,\n            A,\n        )\n    )"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 2130,
+      "kind": "ASSIGNMENT",
+      "lhs": "pred100",
+      "rhs": "model.predict(\n        deployment[\n            \"X100\"\n        ],\n        batch_size=BATCH_SIZE,\n        verbose=0,\n    )[\n        :,\n        :,\n        0,\n    ]"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 3864,
+      "kind": "ASSIGNMENT",
+      "lhs": "frozen100",
+      "rhs": "frozen_model.predict(\n        deployment[\n            \"X100\"\n        ],\n        batch_size=BATCH_SIZE,\n        verbose=0,\n    )[\n        :,\n        :,\n        0,\n    ]"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 1894,
+      "kind": "CALL",
+      "lhs": "",
+      "rhs": "tf.data.Dataset.from_tensor_slices(\n        (\n            deployment[\n                \"X100\"\n            ].astype(\n                np.float32\n            ),\n            Y,\n            tau,\n            A,\n        )\n    )"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 3830,
+      "kind": "CALL",
+      "lhs": "",
+      "rhs": "load_deployment_database(\n        workspace,\n        float(\n            dataset[\n                \"tD_scale\"\n            ][0]\n        ),\n    )"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 2130,
+      "kind": "CALL",
+      "lhs": "",
+      "rhs": "model.predict(\n        deployment[\n            \"X100\"\n        ],\n        batch_size=BATCH_SIZE,\n        verbose=0,\n    )"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 3864,
+      "kind": "CALL",
+      "lhs": "",
+      "rhs": "frozen_model.predict(\n        deployment[\n            \"X100\"\n        ],\n        batch_size=BATCH_SIZE,\n        verbose=0,\n    )"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 1896,
+      "kind": "CALL",
+      "lhs": "",
+      "rhs": "deployment[\n                \"X100\"\n            ].astype(\n                np.float32\n            )"
+    }
+  ],
+  "serialization_lineage": [
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "line": 1251,
+      "serializer": "np.savez_compressed",
+      "artifact_expression": "NUMERICAL_FILE",
+      "key": "prediction100",
+      "value_expression": "s[\"prediction100\"]"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 4540,
+      "serializer": "np.savez_compressed",
+      "artifact_expression": "NUMERICAL_FILE",
+      "key": "prediction100",
+      "value_expression": "winner_screen[\n                    \"prediction100\"\n                ].astype(\n                    np.float32\n                )"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 4540,
+      "serializer": "np.savez_compressed",
+      "artifact_expression": "NUMERICAL_FILE",
+      "key": "frozen100",
+      "value_expression": "frozen100.astype(\n                    np.float32\n                )"
+    }
+  ],
+  "downstream_consumers": [
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "consumer_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7CR3F4R3A\\V15SG7CR3F4R3A_Contract_Evidence.csv",
+      "consumer_name": "V15SG7CR3F4R3A_Contract_Evidence.csv",
+      "category": "CR3",
+      "hit_count": 1,
+      "hit_tokens": "SG7B13:1"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "consumer_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3A_Deployment_TOF_Coordinate_Model_Transfer_Audit.py",
+      "consumer_name": "PAD_Stream_V15SG7CR3A_Deployment_TOF_Coordinate_Model_Transfer_Audit.py",
+      "category": "CR3",
+      "hit_count": 6,
+      "hit_tokens": "V15SG7B16:1;SG7B16:5"
+    }
+  ],
+  "manifest_contract_lineage": [
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "consumer_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B13\\V15SG7B13_Candidate_Manifest.json",
+      "consumer_name": "V15SG7B13_Candidate_Manifest.json",
+      "category": "MANIFEST_OR_CONTRACT",
+      "hit_count": 6,
+      "hit_tokens": "V15SG7B13:2;SG7B13:4"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "consumer_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B14\\V15SG7B14_TOF_Conditioned_Freeze_Manifest.json",
+      "consumer_name": "V15SG7B14_TOF_Conditioned_Freeze_Manifest.json",
+      "category": "MANIFEST_OR_CONTRACT",
+      "hit_count": 3,
+      "hit_tokens": "V15SG7B13:1;SG7B13:2"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "consumer_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B14R\\PAD_Stream_V15SG7B14R_Summary.json",
+      "consumer_name": "PAD_Stream_V15SG7B14R_Summary.json",
+      "category": "MANIFEST_OR_CONTRACT",
+      "hit_count": 1,
+      "hit_tokens": "SG7B13:1"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "consumer_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B14R\\V15SG7B14R_Nomination.json",
+      "consumer_name": "V15SG7B14R_Nomination.json",
+      "category": "MANIFEST_OR_CONTRACT",
+      "hit_count": 1,
+      "hit_tokens": "SG7B13:1"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "consumer_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B15\\PAD_Stream_V15SG7B15_Summary.json",
+      "consumer_name": "PAD_Stream_V15SG7B15_Summary.json",
+      "category": "MANIFEST_OR_CONTRACT",
+      "hit_count": 1,
+      "hit_tokens": "SG7B13:1"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "consumer_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B15\\V15SG7B15_Front_Preserving_TOF_Refinement_Contract.json",
+      "consumer_name": "V15SG7B15_Front_Preserving_TOF_Refinement_Contract.json",
+      "category": "MANIFEST_OR_CONTRACT",
+      "hit_count": 1,
+      "hit_tokens": "SG7B13:1"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "consumer_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B15R\\V15SG7B15R_Front_Preserving_TOF_Refinement_Contract.json",
+      "consumer_name": "V15SG7B15R_Front_Preserving_TOF_Refinement_Contract.json",
+      "category": "MANIFEST_OR_CONTRACT",
+      "hit_count": 1,
+      "hit_tokens": "SG7B13:1"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "consumer_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7E1R26IR11\\V15SG7E1R26IR11_Raw100_Postprocessing_Contract.json",
+      "consumer_name": "V15SG7E1R26IR11_Raw100_Postprocessing_Contract.json",
+      "category": "MANIFEST_OR_CONTRACT",
+      "hit_count": 4,
+      "hit_tokens": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py:1;PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement:1;V15SG7B13:1;SG7B13:1"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "consumer_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7E1R26IR12\\V15SG7E1R26IR12_Frozen100_Immediate_Input_Contract.json",
+      "consumer_name": "V15SG7E1R26IR12_Frozen100_Immediate_Input_Contract.json",
+      "category": "MANIFEST_OR_CONTRACT",
+      "hit_count": 12,
+      "hit_tokens": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py:3;PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement:3;V15SG7B13:3;SG7B13:3"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "consumer_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7E1R26IR11\\V15SG7E1R26IR11_Postprocessing_Candidate_Contract.csv",
+      "consumer_name": "V15SG7E1R26IR11_Postprocessing_Candidate_Contract.csv",
+      "category": "MANIFEST_OR_CONTRACT",
+      "hit_count": 4,
+      "hit_tokens": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py:1;PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement:1;V15SG7B13:1;SG7B13:1"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "consumer_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B15R_Front_Preserving_TOF_Contract_Repair.py",
+      "consumer_name": "PAD_Stream_V15SG7B15R_Front_Preserving_TOF_Contract_Repair.py",
+      "category": "MANIFEST_OR_CONTRACT",
+      "hit_count": 1,
+      "hit_tokens": "SG7B16:1"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "consumer_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B16\\PAD_Stream_V15SG7B16_Summary.json",
+      "consumer_name": "PAD_Stream_V15SG7B16_Summary.json",
+      "category": "MANIFEST_OR_CONTRACT",
+      "hit_count": 1,
+      "hit_tokens": "SG7B16:1"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "consumer_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B16R\\PAD_Stream_V15SG7B16R_Summary.json",
+      "consumer_name": "PAD_Stream_V15SG7B16R_Summary.json",
+      "category": "MANIFEST_OR_CONTRACT",
+      "hit_count": 1,
+      "hit_tokens": "SG7B16:1"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "consumer_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7E1R26IR11\\V15SG7E1R26IR11_Raw100_Postprocessing_Contract.json",
+      "consumer_name": "V15SG7E1R26IR11_Raw100_Postprocessing_Contract.json",
+      "category": "MANIFEST_OR_CONTRACT",
+      "hit_count": 8,
+      "hit_tokens": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py:2;PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement:2;V15SG7B16:2;SG7B16:2"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "consumer_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7E1R26IR12\\V15SG7E1R26IR12_Frozen100_Immediate_Input_Contract.json",
+      "consumer_name": "V15SG7E1R26IR12_Frozen100_Immediate_Input_Contract.json",
+      "category": "MANIFEST_OR_CONTRACT",
+      "hit_count": 20,
+      "hit_tokens": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py:5;PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement:5;V15SG7B16:5;SG7B16:5"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "consumer_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7E1R26IR11\\V15SG7E1R26IR11_Postprocessing_Candidate_Contract.csv",
+      "consumer_name": "V15SG7E1R26IR11_Postprocessing_Candidate_Contract.csv",
+      "category": "MANIFEST_OR_CONTRACT",
+      "hit_count": 8,
+      "hit_tokens": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py:2;PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement:2;V15SG7B16:2;SG7B16:2"
+    }
+  ],
+  "provenance_scoring": [
+    {
+      "creator_source": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "score": 38250,
+      "unique_exact_model_artifacts": 1,
+      "CR3_hits": 6,
+      "R1F_hits": 0,
+      "manifest_contract_hits": 39,
+      "reasons": "unique_exact_model_artifact;direct_frozen100_creator;frozen_prediction_serialized;CR3_consumer_hits=6;manifest_contract_hits=39"
+    },
+    {
+      "creator_source": "PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "score": 29500,
+      "unique_exact_model_artifacts": 1,
+      "CR3_hits": 1,
+      "R1F_hits": 0,
+      "manifest_contract_hits": 34,
+      "reasons": "unique_exact_model_artifact;direct_frozen100_creator;frozen_prediction_serialized;CR3_consumer_hits=1;manifest_contract_hits=34"
+    }
+  ],
+  "selected_creator": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+  "constraints": {
+    "training_performed": false,
+    "model_parameters_changed": false,
+    "model_predict_executed": false,
+    "X100_changed": false,
+    "threshold_changed": false,
+    "creator_selected_by_numerical_closeness": false,
+    "creator_selected_by_chronology_only": false,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false
+  },
+  "recommendation": "The SG7B13/SG7B16 creator conflict is resolved from downstream provenance rather than numerical closeness or chronology. Preserve the selected creator source, frozen-model load path, and deployment/X100 lineage. Next resolve the exact model artifact and replay only that creator's 100-day frozen_model.predict path against persisted frozen100.",
+  "next_milestone": "V15-SG7E1R26I-R14 \u2014 Selected Frozen100 Creator Model / X100 Runtime Reconciliation"
+}

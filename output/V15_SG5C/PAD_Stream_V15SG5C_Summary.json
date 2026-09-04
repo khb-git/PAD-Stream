@@ -1,0 +1,34 @@
+{
+  "milestone": "V15-SG5C",
+  "description": "Controlled streamline seed-density convergence for Eulerian SGSim plume support",
+  "variable_changed": "injector outgoing-face seed subdivision only",
+  "outgoing_injector_faces": 22,
+  "seed_densities": [
+    5,
+    7,
+    9,
+    11
+  ],
+  "expected_streamline_counts": {
+    "5x5": 550,
+    "7x7": 1078,
+    "9x9": 1782,
+    "11x11": 2662
+  },
+  "base_ladder_complete": true,
+  "failed_cases": [],
+  "convergence_contract": {
+    "maximum_cell_coverage_change": 0.05,
+    "maximum_covered_inventory_change": 0.05,
+    "maximum_grid_L1_change": 0.002,
+    "maximum_footprint_IoU_change": 0.02,
+    "maximum_centroid_change_cells": 0.25
+  },
+  "support_reference": {
+    "desired_minimum_covered_inventory_fraction": 0.75
+  },
+  "decision": "SEED_CONVERGENCE_NOT_YET_ESTABLISHED",
+  "recommended_seed_density": null,
+  "next_milestone": "Review SG5C convergence trajectory before further refinement",
+  "original_project_modified": false
+}

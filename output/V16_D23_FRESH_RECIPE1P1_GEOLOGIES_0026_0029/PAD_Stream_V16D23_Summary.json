@@ -1,0 +1,19 @@
+{
+  "milestone": "V16D-23",
+  "status": "V16D_FRESH_RECIPE1P1_GEOLOGIES_0026_0029_GENERATED_CERTIFIED_36CASE_CONTROLSPACE_FLOW_GENERATION_AUTHORIZED",
+  "manifest_sha256": "530c61f221778b584b3c723350231e12b731233157b5356e7457b4bc3c53f9a5",
+  "gates": {
+    "D22_SHA_exact": true,
+    "exact_geologies_0026_0029": true,
+    "D22_seed_registry_exact": true,
+    "Recipe1p1_algorithm_preserved": true,
+    "not_SGS_or_SGSim": true,
+    "all_case_certification_gates": true,
+    "no_case_replacement": true,
+    "no_flow_generation": true,
+    "no_transport_generation": true,
+    "no_training": true,
+    "locked_geology_not_evaluated": true
+  },
+  "next_milestone": "V16D-24 \u2014 Source-Bound 36-Foundation-Case SG2/SG3/SG4 Control-Space Flow Generation"
+}

@@ -1,0 +1,19 @@
+{
+  "milestone": "V16D-35",
+  "experiment": "EXP-CS1",
+  "status": "V16D_EXP_CS1_ONE_TOUCH_FINAL_LOCKED_OOD_EVALUATION_COMPLETED_OOD_CONSUMED_NO_FURTHER_TUNING_AUTHORIZED",
+  "OOD_opened": true,
+  "OOD_evaluated": true,
+  "OOD_consumed": true,
+  "cases_evaluated": 9,
+  "aggregate_MSE": 1.7935869890747634e-05,
+  "aggregate_RMSE": 0.0042350761375384545,
+  "aggregate_MAE": 0.0017336927827610116,
+  "validation_gap_RMSE_ratio": 0.9720395516812034,
+  "validation_gap_MAE_ratio": 0.9877299387183429,
+  "results_sha256": "ecc8f4d7f54dc1603072b17d763113f3963f3aae8afd0d6e1f9d2af847d9388e",
+  "opening_lock_sha256": "e5cc11a9e33edf9c1d112c9cedaf21e7d8b7b49cb415535ba20781edaea9fec8",
+  "checkpoint_sha256": "dc586da13e9fd7ce0b51cc661ba73edc8ab0f897d2f961112944504b13d1ed13",
+  "evaluator_source_sha256": "80aeb3db5dcb58651df3b2b4f7d987849d6fde7ee1441f6953bca5f0e7699b6d",
+  "next_milestone": "V16D-36 \u2014 Post-OOD scientific interpretation and structural/front/time/control diagnostics using the same frozen results only; no retraining or tuning under EXP-CS1"
+}

@@ -1,0 +1,12 @@
+{
+  "milestone": "V15-SG7E1",
+  "status": "SG7E1_REFERENCE_CONTRACT_BLOCKED",
+  "diagnosis": "HISTORICAL_REFERENCE_PLUME_OR_THRESHOLD_NOT_UNIQUELY_RECOVERED",
+  "authoritative_gates_loaded": 4,
+  "reference_status": "AMBIGUOUS_REFERENCE_CANDIDATES",
+  "plume_threshold_resolved": false,
+  "candidate_changed": false,
+  "thresholds_changed": false,
+  "recommendation": "Do not evaluate deployment gates yet. The authoritative SG7E gate registry is resolved, but the historical reference plume and/or plume-threshold definition is not uniquely reconstructible from persisted evidence. Audit only reference provenance; do not create a new truth field or threshold.",
+  "next_milestone": "V15-SG7E1R0 \u2014 Historical SG7E Reference Plume Provenance Audit"
+}

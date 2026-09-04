@@ -1,0 +1,54 @@
+{
+  "milestone": "V15-SG7B-4",
+  "description": "Reference-case plain-LSTM full-physics PI-RNN training",
+  "architecture": {
+    "type": "plain stacked LSTM",
+    "hidden_size": 64,
+    "lstm_layers": 2,
+    "sequence_length": 201,
+    "input": "[xi, normalized tD]",
+    "output": "S(xi,tD)",
+    "fourier_features": false,
+    "film": false,
+    "front_coordinate": false,
+    "serialization": "standard Keras Activation + Rescaling; no anonymous Lambda"
+  },
+  "physics": {
+    "Nc": 0.1,
+    "Pe_c": 22.0,
+    "lambda_bc": 2.0,
+    "porosity": 0.2,
+    "physics_loss": "conservative finite-volume residual validated in SG7B-2"
+  },
+  "loss_weights": {
+    "data": 1.0,
+    "physics_max": 0.05,
+    "boundary": 1.0,
+    "mass": 2.0
+  },
+  "training": {
+    "recovered_previous_run": true,
+    "requested_epochs": 400,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "best_epoch": 68,
+    "best_validation_data_mse": 0.0011265653229202144,
+    "runtime_seconds": null
+  },
+  "held_out_test": {
+    "L1": 0.016631033271551132,
+    "L2": 0.029911598190665245,
+    "Linf": 0.27293825149536133,
+    "minimum_predicted_saturation": 0.44047796726226807,
+    "maximum_predicted_saturation": 0.726394772529602,
+    "FV_residual_RMS": 6.477466106414795,
+    "FV_relative_MAE": 0.2645454406738281,
+    "FV_relative_RMS": 0.38348156213760376,
+    "mass_MAE": 0.012650820290410094,
+    "mass_relative_MAE": 0.022875930769204668,
+    "mass_relative_max": 0.10715890198214795
+  },
+  "status": "TRAINED_NOT_YET_FROZEN",
+  "freeze_decision": "Deferred to V15-SG7B-5 detailed validation.",
+  "next_milestone": "V15-SG7B-5 - detailed PI-RNN validation against frozen SG7A"
+}

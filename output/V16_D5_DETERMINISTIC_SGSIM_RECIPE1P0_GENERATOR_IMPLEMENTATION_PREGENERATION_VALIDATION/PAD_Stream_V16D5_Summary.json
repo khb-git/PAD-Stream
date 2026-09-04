@@ -1,0 +1,40 @@
+{
+  "milestone": "V16D-5",
+  "status": "V16D_RECIPE1P0_DETERMINISTIC_GEOLOGY_GENERATOR_IMPLEMENTED_PREGENERATION_VALIDATED",
+  "seed": 160400,
+  "implementation_authority": "NEW_V16D_DETERMINISTIC_SPECTRAL_GAUSSIAN_FIELD_IMPLEMENTATION_NOT_HISTORICAL_SGEMS_INTERNALS",
+  "diagnostics": {
+    "mean": -3.031649005909761e-17,
+    "std": 1.0,
+    "min": -4.630590173619983,
+    "max": 3.9936146004484563,
+    "corr_x_lag1": 0.7299301012328279,
+    "corr_y_lag1": 0.7296802621398935,
+    "corr_z_lag1": 0.42020196401847654,
+    "spectral_min_raw_eigenvalue": 0.12488897382267151,
+    "negative_spectral_mode_fraction": 0.0,
+    "max_projected_eigenvalue": 344.23490646508225
+  },
+  "artifact": {
+    "path": "output\\V16_D5_DETERMINISTIC_SGSIM_RECIPE1P0_GENERATOR_IMPLEMENTATION_PREGENERATION_VALIDATION\\V16D5_Generator_Diagnostic_Seed160400.npz",
+    "sha256": "ab6333c92d7dd62e7972278c81e799c3b1ae760bc908d877d6867d0394979d75"
+  },
+  "gates": {
+    "R3_bound": true,
+    "D4_bound": true,
+    "registry_hash_exact": true,
+    "first_seed_exact": true,
+    "shape_15_50_50": true,
+    "finite": true,
+    "deterministic_same_seed": true,
+    "different_next_seed": true,
+    "normalized_mean_machine_zero": true,
+    "normalized_std_one": true,
+    "no_seed_change": true,
+    "no_realization_rejection": true,
+    "no_flow_run": true,
+    "no_transport_run": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-5A \u2014 Spectral Covariance Embedding Fidelity Audit Before Ensemble Generation"
+}

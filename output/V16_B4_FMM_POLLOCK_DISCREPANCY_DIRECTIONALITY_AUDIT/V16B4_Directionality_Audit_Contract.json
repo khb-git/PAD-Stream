@@ -1,0 +1,27 @@
+{
+  "milestone": "V16B-4",
+  "status": "V16B_FMM_POLLOCK_DIRECTIONAL_DISCREPANCY_AUDIT_COMPLETE",
+  "diagnosis": "ISOTROPIC_FMM_SHORTCUT_BIAS_WITH_DIRECTIONAL_ADVECTIVE_PATH_MISMATCH",
+  "directional_extension_warranted": true,
+  "metrics": {
+    "median_terminal_FMM_to_Pollock_ratio": 0.5054942321969669,
+    "median_terminal_error_days": -169.44164429485235,
+    "mean_tangent_velocity_cos": 0.9893801320675943,
+    "mean_tangent_FMM_gradient_cos": 0.45778693246792895,
+    "FMM_negative_step_fraction": 0.1260899814471243,
+    "strongest_abs_error_feature": "mean_speed_m_s",
+    "strongest_abs_error_correlation": -0.7078680206947321
+  },
+  "interpretation_policy": {
+    "diagnostic_only": true,
+    "isotropic_speed_recalibrated": false,
+    "directional_correction_fitted": false,
+    "producer_labels_inferred": false
+  },
+  "output": {
+    "file": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_B4_FMM_POLLOCK_DISCREPANCY_DIRECTIONALITY_AUDIT\\V16B4_Discrepancy_Directionality_Audit.npz",
+    "sha256": "7ef30e59f200af6f3f4240ff3e6bb9aff180e18c3de031435db12246d3cb7115"
+  },
+  "recommendation": "Preserve the isotropic FMM baseline as the control. Proceed to V16B-5 to design, but not yet solve, a directional/anisotropic arrival-time formulation that respects frozen velocity orientation. Do not tune the original isotropic speed field.",
+  "next_milestone": "V16B-5 \u2014 Directional / Anisotropic Arrival-Time Formulation Design"
+}

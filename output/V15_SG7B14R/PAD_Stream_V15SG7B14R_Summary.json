@@ -1,0 +1,15 @@
+{
+  "milestone": "V15-SG7B-14R",
+  "status": "NO_EXISTING_SG7B13_CANDIDATE_PASSES_COMPLETE_INDEPENDENT_CONTRACT",
+  "diagnosis": "TOF_REFINEMENT_FRONT_PRESERVATION_TRADEOFF",
+  "models_evaluated": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5"
+  ],
+  "passing_models": [],
+  "recommendation": "No existing E1-E5 checkpoint independently satisfies the complete contract. Front-position/shape preservation is a recurring limiting mechanism, so do not relax gates and do not reuse E3. Design a narrower TOF correction with stronger front anchoring and explicitly bounded front displacement.",
+  "next_milestone": "V15-SG7B-15 \u2014 Front-Preserving TOF Refinement Design"
+}

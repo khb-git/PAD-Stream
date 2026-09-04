@@ -1,0 +1,197 @@
+{
+  "milestone": "V15-SG7C-R3D-R",
+  "status": "FROZEN_DEPLOYMENT_CALIBRATION_CONTRACT_READY",
+  "training_performed": false,
+  "frozen_model_modified": false,
+  "repair_reason": "R3D incorrectly assumed front correction should be smaller than very-long-TOF correction. The validated canonical target requires a material front correction.",
+  "authoritative_front_contract": {
+    "minimum_recovered_fronts": 744,
+    "maximum_conditioned_threshold_gap": 0.0005331237279179135,
+    "maximum_100d_profile_L1": 0.004500329422914474
+  },
+  "authoritative_front_displacement_guards": {
+    "maximum_front_anchor_MAE": 0.0015,
+    "maximum_mean_frozen_front_xi_shift": 0.002,
+    "maximum_P90_frozen_front_xi_shift": 0.005
+  },
+  "calibration_target": "canonical_interpolated_target - frozen_PI_RNN",
+  "regions": [
+    {
+      "region": "C0_short_TOF",
+      "definition": "tau_end < 500 d",
+      "calibration_strategy": "WEAK / ZERO-ANCHORED",
+      "reason": "frozen deployment already accurate"
+    },
+    {
+      "region": "C1_long_TOF_nonfront",
+      "definition": "tau_end >= 500 d outside front shell",
+      "calibration_strategy": "PRIMARY RESIDUAL FIT",
+      "reason": "remove long-TOF approximation residual"
+    },
+    {
+      "region": "C2_very_long_TOF_nonfront",
+      "definition": "tau_end >= 1000 d outside front shell",
+      "calibration_strategy": "STRONG RESIDUAL FIT",
+      "reason": "largest slow-streamline bias"
+    },
+    {
+      "region": "C3_front_shell",
+      "definition": "0.205 <= SG7A S <= 0.300",
+      "calibration_strategy": "CANONICAL-TARGETED + FRONT-GATED",
+      "reason": "front residual is material; correction is allowed only when it reduces canonical/SG7A error and preserves accepted front metrics"
+    },
+    {
+      "region": "C4_front_core",
+      "definition": "0.210 <= SG7A S <= 0.260",
+      "calibration_strategy": "CANONICAL-TARGETED + CROSSING-CONSTRAINED",
+      "reason": "do not force deltaS to zero; directly preserve/recover threshold position and front shape while correcting state error"
+    }
+  ],
+  "objective": [
+    {
+      "term": "L_residual",
+      "definition": "|deltaS_cal - (S_canonical_interp - S_frozen)|",
+      "purpose": "fit validated deployment approximation residual"
+    },
+    {
+      "term": "L_short_anchor",
+      "definition": "|deltaS_cal| on tau_end < 500 d",
+      "purpose": "keep fast-streamline calibration weak"
+    },
+    {
+      "term": "L_front_state",
+      "definition": "|S_cal - S_canonical_interp| in front shell",
+      "purpose": "correct front state toward authoritative target"
+    },
+    {
+      "term": "L_front_cross",
+      "definition": "front-position error at S=0.21",
+      "purpose": "preserve/recover threshold crossing directly"
+    },
+    {
+      "term": "L_front_shape",
+      "definition": "gradient + TV mismatch vs canonical target",
+      "purpose": "preserve front morphology"
+    },
+    {
+      "term": "L_direction",
+      "definition": "penalize deltaS_cal that increases |S_cal-S_target|",
+      "purpose": "prevent correction in the wrong direction"
+    },
+    {
+      "term": "L_overshoot",
+      "definition": "penalize crossing past canonical target",
+      "purpose": "prevent over-correction"
+    },
+    {
+      "term": "L_smooth_xi",
+      "definition": "|d(deltaS_cal)/dxi|",
+      "purpose": "suppress oscillatory residual correction"
+    }
+  ],
+  "preservation_gates": [
+    {
+      "gate": "Recovered 100d fronts",
+      "limit": ">= 744",
+      "authority": "SG7B-10S"
+    },
+    {
+      "gate": "Conditioned front gap",
+      "limit": "<= 5.33123727917913484e-04",
+      "authority": "SG7B-10S"
+    },
+    {
+      "gate": "100d profile L1",
+      "limit": "<= 4.50032942291447424e-03",
+      "authority": "SG7B-10S"
+    },
+    {
+      "gate": "Front-anchor MAE",
+      "limit": "<= 1.500000e-03",
+      "authority": "SG7B-15R"
+    },
+    {
+      "gate": "Mean frozen-front xi shift",
+      "limit": "<= 2.000000e-03",
+      "authority": "SG7B-15R"
+    },
+    {
+      "gate": "P90 frozen-front xi shift",
+      "limit": "<= 5.000000e-03",
+      "authority": "SG7B-15R"
+    },
+    {
+      "gate": "Global calibration magnitude",
+      "limit": "|deltaS| <= 0.100",
+      "authority": "R3D-R calibration safeguard"
+    },
+    {
+      "gate": "Short-TOF calibration MAE",
+      "limit": "<= 0.001500",
+      "authority": "R3D-R calibration safeguard"
+    },
+    {
+      "gate": "Front error reduction",
+      "limit": ">= 50.0%",
+      "authority": "R3D-R front calibration safeguard"
+    },
+    {
+      "gate": "Front correction sign agreement",
+      "limit": ">= 95.0%",
+      "authority": "R3D-R directionality safeguard"
+    },
+    {
+      "gate": "Front overshoot fraction",
+      "limit": "<= 5.0%",
+      "authority": "R3D-R overshoot safeguard"
+    },
+    {
+      "gate": "Calibration TV ratio",
+      "limit": "<= 0.200",
+      "authority": "R3D-R smoothness safeguard"
+    }
+  ],
+  "controlled_experiments": [
+    {
+      "experiment": "E0",
+      "description": "Frozen SG7B-11 control; zero calibration",
+      "model": "zero residual"
+    },
+    {
+      "experiment": "E1",
+      "description": "Linear canonical-residual calibration",
+      "model": "linear residual head"
+    },
+    {
+      "experiment": "E2",
+      "description": "Small canonical-residual MLP",
+      "model": "MLP 16x16"
+    },
+    {
+      "experiment": "E3",
+      "description": "TOF-gated canonical-residual MLP",
+      "model": "MLP 16x16 + TOF gate"
+    },
+    {
+      "experiment": "E4",
+      "description": "Front-aware canonical-residual MLP",
+      "model": "MLP 16x16 + TOF gate + explicit front state/crossing losses"
+    },
+    {
+      "experiment": "E5",
+      "description": "Conservative front-aware residual calibration",
+      "model": "MLP 8x8 + TOF gate + strongest short-TOF anchor"
+    }
+  ],
+  "front_residual_audit": {
+    "front_shell_required_correction_MAE": 0.009261960129912362,
+    "front_shell_required_correction_MAX": 0.05139590639215985,
+    "very_long_TOF_required_correction_MAE": 0.0047112654138375,
+    "short_TOF_required_correction_MAE": 0.0011638090729701928,
+    "frozen_front_shell_L1": 0.009261964183162193,
+    "canonical_target_front_shell_L1": 1.9411167529263913e-08,
+    "ideal_front_error_reduction_fraction": 0.9999979042061549,
+    "required_correction_sign_agreement": 1.0
+  },
+  "next_milestone": "V15-SG7C-R3E \u2014 Controlled Frozen-Model Deployment Calibration"
+}

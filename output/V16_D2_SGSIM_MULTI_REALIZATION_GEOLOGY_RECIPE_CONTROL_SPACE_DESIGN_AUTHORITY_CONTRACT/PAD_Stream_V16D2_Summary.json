@@ -1,0 +1,116 @@
+{
+  "milestone": "V16D-2",
+  "status": "V16D_SGSIM_MULTI_REALIZATION_EXPERIMENT_DESIGN_FROZEN_EXACT_CASE0001_GEOSTATISTICAL_RECIPE_BINDING_REQUIRED",
+  "recipe": {
+    "grid": {
+      "nx": 50,
+      "ny": 50,
+      "nz": 15,
+      "dx_ft": 20.0,
+      "dy_ft": 20.0,
+      "dz_ft": 4.0
+    },
+    "sgsim_model_class": {
+      "method": "sequential Gaussian simulation (SGSim)",
+      "stationarity_class": "same as Foundation Case 0001",
+      "variogram_vertical_range_ft": 15.0,
+      "azimuth_deg": 30.0,
+      "continuity_and_variogram_parameters": "MUST BE BOUND TO THE CASE-0001 SOURCE RECIPE BEFORE GENERATION; D2 DOES NOT GUESS UNRECOVERED SGeMS PARAMETERS",
+      "realization_rule": "independent stochastic seed per geology_id; seed registry frozen before generation"
+    },
+    "property_transform": {
+      "permeability_transform": "same frozen Case-0001 Gaussian-to-permeability transform implementation",
+      "permeability_support_mD": [
+        50.0,
+        1000.0
+      ],
+      "injection_interval_layers_1based": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "porosity": 0.2,
+      "Kx": "K_SGSim",
+      "Ky": "K_SGSim",
+      "Kz_over_Kh": 0.1,
+      "no_post_generation_case_selection": "prohibited"
+    },
+    "well_geometry": {
+      "pattern": "five-spot",
+      "injector_zero_based_xy": [
+        24,
+        24
+      ],
+      "producers_zero_based_xy": [
+        [
+          4,
+          4
+        ],
+        [
+          45,
+          4
+        ],
+        [
+          4,
+          45
+        ],
+        [
+          45,
+          45
+        ]
+      ],
+      "completion_zero_based_k": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    "control_design": {
+      "reference": {
+        "CO2_mass_rate_tonnes_per_day": 500.0,
+        "producer_BHP_psi": 2000.0
+      },
+      "first_multi_case_phase": "GEOLOGY-ONLY VARIATION: hold reference controls fixed to isolate geology effect",
+      "later_control_phase": "CONTROL VARIATION REQUIRES A SEPARATE D-series contract defining admissible injection-rate/BHP combinations before generation",
+      "reason": "do not confound geology OOD and control OOD in the first expansion"
+    },
+    "case_registry": {
+      "Case0001": "frozen reference, never regenerated",
+      "Case0002_plus": "new independent SGSim realizations only after exact Case0001 geostatistical recipe binding",
+      "case_id_assignment": "deterministic and immutable",
+      "seed_assignment": "predeclared registry; never chosen by visual/numerical desirability"
+    },
+    "split_design": {
+      "assignment_timing": "case-level train/validation/test assignment must be frozen before any multi-case model training",
+      "first_phase_OOD": "unseen geology at fixed controls",
+      "future_OOD": "unseen controls and joint unseen geology+controls"
+    },
+    "training_authorized": false,
+    "case_generation_authorized": false,
+    "blocker": "exact executable/source binding of the Case0001 SGSim geostatistical recipe must precede realization generation"
+  },
+  "gates": {
+    "D1_bound": true,
+    "grid_frozen": true,
+    "Case0001_immutable": true,
+    "independent_seed_rule": true,
+    "no_cherrypicking": true,
+    "property_transform_same_lineage": true,
+    "porosity_frozen": true,
+    "anisotropy_ratio_frozen": true,
+    "well_geometry_fixed_first_phase": true,
+    "reference_controls_fixed_first_phase": true,
+    "geology_and_control_axes_separated": true,
+    "true_OOD_geology_defined": true,
+    "unrecovered_SGeMS_parameters_not_invented": true,
+    "seed_registry_required_before_generation": true,
+    "case_split_required_before_training": true,
+    "no_generation_in_D2": true,
+    "no_training_in_D2": true
+  },
+  "next_milestone": "V16D-3 \u2014 Exact Case 0001 SGSim Geostatistical Recipe Provenance and Executable Binding Audit"
+}

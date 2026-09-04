@@ -1,0 +1,50 @@
+{
+  "milestone": "V16E-1B2T-XPU",
+  "authorized_next_milestone": "V16E-1B2U-XPU",
+  "classification": "EXTENDED_NO_OPTIMIZER_CORRECTED_RESIDUAL_THROUGHPUT_AND_MEMORY_BENCHMARK",
+  "scientific_model": "unchanged prospective V16E-BLREP-COMP-XPU-005",
+  "baseline_checkpoint": {
+    "experiment": "V16E-BLREP-COMP-XPU-004",
+    "sha256": "2b54c6ace6c893916bf55ee54dea2ad55eb3b5239d8e0c0cda21bc9311efca69"
+  },
+  "exact_graph": "same corrected conservative Stage-2 forward + create_graph=True local recurrent derivatives + complete total loss backward as B2S",
+  "candidate_microbatches": [
+    32,
+    64,
+    128,
+    256
+  ],
+  "candidate_rationale": "power-of-two continuation of the already tested 1,2,4,8,16 sequence; operational only, no scientific parameter change",
+  "execution_isolation": "each candidate in a fresh subprocess/XPU context",
+  "allowed_candidate_outcomes": [
+    "PASS",
+    "OOM",
+    "DEVICE_LOST",
+    "RUNTIME_ERROR"
+  ],
+  "selection_rule": "Select the largest tested candidate that completes finite forward, corrected residual, complete backward, XPU synchronization, finite parameter gradients, exact no-weight-change, and checkpoint-SHA gates. Do not infer viability above the largest tested success.",
+  "benchmark_requirements": [
+    "wall time",
+    "profiles per second",
+    "peak XPU memory if available",
+    "finite corrected residual",
+    "finite total loss",
+    "finite parameter gradients",
+    "nonzero parameter gradients",
+    "weights unchanged",
+    "checkpoint SHA unchanged",
+    "no optimizer object",
+    "no optimizer step"
+  ],
+  "scientific_firewall": {
+    "training": false,
+    "optimizer": false,
+    "optimizer_step": false,
+    "weight_update": false,
+    "scientific_settings_changed": false,
+    "OOD": false,
+    "TOF": false,
+    "B3_authorized": false
+  },
+  "full_COMP_XPU_005_training_authorized": false
+}

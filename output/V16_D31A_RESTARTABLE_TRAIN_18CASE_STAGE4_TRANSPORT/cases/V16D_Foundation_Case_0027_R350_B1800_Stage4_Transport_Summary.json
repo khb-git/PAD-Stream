@@ -1,0 +1,28 @@
+{
+  "case_id": "V16D_Foundation_Case_0027_R350_B1800",
+  "partition": "TRAIN",
+  "status": "CERTIFIED",
+  "metric_sha256": "b1757eeec8cb87817b823458c3472b35c8ed7eddc146727ae946cd85cb68be34",
+  "artifact_sha256": "3d97031c37a68b687ed627021f687ee6472e10cba9d007643ea364254ff67924",
+  "steps": 31556,
+  "elapsed_seconds": 1605.4859902858734,
+  "S_min": 0.2009999999999986,
+  "S_max": 0.799,
+  "adv_max": 1.217863971562233e-17,
+  "cap_max": 8.881784197001252e-15,
+  "preclip_max": 0.0,
+  "temporal_negative_fraction": 0.0,
+  "spatial_positive_fraction": 0.0,
+  "gates": {
+    "finite": true,
+    "shape": true,
+    "bounds": true,
+    "injector": true,
+    "undershoot": true,
+    "adv_conservation": true,
+    "cap_residual": true,
+    "preclip": true,
+    "temporal": true,
+    "spatial": true
+  }
+}

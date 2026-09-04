@@ -1,0 +1,33 @@
+{
+  "milestone": "V16E-1B2H-XPU",
+  "status": "V16E1B2H_XPU_NC_CONDITIONING_RESPONSE_AUDIT_COMPLETE_PHYSICAL_NC_COUNTS_PER_NC_LOSS_COMPONENTS_AND_MODEL_TO_TEACHER_RESPONSE_GAINS_FROZEN_NO_TRAINING_NO_WEIGHT_CHANGE_NO_OOD_NO_TOF_NEXT_INTERVENTION_REQUIRES_INTERPRETATION_B3_NOT_AUTHORIZED",
+  "audit_sha256": "e033f0e8b9e64729ef0469514e6c0909c2150c5290851648f98f5b8a0c60c8bc",
+  "B3_authorized": false,
+  "next_intervention_requires_interpretation": true,
+  "gates": {
+    "Stage2_SHA_exact": true,
+    "dataset_SHA_exact": true,
+    "base_runner_SHA_exact": true,
+    "COMP002_checkpoint_SHA_exact": true,
+    "B2F_source_SHA_exact": true,
+    "COMP003_checkpoint_SHA_exact": true,
+    "B2G_source_SHA_exact": true,
+    "B2G_comparison_SHA_exact": true,
+    "B2G_summary_SHA_exact": true,
+    "B2G_status_exact": true,
+    "B2G_B3_false": true,
+    "B2G_interpretation_required": true,
+    "counts_cover_all_Nc": true,
+    "losses_finite": true,
+    "response_gains_finite": true,
+    "COMP002_checkpoint_unchanged": true,
+    "COMP003_checkpoint_unchanged": true,
+    "audit_written": true,
+    "no_training": true,
+    "no_optimizer": true,
+    "no_weight_update": true,
+    "no_OOD": true,
+    "no_TOF": true,
+    "no_numeric_threshold": true
+  }
+}

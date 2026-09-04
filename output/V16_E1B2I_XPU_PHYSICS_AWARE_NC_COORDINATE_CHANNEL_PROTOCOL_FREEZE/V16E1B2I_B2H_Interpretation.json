@@ -1,0 +1,144 @@
+{
+  "milestone": "V16E-1B2I-XPU",
+  "B2H_audit_sha256": "e033f0e8b9e64729ef0469514e6c0909c2150c5290851648f98f5b8a0c60c8bc",
+  "frozen_observations": {
+    "physical_Nc_counts": {
+      "all": {
+        "0.00": 2910,
+        "0.05": 2874,
+        "0.10": 2856,
+        "0.20": 2922,
+        "0.30": 2838
+      },
+      "train": {
+        "0.00": 2324,
+        "0.05": 2342,
+        "0.10": 2278,
+        "0.20": 2310,
+        "0.30": 2266
+      },
+      "holdout": {
+        "0.00": 586,
+        "0.05": 532,
+        "0.10": 578,
+        "0.20": 612,
+        "0.30": 572
+      }
+    },
+    "COMP_XPU_002_per_Nc_holdout_losses": {
+      "0.00": {
+        "profiles": 586,
+        "data": 4.642146303838535e-05,
+        "physics": 0.0013197745238637405,
+        "bc_inj": 4.059293480397682e-06,
+        "bc_tip": 3.1122309724118784e-06,
+        "anchor": 8.720766652808341e-06,
+        "mono": 1.3295782888319218e-07,
+        "total": 0.0002355020641867364
+      },
+      "0.05": {
+        "profiles": 532,
+        "data": 6.601847181949218e-05,
+        "physics": 0.0016098133598181203,
+        "bc_inj": 2.8682249232000127e-06,
+        "bc_tip": 2.147083136205902e-06,
+        "anchor": 1.0322177940154626e-05,
+        "mono": 8.27159188194609e-08,
+        "total": 0.00027482399998820926
+      },
+      "0.10": {
+        "profiles": 578,
+        "data": 0.00010399665488341056,
+        "physics": 0.001703048513229021,
+        "bc_inj": 3.3322505030268844e-06,
+        "bc_tip": 1.9990657826059396e-06,
+        "anchor": 2.2408626996035925e-05,
+        "mono": 1.0410195821100309e-07,
+        "total": 0.0004399127452183115
+      },
+      "0.20": {
+        "profiles": 612,
+        "data": 0.00014079649739798304,
+        "physics": 0.002396207135414181,
+        "bc_inj": 4.063558480101717e-06,
+        "bc_tip": 2.3851804170964682e-06,
+        "anchor": 3.4449188116887656e-05,
+        "mono": 1.1130852964971067e-07,
+        "total": 0.0006373646898116016
+      },
+      "0.30": {
+        "profiles": 572,
+        "data": 0.00017818116372894053,
+        "physics": 0.00322144936405487,
+        "bc_inj": 3.1768813641974702e-06,
+        "bc_tip": 3.4472274765502736e-06,
+        "anchor": 4.371322402030464e-05,
+        "mono": 8.048612269280935e-08,
+        "total": 0.0008095224913847926
+      }
+    },
+    "COMP_XPU_003_per_Nc_holdout_losses": {
+      "0.00": {
+        "profiles": 586,
+        "data": 4.383194051059551e-05,
+        "physics": 0.0009560519904883597,
+        "bc_inj": 4.2690150494370995e-06,
+        "bc_tip": 1.9384064924594893e-06,
+        "anchor": 5.193376621659949e-06,
+        "mono": 6.524096895940813e-08,
+        "total": 0.00017461847616621825
+      },
+      "0.05": {
+        "profiles": 532,
+        "data": 6.241052608658679e-05,
+        "physics": 0.001726171063063176,
+        "bc_inj": 2.8775431853585573e-06,
+        "bc_tip": 1.930369893486379e-06,
+        "anchor": 8.032536311646227e-06,
+        "mono": 4.156060603769644e-08,
+        "total": 0.0002530923542563096
+      },
+      "0.10": {
+        "profiles": 578,
+        "data": 9.559394655165916e-05,
+        "physics": 0.0024839057764328475,
+        "bc_inj": 3.204705488403202e-06,
+        "bc_tip": 2.5953041243007984e-06,
+        "anchor": 1.7364627638016827e-05,
+        "mono": 4.04541879610564e-08,
+        "total": 0.000422443663737669
+      },
+      "0.20": {
+        "profiles": 612,
+        "data": 0.00012915623099413805,
+        "physics": 0.0037875169632481595,
+        "bc_inj": 3.566404583419653e-06,
+        "bc_tip": 2.9386331399924005e-06,
+        "anchor": 2.651362743575257e-05,
+        "mono": 4.517829682182975e-08,
+        "total": 0.0006162025657592013
+      },
+      "0.30": {
+        "profiles": 572,
+        "data": 0.0001611390218856725,
+        "physics": 0.005089056043123657,
+        "bc_inj": 2.6446383325511285e-06,
+        "bc_tip": 3.1799876177393453e-06,
+        "anchor": 3.249423114450199e-05,
+        "mono": 2.3743853428858198e-08,
+        "total": 0.0007696620154461556
+      }
+    },
+    "all_model_to_teacher_response_gains_below_1": true,
+    "all_front_excluded_model_to_teacher_response_gains_below_1": true,
+    "response_gain_reference": "1.0 means model and teacher have equal mean absolute profile-change magnitude"
+  },
+  "scientific_interpretation": "The frozen physical Nc groups are all well represented, so a missing or severely depleted high-Nc training group is not the explanation. Both COMP-XPU-002 and COMP-XPU-003 show systematically sub-unity model-to-teacher Nc response gains in both source cases, including front-excluded diagnostics. Simple Nc input scaling increases some response gains but does not solve the relative high-Nc weakness. The next controlled hypothesis is therefore that the recurrent model needs the known compressibility coordinate stretch exposed explicitly as a sequence feature rather than relying on the LSTM to infer it from the scalar conditioner.",
+  "why_not_weighting_first": "Per-Nc losses increase with Nc, but the sample groups are already represented and the audit directly demonstrates insufficient profile response to Nc. A fixed high-Nc loss multiplier would require choosing a new weighting magnitude without a source-prescribed value. The physics-aware coordinate channel tests the observed response deficiency without inventing a loss coefficient.",
+  "not_concluded": [
+    "loss weighting can never help",
+    "the original Stage-2 source is invalid",
+    "the Godunov teacher is incorrect",
+    "a physics-aware channel is guaranteed to solve the issue"
+  ]
+}

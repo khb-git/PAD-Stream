@@ -1,0 +1,63 @@
+{
+  "milestone": "V16D-29",
+  "D28R1_sha256": "3f7664b8b9b2d5a11dc24e1d3528d9a373a606295c7ef39937aff35a4c071f4c",
+  "D10C_source": "PAD_Stream_V16D10C_Full_Case0002_0025_SourceBound_FMM_ADV_TravelTime_Hierarchy_Execution.py",
+  "D10C_sha256": "5543065571e5a2c0c7d96df0d95ce6203c2c0ee4e933658e63d006709a7da91b",
+  "frozen_sources": {
+    "FMM": {
+      "path": "PAD_Stream_V16B2_Exact_3D_Fast_Marching_Arrival_Time_Baseline.py",
+      "sha256": "0b26e3cdbc41276c53f4778e7eddcddd0cc8ef081ffb495b71df548152e8f049"
+    },
+    "B7": {
+      "path": "PAD_Stream_V16B7_Controlled_Directional_Advective_Travel_Time_Solve.py",
+      "sha256": "2355f3eecd41bb6571f7ead3ebb1c5d90a1907ae681826159e79463166994c56"
+    },
+    "SG5": {
+      "path": "PAD_Stream_V15SG5_Exact_Pollock_Streamlines.py",
+      "sha256": "2989fe58d1fd78fe9f9c03176dbb3ff066faf359f7edaf028cbdc0fea85135f2"
+    }
+  },
+  "execution_contract": {
+    "cell_velocity": "D10C cv(face velocities)",
+    "FMM_speed": "sqrt(cx^2+cy^2+cz^2)",
+    "FMM_sources": "frozen FMM bind_injector_sources(qx,qy,qz)",
+    "FMM_spacing_m": [
+      6.096,
+      6.096,
+      1.2192
+    ],
+    "ADV": "D10C frozen closed-boundary projected upwind coefficients -> exact B7 runner",
+    "roles": {
+      "Pollock": "authoritative trajectory TOF",
+      "FMM": "auxiliary scalar connectivity control",
+      "ADV": "auxiliary directional Eulerian travel time"
+    }
+  },
+  "gates": {
+    "D28R1_SHA_exact": true,
+    "D10C_exists": true,
+    "FMM_source_SHA_exact": true,
+    "B7_source_SHA_exact": true,
+    "SG5_source_SHA_exact": true,
+    "D28R1_status_authorizes_FMM_ADV": true,
+    "D10C_has_construct_face_pore_velocities_qx_qy_qz_": true,
+    "D10C_has_cx_cy_cz_cv_vx_vy_vz_": true,
+    "D10C_has_speed_np_sqrt_cx_cx_cy_cy_cz_cz_": true,
+    "D10C_has_bind_injector_sources_qx_qy_qz_": true,
+    "D10C_has_fast_marching_3d_speed_sm_6_096_6_096_1_2192_": true,
+    "D10C_has_aW_np_maximum_cx_0_dx": true,
+    "D10C_has_aE_np_maximum_cx_0_dx": true,
+    "D10C_has_aS_np_maximum_cy_0_dy": true,
+    "D10C_has_aN_np_maximum_cy_0_dy": true,
+    "D10C_has_aB_np_maximum_cz_0_dz": true,
+    "D10C_has_aT_np_maximum_cz_0_dz": true,
+    "D10C_has_runpy_run_path_str_B7_SRC_run_name_main_": true,
+    "D10C_binds_exact_source_hashes": true,
+    "Pollock_remains_authoritative_reference": true,
+    "FMM_auxiliary_scalar_role": true,
+    "ADV_auxiliary_directional_role": true,
+    "no_execution_in_D29": true,
+    "no_transport": true,
+    "no_training": true
+  }
+}

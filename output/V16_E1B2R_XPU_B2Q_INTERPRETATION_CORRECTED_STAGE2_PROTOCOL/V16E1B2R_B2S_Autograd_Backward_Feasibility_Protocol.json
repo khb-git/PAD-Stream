@@ -1,0 +1,32 @@
+{
+  "milestone": "V16E-1B2R-XPU",
+  "authorized_next_milestone": "V16E-1B2S-XPU",
+  "classification": "NO_OPTIMIZER_NO_WEIGHT_UPDATE_CORRECTED_RESIDUAL_BACKWARD_FEASIBILITY_BENCHMARK",
+  "model": "frozen COMP-XPU-004 checkpoint loaded unchanged",
+  "dataset": "frozen Stage-2 dataset",
+  "operation": "forward -> corrected conservative residual with create_graph=True -> total loss backward -> synchronize XPU -> discard gradients; NO optimizer step",
+  "candidate_microbatches": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "candidate_order": "ascending",
+  "operational_selection_rule": "Select the largest tested candidate that completes finite forward, corrected residual construction, backward, and XPU synchronization without OOM/device loss and while preserving residual-form identity checks.",
+  "benchmark_outputs": [
+    "success/failure by microbatch",
+    "forward+residual+backward wall time",
+    "peak XPU memory if runtime API provides it",
+    "finite total loss",
+    "finite parameter gradients",
+    "RH conservative-vs-expanded residual identity",
+    "Nc=0 nesting identity"
+  ],
+  "weight_update": false,
+  "optimizer": false,
+  "training": false,
+  "scientific_settings_changed": false,
+  "numeric_scientific_threshold": null,
+  "B3_authorized": false
+}

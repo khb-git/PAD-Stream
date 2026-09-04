@@ -1,0 +1,35 @@
+{
+  "milestone": "V15-SG7C",
+  "description": "Frozen full-physics PI-RNN deployment on heterogeneous SGSim streamline TOF coordinates",
+  "training_performed": false,
+  "model_modified": false,
+  "grid_mapback_performed": false,
+  "frozen_model": "V15SG7B_FROZEN_Model.keras",
+  "frozen_model_SHA256": "9242af83e9aae6dc91ce215f78bf2a6d539972632d5e5ce759ea1fc83f3c11be",
+  "streamlines": 1078,
+  "xi_nodes": 201,
+  "total_streamline_flow_m3_day": 714.2857142857108,
+  "terminal_tof_days": {
+    "min": 134.67954012086182,
+    "median": 344.5662131854729,
+    "max": 3669.3825678172248
+  },
+  "deployment_times_days": [
+    100.0,
+    250.0,
+    500.0,
+    1000.0
+  ],
+  "maximum_deployed_tD": 7.425032778569017,
+  "frozen_tD_scale": 11.137549167853525,
+  "global_metrics": {
+    "L1": 0.0018085391234166674,
+    "L2": 0.003910754783564929,
+    "Linf": 0.05401178170559229,
+    "max_snapshot_L1": 0.004030898868641135,
+    "max_flow_weighted_L1": 0.004040727423986967
+  },
+  "validation_passed": true,
+  "status": "FROZEN_PIRNN_SGSIM_STREAMLINE_DEPLOYMENT_PASS",
+  "next_milestone": "V15-SG7D \u2014 Conservative Streamline-to-Grid Map-Back"
+}

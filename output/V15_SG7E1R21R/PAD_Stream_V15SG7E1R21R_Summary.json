@@ -1,0 +1,11 @@
+{
+  "milestone": "V15-SG7E1R21R",
+  "status": "R21_SERIALIZER_BINDING_REJECTED_BY_SEMANTIC_ROLE_AUDIT",
+  "diagnosis": "GUARD_MASK_OR_AUXILIARY_FIELD_CANNOT_BE_AUTHORITATIVE_100D_DEPLOYMENT_STATE",
+  "binding_rejected": true,
+  "selected_key": "guard_mask",
+  "candidate_changed": false,
+  "threshold_changed": false,
+  "recommendation": "Reject the R21 guard_mask binding. Do not perform replay closure against it. Trace the actual deployed saturation/state variable across the final R1F2C/R1F3 caller-return boundary, restricting candidates to state-like arrays and excluding truth, masks, gamma, coefficient, and guard fields.",
+  "next_milestone": "V15-SG7E1R22 \u2014 Cross-Function Deployment-State Return / Caller Binding Audit"
+}

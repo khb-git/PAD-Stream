@@ -1,0 +1,56 @@
+{
+  "milestone": "V16D-8B",
+  "status": "V16D_CASE0002_0025_SOURCEBOUND_SG5_POLLOCK_ENSEMBLE_CERTIFIED_READY_FOR_MULTICASE_TRAVELTIME_HIERARCHY",
+  "certified_count": 24,
+  "manifest": {
+    "path": "output\\V16_D8B_FULL_CASE0002_0025_SOURCEBOUND_SG5_POLLOCK_ENSEMBLE\\V16D8B_Pollock_Ensemble_Manifest.csv",
+    "sha256": "3484b36823021684ba35e41a6a3bc7d2fe780c3efcf9cd38e801c9f7cb63a120"
+  },
+  "ensemble_metrics": {
+    "seed_count": {
+      "min": 1078.0,
+      "median": 1078.0,
+      "max": 1078.0
+    },
+    "tof_min_days": {
+      "min": 134.80657658109408,
+      "median": 163.2278534218334,
+      "max": 195.91816155777084
+    },
+    "tof_median_days": {
+      "min": 364.6731702645698,
+      "median": 379.5595013394741,
+      "max": 400.31089050827546
+    },
+    "tof_mean_days": {
+      "min": 457.14853770377306,
+      "median": 474.80164743080206,
+      "max": 483.7755985251707
+    },
+    "tof_max_days": {
+      "min": 1955.2205909007037,
+      "median": 2980.771604614618,
+      "max": 4151.820805357959
+    },
+    "weight_sum_m3_s": {
+      "min": 0.008267195767195411,
+      "median": 0.008267195767195716,
+      "max": 0.0082671957671961
+    }
+  },
+  "gates": {
+    "D8R1_bound": true,
+    "SG5_hash_exact": true,
+    "all_24_attempted": true,
+    "all_24_certified": true,
+    "no_case_replacement": true,
+    "all_streamlines_producer_captured": true,
+    "all_four_producers_each_case": true,
+    "all_tof_positive_finite": true,
+    "no_streamline_shape_selection": true,
+    "no_tof_selection": true,
+    "no_transport": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-9 \u2014 Multi-Case Pollock TOF/201-Node Transport Coordinate and C7 Metric Construction"
+}

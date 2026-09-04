@@ -1,0 +1,81 @@
+{
+  "milestone": "V16E-1B2AE-XPU",
+  "experiment_id": "V16E-BLREP-COMP-XPU-005",
+  "classification": "FRESH_CORRECTED_STAGE2_REPRODUCTION_EXECUTION_CONTRACT",
+  "fresh_training": {
+    "required": true,
+    "seed": 1337,
+    "initialize_from_COMP004_checkpoint": false,
+    "COMP004_role": "provenance/comparison authority only",
+    "rule": "construct a fresh model using the frozen model class and seed=1337"
+  },
+  "scientific_model": {
+    "sequence_features": [
+      "xi",
+      "eta"
+    ],
+    "conditioner": [
+      "no",
+      "nw",
+      "swi_swc",
+      "sor",
+      "mu_w",
+      "mu_o",
+      "phi",
+      "tD",
+      "xD_star",
+      "Sw_star",
+      "Nc"
+    ],
+    "conditioner_dim": 11,
+    "hidden": 64,
+    "layers": 2,
+    "physical_Nc_scaled_for_network": false,
+    "teacher": "frozen Stage-2 conservative Godunov dataset",
+    "corrected_physics": "frozen conservative moving-fan residual",
+    "scientific_graph_source_sha256": "4bd70ab33dbf30ef4fd8a12037982724ea1bed6ef90684d326b3de71569e5bea",
+    "scientific_change": false
+  },
+  "derivative_engine": {
+    "name": "CHUNKED_BATCHED_VJP",
+    "cotangent_chunk_size": 16,
+    "implementation_source_sha256": "59f7ea7b0dc2e901f5a42649691c2dab5f4dfc5d399f953eaab5ba773040cd53",
+    "equivalence_basis_sha256": "b2e6ac1f4483af1429f0e5cf4fe56d51024d0f0009dae008a64c3d1550cf3e34",
+    "scientific_change": false
+  },
+  "loss_weights": {
+    "lambda_data": 1.0,
+    "lambda_phys": 0.05,
+    "lambda_bc": 5.0,
+    "lambda_tip": 5.0,
+    "lambda_anchor": 10.0,
+    "lambda_mono": 0.2,
+    "lambda_shape": 0.0
+  },
+  "training_geometry": {
+    "train_profiles": 11520,
+    "logical_batch": 8192,
+    "microbatch": 128,
+    "microbatches_per_epoch": 90,
+    "optimizer_steps_per_epoch": 2,
+    "epochs": 800,
+    "target_optimizer_steps": 1600
+  },
+  "optimizer": {
+    "constructor_expression": "torch.optim.Adam(model.parameters(), lr=1.0e-3, foreach=False)",
+    "learning_rate": 0.001,
+    "foreach": false,
+    "scheduler": null,
+    "mixed_precision": false,
+    "gradient_clipping": null
+  },
+  "evaluation": {
+    "dataset_role": "frozen source-native development holdout; NOT OOD",
+    "model_eval_required": true,
+    "torch_no_grad_required": true,
+    "return_to_model_train_after_eval": true,
+    "OOD_claim": false,
+    "TOF_used": false
+  },
+  "full_training_authorized": false
+}

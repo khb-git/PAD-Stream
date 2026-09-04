@@ -1,0 +1,35 @@
+{
+  "milestone": "V15-SG7B-10",
+  "description": "Controlled front-aware PI-RNN refinement",
+  "source_implementation": "PAD_Stream_V15SG7B6D_Advective_Flux_Refinement.py",
+  "frozen_source_model": "V15SG7B_FROZEN_Model.keras",
+  "frozen_source_sha256": "9242af83e9aae6dc91ce215f78bf2a6d539972632d5e5ce759ea1fc83f3c11be",
+  "frozen_model_modified": false,
+  "architecture_changed": false,
+  "deployment_workspace": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11",
+  "deployment_identity_linf": 2.384185791015625e-07,
+  "front_contract": {
+    "minimum_recovered_100d_fronts": 744,
+    "legacy_global_gap_target": 0.02913121,
+    "front_conditioned_baseline_gap": 0.002132494911671654,
+    "front_conditioned_gap_target": 0.0005331237279179135,
+    "maximum_100d_profile_L1": 0.00450033,
+    "maximum_local_monotonic_violation": 0.02
+  },
+  "canonical_physics_contract": {
+    "mean_max": 0.5,
+    "P90_max": 1.0,
+    "fraction_gt1_max": 0.1,
+    "status": "PENDING_SG7B11_INDEPENDENT_VALIDATION"
+  },
+  "experiments_run": [
+    "E0",
+    "E1",
+    "E2"
+  ],
+  "candidate_experiment": null,
+  "candidate_model": null,
+  "candidate_sha256": null,
+  "status": "NO_CANDIDATE_PASSED_LOCAL_SCREEN",
+  "next_milestone": "V15-SG7B-10R \u2014 Front-Aware Refinement Outcome Audit"
+}

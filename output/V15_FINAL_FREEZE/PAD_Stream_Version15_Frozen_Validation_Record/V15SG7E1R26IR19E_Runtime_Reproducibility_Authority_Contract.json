@@ -1,0 +1,108 @@
+{
+  "milestone": "V15-SG7E1R26I-R19E",
+  "status": "HISTORICAL_RUNTIME_REPRODUCIBILITY_LIMITATION_FORMALIZED",
+  "diagnosis": "HISTORICAL_100D_STATES_REMAIN_AUTHORITATIVE_BY_PERSISTED_PROVENANCE_BUT_EXACT_EXECUTABLE_RUNTIME_REGENERATION_IS_NOT_CERTIFIED",
+  "runtime_limitation": {
+    "limitation_id": "L1",
+    "classification": "PARTIALLY_UNRECOVERABLE_HISTORICAL_INFERENCE_RUNTIME",
+    "exact_historical_runtime_replay_certified": false,
+    "historical_tensorflow_version_recovered": false,
+    "onednn_only_explanation_supported": false,
+    "arbitrary_runtime_search_allowed": false,
+    "precision_envelope_relaxation_allowed": false,
+    "impact": "Historical 100-day persisted states remain authoritative by artifact provenance, but no current executable runtime is certified to regenerate them bit-for-bit or inside the frozen precision envelope."
+  },
+  "authority_matrix": [
+    {
+      "object": "Historical frozen100",
+      "authority_status": "AUTHORITATIVE_PERSISTED_HISTORICAL_STATE",
+      "runtime_replay_certified": false,
+      "may_be_modified": false,
+      "reason": "Persisted identically across genuine historical artifacts; exact producing runtime is partially unrecoverable."
+    },
+    {
+      "object": "Current-runtime creator100",
+      "authority_status": "DIAGNOSTIC_REPLAY_ONLY",
+      "runtime_replay_certified": true,
+      "may_be_modified": false,
+      "reason": "Produced by fixed model/X100 under current runtime but does not reproduce historical frozen100."
+    },
+    {
+      "object": "oneDNN-off creator100",
+      "authority_status": "CONTROLLED_RUNTIME_DIAGNOSTIC_ONLY",
+      "runtime_replay_certified": true,
+      "may_be_modified": false,
+      "reason": "Authorized variance case executed but did not restore historical closure."
+    },
+    {
+      "object": "L2_independent_100",
+      "authority_status": "AUTHORITATIVE_NOMINATED_100D_DEPLOYMENT_STATE",
+      "runtime_replay_certified": false,
+      "may_be_modified": false,
+      "reason": "Bound by candidate-selection/freeze-readiness provenance in R23; exact historical raw-runtime replay remains uncertified."
+    },
+    {
+      "object": "Frozen SG7D6 full-grid field",
+      "authority_status": "AUTHORITATIVE_FROZEN_DEPLOYMENT_ARTIFACT",
+      "runtime_replay_certified": false,
+      "may_be_modified": false,
+      "reason": "Frozen downstream artifact remains numerically authoritative; physical-time/multi-time expansion remains unresolved."
+    }
+  ],
+  "allowed_next_paths": [
+    {
+      "path_id": "P1",
+      "path": "Use existing persisted historical 100-day states as immutable authority",
+      "allowed": true,
+      "purpose": "Preserve historical validation/deployment provenance"
+    },
+    {
+      "path_id": "P2",
+      "path": "Inventory genuine persisted 250/500/1000-day L2 states from pre-audit artifacts",
+      "allowed": true,
+      "purpose": "Seek multi-time completion without runtime regeneration"
+    },
+    {
+      "path_id": "P3",
+      "path": "Generate 250/500/1000-day states with current runtime",
+      "allowed": false,
+      "purpose": "Blocked because 100-day historical-runtime closure is uncertified"
+    },
+    {
+      "path_id": "P4",
+      "path": "Search arbitrary TensorFlow versions until frozen100 closes",
+      "allowed": false,
+      "purpose": "Would select runtime by numerical performance rather than provenance"
+    },
+    {
+      "path_id": "P5",
+      "path": "Relax R16 precision envelope",
+      "allowed": false,
+      "purpose": "Frozen acceptance contract may not be changed"
+    },
+    {
+      "path_id": "P6",
+      "path": "Retrain or recalibrate model/gamma/guard",
+      "allowed": false,
+      "purpose": "Would invalidate frozen deployment provenance"
+    }
+  ],
+  "hashes": {
+    "baseline_creator100": "5e4ddeeef51618002063e459dc69ac1499d4a7517330bfa83587eed864d138df",
+    "onednn_off_creator100": "4894cc0799a73b9b41675587249278f95f7ebd7d984fbf7561d10149b2c5a317",
+    "historical_frozen100": "a08c7320a63ace580456191f408a29afde65e0ad3f078846265243e53cd10297"
+  },
+  "constraints": {
+    "training_performed": false,
+    "model_predict_executed": false,
+    "precision_envelope_relaxed": false,
+    "arbitrary_tensorflow_search_allowed": false,
+    "current_runtime_later_time_generation_allowed": false,
+    "persisted_later_time_recovery_allowed": true,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false
+  },
+  "recommendation": "Stop runtime-variance testing. Preserve historical frozen100, L2_independent_100, and SG7D6 as immutable authoritative artifacts. Before abandoning multi-time completion, perform one corrected pre-audit inventory focused specifically on persisted 250/500/1000-day L2 deployment states and aliases. Only genuinely persisted states may restore multi-time coverage.",
+  "next_milestone": "V15-SG7E1R26I-R20 \u2014 Corrected Persisted Later-Time L2 State Recovery Audit"
+}

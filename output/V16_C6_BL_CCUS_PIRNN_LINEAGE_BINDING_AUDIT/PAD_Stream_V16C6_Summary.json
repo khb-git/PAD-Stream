@@ -1,0 +1,10 @@
+{
+  "milestone": "V16C-6",
+  "status": "V16C_BL_CCUS_PIRNN_LINEAGE_BOUND_ADAPTER_REQUIRED",
+  "diagnosis": "FOUR_STAGE_BL_CCUS_PIRNN_FAMILY_BOUND_STAGE4_PRIMARY_BUT_DIRECT_POLLOCK_TOF_SUBSTITUTION_INVALID",
+  "source_count_bound": 4,
+  "primary_lineage": "STAGE4_FULL_COMPRESSIBLE_CAPILLARY_GODUNOV",
+  "adapter_required": true,
+  "recommendation": "Freeze C6 lineage. Proceed to V16C-7 to derive the Pollock-TOF / full BL-CCUS transport adapter, preventing velocity double counting and preserving capillary spatial metrics.",
+  "next_milestone": "V16C-7 \u2014 Pollock-TOF / Full BL-CCUS Transport Adapter Physics Contract"
+}

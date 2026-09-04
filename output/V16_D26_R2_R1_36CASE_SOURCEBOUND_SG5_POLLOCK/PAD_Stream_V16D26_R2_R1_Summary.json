@@ -1,0 +1,23 @@
+{
+  "milestone": "V16D-26-R2-R1",
+  "status": "V16D_36CASE_SOURCEBOUND_SG5_POLLOCK_STREAMLINE_TOF_ENSEMBLE_CERTIFIED_TRANSPORT_COORDINATE_EXPANSION_AUTHORIZED",
+  "runtime_s": 73.40555691719055,
+  "manifest_sha256": "3270a0d91388802ff74c8ec3e33df88ac144f436976fe24e5cab3493a39f50cb",
+  "gates": {
+    "R1R1_SHA_exact": true,
+    "SG5_SHA_exact": true,
+    "D8B_SHA_exact": true,
+    "exactly_36_D25_inputs": true,
+    "signature_construct_face_pore_velocities": true,
+    "signature_build_seeds": true,
+    "signature_trace_streamlines": true,
+    "signature_validate_streamlines": true,
+    "36_cases_executed": true,
+    "all_source_SG5_validation_pass": true,
+    "one_streamline_per_seed_all_cases": true,
+    "split_counts_18_9_9": true,
+    "no_transport": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-27 \u2014 Build 36-case SG6-style 201-node Pollock TOF/transport-coordinate database with source-bound lineage"
+}

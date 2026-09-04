@@ -1,0 +1,261 @@
+{
+  "project": "PAD-Stream",
+  "version": "15",
+  "freeze_status": "SG7E1_BRANCH_CLOSED_VERSION15_FREEZE_READY_WITH_DOCUMENTED_SCOPE_LIMITATION",
+  "freeze_timestamp_utc": "2026-08-27T01:55:41.926409+00:00",
+  "final_diagnosis": "VERSION15_AUTHORITIES_ARE_STABLE_AND_ALL_REMAINING_MULTI_TIME_DEPLOYMENT_LIMITATIONS_ARE_EXPLICIT_WITHOUT_REQUIRING_FROZEN_ARTIFACT_MUTATION",
+  "SG7E_reference_scope": {
+    "historical_times_days": [
+      100.0,
+      250.0,
+      500.0,
+      1000.0
+    ],
+    "threshold": 0.5,
+    "role": "HISTORICAL_MULTI_TIME_REFERENCE_ACCEPTANCE_CONTRACT"
+  },
+  "deployment_scope": {
+    "certified_L2_times_days": [
+      100.0
+    ],
+    "uncertified_L2_times_days": [
+      250.0,
+      500.0,
+      1000.0
+    ],
+    "four_time_deployment_sequence_certified": false,
+    "SG7D6_role": "AUTHORITATIVE_FROZEN_SINGLE_STATE_DEPLOYMENT_ARTIFACT"
+  },
+  "runtime_scope": {
+    "exact_historical_runtime_replay_certified": false,
+    "additional_runtime_search_authorized_in_V15": false
+  },
+  "authority_registry": [
+    {
+      "object": "SG7A_corrected 4-time historical reference tensor",
+      "final_authority": "FROZEN_AUTHORITATIVE_REFERENCE",
+      "mutable_in_V15": "False"
+    },
+    {
+      "object": "SG7E plume threshold S=0.5",
+      "final_authority": "FROZEN_ACCEPTANCE_PARAMETER",
+      "mutable_in_V15": "False"
+    },
+    {
+      "object": "L2_independent_100",
+      "final_authority": "FROZEN_AUTHORITATIVE_100D_DEPLOYMENT_STATE",
+      "mutable_in_V15": "False"
+    },
+    {
+      "object": "SG7D6 frozen full-grid field",
+      "final_authority": "FROZEN_AUTHORITATIVE_SINGLE_STATE_DEPLOYMENT_ARTIFACT",
+      "mutable_in_V15": "False"
+    },
+    {
+      "object": "250/500/1000-day deployment states",
+      "final_authority": "NOT_PRESENT_IN_FROZEN_V15",
+      "mutable_in_V15": "False"
+    },
+    {
+      "object": "Four-time deployment sequence claim",
+      "final_authority": "PROHIBITED_FOR_FROZEN_V15",
+      "mutable_in_V15": "False"
+    }
+  ],
+  "frozen_scope_limitations": [
+    {
+      "limitation_id": "V15-LIM-01",
+      "limitation": "Exact historical SG7B16 inference runtime cannot be fully reconstructed.",
+      "impact": "Current runtime cannot certify bitwise or frozen-envelope reproduction of historical frozen100.",
+      "allowed_interpretation": "Persisted historical state remains authoritative by provenance."
+    },
+    {
+      "limitation_id": "V15-LIM-02",
+      "limitation": "Only 100-day L2 deployment state is provenance-certified.",
+      "impact": "250/500/1000-day frozen deployment sequence is not certified.",
+      "allowed_interpretation": "SG7E remains a historical four-time reference contract, not a four-time frozen deployment sequence."
+    },
+    {
+      "limitation_id": "V15-LIM-03",
+      "limitation": "SG7D6 frozen grid has no supported 250/500/1000-day physical-time assignment.",
+      "impact": "Cannot compare one frozen grid against all historical SG7E times.",
+      "allowed_interpretation": "SG7D6 is an authoritative frozen single-state artifact."
+    },
+    {
+      "limitation_id": "V15-LIM-04",
+      "limitation": "R20 250/500-day candidate bindings were rejected as relabelled frozen100.",
+      "impact": "No recovered later-time deployment authority at those times.",
+      "allowed_interpretation": "Rejected aliases are excluded from frozen V15 authority."
+    }
+  ],
+  "post_V15_handoff": [
+    {
+      "priority": "1",
+      "future_work": "If multi-time deployment is required, implement it only in a post-V15 development branch/version.",
+      "requires_V15_mutation": "False"
+    },
+    {
+      "priority": "2",
+      "future_work": "Preserve R21 scope language in Version 15 theory/validation documentation.",
+      "requires_V15_mutation": "False"
+    },
+    {
+      "priority": "3",
+      "future_work": "Use frozen SG7E reference contract as benchmark for future explicitly time-indexed deployment architecture.",
+      "requires_V15_mutation": "False"
+    },
+    {
+      "priority": "4",
+      "future_work": "Do not reopen historical runtime search unless new provenance evidence is discovered independently.",
+      "requires_V15_mutation": "False"
+    }
+  ],
+  "authoritative_artifact_identities": [
+    {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7D6\\frozen_full_grid\\V15SG7D6_P4_Frozen_Full_Grid_Deployment_Candidate.npz",
+      "sha256": "5c881046bf7b6bcfb411cffc9a332b6e4705e03f91a3a2438ecb58c2eedf9df5",
+      "size_bytes": 746787,
+      "copied_into_package": false,
+      "role": "EXPLICITLY_REFERENCED_AUTHORITATIVE_OR_SUPPORTING_ARTIFACT"
+    },
+    {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7E\\V15SG7E_Plume_Coverage_Validation.npz",
+      "sha256": "26d5039f7a41a111200211b0f8a997acf121edc411cf14b20293c8809e600029",
+      "size_bytes": 2732305,
+      "copied_into_package": false,
+      "role": "EXPLICITLY_REFERENCED_AUTHORITATIVE_OR_SUPPORTING_ARTIFACT"
+    },
+    {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7E1R26IR10\\V15SG7E1R26IR10_100d_Runtime_Control.npz",
+      "sha256": "cf59694325c94ac2019632124bb8b7657367725269f8a1b78196f210a0f5c1b2",
+      "size_bytes": 10450990,
+      "copied_into_package": false,
+      "role": "EXPLICITLY_REFERENCED_AUTHORITATIVE_OR_SUPPORTING_ARTIFACT"
+    }
+  ],
+  "packaged_validation_files": [
+    {
+      "package_file": "V15SG7E1R14_Multi_Time_Historical_Reference_Contract.json",
+      "sha256": "553fc36c8cbd2a49ff054336e782cb79dc2cbc121b6353285c0ccbab972b1727",
+      "size_bytes": 3387,
+      "category": "FINAL_VALIDATION_RECORD"
+    },
+    {
+      "package_file": "PAD_Stream_V15SG7E1R14_Summary.json",
+      "sha256": "b816e52a38efd8ee8b3c2bfea3b1ce60135f6eba161aa5eb1428e5d21035f76e",
+      "size_bytes": 967,
+      "category": "FINAL_VALIDATION_RECORD"
+    },
+    {
+      "package_file": "V15SG7E1R26IR19E_Runtime_Reproducibility_Authority_Contract.json",
+      "sha256": "a54b117dcd7575e10612987957d9e04589ee4ea67e5106b7ea804a447266b3ed",
+      "size_bytes": 5066,
+      "category": "FINAL_VALIDATION_RECORD"
+    },
+    {
+      "package_file": "PAD_Stream_V15SG7E1R26IR19E_Summary.json",
+      "sha256": "7692fa74550cc65dd6708000a5e864456d10244e54e1f65488b5485f5325330f",
+      "size_bytes": 938,
+      "category": "FINAL_VALIDATION_RECORD"
+    },
+    {
+      "package_file": "V15SG7E1R26IR20R_Later_Time_Binding_Contradiction_Contract.json",
+      "sha256": "96f901fefd3f45bcd0f510ef1efc8853525ebec1b293563e818d5192a5333d16",
+      "size_bytes": 3789,
+      "category": "FINAL_VALIDATION_RECORD"
+    },
+    {
+      "package_file": "PAD_Stream_V15SG7E1R26IR20R_Summary.json",
+      "sha256": "59a9939e850d6dead703c818d9656633a77c617496609f64578a7d5454514d8d",
+      "size_bytes": 707,
+      "category": "FINAL_VALIDATION_RECORD"
+    },
+    {
+      "package_file": "V15SG7E1R26IR21_Multi_Time_Coverage_Scope_Contract.json",
+      "sha256": "276906a8d4209dc817f1a4a626cb8b60bde49983fdb27b21f35e24c240145dbf",
+      "size_bytes": 5248,
+      "category": "FINAL_VALIDATION_RECORD"
+    },
+    {
+      "package_file": "PAD_Stream_V15SG7E1R26IR21_Summary.json",
+      "sha256": "ff73de775f95315dd83e7ce82cdd2be90a0f3519968a0c8fae427a26f7cc52c6",
+      "size_bytes": 1001,
+      "category": "FINAL_VALIDATION_RECORD"
+    },
+    {
+      "package_file": "V15SG7E1R26IR22_Version15_Freeze_Readiness_Contract.json",
+      "sha256": "cad5cf32331d566a3d814315593fbd6cc92fe33ad50cb27b3263c278b2edc9f9",
+      "size_bytes": 6928,
+      "category": "FINAL_VALIDATION_RECORD"
+    },
+    {
+      "package_file": "PAD_Stream_V15SG7E1R26IR22_Summary.json",
+      "sha256": "9cd7a4276bada6b70b41c7721649d1cc9a3e7767726cccf91a0a46c362b69837",
+      "size_bytes": 817,
+      "category": "FINAL_VALIDATION_RECORD"
+    },
+    {
+      "package_file": "V15SG7E1R26IR22_SG7E1_Branch_Disposition.csv",
+      "sha256": "246cd97111b88579bcecfe7c0be89def96f6942396b9f5f8e1ef2095d5aa75ed",
+      "size_bytes": 921,
+      "category": "FINAL_VALIDATION_RECORD"
+    },
+    {
+      "package_file": "V15SG7E1R26IR22_Version15_Freeze_Readiness.csv",
+      "sha256": "cba5d7b3e2d5ac7e6f9be2da73f59869d5d9134e90bb52385e42897af3902d09",
+      "size_bytes": 612,
+      "category": "FINAL_VALIDATION_RECORD"
+    },
+    {
+      "package_file": "V15SG7E1R26IR22_Frozen_Scope_Limitations.csv",
+      "sha256": "061d4352746f41955dda39a287a817600794fef894debe3de2fb563e49886b94",
+      "size_bytes": 951,
+      "category": "FINAL_VALIDATION_RECORD"
+    },
+    {
+      "package_file": "V15SG7E1R26IR22_Final_Authority_Registry.csv",
+      "sha256": "32a2f400643234e156e49a2c41fd6863736d61e04eaaf5ce3ad29b306f295982",
+      "size_bytes": 485,
+      "category": "FINAL_VALIDATION_RECORD"
+    },
+    {
+      "package_file": "V15SG7E1R26IR22_Post_V15_Development_Handoff.csv",
+      "sha256": "2a300576c7e9a5ff844f7fd4e095ed6c357784a6f9501d37b37fc2bcbe0aa33e",
+      "size_bytes": 463,
+      "category": "FINAL_VALIDATION_RECORD"
+    },
+    {
+      "package_file": "V15SG7E1R26IR22_Final_Freeze_Gates.csv",
+      "sha256": "352e412e8ba890f0e09134f12df11f1008b955910c8d7d3344559705c67745c8",
+      "size_bytes": 623,
+      "category": "FINAL_VALIDATION_RECORD"
+    },
+    {
+      "package_file": "V15SG7E1R26IR22_Final_Freeze_Decision.csv",
+      "sha256": "d6f1eaa91ba2d69b84226e9b370ce791e751e9e89e5e86e9e556a48af80e7622",
+      "size_bytes": 369,
+      "category": "FINAL_VALIDATION_RECORD"
+    },
+    {
+      "package_file": "README_PAD_Stream_Version15_Freeze.txt",
+      "sha256": "c370d89badcd8a24e211d82da1081785dd8338e789bde56e9fd668c6ed481ada",
+      "size_bytes": 2623,
+      "category": "README"
+    },
+    {
+      "package_file": "PAD_Stream_Version15_Freeze_File_Manifest.csv",
+      "sha256": "1ccef0901102407cfad5323ca95d56bee52f9be933e8b2d71b9cff7f7b5e2b5a",
+      "size_bytes": 2572,
+      "category": "PACKAGE_MANIFEST"
+    }
+  ],
+  "constraints": {
+    "training_performed": false,
+    "model_predict_executed": false,
+    "frozen_numerical_artifact_changed": false,
+    "threshold_changed": false,
+    "precision_envelope_changed": false,
+    "later_time_state_generated": false
+  },
+  "next_development_stage": "POST_VERSION_15_BRANCH"
+}

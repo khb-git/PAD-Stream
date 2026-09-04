@@ -1,0 +1,31 @@
+{
+  "milestone": "V15-SG7C-R3F4-R",
+  "status": "FRONT_LOCAL_BASIS_OUTCOME_AUDIT_COMPLETE",
+  "incoming_status": "NO_R3F4_BASIS_CALIBRATOR_PASSES_COMPLETE_CONTRACT",
+  "best_experiment": "B4",
+  "diagnosis": "TRUE_FRONT_DISPLACEMENT_REMAINS",
+  "best_metrics": {
+    "experiment": "B4",
+    "front_error_reduction_fraction": 0.4954781984966692,
+    "first_mean_shift_vs_frozen": 0.07980130132414287,
+    "first_P90_shift_vs_frozen": 0.4436530666350128,
+    "matched_mean_shift_vs_frozen": 0.008875846880186044,
+    "matched_P90_shift_vs_frozen": 0.021066585274399353,
+    "first_P90_shift_vs_target": 3.934883955344359e-05,
+    "matched_P90_shift_vs_target": 3.934883955344359e-05,
+    "calibrated_multi_crossing_fraction": 0.3106686701728024,
+    "crossing_identity_switch_fraction": 0.0,
+    "front_shell_residual_coverage_fraction": 0.495478416297645,
+    "matched_front_gate_pass": false
+  },
+  "flags": {
+    "first_shift_huge": true,
+    "matched_shift_small": false,
+    "multi_crossing_material": true,
+    "identity_switch_material": false,
+    "near_50_percent_reduction": true,
+    "coverage_limited": true
+  },
+  "recommendation": "Matched-crossing displacement remains outside the authoritative limits, so the R3F4 shift is physical rather than a first-crossing artifact. Audit basis asymmetry and crossing-core support before any new training.",
+  "next_milestone": "V15-SG7C-R3F4-R2 \u2014 True Front-Displacement Basis Audit"
+}

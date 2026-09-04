@@ -1,0 +1,66 @@
+{
+  "milestone": "V16C-10A-R",
+  "status": "V16C_POLLOCK_FULL_PHYSICS_BOUNDARY_SEMANTICS_BOUND_READY_FOR_SOLVER_ASSEMBLY",
+  "diagnosis": "C10A_OUTLET_FAILURE_WAS_A_BOUNDARY_CLASSIFICATION_MISMATCH_STAGE4_USES_A_HELD_VALUE_DIFFUSION_OUTLET_ROW_NOT_AN_EXPLICIT_ZERO_GRADIENT_NEUMANN_CONDITION",
+  "corrected_boundary_semantics": [
+    {
+      "boundary": "inlet",
+      "native_solver": "Dirichlet sw_inj; reapplied after advection and diffusion",
+      "Pollock_mapping": "theta=0; preserve source-authentic injected saturation state",
+      "classification": "BOUND"
+    },
+    {
+      "boundary": "outlet_advection",
+      "native_solver": "outflow face uses last-cell fractional flow F[nx] ~ f[-1] (native source also multiplies legacy u_face)",
+      "Pollock_mapping": "theta=1 conservative outflow from terminal interior state; DO NOT restore legacy uD multiplier",
+      "classification": "BOUND"
+    },
+    {
+      "boundary": "outlet_capillary_diffusion",
+      "native_solver": "held-value outlet row: diffusion solve leaves terminal node at its post-advection current value during that substep",
+      "Pollock_mapping": "theta=1 identity/held-value diffusion row",
+      "classification": "BOUND"
+    },
+    {
+      "boundary": "outlet_capillary_interpretation",
+      "native_solver": "NOT explicitly zero-gradient/Neumann",
+      "Pollock_mapping": "do not replace with G_out=0 unless separately authorized",
+      "classification": "PROVENANCE_CORRECTION"
+    }
+  ],
+  "stage3_evidence": {
+    "stage": 3,
+    "source": "pi_rnn_stage3_capillary.py",
+    "sha256": "dab8eade38ac08c819ac27d803c8f1bceca9722c4c37e82977dbef6e6232ae0f",
+    "exact_sha_match": true,
+    "held_value_outlet_docstring": true,
+    "injector_state_assignment": true,
+    "injector_diffusion_rhs_assignment": true,
+    "advective_outlet_uses_last_interior_state": true,
+    "diffusion_rhs_is_current_state_copy": true,
+    "diffusion_diagonal_initialized_identity": true,
+    "diffusion_coefficients_only_interior": true,
+    "banded_diffusion_solve_present": true,
+    "held_value_outlet_implementation_proven": true
+  },
+  "stage4_evidence": {
+    "stage": 4,
+    "source": "pi_rnn_stage4_full_godunov.py",
+    "sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+    "exact_sha_match": true,
+    "held_value_outlet_docstring": true,
+    "injector_state_assignment": true,
+    "injector_diffusion_rhs_assignment": true,
+    "advective_outlet_uses_last_interior_state": true,
+    "diffusion_rhs_is_current_state_copy": true,
+    "diffusion_diagonal_initialized_identity": true,
+    "diffusion_coefficients_only_interior": true,
+    "banded_diffusion_solve_present": true,
+    "held_value_outlet_implementation_proven": true
+  },
+  "C10_operator_sha256": "9162e313351c556e8ac39587e10e191c85eb71cbdb74dfb67bdc1c6e11b3636e",
+  "solver_assembly_authorized": true,
+  "Y_generation_authorized": false,
+  "recommendation": "Accept C10A with corrected outlet provenance. Preserve the Stage-4 split boundary semantics: conservative terminal-state advective outflow plus a held-value identity row during the implicit capillary substep. Map these to theta=1 without restoring legacy exp(Nc xD). Proceed to C11 diagnostic solver assembly; do not authorize Y yet.",
+  "next_milestone": "V16C-11 \u2014 Executable Conservative Full-Physics Pollock Transport Solver Assembly and Diagnostic Validation"
+}

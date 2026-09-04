@@ -1,0 +1,35 @@
+{
+  "milestone": "V15-SG7E1R19",
+  "status": "L2_100D_REPLAY_BINDING_INCOMPLETE",
+  "diagnosis": "UNIQUE_100D_REPLAY_STATE_NOT_EXPLICITLY_BOUND_IN_FROZEN_PACKAGE",
+  "target_time_days": 100.0,
+  "model": {
+    "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7CR3F4\\experiments\\B4\\V15SG7CR3F4_B4_Best_Any_Alpha_Model.keras",
+    "sha256": "b9a2af574ff3ef5eef6377bbcbd0bd87b6490ff4d938de51f7e1d8ffcd18c0a6",
+    "hash_match": true,
+    "immutable": true
+  },
+  "replay": {
+    "generated": false,
+    "source_key": null,
+    "sha256": null,
+    "shape": null,
+    "dtype": null
+  },
+  "closure": null,
+  "selected_persisted_candidate": null,
+  "constraints": {
+    "training_performed": false,
+    "model_weights_changed": false,
+    "scalar_anchoring_used": false,
+    "posthoc_alignment_used": false,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false,
+    "candidate_performance_used": false,
+    "SG7E_gate_evaluated": false,
+    "threshold_changed": false
+  },
+  "recommendation": "Do not choose among historical 100-day candidates. Bind the exact evaluator output array produced by the frozen R1F3 deployment call, then rerun the closure audit without changing model weights or thresholds.",
+  "next_milestone": "V15-SG7E1R20 \u2014 Exact 100-Day Evaluator Output Binding Audit"
+}

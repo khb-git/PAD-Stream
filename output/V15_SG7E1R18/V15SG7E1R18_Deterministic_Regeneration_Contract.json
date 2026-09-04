@@ -1,0 +1,84 @@
+{
+  "milestone": "V15-SG7E1R18",
+  "status": "L2_PHYSICAL_TIME_DETERMINISTIC_REGENERATION_CONTRACT_READY",
+  "diagnosis": "FROZEN_MODEL_AND_PERSISTED_INPUTS_SUPPORT_NO_TRAINING_MULTI_TIME_REPLAY",
+  "historical_times_days": [
+    100.0,
+    250.0,
+    500.0,
+    1000.0
+  ],
+  "model_candidates": [
+    {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7CR3F4\\experiments\\B4\\V15SG7CR3F4_B4_Best_Any_Alpha_Model.keras",
+      "file": "V15SG7CR3F4_B4_Best_Any_Alpha_Model.keras",
+      "sha256": "b9a2af574ff3ef5eef6377bbcbd0bd87b6490ff4d938de51f7e1d8ffcd18c0a6",
+      "size_bytes": 21863,
+      "referenced_in_R1F3_provenance": false,
+      "is_R3F4_B4_best_any": true
+    }
+  ],
+  "deterministic_evaluator": {
+    "time_path_available": true,
+    "persisted_non_time_inputs_ready": true,
+    "no_training_path": true,
+    "time_domain_min": null,
+    "time_domain_max": null
+  },
+  "required_time_feasibility": [
+    {
+      "time_days": 100.0,
+      "explicit_source_mention": true,
+      "time_in_domain": true,
+      "deterministic_time_path_available": true,
+      "persisted_non_time_inputs_ready": true,
+      "no_training_evaluation_path_found": true,
+      "deterministic_regeneration_feasible": true
+    },
+    {
+      "time_days": 250.0,
+      "explicit_source_mention": true,
+      "time_in_domain": true,
+      "deterministic_time_path_available": true,
+      "persisted_non_time_inputs_ready": true,
+      "no_training_evaluation_path_found": true,
+      "deterministic_regeneration_feasible": true
+    },
+    {
+      "time_days": 500.0,
+      "explicit_source_mention": true,
+      "time_in_domain": true,
+      "deterministic_time_path_available": true,
+      "persisted_non_time_inputs_ready": true,
+      "no_training_evaluation_path_found": true,
+      "deterministic_regeneration_feasible": true
+    },
+    {
+      "time_days": 1000.0,
+      "explicit_source_mention": true,
+      "time_in_domain": true,
+      "deterministic_time_path_available": true,
+      "persisted_non_time_inputs_ready": true,
+      "no_training_evaluation_path_found": true,
+      "deterministic_regeneration_feasible": true
+    }
+  ],
+  "replay_control": {
+    "reference_time_days": 100.0,
+    "persisted_candidate_hash_count": 44,
+    "persisted_candidate_hashes": "01bb967c07b262836f6c140dd519538db13d9ce5b3bc0f83d52a6164ddcfa950;05cc847cfd6ad7ea9ffd0efa363054a43da585262af414dd53e8ce82a4f71503;098b4010b34a1f907ea1fafb24915263883fa45e0d6fa43ea87913e8cea98542;0a16f7a369ba040648875c178b14050d827e6547dde154bd953994e1db9b91f9;0e318ae79d0e066925b4dfa6f2e6b3d40c63c5970c35d4daa9c74a0cf6de3270;0f18912ccde17efd3650f28b55307b8631c37bfed80a5d148d6b7e3f09319548;0ffc2c2891cf7a1f991eae54053d29bcf4c16fe003c5849cbda8c882e1d58290;1d4480ac7c8ce03e81b6e178d2bdc908d8cc25a1cfa204b156df5cd6d9744e73;2c08c76882c82bfde81835ddab4da812f2b180a8ae50c4a2c03229040049dd02;2d8e238a97f7d8b2d900a43020bea0b53141870907b2c56a61b47c23a600a512;3b2c237186582a875a536eeef14b901a2a315e0a08a1b6a341631b820500005b;3cc6714adc6aff02fda758fb2addaaeb0285c3bac501398a5464c6823ca8a617;3e93e4e2975cfc0a8627ccaaec0c829a865cb92fa400cd27373ac77e91224ed1;3ed4166c31c28380b59dd5cfac1ad4cf02875a359b7f5633affda282f1fa4476;4ca97496a8f5802fe46e5651f44ef9dd6605ca7d04abe6a29e96af869664fb8b;4e660e6a886730accf05a114cd256d76529065424376ad42e3a314943be7e69c;569806cefff9adee673a729af54719bdc51b3d32d8016b70f1b2171c2ac1ac91;5aef1aea92fa148ff93dcbcc85e022b2a11cce5c6805a3ebb28cf6aec67ff3b2;676ed31ece88eb11b67d47f0004f0a74b4693c6bae43c4f8ac61ba9a4553ffc6;6b7048e765d984c3c26e393133fdde1b29ac41ad436ad7836b310e4601a98e35;7c2e3c1bc3decdddf00ebb19f54358bc95dedb5e3564fb770bb1cc3ab6e86101;8591c35c1d5a6d2ea06e31e491c627aad401245f94b0e10c6c202457e1a66fe5;8c993d85c756ef2ad46c614e42371f74ff52228e88e4e828596214aae544636b;95ad05f2a92bc65d2497180f996b3cb99aeadd5a8b7856b61279a8bebeff99aa;963746acd2539b30e387516a6c6d4b32310230d8b20e7876a22f82a86419a33e;972cf9d93ffdc7ca0fc5331e786ff1d18ccb9a172174d2f860d60b6383943e23;a08c7320a63ace580456191f408a29afde65e0ad3f078846265243e53cd10297;a404751e671211f27b1ab6ade3cfa043e5d1a3b1c373b0172e1d00021bbd1571;a460c076f464e5c9629802944d356dd213d7b65f234539112e785f34a93260af;a551f83bb23d41bfe2d832f8ab7f62a9b4ab22489171e15ff65d296ac2b42055;a801fc4dc2d077993937f13a10ce77034db20895eb14e197947a5faa1221e9f7;b1399c5a37322b0a7fa51fd7283affff65b1e606b24bfe94c2d588c9f305fc31;b701a392b3d0328e06604d2c8b408556cde622a527064d712995497549a63ccc;bed3e388d628c1c9b9b5b71848497fdc1c2b96c3ea78eddbde6eb9227cd47a49;c5538f3a299aa43c197824475ce9314ab20d85c6e31b1b24dd9e83b3e33767de;c63e0e4df7de50656db5350e8473ece860c6a86a251c890e364110167e39bee9;c6d12d9b90e3ecd4866fb6d8961eb2734baa16e0fb29c26dd36bacec5f353f2a;ca8165654fb6ffcbf3c45a4c9fe48526c80657690495bc54660379895bdaae89;caa8ae1fdefacbd85f89f3ade60d8ec9db993c44191a4d04e82e134d5c24d65c;cc828a57a52c9b0f742e4ec4e20b5efdb42eb7414d5ed633d6627865a099a173;f0bcfc1dcf192ffaac6850091e5bb64b48d52a6964daa21ef8eaf57f715e01f1;f4f597a9fe6bc5db56424eed214974f0bd25d764d277d4b5aa9f4beec987a33c;f94b253c232f7eef9c96d26d30caf77b58876d4d3aec97296ed987f40b653f1c;fcdfefba4f9a1034d2ffcd0cc54e42f03e2ac7cf13430fa17166f9691e0213b8",
+    "replay_use": "Generate 100d deterministically from frozen evaluator, then require exact/precision-aware closure against one persisted state hash before allowing 250/500/1000 regeneration.",
+    "replay_required_before_new_time_generation": true
+  },
+  "constraints": {
+    "training_performed": false,
+    "model_weights_changed": false,
+    "new_L2_state_generated": false,
+    "interpolated_state_used": false,
+    "candidate_performance_used": false,
+    "SG7E_gate_evaluated": false,
+    "threshold_changed": false
+  },
+  "recommendation": "The frozen deployment model, deterministic evaluator path, and required persisted inputs are available for no-training regeneration at all four historical times. Before generating new 250/500/1000-day states, replay 100 days and require precision-aware closure to one persisted 100-day state. If replay closes, proceed to controlled four-time L2 state regeneration with all model weights and gates frozen.",
+  "next_milestone": "V15-SG7E1R19 \u2014 100-Day Deterministic Replay Closure / Evaluator Validation"
+}

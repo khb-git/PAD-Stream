@@ -1,0 +1,11 @@
+{
+  "milestone": "V16C-7A",
+  "status": "V16C_COMPRESSIBILITY_AUTHORITY_SEPARATION_INCOMPLETE",
+  "diagnosis": "ONE_OR_MORE_NC_UD_SOURCE_OR_AUTHORITY_GATES_FAILED",
+  "Pollock_kinematics_primary": false,
+  "legacy_uD_separate_multiplier_allowed": null,
+  "Nc_semantics_preserved": false,
+  "new_PVT_law_introduced": false,
+  "recommendation": "Do not generate Y. Audit only failed C7A gates.",
+  "next_milestone": "V16C-7A-R \u2014 Compressibility Authority Residual Audit"
+}

@@ -1,0 +1,21 @@
+{
+  "milestone": "V16D-22",
+  "status": "V16D_CONTROL_SPACE_RECIPE_1_0_AND_36_FOUNDATION_CASE_REGISTRY_FROZEN_NEW_GEOLOGY_GENERATION_AUTHORIZED",
+  "contract_registry_sha256": "d384d56ab848b8d00c9ba111bf31467238ea0273356f44a9e57f19b73705d974",
+  "gates": {
+    "D21_SHA_exact": true,
+    "prospective_before_generation": true,
+    "two_control_axes": true,
+    "complete_3x3_factorial_each_geology": true,
+    "new_recipe1_1_geologies_only": true,
+    "old_observed_OOD_not_reused": true,
+    "complete_geology_split": true,
+    "locked_test_predeclared": true,
+    "no_flow_generation": true,
+    "no_transport_generation": true,
+    "no_training": true,
+    "no_OOD_evaluation": true,
+    "foundation_model_claim_not_authorized": true
+  },
+  "next_milestone": "V16D-23 \u2014 Generate and Certify Fresh Recipe1.1 Geologies 0026\u20130029"
+}

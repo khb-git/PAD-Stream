@@ -1,0 +1,34 @@
+{
+  "milestone": "V15-SG7E1R26H",
+  "status": "AUTHORITATIVE_EVALUATOR_IO_CONTRACT_READY",
+  "diagnosis": "SG7B10_MODEL_INPUT_TIME_TRANSFORM_PREDICTION_AND_POSTPROCESSING_CHAIN_RESOLVED",
+  "authoritative_source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B10_Controlled_Front_Aware_Refinement.py",
+  "authoritative_model": {
+    "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7CR3F4\\experiments\\B4\\V15SG7CR3F4_B4_Best_Any_Alpha_Model.keras",
+    "filename": "V15SG7CR3F4_B4_Best_Any_Alpha_Model.keras",
+    "sha256": "b9a2af574ff3ef5eef6377bbcbd0bd87b6490ff4d938de51f7e1d8ffcd18c0a6"
+  },
+  "io_contract": {
+    "model_load_records": 5,
+    "predict_records": 5,
+    "input_dependency_records": 46,
+    "time_transform_records": 42,
+    "postprocess_records": 81,
+    "serialization_records": 2,
+    "binding_records": 4,
+    "ready": true
+  },
+  "constraints": {
+    "training_performed": false,
+    "model_parameters_changed": false,
+    "gamma_changed": false,
+    "guard_changed": false,
+    "threshold_changed": false,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false,
+    "alternative_source_search_performed": false
+  },
+  "recommendation": "The authoritative SG7B10 evaluator parent now has a source-level executable input/output contract: model inference, predictor-input dependencies, physical-time/xi/tau transforms, and downstream state postprocessing are explicitly traced. Proceed to an execution-controlled 100-day replay using only this SG7B10 contract. Require closure to L2_independent_100 under the unchanged R25R float32 envelope before any 250/500/1000-day evaluation.",
+  "next_milestone": "V15-SG7E1R26I \u2014 Authoritative SG7B10 100-Day Runtime Control"
+}

@@ -1,0 +1,49 @@
+{
+  "milestone": "V16E-1B2J-XPU",
+  "experiment_id": "V16E-BLREP-COMP-XPU-004",
+  "classification": "FRAMEWORK_EQUIVALENT_ONE_FACTOR_PHYSICS_AWARE_ETA_CHANNEL_XPU_REPRODUCTION",
+  "authority": {
+    "runner_sha256": "fcc4074863a46f6b8d356a01ff0b4b2182d0ffa3ebc9b3fd053e35282f897a4c",
+    "Stage2_sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+    "B2I_protocol_sha256": "34d022c94271326132e34c6603c34c9477e5b111a6cb267b69cc472dc3b595f1",
+    "dataset_sha256": "46f10f00ff6dc48f7b2b936bd7d602e6435f72f8410138c5aad0dd4add555f1c",
+    "comparison_baseline_checkpoint_sha256": "fca205b1981fbbdf15424af8ac8174df88ff7addf99e718548319a81f87d271b"
+  },
+  "artifacts": {
+    "port_protocol": {
+      "path": "output\\V16_E1B_XPU_NATIVE_BL_REPRODUCTIONS\\V16E-BLREP-COMP-XPU-004\\V16E_BLREP_COMP_XPU_004_Framework_Port_Protocol.json",
+      "sha256": "ca1d118061142103d8c0f1da2952dac8d8b3cc2997556b70c5738563847a0f6b"
+    },
+    "checkpoint": {
+      "path": "output\\V16_E1B_XPU_NATIVE_BL_REPRODUCTIONS\\V16E-BLREP-COMP-XPU-004\\V16E_BLREP_COMP_XPU_004.pt",
+      "sha256": "2b54c6ace6c893916bf55ee54dea2ad55eb3b5239d8e0c0cda21bc9311efca69"
+    },
+    "config": {
+      "path": "output\\V16_E1B_XPU_NATIVE_BL_REPRODUCTIONS\\V16E-BLREP-COMP-XPU-004\\V16E_BLREP_COMP_XPU_004_Config.json",
+      "sha256": "22588a6eddd0c12212b529b85e592d53844bd14b1dc5e163e3b7ce9a7318002a"
+    },
+    "history": {
+      "path": "output\\V16_E1B_XPU_NATIVE_BL_REPRODUCTIONS\\V16E-BLREP-COMP-XPU-004\\V16E_BLREP_COMP_XPU_004_Training_History.json",
+      "sha256": "0b993558c1cd981be55d02412a91e58d3561fdd49435b3ae08a3f4aa29daf825"
+    },
+    "metrics": {
+      "path": "output\\V16_E1B_XPU_NATIVE_BL_REPRODUCTIONS\\V16E-BLREP-COMP-XPU-004\\V16E_BLREP_COMP_XPU_004_Metrics.json",
+      "sha256": "75a76341db626ee346c6a73b89524bf2721b1c46e75f4495fa72091378a9c14f"
+    }
+  },
+  "firewall": {
+    "sequence_feature_changed": true,
+    "eta_channel_added": true,
+    "raw_p11_changed": false,
+    "Nc_scaled": false,
+    "physical_Nc_changed": false,
+    "teacher_changed": false,
+    "physics_residual_changed": false,
+    "loss_weights_changed": false,
+    "dataset_changed": false,
+    "epochs_changed_vs_COMP002": false,
+    "OOD_claim": false,
+    "TOF": false,
+    "B3_authorized": false
+  }
+}

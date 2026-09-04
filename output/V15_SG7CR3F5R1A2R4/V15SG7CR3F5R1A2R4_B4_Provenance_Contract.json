@@ -1,0 +1,33 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1A2R4",
+  "status": "B4_PROVENANCE_CHECKPOINT_AMBIGUITY",
+  "diagnosis": "MULTIPLE_B4_CHECKPOINT_IDENTITIES_WITH_TINY_COEFFICIENT_DRIFT",
+  "training_performed": false,
+  "support_extension_calibrated": false,
+  "gate_changed": false,
+  "historical_scalar_overwritten": false,
+  "runtime_required_sum": 126.26830245109524,
+  "historical_required_sum": 126.26830245109524,
+  "runtime_supported_sum": 62.56234252704303,
+  "historical_supported_sum": 62.56321852706071,
+  "supported_sum_relative_delta": 1.4001837474275872e-05,
+  "runtime_coefficient_statistics": {
+    "mean": 0.6042675872670203,
+    "P90": 0.993757140636444,
+    "max": 0.9999879598617554,
+    "min": 0.0,
+    "std": 0.3268716821380265
+  },
+  "historical_coefficient_statistics": {
+    "mean": 0.6042749285697937,
+    "P90": 0.9937669634819031,
+    "max": 0.9999948143959045
+  },
+  "coefficient_statistics_within_provenance_tolerance": true,
+  "unique_B4_checkpoint_hashes": 6,
+  "explicit_historical_hash_match": false,
+  "resolved": false,
+  "resolved_arrays": null,
+  "recommendation": "The numerical difference is tiny, but more than one B4 checkpoint identity exists and no unique historical identity has yet been established. Do not calibrate support. Resolve which checkpoint generated the R3F4-R support table using manifest/epoch/hash evidence.",
+  "next_milestone": "V15-SG7C-R3F5-R1A2R4A \u2014 Historical B4 Checkpoint Identity Resolution"
+}

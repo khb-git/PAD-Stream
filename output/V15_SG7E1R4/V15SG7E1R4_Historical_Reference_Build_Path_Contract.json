@@ -1,0 +1,31 @@
+{
+  "milestone": "V15-SG7E1R4",
+  "status": "SG7E_HISTORICAL_REFERENCE_BUILD_PATH_NOT_YET_RESOLVED",
+  "diagnosis": "REFERENCE_SYMBOL_GRAPH_DOES_NOT_YET_REACH_UNIQUE_NPZ_KEY",
+  "plume_threshold": {
+    "value": 0.5,
+    "changed": false
+  },
+  "reference_build_path": {
+    "authoritative_sources": [
+      "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7ER_Front_Aware_FullGrid_Plume_Coverage_Validation.py"
+    ],
+    "reference_symbols": [
+      "ORIGINAL_REFERENCE_TOL",
+      "original_reference_reproduced"
+    ],
+    "direct_source_linked_candidate_count": 0,
+    "selected": false,
+    "selected_path": null,
+    "selected_key": null
+  },
+  "constraints": {
+    "candidate_performance_used": false,
+    "coverage_support_diagnostic_promoted_to_truth": false,
+    "threshold_changed": false,
+    "posthoc_alignment": false,
+    "deployment_correction_performed": false
+  },
+  "recommendation": "Do not evaluate SG7E gates. The source-level reference graph has been expanded, but no unique NPZ key is yet directly linked. Audit helper functions, imported builders, branch conditions, and time-slice/index expressions reached by the reference symbols. Do not select SG7A raw/corrected arrays by naming alone.",
+  "next_milestone": "V15-SG7E1R5 \u2014 Deep Reference Builder / Branch Trace Audit"
+}

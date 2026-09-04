@@ -1,0 +1,129 @@
+{
+  "milestone": "V16D-3R3",
+  "status": "V16D_NEW_VERSIONED_SGSIM_ENSEMBLE_RECIPE_1P0_FROZEN_SEED_REGISTRY_CAN_PROCEED",
+  "recipe": {
+    "recipe_id": "V16D_SGSIM_ENSEMBLE_RECIPE_1.0",
+    "historical_case0001_relation": "REFERENCE_ONLY_NOT_CLAIMED_AS_EXACT_SAME_STOCHASTIC_RECIPE",
+    "grid": {
+      "nx": 50,
+      "ny": 50,
+      "nz": 15,
+      "dx_ft": 20.0,
+      "dy_ft": 20.0,
+      "dz_ft": 4.0
+    },
+    "simulation": {
+      "algorithm": "sequential Gaussian simulation",
+      "normal_score_field": {
+        "mean": 0.0,
+        "variance": 1.0
+      },
+      "variogram_model": "exponential",
+      "nugget": 0.0,
+      "major_range_ft": 200.0,
+      "minor_range_ft": 200.0,
+      "vertical_range_ft": 15.0,
+      "azimuth_deg": 30.0,
+      "dip_deg": 0.0,
+      "rake_deg": 0.0,
+      "search_neighborhood": "same metric/ranges as variogram for Recipe 1.0",
+      "conditioning_data": "none; unconditional realizations",
+      "seed_policy": "explicit integer seed from frozen D4 registry; one seed per geology_id"
+    },
+    "permeability": {
+      "transform_authority": "existing transform_sgsim_perm.py must be SHA-bound before generation",
+      "target_support_mD": [
+        50.0,
+        1000.0
+      ],
+      "injection_interval_layers_1based": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "background_and_injection_unit_transform": "use the existing transform implementation unchanged; do not re-fit per realization",
+      "Kx": "K_perm",
+      "Ky": "K_perm",
+      "Kz_over_Kh": 0.1
+    },
+    "porosity": 0.2,
+    "first_phase_controls": {
+      "CO2_mass_rate_tonnes_per_day": 500.0,
+      "producer_BHP_psi": 2000.0
+    },
+    "well_geometry": {
+      "injector_zero_based_xy": [
+        24,
+        24
+      ],
+      "producers_zero_based_xy": [
+        [
+          4,
+          4
+        ],
+        [
+          45,
+          4
+        ],
+        [
+          4,
+          45
+        ],
+        [
+          45,
+          45
+        ]
+      ],
+      "completion_zero_based_k": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    "prohibitions": [
+      "no realization rejection or reseeding based on visual appearance",
+      "no permeability-transform refit per realization",
+      "no variogram/range tuning after seeing model performance",
+      "no claim that Case0002+ exactly reproduces the lost Case0001 SGeMS recipe",
+      "no control variation in first geology-only phase"
+    ],
+    "generation_authorized": false,
+    "training_authorized": false
+  },
+  "design_rationale": {
+    "major_minor_range_ft": "200 ft isotropic areal continuity is frozen as the new V16D Recipe 1.0 design choice.",
+    "vertical_range_ft": "15 ft retained from the documented intended vertical continuity scale.",
+    "azimuth_deg": "30 degrees retained as documented intended orientation; with equal major/minor ranges it does not create areal anisotropy in Recipe 1.0.",
+    "variogram_model": "exponential is a new explicit Recipe 1.0 design choice, not a recovered Case0001 fact.",
+    "nugget": "0.0 is a new explicit Recipe 1.0 design choice.",
+    "historical_separation": "all new choices are labeled V16D design authority rather than historical provenance."
+  },
+  "transform_source": {
+    "path": "transform_sgsim_perm.py",
+    "sha256": "98a85f5bc1c1bab3a460e8a2efb2acfe3c589fd1a52f8798990f9484ca0ccbb1"
+  },
+  "gates": {
+    "D3R2_bound": true,
+    "historical_recipe_nonrecoverability_respected": true,
+    "new_recipe_versioned": true,
+    "new_vs_historical_semantics_explicit": true,
+    "grid_explicit": true,
+    "variogram_model_explicit": true,
+    "major_minor_vertical_ranges_explicit": true,
+    "orientation_explicit": true,
+    "nugget_explicit": true,
+    "conditioning_status_explicit": true,
+    "seed_policy_explicit": true,
+    "no_cherrypicking": true,
+    "no_per_realization_refit": true,
+    "case0001_not_relabelled": true,
+    "transform_source_present": true,
+    "no_generation_in_R3": true,
+    "no_training_in_R3": true
+  },
+  "next_milestone": "V16D-4 \u2014 Predeclared SGSim Seed Registry and Case 0002+ Generation Contract"
+}

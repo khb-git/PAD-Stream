@@ -1,0 +1,16 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1F2C",
+  "candidate": "L2",
+  "status": "CROSSING_LOCAL_CANDIDATE_INDEPENDENT_VALIDATION_FAILED",
+  "freeze_ready": false,
+  "candidate_frozen": false,
+  "selected_guard_half_width": 0.029999971389770508,
+  "exact_support_fraction": 0.5000056447248766,
+  "failed_gates": [
+    "reconstruction_state_closure",
+    "reconstruction_gamma_closure"
+  ],
+  "model_weights_changed": false,
+  "gate_changed": false,
+  "next_milestone": "V15-SG7C-R3F5-R1F2CR \u2014 Independent Validation Failure Audit"
+}

@@ -1,0 +1,10 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1",
+  "status": "EXACT_SUPPORT_ARRAY_RECONSTRUCTION_REQUIRED",
+  "diagnosis": "AUTHORITATIVE_FORMULA_KNOWN_BUT_EXACT_NUMERICAL_MASKS_NOT_RECOVERED",
+  "training_performed": false,
+  "support_extension_calibrated": false,
+  "authoritative_formula_reproduced": false,
+  "recommendation": "The support ratio formula is known, but R3F5-R1 cannot yet reproduce the authoritative B4 required/supported residual sums from persisted numerical arrays. Do not calibrate any extension. Inspect the generated array-discovery and exact-support audit tables to identify the persisted front-shell/support arrays or add their serialization to the authoritative R3F4-R audit.",
+  "next_milestone": "V15-SG7C-R3F5-R1A \u2014 Exact Front-Shell / Support-Array Recovery"
+}

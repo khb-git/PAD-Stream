@@ -1,0 +1,20 @@
+{
+  "milestone": "V15-SG7D6",
+  "status": "SG7D_FULL_GRID_CANDIDATE_FROZEN",
+  "diagnosis": "P4_FULL_GRID_FROZEN_AS_AUTHORITATIVE_SG7E_INPUT",
+  "candidate": "P4_full_grid",
+  "candidate_frozen": true,
+  "frozen_full_grid_sha256": "5c881046bf7b6bcfb411cffc9a332b6e4705e03f91a3a2438ecb58c2eedf9df5",
+  "grid_shape": [
+    15,
+    50,
+    50
+  ],
+  "supported_cells": 29107,
+  "unsupported_cells": 8393,
+  "background_saturation": 0.20072828233242035,
+  "numerical_field_changed": false,
+  "SG7E_threshold_changed": false,
+  "recommendation": "The validated 15x50x50 P4 full-grid saturation field is now formally frozen with byte-for-byte SHA-256 provenance. Treat the SG7D6 frozen artifact, support mask, conservative map-back evidence, and frozen background rule as immutable. Proceed to SG7E deployment validation without modifying the grid, support mask, background completion, frozen L2 transport, or SG7E thresholds.",
+  "next_milestone": "V15-SG7E0 \u2014 Frozen Full-Grid Deployment Validation Contract / Baseline Audit"
+}

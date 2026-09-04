@@ -1,0 +1,22 @@
+{
+  "milestone": "V15-SG7B-13",
+  "SG7B12_contract_ready": true,
+  "frozen_model": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B11\\V15SG7B_FRONT_AWARE_FROZEN_Model.keras",
+  "frozen_sha256": "28c3e555f1ea9e128bddc6c021c5b3648699ba7a33125b3b40a6556990fa9141",
+  "deployment_identity_Linf": 0.0,
+  "baseline_bias": {
+    "bias_500_1000": 0.004756026104725998,
+    "bias_1000_2000": 0.008821790222551053,
+    "bias_gt2000": 0.010334881049249931,
+    "tail_bias": 0.010328912605362393,
+    "material_share_500_1000": 0.6071283037821138,
+    "global_bias": 0.0009375747547039473,
+    "global_L1": 0.0035313551321113114
+  },
+  "baseline_front": {
+    "truth_front_count": 992,
+    "recovered_front_count": 949,
+    "conditioned_gap": 0.00039032765093349666,
+    "profile_L1": 0.0035313551321113114
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "milestone": "V16E-1B2R-XPU",
+  "classification": "B2Q_NATIVE_CONSERVATION_AND_FAN_ABLATION_INTERPRETATION",
+  "frozen_observations": [
+    {
+      "case": "case1",
+      "Nc": 0.0,
+      "FV_preclip_max_abs": 5.551115123125783e-17,
+      "clip_events": 0,
+      "fan_interpolation_MSE": 29.77255427331908,
+      "plus_Sw_star_floor_MSE": 0.006145188822576373,
+      "plus_endpoints_MSE": 0.006106774582742165,
+      "sparse6_MSE": 0.24754311870896636,
+      "sparse6_over_dense_endpoints": 40.535820563694436
+    },
+    {
+      "case": "case1",
+      "Nc": 0.05,
+      "FV_preclip_max_abs": 5.551115123125783e-17,
+      "clip_events": 0,
+      "fan_interpolation_MSE": 30.323143938735402,
+      "plus_Sw_star_floor_MSE": 0.006654664741951475,
+      "plus_endpoints_MSE": 0.006616981197101966,
+      "sparse6_MSE": 0.2505120769839301,
+      "sparse6_over_dense_endpoints": 37.85896763521811
+    },
+    {
+      "case": "case1",
+      "Nc": 0.1,
+      "FV_preclip_max_abs": 5.551115123125783e-17,
+      "clip_events": 0,
+      "fan_interpolation_MSE": 30.800926252188685,
+      "plus_Sw_star_floor_MSE": 0.00650030902557233,
+      "plus_endpoints_MSE": 0.00646303624967355,
+      "sparse6_MSE": 0.25414503347599754,
+      "sparse6_over_dense_endpoints": 39.32285440745199
+    },
+    {
+      "case": "case1",
+      "Nc": 0.2,
+      "FV_preclip_max_abs": 5.551115123125783e-17,
+      "clip_events": 0,
+      "fan_interpolation_MSE": 32.02035645917235,
+      "plus_Sw_star_floor_MSE": 0.010720715109784007,
+      "plus_endpoints_MSE": 0.010684574640847494,
+      "sparse6_MSE": 0.26595224506573745,
+      "sparse6_over_dense_endpoints": 24.891233765075956
+    },
+    {
+      "case": "case1",
+      "Nc": 0.3,
+      "FV_preclip_max_abs": 5.551115123125783e-17,
+      "clip_events": 0,
+      "fan_interpolation_MSE": 33.364455797978714,
+      "plus_Sw_star_floor_MSE": 0.02314876967486671,
+      "plus_endpoints_MSE": 0.023113838694710082,
+      "sparse6_MSE": 0.2849668837890568,
+      "sparse6_over_dense_endpoints": 12.32884280075362
+    },
+    {
+      "case": "case2",
+      "Nc": 0.0,
+      "FV_preclip_max_abs": 5.551115123125783e-17,
+      "clip_events": 0,
+      "fan_interpolation_MSE": 266.5531800667119,
+      "plus_Sw_star_floor_MSE": 0.00431041804824046,
+      "plus_endpoints_MSE": 0.004295968473361027,
+      "sparse6_MSE": 0.1289075275157713,
+      "sparse6_over_dense_endpoints": 30.0066279152459
+    },
+    {
+      "case": "case2",
+      "Nc": 0.05,
+      "FV_preclip_max_abs": 5.551115123125783e-17,
+      "clip_events": 0,
+      "fan_interpolation_MSE": 265.7599758233115,
+      "plus_Sw_star_floor_MSE": 0.004883474523146314,
+      "plus_endpoints_MSE": 0.004871004677990459,
+      "sparse6_MSE": 0.12921290681806782,
+      "sparse6_over_dense_endpoints": 26.526951904175718
+    },
+    {
+      "case": "case2",
+      "Nc": 0.1,
+      "FV_preclip_max_abs": 5.551115123125783e-17,
+      "clip_events": 0,
+      "fan_interpolation_MSE": 278.90697836708813,
+      "plus_Sw_star_floor_MSE": 0.0061101710928524655,
+      "plus_endpoints_MSE": 0.006099752726245613,
+      "sparse6_MSE": 0.13145580159837042,
+      "sparse6_over_dense_endpoints": 21.55100501578549
+    },
+    {
+      "case": "case2",
+      "Nc": 0.2,
+      "FV_preclip_max_abs": 5.551115123125783e-17,
+      "clip_events": 0,
+      "fan_interpolation_MSE": 289.1804476588904,
+      "plus_Sw_star_floor_MSE": 0.01899509091552224,
+      "plus_endpoints_MSE": 0.01898859108278379,
+      "sparse6_MSE": 0.14497505701922625,
+      "sparse6_over_dense_endpoints": 7.634850652541012
+    },
+    {
+      "case": "case2",
+      "Nc": 0.3,
+      "FV_preclip_max_abs": 5.551115123125783e-17,
+      "clip_events": 0,
+      "fan_interpolation_MSE": 300.25048814940305,
+      "plus_Sw_star_floor_MSE": 0.0497778480555831,
+      "plus_endpoints_MSE": 0.049775365526612575,
+      "sparse6_MSE": 0.18049320454527334,
+      "sparse6_over_dense_endpoints": 3.626155280542782
+    }
+  ],
+  "scientific_findings": {
+    "native_teacher_discrete_conservation": "VERIFIED_TO_MACHINE_PRECISION",
+    "clipping_effect_in_audited_cases": "NONE_OBSERVED",
+    "continuous_native_residual_role": "DIAGNOSTIC_ONLY_NOT_DISCRETE_CONSERVATION_AUTHORITY",
+    "fan_interpolation_effect": "Raw moving-fan interpolation of the numerically smeared shock produces large derivative residuals.",
+    "Sw_star_floor_effect": "The source-defined Sw_star floor reduces the interpolation-only moving-fan residual in every audited case/Nc combination.",
+    "forced_endpoint_effect": "Small relative to the preceding interpolation/floor transformation.",
+    "six_time_effect": "The exact source six-time representation increases the finite-difference moving-fan residual relative to the dense postprocessed fan in every audited case/Nc combination.",
+    "training_derivative_implication": "Prospective corrected PI-RNN physics loss uses network autograd derivatives, not finite differences across the six supervised times; therefore the sparse-time derivative artifact is not the derivative mechanism used by corrected training."
+  },
+  "Stage2_residual_readiness": "SCIENTIFICALLY_READY_FOR_PROSPECTIVE_CONTROLLED_STUDY",
+  "remaining_blocker": "XPU computational feasibility of backward through recurrent input derivatives / second-order autograd graph.",
+  "prohibited_conclusions": [
+    "the old characteristic residual is restored",
+    "processed-fan finite-difference residual becomes the conservation authority",
+    "COMP-XPU-004 is overwritten",
+    "corrected Stage-2 full training is already authorized",
+    "B3 is authorized"
+  ]
+}

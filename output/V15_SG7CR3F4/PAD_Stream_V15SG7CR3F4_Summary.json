@@ -1,0 +1,17 @@
+{
+  "milestone": "V15-SG7C-R3F4",
+  "status": "NO_R3F4_BASIS_CALIBRATOR_PASSES_COMPLETE_CONTRACT",
+  "training_performed": true,
+  "SG7B11_modified": false,
+  "experiments_run": [
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B5"
+  ],
+  "candidate_nominated": false,
+  "candidate_experiment": null,
+  "recommendation": "No bounded front-local basis calibrator satisfies the complete contract. Use the persisted R3F4 trajectories to determine whether the remaining limiter is support width, crossing displacement, or insufficient residual coverage before changing the basis family.",
+  "next_milestone": "V15-SG7C-R3F4-R \u2014 Front-Local Basis Outcome Audit"
+}

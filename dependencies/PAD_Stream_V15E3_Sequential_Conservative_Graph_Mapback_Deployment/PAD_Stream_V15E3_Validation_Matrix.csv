@@ -1,0 +1,32 @@
+gate,group,passed,value,criterion
+expected_24_transitions,integrity,True,24,24 stored transitions from day 15 to day 365
+expected_4320_path_updates,integrity,True,4320,180 paths x 24 transitions
+finite_snapshot_metrics,integrity,True,finite,all numeric snapshot audit values finite
+finite_path_metrics,integrity,True,finite,all numeric path audit values finite
+accepted_saturation_bounds,integrity,True,"[2.648e-01,5.625e-01]","within [0,0.8]"
+history_above_saturation,integrity,True,valid,history is bound preserving
+grid_mass_projection_exact,integrity,True,2.0150051762743326e-16,<5e-7 nonlinear compressible mass residual
+path_projection_exact,integrity,True,4.4388436898181905e-08,<2e-6 path projection self-error
+inventory_within_capacity,integrity,True,0.0,<1% global forecasts capacity-clipped
+producer_gas_cut_bounded,integrity,True,"[-0.000e+00,1.000e+00]","within [0,1]"
+breakthrough_detected,integrity,True,45.21141090455075,finite predicted breakthrough
+restart_saturation_identity,integrity,True,0.0,exact restart identity
+restart_history_identity,integrity,True,0.0,exact restart identity
+restart_gas_cut_identity,integrity,True,0.0,exact restart identity
+restart_breakthrough_identity,integrity,True,0.0,exact restart identity
+target_leakage_channels_zero,integrity,True,node 26/27 and condition 4/5,exact future inventory channels unavailable at inference
+e2_dataset_hash_matches_checkpoint,integrity,True,532bb5b5a2d546a81f532670c5a7dc2d818cd91de0d189436c82121785239494,frozen 15E-0 dataset
+e2_operator_hash_matches_checkpoint,integrity,True,9d8a9f1112e1a33694011023193d7f5cf257608949a91b831380552b1254f972,frozen 15E-0 operator
+e1_checkpoint_hash_matches_e2_source,integrity,True,6d5c682d430dc710e8f7f3c22b0387fcd6346859bba56ce5c8227bc81e16cd89,frozen 15E-1 source checkpoint
+accepted_beats_grid_persistence,deployment,True,0.0333242 vs 0.0426929,accepted sequential RMSE below grid persistence
+accepted_no_regression_vs_deterministic,deployment,True,0.0333242 vs 0.0333434,screened graph branch does not materially regress
+final_grid_drift_below_0p08,deployment,True,0.020231399106245232,same drift limit used by 15D-3
+final_grid_drift_improves_15d3,deployment,True,0.0202314 vs 0.106511,unique-grid state improves path-only drift
+inventory_mape_below_5pct,deployment,True,0.019550414151756127,<5% full-rollout inventory MAPE
+gas_cut_rmse_below_0p08,diagnostic,False,0.3780501043767032,15F-1 handoff: <0.08 producer gas-cut RMSE
+breakthrough_within_15_days,diagnostic,False,70.53904020514719,15F-1 handoff: within one standard path interval
+transport_residual_no_regression,deployment,True,0.0571948 vs 0.057303,screened branch does not worsen flux-weighted increment residual
+producer_reconstruction_no_regression,deployment,True,0.138521 vs 0.138806,producer cells do not regress
+graph_branch_exercised,diagnostic,True,15,at least one learned graph selection
+deterministic_fallback_exercised,diagnostic,True,9,at least one uncertainty fallback
+selected_graph_steps_improve,diagnostic,True,15,selected graph subset improves deterministic map-back

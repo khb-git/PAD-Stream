@@ -1,0 +1,20 @@
+{
+  "experiment_id": "V16E-BLREP-INC-XPU-001",
+  "certification_milestone": "V16E-1B1-XPU-R1",
+  "classification": "FRAMEWORK_EQUIVALENT_XPU_REPRODUCTION_POSTTRAINING_REPAIR_CERTIFIED",
+  "source_sha256": "98d492e1e4a84e9d2c3ab99a631bf7d21d011b65bdd599e0ab3192d947b36e58",
+  "runner_sha256": "d5925a5b5e7e2591142596cb5f13eed4d16507dad534ae334cae646e7ffc3435",
+  "dataset_sha256": "3495f933a377928254465d60ed5452bcb9fb0fdf6a9507efab94edd4abee6e98",
+  "checkpoint_sha256": "535e106b59a8064979f525290882fc3280e79fa1d27cdb73edcc9805f6932bc4",
+  "config_sha256": "9719d857f681adcd6e989b07de85103f09ca0f9d43cb85eb302d7e48a87c0aaa",
+  "port_protocol_sha256": "4832aace96a5c6e6a0c6711c134748ef55bdb86ee67988283af55abf2151cbca",
+  "history_sha256": "2c3253d25090d4a0a04fa5b7fb437916b55b5c667265df60616fc9330fa070ae",
+  "metrics_sha256": "871b1f676a1f3309adee39616c1570ce4349d7e0ac12f1552eb6dcb80f91f77e",
+  "repair_sha256": "aee86a41af7e981407b29c6328b1022fc229c35e6a6a4961c74e141611afb12b",
+  "framework": "PyTorch XPU",
+  "model_eval_used": true,
+  "training_repeated_in_R1": false,
+  "weights_modified_in_R1": false,
+  "OOD_claim": false,
+  "TOF": false
+}

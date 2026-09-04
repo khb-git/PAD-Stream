@@ -1,0 +1,47 @@
+{
+  "milestone": "V16E-1B2AE-XPU",
+  "authorized_next_milestone": "V16E-1B2AF-XPU",
+  "classification": "ONE_LOGICAL_BATCH_OPTIMIZER_AND_CHECKPOINT_RELOAD_REHEARSAL",
+  "scratch_only": true,
+  "scratch_weights_may_seed_COMP_XPU_005": false,
+  "fresh_initialization_required": true,
+  "seed": 1337,
+  "reference_contracts": {
+    "execution_contract_sha256": "6bf7794f493b95d9922573f24fdee30d1ff9f0caac5a0075d70a9abfa9dae83e",
+    "accumulation_contract_sha256": "fd07af361a788f6cbc2c93faad8a196223dfd9a5894e67e2475e96657a8a5425",
+    "resume_contract_sha256": "ba9f86b236e2276e507988d9c44f96b428c59aa1bedc02575f0c2b09c13bc449"
+  },
+  "rehearsal_geometry": {
+    "logical_profiles": 8192,
+    "microbatch": 128,
+    "microbatches": 64,
+    "optimizer_steps": 1
+  },
+  "rehearsal_optimizer": "torch.optim.Adam(model.parameters(), lr=1.0e-3, foreach=False)",
+  "required_sequence": [
+    "construct fresh seed=1337 model",
+    "construct exact Adam optimizer",
+    "select one production-sized 8192-profile logical training chunk",
+    "optimizer.zero_grad(set_to_none=True)",
+    "run 64 chunk16-corrected microbatches of size 128",
+    "scale each raw total loss by 128/8192 before backward",
+    "verify accumulated gradients finite and nonzero",
+    "optimizer.step() exactly once",
+    "verify post-step model parameters finite",
+    "write atomic scratch checkpoint",
+    "reload model + optimizer + RNG from scratch checkpoint",
+    "verify exact reloaded model state equality",
+    "verify exact reloaded optimizer state equality",
+    "verify checkpoint contract/source hashes",
+    "mark scratch rehearsal PASS only if all gates pass"
+  ],
+  "rehearsal_output_is_training_artifact": false,
+  "rehearsal_output_is_resume_source_for_COMP005": false,
+  "full_training_authorized": false,
+  "scientific_firewall": {
+    "OOD": false,
+    "TOF": false,
+    "B3_authorized": false,
+    "scientific_settings_changed": false
+  }
+}

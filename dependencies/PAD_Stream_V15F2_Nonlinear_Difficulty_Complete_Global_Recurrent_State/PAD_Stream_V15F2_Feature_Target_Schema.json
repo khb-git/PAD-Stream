@@ -1,0 +1,261 @@
+{
+  "version": "15F-2",
+  "architecture": "frozen 15F-0 hidden state and 15F-1 memory plus three calibrated recurrent workload heads",
+  "features": [
+    {
+      "index": 0,
+      "name": "f0_hidden_00"
+    },
+    {
+      "index": 1,
+      "name": "f0_hidden_01"
+    },
+    {
+      "index": 2,
+      "name": "f0_hidden_02"
+    },
+    {
+      "index": 3,
+      "name": "f0_hidden_03"
+    },
+    {
+      "index": 4,
+      "name": "f0_hidden_04"
+    },
+    {
+      "index": 5,
+      "name": "f0_hidden_05"
+    },
+    {
+      "index": 6,
+      "name": "f0_hidden_06"
+    },
+    {
+      "index": 7,
+      "name": "f0_hidden_07"
+    },
+    {
+      "index": 8,
+      "name": "f0_hidden_08"
+    },
+    {
+      "index": 9,
+      "name": "f0_hidden_09"
+    },
+    {
+      "index": 10,
+      "name": "f0_hidden_10"
+    },
+    {
+      "index": 11,
+      "name": "f0_hidden_11"
+    },
+    {
+      "index": 12,
+      "name": "f0_hidden_12"
+    },
+    {
+      "index": 13,
+      "name": "f0_hidden_13"
+    },
+    {
+      "index": 14,
+      "name": "f0_hidden_14"
+    },
+    {
+      "index": 15,
+      "name": "f0_hidden_15"
+    },
+    {
+      "index": 16,
+      "name": "f0_hidden_16"
+    },
+    {
+      "index": 17,
+      "name": "f0_hidden_17"
+    },
+    {
+      "index": 18,
+      "name": "f0_hidden_18"
+    },
+    {
+      "index": 19,
+      "name": "f0_hidden_19"
+    },
+    {
+      "index": 20,
+      "name": "f0_hidden_20"
+    },
+    {
+      "index": 21,
+      "name": "f0_hidden_21"
+    },
+    {
+      "index": 22,
+      "name": "f0_hidden_22"
+    },
+    {
+      "index": 23,
+      "name": "f0_hidden_23"
+    },
+    {
+      "index": 24,
+      "name": "f0_hidden_24"
+    },
+    {
+      "index": 25,
+      "name": "f0_hidden_25"
+    },
+    {
+      "index": 26,
+      "name": "f0_hidden_26"
+    },
+    {
+      "index": 27,
+      "name": "f0_hidden_27"
+    },
+    {
+      "index": 28,
+      "name": "f0_hidden_28"
+    },
+    {
+      "index": 29,
+      "name": "f0_hidden_29"
+    },
+    {
+      "index": 30,
+      "name": "f0_hidden_30"
+    },
+    {
+      "index": 31,
+      "name": "f0_hidden_31"
+    },
+    {
+      "index": 32,
+      "name": "current_producer_gas_cut"
+    },
+    {
+      "index": 33,
+      "name": "log10_current_producer_gas_cut_plus_1e-8"
+    },
+    {
+      "index": 34,
+      "name": "current_gas_cut_increment"
+    },
+    {
+      "index": 35,
+      "name": "current_breakthrough_memory"
+    },
+    {
+      "index": 36,
+      "name": "time_since_breakthrough_fraction"
+    },
+    {
+      "index": 37,
+      "name": "current_injector_mass_rate_mode"
+    },
+    {
+      "index": 38,
+      "name": "current_injector_bhp_over_limit"
+    },
+    {
+      "index": 39,
+      "name": "current_injector_mass_rate_over_limit"
+    },
+    {
+      "index": 40,
+      "name": "current_bhp_headroom_over_4mpa"
+    },
+    {
+      "index": 41,
+      "name": "current_mass_rate_headroom_kg_s"
+    },
+    {
+      "index": 42,
+      "name": "current_control_switch_memory"
+    },
+    {
+      "index": 43,
+      "name": "log_current_dt_days"
+    },
+    {
+      "index": 44,
+      "name": "current_retries_before_accept"
+    },
+    {
+      "index": 45,
+      "name": "current_nonlinear_iterations"
+    },
+    {
+      "index": 46,
+      "name": "current_pressure_fixed_point_iterations_final"
+    },
+    {
+      "index": 47,
+      "name": "current_pressure_fixed_point_iterations_total"
+    },
+    {
+      "index": 48,
+      "name": "log10_current_pressure_fixed_point_residual"
+    },
+    {
+      "index": 49,
+      "name": "current_maximum_saturation_change"
+    },
+    {
+      "index": 50,
+      "name": "current_pressure_guess_rmse_mpa"
+    },
+    {
+      "index": 51,
+      "name": "current_persistence_error_rmse_mpa"
+    },
+    {
+      "index": 52,
+      "name": "current_candidate_innovation_rmse_mpa"
+    },
+    {
+      "index": 53,
+      "name": "f0_screened_next_dt_days"
+    },
+    {
+      "index": 54,
+      "name": "f0_dense_state_distance"
+    },
+    {
+      "index": 55,
+      "name": "f1_screened_next_gas_cut"
+    },
+    {
+      "index": 56,
+      "name": "f1_breakthrough_hazard"
+    },
+    {
+      "index": 57,
+      "name": "f1_mode_mass_rate_probability"
+    },
+    {
+      "index": 58,
+      "name": "f1_control_preflight"
+    }
+  ],
+  "targets": {
+    "nonlinear_iterations": "next accepted-step nonlinear coupling iterations",
+    "pressure_fixed_point_iterations_total": "next accepted-step total pressure fixed-point workload",
+    "retry_event": "whether next accepted step required one or more rejected/retried attempts"
+  },
+  "deployment": {
+    "output": "initial budgets and preflight tier only",
+    "mandatory_authority": "exact residual, convergence, rejection/retry, well, path, and conservation checks"
+  },
+  "forbidden_feature_tokens": [
+    "next_nonlinear",
+    "next_pressure",
+    "next_retry",
+    "target_",
+    "future_",
+    "exact_future",
+    "accepted_next_iterations",
+    "converged_next"
+  ]
+}

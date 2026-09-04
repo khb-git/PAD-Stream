@@ -1,0 +1,19 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1F1R",
+  "status": "R1F1_OUTCOME_AUDIT_COMPLETE",
+  "diagnosis": "TRUTH_VALUE_FRONT_MASK_OVERPROTECTS_SAFE_RESIDUAL",
+  "training_performed": false,
+  "correction_recalibrated": false,
+  "X08_support_geometry_changed": false,
+  "gate_changed": false,
+  "K5_failed_gates": [
+    "bias_500_1000",
+    "bias_1000_2000",
+    "bias_gt2000",
+    "tail_bias"
+  ],
+  "all_nonfront_capacity_sufficient": false,
+  "high_front_mask_overlap": true,
+  "recommendation": "At least one remaining gate cannot be met from the currently defined non-front residual alone, while a material fraction of residual mass is trapped inside the broad truth-value front shell. The accepted crossing itself still has very large safety margin. Do not relax front gates. Replace the broad saturation-value mask with a crossing-distance-local protection mask so only the actual S=0.21 crossing neighborhood remains locked.",
+  "next_milestone": "V15-SG7C-R3F5-R1F2A \u2014 Crossing-Distance Front Protection Audit / Design"
+}

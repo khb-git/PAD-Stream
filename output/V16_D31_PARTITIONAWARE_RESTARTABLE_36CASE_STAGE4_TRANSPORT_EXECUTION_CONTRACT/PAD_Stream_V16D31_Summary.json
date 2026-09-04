@@ -1,0 +1,30 @@
+{
+  "milestone": "V16D-31",
+  "status": "V16D_PARTITIONAWARE_RESTARTABLE_36CASE_STAGE4_TRANSPORT_EXECUTION_CONTRACT_FROZEN_TRAIN_PARTITION_EXECUTION_AUTHORIZED",
+  "contract_sha256": "9d2baf3a2ba7c1a80f24271b3c396dd72dff4b20ab9390ff80be2a07a452d873",
+  "gates": {
+    "D30_summary_SHA_exact": true,
+    "D30R1R2_summary_SHA_exact": true,
+    "C17_source_SHA_exact": true,
+    "D28_36_case_metrics": true,
+    "pilot_status_certified": true,
+    "pilot_artifact_SHA_exact": true,
+    "partition_counts_18_9_9": true,
+    "nine_times_frozen": true,
+    "shape_frozen": true,
+    "per_case_restartability": true,
+    "certified_skip_only": true,
+    "failed_case_rerun_only": true,
+    "Pollock_primary": true,
+    "Mface_primary": true,
+    "theta_adapter_only": true,
+    "no_deduplication": true,
+    "no_training": true,
+    "no_normalization": true,
+    "no_selection": true,
+    "locked_OOD_sealed_for_model_development": true,
+    "no_transport_executed_in_D31": true,
+    "no_threshold_relaxation": true
+  },
+  "next_milestone": "V16D-31A \u2014 Restartable TRAIN partition Stage-4 transport generation for 18 Foundation Cases"
+}

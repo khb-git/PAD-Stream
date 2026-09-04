@@ -1,0 +1,23 @@
+{
+  "milestone": "V16D-15R1",
+  "status": "V16D_MULTIFOUNDATIONCASE_LEARNING_DATASET_1_0_FROZEN_EXP_MC1_AUTHORITY_ESTABLISHED_EXECUTABLE_TRAINING_PROTOCOL_FREEZE_AUTHORIZED",
+  "dataset_registry_sha256": "7e3e885a1219bf72f89dd759df7043fe2bd6e9a718d418edbe8db3e2afce6266",
+  "training_authority_sha256": "b8987bfddefcdb890b99bbb0de9d8c7f6ad29c4332082c16c06a4beab0f3f65e",
+  "gates": {
+    "D14B_R1_SHA_exact": true,
+    "D15R_SHA_exact": true,
+    "exact_24_case_registry": true,
+    "exact_16_4_4_split": true,
+    "all_predictor_SHA_verified": true,
+    "all_target_SHA_verified_without_Y_open": true,
+    "C20_feature_order_preserved": true,
+    "TRAIN_only_normalization_preserved": true,
+    "complete_case_generalization_unit": true,
+    "locked_OOD_final_evaluation_only": true,
+    "no_Y_array_opened": true,
+    "no_training": true,
+    "no_model_selection": true,
+    "no_OOD_evaluation": true
+  },
+  "next_milestone": "V16D-16 \u2014 EXP-MC1 Executable Multi-Case Predictive Baseline Training Protocol Freeze"
+}

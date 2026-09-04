@@ -1,0 +1,243 @@
+{
+  "milestone": "V15-SG7C-R3F0",
+  "status": "FRONT_STATE_REFINEMENT_CONTRACT_READY",
+  "training_performed": false,
+  "SG7B11_modified": false,
+  "incoming_diagnosis": "FRONT_STATE_CORRECTION_CAPACITY_LIMIT",
+  "evidence_caveat": "R3E persisted complete final front-reduction metrics only for E0; R3F1 therefore requires complete per-experiment/checkpoint persistence.",
+  "baseline": {
+    "frozen_front_shell_L1": 0.009261964183162193,
+    "canonical_front_shell_L1": 1.9411167529263913e-08,
+    "ideal_front_error_reduction_fraction": 0.9999979042061549,
+    "required_shell_correction_MAE": 0.009261960129912362,
+    "required_shell_correction_P90": 0.018180461936914007,
+    "required_shell_correction_MAX": 0.05139590639215985,
+    "required_core_correction_MAE": 0.008982825969173883
+  },
+  "regions": [
+    {
+      "region": "F0_nonfront_short_TOF",
+      "definition": "outside front shell and tau_end < 500 d",
+      "capacity": "LOW",
+      "purpose": "preserve already-good short-TOF behavior"
+    },
+    {
+      "region": "F1_nonfront_long_TOF",
+      "definition": "outside front shell and tau_end >= 500 d",
+      "capacity": "MODERATE",
+      "purpose": "retain existing TOF-bias correction capability"
+    },
+    {
+      "region": "F2_front_shell",
+      "definition": "0.205 <= SG7A S <= 0.300",
+      "capacity": "HIGHER LOCAL CAPACITY",
+      "purpose": "reach >=50% front-state error reduction"
+    },
+    {
+      "region": "F3_front_core",
+      "definition": "0.210 <= SG7A S <= 0.260",
+      "capacity": "HIGH + CROSSING-CONSTRAINED",
+      "purpose": "correct state while preserving threshold position"
+    },
+    {
+      "region": "F4_front_shoulders",
+      "definition": "front shell excluding front core",
+      "capacity": "HIGH + SHAPE-CONSTRAINED",
+      "purpose": "correct shoulder state without broadening/oscillation"
+    }
+  ],
+  "objective": [
+    {
+      "term": "L_residual_global",
+      "role": "global canonical residual fit",
+      "relative_weight": "1.0"
+    },
+    {
+      "term": "L_front_state",
+      "role": "front-shell canonical state fit",
+      "relative_weight": "8-16"
+    },
+    {
+      "term": "L_front_core_state",
+      "role": "front-core canonical state fit",
+      "relative_weight": "10-20"
+    },
+    {
+      "term": "L_crossing_position",
+      "role": "retain S=0.21 crossing accuracy",
+      "relative_weight": "4-8"
+    },
+    {
+      "term": "L_front_gradient",
+      "role": "retain canonical front gradient",
+      "relative_weight": "2-4"
+    },
+    {
+      "term": "L_front_TV",
+      "role": "retain canonical front morphology",
+      "relative_weight": "1-3"
+    },
+    {
+      "term": "L_short_anchor",
+      "role": "keep tau_end<500d correction weak",
+      "relative_weight": "2-5"
+    },
+    {
+      "term": "L_direction",
+      "role": "correction must move toward canonical target",
+      "relative_weight": "2-4"
+    },
+    {
+      "term": "L_overshoot",
+      "role": "prevent correction past canonical target",
+      "relative_weight": "2-4"
+    }
+  ],
+  "preservation_gates": [
+    {
+      "gate": "front_error_reduction",
+      "limit": ">= 50%",
+      "authority": "R3D-R"
+    },
+    {
+      "gate": "recovered_fronts",
+      "limit": ">= 744",
+      "authority": "SG7B-10S"
+    },
+    {
+      "gate": "conditioned_front_gap",
+      "limit": "<= 5.33123727917913484e-04",
+      "authority": "SG7B-10S"
+    },
+    {
+      "gate": "100d_profile_L1",
+      "limit": "<= 4.50032942291447424e-03",
+      "authority": "SG7B-10S"
+    },
+    {
+      "gate": "mean_frozen_front_xi_shift",
+      "limit": "<= 2.000000e-03",
+      "authority": "SG7B-15R"
+    },
+    {
+      "gate": "P90_frozen_front_xi_shift",
+      "limit": "<= 5.000000e-03",
+      "authority": "SG7B-15R"
+    },
+    {
+      "gate": "front_sign_agreement",
+      "limit": ">= 95.0%",
+      "authority": "R3D-R"
+    },
+    {
+      "gate": "front_overshoot_fraction",
+      "limit": "<= 5.0%",
+      "authority": "R3D-R"
+    },
+    {
+      "gate": "short_TOF_calibration_MAE",
+      "limit": "<= 1.500000e-03",
+      "authority": "R3D-R"
+    },
+    {
+      "gate": "global_abs_correction",
+      "limit": "<= 0.100",
+      "authority": "R3D-R"
+    },
+    {
+      "gate": "calibration_TV_ratio",
+      "limit": "<= 0.200",
+      "authority": "R3D-R"
+    },
+    {
+      "gate": "500-1000d bias",
+      "limit": "|bias| <= 2.5e-3",
+      "authority": "SG7B-12"
+    },
+    {
+      "gate": "1000-2000d bias",
+      "limit": "|bias| <= 4.5e-3",
+      "authority": "SG7B-12"
+    },
+    {
+      "gate": ">2000d bias",
+      "limit": "|bias| <= 5.0e-3",
+      "authority": "SG7B-12"
+    }
+  ],
+  "experiment_matrix": [
+    {
+      "experiment": "F0",
+      "description": "R3E-style control calibrator",
+      "front_capacity": "BASE",
+      "architecture": "MLP 16x16",
+      "front_state_weight": 6,
+      "front_core_weight": 6
+    },
+    {
+      "experiment": "F1",
+      "description": "Moderate front-state capacity",
+      "front_capacity": "MODERATE",
+      "architecture": "MLP 24x24",
+      "front_state_weight": 10,
+      "front_core_weight": 12
+    },
+    {
+      "experiment": "F2",
+      "description": "Strong front-state capacity",
+      "front_capacity": "STRONG",
+      "architecture": "MLP 32x32",
+      "front_state_weight": 14,
+      "front_core_weight": 16
+    },
+    {
+      "experiment": "F3",
+      "description": "Dual-head front/nonfront residual calibrator",
+      "front_capacity": "REGION-SPECIALIZED",
+      "architecture": "shared 24x24 + front residual head",
+      "front_state_weight": 12,
+      "front_core_weight": 16
+    },
+    {
+      "experiment": "F4",
+      "description": "Dual-head + explicit crossing lock",
+      "front_capacity": "REGION-SPECIALIZED",
+      "architecture": "shared 24x24 + front head + crossing constraint",
+      "front_state_weight": 16,
+      "front_core_weight": 20
+    }
+  ],
+  "persistence_contract": [
+    {
+      "artifact": "R3F1_Epoch_Metrics.csv",
+      "required": true,
+      "contents": "all evaluated checkpoint metrics for F1-F4"
+    },
+    {
+      "artifact": "R3F1_Final_Experiment_Metrics.csv",
+      "required": true,
+      "contents": "complete final metrics for every F0-F4 experiment"
+    },
+    {
+      "artifact": "R3F1_Final_Gate_Matrix.csv",
+      "required": true,
+      "contents": "every mandatory gate for every experiment"
+    },
+    {
+      "artifact": "R3F1_Best_Checkpoint_By_Experiment.csv",
+      "required": true,
+      "contents": "epoch/path/metrics for each experiment's best checkpoint"
+    },
+    {
+      "artifact": "F1-F4 best calibrator .keras files",
+      "required": true,
+      "contents": "best persisted checkpoint even if contract fails"
+    },
+    {
+      "artifact": "R3F1_Candidate_Manifest.json",
+      "required": true,
+      "contents": "nomination status, candidate hash/path, no-freeze declaration"
+    }
+  ],
+  "next_milestone": "V15-SG7C-R3F1 \u2014 Controlled Front-State-Focused Calibration Refinement"
+}

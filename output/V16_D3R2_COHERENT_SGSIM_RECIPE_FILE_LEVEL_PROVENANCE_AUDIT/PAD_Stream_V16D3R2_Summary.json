@@ -1,0 +1,29 @@
+{
+  "milestone": "V16D-3R2",
+  "status": "V16D_CASE0001_COHERENT_SGSIM_RECIPE_FILE_NOT_BOUND_NEW_VERSIONED_ENSEMBLE_RECIPE_REQUIRED",
+  "D3R_result_superseded_for_exact_recipe_claim": true,
+  "coherent_recipe_files": [],
+  "transform_sources": [
+    {
+      "path": "SGSIM_50x50x15_GAUSS_PERM.csv",
+      "sha256": "a0c024d864a02c2767760faaf71b192628846c881c4b62352b8cf06ea1eeaa8a"
+    },
+    {
+      "path": "transform_sgsim_perm.py",
+      "sha256": "98a85f5bc1c1bab3a460e8a2efb2acfe3c589fd1a52f8798990f9484ca0ccbb1"
+    }
+  ],
+  "gates": {
+    "D3R_bound": true,
+    "venv_excluded": true,
+    "generated_output_excluded": true,
+    "cross_file_parameter_pooling_prohibited": true,
+    "file_level_candidate_inventory_written": true,
+    "no_numerical_similarity": true,
+    "no_parameter_inference": true,
+    "no_case_generation": true,
+    "coherent_original_recipe_file_bound": false
+  },
+  "generation_authorized": false,
+  "next_milestone": "V16D-3R3 \u2014 Explicit New Versioned V16D SGSim Ensemble Recipe Authority Contract"
+}

@@ -1,0 +1,333 @@
+{
+  "milestone": "V16D-35",
+  "experiment": "EXP-CS1",
+  "evaluation_role": "ONE_TOUCH_FINAL_LOCKED_OOD_TEST",
+  "LOCKED_OOD": {
+    "partition": "LOCKED_OOD_TEST",
+    "geology": "0029",
+    "cases_evaluated": 9,
+    "case_ids": [
+      "V16D_Foundation_Case_0029_R350_B1800",
+      "V16D_Foundation_Case_0029_R350_B2000",
+      "V16D_Foundation_Case_0029_R350_B2200",
+      "V16D_Foundation_Case_0029_R500_B1800",
+      "V16D_Foundation_Case_0029_R500_B2000",
+      "V16D_Foundation_Case_0029_R500_B2200",
+      "V16D_Foundation_Case_0029_R650_B1800",
+      "V16D_Foundation_Case_0029_R650_B2000",
+      "V16D_Foundation_Case_0029_R650_B2200"
+    ],
+    "target_days": [
+      30,
+      60,
+      100,
+      150,
+      250,
+      365,
+      500,
+      750,
+      1000
+    ],
+    "opening_lock": "output\\V16_D35_EXP_CS1_ONE_TOUCH_FINAL_LOCKED_OOD_EVALUATION\\OOD_OPENED.lock",
+    "opening_lock_sha256": "e5cc11a9e33edf9c1d112c9cedaf21e7d8b7b49cb415535ba20781edaea9fec8"
+  },
+  "selected_model": {
+    "architecture_sha256": "4304519d7c41b231f300535cef5daacd2525e395413addc883e66e7310096920",
+    "checkpoint_sha256": "dc586da13e9fd7ce0b51cc661ba73edc8ab0f897d2f961112944504b13d1ed13",
+    "evaluator_source_sha256": "80aeb3db5dcb58651df3b2b4f7d987849d6fde7ee1441f6953bca5f0e7699b6d"
+  },
+  "aggregate": {
+    "values": 17550918,
+    "MSE": 1.7935869890747634e-05,
+    "RMSE": 0.0042350761375384545,
+    "MAE": 0.0017336927827610116,
+    "mean_signed_error": 0.00028239705125491545,
+    "max_abs_error": 0.13503268361091614,
+    "prediction_min": 0.20023314654827118,
+    "prediction_max": 0.7999467849731445
+  },
+  "case_level": [
+    {
+      "values": 1950102,
+      "MSE": 2.807983336850542e-05,
+      "RMSE": 0.005299040797022176,
+      "MAE": 0.0021099813961267117,
+      "mean_signed_error": -3.7928863007160786e-07,
+      "max_abs_error": 0.13503268361091614,
+      "prediction_min": 0.20024283230304718,
+      "prediction_max": 0.7999467253684998,
+      "case_id": "V16D_Foundation_Case_0029_R350_B1800",
+      "geology": "0029",
+      "injection_rate_tpd": 350,
+      "producer_bhp_psi": 1800
+    },
+    {
+      "values": 1950102,
+      "MSE": 2.4190970095874542e-05,
+      "RMSE": 0.00491843167034722,
+      "MAE": 0.001978413496572297,
+      "mean_signed_error": 0.0003345829578073694,
+      "max_abs_error": 0.12920664250850677,
+      "prediction_min": 0.20023314654827118,
+      "prediction_max": 0.7999464869499207,
+      "case_id": "V16D_Foundation_Case_0029_R350_B2000",
+      "geology": "0029",
+      "injection_rate_tpd": 350,
+      "producer_bhp_psi": 2000
+    },
+    {
+      "values": 1950102,
+      "MSE": 2.2614278753627566e-05,
+      "RMSE": 0.004755447271669361,
+      "MAE": 0.0019683589139754386,
+      "mean_signed_error": 0.0006670967054106335,
+      "max_abs_error": 0.13147804141044617,
+      "prediction_min": 0.20025107264518738,
+      "prediction_max": 0.7999460697174072,
+      "case_id": "V16D_Foundation_Case_0029_R350_B2200",
+      "geology": "0029",
+      "injection_rate_tpd": 350,
+      "producer_bhp_psi": 2200
+    },
+    {
+      "values": 1950102,
+      "MSE": 1.692684726854806e-05,
+      "RMSE": 0.004114224990025225,
+      "MAE": 0.0016198573824040777,
+      "mean_signed_error": -8.324028578764459e-05,
+      "max_abs_error": 0.11733725666999817,
+      "prediction_min": 0.2002641260623932,
+      "prediction_max": 0.7999467849731445,
+      "case_id": "V16D_Foundation_Case_0029_R500_B1800",
+      "geology": "0029",
+      "injection_rate_tpd": 500,
+      "producer_bhp_psi": 1800
+    },
+    {
+      "values": 1950102,
+      "MSE": 1.4767858612741787e-05,
+      "RMSE": 0.0038428971639560936,
+      "MAE": 0.0015952578624381514,
+      "mean_signed_error": 0.0002639619484694867,
+      "max_abs_error": 0.11537522077560425,
+      "prediction_min": 0.2002783715724945,
+      "prediction_max": 0.7999465465545654,
+      "case_id": "V16D_Foundation_Case_0029_R500_B2000",
+      "geology": "0029",
+      "injection_rate_tpd": 500,
+      "producer_bhp_psi": 2000
+    },
+    {
+      "values": 1950102,
+      "MSE": 1.4580549720779626e-05,
+      "RMSE": 0.00381844860130127,
+      "MAE": 0.0016843840537679533,
+      "mean_signed_error": 0.0006097242667499623,
+      "max_abs_error": 0.1149846613407135,
+      "prediction_min": 0.2002754509449005,
+      "prediction_max": 0.799946129322052,
+      "case_id": "V16D_Foundation_Case_0029_R500_B2200",
+      "geology": "0029",
+      "injection_rate_tpd": 500,
+      "producer_bhp_psi": 2200
+    },
+    {
+      "values": 1950102,
+      "MSE": 1.4517613874547251e-05,
+      "RMSE": 0.0038101986660208746,
+      "MAE": 0.0015008481882846576,
+      "mean_signed_error": -8.712122572643744e-05,
+      "max_abs_error": 0.124751016497612,
+      "prediction_min": 0.20029106736183167,
+      "prediction_max": 0.7999460697174072,
+      "case_id": "V16D_Foundation_Case_0029_R650_B1800",
+      "geology": "0029",
+      "injection_rate_tpd": 650,
+      "producer_bhp_psi": 1800
+    },
+    {
+      "values": 1950102,
+      "MSE": 1.2864537880924443e-05,
+      "RMSE": 0.003586716866568149,
+      "MAE": 0.0015168946959105462,
+      "mean_signed_error": 0.00025140192344903957,
+      "max_abs_error": 0.12243455648422241,
+      "prediction_min": 0.20026886463165283,
+      "prediction_max": 0.7999459505081177,
+      "case_id": "V16D_Foundation_Case_0029_R650_B2000",
+      "geology": "0029",
+      "injection_rate_tpd": 650,
+      "producer_bhp_psi": 2000
+    },
+    {
+      "values": 1950102,
+      "MSE": 1.2880339441179986e-05,
+      "RMSE": 0.0035889189794672135,
+      "MAE": 0.0016292390553692717,
+      "mean_signed_error": 0.0005855464595519012,
+      "max_abs_error": 0.12001131474971771,
+      "prediction_min": 0.20025643706321716,
+      "prediction_max": 0.7999457716941833,
+      "case_id": "V16D_Foundation_Case_0029_R650_B2200",
+      "geology": "0029",
+      "injection_rate_tpd": 650,
+      "producer_bhp_psi": 2200
+    }
+  ],
+  "time_resolved": [
+    {
+      "time_days": 30,
+      "MSE": 2.8552558126074234e-05,
+      "RMSE": 0.005343459378162637,
+      "MAE": 0.0020846820623233505,
+      "max_abs_error": 0.10649749636650085,
+      "values": 1950102
+    },
+    {
+      "time_days": 60,
+      "MSE": 3.567395506955968e-05,
+      "RMSE": 0.00597276778969011,
+      "MAE": 0.002765502949046382,
+      "max_abs_error": 0.094936802983284,
+      "values": 1950102
+    },
+    {
+      "time_days": 100,
+      "MSE": 3.8916073725301754e-05,
+      "RMSE": 0.006238274899786138,
+      "MAE": 0.0027703199501027944,
+      "max_abs_error": 0.124751016497612,
+      "values": 1950102
+    },
+    {
+      "time_days": 150,
+      "MSE": 3.093459458241964e-05,
+      "RMSE": 0.005561887681571756,
+      "MAE": 0.0022370976158202858,
+      "max_abs_error": 0.11733725666999817,
+      "values": 1950102
+    },
+    {
+      "time_days": 250,
+      "MSE": 1.373959957601596e-05,
+      "RMSE": 0.0037066965853730137,
+      "MAE": 0.0015019567603604884,
+      "max_abs_error": 0.13503268361091614,
+      "values": 1950102
+    },
+    {
+      "time_days": 365,
+      "MSE": 5.966362573858077e-06,
+      "RMSE": 0.002442613881451196,
+      "MAE": 0.0012056369994863328,
+      "max_abs_error": 0.13147804141044617,
+      "values": 1950102
+    },
+    {
+      "time_days": 500,
+      "MSE": 3.146868439080453e-06,
+      "RMSE": 0.0017739414982125125,
+      "MAE": 0.0010762850197917997,
+      "max_abs_error": 0.12212380766868591,
+      "values": 1950102
+    },
+    {
+      "time_days": 750,
+      "MSE": 2.3557057713004816e-06,
+      "RMSE": 0.0015348308608118622,
+      "MAE": 0.001006600078479201,
+      "max_abs_error": 0.021035850048065186,
+      "values": 1950102
+    },
+    {
+      "time_days": 1000,
+      "MSE": 2.1371111531183885e-06,
+      "RMSE": 0.001461886162845243,
+      "MAE": 0.000955153609438471,
+      "max_abs_error": 0.02436530590057373,
+      "values": 1950102
+    }
+  ],
+  "control_resolved": {
+    "by_injection_rate_tpd": {
+      "350": {
+        "RMSE": 0.004996167938797612,
+        "MAE": 0.002018917935558149,
+        "values": 5850306
+      },
+      "500": {
+        "RMSE": 0.003927478224088559,
+        "MAE": 0.0016331664328700609,
+        "values": 5850306
+      },
+      "650": {
+        "RMSE": 0.00366344515434364,
+        "MAE": 0.0015489939798548251,
+        "values": 5850306
+      }
+    },
+    "by_producer_bhp_psi": {
+      "1800": {
+        "RMSE": 0.004454372178418291,
+        "MAE": 0.0017435623222718157,
+        "values": 5850306
+      },
+      "2000": {
+        "RMSE": 0.0041562549885500195,
+        "MAE": 0.0016968553516403314,
+        "values": 5850306
+      },
+      "2200": {
+        "RMSE": 0.004085550469462966,
+        "MAE": 0.001760660674370888,
+        "values": 5850306
+      }
+    }
+  },
+  "prediction_physics_diagnostics": {
+    "Swc": 0.2,
+    "one_minus_Sor": 0.8,
+    "fraction_predictions_below_Swc": 0.0,
+    "fraction_predictions_above_one_minus_Sor": 0.0,
+    "maximum_lower_bound_violation": 0.0,
+    "maximum_upper_bound_violation": 0.0,
+    "injector_node_boundary_Sw": 0.8,
+    "injector_node_mean_absolute_error": 0.0005973000609871622,
+    "temporal_negative_threshold": -1e-08,
+    "temporal_negative_fraction": 0.016650090610644982,
+    "spatial_positive_threshold": 1e-08,
+    "spatial_positive_fraction": 0.04896126800888705,
+    "prediction_values": 17550918,
+    "temporal_differences": 15600816,
+    "spatial_differences": 17463600
+  },
+  "validation_generalization_gap": {
+    "OOD_RMSE_over_frozen_validation_RMSE": 0.9720395516812034,
+    "OOD_MAE_over_frozen_validation_MAE": 0.9877299387183429,
+    "frozen_validation_RMSE": 0.004356896928950704,
+    "frozen_validation_MAE": 0.001755229556988638
+  },
+  "precision": "float64 error accumulation",
+  "result_policy": {
+    "all_9_cases_included": true,
+    "all_9_times_included": true,
+    "all_1078_streamlines_per_case_included": true,
+    "all_201_nodes_included": true,
+    "no_deduplication": true,
+    "no_adaptation": true,
+    "no_threshold_fitting": true,
+    "poor_results_reported_without_suppression": true
+  },
+  "post_opening_firewall": {
+    "retraining_same_experiment": "PROHIBITED",
+    "checkpoint_change": "PROHIBITED",
+    "architecture_change": "PROHIBITED",
+    "feature_change": "PROHIBITED",
+    "normalization_change": "PROHIBITED",
+    "loss_change": "PROHIBITED",
+    "hyperparameter_change": "PROHIBITED",
+    "threshold_tuning": "PROHIBITED",
+    "OOD_informed_model_selection": "PROHIBITED",
+    "new_learning_requires_new_independent_locked_test": true
+  }
+}

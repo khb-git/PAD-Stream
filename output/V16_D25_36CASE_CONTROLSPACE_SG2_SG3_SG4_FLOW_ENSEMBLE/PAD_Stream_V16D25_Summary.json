@@ -1,0 +1,61 @@
+{
+  "milestone": "V16D-25",
+  "status": "V16D_36CASE_CONTROLSPACE_SG2_SG3_SG4_FLOW_ENSEMBLE_GENERATED_CERTIFIED_POLLOCK_EXPANSION_AUTHORIZED",
+  "authority": {
+    "R7_sha256": "e77998de6fe4dfa1d00144bb56be68cef8820f364223312d92d5c8fdc1f64e80",
+    "D7B_sha256": "d2a736039bd34ec5bc3272ebf0ab9908f47c28cdc1bd91ca74d8d76ec366922b"
+  },
+  "design": {
+    "geologies": {
+      "0026": [
+        "TRAIN",
+        350456
+      ],
+      "0027": [
+        "TRAIN",
+        358375
+      ],
+      "0028": [
+        "VALIDATION",
+        366294
+      ],
+      "0029": [
+        "LOCKED_OOD_TEST",
+        374213
+      ]
+    },
+    "rates_tonnes_day": [
+      350.0,
+      500.0,
+      650.0
+    ],
+    "producer_BHP_psi": [
+      1800.0,
+      2000.0,
+      2200.0
+    ],
+    "total_cases": 36
+  },
+  "execution": {
+    "completed": 36,
+    "runtime_s": 123.47074294090271,
+    "manifest_sha256": "be49457d258df0c1ade931fb6934d86ba0cac93a8d0b1193196095d2a1da6a1e"
+  },
+  "gates": {
+    "R7_SHA_exact": true,
+    "D7B_SHA_exact": true,
+    "SG2_SHA_exact": true,
+    "SG3_SHA_exact": true,
+    "SG4_SHA_exact": true,
+    "four_fresh_geologies_exist": true,
+    "exactly_36_cases_executed": true,
+    "all_executed_cases_certified": true,
+    "split_counts_18_9_9": true,
+    "all_9_control_combinations_per_geology": true,
+    "frozen_SG3_SG4_unmodified": true,
+    "no_transport": true,
+    "no_training": true,
+    "locked_OOD_generated_not_evaluated": true
+  },
+  "next_milestone": "V16D-26 \u2014 Source-Bound SG5 Pollock Streamline/TOF Expansion Across 36 Control-Space Foundation Cases"
+}

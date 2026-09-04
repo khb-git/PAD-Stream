@@ -1,0 +1,35 @@
+{
+  "name": "V16D_EXP_MC1_PROTOCOL_AUTHORITY_1.0",
+  "experiment": "EXP-MC1",
+  "purpose": "first multi-Foundation-Case predictive-accuracy baseline",
+  "architecture_lineage": "C20 Stage4-lineage recurrent transport model",
+  "loss": "MSE_ONLY",
+  "physics_loss": "NONE",
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "seed": 161501,
+  "max_epochs": 300,
+  "selection": {
+    "TRAIN": "gradient updates only",
+    "VALIDATION": "early stopping/checkpoint selection only",
+    "LOCKED_OOD_TEST": "one final evaluation only after model and checkpoint selection"
+  },
+  "prohibited_OOD_uses": [
+    "normalization",
+    "feature selection",
+    "architecture selection",
+    "loss design",
+    "hyperparameter tuning",
+    "early stopping",
+    "checkpoint selection",
+    "threshold tuning"
+  ],
+  "next_freeze_required_before_training": [
+    "exact LSTM widths/layers",
+    "batch size",
+    "patience/min_delta",
+    "checkpoint format",
+    "memory-safe case/streamline loading",
+    "sample weighting policy"
+  ]
+}

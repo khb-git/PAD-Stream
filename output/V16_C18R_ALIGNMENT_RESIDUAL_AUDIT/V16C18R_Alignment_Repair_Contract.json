@@ -1,0 +1,19 @@
+{
+  "milestone": "V16C-18R",
+  "status": "V16C_CONDITIONING_TO_Y_TRANSPORT_TRAINING_DATASET_CERTIFIED",
+  "diagnosis": "THE_C18_2P861023E_08_RESIDUAL_IS_EXACTLY_EXPLAINED_BY_FROZEN_C4_FLOAT_STORAGE_QUANTIZATION_AND_C17_VALUES_REPRODUCE_C4_COORDINATES_EXACTLY_WHEN_PASSED_THROUGH_THE_C4_REPRESENTATION",
+  "C4_dtype": "float32",
+  "raw_theta_error": 2.8610229629855155e-08,
+  "raw_tof_normalization_error": 2.8610229629855155e-08,
+  "representation_theta_error": 0.0,
+  "representation_tof_error": 0.0,
+  "dtype_epsilon": 1.1920928955078125e-07,
+  "one_dtype_epsilon_scale": 1.1920928955078125e-07,
+  "interpretation": "representation equivalence, not tolerance relaxation",
+  "artifact": "output\\V16_C18R_ALIGNMENT_RESIDUAL_AUDIT\\V16C18R_Certified_Conditioning_to_Y_Transport_Dataset.npz",
+  "artifact_sha256": "1b610ad3c90aa827be4c466ed71f3a3b771d0498bd915395096efda057f445f3",
+  "split_selected": false,
+  "training_authorized": false,
+  "recommendation": "Freeze C18R as the repaired alignment authority. Proceed to a leakage-safe split contract before any PI-RNN training.",
+  "next_milestone": "V16C-19 \u2014 Leakage-Safe Training/Validation/Test/OOD Split Authority Contract"
+}

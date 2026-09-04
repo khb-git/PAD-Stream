@@ -1,0 +1,55 @@
+{
+  "milestone": "V15-SG7E1R26E",
+  "status": "TRUE_UPSTREAM_RUNTIME_SOURCE_CONFLICT_REMAINS",
+  "diagnosis": "R18_TRACE_AND_PROJECT_RUNTIME_SEMANTICS_DO_NOT_YET_YIELD_ONE_UNIQUE_EVALUATOR",
+  "R18_meta_program_excluded": true,
+  "trace_inventory": {
+    "rows": 6,
+    "function_tokens": [
+      "any",
+      "append",
+      "bool",
+      "in",
+      "join",
+      "load_model",
+      "lower",
+      "max",
+      "min",
+      "model",
+      "predict",
+      "project_python_files",
+      "safe_text",
+      "search",
+      "splitlines",
+      "strip"
+    ],
+    "file_tokens": [
+      "PAD_Stream_V15SG7E1R18_Missing_L2_Physical_Time_State_Deterministic_Regeneration_Audit.py"
+    ],
+    "model_tokens": [
+      "V15SG7CR3F4_B4_Best_Any_Alpha_Model.keras"
+    ]
+  },
+  "upstream_runtime_evaluator": {
+    "resolved": false,
+    "source": null,
+    "source_score": null,
+    "source_margin": 0,
+    "function": null,
+    "function_score": null,
+    "function_margin": 0
+  },
+  "constraints": {
+    "training_performed": false,
+    "model_parameters_changed": false,
+    "gamma_changed": false,
+    "guard_changed": false,
+    "threshold_changed": false,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false,
+    "candidate_performance_used": false
+  },
+  "recommendation": "Do not generate later-time states. Audit only the top R26E crosswalk candidates. Use exact frozen-model load provenance and R18 trace function/symbol evidence to separate them; do not use candidate performance.",
+  "next_milestone": "V15-SG7E1R26F \u2014 Top Upstream Evaluator Source Lineage Conflict Audit"
+}

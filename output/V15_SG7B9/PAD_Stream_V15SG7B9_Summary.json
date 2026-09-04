@@ -1,0 +1,20 @@
+{
+  "milestone": "V15-SG7B-9",
+  "description": "Front-aware PI-RNN targeted refinement design",
+  "training_performed": false,
+  "frozen_model_changed": false,
+  "architecture_changed": false,
+  "incoming_diagnosis": "THRESHOLD_AVOIDANCE",
+  "frozen_model_identity_verified": true,
+  "number_of_training_candidates": 6,
+  "front_improvement_target": {
+    "minimum_100d_crossings": 744,
+    "maximum_100d_threshold_gap_mean": 0.02913120623910275,
+    "maximum_100d_profile_L1": 0.004500329779642862
+  },
+  "preservation_contract_retained": true,
+  "design_passed": true,
+  "status": "FRONT_AWARE_REFINEMENT_CONTRACT_READY",
+  "recommendation": "Proceed to a controlled SG7B-10 refinement branch starting from the frozen SG7B checkpoint. Run the defined experiment matrix without replacing the frozen model. Candidate selection must satisfy both front-improvement gates and the complete original SG7B-7R preservation contract.",
+  "next_milestone": "V15-SG7B-10 \u2014 Controlled Front-Aware PI-RNN Refinement"
+}

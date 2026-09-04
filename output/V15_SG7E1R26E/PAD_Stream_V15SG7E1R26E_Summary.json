@@ -1,0 +1,11 @@
+{
+  "milestone": "V15-SG7E1R26E",
+  "status": "TRUE_UPSTREAM_RUNTIME_SOURCE_CONFLICT_REMAINS",
+  "diagnosis": "R18_TRACE_AND_PROJECT_RUNTIME_SEMANTICS_DO_NOT_YET_YIELD_ONE_UNIQUE_EVALUATOR",
+  "selected_upstream_source": null,
+  "selected_upstream_function": null,
+  "candidate_changed": false,
+  "threshold_changed": false,
+  "recommendation": "Do not generate later-time states. Audit only the top R26E crosswalk candidates. Use exact frozen-model load provenance and R18 trace function/symbol evidence to separate them; do not use candidate performance.",
+  "next_milestone": "V15-SG7E1R26F \u2014 Top Upstream Evaluator Source Lineage Conflict Audit"
+}

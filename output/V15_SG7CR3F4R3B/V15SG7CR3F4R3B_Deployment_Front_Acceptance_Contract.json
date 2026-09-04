@@ -1,0 +1,74 @@
+{
+  "version": "V15-SG7C-R3F4-R3B",
+  "created_utc": "2026-08-25T20:23:55.234835Z",
+  "status": "DEPLOYMENT_FRONT_ACCEPTANCE_CONTRACT_CLARIFIED",
+  "authority_decision": "SG7A_PHYSICS_AUTHORITY_FROZEN_REGRESSION_GUARD",
+  "historical_contracts_immutable": true,
+  "training_performed": false,
+  "model_parameters_changed": false,
+  "gate_thresholds_changed": false,
+  "deployment_semantics": {
+    "physics_front_reference": "SG7A/canonical truth",
+    "frozen_reference": "SG7B-11 regression/preservation baseline",
+    "frozen_relative_absolute_front_displacement": "diagnostic_only_for_new_deployment_acceptance",
+    "historical_frozen_relative_results": "retained_unchanged",
+    "automatic_candidate_acceptance": false
+  },
+  "gate_families": [
+    {
+      "gate_family": "SG7A-relative front position/error",
+      "authority": "PHYSICS",
+      "acceptance_role": "AUTHORITATIVE_PASS_FAIL",
+      "status": "ACTIVE"
+    },
+    {
+      "gate_family": "state/profile accuracy",
+      "authority": "PHYSICS",
+      "acceptance_role": "AUTHORITATIVE_PASS_FAIL",
+      "status": "ACTIVE"
+    },
+    {
+      "gate_family": "mass/conservation",
+      "authority": "PHYSICS",
+      "acceptance_role": "AUTHORITATIVE_PASS_FAIL",
+      "status": "ACTIVE"
+    },
+    {
+      "gate_family": "regional/canonical-physics",
+      "authority": "PHYSICS",
+      "acceptance_role": "AUTHORITATIVE_PASS_FAIL",
+      "status": "ACTIVE"
+    },
+    {
+      "gate_family": "TOF-bias",
+      "authority": "TRANSFER",
+      "acceptance_role": "AUTHORITATIVE_PASS_FAIL",
+      "status": "ACTIVE"
+    },
+    {
+      "gate_family": "front topology/width/gradient/directionality/overshoot",
+      "authority": "PHYSICS",
+      "acceptance_role": "AUTHORITATIVE_PASS_FAIL",
+      "status": "ACTIVE"
+    },
+    {
+      "gate_family": "calibrated-vs-frozen absolute front displacement",
+      "authority": "REGRESSION",
+      "acceptance_role": "DIAGNOSTIC_ONLY_FOR_DEPLOYMENT",
+      "status": "RETAINED_UNCHANGED"
+    },
+    {
+      "gate_family": "map-back",
+      "authority": "DEPLOYMENT",
+      "acceptance_role": "AUTHORITATIVE_PASS_FAIL",
+      "status": "ACTIVE"
+    },
+    {
+      "gate_family": "SG7E plume validation",
+      "authority": "DEPLOYMENT",
+      "acceptance_role": "AUTHORITATIVE_PASS_FAIL",
+      "status": "ACTIVE"
+    }
+  ],
+  "next_milestone": "V15-SG7C-R3F4-R3C \u2014 Retrospective B1-B5 Deployment Re-Screen"
+}

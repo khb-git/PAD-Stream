@@ -1,0 +1,50 @@
+{
+  "milestone": "V16D-7A",
+  "status": "V16D_CASE0002_SOURCEBOUND_SG2_SG3_SG4_PILOT_CERTIFIED_FULL_24CASE_FLOW_EXECUTION_AUTHORIZED",
+  "case_id": "V16D_Foundation_Case_0002",
+  "metrics": {
+    "pressure_min_psi": 2014.8994416035418,
+    "pressure_mean_psi": 2043.3473269210474,
+    "pressure_max_psi": 2180.492948616616,
+    "pressure_relative_linear_residual": 4.7839335213013454e-14,
+    "local_conservation_L2": 1.0863929385274329e-14,
+    "local_conservation_Linf": 8.04277265175745e-16,
+    "local_conservation_relative": 7.814663595660646e-11,
+    "global_conservation_relative": 1.4967524095155425e-12,
+    "Qx_minmax": [
+      -0.0004927411745747138,
+      0.0004232799055318856
+    ],
+    "Qy_minmax": [
+      -0.0004867857791305679,
+      0.0004899268121083435
+    ],
+    "Qz_minmax": [
+      -0.0008661686679923893,
+      0.0006326911343441826
+    ]
+  },
+  "artifact": {
+    "path": "output\\V16_D7A_SOURCEBOUND_SG2_SG3_SG4_ADAPTER_CASE0002_PILOT\\V16D7A_Case0002_SG2_SG3_SG4_Pilot.npz",
+    "sha256": "6905b58444f4928c8550f5d40dbf81ac6c930ee7b91d4a4dc715e78473ed40be"
+  },
+  "gates": {
+    "D7_bound": true,
+    "D6_bound": true,
+    "source_hashes_exact": true,
+    "exact_SG2_functions_called": true,
+    "exact_SG3_functions_called": true,
+    "exact_SG4_functions_called": true,
+    "case0002_only": true,
+    "pressure_shape": true,
+    "flux_shapes": true,
+    "finite": true,
+    "pressure_linear_residual_le_1e_10": true,
+    "local_conservation_relative_le_1e_8": true,
+    "global_conservation_relative_le_1e_10": true,
+    "no_case0001_closeness_gate": true,
+    "no_transport": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-7B \u2014 Full Frozen Case 0002-0025 Source-Bound SG2/SG3/SG4 Flow Ensemble Execution"
+}

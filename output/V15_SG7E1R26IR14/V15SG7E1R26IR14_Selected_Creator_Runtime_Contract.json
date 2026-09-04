@@ -1,0 +1,48 @@
+{
+  "milestone": "V15-SG7E1R26I-R14",
+  "status": "SG7B16_FROZEN100_CREATOR_RUNTIME_RECONCILIATION_INCOMPLETE",
+  "diagnosis": "SELECTED_CREATOR_LINEAGE_IS_FIXED_BUT_ONE_OR_MORE_MODEL_DEPLOYMENT_OR_CLOSURE_BINDINGS_FAIL",
+  "selected_creator": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+  "creator_source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+  "model": {
+    "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B11\\V15SG7B_FRONT_AWARE_FROZEN_Model.keras",
+    "sha256": "28c3e555f1ea9e128bddc6c021c5b3648699ba7a33125b3b40a6556990fa9141",
+    "resolution_symbol": "SG7B11_FROZEN_MODEL"
+  },
+  "deployment": {
+    "workspace": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11",
+    "workspace_symbol": "DEFAULT_DEPLOYMENT_WORKSPACE",
+    "tD_scale": null,
+    "tD_scale_basis": null,
+    "loader": null,
+    "X100_shape": null,
+    "X100_sha256": null
+  },
+  "runtime100": {
+    "executed": false,
+    "shape": null,
+    "sha256": null,
+    "closure": null,
+    "precision_envelope": 1.1920928955078125e-07,
+    "passed": false
+  },
+  "failed_gates": [
+    "tD_scale_resolved",
+    "deployment_X100_resolved",
+    "deployment_X100_finite",
+    "creator_100d_runtime_executed",
+    "creator_100d_runtime_finite",
+    "creator_100d_closes_to_frozen100"
+  ],
+  "constraints": {
+    "training_performed": false,
+    "model_parameters_changed": false,
+    "threshold_changed": false,
+    "alternative_creator_searched": false,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false
+  },
+  "recommendation": "Do not generate later-time states. Audit only the failed R14 gates in the selected SG7B16 creator lineage. Do not reopen SG7B13, model discovery, or X100 discovery.",
+  "next_milestone": "V15-SG7E1R26I-R15 \u2014 Selected SG7B16 Creator Residual Binding Audit"
+}

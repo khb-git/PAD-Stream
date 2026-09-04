@@ -1,0 +1,44 @@
+{
+  "milestone": "V15-SG7E-2",
+  "description": "Raw map-back and conservative projection dependence audit for the 11x11 SGSim streamline candidate",
+  "source_workspace": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11",
+  "training_performed": false,
+  "seed_density_changed": false,
+  "mapback_operator_changed": false,
+  "projection_operator_changed": false,
+  "validation_threshold_changed": false,
+  "source_support": {
+    "direct_cell_coverage_fraction": 0.7761866666666667,
+    "supported_cells": 29107,
+    "unsupported_cells": 8393,
+    "maximum_streamline_support_count": 148,
+    "incoming_SG7E1_diagnosis": "PROJECTION_DEPENDENCE"
+  },
+  "fallback_contract": {
+    "PI_RNN_max_uncovered_raw_deviation": 0.0,
+    "SG7A_max_uncovered_raw_deviation": 0.0,
+    "valid": true
+  },
+  "diagnostic_aggregates": {
+    "maximum_raw_L1": 0.004467323579396077,
+    "maximum_corrected_L1": 0.006438389160932764,
+    "maximum_projection_amplification_ratio": 1.4412184491464908,
+    "minimum_unsupported_projection_share": 0.9410317296003163,
+    "maximum_supported_projection_MAE": 0.005356391479625832,
+    "maximum_unsupported_projection_MAE": 0.29644109637719523,
+    "raw_100d_plume_volume_relative_error": 0.2509455045556129,
+    "projected_100d_plume_volume_relative_error": 0.18240580167113354
+  },
+  "diagnostic_flags": {
+    "raw_state_agreement_good": true,
+    "unsupported_projection_dominant": true,
+    "projection_amplifies_error": true,
+    "supported_projection_small": true,
+    "raw_100d_volume_error_above_10pct": true,
+    "projected_100d_volume_error_above_10pct": true
+  },
+  "diagnosis": "RAW_MAPBACK_DISAGREEMENT",
+  "recommendation": "The disagreement is already present before conservative projection. Diagnose the streamline-to-cell accumulation operator rather than increasing seed density.",
+  "audit_passed": true,
+  "next_milestone": "V15-SG7D-1 \u2014 Raw Streamline-to-Cell Accumulation Operator Audit"
+}

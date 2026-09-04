@@ -1,0 +1,77 @@
+{
+  "milestone": "V15-SG7E1R26I-R20R",
+  "status": "R20_LATER_TIME_BINDINGS_REJECTED_OR_INCOMPLETE",
+  "diagnosis": "R20_250_500_BINDINGS_REUSE_AUTHORITATIVE_100D_STATE_OR_OTHERWISE_LACK_VALID_PHYSICAL_TIME_AUTHORITY",
+  "authoritative_frozen100_sha256": "a08c7320a63ace580456191f408a29afde65e0ad3f078846265243e53cd10297",
+  "corrected_coverage": [
+    {
+      "time_days": 250.0,
+      "R20_selected_candidate": true,
+      "accepted_after_semantic_audit": false,
+      "classification": "REJECTED_RELABELED_OR_SEMANTICALLY_CONTRADICTORY_STATE",
+      "selected_key": "frozen100",
+      "selected_sha256": "a08c7320a63ace580456191f408a29afde65e0ad3f078846265243e53cd10297",
+      "reason": "Candidate duplicates authoritative 100-day state, reuses one hash across multiple times, or carries explicit 100-day key semantics without sufficient override."
+    },
+    {
+      "time_days": 500.0,
+      "R20_selected_candidate": true,
+      "accepted_after_semantic_audit": false,
+      "classification": "REJECTED_RELABELED_OR_SEMANTICALLY_CONTRADICTORY_STATE",
+      "selected_key": "frozen100",
+      "selected_sha256": "a08c7320a63ace580456191f408a29afde65e0ad3f078846265243e53cd10297",
+      "reason": "Candidate duplicates authoritative 100-day state, reuses one hash across multiple times, or carries explicit 100-day key semantics without sufficient override."
+    },
+    {
+      "time_days": 1000.0,
+      "R20_selected_candidate": false,
+      "accepted_after_semantic_audit": false,
+      "classification": "NO_PERSISTED_STATE",
+      "selected_key": "",
+      "selected_sha256": "",
+      "reason": "R20 had no selected persisted candidate."
+    }
+  ],
+  "contradictions": [
+    {
+      "time_days": 250.0,
+      "artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7E1R26IR10\\V15SG7E1R26IR10_100d_Runtime_Control.npz",
+      "key": "frozen100",
+      "sha256_float32": "a08c7320a63ace580456191f408a29afde65e0ad3f078846265243e53cd10297",
+      "same_as_authoritative_frozen100": true,
+      "same_hash_bound_to_times": "250;500",
+      "same_hash_multiple_required_times": true,
+      "key_has_100_day_semantics": true,
+      "explicit_key_time_binding": true,
+      "explicit_parent_time_context": true,
+      "override_sufficient": false,
+      "accepted_after_semantic_audit": false
+    },
+    {
+      "time_days": 500.0,
+      "artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7E1R26IR10\\V15SG7E1R26IR10_100d_Runtime_Control.npz",
+      "key": "frozen100",
+      "sha256_float32": "a08c7320a63ace580456191f408a29afde65e0ad3f078846265243e53cd10297",
+      "same_as_authoritative_frozen100": true,
+      "same_hash_bound_to_times": "250;500",
+      "same_hash_multiple_required_times": true,
+      "key_has_100_day_semantics": true,
+      "explicit_key_time_binding": true,
+      "explicit_parent_time_context": true,
+      "override_sufficient": false,
+      "accepted_after_semantic_audit": false
+    }
+  ],
+  "constraints": {
+    "training_performed": false,
+    "model_predict_executed": false,
+    "state_generated": false,
+    "interpolation_used": false,
+    "extrapolation_used": false,
+    "threshold_changed": false,
+    "precision_envelope_changed": false,
+    "numerical_performance_used_for_binding": false
+  },
+  "recommendation": "Treat rejected bindings as non-recovered. Do not relabel frozen100 as 250/500-day state. The corrected persisted later-time coverage is incomplete. Proceed to a formal multi-time deployment coverage limitation / SG7E scope decision audit.",
+  "next_milestone": "V15-SG7E1R26I-R21 \u2014 Multi-Time Deployment Coverage Limitation / SG7E Scope Decision Audit"
+}

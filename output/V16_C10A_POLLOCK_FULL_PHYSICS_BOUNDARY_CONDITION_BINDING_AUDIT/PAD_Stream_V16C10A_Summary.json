@@ -1,0 +1,12 @@
+{
+  "milestone": "V16C-10A",
+  "status": "V16C_POLLOCK_BOUNDARY_PHYSICS_REQUIRES_SOURCE_AUDIT",
+  "diagnosis": "ONE_OR_MORE_PHYSICAL_BOUNDARY_SEMANTICS_ARE_NOT_EXPLICITLY_BOUND_FROM_THE_STAGE4_SOURCE",
+  "inlet_boundary_bound": true,
+  "outlet_boundary_bound": false,
+  "capillary_boundary_bound": true,
+  "solver_assembly_authorized": false,
+  "Y_transport_generated": false,
+  "recommendation": "Do not guess missing boundary physics and do not generate Y. Audit the failed C10A source-boundary gates against the exact Stage-4 solver implementation and, if needed, its nested Stage-3 predecessor.",
+  "next_milestone": "V16C-10A-R \u2014 Full-Physics Boundary Source Residual Audit"
+}

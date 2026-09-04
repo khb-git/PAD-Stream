@@ -1,0 +1,13 @@
+{
+  "milestone": "V15-SG7E1R14",
+  "status": "SG7E_MULTI_TIME_HISTORICAL_REFERENCE_CONTRACT_RECONSTRUCTED",
+  "diagnosis": "FOUR_TIME_SG7A_CORRECTED_REFERENCE_SET_PERSISTED_WITH_AGGREGATION_SEMANTICS",
+  "multi_time_reference_reconstructed": true,
+  "aggregation_resolved": true,
+  "aggregation_mode": "PER_TIME_ALL_REQUIRED",
+  "SG7D6_time_compatibility_resolved": false,
+  "candidate_changed": false,
+  "threshold_changed": false,
+  "recommendation": "The exact four-time historical SG7E reference set is reconstructed and persisted with immutable hashes, unchanged S=0.5 plume masks, and recovered multi-time aggregation semantics. Before evaluating frozen SG7D6, resolve the physical time identity of its single 15x50x50 field if not already explicit. Do not compare one untimed grid against all four historical snapshots by assumption.",
+  "next_milestone": "V15-SG7E1R15 \u2014 Frozen SG7D6 Physical-Time Identity / Multi-Time Compatibility Audit"
+}

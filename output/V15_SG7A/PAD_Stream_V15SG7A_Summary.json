@@ -1,0 +1,55 @@
+{
+  "milestone": "V15-SG7A",
+  "description": "Classical full conservative compressible + capillary transport on SGSim streamline TOF coordinates",
+  "status": "PASS",
+  "source": "Frozen V15-SG6 transport coordinates",
+  "streamlines": 1078,
+  "transport_nodes": 201,
+  "governing_equation": "dS/dtD + d[uD f(S)]/dxi = (phi/Pe_c) d/dxi[D_tilde(S) dS/dxi]",
+  "compressibility": {
+    "formulation": "conservative Godunov",
+    "Nc": 0.1,
+    "velocity": "uD = exp(Nc xi)"
+  },
+  "capillarity": {
+    "model": "Brooks-Corey normalized nonlinear diffusion",
+    "Pe_c": 22.0,
+    "lambda_bc": 2.0,
+    "normalization": "D_tilde(Se=0.5)=1"
+  },
+  "rock_fluid": {
+    "Swc": 0.2,
+    "Sor": 0.2,
+    "kr_disp_max": 0.8,
+    "kr_res_max": 0.8,
+    "n_disp": 2.0,
+    "n_res": 2.0,
+    "mu_disp": 0.5,
+    "mu_res": 5.0,
+    "porosity": 0.2
+  },
+  "physical_times_days": [
+    100.0,
+    250.0,
+    500.0,
+    1000.0
+  ],
+  "master_solver": {
+    "dxi": 0.005,
+    "max_wave_speed": 5.483343731584577,
+    "cfl_dtD": 0.0003647409496653377,
+    "max_tD": 11.137549167853525
+  },
+  "weak_capillary_limit_error": 3.901077912888045e-13,
+  "breakthrough_definition": {
+    "threshold_saturation": 0.20600000000000002,
+    "criterion": "producer flux-weighted saturation exceeds initial saturation plus 1 percent of mobile saturation interval"
+  },
+  "producer_breakthrough_days": {
+    "PROD_SW": 65.0,
+    "PROD_SE": 55.0,
+    "PROD_NW": 50.0,
+    "PROD_NE": 40.0
+  },
+  "next_milestone": "V15-SG7B - full-physics PI-RNN transport on SGSim TOF coordinates"
+}

@@ -1,0 +1,33 @@
+{
+  "milestone": "V16E-1B2F-XPU",
+  "experiment_id": "V16E-BLREP-COMP-XPU-003",
+  "classification": "FRAMEWORK_EQUIVALENT_ONE_FACTOR_NC_CONDITIONING_SCALE_REPRODUCTION",
+  "authority": {
+    "Stage2_source_sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+    "B2E_protocol_sha256": "58f37ef536f3683772c7e9fb342d5a39bdead660e77205b13cc150f8fc7c3ee3",
+    "dataset_sha256": "46f10f00ff6dc48f7b2b936bd7d602e6435f72f8410138c5aad0dd4add555f1c",
+    "runner_sha256": "6170abb221bca66ff6be30bb5c2f7c95637f38218affe2523e5376fe57171e53"
+  },
+  "one_scientific_change": {
+    "physical_Nc": "unchanged",
+    "model_conditioner_Nc": "Nc_physical / 0.30"
+  },
+  "physics_firewall": {
+    "dataset_p11_is_physical": true,
+    "teacher_uses_physical_Nc": true,
+    "physics_loss_receives_physical_p11": true,
+    "model_scales_internal_copy_only": true
+  },
+  "training": {
+    "epochs": 800,
+    "seed": 1337,
+    "logical_batch": 8192,
+    "microbatch": 2048,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "Adam_foreach": false,
+    "mixed_precision": false
+  },
+  "evaluation_semantics": "reproduction development diagnostic; NOT OOD",
+  "B3_automatic_authorization": false
+}

@@ -1,0 +1,67 @@
+{
+  "milestone": "V16C-8",
+  "status": "V16C_FULL_BL_CCUS_STREAMLINE_TARGET_SEMANTICS_FROZEN_READY_FOR_SOURCE_AUTHENTIC_GENERATOR_BINDING",
+  "diagnosis": "FUTURE_Y_TRANSPORT_IS_DEFINED_AS_SOURCE_AUTHENTIC_STAGE4_FULL_PHYSICS_SATURATION_ON_THE_201_NODE_POLLOCK_TOF_SEQUENCE_WITH_C7_CAPILLARY_METRIC_AND_C7A_KINEMATIC_AUTHORITY_SEPARATION",
+  "primary_future_Y_authority": "SOURCE_AUTHENTIC_STAGE4_FULL_PHYSICS_ADAPTED_TO_POLLOCK",
+  "target_coordinate": "POLLOCK_TOF_2O1_NODE",
+  "capillary_metric": "V16C7",
+  "kinematic_authority": "POLLOCK_TOF",
+  "legacy_uD_action": "DO_NOT_STACK_AS_SECOND_KINEMATIC_MULTIPLIER",
+  "V15_100d_role": "REFERENCE_VALIDATION",
+  "V15_250_500_1000_role": "NOT_CERTIFIED_AS_FROZEN_TARGETS",
+  "Y_generated_now": false,
+  "next_milestone": "V16C-9 \u2014 Source-Authentic Full BL/CCUS Pollock-Adapter Target Generator Binding Audit",
+  "target_definition": {
+    "quantity": "phase saturation profile",
+    "sequence_nodes": 201,
+    "streamline_authority": "frozen Pollock geometry and TOF",
+    "coordinate": "theta = tau_Pollock / tau_end",
+    "spatial_metric": "xD_arc=s/L_s and M=dtheta/dxD_arc",
+    "capillary_operator": "M d/dtheta[D_tilde(S) M dS/dtheta]",
+    "compressibility_rule": "preserve source-authentic Nc semantics; Pollock TOF is kinematic authority; do not stack legacy exp(Nc xD) as a second velocity multiplier"
+  },
+  "supervision_hierarchy": [
+    {
+      "rank": 1,
+      "authority": "SOURCE_AUTHENTIC_STAGE4_FULL_PHYSICS_TRANSPORT",
+      "role": "PRIMARY_FUTURE_Y_TRANSPORT_GENERATOR",
+      "scope": "full compressible + capillary BL/CCUS transport after V16 Pollock adapter"
+    },
+    {
+      "rank": 2,
+      "authority": "POLLOCK_TOF_AND_C7_STREAMLINE_METRIC",
+      "role": "AUTHORITATIVE_TRANSPORT_COORDINATE_AND_SPATIAL_METRIC",
+      "scope": "201-node frozen streamline sequence"
+    },
+    {
+      "rank": 3,
+      "authority": "FROZEN_V15_100_DAY_TRANSPORT",
+      "role": "REFERENCE_VALIDATION_AUTHORITY",
+      "scope": "historically certified 100-day V15 deployment state only"
+    },
+    {
+      "rank": 4,
+      "authority": "SG7D6_GRID_LEVEL_DEPLOYMENT_ARTIFACT",
+      "role": "GRID_LEVEL_REFERENCE_AUTHORITY",
+      "scope": "reference/validation, not automatic streamline supervision"
+    },
+    {
+      "rank": 5,
+      "authority": "V15_250_500_1000_DAY_HISTORICAL_STATES",
+      "role": "NOT_CERTIFIED_AS_FROZEN_DEPLOYMENT_TARGETS",
+      "scope": "must not be relabeled as certified V16 Y targets"
+    }
+  ],
+  "prohibited_constructions": [
+    "Relabel Pollock tau as native Stage-4 xD or xi.",
+    "Multiply legacy exp(Nc xD) on top of Pollock kinematics without a distinct constitutive derivation.",
+    "Evaluate capillary spatial derivatives in TOF without the C7 streamline metric.",
+    "Collapse the 201-node target to legacy 64 nodes by truth-adaptive remeshing.",
+    "Use FMM or ADV travel time as replacement Y-coordinate authority.",
+    "Treat V15 250/500/1000-day historical states as certified frozen deployment targets.",
+    "Generate Y by PI-RNN inference and call it source-authentic physics truth.",
+    "Fit adapter physics to improve agreement before source-authentic target generation.",
+    "Invent a new compressibility/PVT closure in C8."
+  ],
+  "recommendation": "Freeze C8 target semantics. Proceed to C9 to bind/derive the source-authentic full BL/CCUS target generator on the 201-node Pollock adapter. C9 should still begin with a solver/operator binding audit before generating Y."
+}

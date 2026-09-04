@@ -1,0 +1,54 @@
+{
+  "milestone": "V16E-1A",
+  "artifact_root": "output/V16_E1B_NATIVE_BL_REPRODUCTIONS/<experiment_id>/",
+  "experiments": {
+    "INC": {
+      "experiment_id": "V16E-BLREP-INC-001",
+      "runner_milestone": "V16E-1B1",
+      "checkpoint": "V16E_BLREP_INC_001.weights.h5",
+      "manifest": "V16E_BLREP_INC_001_Manifest.json",
+      "metrics": "V16E_BLREP_INC_001_Metrics.json"
+    },
+    "COMP": {
+      "experiment_id": "V16E-BLREP-COMP-001",
+      "runner_milestone": "V16E-1B2",
+      "checkpoint": "V16E_BLREP_COMP_001.weights.h5",
+      "manifest": "V16E_BLREP_COMP_001_Manifest.json",
+      "metrics": "V16E_BLREP_COMP_001_Metrics.json"
+    },
+    "CAP": {
+      "experiment_id": "V16E-BLREP-CAP-001",
+      "runner_milestone": "V16E-1B3",
+      "checkpoint": "V16E_BLREP_CAP_001.weights.h5",
+      "manifest": "V16E_BLREP_CAP_001_Manifest.json",
+      "metrics": "V16E_BLREP_CAP_001_Metrics.json"
+    },
+    "FULL": {
+      "experiment_id": "V16E-BLREP-FULL-001",
+      "runner_milestone": "V16E-1B4",
+      "checkpoint": "V16E_BLREP_FULL_001.weights.h5",
+      "manifest": "V16E_BLREP_FULL_001_Manifest.json",
+      "metrics": "V16E_BLREP_FULL_001_Metrics.json"
+    }
+  },
+  "required_manifest_fields": [
+    "experiment_id",
+    "source_path",
+    "source_sha256",
+    "teacher_role",
+    "effective_conditioning_order",
+    "effective_param_dim",
+    "sequence_coordinate",
+    "architecture",
+    "seed",
+    "train_fraction",
+    "dataset_generation_semantics",
+    "loss_weights",
+    "runtime_batch_size",
+    "epochs",
+    "checkpoint_sha256",
+    "metrics_artifact_sha256",
+    "historical_checkpoint_recovery_claim=false"
+  ],
+  "immutability_rule": "Once a phase reproduction is certified, its checkpoint/manifest/metrics SHAs are frozen and become upstream authority for the next phase."
+}

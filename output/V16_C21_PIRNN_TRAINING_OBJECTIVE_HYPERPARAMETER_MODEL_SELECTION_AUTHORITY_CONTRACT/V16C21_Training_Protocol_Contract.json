@@ -1,0 +1,79 @@
+{
+  "milestone": "V16C-21",
+  "status": "V16C_PIRNN_EXP1_TRAINING_PROTOCOL_FROZEN_TRAINING_AUTHORIZED",
+  "diagnosis": "THE_FIRST_V16_STAGE4_LINEAGE_PIRNN_EXPERIMENT_HAS_A_PREDECLARED_201_NODE_NINE_CHANNEL_ARCHITECTURE_SUPERVISION_OPTIMIZATION_EARLY_STOPPING_AND_VALIDATION_ONLY_MODEL_SELECTION_PROTOCOL",
+  "protocol": {
+    "experiment_id": "V16C_EXP1_REQUIRED_CHANNELS_STAGE4_LINEAGE",
+    "input_nodes": 201,
+    "input_channels": 9,
+    "required_channels": [
+      "xi",
+      "pollock_tau_hat",
+      "adv_tau_hat",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity",
+      "pressure_z",
+      "target_time_hat",
+      "target_eta_sequence"
+    ],
+    "optional_channels_used": false,
+    "architecture": {
+      "family": "stacked_LSTM_TimeDistributed_Dense_bounded_Sw",
+      "hidden_units": 64,
+      "lstm_layers": 2,
+      "output_units_per_node": 1
+    },
+    "output_bounds": {
+      "Swc": 0.2,
+      "Sor": 0.2,
+      "mapping": "Swc + (1-Swc-Sor)*sigmoid(raw)"
+    },
+    "loss": {
+      "primary": "mean_squared_error_on_Sw_all_201_nodes",
+      "weight": 1.0,
+      "additional_training_physics_residual": "NONE_IN_EXP1",
+      "reason": "C17 labels already come from certified full-physics Pollock solver; new differentiable V16 operator loss requires separate validation before promotion"
+    },
+    "optimizer": {
+      "name": "Adam",
+      "learning_rate": 0.001
+    },
+    "batch_size": 64,
+    "max_epochs": 300,
+    "shuffle_training_samples_each_epoch": true,
+    "validation_frequency_epochs": 1,
+    "early_stopping": {
+      "monitor": "validation_MSE",
+      "patience": 30,
+      "min_delta": 1e-06,
+      "restore_best_weights": true
+    },
+    "lr_schedule": {
+      "type": "ReduceLROnPlateau",
+      "monitor": "validation_MSE",
+      "factor": 0.5,
+      "patience": 10,
+      "min_learning_rate": 1e-06
+    },
+    "checkpoint_selection": "minimum_validation_MSE",
+    "test_policy": "evaluate exactly once after model selection; never select hyperparameters on test",
+    "random_seed": 16021,
+    "normalization_policy": "use frozen C4/C18R representations and deterministic C20 time scaling only; no train-statistic refit",
+    "post_prediction_physics_audit": [
+      "saturation_bounds",
+      "injector_boundary",
+      "front_ordering",
+      "C10/C11 Pollock full-physics residual diagnostic"
+    ],
+    "training_authorized_after_C21_pass": true
+  },
+  "source_hashes": {
+    "Stage4": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+    "C18R": "1b610ad3c90aa827be4c466ed71f3a3b771d0498bd915395096efda057f445f3",
+    "C19": "399815504f5ba3a900c02f24e4f9496b3a93c2e472a5faea593507cf9174638a"
+  },
+  "training_authorized": true,
+  "recommendation": "Freeze C21. Training is now authorized only under this exact EXP1 protocol. Next execute the training run, preserve the best-validation checkpoint and full history, then evaluate the locked test set and physics diagnostics without retuning.",
+  "next_milestone": "V16C-22 \u2014 PI-RNN EXP1 Training Execution, Best-Validation Checkpoint and Locked-Test Evaluation"
+}

@@ -1,0 +1,63 @@
+{
+  "milestone": "V15-SG7D-2C",
+  "description": "Streamline-level PI-RNN / SG7A front-position alignment audit",
+  "source_workspace": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11",
+  "training_performed": false,
+  "PI_RNN_parameters_changed": false,
+  "seed_density_changed": false,
+  "mapback_operator_changed": false,
+  "projection_operator_changed": false,
+  "validation_threshold_changed": false,
+  "front_contract": {
+    "threshold": 0.21000000000000002,
+    "near_threshold_tolerance": 0.0005,
+    "detection_methods": [
+      "STRICT_BRACKET",
+      "BINARY_TRANSITION",
+      "NEAR_THRESHOLD_NODE",
+      "CLOSEST_NODE_FALLBACK"
+    ]
+  },
+  "100_day": {
+    "time_days": 100.0,
+    "streamlines": 2662,
+    "both_have_front": 0,
+    "SG7A_only_front": 992,
+    "PI_RNN_only_front": 0,
+    "neither_has_front": 1670,
+    "both_front_fraction": 0.0,
+    "one_sided_front_fraction": 0.37265214124718254,
+    "SG7A_strict_front_profiles": 992,
+    "PI_RNN_strict_front_profiles": 0,
+    "SG7A_robust_front_profiles": 992,
+    "PI_RNN_robust_front_profiles": 0,
+    "front_xi_MAE": NaN,
+    "front_xi_P50": NaN,
+    "front_xi_P90": NaN,
+    "front_xi_P95": NaN,
+    "front_xi_MAX": NaN,
+    "signed_front_xi_bias": NaN,
+    "flow_weighted_front_xi_MAE": NaN,
+    "front_TOF_MAE_days": NaN,
+    "front_TOF_P90_days": NaN,
+    "front_spatial_MAE_m": NaN,
+    "front_spatial_P50_m": NaN,
+    "front_spatial_P90_m": NaN,
+    "front_spatial_P95_m": NaN,
+    "front_spatial_MAX_m": NaN,
+    "flow_weighted_spatial_MAE_m": NaN
+  },
+  "diagnostic_flags": {
+    "strict_crossing_gap_large": true,
+    "robust_crossing_gap_small": false,
+    "both_front_fraction_good": false,
+    "one_sided_front_fraction_low": false,
+    "xi_MAE_acceptable": false,
+    "xi_P90_acceptable": false,
+    "spatial_P90_acceptable": false
+  },
+  "diagnosis": "PI_RNN_FRONT_SMOOTHING_OR_THRESHOLD_AVOIDANCE",
+  "recommendation": "A substantial fraction of SG7A and PI-RNN profiles do not share a resolvable threshold front. Audit the PI-RNN front shape and training target near the early displacement front before modifying the grid reconstruction.",
+  "audit_passed": true,
+  "next_milestone": "V15-SG7B-8 \u2014 Frozen PI-RNN Early-Front Shape Audit"
+}

@@ -1,0 +1,41 @@
+{
+  "authority": "V16D13_TRAIN_ONLY_NORMALIZATION_METHOD",
+  "fit_cases": [
+    "0020",
+    "0015",
+    "0013",
+    "0004",
+    "0006",
+    "0002",
+    "0023",
+    "0016",
+    "0009",
+    "0019",
+    "0017",
+    "0024",
+    "0003",
+    "0011",
+    "0014",
+    "0007"
+  ],
+  "fit_partition": "TRAIN_ONLY",
+  "transform_only": [
+    "VALIDATION",
+    "LOCKED_OOD_TEST"
+  ],
+  "feature_channels": [
+    "xi",
+    "pollock_tau_hat",
+    "adv_tau_hat",
+    "log10_Kh",
+    "log10_Kz_over_Kh",
+    "porosity",
+    "pressure_z",
+    "target_time_hat",
+    "target_eta_sequence"
+  ],
+  "target_Y_used_for_fit": false,
+  "M_sidecar_predictor": false,
+  "zero_variance_policy": "NO_DIVIDE_BY_ZERO_IDENTITY_CONSTANT_CHANNEL",
+  "statistics": "TO_BE_COMPUTED_IN_D14_FROM_SOURCE_BOUND_TRAIN_PREDICTORS_ONLY"
+}

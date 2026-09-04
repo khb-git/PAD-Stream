@@ -1,0 +1,13 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1E",
+  "status": "NO_R1E_JOINT_CANDIDATE_PASSES_COMPLETE_CONTRACT",
+  "diagnosis": "JOINT_TOF_CORRECTION_REQUIRES_OUTCOME_AUDIT",
+  "training_performed": false,
+  "joint_correction_performed": true,
+  "X08_support_geometry_changed": false,
+  "model_weights_changed": false,
+  "gate_changed": false,
+  "selected_experiment": null,
+  "recommendation": "No J1-J5 candidate satisfies every unchanged joint gate. Do not relax the support/front/TOF contract. Audit the remaining failed gates and their relationship to the regional beta caps.",
+  "next_milestone": "V15-SG7C-R3F5-R1ER \u2014 Joint Reconciliation Outcome Audit"
+}

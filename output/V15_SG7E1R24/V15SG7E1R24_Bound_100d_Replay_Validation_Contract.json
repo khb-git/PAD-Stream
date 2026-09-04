@@ -1,0 +1,49 @@
+{
+  "milestone": "V15-SG7E1R24",
+  "status": "L2_100D_DETERMINISTIC_REPLAY_VALIDATION_FAILED",
+  "diagnosis": "BOUND_100D_STATE_DOES_NOT_CLOSE_UNDER_CURRENT_DETERMINISTIC_REPLAY_CONTRACT",
+  "target": {
+    "key": "L2_independent_100",
+    "sha256": "01bb967c07b262836f6c140dd519538db13d9ce5b3bc0f83d52a6164ddcfa950",
+    "dtype": "float32",
+    "shape": [
+      2662,
+      201
+    ],
+    "time_days": 100.0
+  },
+  "model": {
+    "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7CR3F4\\experiments\\B4\\V15SG7CR3F4_B4_Best_Any_Alpha_Model.keras",
+    "sha256": "b9a2af574ff3ef5eef6377bbcbd0bd87b6490ff4d938de51f7e1d8ffcd18c0a6",
+    "hash_match": true,
+    "immutable": true
+  },
+  "replay": {
+    "best_variant": "V0_float64_base_plus_gamma_residual",
+    "sha256": "18df2f8a019dfca914240490dedd61aee24ad08808aeea4d24c72d47d5c8ede5",
+    "L1": 1.8748236456651293e-09,
+    "L2": 4.702859852012545e-09,
+    "Linf": 2.98361850781248e-08,
+    "precision_envelope": 1.1920928955078125e-07,
+    "precision_pass": true,
+    "unique_numerical_output": false
+  },
+  "failed_gates": [
+    "unique_numerical_replay_output"
+  ],
+  "constraints": {
+    "training_performed": false,
+    "model_parameters_changed": false,
+    "gamma_recalibrated": false,
+    "guard_changed": false,
+    "scalar_anchoring_used": false,
+    "posthoc_alignment_used": false,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false,
+    "SG7E_threshold_changed": false,
+    "SG7E_gate_evaluated": false
+  },
+  "recommendation": "Do not generate 250/500/1000-day states. Audit only the failed R24 replay gates, with emphasis on exact operation order, guard semantics, and float32 serialization. Do not recalibrate gamma, change the guard, alter model weights, or relax tolerance.",
+  "next_milestone": "V15-SG7E1R25 \u2014 Bound 100-Day Replay Failure / Operation-Order Audit"
+}

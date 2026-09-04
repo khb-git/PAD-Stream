@@ -1,0 +1,10 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1CR",
+  "status": "R1C_FAILURE_AUDIT_COMPLETE",
+  "diagnosis": "TOF_BIAS_FAILURES_PREEXIST_SUPPORT_EXTENSION",
+  "training_performed": false,
+  "support_extension_recalibrated": false,
+  "gate_changed": false,
+  "recommendation": "All failed TOF/tail gates were already violated by the unextended B4 exact-array baseline and X08 does not materially worsen them. The support extension itself is not the limiting mechanism. Preserve X08 geometry and return to the previously identified deployment TOF-bias correction problem using the clarified front contract.",
+  "next_milestone": "V15-SG7C-R3F5-R1D \u2014 Joint Exact-Support / TOF-Bias Reconciliation Design"
+}

@@ -1,0 +1,62 @@
+{
+  "milestone": "V16D-8R1",
+  "status": "V16D_CASE0002_SOURCEBOUND_SG5_POLLOCK_PILOT_CERTIFIED_FULL_24CASE_POLLOCK_EXECUTION_AUTHORIZED",
+  "case_id": "V16D_Foundation_Case_0002",
+  "SG5_sha256": "2989fe58d1fd78fe9f9c03176dbb3ff066faf359f7edaf028cbdc0fea85135f2",
+  "metrics": {
+    "face_count": 22,
+    "seed_count": 1078,
+    "streamline_count": 1078,
+    "captured_or_producer_labeled_count": 1078,
+    "seed_weight_sum_m3_s": 0.008267195767195718,
+    "streamline_common_keys": [
+      "points_m",
+      "producer",
+      "seed_id",
+      "status",
+      "times_s",
+      "travel_time_s",
+      "weight_m3_s"
+    ],
+    "time_like_keys": [
+      "times_s",
+      "travel_time_s"
+    ],
+    "geometry_like_keys": [
+      "points_m"
+    ],
+    "status_counts": {
+      "PRODUCER": 1078
+    },
+    "V_absmax": [
+      0.0003314888663591591,
+      0.00032959551976739906,
+      0.00011654202435038579
+    ]
+  },
+  "validation_repr": "{'outgoing_injector_flow_m3_day': 714.2857142857099, 'seed_weight_m3_day': 714.2857142857081, 'captured_weight_m3_day': 714.2857142857081, 'capture_fraction': 1.0, 'streamline_count': 1078, 'producer_capture_count': 1078, 'stagnation_count': 0, 'loop_count': 0, 'maxstep_count': 0, 'boundary_exit_count': 0, 'producer_capture_m3_day': {'PROD_SW': 217.70256378201526, 'PROD_SE': 229.35318169136985, 'PROD_NW': 124.15800500753973, 'PROD_NE': 143.07196380478533}, 'producer_capture_count_detail': {'PROD_SW': 307, 'PROD_SE': 352, 'PROD_NW': 191, 'PROD_NE': 228}}",
+  "artifact": {
+    "path": "output\\V16_D8R1_EXACT_SG5_SEED_CONTAINER_ADAPTER_REPAIR_CASE0002_POLLOCK_PILOT\\V16D8R1_Case0002_SourceNative_SG5_Pollock_Pilot.npz",
+    "sha256": "cc44372f507aa62c9c945c280327ec99a11c0c8c1cbf235b5703e787b02754b2"
+  },
+  "gates": {
+    "D8R_bound": true,
+    "SG5_hash_exact": true,
+    "build_seeds_tuple_contract": true,
+    "seed_elements_are_mappings": true,
+    "required_seed_keys_present": true,
+    "velocity_shapes": true,
+    "velocities_finite": true,
+    "positive_seed_count": true,
+    "one_streamline_per_seed": true,
+    "seed_weights_finite_positive": true,
+    "SG5_validation_boolean_fields_pass": true,
+    "no_seed_flattening": true,
+    "no_seed_repacking": true,
+    "no_pollock_reimplementation": true,
+    "case0002_only": true,
+    "no_transport": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-8B \u2014 Full Case 0002-0025 Source-Bound SG5 Pollock Ensemble Execution"
+}

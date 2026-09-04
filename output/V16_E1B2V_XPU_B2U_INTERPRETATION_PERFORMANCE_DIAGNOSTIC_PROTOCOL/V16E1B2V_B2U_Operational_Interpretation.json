@@ -1,0 +1,73 @@
+{
+  "milestone": "V16E-1B2V-XPU",
+  "classification": "B2U_EXTENDED_THROUGHPUT_MEMORY_INTERPRETATION",
+  "frozen_measurements": {
+    "32": {
+      "success": true,
+      "forward_residual_backward_seconds": 21.96541669999897,
+      "profiles_per_second": 1.4568355536820525,
+      "peak_xpu_memory_bytes": 1172815360,
+      "failure_class": null,
+      "error": null
+    },
+    "64": {
+      "success": true,
+      "forward_residual_backward_seconds": 29.94380590000037,
+      "profiles_per_second": 2.1373368573698643,
+      "peak_xpu_memory_bytes": 2341983232,
+      "failure_class": null,
+      "error": null
+    },
+    "128": {
+      "success": true,
+      "forward_residual_backward_seconds": 35.285421500000666,
+      "profiles_per_second": 3.627560464312367,
+      "peak_xpu_memory_bytes": 4683422720,
+      "failure_class": null,
+      "error": null
+    },
+    "256": {
+      "success": false,
+      "forward_residual_backward_seconds": null,
+      "profiles_per_second": null,
+      "peak_xpu_memory_bytes": 6719319040,
+      "failure_class": "RUNTIME_ERROR",
+      "error": "RuntimeError: level_zero backend failed with error: 40 (UR_RESULT_ERROR_OUT_OF_RESOURCES)"
+    }
+  },
+  "throughput_scaling": {
+    "32_profiles_per_second": 1.4568355536820525,
+    "64_profiles_per_second": 2.1373368573698643,
+    "128_profiles_per_second": 3.627560464312367,
+    "64_over_32": 1.4671092093873541,
+    "128_over_64": 1.6972338505294493,
+    "128_over_32": 2.490027412595715
+  },
+  "memory_scaling": {
+    "32_peak_bytes": 1172815360,
+    "64_peak_bytes": 2341983232,
+    "128_peak_bytes": 4683422720
+  },
+  "microbatch_128": {
+    "classification": "LARGEST_PROVEN_FEASIBLE_TESTED_REFERENCE",
+    "not_classified_as": [
+      "hardware ceiling",
+      "final training microbatch",
+      "full-run execution authorization"
+    ],
+    "diagnostic_projected_hours_per_epoch": 0.8821355375000166,
+    "diagnostic_projected_days_for_800_epochs": 29.40451791666722,
+    "projection_semantics": "operational diagnostic only; not a runtime promise"
+  },
+  "microbatch_256": {
+    "success": false,
+    "frozen_failure_class": "RUNTIME_ERROR",
+    "frozen_error_text": "RuntimeError: level_zero backend failed with error: 40 (UR_RESULT_ERROR_OUT_OF_RESOURCES)",
+    "interpretation": "Failure mechanism is not reclassified in B2V. In particular, RUNTIME_ERROR is not silently converted to OOM or hardware ceiling."
+  },
+  "decision": "DO_NOT_AUTHORIZE_FULL_COMP_XPU_005_TRAINING_YET",
+  "reason": "The largest proven-feasible exact-graph reference still carries an operationally large isolated-measurement full-run projection, while the next larger candidate failed without a frozen OOM classification. The exact derivative engine should be performance-profiled before the execution contract is frozen.",
+  "scientific_model_changed": false,
+  "COMP_XPU_005_full_training_authorized": false,
+  "B3_authorized": false
+}

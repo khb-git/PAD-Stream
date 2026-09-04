@@ -1,0 +1,17 @@
+{
+  "milestone": "V16D-24C-R7",
+  "status": "V16D_GEOLOGY0026_350TPD_1800PSI_MATCHED_CONTROL_PILOT_RECERTIFIED_CONSERVATIVE_36CASE_FLOW_ENSEMBLE_AUTHORIZED",
+  "contract_sha256": "33a5c9a7da7ab1a215fa0dd2e50c6ca982443b36b3b84cd7e462ecbe99421a01",
+  "recertification_sha256": "34c4d223a3bc040e3ce2765ffe9ce108af4b7c37616626379dfae2f33053f78a",
+  "gates": {
+    "R6_SHA_exact": true,
+    "R5_SHA_exact": true,
+    "R5_artifact_exists": true,
+    "local_rel_L2_le_1e_9": true,
+    "global_gross_scaled_le_1e_9": true,
+    "global_throughput_scaled_le_1e_9": true,
+    "balanced_injection_production_rel_le_1e_9": true,
+    "net_source_near_zero": true
+  },
+  "next_milestone": "V16D-25 \u2014 D7B-Derived 36-Foundation-Case Control-Space SG2/SG3/SG4 Flow Ensemble Execution"
+}

@@ -1,0 +1,13 @@
+{
+  "milestone": "V15-SG7E1R13",
+  "status": "SG7E_HISTORICAL_REFERENCE_IS_MULTI_TIME_CONTRACT",
+  "diagnosis": "AUTHORITATIVE_SG7E_REFERENCE_METRICS_CONSUME_ALL_PERSISTED_SNAPSHOTS",
+  "reference_snapshot_resolved": false,
+  "selected_snapshot_index": null,
+  "selected_time_days": null,
+  "multi_time_contract": true,
+  "candidate_changed": false,
+  "threshold_changed": false,
+  "recommendation": "Do not force one snapshot. Persisted metric correspondence indicates that the historical SG7E reference contract is multi-time across all four SG7A_corrected snapshots. The next milestone must reconstruct/persist the complete four-time reference set and define how the frozen SG7D6 field is compared against the historical multi-time acceptance contract without changing any gate.",
+  "next_milestone": "V15-SG7E1R14 \u2014 Multi-Time Historical Reference Reconstruction / Contract Audit"
+}

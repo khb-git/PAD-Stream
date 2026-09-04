@@ -1,0 +1,1757 @@
+{
+  "milestone": "V16D-7",
+  "status": "V16D_SG2_SG3_SG4_SOURCE_AUTHENTIC_FLOW_LINEAGE_BOUND_MULTICASE_ADAPTER_IMPLEMENTATION_AUTHORIZED",
+  "sources": [
+    {
+      "stage": "SG2",
+      "path": "PAD_Stream_V15SG2_Anisotropic_Transmissibility.py",
+      "exists": true,
+      "sha256": "8dfc3485682830ef854178720d32050b6b2e9d25befa7ee9669993df1e544416",
+      "required_tokens_bound": true,
+      "function_count": 14,
+      "assignment_count": 45
+    },
+    {
+      "stage": "SG3",
+      "path": "PAD_Stream_V15SG3_FiveSpot_Pressure_Solve.py",
+      "exists": true,
+      "sha256": "d3ba7b7be45636f6d3ee254fd6cb95268cef9e6f35e85d53b5793596cb22b14d",
+      "required_tokens_bound": true,
+      "function_count": 17,
+      "assignment_count": 138
+    },
+    {
+      "stage": "SG4",
+      "path": "PAD_Stream_V15SG4_Conservative_Darcy_Fluxes.py",
+      "exists": true,
+      "sha256": "86a1c88ffc35033314ae6598ade23f0bebfa709f62cbe2cbef1830cd607e0af9",
+      "required_tokens_bound": true,
+      "function_count": 16,
+      "assignment_count": 138
+    }
+  ],
+  "inventories": {
+    "SG2": {
+      "functions": [
+        {
+          "name": "load_permeability",
+          "args": [],
+          "line": 81
+        },
+        {
+          "name": "harmonic_average",
+          "args": [
+            "a",
+            "b"
+          ],
+          "line": 110
+        },
+        {
+          "name": "build_directional_permeability",
+          "args": [
+            "k"
+          ],
+          "line": 122
+        },
+        {
+          "name": "build_face_permeabilities",
+          "args": [
+            "kx",
+            "ky",
+            "kz"
+          ],
+          "line": 131
+        },
+        {
+          "name": "build_transmissibilities",
+          "args": [
+            "kfx",
+            "kfy",
+            "kfz"
+          ],
+          "line": 159
+        },
+        {
+          "name": "stats_dict",
+          "args": [
+            "a"
+          ],
+          "line": 195
+        },
+        {
+          "name": "validate",
+          "args": [
+            "k",
+            "kx",
+            "ky",
+            "kz",
+            "kfx",
+            "kfy",
+            "kfz",
+            "tx",
+            "ty",
+            "tz"
+          ],
+          "line": 213
+        },
+        {
+          "name": "plot_tx_layer8",
+          "args": [
+            "tx"
+          ],
+          "line": 377
+        },
+        {
+          "name": "plot_ty_layer8",
+          "args": [
+            "ty"
+          ],
+          "line": 425
+        },
+        {
+          "name": "plot_tz_section",
+          "args": [
+            "tz"
+          ],
+          "line": 472
+        },
+        {
+          "name": "plot_transmissibility_histograms",
+          "args": [
+            "tx",
+            "ty",
+            "tz"
+          ],
+          "line": 525
+        },
+        {
+          "name": "save_arrays",
+          "args": [
+            "kfx",
+            "kfy",
+            "kfz",
+            "tx",
+            "ty",
+            "tz"
+          ],
+          "line": 586
+        },
+        {
+          "name": "save_summary",
+          "args": [
+            "k",
+            "kfx",
+            "kfy",
+            "kfz",
+            "tx",
+            "ty",
+            "tz"
+          ],
+          "line": 630
+        },
+        {
+          "name": "main",
+          "args": [],
+          "line": 720
+        }
+      ],
+      "assignments": [
+        {
+          "name": "ROOT",
+          "line": 32
+        },
+        {
+          "name": "INPUT_PERM_FILE",
+          "line": 34
+        },
+        {
+          "name": "OUTPUT_DIR",
+          "line": 36
+        },
+        {
+          "name": "SUMMARY_FILE",
+          "line": 39
+        },
+        {
+          "name": "NX",
+          "line": 46
+        },
+        {
+          "name": "NY",
+          "line": 47
+        },
+        {
+          "name": "NZ",
+          "line": 48
+        },
+        {
+          "name": "DX_FT",
+          "line": 50
+        },
+        {
+          "name": "DY_FT",
+          "line": 51
+        },
+        {
+          "name": "DZ_FT",
+          "line": 52
+        },
+        {
+          "name": "N_CELLS",
+          "line": 54
+        },
+        {
+          "name": "KV_KH_RATIO",
+          "line": 61
+        },
+        {
+          "name": "MU_CP",
+          "line": 65
+        },
+        {
+          "name": "AX_FT2",
+          "line": 72
+        },
+        {
+          "name": "AY_FT2",
+          "line": 73
+        },
+        {
+          "name": "AZ_FT2",
+          "line": 74
+        },
+        {
+          "name": "values",
+          "line": 88
+        },
+        {
+          "name": "kx",
+          "line": 124
+        },
+        {
+          "name": "ky",
+          "line": 125
+        },
+        {
+          "name": "kz",
+          "line": 126
+        },
+        {
+          "name": "kfx",
+          "line": 141
+        },
+        {
+          "name": "kfy",
+          "line": 146
+        },
+        {
+          "name": "kfz",
+          "line": 151
+        },
+        {
+          "name": "tx",
+          "line": 170
+        },
+        {
+          "name": "ty",
+          "line": 176
+        },
+        {
+          "name": "tz",
+          "line": 182
+        },
+        {
+          "name": "checks",
+          "line": 230
+        },
+        {
+          "name": "expected_x",
+          "line": 303
+        },
+        {
+          "name": "expected_y",
+          "line": 318
+        },
+        {
+          "name": "expected_z",
+          "line": 333
+        },
+        {
+          "name": "all_passed",
+          "line": 348
+        },
+        {
+          "name": "layer",
+          "line": 380
+        },
+        {
+          "name": "im",
+          "line": 386
+        },
+        {
+          "name": "cbar",
+          "line": 398
+        },
+        {
+          "name": "layer",
+          "line": 427
+        },
+        {
+          "name": "im",
+          "line": 433
+        },
+        {
+          "name": "cbar",
+          "line": 445
+        },
+        {
+          "name": "middle_y",
+          "line": 474
+        },
+        {
+          "name": "section",
+          "line": 476
+        },
+        {
+          "name": "im",
+          "line": 486
+        },
+        {
+          "name": "cbar",
+          "line": 498
+        },
+        {
+          "name": "summary",
+          "line": 640
+        },
+        {
+          "name": "k",
+          "line": 733
+        },
+        {
+          "name": "status",
+          "line": 352
+        },
+        {
+          "name": "all_passed",
+          "line": 359
+        }
+      ],
+      "tokens": {
+        "transmiss": true,
+        "harmonic": true,
+        "kx": true,
+        "ky": true,
+        "kz": true
+      }
+    },
+    "SG3": {
+      "functions": [
+        {
+          "name": "cell_id",
+          "args": [
+            "k",
+            "j",
+            "i"
+          ],
+          "line": 187
+        },
+        {
+          "name": "cell_center_x_ft",
+          "args": [
+            "i"
+          ],
+          "line": 195
+        },
+        {
+          "name": "cell_center_y_ft",
+          "args": [
+            "j"
+          ],
+          "line": 199
+        },
+        {
+          "name": "cell_center_z_m",
+          "args": [
+            "k"
+          ],
+          "line": 203
+        },
+        {
+          "name": "load_cell_permeability",
+          "args": [],
+          "line": 216
+        },
+        {
+          "name": "load_face_permeabilities",
+          "args": [],
+          "line": 236
+        },
+        {
+          "name": "construct_si_transmissibilities",
+          "args": [
+            "kfx_md",
+            "kfy_md",
+            "kfz_md"
+          ],
+          "line": 270
+        },
+        {
+          "name": "peaceman_well_index_si",
+          "args": [
+            "kx_md",
+            "ky_md"
+          ],
+          "line": 311
+        },
+        {
+          "name": "assemble_pressure_system",
+          "args": [
+            "k_cell_md",
+            "tx",
+            "ty",
+            "tz"
+          ],
+          "line": 376
+        },
+        {
+          "name": "solve_pressure",
+          "args": [
+            "A",
+            "b"
+          ],
+          "line": 544
+        },
+        {
+          "name": "calculate_well_rates",
+          "args": [
+            "p_psi",
+            "producer_wi"
+          ],
+          "line": 576
+        },
+        {
+          "name": "validate_solution",
+          "args": [
+            "A",
+            "b",
+            "p_pa",
+            "p_psi",
+            "producer_rates",
+            "total_prod_m3_s"
+          ],
+          "line": 634
+        },
+        {
+          "name": "plot_pressure_layer8",
+          "args": [
+            "p_psi"
+          ],
+          "line": 770
+        },
+        {
+          "name": "plot_vertical_pressure",
+          "args": [
+            "p_psi"
+          ],
+          "line": 875
+        },
+        {
+          "name": "plot_pressure_histogram",
+          "args": [
+            "p_psi"
+          ],
+          "line": 941
+        },
+        {
+          "name": "save_summary",
+          "args": [
+            "p_psi",
+            "producer_rates",
+            "validation",
+            "A"
+          ],
+          "line": 990
+        },
+        {
+          "name": "main",
+          "args": [],
+          "line": 1099
+        }
+      ],
+      "assignments": [
+        {
+          "name": "ROOT",
+          "line": 39
+        },
+        {
+          "name": "SG1_PERM_FILE",
+          "line": 41
+        },
+        {
+          "name": "SG2_DIR",
+          "line": 43
+        },
+        {
+          "name": "KFACE_X_FILE",
+          "line": 45
+        },
+        {
+          "name": "KFACE_Y_FILE",
+          "line": 46
+        },
+        {
+          "name": "KFACE_Z_FILE",
+          "line": 47
+        },
+        {
+          "name": "OUTPUT_DIR",
+          "line": 49
+        },
+        {
+          "name": "SUMMARY_FILE",
+          "line": 52
+        },
+        {
+          "name": "PRESSURE_FILE",
+          "line": 54
+        },
+        {
+          "name": "NX",
+          "line": 61
+        },
+        {
+          "name": "NY",
+          "line": 62
+        },
+        {
+          "name": "NZ",
+          "line": 63
+        },
+        {
+          "name": "DX_FT",
+          "line": 65
+        },
+        {
+          "name": "DY_FT",
+          "line": 66
+        },
+        {
+          "name": "DZ_FT",
+          "line": 67
+        },
+        {
+          "name": "N_CELLS",
+          "line": 69
+        },
+        {
+          "name": "LX_FT",
+          "line": 71
+        },
+        {
+          "name": "LY_FT",
+          "line": 72
+        },
+        {
+          "name": "LZ_FT",
+          "line": 73
+        },
+        {
+          "name": "FT_TO_M",
+          "line": 80
+        },
+        {
+          "name": "MD_TO_M2",
+          "line": 81
+        },
+        {
+          "name": "CP_TO_PA_S",
+          "line": 82
+        },
+        {
+          "name": "PSI_TO_PA",
+          "line": 84
+        },
+        {
+          "name": "PA_TO_PSI",
+          "line": 85
+        },
+        {
+          "name": "DAY_TO_S",
+          "line": 87
+        },
+        {
+          "name": "TONNE_TO_KG",
+          "line": 88
+        },
+        {
+          "name": "DX_M",
+          "line": 92
+        },
+        {
+          "name": "DY_M",
+          "line": 93
+        },
+        {
+          "name": "DZ_M",
+          "line": 94
+        },
+        {
+          "name": "AX_M2",
+          "line": 96
+        },
+        {
+          "name": "AY_M2",
+          "line": 97
+        },
+        {
+          "name": "AZ_M2",
+          "line": 98
+        },
+        {
+          "name": "MU_REF_CP",
+          "line": 106
+        },
+        {
+          "name": "MU_REF_PA_S",
+          "line": 107
+        },
+        {
+          "name": "RHO_BRINE_KG_M3",
+          "line": 110
+        },
+        {
+          "name": "G_M_S2",
+          "line": 112
+        },
+        {
+          "name": "GRAVITY_ON",
+          "line": 114
+        },
+        {
+          "name": "INITIAL_PRESSURE_PSI",
+          "line": 121
+        },
+        {
+          "name": "PRODUCER_BHP_PSI",
+          "line": 122
+        },
+        {
+          "name": "INITIAL_PRESSURE_PA",
+          "line": 124
+        },
+        {
+          "name": "PRODUCER_BHP_PA",
+          "line": 125
+        },
+        {
+          "name": "CO2_MASS_RATE_TONNES_DAY",
+          "line": 132
+        },
+        {
+          "name": "CO2_DENSITY_KG_M3",
+          "line": 133
+        },
+        {
+          "name": "CO2_MASS_RATE_KG_S",
+          "line": 135
+        },
+        {
+          "name": "Q_INJ_M3_S",
+          "line": 141
+        },
+        {
+          "name": "Q_INJ_M3_DAY",
+          "line": 146
+        },
+        {
+          "name": "INJECTOR_I",
+          "line": 153
+        },
+        {
+          "name": "INJECTOR_J",
+          "line": 154
+        },
+        {
+          "name": "PRODUCERS",
+          "line": 156
+        },
+        {
+          "name": "COMPLETION_K",
+          "line": 164
+        },
+        {
+          "name": "N_INJECTOR_PERFS",
+          "line": 166
+        },
+        {
+          "name": "Q_INJ_PERF_M3_S",
+          "line": 168
+        },
+        {
+          "name": "WELL_RADIUS_FT",
+          "line": 177
+        },
+        {
+          "name": "WELL_RADIUS_M",
+          "line": 178
+        },
+        {
+          "name": "SKIN",
+          "line": 180
+        },
+        {
+          "name": "values",
+          "line": 218
+        },
+        {
+          "name": "required",
+          "line": 238
+        },
+        {
+          "name": "kfx_md",
+          "line": 250
+        },
+        {
+          "name": "kfy_md",
+          "line": 251
+        },
+        {
+          "name": "kfz_md",
+          "line": 252
+        },
+        {
+          "name": "kfx",
+          "line": 282
+        },
+        {
+          "name": "kfy",
+          "line": 283
+        },
+        {
+          "name": "kfz",
+          "line": 284
+        },
+        {
+          "name": "tx",
+          "line": 286
+        },
+        {
+          "name": "ty",
+          "line": 292
+        },
+        {
+          "name": "tz",
+          "line": 298
+        },
+        {
+          "name": "kx",
+          "line": 324
+        },
+        {
+          "name": "ky",
+          "line": 325
+        },
+        {
+          "name": "ratio_yx",
+          "line": 328
+        },
+        {
+          "name": "ratio_xy",
+          "line": 329
+        },
+        {
+          "name": "numerator",
+          "line": 331
+        },
+        {
+          "name": "denominator",
+          "line": 337
+        },
+        {
+          "name": "re",
+          "line": 343
+        },
+        {
+          "name": "kh",
+          "line": 345
+        },
+        {
+          "name": "denom",
+          "line": 347
+        },
+        {
+          "name": "wi",
+          "line": 357
+        },
+        {
+          "name": "A",
+          "line": 383
+        },
+        {
+          "name": "b",
+          "line": 388
+        },
+        {
+          "name": "producer_wi",
+          "line": 393
+        },
+        {
+          "name": "p_pa",
+          "line": 554
+        },
+        {
+          "name": "p_psi",
+          "line": 561
+        },
+        {
+          "name": "rates",
+          "line": 581
+        },
+        {
+          "name": "total_prod_m3_s",
+          "line": 583
+        },
+        {
+          "name": "residual",
+          "line": 643
+        },
+        {
+          "name": "abs_res_norm",
+          "line": 647
+        },
+        {
+          "name": "rhs_norm",
+          "line": 651
+        },
+        {
+          "name": "rel_res_norm",
+          "line": 653
+        },
+        {
+          "name": "mass_error_m3_s",
+          "line": 658
+        },
+        {
+          "name": "mass_error_fraction",
+          "line": 663
+        },
+        {
+          "name": "injector_pressures",
+          "line": 668
+        },
+        {
+          "name": "checks",
+          "line": 681
+        },
+        {
+          "name": "all_passed",
+          "line": 708
+        },
+        {
+          "name": "layer",
+          "line": 774
+        },
+        {
+          "name": "im",
+          "line": 780
+        },
+        {
+          "name": "cbar",
+          "line": 792
+        },
+        {
+          "name": "x",
+          "line": 802
+        },
+        {
+          "name": "y",
+          "line": 808
+        },
+        {
+          "name": "middle_y",
+          "line": 879
+        },
+        {
+          "name": "section",
+          "line": 881
+        },
+        {
+          "name": "im",
+          "line": 891
+        },
+        {
+          "name": "cbar",
+          "line": 903
+        },
+        {
+          "name": "summary",
+          "line": 997
+        },
+        {
+          "name": "k_cell",
+          "line": 1170
+        },
+        {
+          "name": "validation",
+          "line": 1285
+        },
+        {
+          "name": "zc",
+          "line": 401
+        },
+        {
+          "name": "c",
+          "line": 492
+        },
+        {
+          "name": "perf_data",
+          "line": 506
+        },
+        {
+          "name": "i",
+          "line": 508
+        },
+        {
+          "name": "j",
+          "line": 509
+        },
+        {
+          "name": "i",
+          "line": 587
+        },
+        {
+          "name": "j",
+          "line": 588
+        },
+        {
+          "name": "q_total",
+          "line": 590
+        },
+        {
+          "name": "perf_rates",
+          "line": 591
+        },
+        {
+          "name": "status",
+          "line": 712
+        },
+        {
+          "name": "k_md",
+          "line": 513
+        },
+        {
+          "name": "c",
+          "line": 520
+        },
+        {
+          "name": "k",
+          "line": 595
+        },
+        {
+          "name": "wi",
+          "line": 596
+        },
+        {
+          "name": "pcell_pa",
+          "line": 598
+        },
+        {
+          "name": "q",
+          "line": 603
+        },
+        {
+          "name": "all_passed",
+          "line": 723
+        },
+        {
+          "name": "c",
+          "line": 407
+        },
+        {
+          "name": "diag",
+          "line": 409
+        },
+        {
+          "name": "rhs_gravity",
+          "line": 410
+        },
+        {
+          "name": "n",
+          "line": 414
+        },
+        {
+          "name": "t",
+          "line": 415
+        },
+        {
+          "name": "n",
+          "line": 422
+        },
+        {
+          "name": "t",
+          "line": 423
+        },
+        {
+          "name": "n",
+          "line": 430
+        },
+        {
+          "name": "t",
+          "line": 431
+        },
+        {
+          "name": "n",
+          "line": 438
+        },
+        {
+          "name": "t",
+          "line": 439
+        },
+        {
+          "name": "n",
+          "line": 447
+        },
+        {
+          "name": "t",
+          "line": 448
+        },
+        {
+          "name": "zn",
+          "line": 450
+        },
+        {
+          "name": "n",
+          "line": 466
+        },
+        {
+          "name": "t",
+          "line": 467
+        },
+        {
+          "name": "zn",
+          "line": 469
+        }
+      ],
+      "tokens": {
+        "pressure": true,
+        "spsolve": true,
+        "bhp": true,
+        "inject": true
+      }
+    },
+    "SG4": {
+      "functions": [
+        {
+          "name": "load_inputs",
+          "args": [],
+          "line": 152
+        },
+        {
+          "name": "construct_si_transmissibilities",
+          "args": [
+            "kfx_md",
+            "kfy_md",
+            "kfz_md"
+          ],
+          "line": 203
+        },
+        {
+          "name": "compute_face_fluxes",
+          "args": [
+            "pressure_psi",
+            "tx",
+            "ty",
+            "tz"
+          ],
+          "line": 238
+        },
+        {
+          "name": "compute_flux_divergence",
+          "args": [
+            "qx",
+            "qy",
+            "qz"
+          ],
+          "line": 320
+        },
+        {
+          "name": "peaceman_well_index_si",
+          "args": [
+            "kx_md",
+            "ky_md"
+          ],
+          "line": 361
+        },
+        {
+          "name": "construct_expected_well_rates",
+          "args": [
+            "k_cell",
+            "pressure_psi"
+          ],
+          "line": 411
+        },
+        {
+          "name": "validate_conservation",
+          "args": [
+            "qx",
+            "qy",
+            "qz",
+            "div",
+            "well_source"
+          ],
+          "line": 500
+        },
+        {
+          "name": "cell_center_velocity_layer8",
+          "args": [
+            "qx",
+            "qy"
+          ],
+          "line": 699
+        },
+        {
+          "name": "plot_flux_magnitude_layer8",
+          "args": [
+            "qx",
+            "qy"
+          ],
+          "line": 753
+        },
+        {
+          "name": "plot_flux_vectors_layer8",
+          "args": [
+            "qx",
+            "qy"
+          ],
+          "line": 819
+        },
+        {
+          "name": "plot_vertical_flux_section",
+          "args": [
+            "qz"
+          ],
+          "line": 898
+        },
+        {
+          "name": "plot_divergence_layer8",
+          "args": [
+            "div",
+            "well_source"
+          ],
+          "line": 969
+        },
+        {
+          "name": "save_outputs",
+          "args": [
+            "qx",
+            "qy",
+            "qz",
+            "div",
+            "well_source"
+          ],
+          "line": 1038
+        },
+        {
+          "name": "stats",
+          "args": [
+            "a"
+          ],
+          "line": 1072
+        },
+        {
+          "name": "save_summary",
+          "args": [
+            "qx",
+            "qy",
+            "qz",
+            "producer_rates",
+            "conservation"
+          ],
+          "line": 1085
+        },
+        {
+          "name": "main",
+          "args": [],
+          "line": 1159
+        }
+      ],
+      "assignments": [
+        {
+          "name": "ROOT",
+          "line": 31
+        },
+        {
+          "name": "SG1_PERM_FILE",
+          "line": 33
+        },
+        {
+          "name": "SG2_DIR",
+          "line": 35
+        },
+        {
+          "name": "SG3_DIR",
+          "line": 36
+        },
+        {
+          "name": "KFACE_X_FILE",
+          "line": 38
+        },
+        {
+          "name": "KFACE_Y_FILE",
+          "line": 39
+        },
+        {
+          "name": "KFACE_Z_FILE",
+          "line": 40
+        },
+        {
+          "name": "PRESSURE_FILE",
+          "line": 42
+        },
+        {
+          "name": "OUTPUT_DIR",
+          "line": 44
+        },
+        {
+          "name": "SUMMARY_FILE",
+          "line": 47
+        },
+        {
+          "name": "NX",
+          "line": 54
+        },
+        {
+          "name": "NY",
+          "line": 55
+        },
+        {
+          "name": "NZ",
+          "line": 56
+        },
+        {
+          "name": "DX_FT",
+          "line": 58
+        },
+        {
+          "name": "DY_FT",
+          "line": 59
+        },
+        {
+          "name": "DZ_FT",
+          "line": 60
+        },
+        {
+          "name": "LX_FT",
+          "line": 62
+        },
+        {
+          "name": "LY_FT",
+          "line": 63
+        },
+        {
+          "name": "LZ_FT",
+          "line": 64
+        },
+        {
+          "name": "N_CELLS",
+          "line": 66
+        },
+        {
+          "name": "FT_TO_M",
+          "line": 73
+        },
+        {
+          "name": "MD_TO_M2",
+          "line": 74
+        },
+        {
+          "name": "CP_TO_PA_S",
+          "line": 75
+        },
+        {
+          "name": "PSI_TO_PA",
+          "line": 77
+        },
+        {
+          "name": "DAY_TO_S",
+          "line": 79
+        },
+        {
+          "name": "TONNE_TO_KG",
+          "line": 80
+        },
+        {
+          "name": "DX_M",
+          "line": 87
+        },
+        {
+          "name": "DY_M",
+          "line": 88
+        },
+        {
+          "name": "DZ_M",
+          "line": 89
+        },
+        {
+          "name": "AX_M2",
+          "line": 91
+        },
+        {
+          "name": "AY_M2",
+          "line": 92
+        },
+        {
+          "name": "AZ_M2",
+          "line": 93
+        },
+        {
+          "name": "MU_REF_CP",
+          "line": 100
+        },
+        {
+          "name": "MU_REF_PA_S",
+          "line": 101
+        },
+        {
+          "name": "RHO_BRINE_KG_M3",
+          "line": 103
+        },
+        {
+          "name": "G_M_S2",
+          "line": 104
+        },
+        {
+          "name": "GRAVITY_ON",
+          "line": 106
+        },
+        {
+          "name": "CO2_MASS_RATE_TONNES_DAY",
+          "line": 113
+        },
+        {
+          "name": "CO2_DENSITY_KG_M3",
+          "line": 114
+        },
+        {
+          "name": "Q_INJ_M3_S",
+          "line": 116
+        },
+        {
+          "name": "PRODUCER_BHP_PSI",
+          "line": 123
+        },
+        {
+          "name": "PRODUCER_BHP_PA",
+          "line": 124
+        },
+        {
+          "name": "WELL_RADIUS_FT",
+          "line": 126
+        },
+        {
+          "name": "WELL_RADIUS_M",
+          "line": 127
+        },
+        {
+          "name": "SKIN",
+          "line": 129
+        },
+        {
+          "name": "INJECTOR_I",
+          "line": 131
+        },
+        {
+          "name": "INJECTOR_J",
+          "line": 132
+        },
+        {
+          "name": "PRODUCERS",
+          "line": 134
+        },
+        {
+          "name": "COMPLETION_K",
+          "line": 141
+        },
+        {
+          "name": "Q_INJ_PERF_M3_S",
+          "line": 143
+        },
+        {
+          "name": "required",
+          "line": 154
+        },
+        {
+          "name": "k_values",
+          "line": 168
+        },
+        {
+          "name": "k_cell",
+          "line": 174
+        },
+        {
+          "name": "kfx_md",
+          "line": 179
+        },
+        {
+          "name": "kfy_md",
+          "line": 180
+        },
+        {
+          "name": "kfz_md",
+          "line": 181
+        },
+        {
+          "name": "pressure_psi",
+          "line": 183
+        },
+        {
+          "name": "kfx",
+          "line": 209
+        },
+        {
+          "name": "kfy",
+          "line": 210
+        },
+        {
+          "name": "kfz",
+          "line": 211
+        },
+        {
+          "name": "tx",
+          "line": 213
+        },
+        {
+          "name": "ty",
+          "line": 219
+        },
+        {
+          "name": "tz",
+          "line": 225
+        },
+        {
+          "name": "p_pa",
+          "line": 245
+        },
+        {
+          "name": "dp_x",
+          "line": 254
+        },
+        {
+          "name": "qx",
+          "line": 259
+        },
+        {
+          "name": "dp_y",
+          "line": 268
+        },
+        {
+          "name": "qy",
+          "line": 273
+        },
+        {
+          "name": "dp_z",
+          "line": 288
+        },
+        {
+          "name": "dz",
+          "line": 293
+        },
+        {
+          "name": "qz",
+          "line": 308
+        },
+        {
+          "name": "div",
+          "line": 337
+        },
+        {
+          "name": "kx",
+          "line": 366
+        },
+        {
+          "name": "ky",
+          "line": 367
+        },
+        {
+          "name": "ratio_yx",
+          "line": 369
+        },
+        {
+          "name": "ratio_xy",
+          "line": 370
+        },
+        {
+          "name": "numerator",
+          "line": 372
+        },
+        {
+          "name": "denominator",
+          "line": 381
+        },
+        {
+          "name": "re",
+          "line": 387
+        },
+        {
+          "name": "kh",
+          "line": 389
+        },
+        {
+          "name": "wi",
+          "line": 391
+        },
+        {
+          "name": "p_pa",
+          "line": 416
+        },
+        {
+          "name": "well_source",
+          "line": 418
+        },
+        {
+          "name": "producer_rates",
+          "line": 445
+        },
+        {
+          "name": "error",
+          "line": 521
+        },
+        {
+          "name": "max_abs_error",
+          "line": 526
+        },
+        {
+          "name": "l2_error",
+          "line": 530
+        },
+        {
+          "name": "source_norm",
+          "line": 534
+        },
+        {
+          "name": "relative_error",
+          "line": 538
+        },
+        {
+          "name": "global_divergence",
+          "line": 543
+        },
+        {
+          "name": "global_well_source",
+          "line": 547
+        },
+        {
+          "name": "global_mismatch",
+          "line": 551
+        },
+        {
+          "name": "qinj",
+          "line": 556
+        },
+        {
+          "name": "global_relative_mismatch",
+          "line": 558
+        },
+        {
+          "name": "well_mask",
+          "line": 564
+        },
+        {
+          "name": "nonwell_error",
+          "line": 568
+        },
+        {
+          "name": "max_nonwell_div",
+          "line": 572
+        },
+        {
+          "name": "checks",
+          "line": 582
+        },
+        {
+          "name": "all_passed",
+          "line": 616
+        },
+        {
+          "name": "k",
+          "line": 712
+        },
+        {
+          "name": "qx_cell",
+          "line": 714
+        },
+        {
+          "name": "qy_cell",
+          "line": 719
+        },
+        {
+          "name": "mag",
+          "line": 765
+        },
+        {
+          "name": "mag_day",
+          "line": 771
+        },
+        {
+          "name": "im",
+          "line": 779
+        },
+        {
+          "name": "cbar",
+          "line": 791
+        },
+        {
+          "name": "qxc",
+          "line": 831
+        },
+        {
+          "name": "qyc",
+          "line": 832
+        },
+        {
+          "name": "x",
+          "line": 834
+        },
+        {
+          "name": "y",
+          "line": 835
+        },
+        {
+          "name": "skip",
+          "line": 842
+        },
+        {
+          "name": "mag",
+          "line": 848
+        },
+        {
+          "name": "im",
+          "line": 854
+        },
+        {
+          "name": "middle_y",
+          "line": 902
+        },
+        {
+          "name": "section",
+          "line": 904
+        },
+        {
+          "name": "vmax",
+          "line": 913
+        },
+        {
+          "name": "im",
+          "line": 917
+        },
+        {
+          "name": "cbar",
+          "line": 931
+        },
+        {
+          "name": "k",
+          "line": 974
+        },
+        {
+          "name": "residual",
+          "line": 976
+        },
+        {
+          "name": "vmax",
+          "line": 985
+        },
+        {
+          "name": "im",
+          "line": 992
+        },
+        {
+          "name": "cbar",
+          "line": 1006
+        },
+        {
+          "name": "summary",
+          "line": 1093
+        },
+        {
+          "name": "div",
+          "line": 1225
+        },
+        {
+          "name": "total_prod",
+          "line": 1241
+        },
+        {
+          "name": "conservation",
+          "line": 1264
+        },
+        {
+          "name": "potential_difference",
+          "line": 297
+        },
+        {
+          "name": "potential_difference",
+          "line": 306
+        },
+        {
+          "name": "i",
+          "line": 449
+        },
+        {
+          "name": "j",
+          "line": 450
+        },
+        {
+          "name": "q_total",
+          "line": 452
+        },
+        {
+          "name": "perf_rates",
+          "line": 454
+        },
+        {
+          "name": "status",
+          "line": 620
+        },
+        {
+          "name": "vmax",
+          "line": 990
+        },
+        {
+          "name": "wi",
+          "line": 458
+        },
+        {
+          "name": "q_prod",
+          "line": 463
+        },
+        {
+          "name": "all_passed",
+          "line": 631
+        }
+      ],
+      "tokens": {
+        "qx": true,
+        "qy": true,
+        "qz": true,
+        "darcy": true
+      }
+    }
+  },
+  "gates": {
+    "D6_bound": true,
+    "SG2_source_present": true,
+    "SG3_source_present": true,
+    "SG4_source_present": true,
+    "SG2_semantic_tokens_bound": true,
+    "SG3_semantic_tokens_bound": true,
+    "SG4_semantic_tokens_bound": true,
+    "source_hashes_recorded": true,
+    "no_flow_reimplementation_from_memory": true,
+    "no_flow_execution_in_D7": true,
+    "no_transport": true,
+    "no_training": true
+  },
+  "flow_execution_authorized": false,
+  "next_milestone": "V16D-7A \u2014 Source-Bound Multi-Case SG2/SG3/SG4 Adapter Implementation and Case 0002 Pilot"
+}

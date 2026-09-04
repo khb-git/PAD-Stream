@@ -1,0 +1,121 @@
+{
+  "milestone": "V16D-9R",
+  "status": "V16D_D9_C7_DISCRETE_METRIC_OPERATOR_REPAIR_CERTIFIED_D9R1_FULL_24CASE_RECONSTRUCTION_AUTHORIZED",
+  "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D8B_FULL_CASE0002_0025_SOURCEBOUND_SG5_POLLOCK_ENSEMBLE\\cases\\V16D_Foundation_Case_0002_Pollock.npz",
+  "source_sha256": "cc44372f507aa62c9c945c280327ec99a11c0c8c1cbf235b5703e787b02754b2",
+  "diagnostics": {
+    "streamlines": 1078,
+    "blocked_gradient_nonpositive_count": 630,
+    "face_nonpositive_count": 0,
+    "node_nonpositive_count": 0,
+    "blocked_gradient_global_min": -1.3017731376829786,
+    "face_metric_global_min": 0.042834552366230585,
+    "node_metric_global_min": 0.042834552366230585,
+    "max_face_reciprocal_identity_error": 3.552713678800501e-15,
+    "examples": [
+      {
+        "streamline": 6,
+        "old_min": -0.018852451650280877,
+        "face_min": 0.07701697047509891,
+        "node_min": 0.07701697047509891,
+        "min_dxD": 0.0014220056868708975,
+        "max_dxD": 0.06492075667422673
+      },
+      {
+        "streamline": 8,
+        "old_min": -0.015886006081560433,
+        "face_min": 0.1307473353108588,
+        "node_min": 0.1307473353108588,
+        "min_dxD": 0.003375496053225846,
+        "max_dxD": 0.03824169714902588
+      },
+      {
+        "streamline": 9,
+        "old_min": -0.08173487567031212,
+        "face_min": 0.12300343555612044,
+        "node_min": 0.12300343555612044,
+        "min_dxD": 0.0029436836761957963,
+        "max_dxD": 0.040649271115023006
+      },
+      {
+        "streamline": 10,
+        "old_min": -0.08242115566244584,
+        "face_min": 0.11519062873719288,
+        "node_min": 0.11519062873719288,
+        "min_dxD": 0.0026934576220479234,
+        "max_dxD": 0.04340630878408944
+      },
+      {
+        "streamline": 11,
+        "old_min": -0.038709476158610756,
+        "face_min": 0.07631767668184158,
+        "node_min": 0.07631767668184158,
+        "min_dxD": 0.001077130316737951,
+        "max_dxD": 0.06551562124780536
+      },
+      {
+        "streamline": 12,
+        "old_min": -0.008263246120471024,
+        "face_min": 0.0912856598464777,
+        "node_min": 0.0912856598464777,
+        "min_dxD": 0.001608838980172056,
+        "max_dxD": 0.054773115606645065
+      },
+      {
+        "streamline": 13,
+        "old_min": -0.00831442447309172,
+        "face_min": 0.09122710873302636,
+        "node_min": 0.09122710873302636,
+        "min_dxD": 0.0018925363524792127,
+        "max_dxD": 0.054808269925909446
+      },
+      {
+        "streamline": 17,
+        "old_min": -0.06482502020627384,
+        "face_min": 0.08857024707883136,
+        "node_min": 0.08857024707883136,
+        "min_dxD": 0.0021152451772439296,
+        "max_dxD": 0.056452365945753584
+      },
+      {
+        "streamline": 18,
+        "old_min": -0.24982288768108607,
+        "face_min": 0.07594096779510733,
+        "node_min": 0.07594096779510733,
+        "min_dxD": 0.002176514702204202,
+        "max_dxD": 0.06584061469285274
+      },
+      {
+        "streamline": 19,
+        "old_min": -0.02594006341924171,
+        "face_min": 0.08222279625876783,
+        "node_min": 0.08222279625876783,
+        "min_dxD": 0.002296659706901405,
+        "max_dxD": 0.06081038626154514
+      }
+    ]
+  },
+  "repaired_contract": {
+    "theta": "tau/tau_end",
+    "xD": "s/s_end",
+    "M_face": "Delta(theta)/Delta(xD)",
+    "M_node": "endpoint copy; interior arithmetic mean of adjacent positive M_face",
+    "capillary_discretization_note": "future conservative operator should use face metric directly; node metric is a collocated sidecar"
+  },
+  "gates": {
+    "D8B_case0002_bound": true,
+    "source_streamlines_1078": true,
+    "blocked_D9_failure_reproduced": true,
+    "face_metric_all_positive": true,
+    "node_metric_all_positive": true,
+    "face_reciprocal_identity": true,
+    "no_gate_relaxation": true,
+    "no_smoothing_or_fitting": true,
+    "no_FMM": true,
+    "no_ADV": true,
+    "no_transport": true,
+    "no_flow": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-9R1 \u2014 Full Case0002-0025 201-Node Pollock Coordinate and Conservative C7 Face-Metric Construction"
+}

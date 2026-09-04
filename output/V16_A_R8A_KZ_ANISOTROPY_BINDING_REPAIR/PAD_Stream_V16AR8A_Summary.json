@@ -1,0 +1,9 @@
+{
+  "milestone": "V16A-R8A",
+  "status": "V16A_KZ_ANISOTROPY_RATIO_FINAL_BOUND",
+  "diagnosis": "ONE_UNIQUE_SOURCE_AUTHENTIC_VERTICAL_TO_HORIZONTAL_PERMEABILITY_RATIO_IS_SUPPORTED_BY_SG2_PROVENANCE",
+  "kz_horizontal_ratio_bound": true,
+  "kz_horizontal_ratio": 0.1,
+  "recommendation": "Patch R8 to consume the R8A bound ratio contract instead of rediscovering the ratio heuristically, then rerun Foundation Case 0001 assembly/freeze.",
+  "next_milestone": "V16A-R8R \u2014 Repaired Foundation Case 0001 Final Assembly / Freeze"
+}

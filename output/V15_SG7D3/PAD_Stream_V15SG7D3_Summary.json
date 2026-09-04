@@ -1,0 +1,15 @@
+{
+  "milestone": "V15-SG7D3",
+  "status": "UNSUPPORTED_CELL_POLICY_CONTRACT_READY",
+  "diagnosis": "BACKGROUND_ONLY_FILL_IS_MINIMUM_INFORMATION_FULL_GRID_POLICY",
+  "selected_policy": "P4_MASKED_BACKGROUND_PLUS_SUPPORT",
+  "background_saturation": 0.20072828233242035,
+  "supported_cells": 29107,
+  "unsupported_cells": 8393,
+  "unsupported_components": 663,
+  "grid_changed": false,
+  "unsupported_cells_filled": false,
+  "SG7E_threshold_changed": false,
+  "recommendation": "Use a masked background-plus-support policy in the next controlled milestone: retain SG7D1 mapped saturation exactly in every supported cell, retain the SG7D1 support mask as provenance, and assign only the frozen transport background saturation to unsupported cells. Do not use nearest-neighbor or harmonic interpolation because those methods manufacture plume structure outside the streamline-supported domain.",
+  "next_milestone": "V15-SG7D4 \u2014 Controlled Background-Only Unsupported-Cell Completion"
+}

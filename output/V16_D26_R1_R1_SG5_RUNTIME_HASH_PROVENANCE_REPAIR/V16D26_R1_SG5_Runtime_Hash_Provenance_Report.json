@@ -1,0 +1,22 @@
+{
+  "milestone": "V16D-26-R1-R1",
+  "diagnosis": "D26 was a conservative audit false-negative. D8B does not embed the SG5 SHA literal on an SG5 line; it reads D8R1 summary at runtime and enforces sha(SG5) == r['SG5_sha256']. Therefore the authoritative hash must be recovered from the exact D8R1 summary, not regex-extracted from D8B source.",
+  "D8B_sha256": "f8669eb3dd9f5b886dc7cde5e4c26b0c85c1a1967386901a76d51301ed9a32ec",
+  "D8R1_summary_sha256": "0af10aec411358de3df16449dc753c071cfb5d20d437fe54c39692ef792c5e3b",
+  "SG5_actual_sha256": "2989fe58d1fd78fe9f9c03176dbb3ff066faf359f7edaf028cbdc0fea85135f2",
+  "D8R1_recorded_SG5_sha256": "2989fe58d1fd78fe9f9c03176dbb3ff066faf359f7edaf028cbdc0fea85135f2",
+  "gates": {
+    "D26_blocked_summary_SHA_exact": true,
+    "D8B_SHA_exact": true,
+    "SG5_exists": true,
+    "D8R1_summary_exists": true,
+    "D8B_runtime_SG5_hash_binding_expression_found": true,
+    "D8R1_status_certified": true,
+    "SG5_SHA_matches_D8R1_runtime_authority": true,
+    "D8B_has_construct_face_pore_velocities": true,
+    "D8B_has_build_seeds": true,
+    "D8B_has_trace_streamlines": true,
+    "D8B_has_validate_streamlines": true,
+    "D26_failed_only_hash_binding_among_core_bindings": true
+  }
+}

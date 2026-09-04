@@ -1,0 +1,70 @@
+{
+  "milestone": "V16E-1B2N-XPU",
+  "classification": "CONSERVATIVE_STAGE2_MOVING_FAN_COORDINATE_RESIDUAL_DERIVATION",
+  "source_coordinates": {
+    "xD": "x / L",
+    "tD": "(u_inj/(phi*L))*t",
+    "uD": "u/u_inj = exp(Nc*xD)"
+  },
+  "physical_conservative_equation": "S_tD|xD + d_xD[ exp(Nc*xD)*fw(S) ] = 0",
+  "moving_coordinate": {
+    "X": "xD_star(tD)",
+    "xi": "xD / X(tD)",
+    "xD": "xi*X(tD)"
+  },
+  "coordinate_chain_rule": {
+    "dxi_dtD_at_fixed_xD": "-xi*Xdot/X",
+    "d_dxD": "(1/X)*d_dxi",
+    "S_tD_at_fixed_xD": "s_tD_at_fixed_xi - (xi*Xdot/X)*s_xi"
+  },
+  "exact_moving_coordinate_PDE": "s_tD|xi - (xi*Xdot/X)*s_xi + (1/X)*d_dxi[exp(Nc*xi*X)*fw(s)] = 0",
+  "network_parameterization": {
+    "network": "N(xi, tD, X, fixed_case_parameters)",
+    "conditioner_dynamic_entries": [
+      "tD",
+      "xD_star"
+    ],
+    "conditioner_fixed_along_one_case": [
+      "no",
+      "nw",
+      "swi",
+      "sor",
+      "mu_w",
+      "mu_o",
+      "phi",
+      "Sw_star",
+      "Nc"
+    ],
+    "total_time_derivative_at_fixed_xi": "dN/dtD|xi = N_tD + Xdot*N_X"
+  },
+  "implementable_conservative_residual_conservative_form": "R_cons = N_tD + Xdot*N_X - (xi*Xdot/X)*N_xi + (1/X)*d_dxi[exp(Nc*xi*X)*fw(N)]",
+  "implementable_conservative_residual_expanded_form": "R_cons = N_tD + Xdot*N_X + [exp(Nc*xi*X)*fw'(N)/X - xi*Xdot/X]*N_xi + Nc*exp(Nc*xi*X)*fw(N)",
+  "front_speed_closure": {
+    "Rankine_Hugoniot_general": "Xdot = exp(Nc*X) * [fw(S_L)-fw(S_R)]/[S_L-S_R]",
+    "frozen_fan_states": {
+      "S_L": "Sw_star",
+      "S_R": "swc"
+    },
+    "sigma_BL": "[fw(Sw_star)-fw(swc)]/(Sw_star-swc)",
+    "Xdot_RH": "exp(Nc*X)*sigma_BL",
+    "transform_identity": "Differentiating y(X;Nc)=tD*sigma_BL with dy/dX=exp(-Nc*X) gives the same Xdot=exp(Nc*X)*sigma_BL."
+  },
+  "Nc0_limit": {
+    "uD": 1.0,
+    "Xdot": "sigma_BL",
+    "PDE": "the standard conservative incompressible BL equation expressed in the same moving fan coordinate"
+  },
+  "implementation_requirements": [
+    "Differentiate network output with respect to xi.",
+    "Differentiate network output with respect to conditioner tD.",
+    "Differentiate network output with respect to conditioner xD_star.",
+    "Include Xdot*N_X in the physical time derivative.",
+    "Include the moving-grid advection term -xi*Xdot/X*N_xi.",
+    "Use physical raw Nc, never scaled Nc.",
+    "Use the exact fractional-flow implementation bound to Stage 2.",
+    "Use interior fan nodes for residual evaluation; do not enforce pointwise smooth-PDE residual across the shock discontinuity.",
+    "Validate analytical/autograd conservative-form and expanded-form residuals against each other before training."
+  ],
+  "training_authorized": false,
+  "B3_authorized": false
+}

@@ -1,0 +1,37 @@
+{
+  "milestone": "V15-SG7E1R26G",
+  "status": "AUTHORITATIVE_UPSTREAM_EVALUATOR_SOURCE_RESOLVED",
+  "diagnosis": "ONE_FINAL_RUNTIME_SOURCE_HAS_UNIQUE_PARENT_MANIFEST_AND_DOWNSTREAM_CR3_L2_CONSUMER_LINEAGE",
+  "authoritative_model": {
+    "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7CR3F4\\experiments\\B4\\V15SG7CR3F4_B4_Best_Any_Alpha_Model.keras",
+    "filename": "V15SG7CR3F4_B4_Best_Any_Alpha_Model.keras",
+    "sha256": "b9a2af574ff3ef5eef6377bbcbd0bd87b6490ff4d938de51f7e1d8ffcd18c0a6"
+  },
+  "candidate_scope": [
+    "PAD_Stream_V15SG7B6G_Residual_Metric_Reconciliation.py",
+    "PAD_Stream_V15SG7B10_Controlled_Front_Aware_Refinement.py"
+  ],
+  "selection": {
+    "resolved": true,
+    "selected_candidate": "PAD_Stream_V15SG7B10_Controlled_Front_Aware_Refinement.py",
+    "selected_source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B10_Controlled_Front_Aware_Refinement.py",
+    "top_score": 97439,
+    "second_score": 6658,
+    "margin": 90781,
+    "direct_lineage_evidence": true
+  },
+  "constraints": {
+    "training_performed": false,
+    "model_parameters_changed": false,
+    "gamma_changed": false,
+    "guard_changed": false,
+    "threshold_changed": false,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false,
+    "candidate_performance_used": false,
+    "candidate_set_broadened": false
+  },
+  "recommendation": "The final two-source conflict is resolved by artifact/manifest/consumer provenance. One runtime source uniquely reaches the SG7CR3/R1F/L2 deployment lineage. Preserve this source as the authoritative evaluator parent. Proceed to bind only its exact model-input tensor construction, physical-time transform, prediction output, and postprocessing state contract before executing the 100-day runtime control.",
+  "next_milestone": "V15-SG7E1R26H \u2014 Authoritative Evaluator Input / Output Contract Audit"
+}

@@ -1,0 +1,126 @@
+{
+  "milestone": "V15-SG2",
+  "description": "3D anisotropic finite-volume transmissibilities",
+  "status": "PASS",
+  "input_permeability_file": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\SGSIM_50x50x15_PERM_MD.csv",
+  "grid": {
+    "nx": 50,
+    "ny": 50,
+    "nz": 15,
+    "dx_ft": 20.0,
+    "dy_ft": 20.0,
+    "dz_ft": 4.0,
+    "cells": 37500
+  },
+  "directional_permeability": {
+    "kx": "K_SGSim",
+    "ky": "K_SGSim",
+    "kz": "0.1 * K_SGSim"
+  },
+  "reference_viscosity_cp": 1.0,
+  "face_areas_ft2": {
+    "Ax": 80.0,
+    "Ay": 80.0,
+    "Az": 400.0
+  },
+  "cell_permeability_md": {
+    "shape": [
+      15,
+      50,
+      50
+    ],
+    "count": 37500,
+    "min": 50.00000783,
+    "max": 997.8730371,
+    "mean": 357.8510903214352,
+    "median": 334.2443778,
+    "p10": 75.325787483,
+    "p90": 646.007228405
+  },
+  "face_permeability_x_md": {
+    "shape": [
+      15,
+      50,
+      49
+    ],
+    "count": 36750,
+    "min": 50.00006620499274,
+    "max": 995.9692053270966,
+    "mean": 346.36565711068033,
+    "median": 331.15017187002604,
+    "p10": 78.70232376810598,
+    "p90": 624.5719649764443
+  },
+  "face_permeability_y_md": {
+    "shape": [
+      15,
+      49,
+      50
+    ],
+    "count": 36750,
+    "min": 50.00003512999711,
+    "max": 997.1104505021596,
+    "mean": 349.44892802198217,
+    "median": 332.3300540415632,
+    "p10": 78.42748102963516,
+    "p90": 628.8494217149482
+  },
+  "face_permeability_z_md": {
+    "shape": [
+      14,
+      50,
+      50
+    ],
+    "count": 35000,
+    "min": 5.000105418971703,
+    "max": 97.21402308842693,
+    "mean": 33.31859555428796,
+    "median": 32.64811808441543,
+    "p10": 8.92090600773311,
+    "p90": 59.85923358368603
+  },
+  "transmissibility_x": {
+    "shape": [
+      15,
+      50,
+      49
+    ],
+    "count": 36750,
+    "min": 200.00026481997097,
+    "max": 3983.8768213083868,
+    "mean": 1385.4626284427213,
+    "median": 1324.6006874801042,
+    "p10": 314.80929507242394,
+    "p90": 2498.287859905777
+  },
+  "transmissibility_y": {
+    "shape": [
+      15,
+      49,
+      50
+    ],
+    "count": 36750,
+    "min": 200.00014051998843,
+    "max": 3988.4418020086387,
+    "mean": 1397.7957120879287,
+    "median": 1329.3202161662527,
+    "p10": 313.70992411854064,
+    "p90": 2515.397686859793
+  },
+  "transmissibility_z": {
+    "shape": [
+      14,
+      50,
+      50
+    ],
+    "count": 35000,
+    "min": 500.0105418971703,
+    "max": 9721.402308842693,
+    "mean": 3331.8595554287954,
+    "median": 3264.811808441543,
+    "p10": 892.090600773311,
+    "p90": 5985.923358368604
+  },
+  "pressure_solve_performed": false,
+  "next_milestone": "V15-SG3 - five-spot pressure solve"
+}

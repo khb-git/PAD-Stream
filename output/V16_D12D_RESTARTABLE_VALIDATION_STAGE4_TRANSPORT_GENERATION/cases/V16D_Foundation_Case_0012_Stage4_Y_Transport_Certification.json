@@ -1,0 +1,31 @@
+{
+  "case_id": "V16D_Foundation_Case_0012",
+  "partition": "VALIDATION",
+  "status": "CERTIFIED",
+  "artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_D12D_RESTARTABLE_VALIDATION_STAGE4_TRANSPORT_GENERATION\\cases\\V16D_Foundation_Case_0012_Stage4_Y_Transport.npz",
+  "sha256": "aba6eabc553f8b83cd619ab12895e237c2c7bcf68e2b34ff3fa98217330f0fd8",
+  "steps": 46042,
+  "elapsed_seconds": 2497.9172761440277,
+  "S_min": 0.2009999999999984,
+  "S_max": 0.799,
+  "adv_max": 1.1741994231312738e-17,
+  "cap_residual_max": 7.105427357601002e-15,
+  "preclip_max": 0.0,
+  "temporal_negative_fraction": 0.0,
+  "spatial_positive_fraction": 0.0,
+  "gates": {
+    "shape": true,
+    "finite": true,
+    "bounds": true,
+    "injector": true,
+    "undershoot": true,
+    "adv_conservation": true,
+    "cap_residual": true,
+    "preclip": true,
+    "temporal": true,
+    "spatial": true,
+    "Mface_positive": true,
+    "Pollock_primary": true,
+    "no_fit": true
+  }
+}

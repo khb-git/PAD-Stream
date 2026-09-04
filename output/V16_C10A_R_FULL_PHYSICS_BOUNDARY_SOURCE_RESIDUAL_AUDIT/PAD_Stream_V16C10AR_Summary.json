@@ -1,0 +1,13 @@
+{
+  "milestone": "V16C-10A-R",
+  "status": "V16C_POLLOCK_FULL_PHYSICS_BOUNDARY_SEMANTICS_BOUND_READY_FOR_SOLVER_ASSEMBLY",
+  "diagnosis": "C10A_OUTLET_FAILURE_WAS_A_BOUNDARY_CLASSIFICATION_MISMATCH_STAGE4_USES_A_HELD_VALUE_DIFFUSION_OUTLET_ROW_NOT_AN_EXPLICIT_ZERO_GRADIENT_NEUMANN_CONDITION",
+  "inlet_boundary_bound": true,
+  "outlet_advective_boundary_bound": true,
+  "outlet_capillary_held_value_boundary_bound": true,
+  "zero_gradient_claim": false,
+  "solver_assembly_authorized": true,
+  "Y_transport_generated": false,
+  "recommendation": "Accept C10A with corrected outlet provenance. Preserve the Stage-4 split boundary semantics: conservative terminal-state advective outflow plus a held-value identity row during the implicit capillary substep. Map these to theta=1 without restoring legacy exp(Nc xD). Proceed to C11 diagnostic solver assembly; do not authorize Y yet.",
+  "next_milestone": "V16C-11 \u2014 Executable Conservative Full-Physics Pollock Transport Solver Assembly and Diagnostic Validation"
+}

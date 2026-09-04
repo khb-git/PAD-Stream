@@ -1,0 +1,41 @@
+{
+  "milestone": "V15-SG7B-6",
+  "description": "Rebalanced plain-LSTM full-physics PI-RNN training",
+  "architecture": {
+    "type": "plain stacked LSTM",
+    "hidden_size": 64,
+    "layers": 2,
+    "fourier_features": false,
+    "film": false,
+    "front_coordinate": false
+  },
+  "changes_from_SG7B4": {
+    "physics_weight_max": 0.1,
+    "physics_warmup_start": 30,
+    "physics_warmup_end": 160,
+    "injector_region_nodes": 10,
+    "injector_loss_weight": 3.0,
+    "mass_loss_weight": 1.0,
+    "checkpoint_selection": "data + weighted FV + mass + injector loss"
+  },
+  "training": {
+    "runtime_seconds": 4939.662842699792,
+    "best_epoch": 469,
+    "best_checkpoint_score": 0.003115260967206268
+  },
+  "test": {
+    "L1": 0.0110396733507514,
+    "L2": 0.017113160341978073,
+    "Linf": 0.11870819330215454,
+    "injector_L1": 0.006203319877386093,
+    "fv_relative_MAE": 0.059140779078006744,
+    "fv_relative_RMS": 0.1573999524116516,
+    "mass_relative_MAE": 0.017925122752785683,
+    "mass_relative_max": 0.05197877436876297,
+    "minimum_prediction": 0.31724801659584045,
+    "maximum_prediction": 0.7807030081748962
+  },
+  "validation_passed": true,
+  "status": "PASS_CANDIDATE",
+  "next_milestone": "V15-SG7B-7 - final SG7B PI-RNN validation/freeze decision"
+}

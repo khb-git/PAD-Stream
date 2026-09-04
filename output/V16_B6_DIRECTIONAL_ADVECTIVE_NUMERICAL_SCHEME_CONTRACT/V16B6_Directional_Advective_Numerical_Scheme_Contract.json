@@ -1,0 +1,43 @@
+{
+  "milestone": "V16B-6",
+  "status": "V16B_DIRECTIONAL_NUMERICAL_SCHEME_BOUNDARY_POLICY_REQUIRED",
+  "diagnosis": "ONE_OR_MORE_NON_SOURCE_BOUNDARY_CELLS_REQUIRE_UPWIND_INFORMATION_FROM_OUTSIDE_THE_DOMAIN",
+  "governing_equation": "v dot grad(tau_ADV) = 1",
+  "discretization": {
+    "order": 1,
+    "type": "sign-aware donor-cell upwind",
+    "grid": "physical Cartesian unequal spacing",
+    "equation_form": "aP*tauP - sum(aN*tauN) = 1",
+    "source_rows": "tau=0 identity rows",
+    "artificial_diffusion": false
+  },
+  "matrix_structure": {
+    "unknown_count": 37500,
+    "source_count": 5,
+    "estimated_nnz": 146333,
+    "missing_upwind_boundary_cells": 3563,
+    "zero_diagonal_non_source_cells": 0
+  },
+  "solver_contract": {
+    "primary": "scipy.sparse.linalg.spsolve",
+    "dtype": "float64",
+    "solve_executed_in_V16B6": false
+  },
+  "validation_contract": [
+    "linear_system_relative_residual",
+    "upwind_advective_PDE_residual",
+    "source_zero",
+    "finite_nonnegative",
+    "flow_direction_causality"
+  ],
+  "comparison_policy": {
+    "Pollock_used_for_coefficient_tuning": false,
+    "Pollock_comparison_before_solution_freeze": false
+  },
+  "output": {
+    "scheme_file": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_B6_DIRECTIONAL_ADVECTIVE_NUMERICAL_SCHEME_CONTRACT\\V16B6_Directional_Advective_Scheme_Contract.npz",
+    "sha256": "cfdba29bb2a72f4b073dea0213b4b92a5d120013697dbe9eb1924543974ab6d6"
+  },
+  "recommendation": "Do not solve yet. Define the external-boundary inflow travel-time policy source-authentically before assembling the directional transport system.",
+  "next_milestone": "V16B-6A \u2014 Directional External-Boundary Inflow Policy Audit"
+}

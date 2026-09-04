@@ -1,0 +1,39 @@
+{
+  "milestone": "V16E-1B2AG-XPU",
+  "classification": "FINAL_COMP_XPU_005_FRESH_RUN_AUTHORIZATION",
+  "experiment_id": "V16E-BLREP-COMP-XPU-005",
+  "authorized": true,
+  "fresh_initialization_required": true,
+  "seed": 1337,
+  "allowed_initializers": [
+    "brand-new model construction from frozen architecture with seed=1337"
+  ],
+  "forbidden_initializers_or_resume_sources": [
+    "COMP-XPU-004 checkpoint",
+    "B2AF scratch checkpoint",
+    "COMP-XPU-001 checkpoint",
+    "COMP-XPU-002 checkpoint",
+    "COMP-XPU-003 checkpoint",
+    "any prior Stage-2 checkpoint not produced by the authorized COMP-XPU-005 runner"
+  ],
+  "allowed_resume_source_after_run_begins": "only an atomic completed-epoch checkpoint created by the authorized COMP-XPU-005 production runner with exact matching bound hashes",
+  "implementation": {
+    "derivative_engine": "CHUNKED_BATCHED_VJP",
+    "cotangent_chunk_size": 16,
+    "microbatch": 128,
+    "logical_batch": 8192,
+    "epochs": 800,
+    "seed": 1337
+  },
+  "optimizer": "torch.optim.Adam(model.parameters(), lr=1.0e-3, foreach=False)",
+  "microbatches_per_epoch": 90,
+  "optimizer_steps_per_epoch": 2,
+  "target_optimizer_steps": 1600,
+  "checkpoint_rule": "atomic after every completed epoch",
+  "evaluation_role": "development holdout only; NOT OOD",
+  "OOD_used": false,
+  "TOF_used": false,
+  "scientific_settings_changed": false,
+  "COMP_XPU_005_full_training_authorized": true,
+  "B3_authorized": false
+}

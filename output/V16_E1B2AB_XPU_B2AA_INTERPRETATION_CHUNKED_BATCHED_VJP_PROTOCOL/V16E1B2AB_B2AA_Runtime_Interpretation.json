@@ -1,0 +1,24 @@
+{
+  "milestone": "V16E-1B2AB-XPU",
+  "classification": "B2AA_FULL_BATCHED_VJP_RUNTIME_RESOURCE_INTERPRETATION",
+  "B2AA_execution_status": "CERTIFIED_FAIL_CLOSED_RUNTIME_RESULT",
+  "exact_runtime_error": "RuntimeError: level_zero backend failed with error: 40 (UR_RESULT_ERROR_OUT_OF_RESOURCES)",
+  "frozen_runtime_token": "UR_RESULT_ERROR_OUT_OF_RESOURCES",
+  "supported_conclusions": [
+    "The 64-cotangent single-call batched VJP is not operationally viable at microbatch 128 on the current Intel-XPU/runtime configuration.",
+    "B2AA preserved the scientific graph and checkpoint.",
+    "B2AA used no fallback and produced no performance benchmark."
+  ],
+  "prohibited_conclusions": [
+    "is_grads_batched=True is universally unsupported",
+    "all batched VJP sizes will fail",
+    "the error is definitively an OOM",
+    "the error proves a scientific-model incompatibility",
+    "microbatch 128 itself is invalid for the loop baseline"
+  ],
+  "next_route": "CHUNKED_BATCHED_VJP",
+  "route_rationale": "The resource failure occurred for the maximum 64-cotangent VJP batch. Chunking preserves the same derivatives while reducing simultaneous batched-VJP resource demand and still reducing the 64-call loop count.",
+  "scientific_model_changed": false,
+  "COMP_XPU_005_full_training_authorized": false,
+  "B3_authorized": false
+}

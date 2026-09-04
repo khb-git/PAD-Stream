@@ -1,0 +1,32 @@
+{
+  "milestone": "V16E-1B2Z-XPU",
+  "classification": "B2Y_WARMED_STEADY_STATE_PERFORMANCE_INTERPRETATION",
+  "B2Y_execution_status": "CERTIFIED",
+  "steady_state_measurements": {
+    "reference_microbatch": 128,
+    "corrected_median_seconds": 23.099733400000332,
+    "corrected_mean_seconds": 23.957493033332867,
+    "control_median_seconds": 0.10913980000077572,
+    "corrected_over_control_median_ratio": 211.6527004798996,
+    "corrected_median_profiles_per_second": 5.5411894926890435,
+    "diagnostic_days_for_target_epochs": 19.24977783333361,
+    "projection_semantics": "operational diagnostic only; not a runtime promise"
+  },
+  "warmed_stage_attribution": {
+    "model_forward_seconds": 0.025992999999289168,
+    "local_recurrent_derivatives_seconds": 6.671928400000979,
+    "corrected_physics_algebra_seconds": 0.0038180000010470394,
+    "nonphysics_loss_assembly_seconds": 0.0008782999993854901,
+    "total_backward_seconds": 15.703743700001723,
+    "stage_sum_seconds": 22.406361400002424,
+    "derivative_plus_backward_seconds": 22.375672100002703,
+    "derivative_plus_backward_fraction": 0.9986303309380827,
+    "dominant_measured_stage": "total_backward"
+  },
+  "development_decision": "EQUIVALENCE_PRESERVING_DERIVATIVE_ENGINE_OPTIMIZATION_REQUIRED_BEFORE_EXECUTION_CONTRACT",
+  "decision_basis": "The warmed benchmark removed first-use forward contamination while the corrected graph remained far more expensive than the matched first-order control. The warmed stage attribution localizes nearly all corrected-path time to local recurrent derivative construction and backward through that derivative graph.",
+  "scientific_acceptance_threshold_used": false,
+  "scientific_model_changed": false,
+  "COMP_XPU_005_full_training_authorized": false,
+  "B3_authorized": false
+}

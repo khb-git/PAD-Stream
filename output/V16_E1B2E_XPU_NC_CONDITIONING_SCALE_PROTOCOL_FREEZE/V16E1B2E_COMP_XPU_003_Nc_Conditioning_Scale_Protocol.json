@@ -1,0 +1,113 @@
+{
+  "milestone": "V16E-1B2E-XPU",
+  "new_experiment_id": "V16E-BLREP-COMP-XPU-003",
+  "classification": "PROSPECTIVE_ONE_FACTOR_NC_CONDITIONING_SCALE_STUDY",
+  "hypothesis": "The persistent high-Nc weakness may be caused in part by the raw neural-network conditioning scale of Nc.",
+  "one_scientific_change": {
+    "field": "network_conditioner_Nc_representation",
+    "old": "Nc_cond = Nc_physical",
+    "new": "Nc_cond = Nc_physical / 0.30",
+    "physical_grid": [
+      0.0,
+      0.05,
+      0.1,
+      0.2,
+      0.3
+    ],
+    "network_grid": [
+      0.0,
+      0.16666666666666669,
+      0.33333333333333337,
+      0.6666666666666667,
+      1.0
+    ]
+  },
+  "mandatory_physics_conditioner_separation": {
+    "p11_phys": "[no,nw,swi,sor,mu_w,mu_o,phi,tD,xD_star,Sw_star,Nc_physical]",
+    "p11_model": "[no,nw,swi,sor,mu_w,mu_o,phi,tD,xD_star,Sw_star,Nc_physical/0.30]",
+    "teacher_uses": "Nc_physical",
+    "physics_residual_uses": "Nc_physical",
+    "breakthrough_and_transform_use": "Nc_physical",
+    "neural_LSTM_conditioner_uses": "p11_model",
+    "range_map_indices_unchanged": {
+      "swc": 2,
+      "sor": 3
+    },
+    "physics_indices_unchanged": {
+      "xD_star": 8,
+      "Sw_star": 9,
+      "Nc_physical": 10
+    }
+  },
+  "must_remain_identical_to_COMP_XPU_002": {
+    "Stage2_source_sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+    "dataset_sha256": "46f10f00ff6dc48f7b2b936bd7d602e6435f72f8410138c5aad0dd4add555f1c",
+    "epochs": 800,
+    "fresh_initialization": true,
+    "seed": 1337,
+    "hidden": 64,
+    "layers": 2,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "logical_batch": 8192,
+    "XPU_microbatch": 2048,
+    "Adam_foreach": false,
+    "loss_weights": {
+      "data": 1.0,
+      "physics": 0.05,
+      "injector_bc": 5.0,
+      "tip_bc": 5.0,
+      "anchor": 10.0,
+      "monotonicity": 0.2,
+      "shape": 0.0
+    },
+    "NX_TRAIN": 1601,
+    "NX_REF": 3201,
+    "n_fan": 64,
+    "physical_Nc_grid": [
+      0.0,
+      0.05,
+      0.1,
+      0.2,
+      0.3
+    ],
+    "train_fraction": 0.8,
+    "split_seed": 1337
+  },
+  "dataset_policy": {
+    "rebuild_Godunov_teacher": false,
+    "reuse_exact_dataset": true,
+    "dataset_contents_modified": false,
+    "p11_physical_array_remains_authority": true,
+    "scaled_model_conditioner_derived_at_runtime": true
+  },
+  "evaluation_policy": {
+    "same_development_diagnostic_split": true,
+    "NOT_independent_test": true,
+    "NOT_OOD": true,
+    "repeat_B2D_structure": [
+      "overall reproduction diagnostic metrics",
+      "per-Nc holdout MAE/RMSE/max",
+      "full-domain fine-grid Godunov error",
+      "front-excluded fine-grid Godunov error",
+      "front-position error",
+      "Nc0.30/Nc0 response ratios",
+      "Nc=0 Stage-1 nesting diagnostics",
+      "saturation bounds"
+    ],
+    "numeric_acceptance_threshold": null,
+    "B3_automatic_authorization": false
+  },
+  "firewall": {
+    "change_epochs": false,
+    "change_dataset": false,
+    "change_teacher": false,
+    "change_architecture_width_or_depth": false,
+    "change_loss_weights": false,
+    "change_physical_Nc": false,
+    "change_PDE_or_transform": false,
+    "change_front_definition": false,
+    "OOD_claim": false,
+    "TOF": false
+  }
+}

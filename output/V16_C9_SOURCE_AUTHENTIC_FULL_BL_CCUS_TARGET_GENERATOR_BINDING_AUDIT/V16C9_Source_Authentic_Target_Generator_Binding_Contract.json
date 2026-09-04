@@ -1,0 +1,108 @@
+{
+  "milestone": "V16C-9",
+  "status": "V16C_SOURCE_AUTHENTIC_TARGET_GENERATOR_LINEAGE_BOUND_NEW_POLLOCK_ADAPTER_SOLVER_REQUIRED",
+  "diagnosis": "STAGE4_CONSTITUTIVE_AND_NUMERICAL_PHYSICS_ARE_BOUND_BUT_NATIVE_STAGE4_SOLVER_CANNOT_BE_CALLED_DIRECTLY_BECAUSE_V16_REQUIRES_201_NODE_POLLOCK_KINEMATICS_AND_THE_C7_TRANSFORMED_CAPILLARY_OPERATOR",
+  "source_identity": {
+    "stage4_source": "pi_rnn_stage4_full_godunov.py",
+    "sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+    "expected_sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+    "exact_sha_match": true,
+    "C7_metric_sha256": "5a47ef2a4154291b424e43d1b0e21e30baa0c805c846e9943f62f8b389289e6d",
+    "C7_metric_hash_matches_contract": true,
+    "C8_contract_sha256": "ad29a3c13b782f21d31d8d5db0e6a771f8dac5557027afa1435bd1fb72c17a80"
+  },
+  "bound_stage4_components": [
+    {
+      "component": "fractional_flow_and_relative_permeability",
+      "source_authentic": true,
+      "reuse_policy": "REUSE_STAGE4_PHYSICS"
+    },
+    {
+      "component": "conservative_Godunov_advection",
+      "source_authentic": true,
+      "reuse_policy": "REUSE_FLUX_LOGIC_BUT_REPLACE_NATIVE_XD_KINEMATIC_MAPPING_WITH_C7A_POLLOCK_AUTHORITY"
+    },
+    {
+      "component": "legacy_variable_u_exp_Nc_xD",
+      "source_authentic": true,
+      "reuse_policy": "DO_NOT_APPLY_AS_SECOND_KINEMATIC_MULTIPLIER"
+    },
+    {
+      "component": "capillary_diffusion",
+      "source_authentic": true,
+      "reuse_policy": "REUSE_D_TILDE_AND_COEFFICIENT_PHYSICS_WITH_C7_TRANSFORMED_SPATIAL_OPERATOR"
+    },
+    {
+      "component": "full_operator_split_solver_lineage",
+      "source_authentic": true,
+      "reuse_policy": "REFERENCE_IMPLEMENTATION_FOR_NEW_V16_ADAPTER_SOLVER"
+    },
+    {
+      "component": "saturation_bounds",
+      "source_authentic": true,
+      "reuse_policy": "PRESERVE"
+    }
+  ],
+  "adapter_requirements": [
+    {
+      "requirement_id": "G1",
+      "requirement": "201-node Pollock sequence",
+      "derivation": "C8 frozen target geometry",
+      "implementation": "new deterministic V16 transport-grid interface",
+      "fitted": false
+    },
+    {
+      "requirement_id": "G2",
+      "requirement": "theta=tau/tau_end and xD_arc=s/L",
+      "derivation": "C7",
+      "implementation": "consume frozen C7 metric artifact",
+      "fitted": false
+    },
+    {
+      "requirement_id": "G3",
+      "requirement": "M=dtheta/dxD_arc",
+      "derivation": "C7",
+      "implementation": "consume frozen C7 metric; no recalibration",
+      "fitted": false
+    },
+    {
+      "requirement_id": "G4",
+      "requirement": "capillary operator M d/dtheta[D_tilde M dS/dtheta]",
+      "derivation": "C7/C7R",
+      "implementation": "new conservative face-form V16 operator",
+      "fitted": false
+    },
+    {
+      "requirement_id": "G5",
+      "requirement": "Pollock TOF is kinematic authority",
+      "derivation": "C7A/C7A-R",
+      "implementation": "do not multiply legacy exp(Nc xD) on top of Pollock advection",
+      "fitted": false
+    },
+    {
+      "requirement_id": "G6",
+      "requirement": "Stage-4 Nc semantics retained",
+      "derivation": "C7A/C7A-R",
+      "implementation": "retain as source-lineage parameter/conditioning metadata; no invented PVT law",
+      "fitted": false
+    },
+    {
+      "requirement_id": "G7",
+      "requirement": "source-authentic Stage-4 constitutive physics",
+      "derivation": "C6/C8",
+      "implementation": "reuse relative-perm/fractional-flow/capillary constitutive functions",
+      "fitted": false
+    },
+    {
+      "requirement_id": "G8",
+      "requirement": "conservative discrete transport",
+      "derivation": "Stage-4 Godunov lineage + C8",
+      "implementation": "derive V16 face flux/operator before target generation",
+      "fitted": false
+    }
+  ],
+  "direct_native_stage4_solver_call": "PROHIBITED",
+  "Y_generation_authorized": false,
+  "recommendation": "Freeze C9 binding. Implement C10 as a no-target numerical operator construction/verification milestone: build the conservative 201-node Pollock-coordinate advection-capillary operator from the bound Stage-4 physics, consume the frozen C7 metric, suppress legacy uD double counting, and validate algebraic/conservation properties before any Y generation.",
+  "next_milestone": "V16C-10 \u2014 Conservative 201-Node Pollock-Coordinate Full-Physics Operator Construction"
+}

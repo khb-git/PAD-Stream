@@ -1,0 +1,56 @@
+{
+  "experiment_id": "V16E-BLREP-COMP-XPU-002",
+  "framework": "PyTorch XPU",
+  "pytorch_version": "2.14.0+xpu",
+  "device": "xpu",
+  "source_sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+  "framework_port_protocol_sha256": "a11a6d527c2d566d690062a6e9d9a247bf9fabd994cc7bb72d5bbe995bfa8ca5",
+  "condition_on": [
+    "no",
+    "nw",
+    "swi",
+    "sor",
+    "mu_w",
+    "mu_o",
+    "phi",
+    "tD",
+    "xD_star",
+    "Sw_star",
+    "Nc"
+  ],
+  "param_dim": 11,
+  "hidden": 64,
+  "layers": 2,
+  "seed": 1337,
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "logical_batch_size": 8192,
+  "microbatch": 2048,
+  "epochs_requested": 800,
+  "full_certification_run": true,
+  "one_factor_change": {
+    "epochs": {
+      "old": 400,
+      "new": 800
+    }
+  },
+  "fresh_initialization": true,
+  "warm_start_used": false,
+  "mixed_precision": false,
+  "teacher": {
+    "NX_TRAIN": 1601,
+    "NX_REF": 3201,
+    "Nc_vals": [
+      0.0,
+      0.05000000074505806,
+      0.10000000149011612,
+      0.20000000298023224,
+      0.30000001192092896
+    ],
+    "max_cases": 2400
+  },
+  "dataset": {
+    "path": "output\\V16_E1B_XPU_DATASETS\\V16E_STAGE2_COMPRESSIBLE_GODUNOV_DATASET_SEED1337.npz",
+    "sha256": "46f10f00ff6dc48f7b2b936bd7d602e6435f72f8410138c5aad0dd4add555f1c"
+  }
+}

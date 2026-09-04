@@ -1,0 +1,65 @@
+{
+  "milestone": "V16C-19",
+  "status": "V16C_LEAKAGE_SAFE_STREAMLINE_GROUP_SPLIT_AUTHORITY_FROZEN",
+  "diagnosis": "ALL_NINE_TIME_STATES_FOR_EACH_STREAMLINE_ARE_GROUPED_IN_ONE_DISJOINT_TRAIN_VALIDATION_OR_TEST_PARTITION_WHILE_TRUE_OOD_IS_RESERVED_FOR_FUTURE_UNSEEN_FOUNDATION_CASES",
+  "seed": 16019,
+  "grouping_unit": "streamline_index",
+  "all_time_states_grouped": true,
+  "requested_fractions": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "streamline_counts": {
+    "train": 755,
+    "validation": 162,
+    "test": 161
+  },
+  "sample_counts": {
+    "train": 6795,
+    "validation": 1458,
+    "test": 1449
+  },
+  "target_day_coverage": {
+    "train": [
+      30.0,
+      60.0,
+      100.0,
+      150.0,
+      250.0,
+      365.0,
+      500.0,
+      750.0,
+      1000.0
+    ],
+    "validation": [
+      30.0,
+      60.0,
+      100.0,
+      150.0,
+      250.0,
+      365.0,
+      500.0,
+      750.0,
+      1000.0
+    ],
+    "test": [
+      30.0,
+      60.0,
+      100.0,
+      150.0,
+      250.0,
+      365.0,
+      500.0,
+      750.0,
+      1000.0
+    ]
+  },
+  "OOD_policy": "RESERVED_FOR_FUTURE_UNSEEN_GEOLOGY_CONTROL_FOUNDATION_CASES",
+  "current_case_OOD_samples": 0,
+  "artifact": "output\\V16_C19_LEAKAGE_SAFE_TRAIN_VALIDATION_TEST_OOD_SPLIT_AUTHORITY_CONTRACT\\V16C19_Leakage_Safe_Split_Assignment.npz",
+  "artifact_sha256": "399815504f5ba3a900c02f24e4f9496b3a93c2e472a5faea593507cf9174638a",
+  "training_authorized": false,
+  "recommendation": "Freeze C19. The current Foundation Case 0001 dataset now has a leakage-safe in-case train/validation/test assignment. Next bind the existing Stage4 PI-RNN architecture to the V16 201-node conditioning/target interface and freeze the training input/output contract before training.",
+  "next_milestone": "V16C-20 \u2014 Stage4 PI-RNN to V16 Training Interface and Architecture Binding Contract"
+}

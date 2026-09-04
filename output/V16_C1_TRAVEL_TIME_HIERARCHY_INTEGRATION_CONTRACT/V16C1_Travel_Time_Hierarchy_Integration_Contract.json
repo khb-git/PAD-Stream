@@ -1,0 +1,26 @@
+{
+  "milestone": "V16C-1",
+  "status": "V16C_TRAVEL_TIME_HIERARCHY_INTEGRATION_CONTRACT_READY",
+  "diagnosis": "FMM_ADV_AND_POLLOCK_HAVE_NONCOMPETING_DOWNSTREAM_ROLES_WITH_POLLOCK_RETAINED_AS_THE_AUTHORITATIVE_STREAMLINE_TRANSPORT_COORDINATE",
+  "transport_coordinate_authority": {
+    "streamline": "Pollock TOF",
+    "grid_directional": "ADV tau",
+    "grid_scalar": "FMM arrival time"
+  },
+  "integration_rule": "FMM and ADV may condition downstream transport models; neither may replace Pollock TOF in the existing streamline transport branch.",
+  "next_database_contract": {
+    "streamline_nodes": "existing frozen Pollock XYZ nodes",
+    "primary_coordinate": "Pollock TOF",
+    "auxiliary_grid_samples": [
+      "FMM arrival time",
+      "ADV travel time"
+    ],
+    "context": [
+      "K",
+      "pressure",
+      "streamline weight"
+    ]
+  },
+  "recommendation": "Freeze this integration contract. Proceed to V16C-2 to assemble a multi-coordinate streamline transport database that samples frozen FMM and ADV fields onto the frozen Pollock nodes while preserving Pollock TOF as the transport coordinate.",
+  "next_milestone": "V16C-2 \u2014 Multi-Coordinate Streamline Transport Database Assembly"
+}

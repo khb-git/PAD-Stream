@@ -1,0 +1,228 @@
+{
+  "milestone": "V16D-8",
+  "status": "V16D_SG5_SOURCE_BOUND_ARRAY_ENTRYPOINTS_IDENTIFIED_CASE0002_ADAPTER_EXECUTION_AUTHORIZED",
+  "SG5": {
+    "path": "PAD_Stream_V15SG5_Exact_Pollock_Streamlines.py",
+    "sha256": "2989fe58d1fd78fe9f9c03176dbb3ff066faf359f7edaf028cbdc0fea85135f2",
+    "functions": [
+      {
+        "name": "load_inputs",
+        "args": [],
+        "line": 146
+      },
+      {
+        "name": "construct_face_pore_velocities",
+        "args": [
+          "qx",
+          "qy",
+          "qz"
+        ],
+        "line": 198
+      },
+      {
+        "name": "injector_cells",
+        "args": [],
+        "line": 223
+      },
+      {
+        "name": "producer_lookup",
+        "args": [],
+        "line": 231
+      },
+      {
+        "name": "get_cell_face_velocities",
+        "args": [
+          "k",
+          "j",
+          "i",
+          "vx",
+          "vy",
+          "vz"
+        ],
+        "line": 254
+      },
+      {
+        "name": "local_velocity",
+        "args": [
+          "s",
+          "length",
+          "v_low",
+          "v_high"
+        ],
+        "line": 322
+      },
+      {
+        "name": "exit_time_to_face",
+        "args": [
+          "s0",
+          "target",
+          "length",
+          "v_low",
+          "v_high"
+        ],
+        "line": 338
+      },
+      {
+        "name": "advance_coordinate",
+        "args": [
+          "s0",
+          "dt",
+          "length",
+          "v_low",
+          "v_high"
+        ],
+        "line": 406
+      },
+      {
+        "name": "outward_faces_of_injector_region",
+        "args": [
+          "qx",
+          "qy",
+          "qz"
+        ],
+        "line": 453
+      },
+      {
+        "name": "face_seed_positions",
+        "args": [
+          "face_info"
+        ],
+        "line": 654
+      },
+      {
+        "name": "build_seeds",
+        "args": [
+          "qx",
+          "qy",
+          "qz"
+        ],
+        "line": 741
+      },
+      {
+        "name": "trace_one_streamline",
+        "args": [
+          "seed",
+          "vx",
+          "vy",
+          "vz",
+          "prod_lookup"
+        ],
+        "line": 786
+      },
+      {
+        "name": "trace_streamlines",
+        "args": [
+          "seeds",
+          "vx",
+          "vy",
+          "vz"
+        ],
+        "line": 1149
+      },
+      {
+        "name": "validate_streamlines",
+        "args": [
+          "faces",
+          "seeds",
+          "streamlines"
+        ],
+        "line": 1196
+      },
+      {
+        "name": "save_streamline_arrays",
+        "args": [
+          "streamlines"
+        ],
+        "line": 1484
+      },
+      {
+        "name": "save_capture_csv",
+        "args": [
+          "streamlines"
+        ],
+        "line": 1577
+      },
+      {
+        "name": "plot_xy_streamlines",
+        "args": [
+          "permeability",
+          "streamlines"
+        ],
+        "line": 1619
+      },
+      {
+        "name": "plot_3d_streamlines",
+        "args": [
+          "streamlines"
+        ],
+        "line": 1737
+      },
+      {
+        "name": "plot_travel_time_histogram",
+        "args": [
+          "streamlines"
+        ],
+        "line": 1826
+      },
+      {
+        "name": "save_summary",
+        "args": [
+          "validation",
+          "streamlines"
+        ],
+        "line": 1882
+      },
+      {
+        "name": "main",
+        "args": [],
+        "line": 1991
+      }
+    ],
+    "semantic_tokens": {
+      "pollock": true,
+      "streamline": true,
+      "velocity": true,
+      "porosity": true,
+      "seed": true,
+      "tof": false
+    }
+  },
+  "pilot": {
+    "velocity_candidates": [
+      "construct_face_pore_velocities",
+      "get_cell_face_velocities",
+      "local_velocity"
+    ],
+    "seed_candidates": [
+      "face_seed_positions",
+      "build_seeds"
+    ],
+    "trace_candidates": [
+      "trace_one_streamline",
+      "trace_streamlines",
+      "validate_streamlines",
+      "save_streamline_arrays",
+      "plot_xy_streamlines",
+      "plot_3d_streamlines"
+    ],
+    "note": "Candidate functions bound; exact argument/return adapter must be frozen before calling."
+  },
+  "pollock_executed": false,
+  "gates": {
+    "D7BR_bound": true,
+    "SG5_source_present": true,
+    "SG5_hash_recorded": true,
+    "pollock_semantics_present": true,
+    "streamline_semantics_present": true,
+    "velocity_semantics_present": true,
+    "seed_semantics_present": true,
+    "array_level_velocity_entrypoint_identified": true,
+    "array_level_seed_entrypoint_identified": true,
+    "array_level_trace_entrypoint_identified": true,
+    "no_pollock_reimplementation": true,
+    "no_multicase_execution": true,
+    "no_transport": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-8A \u2014 Exact SG5 Function-Signature Adapter and Case 0002 Pollock Pilot"
+}

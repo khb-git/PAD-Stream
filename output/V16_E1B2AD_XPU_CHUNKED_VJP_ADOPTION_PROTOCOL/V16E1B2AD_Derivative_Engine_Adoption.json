@@ -1,0 +1,31 @@
+{
+  "milestone": "V16E-1B2AD-XPU",
+  "classification": "PROSPECTIVE_COMP_XPU_005_DERIVATIVE_ENGINE_ADOPTION",
+  "adopted_engine": "CHUNKED_BATCHED_VJP",
+  "cotangent_chunk_size": 16,
+  "reference_microbatch": 128,
+  "equivalence_basis": {
+    "B2AC_results_sha256": "b2e6ac1f4483af1429f0e5cf4fe56d51024d0f0009dae008a64c3d1550cf3e34",
+    "derivative_equivalence": true,
+    "corrected_residual_equivalence": true,
+    "physics_loss_equivalence": true,
+    "total_loss_equivalence": true,
+    "parameter_gradient_equivalence": true,
+    "identity_budget": "frozen float32-machine-epsilon-derived computational budget"
+  },
+  "performance_basis": {
+    "loop_baseline_median_seconds": 10.102322599999752,
+    "chunk16_median_seconds": 7.866887500000303,
+    "chunk16_mean_seconds": 7.752968999999818,
+    "chunk16_median_profiles_per_second": 16.270729688201982,
+    "loop_over_chunk16_median_ratio": 1.2841575019344516,
+    "interpretation": "frozen B2AC measurement; operational selection only"
+  },
+  "scientific_graph_frozen": true,
+  "architecture_frozen": true,
+  "corrected_residual_frozen": true,
+  "losses_and_weights_frozen": true,
+  "dataset_frozen": true,
+  "physical_Nc_frozen": true,
+  "training_authorized": false
+}

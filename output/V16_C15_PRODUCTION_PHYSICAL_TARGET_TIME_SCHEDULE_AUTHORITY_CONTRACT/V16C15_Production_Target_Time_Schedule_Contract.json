@@ -1,0 +1,32 @@
+{
+  "milestone": "V16C-15",
+  "status": "V16C_PRODUCTION_PHYSICAL_TARGET_TIME_SCHEDULE_FROZEN",
+  "diagnosis": "A_NEW_V16_MULTI_TIME_SUPERVISION_SCHEDULE_SPANS_EARLY_BREAKTHROUGH_INTERMEDIATE_AND_LATE_POLLOCK_TIME_REGIMES_WITHOUT_RELABELLING_HISTORICAL_V15_STATES",
+  "physical_target_time_schedule_frozen": true,
+  "target_days": [
+    30.0,
+    60.0,
+    100.0,
+    150.0,
+    250.0,
+    365.0,
+    500.0,
+    750.0,
+    1000.0
+  ],
+  "target_count": 9,
+  "Y_transport_generated": false,
+  "Y_generation_authorized": false,
+  "training_authorized": false,
+  "recommendation": "Freeze C15. Next bind C11 executable solver to C13-C15 and perform the final pre-generation authorization audit.",
+  "next_milestone": "V16C-16 \u2014 Source-Authentic Y_transport Generation Authorization Audit",
+  "design_basis": "NEW_V16_MULTI_TIME_SUPERVISION_SCHEDULE",
+  "pollock_source": "output\\V16_A_R8R_FOUNDATION_CASE_0001_FREEZE\\PAD_Stream_V16A_Foundation_Case_0001\\V16A_Foundation_Case_0001.npz",
+  "terminal_tof_days": {
+    "min": 134.67954012086182,
+    "median": 344.5662131854729,
+    "p90": 833.1583861647002,
+    "max": 3669.3825678172248
+  },
+  "historical_V15_deployment_authority_inherited": false
+}

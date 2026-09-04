@@ -1,0 +1,38 @@
+{
+  "milestone": "V16C-7R",
+  "status": "V16C7R_CAPILLARY_SOURCE_SEMANTICS_REPAIRED_C7_GEOMETRIC_CAPILLARY_ADAPTER_ACCEPTED",
+  "diagnosis": "C7_FAILURE_WAS_A_SOURCE_DETECTION_FALSE_NEGATIVE_NOT_A_PHYSICS_OR_METRIC_FAILURE",
+  "original_C7_failed_gate": "stage4_capillary_semantics_reproduced",
+  "repair_principle": "Replace brittle literal-name detector with source-semantic evidence; do not relax physics gates.",
+  "stage3_evidence": {
+    "stage": 3,
+    "source": "pi_rnn_stage3_capillary.py",
+    "sha256": "dab8eade38ac08c819ac27d803c8f1bceca9722c4c37e82977dbef6e6232ae0f",
+    "sha_matches": true,
+    "pde_residual_loss_present": true,
+    "Pe_like_tokens": "Pe_c;default_nx_for_pec;diagnostic_case1_symmetric_pec22;diagnostic_case2_asymmetric_pec100;expect;inv_Pec;inv_pec;inv_pec_seq;pec_from_cap_props;pec_vals;set_aspect;spec",
+    "diffusion_capillary_functions": "build_capillary_profiles;pec_from_cap_props;solve_capillary_snapshots",
+    "residual_diffusion_semantics_present": true,
+    "solver_diffusion_semantics_present": true,
+    "governing_equation_capillary_semantics_present": true,
+    "semantic_capillary_lineage_pass": true
+  },
+  "stage4_evidence": {
+    "stage": 4,
+    "source": "pi_rnn_stage4_full_godunov.py",
+    "sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+    "sha_matches": true,
+    "pde_residual_loss_present": true,
+    "Pe_like_tokens": "Pe_c;SPECIFIC;default_nx_for_pec;diagnostic_case1_full_pec22_nc01;diagnostic_case2_nesting_pec100_nc0;expect;inv_Pec;inv_pec;inv_pec_seq;pec_from_cap_props;pec_vals;set_aspect;spec",
+    "diffusion_capillary_functions": "build_capillary_profiles;pec_from_cap_props;solve_capillary_snapshots",
+    "residual_diffusion_semantics_present": true,
+    "solver_diffusion_semantics_present": true,
+    "governing_equation_capillary_semantics_present": true,
+    "semantic_capillary_lineage_pass": true
+  },
+  "inherited_C7_metric_artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_C7_POLLOCK_TOF_FULL_BL_CCUS_ADAPTER_PHYSICS_CONTRACT\\V16C7_Pollock_TOF_Streamline_Metric_Contract.npz",
+  "inherited_C7_metric_sha256": "5a47ef2a4154291b424e43d1b0e21e30baa0c805c846e9943f62f8b389289e6d",
+  "C7_capillary_transform": "ACCEPTED_WITHOUT_RECALCULATION",
+  "recommendation": "Accept the existing C7 Pollock/arc-length metric and capillary operator transform without recalculation. Proceed to C7A to separate Stage-4 Nc/uD transport compressibility from frozen Pollock kinematics. Do not generate Y yet.",
+  "next_milestone": "V16C-7A \u2014 Compressibility Authority Separation / Nc-uD Pollock Compatibility Audit"
+}

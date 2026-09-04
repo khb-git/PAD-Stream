@@ -1,0 +1,10 @@
+{
+  "milestone": "V15-SG7E1R26I-R20R",
+  "status": "R20_LATER_TIME_BINDINGS_REJECTED_OR_INCOMPLETE",
+  "diagnosis": "R20_250_500_BINDINGS_REUSE_AUTHORITATIVE_100D_STATE_OR_OTHERWISE_LACK_VALID_PHYSICAL_TIME_AUTHORITY",
+  "accepted_later_time_binding_count": 0,
+  "rejected_R20_binding_count": 2,
+  "failed_gates": [],
+  "recommendation": "Treat rejected bindings as non-recovered. Do not relabel frozen100 as 250/500-day state. The corrected persisted later-time coverage is incomplete. Proceed to a formal multi-time deployment coverage limitation / SG7E scope decision audit.",
+  "next_milestone": "V15-SG7E1R26I-R21 \u2014 Multi-Time Deployment Coverage Limitation / SG7E Scope Decision Audit"
+}

@@ -1,0 +1,34 @@
+{
+  "milestone": "V16A-R7",
+  "status": "V16A_PRESSURE_FLUX_REGENERATION_COMPLETE_RESIDUAL_COMPONENTS_REMAIN",
+  "diagnosis": "SOURCE_AUTHENTIC_SG3_SG4_DYNAMIC_FLOW_REGENERATION_PASSED_BUT_ONE_OR_MORE_VELOCITY_OR_PRODUCER_COMPONENTS_REMAIN_UNBOUND",
+  "authority_label": "DERIVED_V16_FROM_FROZEN_V15",
+  "component_status": {
+    "pressure": true,
+    "Qx": true,
+    "Qy": true,
+    "Qz": true,
+    "Vx": false,
+    "Vy": false,
+    "Vz": false,
+    "producer_id": false
+  },
+  "sources": {
+    "SG3": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG3_FiveSpot_Pressure_Solve.py",
+    "SG3_sha256": "d3ba7b7be45636f6d3ee254fd6cb95268cef9e6f35e85d53b5793596cb22b14d",
+    "SG4": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG4_Conservative_Darcy_Fluxes.py",
+    "SG4_sha256": "86a1c88ffc35033314ae6598ade23f0bebfa709f62cbe2cbef1830cd607e0af9"
+  },
+  "derived_artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_A_R7_CONTROLLED_SOURCE_AUTHENTIC_REGENERATION\\V16AR7_Derived_V16_From_Frozen_V15_Dynamic_Components.npz",
+  "derived_artifact_sha256": "a3f1226c18708e2aa4589e640b93de27ec106e0957b650d3ccf81be5d30d4b4f",
+  "constraints": {
+    "historical_V15_relabelling": false,
+    "Pollock_retrace": false,
+    "FMM": false,
+    "model_predict_by_R7": false,
+    "training": false,
+    "frozen_V15_mutation": false
+  },
+  "recommendation": "Do not rerun SG3/SG4. Preserve the R7 regenerated pressure/flux artifact. Resolve only the residual components: Vx, Vy, Vz, producer_id.",
+  "next_milestone": "V16A-R7A \u2014 Residual Velocity / Producer Component Binding"
+}

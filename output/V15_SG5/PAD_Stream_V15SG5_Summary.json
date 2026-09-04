@@ -1,0 +1,49 @@
+{
+  "milestone": "V15-SG5",
+  "description": "Exact 3D Pollock streamline tracing",
+  "status": "PASS",
+  "grid": {
+    "nx": 50,
+    "ny": 50,
+    "nz": 15,
+    "dx_ft": 20.0,
+    "dy_ft": 20.0,
+    "dz_ft": 4.0
+  },
+  "porosity": 0.2,
+  "face_subdivisions": 7,
+  "method": "piecewise-linear Pollock analytical cell tracking",
+  "seeding": "flux-weighted boundary of five-cell injector completion region",
+  "producer_termination": "entry into producer completion cell",
+  "validation": {
+    "outgoing_injector_flow_m3_day": 714.2857142857109,
+    "seed_weight_m3_day": 714.2857142857104,
+    "captured_weight_m3_day": 714.2857142857104,
+    "capture_fraction": 1.0,
+    "streamline_count": 1078,
+    "producer_capture_count": 1078,
+    "stagnation_count": 0,
+    "loop_count": 0,
+    "maxstep_count": 0,
+    "boundary_exit_count": 0,
+    "producer_capture_m3_day": {
+      "PROD_SW": 120.66964377412772,
+      "PROD_SE": 146.5001828627121,
+      "PROD_NW": 195.79200377316096,
+      "PROD_NE": 251.32388387570919
+    },
+    "producer_capture_count_detail": {
+      "PROD_SW": 188,
+      "PROD_SE": 214,
+      "PROD_NW": 304,
+      "PROD_NE": 372
+    }
+  },
+  "travel_time": {
+    "min_days": 134.67954012086182,
+    "max_days": 3669.3825678172248,
+    "mean_days": 463.3627938545692,
+    "median_days": 344.5662131854729
+  },
+  "next_milestone": "V15-SG6 - streamline time-of-flight and transport coordinates"
+}

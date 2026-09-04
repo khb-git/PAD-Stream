@@ -1,0 +1,27 @@
+{
+  "milestone": "V16C-12R3",
+  "status": "V16C_FROZEN_V15_100D_REFERENCE_NOT_RESOLVABLE_BY_EXPLICIT_SUPERSESSION_RECORDS",
+  "diagnosis": "THE_LOCAL_V15_PRODUCER_MANIFEST_RECORDS_DO_NOT_EXPLICITLY_IDENTIFY_ONE_COMPETING_HASH_AS_FINAL_WHILE_SUPERSEDING_ALL_OTHERS",
+  "competing_hashes": [
+    "cf59694325c94ac2019632124bb8b7657367725269f8a1b78196f210a0f5c1b2",
+    "dfbf72659c7f35e57dd05e65548ff0325337d141fe040a5da0c5bdccc24bcc4c",
+    "5fb3ce987c7078b50543e4ed698d97cedb4f9259fa904216822e10bddf2353d0"
+  ],
+  "positive_authority_sources": {
+    "cf59694325c94ac2019632124bb8b7657367725269f8a1b78196f210a0f5c1b2": [],
+    "dfbf72659c7f35e57dd05e65548ff0325337d141fe040a5da0c5bdccc24bcc4c": [],
+    "5fb3ce987c7078b50543e4ed698d97cedb4f9259fa904216822e10bddf2353d0": []
+  },
+  "supersession_or_nonauthority_sources": {
+    "cf59694325c94ac2019632124bb8b7657367725269f8a1b78196f210a0f5c1b2": [],
+    "dfbf72659c7f35e57dd05e65548ff0325337d141fe040a5da0c5bdccc24bcc4c": [],
+    "5fb3ce987c7078b50543e4ed698d97cedb4f9259fa904216822e10bddf2353d0": []
+  },
+  "bound_reference_sha256": null,
+  "bound_reference_path": null,
+  "resolution_rule": "explicit final authority for winner + explicit supersession/nonauthority for every competitor",
+  "numerical_comparison_executed": false,
+  "Y_generation_authorized": false,
+  "recommendation": "Do not choose among the three hashes. Freeze the negative provenance finding. The next milestone must determine the intended frozen 100-day authority from the formal V15 freeze contract/runbook or regenerate the comparison from the exact frozen source recipe if that contract explicitly authorizes regeneration.",
+  "next_milestone": "V16C-12R4 \u2014 Formal V15 Freeze Contract and Source-Recipe Authority Audit"
+}

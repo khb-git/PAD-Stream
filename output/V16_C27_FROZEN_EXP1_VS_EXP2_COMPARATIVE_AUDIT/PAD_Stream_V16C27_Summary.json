@@ -1,0 +1,61 @@
+{
+  "milestone": "V16C-27",
+  "status": "V16C_EXP1_VS_EXP2_FROZEN_COMPARATIVE_AUDIT_COMPLETE",
+  "predictive": {
+    "EXP1": {
+      "mse": 1.9360864490401794e-05,
+      "rmse": 0.004400098236449022,
+      "mae": 0.0018270660761256494,
+      "max_abs": 0.14034636318683624
+    },
+    "EXP2": {
+      "mse": 0.00011000435730582552,
+      "rmse": 0.010488296206049175,
+      "mae": 0.0055905877160918925,
+      "max_abs": 0.1064608097076416
+    },
+    "EXP2_RMSE_reduction_pct": -138.36504647026848,
+    "EXP2_MAE_reduction_pct": -205.98716648206332
+  },
+  "physics_residual": {
+    "EXP1": {
+      "l1": 0.256569362012853,
+      "l2": 0.7510873362126536,
+      "linf": 15.257634621197878
+    },
+    "EXP2": {
+      "l1": 0.2014050081866182,
+      "l2": 0.45014429120582694,
+      "linf": 12.090959115841807
+    },
+    "EXP2_L1_reduction_pct": 21.500756518025458,
+    "EXP2_L2_reduction_pct": 40.06764999185412,
+    "EXP2_Linf_reduction_pct": 20.754694839503603
+  },
+  "structural": {
+    "EXP1": {
+      "spatial_positive_fraction": 0.020786749482401657,
+      "temporal_negative_fraction": 0.008146379901733568
+    },
+    "EXP2": {
+      "spatial_positive_fraction": 0.0032505175983436854,
+      "temporal_negative_fraction": 0.0024296220759556257
+    }
+  },
+  "gates": {
+    "C26_frozen": true,
+    "identical_test_indices": true,
+    "identical_targets": true,
+    "exact_C18R_bound": true,
+    "exact_C7_bound": true,
+    "EXP1_finite": true,
+    "EXP2_finite": true,
+    "same_residual_diagnostic": true,
+    "no_retraining": true,
+    "no_retuning": true,
+    "no_model_reselection": true,
+    "no_OOD_claim": true
+  },
+  "scientific_rule": "Descriptive frozen comparison; superiority is not a gate.",
+  "next_milestone": "V16C-28 \u2014 V16C Transport Learning Branch Freeze, Interpretation and Forward Architecture Decision"
+}

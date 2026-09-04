@@ -1,0 +1,722 @@
+{
+  "0020": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0015": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0013": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0004": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0006": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0002": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0023": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0016": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0009": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0019": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0017": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0024": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0003": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0011": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0014": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0007": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0010": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0025": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0008": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0012": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0005": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0018": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0021": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  },
+  "0022": {
+    "bindings": {
+      "theta": "theta",
+      "pollock_tau_s": "pollock_tau_s",
+      "pollock_tau_end_s": "pollock_tau_end_s",
+      "xyz": null,
+      "Kx": null,
+      "Ky": null,
+      "Kz": null,
+      "porosity_grid": "porosity",
+      "pressure_grid": null,
+      "adv_path": null,
+      "log10_Kh": null,
+      "log10_Kz_over_Kh": null,
+      "porosity_path": null,
+      "pressure_z": null
+    },
+    "missing": [
+      "xyz",
+      "Kx",
+      "Ky",
+      "Kz",
+      "pressure_grid",
+      "adv_path",
+      "log10_Kh",
+      "log10_Kz_over_Kh",
+      "porosity_path",
+      "pressure_z"
+    ]
+  }
+}

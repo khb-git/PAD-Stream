@@ -1,0 +1,131 @@
+{
+  "milestone": "V16A-R1",
+  "status": "V16A_COMPONENT_BINDING_REMAINS_INCOMPLETE",
+  "diagnosis": "ONE_OR_MORE_REQUIRED_COMPONENTS_REMAIN_AMBIGUOUS_OR_NOT_FOUND_WITHIN_THEIR_ORIGINAL_SG1_SG6_OWNER_LINEAGE",
+  "resolution_counts": {
+    "exactly_persisted": 0,
+    "source_defined_not_persisted": 10,
+    "ambiguous_within_owner": 0,
+    "not_found": 2
+  },
+  "component_resolution": [
+    {
+      "component": "Kx",
+      "status": "SOURCE_DEFINED_NOT_PERSISTED",
+      "owner": "SG1;SG2",
+      "artifact": "",
+      "key": "",
+      "source_assignment_records": 3,
+      "source_serialization_records": 0
+    },
+    {
+      "component": "Ky",
+      "status": "SOURCE_DEFINED_NOT_PERSISTED",
+      "owner": "SG1;SG2",
+      "artifact": "",
+      "key": "",
+      "source_assignment_records": 3,
+      "source_serialization_records": 0
+    },
+    {
+      "component": "Kz",
+      "status": "SOURCE_DEFINED_NOT_PERSISTED",
+      "owner": "SG1;SG2",
+      "artifact": "",
+      "key": "",
+      "source_assignment_records": 3,
+      "source_serialization_records": 0
+    },
+    {
+      "component": "porosity",
+      "status": "SOURCE_DEFINED_NOT_PERSISTED",
+      "owner": "SG1;SG2;SG3",
+      "artifact": "",
+      "key": "",
+      "source_assignment_records": 3,
+      "source_serialization_records": 0
+    },
+    {
+      "component": "pressure",
+      "status": "NOT_FOUND",
+      "owner": "SG3",
+      "artifact": "",
+      "key": "",
+      "source_assignment_records": 0,
+      "source_serialization_records": 0
+    },
+    {
+      "component": "Qx",
+      "status": "SOURCE_DEFINED_NOT_PERSISTED",
+      "owner": "SG4",
+      "artifact": "",
+      "key": "",
+      "source_assignment_records": 1,
+      "source_serialization_records": 0
+    },
+    {
+      "component": "Qy",
+      "status": "SOURCE_DEFINED_NOT_PERSISTED",
+      "owner": "SG4",
+      "artifact": "",
+      "key": "",
+      "source_assignment_records": 1,
+      "source_serialization_records": 0
+    },
+    {
+      "component": "Qz",
+      "status": "SOURCE_DEFINED_NOT_PERSISTED",
+      "owner": "SG4",
+      "artifact": "",
+      "key": "",
+      "source_assignment_records": 1,
+      "source_serialization_records": 0
+    },
+    {
+      "component": "Vx",
+      "status": "SOURCE_DEFINED_NOT_PERSISTED",
+      "owner": "SG5",
+      "artifact": "",
+      "key": "",
+      "source_assignment_records": 1,
+      "source_serialization_records": 0
+    },
+    {
+      "component": "Vy",
+      "status": "SOURCE_DEFINED_NOT_PERSISTED",
+      "owner": "SG5",
+      "artifact": "",
+      "key": "",
+      "source_assignment_records": 1,
+      "source_serialization_records": 0
+    },
+    {
+      "component": "Vz",
+      "status": "SOURCE_DEFINED_NOT_PERSISTED",
+      "owner": "SG5",
+      "artifact": "",
+      "key": "",
+      "source_assignment_records": 1,
+      "source_serialization_records": 0
+    },
+    {
+      "component": "producer_id",
+      "status": "NOT_FOUND",
+      "owner": "SG5;SG6",
+      "artifact": "",
+      "key": "",
+      "source_assignment_records": 0,
+      "source_serialization_records": 0
+    }
+  ],
+  "constraints": {
+    "training_performed": false,
+    "model_predict_executed": false,
+    "new_physics_solved": false,
+    "FMM_executed": false,
+    "V15_artifact_changed": false,
+    "global_shape_only_binding_used": false
+  },
+  "recommendation": "Do not run Fast Marching. Audit only the ambiguous/not-found component rows and their exact SG1-SG6 source/output lineage.",
+  "next_milestone": "V16A-R2 \u2014 Residual Original-Milestone Component Lineage Audit"
+}

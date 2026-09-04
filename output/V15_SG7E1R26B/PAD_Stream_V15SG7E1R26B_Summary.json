@@ -1,0 +1,10 @@
+{
+  "milestone": "V15-SG7E1R26B",
+  "status": "R26B_RUNTIME_EVALUATOR_CONTROL_BLOCKED",
+  "diagnosis": "NO_REUSABLE_NESTED_EVALUATOR_REPRODUCES_AUTHORITATIVE_100D_L2_STATE",
+  "states_generated": 0,
+  "candidate_changed": false,
+  "threshold_changed": false,
+  "recommendation": "Do not generate 250/500/1000-day states. R26A correctly identified the R18 source lineage, but the reusable physical evaluator is still not exposed as a standalone callable beneath main(). Audit only the model.predict input-construction statements inside the selected R18 source and extract the exact raw inference operator plus postprocessing chain. Do not broaden the search or fabricate features.",
+  "next_milestone": "V15-SG7E1R26C \u2014 Inlined Model-Predict Input Construction / Postprocessing Audit"
+}

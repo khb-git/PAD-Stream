@@ -1,0 +1,64 @@
+{
+  "milestone": "V15-SG7E1R17",
+  "status": "MULTI_TIME_L2_STATE_COVERAGE_INCOMPLETE",
+  "diagnosis": "ONE_OR_MORE_HISTORICAL_SG7E_TIMES_LACK_UNIQUE_PERSISTED_L2_STATE",
+  "historical_times_days": [
+    100.0,
+    250.0,
+    500.0,
+    1000.0
+  ],
+  "state_coverage": [
+    {
+      "time_days": 100.0,
+      "resolved_state_hash_count": 39,
+      "state_hashes": "01bb967c07b262836f6c140dd519538db13d9ce5b3bc0f83d52a6164ddcfa950;05cc847cfd6ad7ea9ffd0efa363054a43da585262af414dd53e8ce82a4f71503;098b4010b34a1f907ea1fafb24915263883fa45e0d6fa43ea87913e8cea98542;0a16f7a369ba040648875c178b14050d827e6547dde154bd953994e1db9b91f9;0e318ae79d0e066925b4dfa6f2e6b3d40c63c5970c35d4daa9c74a0cf6de3270;0f18912ccde17efd3650f28b55307b8631c37bfed80a5d148d6b7e3f09319548;0ffc2c2891cf7a1f991eae54053d29bcf4c16fe003c5849cbda8c882e1d58290;1d4480ac7c8ce03e81b6e178d2bdc908d8cc25a1cfa204b156df5cd6d9744e73;2c08c76882c82bfde81835ddab4da812f2b180a8ae50c4a2c03229040049dd02;2d8e238a97f7d8b2d900a43020bea0b53141870907b2c56a61b47c23a600a512;3b2c237186582a875a536eeef14b901a2a315e0a08a1b6a341631b820500005b;3cc6714adc6aff02fda758fb2addaaeb0285c3bac501398a5464c6823ca8a617;3e93e4e2975cfc0a8627ccaaec0c829a865cb92fa400cd27373ac77e91224ed1;3ed4166c31c28380b59dd5cfac1ad4cf02875a359b7f5633affda282f1fa4476;4ca97496a8f5802fe46e5651f44ef9dd6605ca7d04abe6a29e96af869664fb8b;4e660e6a886730accf05a114cd256d76529065424376ad42e3a314943be7e69c;569806cefff9adee673a729af54719bdc51b3d32d8016b70f1b2171c2ac1ac91;676ed31ece88eb11b67d47f0004f0a74b4693c6bae43c4f8ac61ba9a4553ffc6;6b7048e765d984c3c26e393133fdde1b29ac41ad436ad7836b310e4601a98e35;8591c35c1d5a6d2ea06e31e491c627aad401245f94b0e10c6c202457e1a66fe5;8c993d85c756ef2ad46c614e42371f74ff52228e88e4e828596214aae544636b;95ad05f2a92bc65d2497180f996b3cb99aeadd5a8b7856b61279a8bebeff99aa;963746acd2539b30e387516a6c6d4b32310230d8b20e7876a22f82a86419a33e;a08c7320a63ace580456191f408a29afde65e0ad3f078846265243e53cd10297;a404751e671211f27b1ab6ade3cfa043e5d1a3b1c373b0172e1d00021bbd1571;a460c076f464e5c9629802944d356dd213d7b65f234539112e785f34a93260af;a801fc4dc2d077993937f13a10ce77034db20895eb14e197947a5faa1221e9f7;b1399c5a37322b0a7fa51fd7283affff65b1e606b24bfe94c2d588c9f305fc31;b701a392b3d0328e06604d2c8b408556cde622a527064d712995497549a63ccc;bed3e388d628c1c9b9b5b71848497fdc1c2b96c3ea78eddbde6eb9227cd47a49;c5538f3a299aa43c197824475ce9314ab20d85c6e31b1b24dd9e83b3e33767de;c63e0e4df7de50656db5350e8473ece860c6a86a251c890e364110167e39bee9;c6d12d9b90e3ecd4866fb6d8961eb2734baa16e0fb29c26dd36bacec5f353f2a;ca8165654fb6ffcbf3c45a4c9fe48526c80657690495bc54660379895bdaae89;caa8ae1fdefacbd85f89f3ade60d8ec9db993c44191a4d04e82e134d5c24d65c;cc828a57a52c9b0f742e4ec4e20b5efdb42eb7414d5ed633d6627865a099a173;f4f597a9fe6bc5db56424eed214974f0bd25d764d277d4b5aa9f4beec987a33c;f94b253c232f7eef9c96d26d30caf77b58876d4d3aec97296ed987f40b653f1c;fcdfefba4f9a1034d2ffcd0cc54e42f03e2ac7cf13430fa17166f9691e0213b8",
+      "unique_state_available": false
+    },
+    {
+      "time_days": 250.0,
+      "resolved_state_hash_count": 0,
+      "state_hashes": "",
+      "unique_state_available": false
+    },
+    {
+      "time_days": 500.0,
+      "resolved_state_hash_count": 0,
+      "state_hashes": "",
+      "unique_state_available": false
+    },
+    {
+      "time_days": 1000.0,
+      "resolved_state_hash_count": 0,
+      "state_hashes": "",
+      "unique_state_available": false
+    }
+  ],
+  "mapback_replay": {
+    "SG7D1_numerical_exists": true,
+    "SG7D0_contract_exists": true,
+    "SG7D1_source_exists": true,
+    "SG7D1_key_count": 16,
+    "geometry_like_keys": "segment_piece_count:(15, 50, 50)",
+    "weight_like_keys": "support_denominator:(15, 50, 50);support_numerator:(15, 50, 50);supported_mask:(15, 50, 50);total_input_weighted_length:();total_deposited_weighted_length:();total_input_weighted_sat_length:();total_deposited_weighted_sat_length:()",
+    "exact_segment_split_semantics_found": true,
+    "mapback_replay_inputs_available": true
+  },
+  "frozen_membership": {
+    "frozen_grid_sha256": "6bf6661e2344d51c54df4689758a1998952454e0bc13797b8e4da57824cf9522",
+    "uniquely_time_labelled_L2_states": 0,
+    "source_linked_time_candidates": "",
+    "one_time_membership_resolved": false,
+    "resolved_time_days": ""
+  },
+  "constraints": {
+    "training_performed": false,
+    "missing_state_fabricated": false,
+    "candidate_performance_used": false,
+    "SG7E_gate_evaluated": false,
+    "threshold_changed": false,
+    "posthoc_alignment": false
+  },
+  "recommendation": "Do not fabricate missing deployment states and do not evaluate SG7E gates. Audit the L2 evaluation source for the missing required times and determine whether those states can be deterministically regenerated from the frozen model and existing inputs without retraining.",
+  "next_milestone": "V15-SG7E1R18 \u2014 Missing L2 Physical-Time State Deterministic-Regeneration Audit"
+}

@@ -1,0 +1,104 @@
+{
+  "milestone": "V16D-31",
+  "status": "V16D_PARTITIONAWARE_RESTARTABLE_36CASE_STAGE4_TRANSPORT_EXECUTION_CONTRACT_FROZEN_TRAIN_PARTITION_EXECUTION_AUTHORIZED",
+  "D30_sha256": "887c64939da23b2666a3b89ee2e29dd8e0e97e71d6d5692fef38b4d2b0604904",
+  "D30R1R2_sha256": "09951d8c6020942739a08eb4adf1ba87f6e59101cf6d12c389781fcb74264473",
+  "C17_sha256": "1d357be446103cb554c4759948347d2876235b7c630c64cd826801cbfc61dd4f",
+  "contract": {
+    "version": "V16D_STAGE4_36CASE_EXECUTION_CONTRACT_1.0",
+    "foundation_cases": 36,
+    "controls": {
+      "rate_tpd": [
+        350,
+        500,
+        650
+      ],
+      "producer_bhp_psi": [
+        1800,
+        2000,
+        2200
+      ]
+    },
+    "partitions": {
+      "TRAIN": {
+        "geologies": [
+          "0026",
+          "0027"
+        ],
+        "cases": 18
+      },
+      "VALIDATION": {
+        "geologies": [
+          "0028"
+        ],
+        "cases": 9
+      },
+      "LOCKED_OOD_TEST": {
+        "geologies": [
+          "0029"
+        ],
+        "cases": 9
+      }
+    },
+    "target_days": [
+      30,
+      60,
+      100,
+      150,
+      250,
+      365,
+      500,
+      750,
+      1000
+    ],
+    "Y_shape_each": [
+      9,
+      1078,
+      201
+    ],
+    "execution_unit": "one complete Foundation Case",
+    "restartability": "one immutable case artifact + case summary written immediately after certification; rerun skips only SHA-certified completed cases",
+    "source_physics": "exact C17 ADV/CAP kernels; D28-R1 M_face; Pollock kinematics authoritative",
+    "theta_schema": "canonical persisted (201,) may be broadcast to (1078,201) as adapter only",
+    "normalization": "none in transport generation",
+    "selection": "none",
+    "locked_OOD_policy": "physics targets may be generated prospectively but no aggregate/statistical inspection, tuning, normalization, selection, or training use before final one-touch evaluation",
+    "case_independence": "all 36 Foundation Cases executed independently; no deduplication for observed BHP invariance",
+    "failure_policy": "failed/interrupted case remains uncertified and is rerun from its own beginning; certified earlier cases are not recomputed",
+    "forbidden": [
+      "physics fitting",
+      "threshold relaxation",
+      "case/streamline cherry-picking",
+      "node-M substitution",
+      "FMM/ADV replacement of Pollock",
+      "control-dependent Stage4 law invention",
+      "cross-partition normalization",
+      "OOD selection"
+    ]
+  },
+  "gates": {
+    "D30_summary_SHA_exact": true,
+    "D30R1R2_summary_SHA_exact": true,
+    "C17_source_SHA_exact": true,
+    "D28_36_case_metrics": true,
+    "pilot_status_certified": true,
+    "pilot_artifact_SHA_exact": true,
+    "partition_counts_18_9_9": true,
+    "nine_times_frozen": true,
+    "shape_frozen": true,
+    "per_case_restartability": true,
+    "certified_skip_only": true,
+    "failed_case_rerun_only": true,
+    "Pollock_primary": true,
+    "Mface_primary": true,
+    "theta_adapter_only": true,
+    "no_deduplication": true,
+    "no_training": true,
+    "no_normalization": true,
+    "no_selection": true,
+    "locked_OOD_sealed_for_model_development": true,
+    "no_transport_executed_in_D31": true,
+    "no_threshold_relaxation": true
+  },
+  "next_milestone": "V16D-31A \u2014 Restartable TRAIN partition Stage-4 transport generation for 18 Foundation Cases"
+}

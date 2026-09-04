@@ -1,0 +1,47 @@
+{
+  "milestone": "V16E-0R",
+  "physics_authorities": {
+    "pressure": "finite-volume pressure solve",
+    "Darcy_flux": "conservative Darcy face fluxes",
+    "trajectory": "exact Pollock streamline geometry",
+    "transport_coordinate": "total-flow time of flight",
+    "acceptance": [
+      "transport physics residual / teacher agreement",
+      "saturation bounds",
+      "inventory closure",
+      "conservative path-to-grid map-back"
+    ]
+  },
+  "transport_research_lineages": {
+    "BL_PI_RNN_lineage": [
+      "incompressible",
+      "compressible",
+      "capillary",
+      "full compressible-capillary"
+    ],
+    "Hybrid_DP_lineage": [
+      "8-layer physics validation reference",
+      "10-param Hybrid",
+      "12-param Hybrid with relative-permeability endpoint conditioning",
+      "synthetic N-layer heterogeneity"
+    ],
+    "PAD_Stream_lineage": [
+      "SGSim geology",
+      "finite-volume pressure",
+      "conservative Darcy flux",
+      "exact Pollock",
+      "TOF",
+      "frozen V16D recurrent Stage-4 comparison baseline"
+    ]
+  },
+  "integration_question": "Can the validated physics-informed BL / Hybrid-DP transport lineage be expressed consistently on exact Pollock/TOF path states and improve or complement the frozen V16D recurrent transport proposal?",
+  "canonical_transport_strategy": "DEFERRED_EVIDENCE_DRIVEN",
+  "important_non_equivalences": [
+    "DP is not SGSim spatial connectivity.",
+    "8 layers is not a permanent architecture limit.",
+    "krw_max/kro_max are relative-permeability endpoints, not absolute permeability.",
+    "absolute permeability k_md is not one of the 12 neural conditioning variables.",
+    "V16D recurrent transport is not the historical BL PI-RNN.",
+    "a newly trained V16E checkpoint is not a recovered historical checkpoint."
+  ]
+}

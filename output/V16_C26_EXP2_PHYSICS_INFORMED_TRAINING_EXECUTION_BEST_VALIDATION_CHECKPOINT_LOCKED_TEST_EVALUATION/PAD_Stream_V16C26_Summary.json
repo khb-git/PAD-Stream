@@ -1,0 +1,32 @@
+{
+  "milestone": "V16C-26",
+  "status": "V16C_EXP2_PHYSICS_INFORMED_TRAINING_COMPLETE_LOCKED_TEST_EVALUATED",
+  "model_sha256": "72d4ea3eeadb8bc88b2fa410ca9ba7e6e63f641e1620473c0c2ed15f3109e96f",
+  "epochs_completed": 141,
+  "best_validation_total_objective": 0.00022567576386444714,
+  "locked_test": {
+    "mse": 0.00011000435730582552,
+    "rmse": 0.010488296206049175,
+    "mae": 0.0055905877160918925,
+    "max_abs_error": 0.1064608097076416,
+    "prediction_min": 0.20014388859272003,
+    "prediction_max": 0.7991074323654175
+  },
+  "gates": {
+    "C25_authorized": true,
+    "C18R_hash": true,
+    "C19_hash": true,
+    "C7_hash": true,
+    "train_pairs_6040": true,
+    "validation_pairs_1296": true,
+    "test_count_1449": true,
+    "nine_predictor_channels": true,
+    "lambda_phys_0p01": true,
+    "checkpoint_saved_before_test": true,
+    "test_touched_only_after_checkpoint": true,
+    "predictions_finite": true,
+    "bounded_output": true,
+    "no_retuning": true
+  },
+  "next_milestone": "V16C-27 \u2014 Frozen EXP1-vs-EXP2 Predictive and Full-Physics Comparative Certification Audit"
+}

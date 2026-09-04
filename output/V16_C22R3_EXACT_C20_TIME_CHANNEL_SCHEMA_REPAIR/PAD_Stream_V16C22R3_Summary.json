@@ -1,0 +1,28 @@
+{
+  "status": "V16C_PIRNN_EXP1_CHECKPOINT_REPAIRED_LOCKED_TEST_EVALUATION_COMPLETE",
+  "repair_scope": "POST_TRAINING_LAMBDA_DESERIALIZATION_ONLY",
+  "retraining": false,
+  "retuning": false,
+  "original_checkpoint_sha256": "282fced1a0273c0e25c6e971f9c3734011a6bc9e3d564a0824b2225c9ce12100",
+  "repaired_model_sha256": "e2c7d74236cbbd38c8d95848118b9b98a48327ce2ea68cd2ac5f3bfa9e191d7c",
+  "metrics": {
+    "mse": 1.9360864490401794e-05,
+    "rmse": 0.004400098236449022,
+    "mae": 0.0018270660761256494,
+    "max_abs_error": 0.14034636318683624
+  },
+  "gates": {
+    "C22_checkpoint_exists": true,
+    "C18R_hash": true,
+    "C19_hash": true,
+    "no_retraining": true,
+    "no_retuning": true,
+    "checkpoint_recovered_without_model_deserialization": true,
+    "repaired_model_saved_before_test": true,
+    "locked_test_count_1449": true,
+    "test_predictions_finite": true,
+    "bounded_output_preserved": true,
+    "test_not_used_for_selection": true
+  },
+  "next_milestone": "V16C-23 \u2014 Frozen EXP1 Prediction Full-Physics Residual and Error-Structure Certification Audit"
+}

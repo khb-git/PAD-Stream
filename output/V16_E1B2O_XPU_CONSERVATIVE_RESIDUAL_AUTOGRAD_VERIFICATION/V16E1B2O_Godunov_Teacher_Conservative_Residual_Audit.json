@@ -1,0 +1,211 @@
+{
+  "milestone": "V16E-1B2O-XPU",
+  "classification": "MODEL_FREE_GODUNOV_TEACHER_CORRECTED_CONSERVATIVE_RESIDUAL_AUDIT",
+  "teacher_derivatives": {
+    "S_tD_at_fixed_xi": "finite difference across six frozen fan snapshots within each physical case/Nc group",
+    "S_xi": "finite difference along common frozen xi fan grid",
+    "flux_xi": "finite difference of exp(Nc*xi*X)*fw(S) along xi"
+  },
+  "front_speed_closures": {
+    "RH": "exp(Nc*X)*sigma_BL",
+    "FD": "finite difference dX/dtD of frozen Godunov mid-jump front"
+  },
+  "residual_nodes": "interior fan nodes only (1:-1)",
+  "corrected_residual": {
+    "groups": 2400,
+    "invalid_groups": 0,
+    "per_Nc": {
+      "0.00": {
+        "RH_all": {
+          "n_scalar_residuals": 180420,
+          "MSE": 0.031574241194522686,
+          "RMSE": 0.17769142127441798,
+          "MAE": 0.04149730681412979,
+          "max_abs": 5.840660585057469
+        },
+        "FD_all": {
+          "n_scalar_residuals": 180420,
+          "MSE": 0.030389614570322347,
+          "RMSE": 0.17432617293545552,
+          "MAE": 0.040655260083380176,
+          "max_abs": 5.911121314331018
+        },
+        "RH_holdout": {
+          "n_scalar_residuals": 36332,
+          "MSE": 0.04999810235558516,
+          "RMSE": 0.2236025544478085,
+          "MAE": 0.05626740814729175,
+          "max_abs": 4.415177191972045
+        },
+        "FD_holdout": {
+          "n_scalar_residuals": 36332,
+          "MSE": 0.04792484548733941,
+          "RMSE": 0.21891743988851006,
+          "MAE": 0.05503323333080574,
+          "max_abs": 4.284123769437137
+        }
+      },
+      "0.05": {
+        "RH_all": {
+          "n_scalar_residuals": 178188,
+          "MSE": 0.03990482216584522,
+          "RMSE": 0.1997619137018997,
+          "MAE": 0.06280801117234146,
+          "max_abs": 6.1994865356355895
+        },
+        "FD_all": {
+          "n_scalar_residuals": 178188,
+          "MSE": 0.03852804812160877,
+          "RMSE": 0.19628562892277357,
+          "MAE": 0.06199075981881154,
+          "max_abs": 6.2668322046020215
+        },
+        "RH_holdout": {
+          "n_scalar_residuals": 32984,
+          "MSE": 0.041330029619250974,
+          "RMSE": 0.20329788395172974,
+          "MAE": 0.06358517546303666,
+          "max_abs": 5.504327508853343
+        },
+        "FD_holdout": {
+          "n_scalar_residuals": 32984,
+          "MSE": 0.04013718102629961,
+          "RMSE": 0.20034265902772583,
+          "MAE": 0.06279299055534482,
+          "max_abs": 5.403806027807654
+        }
+      },
+      "0.10": {
+        "RH_all": {
+          "n_scalar_residuals": 177072,
+          "MSE": 0.04798099424093612,
+          "RMSE": 0.21904564419530492,
+          "MAE": 0.09417946955217464,
+          "max_abs": 8.025419170114603
+        },
+        "FD_all": {
+          "n_scalar_residuals": 177072,
+          "MSE": 0.04634636159279692,
+          "RMSE": 0.21528205125554922,
+          "MAE": 0.0932696067049233,
+          "max_abs": 7.735829031403952
+        },
+        "RH_holdout": {
+          "n_scalar_residuals": 35836,
+          "MSE": 0.041193045048254204,
+          "RMSE": 0.20296069828480146,
+          "MAE": 0.08989423170151732,
+          "max_abs": 4.432050827787442
+        },
+        "FD_holdout": {
+          "n_scalar_residuals": 35836,
+          "MSE": 0.03970555744276102,
+          "RMSE": 0.1992625339665262,
+          "MAE": 0.0890227350863872,
+          "max_abs": 4.287837005942642
+        }
+      },
+      "0.20": {
+        "RH_all": {
+          "n_scalar_residuals": 181164,
+          "MSE": 0.06164807279077464,
+          "RMSE": 0.2482902994294675,
+          "MAE": 0.1680630029983582,
+          "max_abs": 7.3549301575525465
+        },
+        "FD_all": {
+          "n_scalar_residuals": 181164,
+          "MSE": 0.06056069469880488,
+          "RMSE": 0.24609082611671018,
+          "MAE": 0.1669891791319497,
+          "max_abs": 7.413293260574962
+        },
+        "RH_holdout": {
+          "n_scalar_residuals": 37944,
+          "MSE": 0.057253825806351265,
+          "RMSE": 0.2392777169030816,
+          "MAE": 0.16787046308857953,
+          "max_abs": 6.173724558208054
+        },
+        "FD_holdout": {
+          "n_scalar_residuals": 37944,
+          "MSE": 0.05616476391981597,
+          "RMSE": 0.23699106295347083,
+          "MAE": 0.1667345398547275,
+          "max_abs": 6.235216646050013
+        }
+      },
+      "0.30": {
+        "RH_all": {
+          "n_scalar_residuals": 175956,
+          "MSE": 0.1028919402064773,
+          "RMSE": 0.3207677356070546,
+          "MAE": 0.2573414729605194,
+          "max_abs": 6.7547810503800605
+        },
+        "FD_all": {
+          "n_scalar_residuals": 175956,
+          "MSE": 0.1016415313505873,
+          "RMSE": 0.3188126900714388,
+          "MAE": 0.255953137993082,
+          "max_abs": 6.808973430023325
+        },
+        "RH_holdout": {
+          "n_scalar_residuals": 35464,
+          "MSE": 0.11781912623730062,
+          "RMSE": 0.34324790784111214,
+          "MAE": 0.26369991432872264,
+          "max_abs": 4.6827616233108
+        },
+        "FD_holdout": {
+          "n_scalar_residuals": 35464,
+          "MSE": 0.11599173042283951,
+          "RMSE": 0.34057558694486534,
+          "MAE": 0.2621646282640239,
+          "max_abs": 4.612344575436005
+        }
+      }
+    }
+  },
+  "comparison_to_B2L_old_characteristic_teacher_residual": {
+    "0.00": {
+      "old_characteristic_teacher_MSE": 0.0011562356203254122,
+      "corrected_conservative_RH_teacher_MSE": 0.04999810235558516,
+      "corrected_conservative_FD_teacher_MSE": 0.04792484548733941,
+      "old_over_corrected_RH_MSE_ratio": 0.023125590089445706,
+      "old_over_corrected_FD_MSE_ratio": 0.024126016653112876
+    },
+    "0.05": {
+      "old_characteristic_teacher_MSE": 0.03662126497330522,
+      "corrected_conservative_RH_teacher_MSE": 0.041330029619250974,
+      "corrected_conservative_FD_teacher_MSE": 0.04013718102629961,
+      "old_over_corrected_RH_MSE_ratio": 0.8860691683668073,
+      "old_over_corrected_FD_MSE_ratio": 0.9124025164923614
+    },
+    "0.10": {
+      "old_characteristic_teacher_MSE": 0.04889786197033721,
+      "corrected_conservative_RH_teacher_MSE": 0.041193045048254204,
+      "corrected_conservative_FD_teacher_MSE": 0.03970555744276102,
+      "old_over_corrected_RH_MSE_ratio": 1.1870416938844277,
+      "old_over_corrected_FD_MSE_ratio": 1.231511786248756
+    },
+    "0.20": {
+      "old_characteristic_teacher_MSE": 0.05673180060351596,
+      "corrected_conservative_RH_teacher_MSE": 0.057253825806351265,
+      "corrected_conservative_FD_teacher_MSE": 0.05616476391981597,
+      "old_over_corrected_RH_MSE_ratio": 0.9908822651502636,
+      "old_over_corrected_FD_MSE_ratio": 1.0100959506303546
+    },
+    "0.30": {
+      "old_characteristic_teacher_MSE": 0.0569005213886291,
+      "corrected_conservative_RH_teacher_MSE": 0.11781912623730062,
+      "corrected_conservative_FD_teacher_MSE": 0.11599173042283951,
+      "old_over_corrected_RH_MSE_ratio": 0.48294808496563807,
+      "old_over_corrected_FD_MSE_ratio": 0.49055670763081416
+    }
+  },
+  "evaluation_semantics": "diagnostic only; holdout labels are not independent/OOD because finite-difference temporal derivatives use complete within-case trajectories",
+  "no_training": true,
+  "no_OOD": true,
+  "no_TOF": true
+}

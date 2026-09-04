@@ -1,0 +1,35 @@
+{
+  "milestone": "V16C-13",
+  "status": "V16C_PHYSICAL_TIME_TO_POLLOCK_NORMALIZED_TIME_MAPPING_FROZEN",
+  "diagnosis": "PHYSICAL_TIME_IS_DETERMINISTICALLY_MAPPED_TO_PER_STREAMLINE_NORMALIZED_TIME_USING_THE_FROZEN_TERMINAL_POLLOCK_TOF_WITH_EXACT_UNIT_CONVERSION",
+  "source_database": "output\\V16_A_R8R_FOUNDATION_CASE_0001_FREEZE\\PAD_Stream_V16A_Foundation_Case_0001\\V16A_Foundation_Case_0001.npz",
+  "shape": [
+    1078,
+    201
+  ],
+  "units": {
+    "pollock_tof": "seconds",
+    "physical_target_time": "days",
+    "seconds_per_day": 86400.0,
+    "eta": "dimensionless",
+    "theta": "dimensionless"
+  },
+  "definitions": {
+    "theta": "pollock_tof_s / terminal_pollock_tof_s",
+    "eta_i": "physical_time_seconds / terminal_pollock_tof_i_seconds",
+    "physical_time_seconds": "physical_time_days * 86400"
+  },
+  "terminal_tof_days": {
+    "min": 134.67954012086182,
+    "median": 344.5662131854729,
+    "mean": 463.3627938545692,
+    "max": 3669.3825678172248
+  },
+  "audit_roundtrip_max_days": 2.2737367544323206e-13,
+  "production_target_times_frozen": false,
+  "Y_transport_generated": false,
+  "Y_generation_authorized": false,
+  "training_authorized": false,
+  "recommendation": "Freeze C13. Next bind the production full-physics transport parameter authority (rock/fluid endpoints, viscosities, Pe_c, capillary lambda, and the role of Nc metadata) without fitting to unavailable V15 states. Y generation remains prohibited until that contract passes.",
+  "next_milestone": "V16C-14 \u2014 Production Full-Physics Transport Parameter Authority Contract"
+}

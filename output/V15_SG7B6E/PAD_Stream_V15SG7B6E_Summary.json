@@ -1,0 +1,212 @@
+{
+  "milestone": "V15-SG7B-6E",
+  "description": "Coupled signed residual-balance audit comparing SG7B-6B and SG7B-6D",
+  "training_performed": false,
+  "canonical_truth_source": "SG7A master_saturation",
+  "SG7A_truth_FV_relative_MAE": 0.0006323247504615058,
+  "SG7B6B": {
+    "name": "SG7B-6B",
+    "saturation_L1": 0.005404826483660971,
+    "saturation_L2": 0.008547621968075713,
+    "temporal_difference_MAE": 0.01149759422264766,
+    "advective_difference_MAE": 0.018205876331097486,
+    "capillary_difference_MAE": 0.00871003300462391,
+    "balance_difference_MAE": 0.013230437055651311,
+    "absolute_residual_MAE": 0.010948448004369548,
+    "relative_residual_MAE": 0.04050596201583986,
+    "relative_residual_RMS": 0.14544495353158843,
+    "mean_cancellation_index": 0.9215421072797134,
+    "median_cancellation_index": 0.9865091288265173,
+    "corr_t_adv": -0.5760435725137684,
+    "corr_t_minuscap": 0.0480980155627728,
+    "corr_adv_minuscap": 0.01859628235669022,
+    "corr_t_plus_adv_minuscap": 0.06048642833926166
+  },
+  "SG7B6D": {
+    "name": "SG7B-6D",
+    "saturation_L1": 0.0007951414260113388,
+    "saturation_L2": 0.0016421880887114713,
+    "temporal_difference_MAE": 0.003314368390762907,
+    "advective_difference_MAE": 0.006195250520017105,
+    "capillary_difference_MAE": 0.004171367841959694,
+    "balance_difference_MAE": 0.006763722130883884,
+    "absolute_residual_MAE": 0.006171631803929365,
+    "relative_residual_MAE": 0.14294085537313372,
+    "relative_residual_RMS": 0.23998602063182103,
+    "mean_cancellation_index": 0.7357272320774452,
+    "median_cancellation_index": 0.8501122062227136,
+    "corr_t_adv": -0.08692043175126045,
+    "corr_t_minuscap": 0.058936950182121486,
+    "corr_adv_minuscap": -0.05713936257951748,
+    "corr_t_plus_adv_minuscap": -0.03513668573458967
+  },
+  "regional_metrics": [
+    {
+      "model": "SG7B-6B",
+      "region": "injector",
+      "temporal_difference_MAE": 0.004917278941427052,
+      "advective_difference_MAE": 0.03169368991903247,
+      "capillary_difference_MAE": 0.03255084818986564,
+      "balance_difference_MAE": 0.03913154448448321,
+      "relative_residual_MAE": 0.19048049163791597,
+      "mean_cancellation_index": 0.7443275272759038,
+      "corr_t_adv": -0.10393114857909976,
+      "corr_t_minuscap": -0.33339123979906854,
+      "corr_adv_minuscap": 0.5678276290315241
+    },
+    {
+      "model": "SG7B-6B",
+      "region": "front",
+      "temporal_difference_MAE": 0.019749470556348868,
+      "advective_difference_MAE": 0.0643028688606716,
+      "capillary_difference_MAE": 0.05322165499265688,
+      "balance_difference_MAE": 0.07105420259033714,
+      "relative_residual_MAE": 0.21712784537387614,
+      "mean_cancellation_index": 0.7401738489945187,
+      "corr_t_adv": -0.7975964248326767,
+      "corr_t_minuscap": -0.0896052293338951,
+      "corr_adv_minuscap": -0.04643185786263608
+    },
+    {
+      "model": "SG7B-6B",
+      "region": "interior",
+      "temporal_difference_MAE": 0.009594397209814313,
+      "advective_difference_MAE": 0.011223044274753341,
+      "capillary_difference_MAE": 0.0017019340503468972,
+      "balance_difference_MAE": 0.003572716175283844,
+      "relative_residual_MAE": 0.014218471790102603,
+      "mean_cancellation_index": 0.946737120706373,
+      "corr_t_adv": -0.77381850097402,
+      "corr_t_minuscap": 0.3784551120429871,
+      "corr_adv_minuscap": -0.0486007237044969
+    },
+    {
+      "model": "SG7B-6B",
+      "region": "outlet",
+      "temporal_difference_MAE": 0.04185021405177575,
+      "advective_difference_MAE": 0.06699824035839415,
+      "capillary_difference_MAE": 0.049538546727837356,
+      "balance_difference_MAE": 0.07995557429486377,
+      "relative_residual_MAE": 0.11729521450278103,
+      "mean_cancellation_index": 0.8713234560850771,
+      "corr_t_adv": -0.416228139168318,
+      "corr_t_minuscap": -0.19220420206789343,
+      "corr_adv_minuscap": 0.1430249981307608
+    },
+    {
+      "model": "SG7B-6D",
+      "region": "injector",
+      "temporal_difference_MAE": 0.002800274168803639,
+      "advective_difference_MAE": 0.012361855895187776,
+      "capillary_difference_MAE": 0.014252627079286265,
+      "balance_difference_MAE": 0.02443734011991756,
+      "relative_residual_MAE": 0.41280070819667986,
+      "mean_cancellation_index": 0.3440780210413137,
+      "corr_t_adv": -0.11583304104106001,
+      "corr_t_minuscap": -0.41078366236937736,
+      "corr_adv_minuscap": 0.7514957623083361
+    },
+    {
+      "model": "SG7B-6D",
+      "region": "front",
+      "temporal_difference_MAE": 0.004839538050493371,
+      "advective_difference_MAE": 0.02067140408552162,
+      "capillary_difference_MAE": 0.017530379937739947,
+      "balance_difference_MAE": 0.024066470643782215,
+      "relative_residual_MAE": 0.4294537728987119,
+      "mean_cancellation_index": 0.3713796950832924,
+      "corr_t_adv": -0.3340644385517609,
+      "corr_t_minuscap": -0.020295978018797525,
+      "corr_adv_minuscap": -0.5273247286900946
+    },
+    {
+      "model": "SG7B-6D",
+      "region": "interior",
+      "temporal_difference_MAE": 0.0026996103055127703,
+      "advective_difference_MAE": 0.0027665329476980667,
+      "capillary_difference_MAE": 0.0005843710763366362,
+      "balance_difference_MAE": 0.0020069711098554357,
+      "relative_residual_MAE": 0.10052581608295266,
+      "mean_cancellation_index": 0.7778539512621826,
+      "corr_t_adv": -0.7211367091321196,
+      "corr_t_minuscap": 0.6201902702595559,
+      "corr_adv_minuscap": -0.36580727254831036
+    },
+    {
+      "model": "SG7B-6D",
+      "region": "outlet",
+      "temporal_difference_MAE": 0.01292376303973228,
+      "advective_difference_MAE": 0.05219160460058232,
+      "capillary_difference_MAE": 0.05366748427650093,
+      "balance_difference_MAE": 0.06949059553491245,
+      "relative_residual_MAE": 0.26261772622726764,
+      "mean_cancellation_index": 0.782285358493177,
+      "corr_t_adv": 0.14151311165895233,
+      "corr_t_minuscap": -0.024689303427772785,
+      "corr_adv_minuscap": 0.00951473212722947
+    }
+  ],
+  "time_band_SG7B6B": {
+    "early": {
+      "temporal_difference_MAE": 0.029211799125543888,
+      "advective_difference_MAE": 0.039356679378155256,
+      "capillary_difference_MAE": 0.014469410988226322,
+      "balance_difference_MAE": 0.025909865632492025,
+      "relative_residual_MAE": 0.047139606825131374,
+      "mean_cancellation_index": 0.842790432502572
+    },
+    "middle": {
+      "temporal_difference_MAE": 0.0020852530475668064,
+      "advective_difference_MAE": 0.004131565715441554,
+      "capillary_difference_MAE": 0.0025593264472137584,
+      "balance_difference_MAE": 0.0030092563079150616,
+      "relative_residual_MAE": 0.03799567071995917,
+      "mean_cancellation_index": 0.9591276853873484
+    },
+    "late": {
+      "temporal_difference_MAE": 0.0031957304948322875,
+      "advective_difference_MAE": 0.011129383899695644,
+      "capillary_difference_MAE": 0.009101361578431642,
+      "balance_difference_MAE": 0.010772189226546849,
+      "relative_residual_MAE": 0.03638260850242904,
+      "mean_cancellation_index": 0.9627082039492195
+    }
+  },
+  "time_band_SG7B6D": {
+    "early": {
+      "temporal_difference_MAE": 0.009099278710063823,
+      "advective_difference_MAE": 0.015365796975876186,
+      "capillary_difference_MAE": 0.009830220023053194,
+      "balance_difference_MAE": 0.016804194551226916,
+      "relative_residual_MAE": 0.1209175031786539,
+      "mean_cancellation_index": 0.6611954524810815
+    },
+    "middle": {
+      "temporal_difference_MAE": 0.0003876047373277042,
+      "advective_difference_MAE": 0.0016577387094369477,
+      "capillary_difference_MAE": 0.0013316615281611709,
+      "balance_difference_MAE": 0.0016861736004966296,
+      "relative_residual_MAE": 0.14597623884293529,
+      "mean_cancellation_index": 0.7850542064868556
+    },
+    "late": {
+      "temporal_difference_MAE": 0.00045622172489719385,
+      "advective_difference_MAE": 0.001562215874738183,
+      "capillary_difference_MAE": 0.0013522219746647179,
+      "balance_difference_MAE": 0.0018007982409281066,
+      "relative_residual_MAE": 0.16192882409781192,
+      "mean_cancellation_index": 0.7609320372643981
+    }
+  },
+  "diagnosis": {
+    "diagnosis": "LOSS_OF_COUPLED_ERROR_CANCELLATION",
+    "fv_worsened": true,
+    "advective_improved": true,
+    "cancellation_decreased": true,
+    "temporal_worsened": false,
+    "capillary_worsened": false,
+    "recommendation": "SG7B-6D improved the targeted advective component but reduced the signed cancellation among temporal, advective, and capillary errors. The next training milestone should optimize coupled residual balance rather than individual advective terms."
+  },
+  "status": "COUPLED_BALANCE_AUDIT_COMPLETE",
+  "recommended_next_milestone": "V15-SG7B-6F \u2014 Coupled Conservative Component Refinement"
+}

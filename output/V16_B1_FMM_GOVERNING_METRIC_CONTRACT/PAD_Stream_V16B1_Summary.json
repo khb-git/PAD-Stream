@@ -1,0 +1,20 @@
+{
+  "milestone": "V16B-1",
+  "status": "V16B_FMM_GOVERNING_SPEED_CONTRACT_READY",
+  "diagnosis": "FROZEN_DARCY_PORE_SPEED_MAGNITUDE_PROVIDES_ONE_POSITIVE_SOURCE_AUTHENTIC_ISOTROPIC_FMM_PROPAGATION_FIELD",
+  "selected_metric": {
+    "id": "M1",
+    "name": "FROZEN_DARCY_PORE_SPEED_MAGNITUDE",
+    "definition": "F = max(sqrt(Vxc^2 + Vyc^2 + Vzc^2), epsilon)",
+    "units": "m/s",
+    "porosity_division_applied_in_V16B1": false,
+    "reason": "Frozen SG5 velocities already embody the Darcy-to-pore-velocity conversion used by Pollock; dividing by porosity again would double-count porosity."
+  },
+  "metric_artifact": {
+    "file": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_B1_FMM_GOVERNING_METRIC_CONTRACT\\V16B1_FMM_Speed_Field_Contract.npz",
+    "sha256": "fdb9fd31d3aaba629d48e97f312f77a255851c2a9f439bb62aa1a08ee6f90af4",
+    "speed_field_sha256": "2b505f2a8ff360097fa57b4b00081be910a7aa158614a9b004cffec84531dea4"
+  },
+  "recommendation": "Freeze the V16B-1 speed contract. Proceed to V16B-2 and implement the exact 3D Eikonal/Fast-Marching solver using speed_fmm_m_s, with the injector completion interval as the zero-arrival source set. Do not tune the speed field against Pollock TOF.",
+  "next_milestone": "V16B-2 \u2014 Exact 3D Fast Marching Arrival-Time Baseline"
+}

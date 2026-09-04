@@ -1,0 +1,25 @@
+{
+  "TF_ENABLE_ONEDNN_OPTS": "0",
+  "TF_DETERMINISTIC_OPS": "",
+  "OMP_NUM_THREADS": "",
+  "MKL_NUM_THREADS": "",
+  "tensorflow_version": "2.21.0",
+  "keras_version": "3.15.1",
+  "x100_shape": [
+    2662,
+    201,
+    2
+  ],
+  "raw_shape": [
+    2662,
+    201,
+    1
+  ],
+  "creator100_shape": [
+    2662,
+    201
+  ],
+  "creator100_min": 0.20768964290618896,
+  "creator100_max": 0.7445095181465149,
+  "creator100_sha256": "4894cc0799a73b9b41675587249278f95f7ebd7d984fbf7561d10149b2c5a317"
+}

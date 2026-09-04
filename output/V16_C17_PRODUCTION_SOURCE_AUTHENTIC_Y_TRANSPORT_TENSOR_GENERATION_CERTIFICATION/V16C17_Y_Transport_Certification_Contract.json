@@ -1,0 +1,45 @@
+{
+  "milestone": "V16C-17",
+  "status": "V16C_PRODUCTION_SOURCE_AUTHENTIC_Y_TRANSPORT_TENSOR_CERTIFIED",
+  "diagnosis": "THE_NINE_TIME_1078_STREAMLINE_201_NODE_FULL_PHYSICS_TRANSPORT_TENSOR_IS_GENERATED_FROM_THE_FROZEN_POLLOCK_STAGE4_C13_C14_C15_LINEAGE_AND_PASSES_NUMERICAL_PHYSICAL_AND_PROVENANCE_CERTIFICATION",
+  "equation": "dS/deta + d fw/dtheta = (phi/Pe_c) M d/dtheta[D_tilde(S) M dS/dtheta]",
+  "Y_shape": [
+    9,
+    1078,
+    201
+  ],
+  "target_days": [
+    30.0,
+    60.0,
+    100.0,
+    150.0,
+    250.0,
+    365.0,
+    500.0,
+    750.0,
+    1000.0
+  ],
+  "parameters": {
+    "nw": 2.0,
+    "no": 2.0,
+    "Swc": 0.2,
+    "Sor": 0.2,
+    "krw_max": 0.8,
+    "kro_max": 0.8,
+    "mu_w": 0.5,
+    "mu_o": 5.0,
+    "phi": 0.2,
+    "Pe_c": 22.0,
+    "lambda_c": 2.0,
+    "Nc": 0.1
+  },
+  "CFL": 0.25,
+  "dt_eta_ceiling": 0.00012596916591860446,
+  "iterations": 58948,
+  "elapsed_seconds": 2940.297372817993,
+  "artifact": "output\\V16_C17_PRODUCTION_SOURCE_AUTHENTIC_Y_TRANSPORT_TENSOR_GENERATION_CERTIFICATION\\V16C17_Production_Source_Authentic_Y_Transport.npz",
+  "artifact_sha256": "d2a7ba92660dfc0ccf08a5f37b1c9519be000e4f42167ad4417e889be0015f63",
+  "training_authorized": false,
+  "recommendation": "Freeze C17 Y_transport as the V16 source-authentic supervision authority. Next bind it to the frozen C4 conditioning tensors and audit sample/time alignment before authorizing PI-RNN training.",
+  "next_milestone": "V16C-18 \u2014 Conditioning-to-Y_transport Alignment and Training Dataset Certification"
+}

@@ -1,0 +1,190 @@
+{
+  "milestone": "V15-SG6C",
+  "description": "Compressible Buckley-Leverett formulation comparison",
+  "status": "PASS",
+  "scope": "compressibility only; no capillary pressure",
+  "selected_pad_stream_formulation": "conservative Godunov",
+  "reference_formulation": "analytical travel-time transform",
+  "governing_equations": {
+    "transform": "dS/dtD + uD(xD) df/dxD = 0",
+    "conservative": "dS/dtD + d[uD(xD) f(S)]/dxD = 0",
+    "velocity": "uD(xD) = exp(Nc xD)",
+    "equation_difference": "d(uD f)/dxD = uD df/dxD + Nc uD f"
+  },
+  "rock_fluid": {
+    "Swc": 0.2,
+    "Sor": 0.2,
+    "krw_max": 0.8,
+    "kro_max": 0.8,
+    "nw": 2.0,
+    "no": 2.0,
+    "mu_displacing": 0.5,
+    "mu_resident": 5.0
+  },
+  "Welge": {
+    "shock_saturation": 0.38091200000000003,
+    "shock_fractional_flow": 0.6507743530100689,
+    "shock_speed": 3.5971873231740785,
+    "dfds_at_shock": 3.5970394835458634,
+    "tangent_error": 0.00014783962821507401
+  },
+  "Nc_values": [
+    0.0,
+    0.05,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "Nx_values": [
+    201,
+    401,
+    801,
+    1601
+  ],
+  "primary_dimensionless_time": 0.15,
+  "finest_grid_metrics": {
+    "Nc_0.00": {
+      "Nc": 0.0,
+      "tD": 0.15,
+      "nx": 1601,
+      "L1_transform_vs_godunov": 0.0007567163246067008,
+      "L2_transform_vs_godunov": 0.006956944906468804,
+      "Linf_transform_vs_godunov": 0.15976054343442514,
+      "front_transform": 0.5396875731700926,
+      "front_godunov": 0.542018412659439,
+      "front_difference": 0.0023308394893463147,
+      "storage_transform": 0.15002018439031226,
+      "storage_godunov": 0.14999999999999908,
+      "storage_difference": -2.0184390313177092e-05,
+      "godunov_net_boundary_input": 0.15000000000000316,
+      "godunov_conservation_error": -4.08006961549745e-15,
+      "godunov_relative_conservation_error": 2.720046410331576e-14,
+      "godunov_steps": 2648
+    },
+    "Nc_0.05": {
+      "Nc": 0.05,
+      "tD": 0.15,
+      "nx": 1601,
+      "L1_transform_vs_godunov": 0.002413835396185016,
+      "L2_transform_vs_godunov": 0.00701110777171847,
+      "Linf_transform_vs_godunov": 0.15662375457255212,
+      "front_transform": 0.5471875364207816,
+      "front_godunov": 0.5492775261115083,
+      "front_difference": 0.0020899896907267124,
+      "storage_transform": 0.15176278436046364,
+      "storage_godunov": 0.14999999999999908,
+      "storage_difference": -0.0017627843604645643,
+      "godunov_net_boundary_input": 0.15000000000000233,
+      "godunov_conservation_error": -3.247402347028583e-15,
+      "godunov_relative_conservation_error": 2.1649348980190218e-14,
+      "godunov_steps": 2784
+    },
+    "Nc_0.10": {
+      "Nc": 0.1,
+      "tD": 0.15,
+      "nx": 1601,
+      "L1_transform_vs_godunov": 0.004159012849961805,
+      "L2_transform_vs_godunov": 0.008192674375221573,
+      "Linf_transform_vs_godunov": 0.1557568338861937,
+      "front_transform": 0.5546876081461308,
+      "front_godunov": 0.5567551380000882,
+      "front_difference": 0.002067529853957417,
+      "storage_transform": 0.15351530634172358,
+      "storage_godunov": 0.1499999999999991,
+      "storage_difference": -0.003515306341724478,
+      "godunov_net_boundary_input": 0.15000000000000066,
+      "godunov_conservation_error": -1.582067810090848e-15,
+      "godunov_relative_conservation_error": 1.0547118733938941e-14,
+      "godunov_steps": 2927
+    },
+    "Nc_0.20": {
+      "Nc": 0.2,
+      "tD": 0.15,
+      "nx": 1601,
+      "L1_transform_vs_godunov": 0.007753261871315953,
+      "L2_transform_vs_godunov": 0.011276843753670676,
+      "Linf_transform_vs_godunov": 0.14709553955025217,
+      "front_transform": 0.5709376164896182,
+      "front_godunov": 0.5725002175774334,
+      "front_difference": 0.0015626010878152519,
+      "storage_transform": 0.15727821869977132,
+      "storage_godunov": 0.14999999999999905,
+      "storage_difference": -0.007278218699772271,
+      "godunov_net_boundary_input": 0.14999999999999422,
+      "godunov_conservation_error": 4.801714581503802e-15,
+      "godunov_relative_conservation_error": 3.2011430543359915e-14,
+      "godunov_steps": 3234
+    },
+    "Nc_0.30": {
+      "Nc": 0.3,
+      "tD": 0.15,
+      "nx": 1601,
+      "L1_transform_vs_godunov": 0.011578595100424029,
+      "L2_transform_vs_godunov": 0.015400483880259873,
+      "Linf_transform_vs_godunov": 0.12599416155310617,
+      "front_transform": 0.5884376589571293,
+      "front_godunov": 0.5893010839508785,
+      "front_difference": 0.0008634249937492511,
+      "storage_transform": 0.16131332137830962,
+      "storage_godunov": 0.14999999999999908,
+      "storage_difference": -0.011313321378310537,
+      "godunov_net_boundary_input": 0.14999999999999727,
+      "godunov_conservation_error": 1.8041124150158794e-15,
+      "godunov_relative_conservation_error": 1.2027416100106081e-14,
+      "godunov_steps": 3574
+    }
+  },
+  "godunov_grid_convergence_Nc_0p30": [
+    {
+      "Nc": 0.3,
+      "tD": 0.15,
+      "nx": 201,
+      "reference_nx": 1601,
+      "L1_to_1601": 0.0030845643432550144,
+      "L2_to_1601": 0.01288176671476058,
+      "Linf_to_1601": 0.12824415806955936,
+      "relative_conservation_error": 4.440892098500634e-15
+    },
+    {
+      "Nc": 0.3,
+      "tD": 0.15,
+      "nx": 401,
+      "reference_nx": 1601,
+      "L1_to_1601": 0.0014633043761345247,
+      "L2_to_1601": 0.008825727443678056,
+      "Linf_to_1601": 0.12099182708094147,
+      "relative_conservation_error": 7.95659834314707e-15
+    },
+    {
+      "Nc": 0.3,
+      "tD": 0.15,
+      "nx": 801,
+      "reference_nx": 1601,
+      "L1_to_1601": 0.0005143685247171135,
+      "L2_to_1601": 0.004660754556459019,
+      "Linf_to_1601": 0.10063716022599681,
+      "relative_conservation_error": 1.7578531223231447e-14
+    }
+  ],
+  "finest_reference_godunov_diagnostics": {
+    "dx": 0.0006246096189881324,
+    "dt": 4.196978175713486e-05,
+    "n_steps": 3574,
+    "max_characteristic_speed": 6.696744253231088,
+    "storage_initial": 0.0,
+    "storage_final": 0.14999999999999908,
+    "cumulative_inflow": 0.14999999999999727,
+    "cumulative_outflow": 0.0,
+    "net_boundary_input": 0.14999999999999727,
+    "conservation_error": 1.8041124150158794e-15,
+    "relative_conservation_error": 1.2027416100106081e-14
+  },
+  "validation": {
+    "nc0_l1_nx201": 0.004318845807464066,
+    "nc0_l1_nx1601": 0.0007567163246067008,
+    "nc030_l1_nx1601": 0.011578595100424029,
+    "maximum_godunov_relative_material_balance_error": 3.2011430543359915e-14
+  },
+  "physics_decision": "Conservative Godunov advection is retained for PAD-Stream SG7 because it preserves the divergence-form transport equation and provides direct finite-volume material conservation. The travel-time transform remains an analytical reference and reduced compressibility model.",
+  "next_milestone": "V15-SG7A - classical full conservative compressible + capillary transport in SGSim streamline TOF space"
+}

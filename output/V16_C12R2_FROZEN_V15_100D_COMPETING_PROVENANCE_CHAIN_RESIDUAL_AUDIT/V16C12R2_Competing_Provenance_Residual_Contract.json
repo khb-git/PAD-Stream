@@ -1,0 +1,51 @@
+{
+  "milestone": "V16C-12R2",
+  "status": "V16C_FROZEN_V15_100D_COMPETING_PROVENANCE_REMAINS_UNRESOLVED",
+  "diagnosis": "COMPETING_HASHES_CANNOT_BE_SEPARATED_BY_EXPLICIT_FINAL_FREEZE_SG7D6_REFERENCE_AUTHORITY_ALONE",
+  "competing_hash_count": 3,
+  "authority_by_hash": {
+    "cf59694325c94ac2019632124bb8b7657367725269f8a1b78196f210a0f5c1b2": {
+      "eligible": true,
+      "strongest": false,
+      "final_freeze": false,
+      "sg7d6_deploy": false,
+      "frozen100": true,
+      "reference": true,
+      "explicit_disqual": false,
+      "paths": [
+        "output\\V15_SG7E1R26IR10\\V15SG7E1R26IR10_100d_Runtime_Control.npz"
+      ]
+    },
+    "dfbf72659c7f35e57dd05e65548ff0325337d141fe040a5da0c5bdccc24bcc4c": {
+      "eligible": true,
+      "strongest": false,
+      "final_freeze": false,
+      "sg7d6_deploy": false,
+      "frozen100": true,
+      "reference": true,
+      "explicit_disqual": false,
+      "paths": [
+        "output\\V15_SG7E1R26IR6\\V15SG7E1R26IR6_Reconstructed_X100.npz"
+      ]
+    },
+    "5fb3ce987c7078b50543e4ed698d97cedb4f9259fa904216822e10bddf2353d0": {
+      "eligible": true,
+      "strongest": false,
+      "final_freeze": false,
+      "sg7d6_deploy": false,
+      "frozen100": true,
+      "reference": false,
+      "explicit_disqual": false,
+      "paths": [
+        "output\\V15_SG7E1R26IR16\\V15SG7E1R26IR16_SG7B16_Frozen100_Runtime_Control.npz"
+      ]
+    }
+  },
+  "bound_reference_sha256": null,
+  "bound_reference_path": null,
+  "selection_basis": "explicit categorical final-freeze + SG7D6-deployment + reference authority; never numerical closeness",
+  "numerical_comparison_executed": false,
+  "Y_generation_authorized": false,
+  "recommendation": "Do not choose a winner. Use the R2 authority and producer trace tables to audit the exact producer scripts/manifests for the remaining competing hashes. Preserve all candidates until one is explicitly superseded or bound.",
+  "next_milestone": "V16C-12R3 \u2014 Exact V15 Producer/Manifest Supersession Audit"
+}

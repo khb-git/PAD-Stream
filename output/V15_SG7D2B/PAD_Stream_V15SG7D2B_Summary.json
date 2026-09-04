@@ -1,0 +1,41 @@
+{
+  "milestone": "V15-SG7D-2B",
+  "description": "Front geometry and subcell sampling audit for the 11x11 SGSim candidate",
+  "source_workspace": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11",
+  "training_performed": false,
+  "seed_density_changed": false,
+  "mapback_operator_changed": false,
+  "projection_operator_changed": false,
+  "validation_threshold_changed": false,
+  "source": {
+    "streamlines": 2662,
+    "transport_nodes": 201,
+    "cartesian_subsegments": 661469,
+    "directly_sampled_cells": 29107,
+    "direct_support_fraction": 0.7761866666666667
+  },
+  "100_day": {
+    "binary_plume_volume_error": 0.2509455045556129,
+    "fractional_swept_volume_error": 0.2862640963287792,
+    "binary_3D_IoU": 0.7993953344556293,
+    "fractional_soft_IoU": 0.777445318464671,
+    "binary_mismatch_cells": 5839,
+    "binary_mismatch_partial_share": 0.04761089227607467,
+    "strong_partial_share": 0.016441171433464633,
+    "SG7A_partial_cells": 2002,
+    "PI_RNN_partial_cells": 0,
+    "SG7A_crossing_cells": 847,
+    "PI_RNN_crossing_cells": 0
+  },
+  "diagnostic_flags": {
+    "binary_error_above_10pct": true,
+    "fractional_error_below_10pct": false,
+    "fractional_soft_IoU_good": false,
+    "partial_sweep_dominates_binary_mismatch": false,
+    "direct_support_strong": true
+  },
+  "diagnosis": "SUBCELL_FRONT_GEOMETRY_DISAGREEMENT",
+  "recommendation": "Even fractional subcell occupancy remains inconsistent between PI-RNN and SG7A. The next step should inspect local streamline front positions rather than modifying cell averaging.",
+  "audit_passed": true,
+  "next_milestone": "V15-SG7D-2C \u2014 Streamline Front-Position Alignment Audit"
+}

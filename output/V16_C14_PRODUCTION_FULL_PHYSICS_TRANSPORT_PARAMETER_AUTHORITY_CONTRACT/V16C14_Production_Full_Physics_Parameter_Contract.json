@@ -1,0 +1,95 @@
+{
+  "milestone": "V16C-14",
+  "status": "V16C_PRODUCTION_FULL_PHYSICS_TRANSPORT_PARAMETER_AUTHORITY_FROZEN",
+  "diagnosis": "THE_PRODUCTION_BL_CCUS_CONSTITUTIVE_PARAMETER_SET_IS_BOUND_TO_STAGE4_SOURCE_SEMANTICS_AND_FOUNDATION_CASE_POROSITY_WITH_POLLOCK_KINEMATICS_PRESERVED_AND_NC_EXCLUDED_FROM_DUPLICATE_VELOCITY_SCALING",
+  "stage4_source": "pi_rnn_stage4_full_godunov.py",
+  "stage4_sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+  "production_parameters": {
+    "nw": {
+      "value": 2.0,
+      "units": "-",
+      "authority": "Stage4 RockFluid default",
+      "role": "constitutive"
+    },
+    "no": {
+      "value": 2.0,
+      "units": "-",
+      "authority": "Stage4 RockFluid default",
+      "role": "constitutive"
+    },
+    "Swc": {
+      "value": 0.2,
+      "units": "fraction",
+      "authority": "Stage4 RockFluid default",
+      "role": "constitutive"
+    },
+    "Sor": {
+      "value": 0.2,
+      "units": "fraction",
+      "authority": "Stage4 RockFluid default",
+      "role": "constitutive"
+    },
+    "krw_max": {
+      "value": 0.8,
+      "units": "-",
+      "authority": "Stage4 RockFluid default",
+      "role": "constitutive"
+    },
+    "kro_max": {
+      "value": 0.8,
+      "units": "-",
+      "authority": "Stage4 RockFluid default",
+      "role": "constitutive"
+    },
+    "mu_w": {
+      "value": 0.5,
+      "units": "cP",
+      "authority": "Stage4 RockFluid default",
+      "role": "constitutive"
+    },
+    "mu_o": {
+      "value": 5.0,
+      "units": "cP",
+      "authority": "Stage4 RockFluid default",
+      "role": "constitutive"
+    },
+    "phi": {
+      "value": 0.2,
+      "units": "fraction",
+      "authority": "V16A Foundation Case",
+      "role": "storage/capillary coefficient"
+    },
+    "Pe_c": {
+      "value": 22.0,
+      "units": "-",
+      "authority": "Stage4 FULL source reference case",
+      "role": "capillary"
+    },
+    "lambda_c": {
+      "value": 2.0,
+      "units": "-",
+      "authority": "Stage4 FULL source reference case",
+      "role": "capillary"
+    },
+    "Nc": {
+      "value": 0.1,
+      "units": "-",
+      "authority": "Stage4 FULL source reference case",
+      "role": "metadata/conditioning_only"
+    }
+  },
+  "policies": {
+    "Pollock_kinematics_primary": true,
+    "use_exp_Nc_xD_velocity_scaling": false,
+    "Nc_role": "source-lineage metadata/conditioning only",
+    "invented_PVT_storage_law": false,
+    "fit_to_V15_reference": false,
+    "Stage4_Case1_mu_o_0p7_promoted_to_production": false
+  },
+  "physical_target_time_schedule_frozen": false,
+  "Y_transport_generated": false,
+  "Y_generation_authorized": false,
+  "training_authorized": false,
+  "recommendation": "Freeze C14. The remaining pre-Y decision is the physical target-time schedule. Next freeze which physical days constitute the V16 source-authentic supervision set; do not inherit uncertified V15 deployment times merely because they were historical SG7E reference times.",
+  "next_milestone": "V16C-15 \u2014 Production Physical Target-Time Schedule Authority Contract"
+}

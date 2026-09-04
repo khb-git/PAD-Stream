@@ -1,0 +1,79 @@
+{
+  "milestone": "V16E-1B2AH-XPU",
+  "experiment_id": "V16E-BLREP-COMP-XPU-005",
+  "classification": "AUTHORIZED_FRESH_CORRECTED_STAGE2_PRODUCTION_RUN",
+  "runner_sha256": "10ffef783336118945d6dae78c17c880e51a08c85c63e3410c85ff1be3537e45",
+  "framework": {
+    "name": "PyTorch XPU",
+    "pytorch_version": "2.14.0+xpu",
+    "mixed_precision": false
+  },
+  "fresh_initialization": {
+    "required": true,
+    "seed": 1337,
+    "COMP004_initializer": false,
+    "B2AF_scratch_initializer": false
+  },
+  "scientific_model": {
+    "sequence_features": [
+      "xi",
+      "eta"
+    ],
+    "conditioner_dim": 11,
+    "hidden": 64,
+    "layers": 2,
+    "physical_Nc_scaled": false,
+    "corrected_residual": "conservative moving-fan residual",
+    "scientific_graph_source_sha256": "4bd70ab33dbf30ef4fd8a12037982724ea1bed6ef90684d326b3de71569e5bea",
+    "scientific_change": false
+  },
+  "derivative_engine": {
+    "name": "CHUNKED_BATCHED_VJP",
+    "cotangent_chunk_size": 16,
+    "implementation_source_sha256": "59f7ea7b0dc2e901f5a42649691c2dab5f4dfc5d399f953eaab5ba773040cd53"
+  },
+  "training": {
+    "train_profiles": 11520,
+    "holdout_profiles": 2880,
+    "logical_batch": 8192,
+    "microbatch": 128,
+    "microbatches_per_epoch": 90,
+    "optimizer_steps_per_epoch": 2,
+    "epochs": 800,
+    "target_optimizer_steps": 1600
+  },
+  "optimizer": {
+    "name": "Adam",
+    "learning_rate": 0.001,
+    "foreach": false,
+    "scheduler": null,
+    "gradient_clipping": null
+  },
+  "loss_weights": {
+    "lambda_data": 1.0,
+    "lambda_phys": 0.05,
+    "lambda_bc": 5.0,
+    "lambda_tip": 5.0,
+    "lambda_anchor": 10.0,
+    "lambda_mono": 0.2,
+    "lambda_shape": 0.0
+  },
+  "contracts": {
+    "execution_contract_sha256": "6bf7794f493b95d9922573f24fdee30d1ff9f0caac5a0075d70a9abfa9dae83e",
+    "accumulation_contract_sha256": "fd07af361a788f6cbc2c93faad8a196223dfd9a5894e67e2475e96657a8a5425",
+    "resume_contract_sha256": "ba9f86b236e2276e507988d9c44f96b428c59aa1bedc02575f0c2b09c13bc449",
+    "B2AG_authorization_sha256": "d29469101d4d4af979410140dad261bd0814ad27ff486e317b96bc969b4a2db0",
+    "B2AG_runner_contract_sha256": "080cd2c8a2139284d250c2362430cb765cba48e31b4e9f91e679c30057607df6"
+  },
+  "dataset": {
+    "path": "output\\V16_E1B_XPU_DATASETS\\V16E_STAGE2_COMPRESSIBLE_GODUNOV_DATASET_SEED1337.npz",
+    "sha256": "46f10f00ff6dc48f7b2b936bd7d602e6435f72f8410138c5aad0dd4add555f1c"
+  },
+  "evaluation": {
+    "role": "development diagnostic; NOT OOD",
+    "model_eval": true,
+    "torch_no_grad": true,
+    "OOD": false,
+    "TOF": false
+  }
+}

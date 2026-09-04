@@ -1,0 +1,16 @@
+{
+  "milestone": "V16D-24C-R6",
+  "status": "V16D_R5_GLOBAL_GATE_DENOMINATOR_PATHOLOGY_CONFIRMED_CONSERVATION_CERTIFICATION_REFORMULATION_AUTHORIZED",
+  "report_sha256": "074a002bd2a11edca22bc1cf5448b058c78491b47f3b539ade827a39f2452bd0",
+  "gates": {
+    "R5_SHA_exact": true,
+    "SG4_SHA_exact": true,
+    "R5_artifact_exists": true,
+    "R5_local_conservation_passed": true,
+    "net_well_source_is_near_zero_relative_to_gross": true,
+    "global_residual_gross_scaled_le_1e_9": true,
+    "global_residual_throughput_scaled_le_1e_9": true,
+    "R5_global_failure_identified_as_denominator_pathology": true
+  },
+  "next_milestone": "V16D-24C-R7 \u2014 Freeze corrected global conservation metric and recertify existing R5 pilot without rerunning physics"
+}

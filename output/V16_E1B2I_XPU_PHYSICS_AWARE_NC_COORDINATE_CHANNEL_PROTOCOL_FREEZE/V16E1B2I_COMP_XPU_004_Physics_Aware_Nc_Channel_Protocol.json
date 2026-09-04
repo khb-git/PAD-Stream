@@ -1,0 +1,110 @@
+{
+  "milestone": "V16E-1B2I-XPU",
+  "new_experiment_id": "V16E-BLREP-COMP-XPU-004",
+  "classification": "PROSPECTIVE_ONE_FACTOR_PHYSICS_AWARE_NC_SEQUENCE_FEATURE_STUDY",
+  "hypothesis": "The persistent high-Nc under-response arises because the LSTM must infer the known compressibility coordinate stretch indirectly from the raw scalar Nc conditioner. Supplying the normalized stretched coordinate eta as an explicit sequence feature may improve Nc response.",
+  "one_scientific_change": {
+    "field": "sequence_input_features",
+    "old": [
+      "xi"
+    ],
+    "new": [
+      "xi",
+      "eta"
+    ],
+    "eta_definition": {
+      "xD": "xi * xD_star",
+      "y": "-expm1(-Nc*xD)/Nc with exact Nc->0 limit y=xD",
+      "eta": "y(xi*xD_star;Nc) / y(xD_star;Nc)"
+    },
+    "input_feature_count_old": 1,
+    "input_feature_count_new": 2
+  },
+  "mathematical_properties": {
+    "eta_at_xi_0": 0.0,
+    "eta_at_xi_1": 1.0,
+    "eta_Nc0_limit": "xi",
+    "eta_dimensionless": true,
+    "eta_uses_physical_Nc": true,
+    "eta_uses_physical_xD_star": true
+  },
+  "raw_conditioner_policy": {
+    "p11_remains": "[no,nw,swi,sor,mu_w,mu_o,phi,tD,xD_star,Sw_star,Nc_physical]",
+    "Nc_scaled_in_p11": false,
+    "COMP_XPU_003_Nc_over_0p30_not_carried_forward": true,
+    "comparison_baseline": "COMP-XPU-002"
+  },
+  "must_remain_identical_to_COMP_XPU_002": {
+    "Stage2_source_sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+    "dataset_sha256": "46f10f00ff6dc48f7b2b936bd7d602e6435f72f8410138c5aad0dd4add555f1c",
+    "epochs": 800,
+    "fresh_initialization": true,
+    "seed": 1337,
+    "hidden": 64,
+    "layers": 2,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "logical_batch": 8192,
+    "XPU_microbatch": 2048,
+    "Adam_foreach": false,
+    "loss_weights": {
+      "data": 1.0,
+      "physics": 0.05,
+      "injector_bc": 5.0,
+      "tip_bc": 5.0,
+      "anchor": 10.0,
+      "monotonicity": 0.2,
+      "shape": 0.0
+    },
+    "NX_TRAIN": 1601,
+    "NX_REF": 3201,
+    "n_fan": 64,
+    "physical_Nc_grid": [
+      0.0,
+      0.05,
+      0.1,
+      0.2,
+      0.3
+    ],
+    "train_fraction": 0.8,
+    "split_seed": 1337
+  },
+  "physics_firewall": {
+    "Godunov_teacher_changed": false,
+    "physical_Nc_changed": false,
+    "breakthrough_time_changed": false,
+    "physics_residual_changed": false,
+    "y_transform_changed": false,
+    "front_definition_changed": false,
+    "loss_weights_changed": false,
+    "dataset_rebuilt": false,
+    "raw_p11_changed": false,
+    "OOD_claim": false,
+    "TOF": false
+  },
+  "runtime_feature_policy": {
+    "derive_eta_from_frozen_xi_and_physical_p11_at_runtime": true,
+    "dataset_file_contents_modified": false,
+    "new_dataset_artifact_required": false
+  },
+  "evaluation_policy": {
+    "development_diagnostic_split_reused": true,
+    "NOT_independent_test": true,
+    "NOT_OOD": true,
+    "compare_against": "COMP-XPU-002",
+    "repeat_metrics": [
+      "overall reproduction-development metrics",
+      "per-Nc holdout MAE/RMSE/max error",
+      "per-Nc data/physics/total loss",
+      "full-domain fine-grid Godunov error",
+      "front-excluded fine-grid Godunov error",
+      "front-position error",
+      "model-to-teacher Nc response gain",
+      "Nc0.30/Nc0 response ratios",
+      "Nc=0 Stage-1 nesting diagnostics",
+      "saturation bounds"
+    ],
+    "numeric_acceptance_threshold": null,
+    "B3_automatic_authorization": false
+  }
+}

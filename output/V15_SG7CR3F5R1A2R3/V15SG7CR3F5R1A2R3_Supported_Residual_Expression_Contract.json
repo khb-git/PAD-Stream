@@ -1,0 +1,23 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1A2R3",
+  "status": "SUPPORTED_RESIDUAL_PROVENANCE_ISOLATED",
+  "diagnosis": "LIKELY_CHECKPOINT_OR_COEFFICIENT_FIELD_PROVENANCE_DRIFT",
+  "training_performed": false,
+  "support_extension_calibrated": false,
+  "gate_changed": false,
+  "source_expression": "supported_required = coeff_shell * required_shell",
+  "algebra_identity_L1": 0.0,
+  "algebra_identity_Linf": 0.0,
+  "runtime_required_sum": 126.26830245109524,
+  "historical_required_sum": 126.26830245109524,
+  "runtime_supported_sum": 62.56234252704303,
+  "historical_supported_sum": 62.56321852706071,
+  "supported_sum_delta": 0.0008760000176835092,
+  "supported_sum_relative_delta": 1.4001837474275872e-05,
+  "coefficient_stats_match_historical": false,
+  "numerical_precision_explains_difference": false,
+  "resolved": false,
+  "resolved_exact_arrays": null,
+  "recommendation": "The algebra is exact and the discrepancy is tiny, but coefficient summary provenance does not fully match or is unavailable. Do not calibrate yet. Resolve the exact B4 coefficient/checkpoint identity that produced the historical scalar.",
+  "next_milestone": "V15-SG7C-R3F5-R1A2R4 \u2014 B4 Coefficient / Checkpoint Provenance Audit"
+}

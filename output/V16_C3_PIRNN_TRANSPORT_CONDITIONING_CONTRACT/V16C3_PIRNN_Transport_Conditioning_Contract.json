@@ -1,0 +1,36 @@
+{
+  "milestone": "V16C-3",
+  "status": "V16C_PIRNN_TRANSPORT_CONDITIONING_CONTRACT_READY",
+  "diagnosis": "POLLOCK_TOF_REMAINS_THE_AUTHORITATIVE_TRANSPORT_COORDINATE_WHILE_ADV_GEOLOGY_POROSITY_PRESSURE_AND_STREAMLINE_WEIGHT_FORM_A_PHYSICS_DEFINED_CONDITIONING_SET",
+  "transport_coordinate": {
+    "authoritative_raw": "pollock_tof_s",
+    "model_coordinate": "pollock_tau_hat",
+    "normalization": "divide each streamline by its own terminal Pollock TOF"
+  },
+  "required_sequence_channels": [
+    "xi",
+    "pollock_tau_hat",
+    "adv_tau_hat",
+    "log10_Kh",
+    "log10_Kz_over_Kh",
+    "porosity",
+    "pressure_z"
+  ],
+  "optional_sequence_channels": [
+    "fmm_tau_hat",
+    "x_norm",
+    "y_norm",
+    "z_norm"
+  ],
+  "required_static_channels": [
+    "log_streamline_weight_z"
+  ],
+  "feature_selection_policy": "physics-role only; no predictive performance selection",
+  "target_status": "undefined; no saturation target generated in V16C-3",
+  "normalization_parameters": {
+    "artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_C3_PIRNN_TRANSPORT_CONDITIONING_CONTRACT\\V16C3_Conditioning_Normalization_Parameters.npz",
+    "sha256": "870c7360aff526c6ad0af31562270c139c61c69177a59290518f45b0d907efd3"
+  },
+  "recommendation": "Freeze this conditioning contract. Proceed to V16C-4 to assemble the deterministic model-ready conditioning tensors from the frozen V16C-2 raw database and V16C-3 normalization parameters. Do not train or infer a transport model yet.",
+  "next_milestone": "V16C-4 \u2014 Model-Ready Conditioning Tensor Assembly"
+}

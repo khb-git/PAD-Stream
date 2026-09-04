@@ -1,0 +1,143 @@
+{
+  "milestone": "V16D-7BR",
+  "repair_of": "V16D-7B",
+  "failure_class": "POST_EXECUTION_SUMMARY_SERIALIZATION_ONLY",
+  "status": "V16D_CASE0002_0025_SOURCEBOUND_FLOW_ENSEMBLE_CERTIFIED_READY_FOR_VELOCITY_POLLOCK_TRAVELTIME_PIPELINE",
+  "certified_count": 24,
+  "original_manifest": {
+    "path": "output\\V16_D7B_FULL_FROZEN_CASE0002_0025_SOURCEBOUND_SG2_SG3_SG4_FLOW_ENSEMBLE\\V16D7B_Flow_Ensemble_Manifest.csv",
+    "sha256": "a85f87262d2c82affa50e5ff18dff79eaea9d09260112fc62c951fcfa3149a6b"
+  },
+  "artifact_hashes": [
+    {
+      "case_id": "V16D_Foundation_Case_0002",
+      "sha256": "ff150f3a5ce97a779e71c09e2b44daed505f7f89ef6deccb8962fc2cb20e9780"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0003",
+      "sha256": "9fae70da9b5c17a7ce01095c2152476c9e9e9e5a13469c53fe314004ea4c3792"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0004",
+      "sha256": "7c23ce1dbe2608b1ab8d6d34b1583d5ef2f7129be5c1ca16bb6b9dad5be00bd0"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0005",
+      "sha256": "6a4543b96badd1d0e4ea65d1f2a947c99754448f48f0e23488c9c24a583a4037"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0006",
+      "sha256": "c2de6917a68d65165c048d5412b2191329163c8259eb04087638837dbeddf532"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0007",
+      "sha256": "6949d37b55ecf441ff150e4c08c5c0969552a5a0cc28b8a3f94542770367aef5"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0008",
+      "sha256": "fdf08fc6d1bdc2a6c9f957b50fc6d9fd71355e5b472504c219485f960cad2df3"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0009",
+      "sha256": "c5c96752abcb1d1a0a5ca51989e75705cdc68adb3efb39433d7ee3db6da7267f"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0010",
+      "sha256": "e23b663da7d8fb007c1dfb0e5c0d8354929ee20142bcff02da187474efb52547"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0011",
+      "sha256": "f0cd10e15d2ca6c41db8cfc1869ede34a306a736c29a26bbbbe6e8cb4bbbc6cd"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0012",
+      "sha256": "8bfa3b9509000316ef739d7dc47a39a340ea5fca062dc59a49ef39245de94f7e"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0013",
+      "sha256": "4a100cca1ae1df3c9857919565176f231fcfc0c7bf9df74b34c6bc9427d247dc"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0014",
+      "sha256": "60bddff42c0d706afb763eee75c09b6d22a58b5b83bdc0a20ccbc04834bf8966"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0015",
+      "sha256": "ff61b39258c250c93413721381be067a434efe4b13c2dfbe916bd24623cff73d"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0016",
+      "sha256": "89b9e2455470edd7ce62619d8bf4e9680c7e0fae2e3cdcb81e7dcdd9e8a45421"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0017",
+      "sha256": "73652d56253696d3ada289b9c1ec57f309a8b4a39f943cc108399e945cf2a3c9"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0018",
+      "sha256": "5e06cb7691b313cf523c24c36a975c70d5ec75bbbf5235ff3d384a08024ef5d2"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0019",
+      "sha256": "ad36731eb37c512d4fdf848a9bb3d34a2f4a06c75c5609b684cc2e4f8a4802c6"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0020",
+      "sha256": "4fcd76cb3b5b49a7547075c1e11e0e749a55fcabb3a2b475e5005987e4028329"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0021",
+      "sha256": "a91f62d6e75468701d76339ff57a7ce0bfb3203cd0c81f9e8bd80b969cafd25d"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0022",
+      "sha256": "401eee8288218ea4ed4e0064161c9e1567e7dc118eece6f17f349d272677c15c"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0023",
+      "sha256": "80af6fdb56816646dfe07bc712b7039458a66fcc3f73635c5272a573e4437d4a"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0024",
+      "sha256": "51e58326ff301fac9bd23fbb717e5606b3135a2dbe217d3b80b6fcca48e128fb"
+    },
+    {
+      "case_id": "V16D_Foundation_Case_0025",
+      "sha256": "ec1babdf1915c9b7095263f0f8e0249dfa4e555684d85aa95f5661c312c35f4c"
+    }
+  ],
+  "ensemble_metrics": {
+    "pressure_mean_psi": {
+      "min": 2038.727343514679,
+      "median": 2048.3927549671416,
+      "max": 2062.0423837504486
+    },
+    "pressure_relative_residual": {
+      "max": 6.867786909053157e-14
+    },
+    "local_conservation_relative": {
+      "max": 8.32414091657108e-11
+    },
+    "global_conservation_relative": {
+      "max": 1.8254249674365413e-12
+    }
+  },
+  "gates": {
+    "existing_D7B_manifest_present": true,
+    "exact_24_manifest_rows": true,
+    "case_ids_exact_and_ordered": true,
+    "all_24_original_status_certified": true,
+    "all_24_existing_flow_artifacts_present": true,
+    "existing_artifact_shapes_valid": true,
+    "existing_artifacts_finite": true,
+    "all_pressure_residuals_pass": true,
+    "all_local_conservation_pass": true,
+    "all_global_conservation_pass": true,
+    "no_flow_rerun": true,
+    "no_case_replacement": true,
+    "no_transport": true,
+    "no_training": true,
+    "json_native_scalar_repair": true
+  },
+  "next_milestone": "V16D-8 \u2014 Source-Bound SG5 Velocity/Pollock Multi-Case Execution Binding and Pilot"
+}

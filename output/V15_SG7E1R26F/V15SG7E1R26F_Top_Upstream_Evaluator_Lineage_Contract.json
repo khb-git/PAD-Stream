@@ -1,0 +1,30 @@
+{
+  "milestone": "V15-SG7E1R26F",
+  "status": "UPSTREAM_EVALUATOR_LINEAGE_CONFLICT_REMAINS",
+  "diagnosis": "TOP_RUNTIME_SOURCES_REMAIN_TIED_AFTER_MODEL_AND_NO_TRAINING_LINEAGE_AUDIT",
+  "authoritative_model": {
+    "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7CR3F4\\experiments\\B4\\V15SG7CR3F4_B4_Best_Any_Alpha_Model.keras",
+    "filename": "V15SG7CR3F4_B4_Best_Any_Alpha_Model.keras",
+    "sha256": "b9a2af574ff3ef5eef6377bbcbd0bd87b6490ff4d938de51f7e1d8ffcd18c0a6"
+  },
+  "resolved_evaluator": {
+    "resolved": false,
+    "source": null,
+    "source_margin": 98,
+    "function": null,
+    "function_margin": 0
+  },
+  "constraints": {
+    "training_performed": false,
+    "model_parameters_changed": false,
+    "gamma_changed": false,
+    "guard_changed": false,
+    "threshold_changed": false,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false,
+    "candidate_performance_used": false
+  },
+  "recommendation": "Do not generate later-time states. Audit only the top two lineage candidates using exact checkpoint parent-manifest and saved-array consumer provenance.",
+  "next_milestone": "V15-SG7E1R26G \u2014 Final Evaluator Parent-Manifest / Consumer Conflict Audit"
+}

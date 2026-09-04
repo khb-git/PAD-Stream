@@ -1,0 +1,56 @@
+{
+  "milestone": "V16D-12E",
+  "status": "V16D_LOCKED_OOD_TEST_FINAL_EVALUATION_ISOLATION_CONTRACT_FROZEN_SEALED_TARGET_GENERATION_AUTHORIZED",
+  "locked_ood_test": [
+    "0005",
+    "0018",
+    "0021",
+    "0022"
+  ],
+  "target_days": [
+    30,
+    60,
+    100,
+    150,
+    250,
+    365,
+    500,
+    750,
+    1000
+  ],
+  "Y_shape": [
+    9,
+    1078,
+    201
+  ],
+  "train_manifest_sha256": "85415615a8d752e45085eaff5c4d9b97ecb2c5155d570bc4019ef42221c30264",
+  "validation_manifest_sha256": "14dfabec309c2d024ed970983a03c4f3610caff8f66a845ca5f5ba2318ff867c",
+  "allowed_use": "SOURCE_AUTHENTIC_LABEL_GENERATION_AND_FINAL_FROZEN_MODEL_EVALUATION_ONLY",
+  "gates": {
+    "TRAIN_manifest_SHA_exact": true,
+    "TRAIN_status_certified": true,
+    "VALIDATION_manifest_SHA_exact": true,
+    "VALIDATION_status_certified": true,
+    "locked_OOD_exact_cases": true,
+    "evaluation_only": true,
+    "no_OOD_normalization_fit": true,
+    "no_OOD_feature_selection": true,
+    "no_OOD_architecture_selection": true,
+    "no_OOD_loss_weight_selection": true,
+    "no_OOD_hyperparameter_tuning": true,
+    "no_OOD_early_stopping": true,
+    "no_OOD_threshold_tuning": true,
+    "no_OOD_checkpoint_selection": true,
+    "one_case_one_restartable_job": true,
+    "completed_OOD_artifacts_immutable": true,
+    "Pollock_primary": true,
+    "C7_Mface_primary": true,
+    "FMM_ADV_auxiliary_only": true,
+    "legacy_exp_Nc_xD_prohibited": true,
+    "nine_time_schedule": true,
+    "no_transport_executed": true,
+    "no_training": true,
+    "no_model_selection": true
+  },
+  "next_milestone": "V16D-12F \u2014 Restartable SEALED LOCKED-OOD Stage-4 Transport Target Generation"
+}

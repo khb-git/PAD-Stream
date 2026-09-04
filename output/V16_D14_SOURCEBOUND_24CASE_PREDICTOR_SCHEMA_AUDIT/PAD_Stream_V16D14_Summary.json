@@ -1,0 +1,33 @@
+{
+  "milestone": "V16D-14",
+  "status": "V16D_24CASE_PREDICTOR_SOURCE_SCHEMA_UNIQUELY_BOUND_NUMERICAL_ASSEMBLY_AND_TRAIN_ONLY_STATS_AUTHORIZED",
+  "features": [
+    "xi",
+    "pollock_tau_hat",
+    "adv_tau_hat",
+    "log10_Kh",
+    "log10_Kz_over_Kh",
+    "porosity",
+    "pressure_z",
+    "target_time_hat",
+    "target_eta_sequence"
+  ],
+  "missing_cases": [],
+  "ambiguous_cases": [],
+  "source_registry_sha256": "6d6ab242deadec4b12fd0e85346e12e0d5a8160282c86615e0f7e472bf029657",
+  "gates": {
+    "D13_SHA_exact": true,
+    "exact_24_cases": true,
+    "no_missing_source_binding": true,
+    "no_ambiguous_source_binding": true,
+    "C20_nine_channels_exact": true,
+    "TRAIN_only_stats_policy": true,
+    "validation_transform_only": true,
+    "OOD_transform_only": true,
+    "OOD_labels_unread_for_stats": true,
+    "M_sidecar_not_predictor": true,
+    "no_training": true,
+    "no_model_selection": true
+  },
+  "next_milestone": "V16D-14A \u2014 Exact Field-Level Predictor Assembly + TRAIN-Only Numerical Normalization Statistics Freeze"
+}

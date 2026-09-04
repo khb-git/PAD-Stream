@@ -1,0 +1,2026 @@
+{
+  "milestone": "V16E-0A",
+  "policy": "Discovery only. Candidate rankings are fingerprints, not scientific role bindings.",
+  "roles": {
+    "BL_ANALYTICAL_TEACHER": {
+      "candidate_count": 12,
+      "candidates": [
+        {
+          "path": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "name": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "sha256": "846cf8c278d9140e38ec11703e97ddd258d98465a7a66039a9b4838b3c74354e",
+          "score": 14,
+          "evidence": [
+            "breakthrough",
+            "dfw",
+            "fractional flow",
+            "fractional_flow",
+            "shock saturation",
+            "shock speed",
+            "shock_saturation",
+            "tangent",
+            "welge"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG6C_Compressible_Formulation_Comparison.py",
+          "name": "PAD_Stream_V15SG6C_Compressible_Formulation_Comparison.py",
+          "sha256": "877d376266a53e6980350ee1c563123078f7ed2c83543af6cf97427c2574bf0e",
+          "score": 13,
+          "evidence": [
+            "breakthrough",
+            "fractional flow",
+            "fractional_flow",
+            "shock saturation",
+            "shock speed",
+            "shock_saturation",
+            "tangent",
+            "welge"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage3_capillary.py",
+          "name": "pi_rnn_stage3_capillary.py",
+          "sha256": "dab8eade38ac08c819ac27d803c8f1bceca9722c4c37e82977dbef6e6232ae0f",
+          "score": 9,
+          "evidence": [
+            "breakthrough",
+            "dfw",
+            "fractional flow",
+            "fractional_flow",
+            "tangent",
+            "welge"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage4_full_godunov.py",
+          "name": "pi_rnn_stage4_full_godunov.py",
+          "sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+          "score": 9,
+          "evidence": [
+            "breakthrough",
+            "dfw",
+            "fractional flow",
+            "fractional_flow",
+            "tangent",
+            "welge"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage1_incompressible.py",
+          "name": "pi_rnn_stage1_incompressible.py",
+          "sha256": "98d492e1e4a84e9d2c3ab99a631bf7d21d011b65bdd599e0ab3192d947b36e58",
+          "score": 7,
+          "evidence": [
+            "breakthrough",
+            "dfw",
+            "fractional_flow",
+            "tangent",
+            "welge"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage2_compressible_godunov.py",
+          "name": "pi_rnn_stage2_compressible_godunov.py",
+          "sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+          "score": 7,
+          "evidence": [
+            "breakthrough",
+            "dfw",
+            "fractional_flow",
+            "tangent",
+            "welge"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B4_Reference_PIRNN_Training.py",
+          "name": "PAD_Stream_V15SG7B4_Reference_PIRNN_Training.py",
+          "sha256": "6825e93d17210dc5bb7619abebd323f604a8d0f951c386446d9d9e673eeb4661",
+          "score": 4,
+          "evidence": [
+            "fractional flow",
+            "fractional_flow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C9_Source_Authentic_Full_BL_CCUS_Pollock_Adapter_Target_Generator_Binding_Audit.py",
+          "name": "PAD_Stream_V16C9_Source_Authentic_Full_BL_CCUS_Pollock_Adapter_Target_Generator_Binding_Audit.py",
+          "sha256": "2822e6543f42b3dfc82ad7707c137dd1dafd054d653c4f045a4326e0c5c5309d",
+          "score": 4,
+          "evidence": [
+            "fractional flow",
+            "fractional_flow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7A_Full_Physics_TOF_Transport.py",
+          "name": "PAD_Stream_V15SG7A_Full_Physics_TOF_Transport.py",
+          "sha256": "8ae5aefb80862119fc61a83cf7d6c969eb2cb7c90b12b31ca39c6ad445984bc0",
+          "score": 3,
+          "evidence": [
+            "breakthrough",
+            "fractional_flow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C11_Executable_Conservative_Full_Physics_Pollock_Transport_Solver_Assembly_and_Diagnostic_Validation.py",
+          "name": "PAD_Stream_V16C11_Executable_Conservative_Full_Physics_Pollock_Transport_Solver_Assembly_and_Diagnostic_Validation.py",
+          "sha256": "cf3f4f124ae08d928471f2ec14a6bd269ac5362d6008011fcacd59190d215c3d",
+          "score": 3,
+          "evidence": [
+            "dfw",
+            "fractional_flow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C6_Existing_BL_CCUS_Transport_Physics_PIRNN_Lineage_Binding_Audit.py",
+          "name": "PAD_Stream_V16C6_Existing_BL_CCUS_Transport_Physics_PIRNN_Lineage_Binding_Audit.py",
+          "sha256": "db138d0c57f5d9b0e99d9d3054b0f5b51a4938937f779919b663cba8fba506db",
+          "score": 3,
+          "evidence": [
+            "dfw",
+            "welge"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16E0_BL_DP_Architecture_Reconciliation_Contract.py",
+          "name": "PAD_Stream_V16E0_BL_DP_Architecture_Reconciliation_Contract.py",
+          "sha256": "e4d32593f9212cd3cd88402bc75802eb3324603fb5a23732a149063c5d92189d",
+          "score": 3,
+          "evidence": [
+            "breakthrough",
+            "fractional_flow"
+          ]
+        }
+      ]
+    },
+    "BL_FV_INCOMPRESSIBLE": {
+      "candidate_count": 21,
+      "candidates": [
+        {
+          "path": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "name": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "sha256": "846cf8c278d9140e38ec11703e97ddd258d98465a7a66039a9b4838b3c74354e",
+          "score": 11,
+          "evidence": [
+            "buckley",
+            "finite volume",
+            "finite-volume",
+            "fractional_flow",
+            "godunov",
+            "incompressible",
+            "upwind"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage2_compressible_godunov.py",
+          "name": "pi_rnn_stage2_compressible_godunov.py",
+          "sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+          "score": 9,
+          "evidence": [
+            "buckley",
+            "finite-volume",
+            "fractional_flow",
+            "godunov",
+            "incompressible",
+            "upwind"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG6C_Compressible_Formulation_Comparison.py",
+          "name": "PAD_Stream_V15SG6C_Compressible_Formulation_Comparison.py",
+          "sha256": "877d376266a53e6980350ee1c563123078f7ed2c83543af6cf97427c2574bf0e",
+          "score": 7,
+          "evidence": [
+            "buckley",
+            "finite-volume",
+            "fractional_flow",
+            "godunov",
+            "incompressible"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6CR_Residual_Operator_Reconciliation.py",
+          "name": "PAD_Stream_V15SG7B6CR_Residual_Operator_Reconciliation.py",
+          "sha256": "0ba5abbd84842e95eefcf20cb23bf8b4bd6d81f76e9939823465eba1fe5ff920",
+          "score": 7,
+          "evidence": [
+            "finite-volume",
+            "fractional_flow",
+            "godunov",
+            "upwind"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage3_capillary.py",
+          "name": "pi_rnn_stage3_capillary.py",
+          "sha256": "dab8eade38ac08c819ac27d803c8f1bceca9722c4c37e82977dbef6e6232ae0f",
+          "score": 7,
+          "evidence": [
+            "buckley",
+            "fractional_flow",
+            "godunov",
+            "incompressible",
+            "upwind"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage4_full_godunov.py",
+          "name": "pi_rnn_stage4_full_godunov.py",
+          "sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+          "score": 7,
+          "evidence": [
+            "buckley",
+            "fractional_flow",
+            "godunov",
+            "incompressible",
+            "upwind"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B11_Independent_Front_Aware_Candidate_Validation.py",
+          "name": "PAD_Stream_V15SG7B11_Independent_Front_Aware_Candidate_Validation.py",
+          "sha256": "2c4c07f674a3940a2e9c480d925d506104da77ffab6c7a3f6382a0bea4588475",
+          "score": 6,
+          "evidence": [
+            "finite-volume",
+            "godunov",
+            "upwind"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C6_Existing_BL_CCUS_Transport_Physics_PIRNN_Lineage_Binding_Audit.py",
+          "name": "PAD_Stream_V16C6_Existing_BL_CCUS_Transport_Physics_PIRNN_Lineage_Binding_Audit.py",
+          "sha256": "db138d0c57f5d9b0e99d9d3054b0f5b51a4938937f779919b663cba8fba506db",
+          "score": 6,
+          "evidence": [
+            "buckley",
+            "godunov",
+            "incompressible",
+            "upwind"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7A_Full_Physics_TOF_Transport.py",
+          "name": "PAD_Stream_V15SG7A_Full_Physics_TOF_Transport.py",
+          "sha256": "8ae5aefb80862119fc61a83cf7d6c969eb2cb7c90b12b31ca39c6ad445984bc0",
+          "score": 5,
+          "evidence": [
+            "finite-volume",
+            "fractional_flow",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B2_Residual_Verification.py",
+          "name": "PAD_Stream_V15SG7B2_Residual_Verification.py",
+          "sha256": "df4f76ed9ba35d4ab17b67725a6b51431a86a7af30b600f416bfadf5c34bf2ec",
+          "score": 5,
+          "evidence": [
+            "finite-volume",
+            "fractional_flow",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B4_Reference_PIRNN_Training.py",
+          "name": "PAD_Stream_V15SG7B4_Reference_PIRNN_Training.py",
+          "sha256": "6825e93d17210dc5bb7619abebd323f604a8d0f951c386446d9d9e673eeb4661",
+          "score": 5,
+          "evidence": [
+            "finite-volume",
+            "fractional_flow",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6D_Advective_Flux_Refinement.py",
+          "name": "PAD_Stream_V15SG7B6D_Advective_Flux_Refinement.py",
+          "sha256": "a1181b0f0dd8367e8edec07fc88a0de09fdedc94e3d5d5a8fce5cd0441324e89",
+          "score": 5,
+          "evidence": [
+            "fractional_flow",
+            "godunov",
+            "upwind"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B7_Final_PIRNN_Validation.py",
+          "name": "PAD_Stream_V15SG7B7_Final_PIRNN_Validation.py",
+          "sha256": "d1974c00424648e3e60cd38371489c7848341b76b24866593dfd64659e3851a0",
+          "score": 5,
+          "evidence": [
+            "finite-volume",
+            "fractional_flow",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C8_Full_BL_CCUS_Streamline_Transport_Target_Semantics_Contract.py",
+          "name": "PAD_Stream_V16C8_Full_BL_CCUS_Streamline_Transport_Target_Semantics_Contract.py",
+          "sha256": "394968f86b445aeb0987d94943148f7d37c65f827b9c5493c98d4a5889c10782",
+          "score": 5,
+          "evidence": [
+            "finite-volume",
+            "fractional_flow",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16E0_BL_DP_Architecture_Reconciliation_Contract.py",
+          "name": "PAD_Stream_V16E0_BL_DP_Architecture_Reconciliation_Contract.py",
+          "sha256": "e4d32593f9212cd3cd88402bc75802eb3324603fb5a23732a149063c5d92189d",
+          "score": 5,
+          "evidence": [
+            "buckley",
+            "finite-volume",
+            "fractional_flow",
+            "incompressible"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C10A_Pollock_Coordinate_Full_Physics_Transport_Boundary_Condition_Binding_Audit.py",
+          "name": "PAD_Stream_V16C10A_Pollock_Coordinate_Full_Physics_Transport_Boundary_Condition_Binding_Audit.py",
+          "sha256": "32530b82c73835ab4f5822de6c31d2c98541d4cf6970a615f4e6ab6462b70def",
+          "score": 4,
+          "evidence": [
+            "godunov",
+            "upwind"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6C_Residual_Component_Audit.py",
+          "name": "PAD_Stream_V15SG7B6C_Residual_Component_Audit.py",
+          "sha256": "8243babfa594c3d57fb5e957cb7f21c414927b0d9a6ddeacb1c25e2d90c6174f",
+          "score": 3,
+          "evidence": [
+            "fractional_flow",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6FR_Activity_Scaled_Coupled_Refinement.py",
+          "name": "PAD_Stream_V15SG7B6FR_Activity_Scaled_Coupled_Refinement.py",
+          "sha256": "bb40bee90e86b15b45cfead4bcdbe47c9e997818c70bd81ad6001d18ac3aa39d",
+          "score": 3,
+          "evidence": [
+            "finite-volume",
+            "fractional_flow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C11_Executable_Conservative_Full_Physics_Pollock_Transport_Solver_Assembly_and_Diagnostic_Validation.py",
+          "name": "PAD_Stream_V16C11_Executable_Conservative_Full_Physics_Pollock_Transport_Solver_Assembly_and_Diagnostic_Validation.py",
+          "sha256": "cf3f4f124ae08d928471f2ec14a6bd269ac5362d6008011fcacd59190d215c3d",
+          "score": 3,
+          "evidence": [
+            "fractional_flow",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C9_Source_Authentic_Full_BL_CCUS_Pollock_Adapter_Target_Generator_Binding_Audit.py",
+          "name": "PAD_Stream_V16C9_Source_Authentic_Full_BL_CCUS_Pollock_Adapter_Target_Generator_Binding_Audit.py",
+          "sha256": "2822e6543f42b3dfc82ad7707c137dd1dafd054d653c4f045a4326e0c5c5309d",
+          "score": 3,
+          "evidence": [
+            "fractional_flow",
+            "godunov"
+          ]
+        }
+      ]
+    },
+    "BL_FV_COMPRESSIBLE": {
+      "candidate_count": 16,
+      "candidates": [
+        {
+          "path": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "name": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "sha256": "846cf8c278d9140e38ec11703e97ddd258d98465a7a66039a9b4838b3c74354e",
+          "score": 12,
+          "evidence": [
+            "accumulation",
+            "compressibility",
+            "compressible",
+            "density(",
+            "finite volume",
+            "finite-volume",
+            "godunov",
+            "rho_ref"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG6C_Compressible_Formulation_Comparison.py",
+          "name": "PAD_Stream_V15SG6C_Compressible_Formulation_Comparison.py",
+          "sha256": "877d376266a53e6980350ee1c563123078f7ed2c83543af6cf97427c2574bf0e",
+          "score": 6,
+          "evidence": [
+            "compressibility",
+            "compressible",
+            "finite-volume",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7A_Full_Physics_TOF_Transport.py",
+          "name": "PAD_Stream_V15SG7A_Full_Physics_TOF_Transport.py",
+          "sha256": "8ae5aefb80862119fc61a83cf7d6c969eb2cb7c90b12b31ca39c6ad445984bc0",
+          "score": 6,
+          "evidence": [
+            "compressibility",
+            "compressible",
+            "finite-volume",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C7A_Compressibility_Authority_Separation_Nc_uD_Pollock_Compatibility_Audit.py",
+          "name": "PAD_Stream_V16C7A_Compressibility_Authority_Separation_Nc_uD_Pollock_Compatibility_Audit.py",
+          "sha256": "282020cb373595b6ad2c9df86aeb27c462a6fddd6e70d13e1e6ccc51255746d1",
+          "score": 6,
+          "evidence": [
+            "accumulation",
+            "compressibility",
+            "compressible",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C8_Full_BL_CCUS_Streamline_Transport_Target_Semantics_Contract.py",
+          "name": "PAD_Stream_V16C8_Full_BL_CCUS_Streamline_Transport_Target_Semantics_Contract.py",
+          "sha256": "394968f86b445aeb0987d94943148f7d37c65f827b9c5493c98d4a5889c10782",
+          "score": 6,
+          "evidence": [
+            "compressibility",
+            "compressible",
+            "finite-volume",
+            "godunov"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage2_compressible_godunov.py",
+          "name": "pi_rnn_stage2_compressible_godunov.py",
+          "sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+          "score": 6,
+          "evidence": [
+            "compressibility",
+            "compressible",
+            "finite-volume",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C6_Existing_BL_CCUS_Transport_Physics_PIRNN_Lineage_Binding_Audit.py",
+          "name": "PAD_Stream_V16C6_Existing_BL_CCUS_Transport_Physics_PIRNN_Lineage_Binding_Audit.py",
+          "sha256": "db138d0c57f5d9b0e99d9d3054b0f5b51a4938937f779919b663cba8fba506db",
+          "score": 5,
+          "evidence": [
+            "compressibility",
+            "compressible",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C7AR_Compressibility_Authority_Residual_Audit_Stage2_Nc_Provenance.py",
+          "name": "PAD_Stream_V16C7AR_Compressibility_Authority_Residual_Audit_Stage2_Nc_Provenance.py",
+          "sha256": "ef57ed7e5729d46588c60937a2173f28e92de55096d0a2654a5f4dde6f04eaa8",
+          "score": 5,
+          "evidence": [
+            "compressibility",
+            "compressible",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C7_Pollock_TOF_Full_BL_CCUS_Transport_Adapter_Physics_Contract.py",
+          "name": "PAD_Stream_V16C7_Pollock_TOF_Full_BL_CCUS_Transport_Adapter_Physics_Contract.py",
+          "sha256": "bf0f51e6126c9c7a930738bfa73e58f787194de8646973517db5cf083ad7d534",
+          "score": 5,
+          "evidence": [
+            "compressibility",
+            "compressible",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16E0_BL_DP_Architecture_Reconciliation_Contract.py",
+          "name": "PAD_Stream_V16E0_BL_DP_Architecture_Reconciliation_Contract.py",
+          "sha256": "e4d32593f9212cd3cd88402bc75802eb3324603fb5a23732a149063c5d92189d",
+          "score": 5,
+          "evidence": [
+            "compressibility",
+            "compressible",
+            "finite-volume"
+          ]
+        },
+        {
+          "path": "dependencies\\PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment\\PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment.py",
+          "name": "PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment.py",
+          "sha256": "dbbbd34c4deffc8851866685b755c708cf87c8fcd4c8fc2fbcc2d821bd6a559f",
+          "score": 4,
+          "evidence": [
+            "compressibility",
+            "compressible"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C7R_Pollock_TOF_Adapter_Capillary_Source_Semantics_Residual_Audit.py",
+          "name": "PAD_Stream_V16C7R_Pollock_TOF_Adapter_Capillary_Source_Semantics_Residual_Audit.py",
+          "sha256": "0bb06f258864bd243b942f4e9e6f27ceceb68444d184f22fe4f1256ac3102ef1",
+          "score": 3,
+          "evidence": [
+            "compressibility",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16D12_MultiCase_Stage4_Transport_Generator_Source_Binding_and_Case0002_Pilot_Contract.py",
+          "name": "PAD_Stream_V16D12_MultiCase_Stage4_Transport_Generator_Source_Binding_and_Case0002_Pilot_Contract.py",
+          "sha256": "8d4c8bad2f31879a4098f054cb7b614a282cdd281f6217732e6699ae9b6d4fe4",
+          "score": 3,
+          "evidence": [
+            "compressibility",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16D30_Stage4_Transport_Supervision_ControlSpace_Source_Binding_Contract.py",
+          "name": "PAD_Stream_V16D30_Stage4_Transport_Supervision_ControlSpace_Source_Binding_Contract.py",
+          "sha256": "71e204983cffc052b21310698ebc4cf03a34a25ed806d3e28f576af580e7671a",
+          "score": 3,
+          "evidence": [
+            "compressibility",
+            "godunov"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage3_capillary.py",
+          "name": "pi_rnn_stage3_capillary.py",
+          "sha256": "dab8eade38ac08c819ac27d803c8f1bceca9722c4c37e82977dbef6e6232ae0f",
+          "score": 3,
+          "evidence": [
+            "compressible",
+            "godunov"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage4_full_godunov.py",
+          "name": "pi_rnn_stage4_full_godunov.py",
+          "sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+          "score": 3,
+          "evidence": [
+            "compressible",
+            "godunov"
+          ]
+        }
+      ]
+    },
+    "BL_FV_CAPILLARY": {
+      "candidate_count": 41,
+      "candidates": [
+        {
+          "path": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "name": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "sha256": "846cf8c278d9140e38ec11703e97ddd258d98465a7a66039a9b4838b3c74354e",
+          "score": 12,
+          "evidence": [
+            "brooks-corey",
+            "capillary",
+            "diffusion",
+            "godunov",
+            "implicit diffusion",
+            "lambda_bc",
+            "pe_c",
+            "solve_banded"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7A_Full_Physics_TOF_Transport.py",
+          "name": "PAD_Stream_V15SG7A_Full_Physics_TOF_Transport.py",
+          "sha256": "8ae5aefb80862119fc61a83cf7d6c969eb2cb7c90b12b31ca39c6ad445984bc0",
+          "score": 10,
+          "evidence": [
+            "brooks-corey",
+            "capillary",
+            "diffusion",
+            "godunov",
+            "lambda_bc",
+            "pe_c",
+            "solve_banded"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage3_capillary.py",
+          "name": "pi_rnn_stage3_capillary.py",
+          "sha256": "dab8eade38ac08c819ac27d803c8f1bceca9722c4c37e82977dbef6e6232ae0f",
+          "score": 10,
+          "evidence": [
+            "brooks-corey",
+            "capillary",
+            "diffusion",
+            "godunov",
+            "lambda_bc",
+            "pe_c",
+            "solve_banded"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage4_full_godunov.py",
+          "name": "pi_rnn_stage4_full_godunov.py",
+          "sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+          "score": 10,
+          "evidence": [
+            "brooks-corey",
+            "capillary",
+            "diffusion",
+            "godunov",
+            "lambda_bc",
+            "pe_c",
+            "solve_banded"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B2_Residual_Verification.py",
+          "name": "PAD_Stream_V15SG7B2_Residual_Verification.py",
+          "sha256": "df4f76ed9ba35d4ab17b67725a6b51431a86a7af30b600f416bfadf5c34bf2ec",
+          "score": 8,
+          "evidence": [
+            "brooks-corey",
+            "capillary",
+            "diffusion",
+            "godunov",
+            "lambda_bc",
+            "pe_c"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B4_Reference_PIRNN_Training.py",
+          "name": "PAD_Stream_V15SG7B4_Reference_PIRNN_Training.py",
+          "sha256": "6825e93d17210dc5bb7619abebd323f604a8d0f951c386446d9d9e673eeb4661",
+          "score": 8,
+          "evidence": [
+            "brooks-corey",
+            "capillary",
+            "diffusion",
+            "godunov",
+            "lambda_bc",
+            "pe_c"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6CR_Residual_Operator_Reconciliation.py",
+          "name": "PAD_Stream_V15SG7B6CR_Residual_Operator_Reconciliation.py",
+          "sha256": "0ba5abbd84842e95eefcf20cb23bf8b4bd6d81f76e9939823465eba1fe5ff920",
+          "score": 7,
+          "evidence": [
+            "capillary",
+            "diffusion",
+            "godunov",
+            "lambda_bc",
+            "pe_c"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6C_Residual_Component_Audit.py",
+          "name": "PAD_Stream_V15SG7B6C_Residual_Component_Audit.py",
+          "sha256": "8243babfa594c3d57fb5e957cb7f21c414927b0d9a6ddeacb1c25e2d90c6174f",
+          "score": 7,
+          "evidence": [
+            "capillary",
+            "diffusion",
+            "godunov",
+            "lambda_bc",
+            "pe_c"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6D_Advective_Flux_Refinement.py",
+          "name": "PAD_Stream_V15SG7B6D_Advective_Flux_Refinement.py",
+          "sha256": "a1181b0f0dd8367e8edec07fc88a0de09fdedc94e3d5d5a8fce5cd0441324e89",
+          "score": 7,
+          "evidence": [
+            "capillary",
+            "diffusion",
+            "godunov",
+            "lambda_bc",
+            "pe_c"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B7_Final_PIRNN_Validation.py",
+          "name": "PAD_Stream_V15SG7B7_Final_PIRNN_Validation.py",
+          "sha256": "d1974c00424648e3e60cd38371489c7848341b76b24866593dfd64659e3851a0",
+          "score": 7,
+          "evidence": [
+            "capillary",
+            "diffusion",
+            "godunov",
+            "lambda_bc",
+            "pe_c"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C10AR_Full_Physics_Boundary_Source_Residual_Audit.py",
+          "name": "PAD_Stream_V16C10AR_Full_Physics_Boundary_Source_Residual_Audit.py",
+          "sha256": "a7b9f462d66641836f5d8f50bfc85f28d206f40a7047caee6b712efb85f02c66",
+          "score": 7,
+          "evidence": [
+            "capillary",
+            "diffusion",
+            "godunov",
+            "solve_banded"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C6_Existing_BL_CCUS_Transport_Physics_PIRNN_Lineage_Binding_Audit.py",
+          "name": "PAD_Stream_V16C6_Existing_BL_CCUS_Transport_Physics_PIRNN_Lineage_Binding_Audit.py",
+          "sha256": "db138d0c57f5d9b0e99d9d3054b0f5b51a4938937f779919b663cba8fba506db",
+          "score": 7,
+          "evidence": [
+            "capillary",
+            "diffusion",
+            "godunov",
+            "lambda_bc",
+            "pe_c"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B11_Independent_Front_Aware_Candidate_Validation.py",
+          "name": "PAD_Stream_V15SG7B11_Independent_Front_Aware_Candidate_Validation.py",
+          "sha256": "2c4c07f674a3940a2e9c480d925d506104da77ffab6c7a3f6382a0bea4588475",
+          "score": 6,
+          "evidence": [
+            "capillary",
+            "diffusion",
+            "godunov",
+            "pe_c"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B5_Detailed_PIRNN_Validation.py",
+          "name": "PAD_Stream_V15SG7B5_Detailed_PIRNN_Validation.py",
+          "sha256": "725c778d7b6538c4ad9ae63d168e83bc144557d2c2ad7a3a4724e6c8fb478eac",
+          "score": 6,
+          "evidence": [
+            "capillary",
+            "diffusion",
+            "lambda_bc",
+            "pe_c"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6B_Physics_Finetuning.py",
+          "name": "PAD_Stream_V15SG7B6B_Physics_Finetuning.py",
+          "sha256": "549b63ff0795133faf208e263dbed7db1c5e296ef2a405d3bc82dc6b70cfc870",
+          "score": 6,
+          "evidence": [
+            "capillary",
+            "diffusion",
+            "lambda_bc",
+            "pe_c"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6E_Coupled_Residual_Balance_Audit.py",
+          "name": "PAD_Stream_V15SG7B6E_Coupled_Residual_Balance_Audit.py",
+          "sha256": "b17ace631cc231b00572ad41909e56488c17107a496db9363983a3872f1b9293",
+          "score": 6,
+          "evidence": [
+            "capillary",
+            "diffusion",
+            "lambda_bc",
+            "pe_c"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6FR_Activity_Scaled_Coupled_Refinement.py",
+          "name": "PAD_Stream_V15SG7B6FR_Activity_Scaled_Coupled_Refinement.py",
+          "sha256": "bb40bee90e86b15b45cfead4bcdbe47c9e997818c70bd81ad6001d18ac3aa39d",
+          "score": 6,
+          "evidence": [
+            "capillary",
+            "diffusion",
+            "lambda_bc",
+            "pe_c"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6F_Coupled_Conservative_Refinement.py",
+          "name": "PAD_Stream_V15SG7B6F_Coupled_Conservative_Refinement.py",
+          "sha256": "81b87bc72b780e568d06fdb67f57c1fd308fc9a8fa1bdd48b35c56ad73833f46",
+          "score": 6,
+          "evidence": [
+            "capillary",
+            "diffusion",
+            "lambda_bc",
+            "pe_c"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6_Rebalanced_PIRNN_Training.py",
+          "name": "PAD_Stream_V15SG7B6_Rebalanced_PIRNN_Training.py",
+          "sha256": "908ed660243c4e6ad97b61b688eb1393fe98cfd5d7d0ae4c7145e8e11f4be696",
+          "score": 6,
+          "evidence": [
+            "capillary",
+            "diffusion",
+            "lambda_bc",
+            "pe_c"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C12_Full_Physics_Pollock_Solver_Limiting_Case_and_Frozen_Reference_Validation.py",
+          "name": "PAD_Stream_V16C12_Full_Physics_Pollock_Solver_Limiting_Case_and_Frozen_Reference_Validation.py",
+          "sha256": "4e9a8b694f8c4b804350953103e293e383030e389ccda4047799ef1349b1eaec",
+          "score": 6,
+          "evidence": [
+            "capillary",
+            "diffusion",
+            "godunov",
+            "pe_c"
+          ]
+        }
+      ]
+    },
+    "BL_FV_FULL_COMPRESSIBLE_CAPILLARY": {
+      "candidate_count": 16,
+      "candidates": [
+        {
+          "path": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "name": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "sha256": "846cf8c278d9140e38ec11703e97ddd258d98465a7a66039a9b4838b3c74354e",
+          "score": 10,
+          "evidence": [
+            "capillary",
+            "compressibility",
+            "compressible",
+            "diffusion",
+            "full",
+            "godunov",
+            "rho",
+            "solve_banded"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage4_full_godunov.py",
+          "name": "pi_rnn_stage4_full_godunov.py",
+          "sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+          "score": 10,
+          "evidence": [
+            "capillary",
+            "compressible",
+            "diffusion",
+            "full",
+            "godunov",
+            "rho",
+            "solve_banded"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7A_Full_Physics_TOF_Transport.py",
+          "name": "PAD_Stream_V15SG7A_Full_Physics_TOF_Transport.py",
+          "sha256": "8ae5aefb80862119fc61a83cf7d6c969eb2cb7c90b12b31ca39c6ad445984bc0",
+          "score": 9,
+          "evidence": [
+            "capillary",
+            "compressibility",
+            "compressible",
+            "diffusion",
+            "full",
+            "godunov",
+            "solve_banded"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C7A_Compressibility_Authority_Separation_Nc_uD_Pollock_Compatibility_Audit.py",
+          "name": "PAD_Stream_V16C7A_Compressibility_Authority_Separation_Nc_uD_Pollock_Compatibility_Audit.py",
+          "sha256": "282020cb373595b6ad2c9df86aeb27c462a6fddd6e70d13e1e6ccc51255746d1",
+          "score": 9,
+          "evidence": [
+            "capillary",
+            "compressibility",
+            "compressible",
+            "diffusion",
+            "full",
+            "godunov",
+            "rho"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage3_capillary.py",
+          "name": "pi_rnn_stage3_capillary.py",
+          "sha256": "dab8eade38ac08c819ac27d803c8f1bceca9722c4c37e82977dbef6e6232ae0f",
+          "score": 9,
+          "evidence": [
+            "capillary",
+            "compressible",
+            "diffusion",
+            "full",
+            "godunov",
+            "solve_banded"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG6C_Compressible_Formulation_Comparison.py",
+          "name": "PAD_Stream_V15SG6C_Compressible_Formulation_Comparison.py",
+          "sha256": "877d376266a53e6980350ee1c563123078f7ed2c83543af6cf97427c2574bf0e",
+          "score": 8,
+          "evidence": [
+            "capillary",
+            "compressibility",
+            "compressible",
+            "full",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C14_Production_Full_Physics_Transport_Parameter_Authority_Contract.py",
+          "name": "PAD_Stream_V16C14_Production_Full_Physics_Transport_Parameter_Authority_Contract.py",
+          "sha256": "cd3b45b72ae2dc7d6906aad7323522d467234ba81a7b641fd323ddc3df3bb419",
+          "score": 8,
+          "evidence": [
+            "capillary",
+            "compressibility",
+            "full",
+            "rho"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C6_Existing_BL_CCUS_Transport_Physics_PIRNN_Lineage_Binding_Audit.py",
+          "name": "PAD_Stream_V16C6_Existing_BL_CCUS_Transport_Physics_PIRNN_Lineage_Binding_Audit.py",
+          "sha256": "db138d0c57f5d9b0e99d9d3054b0f5b51a4938937f779919b663cba8fba506db",
+          "score": 8,
+          "evidence": [
+            "capillary",
+            "compressibility",
+            "compressible",
+            "diffusion",
+            "full",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C7R_Pollock_TOF_Adapter_Capillary_Source_Semantics_Residual_Audit.py",
+          "name": "PAD_Stream_V16C7R_Pollock_TOF_Adapter_Capillary_Source_Semantics_Residual_Audit.py",
+          "sha256": "0bb06f258864bd243b942f4e9e6f27ceceb68444d184f22fe4f1256ac3102ef1",
+          "score": 8,
+          "evidence": [
+            "capillary",
+            "compressibility",
+            "diffusion",
+            "full",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C7_Pollock_TOF_Full_BL_CCUS_Transport_Adapter_Physics_Contract.py",
+          "name": "PAD_Stream_V16C7_Pollock_TOF_Full_BL_CCUS_Transport_Adapter_Physics_Contract.py",
+          "sha256": "bf0f51e6126c9c7a930738bfa73e58f787194de8646973517db5cf083ad7d534",
+          "score": 8,
+          "evidence": [
+            "capillary",
+            "compressibility",
+            "compressible",
+            "full",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C8_Full_BL_CCUS_Streamline_Transport_Target_Semantics_Contract.py",
+          "name": "PAD_Stream_V16C8_Full_BL_CCUS_Streamline_Transport_Target_Semantics_Contract.py",
+          "sha256": "394968f86b445aeb0987d94943148f7d37c65f827b9c5493c98d4a5889c10782",
+          "score": 8,
+          "evidence": [
+            "capillary",
+            "compressibility",
+            "compressible",
+            "diffusion",
+            "full",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16D12_MultiCase_Stage4_Transport_Generator_Source_Binding_and_Case0002_Pilot_Contract.py",
+          "name": "PAD_Stream_V16D12_MultiCase_Stage4_Transport_Generator_Source_Binding_and_Case0002_Pilot_Contract.py",
+          "sha256": "8d4c8bad2f31879a4098f054cb7b614a282cdd281f6217732e6699ae9b6d4fe4",
+          "score": 8,
+          "evidence": [
+            "capillary",
+            "compressibility",
+            "full",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16D30_Stage4_Transport_Supervision_ControlSpace_Source_Binding_Contract.py",
+          "name": "PAD_Stream_V16D30_Stage4_Transport_Supervision_ControlSpace_Source_Binding_Contract.py",
+          "sha256": "71e204983cffc052b21310698ebc4cf03a34a25ed806d3e28f576af580e7671a",
+          "score": 8,
+          "evidence": [
+            "capillary",
+            "compressibility",
+            "full",
+            "godunov"
+          ]
+        },
+        {
+          "path": "dependencies\\PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment\\PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment.py",
+          "name": "PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment.py",
+          "sha256": "dbbbd34c4deffc8851866685b755c708cf87c8fcd4c8fc2fbcc2d821bd6a559f",
+          "score": 8,
+          "evidence": [
+            "capillary",
+            "compressibility",
+            "compressible",
+            "full",
+            "rho"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage2_compressible_godunov.py",
+          "name": "pi_rnn_stage2_compressible_godunov.py",
+          "sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+          "score": 8,
+          "evidence": [
+            "compressibility",
+            "compressible",
+            "diffusion",
+            "full",
+            "godunov"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16E0_BL_DP_Architecture_Reconciliation_Contract.py",
+          "name": "PAD_Stream_V16E0_BL_DP_Architecture_Reconciliation_Contract.py",
+          "sha256": "e4d32593f9212cd3cd88402bc75802eb3324603fb5a23732a149063c5d92189d",
+          "score": 7,
+          "evidence": [
+            "capillary",
+            "compressibility",
+            "compressible",
+            "full"
+          ]
+        }
+      ]
+    },
+    "BL_PI_RNN": {
+      "candidate_count": 52,
+      "candidates": [
+        {
+          "path": "PAD_Stream_V15SG7B4_Reference_PIRNN_Training.py",
+          "name": "PAD_Stream_V15SG7B4_Reference_PIRNN_Training.py",
+          "sha256": "6825e93d17210dc5bb7619abebd323f604a8d0f951c386446d9d9e673eeb4661",
+          "score": 13,
+          "evidence": [
+            "film",
+            "fourier",
+            "keras",
+            "lambda_phys",
+            "lstm",
+            "physics loss",
+            "physics_loss",
+            "pi-rnn",
+            "pirnn",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "name": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "sha256": "846cf8c278d9140e38ec11703e97ddd258d98465a7a66039a9b4838b3c74354e",
+          "score": 13,
+          "evidence": [
+            "film",
+            "fourier",
+            "gru",
+            "keras",
+            "lambda_phys",
+            "lstm",
+            "physics loss",
+            "physics_loss",
+            "pi-rnn",
+            "pirnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6B_Physics_Finetuning.py",
+          "name": "PAD_Stream_V15SG7B6B_Physics_Finetuning.py",
+          "sha256": "549b63ff0795133faf208e263dbed7db1c5e296ef2a405d3bc82dc6b70cfc870",
+          "score": 12,
+          "evidence": [
+            "film",
+            "fourier",
+            "keras",
+            "lambda_phys",
+            "lstm",
+            "physics loss",
+            "physics_loss",
+            "pi-rnn",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6_Rebalanced_PIRNN_Training.py",
+          "name": "PAD_Stream_V15SG7B6_Rebalanced_PIRNN_Training.py",
+          "sha256": "908ed660243c4e6ad97b61b688eb1393fe98cfd5d7d0ae4c7145e8e11f4be696",
+          "score": 11,
+          "evidence": [
+            "film",
+            "fourier",
+            "keras",
+            "lambda_phys",
+            "lstm",
+            "pi-rnn",
+            "pirnn",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B5_Detailed_PIRNN_Validation.py",
+          "name": "PAD_Stream_V15SG7B5_Detailed_PIRNN_Validation.py",
+          "sha256": "725c778d7b6538c4ad9ae63d168e83bc144557d2c2ad7a3a4724e6c8fb478eac",
+          "score": 10,
+          "evidence": [
+            "film",
+            "fourier",
+            "keras",
+            "lambda_phys",
+            "lstm",
+            "pi-rnn",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage2_compressible_godunov.py",
+          "name": "pi_rnn_stage2_compressible_godunov.py",
+          "sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+          "score": 10,
+          "evidence": [
+            "keras",
+            "lambda_phys",
+            "lstm",
+            "physics loss",
+            "physics_loss",
+            "pi-rnn",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage3_capillary.py",
+          "name": "pi_rnn_stage3_capillary.py",
+          "sha256": "dab8eade38ac08c819ac27d803c8f1bceca9722c4c37e82977dbef6e6232ae0f",
+          "score": 10,
+          "evidence": [
+            "keras",
+            "lambda_phys",
+            "lstm",
+            "physics loss",
+            "physics_loss",
+            "pi-rnn",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage4_full_godunov.py",
+          "name": "pi_rnn_stage4_full_godunov.py",
+          "sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+          "score": 10,
+          "evidence": [
+            "keras",
+            "lambda_phys",
+            "lstm",
+            "physics loss",
+            "physics_loss",
+            "pi-rnn",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6D_Advective_Flux_Refinement.py",
+          "name": "PAD_Stream_V15SG7B6D_Advective_Flux_Refinement.py",
+          "sha256": "a1181b0f0dd8367e8edec07fc88a0de09fdedc94e3d5d5a8fce5cd0441324e89",
+          "score": 9,
+          "evidence": [
+            "film",
+            "fourier",
+            "keras",
+            "pi-rnn",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6FR_Activity_Scaled_Coupled_Refinement.py",
+          "name": "PAD_Stream_V15SG7B6FR_Activity_Scaled_Coupled_Refinement.py",
+          "sha256": "bb40bee90e86b15b45cfead4bcdbe47c9e997818c70bd81ad6001d18ac3aa39d",
+          "score": 9,
+          "evidence": [
+            "film",
+            "fourier",
+            "keras",
+            "lstm",
+            "pi-rnn",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6F_Coupled_Conservative_Refinement.py",
+          "name": "PAD_Stream_V15SG7B6F_Coupled_Conservative_Refinement.py",
+          "sha256": "81b87bc72b780e568d06fdb67f57c1fd308fc9a8fa1bdd48b35c56ad73833f46",
+          "score": 9,
+          "evidence": [
+            "film",
+            "fourier",
+            "keras",
+            "pi-rnn",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C6_Existing_BL_CCUS_Transport_Physics_PIRNN_Lineage_Binding_Audit.py",
+          "name": "PAD_Stream_V16C6_Existing_BL_CCUS_Transport_Physics_PIRNN_Lineage_Binding_Audit.py",
+          "sha256": "db138d0c57f5d9b0e99d9d3054b0f5b51a4938937f779919b663cba8fba506db",
+          "score": 9,
+          "evidence": [
+            "keras",
+            "lstm",
+            "physics_loss",
+            "pi-rnn",
+            "pirnn",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage1_incompressible.py",
+          "name": "pi_rnn_stage1_incompressible.py",
+          "sha256": "98d492e1e4a84e9d2c3ab99a631bf7d21d011b65bdd599e0ab3192d947b36e58",
+          "score": 9,
+          "evidence": [
+            "keras",
+            "lambda_phys",
+            "lstm",
+            "physics_loss",
+            "pi-rnn",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG5C_Seed_Density_Convergence.py",
+          "name": "PAD_Stream_V15SG5C_Seed_Density_Convergence.py",
+          "sha256": "e7572126637f20dea68cffdf87c910a86ef3887021a24507440c1bf433918f58",
+          "score": 8,
+          "evidence": [
+            "keras",
+            "pi-rnn",
+            "pirnn",
+            "rnn"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B10_Controlled_Front_Aware_Refinement.py",
+          "name": "PAD_Stream_V15SG7B10_Controlled_Front_Aware_Refinement.py",
+          "sha256": "11d836b9e1b8d0858c460abf212147cfdad6c6187572e41911c9dcf875d6f103",
+          "score": 8,
+          "evidence": [
+            "keras",
+            "pi-rnn",
+            "pirnn",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6C_Residual_Component_Audit.py",
+          "name": "PAD_Stream_V15SG7B6C_Residual_Component_Audit.py",
+          "sha256": "8243babfa594c3d57fb5e957cb7f21c414927b0d9a6ddeacb1c25e2d90c6174f",
+          "score": 8,
+          "evidence": [
+            "keras",
+            "lstm",
+            "pi-rnn",
+            "pirnn",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6E_Coupled_Residual_Balance_Audit.py",
+          "name": "PAD_Stream_V15SG7B6E_Coupled_Residual_Balance_Audit.py",
+          "sha256": "b17ace631cc231b00572ad41909e56488c17107a496db9363983a3872f1b9293",
+          "score": 8,
+          "evidence": [
+            "keras",
+            "pi-rnn",
+            "pirnn",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6G_Residual_Metric_Reconciliation.py",
+          "name": "PAD_Stream_V15SG7B6G_Residual_Metric_Reconciliation.py",
+          "sha256": "5fce66817067204739097bbc9176913e226660a8822a25ad44975cc00535fc50",
+          "score": 8,
+          "evidence": [
+            "keras",
+            "pi-rnn",
+            "pirnn",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B7R_Final_Freeze_Validation.py",
+          "name": "PAD_Stream_V15SG7B7R_Final_Freeze_Validation.py",
+          "sha256": "9cfeb53e29b4863e27d5d80c48c576121e8a714e238f8cf1a3f60f7752cab991",
+          "score": 8,
+          "evidence": [
+            "keras",
+            "pi-rnn",
+            "pirnn",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B7_Final_PIRNN_Validation.py",
+          "name": "PAD_Stream_V15SG7B7_Final_PIRNN_Validation.py",
+          "sha256": "d1974c00424648e3e60cd38371489c7848341b76b24866593dfd64659e3851a0",
+          "score": 8,
+          "evidence": [
+            "keras",
+            "pi-rnn",
+            "pirnn",
+            "rnn",
+            "tensorflow"
+          ]
+        }
+      ]
+    },
+    "BL_PI_RNN_CAPILLARY": {
+      "candidate_count": 22,
+      "candidates": [
+        {
+          "path": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "name": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "sha256": "846cf8c278d9140e38ec11703e97ddd258d98465a7a66039a9b4838b3c74354e",
+          "score": 13,
+          "evidence": [
+            "capillary",
+            "film",
+            "finite-volume capillary",
+            "gru",
+            "implicit",
+            "keras",
+            "lstm",
+            "pe_c",
+            "physics loss",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B4_Reference_PIRNN_Training.py",
+          "name": "PAD_Stream_V15SG7B4_Reference_PIRNN_Training.py",
+          "sha256": "6825e93d17210dc5bb7619abebd323f604a8d0f951c386446d9d9e673eeb4661",
+          "score": 11,
+          "evidence": [
+            "capillary",
+            "film",
+            "keras",
+            "lstm",
+            "pe_c",
+            "physics loss",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6B_Physics_Finetuning.py",
+          "name": "PAD_Stream_V15SG7B6B_Physics_Finetuning.py",
+          "sha256": "549b63ff0795133faf208e263dbed7db1c5e296ef2a405d3bc82dc6b70cfc870",
+          "score": 11,
+          "evidence": [
+            "capillary",
+            "film",
+            "keras",
+            "lstm",
+            "pe_c",
+            "physics loss",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage3_capillary.py",
+          "name": "pi_rnn_stage3_capillary.py",
+          "sha256": "dab8eade38ac08c819ac27d803c8f1bceca9722c4c37e82977dbef6e6232ae0f",
+          "score": 11,
+          "evidence": [
+            "capillary",
+            "implicit",
+            "keras",
+            "lstm",
+            "pe_c",
+            "physics loss",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage4_full_godunov.py",
+          "name": "pi_rnn_stage4_full_godunov.py",
+          "sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+          "score": 11,
+          "evidence": [
+            "capillary",
+            "implicit",
+            "keras",
+            "lstm",
+            "pe_c",
+            "physics loss",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B11_Independent_Front_Aware_Candidate_Validation.py",
+          "name": "PAD_Stream_V15SG7B11_Independent_Front_Aware_Candidate_Validation.py",
+          "sha256": "2c4c07f674a3940a2e9c480d925d506104da77ffab6c7a3f6382a0bea4588475",
+          "score": 10,
+          "evidence": [
+            "capillary",
+            "finite-volume capillary",
+            "keras",
+            "pe_c",
+            "rnn"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B5_Detailed_PIRNN_Validation.py",
+          "name": "PAD_Stream_V15SG7B5_Detailed_PIRNN_Validation.py",
+          "sha256": "725c778d7b6538c4ad9ae63d168e83bc144557d2c2ad7a3a4724e6c8fb478eac",
+          "score": 10,
+          "evidence": [
+            "capillary",
+            "film",
+            "keras",
+            "lstm",
+            "pe_c",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6D_Advective_Flux_Refinement.py",
+          "name": "PAD_Stream_V15SG7B6D_Advective_Flux_Refinement.py",
+          "sha256": "a1181b0f0dd8367e8edec07fc88a0de09fdedc94e3d5d5a8fce5cd0441324e89",
+          "score": 10,
+          "evidence": [
+            "capillary",
+            "film",
+            "keras",
+            "pe_c",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6FR_Activity_Scaled_Coupled_Refinement.py",
+          "name": "PAD_Stream_V15SG7B6FR_Activity_Scaled_Coupled_Refinement.py",
+          "sha256": "bb40bee90e86b15b45cfead4bcdbe47c9e997818c70bd81ad6001d18ac3aa39d",
+          "score": 10,
+          "evidence": [
+            "capillary",
+            "film",
+            "keras",
+            "lstm",
+            "pe_c",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6F_Coupled_Conservative_Refinement.py",
+          "name": "PAD_Stream_V15SG7B6F_Coupled_Conservative_Refinement.py",
+          "sha256": "81b87bc72b780e568d06fdb67f57c1fd308fc9a8fa1bdd48b35c56ad73833f46",
+          "score": 10,
+          "evidence": [
+            "capillary",
+            "film",
+            "keras",
+            "pe_c",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6_Rebalanced_PIRNN_Training.py",
+          "name": "PAD_Stream_V15SG7B6_Rebalanced_PIRNN_Training.py",
+          "sha256": "908ed660243c4e6ad97b61b688eb1393fe98cfd5d7d0ae4c7145e8e11f4be696",
+          "score": 10,
+          "evidence": [
+            "capillary",
+            "film",
+            "keras",
+            "lstm",
+            "pe_c",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C11_Executable_Conservative_Full_Physics_Pollock_Transport_Solver_Assembly_and_Diagnostic_Validation.py",
+          "name": "PAD_Stream_V16C11_Executable_Conservative_Full_Physics_Pollock_Transport_Solver_Assembly_and_Diagnostic_Validation.py",
+          "sha256": "cf3f4f124ae08d928471f2ec14a6bd269ac5362d6008011fcacd59190d215c3d",
+          "score": 10,
+          "evidence": [
+            "capillary",
+            "implicit",
+            "pe_c",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C6_Existing_BL_CCUS_Transport_Physics_PIRNN_Lineage_Binding_Audit.py",
+          "name": "PAD_Stream_V16C6_Existing_BL_CCUS_Transport_Physics_PIRNN_Lineage_Binding_Audit.py",
+          "sha256": "db138d0c57f5d9b0e99d9d3054b0f5b51a4938937f779919b663cba8fba506db",
+          "score": 10,
+          "evidence": [
+            "capillary",
+            "implicit",
+            "keras",
+            "lstm",
+            "pe_c",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16E0_BL_DP_Architecture_Reconciliation_Contract.py",
+          "name": "PAD_Stream_V16E0_BL_DP_Architecture_Reconciliation_Contract.py",
+          "sha256": "e4d32593f9212cd3cd88402bc75802eb3324603fb5a23732a149063c5d92189d",
+          "score": 10,
+          "evidence": [
+            "capillary",
+            "physics loss",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage2_compressible_godunov.py",
+          "name": "pi_rnn_stage2_compressible_godunov.py",
+          "sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+          "score": 10,
+          "evidence": [
+            "keras",
+            "lambda_bc",
+            "lstm",
+            "physics loss",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B14_Independent_TOF_Conditioned_Candidate_Validation.py",
+          "name": "PAD_Stream_V15SG7B14_Independent_TOF_Conditioned_Candidate_Validation.py",
+          "sha256": "ce37b7c28b6d0c8eabf0868530d8f338983afb8468e7c01f740b14ed99ea643c",
+          "score": 9,
+          "evidence": [
+            "keras",
+            "pe_c",
+            "rnn"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+          "name": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+          "sha256": "8a6e68c8e915104c035eadf93f85ea104c9b42ee840c6847082311e74947efe7",
+          "score": 9,
+          "evidence": [
+            "keras",
+            "pe_c",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6C_Residual_Component_Audit.py",
+          "name": "PAD_Stream_V15SG7B6C_Residual_Component_Audit.py",
+          "sha256": "8243babfa594c3d57fb5e957cb7f21c414927b0d9a6ddeacb1c25e2d90c6174f",
+          "score": 9,
+          "evidence": [
+            "capillary",
+            "keras",
+            "lstm",
+            "pe_c",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6E_Coupled_Residual_Balance_Audit.py",
+          "name": "PAD_Stream_V15SG7B6E_Coupled_Residual_Balance_Audit.py",
+          "sha256": "b17ace631cc231b00572ad41909e56488c17107a496db9363983a3872f1b9293",
+          "score": 9,
+          "evidence": [
+            "capillary",
+            "keras",
+            "pe_c",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7B6G_Residual_Metric_Reconciliation.py",
+          "name": "PAD_Stream_V15SG7B6G_Residual_Metric_Reconciliation.py",
+          "sha256": "5fce66817067204739097bbc9176913e226660a8822a25ad44975cc00535fc50",
+          "score": 9,
+          "evidence": [
+            "capillary",
+            "keras",
+            "rnn",
+            "tensorflow"
+          ]
+        }
+      ]
+    },
+    "BL_PI_RNN_COMPRESSIBLE": {
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "path": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "name": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "sha256": "846cf8c278d9140e38ec11703e97ddd258d98465a7a66039a9b4838b3c74354e",
+          "score": 13,
+          "evidence": [
+            "accumulation",
+            "compressibility",
+            "compressible",
+            "gru",
+            "keras",
+            "lambda_phys",
+            "lstm",
+            "physics loss",
+            "rho",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage4_full_godunov.py",
+          "name": "pi_rnn_stage4_full_godunov.py",
+          "sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+          "score": 12,
+          "evidence": [
+            "compressible",
+            "keras",
+            "lambda_phys",
+            "lstm",
+            "physics loss",
+            "rho",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage2_compressible_godunov.py",
+          "name": "pi_rnn_stage2_compressible_godunov.py",
+          "sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+          "score": 11,
+          "evidence": [
+            "compressibility",
+            "compressible",
+            "keras",
+            "lambda_phys",
+            "lstm",
+            "physics loss",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage3_capillary.py",
+          "name": "pi_rnn_stage3_capillary.py",
+          "sha256": "dab8eade38ac08c819ac27d803c8f1bceca9722c4c37e82977dbef6e6232ae0f",
+          "score": 11,
+          "evidence": [
+            "compressible",
+            "keras",
+            "lambda_phys",
+            "lstm",
+            "physics loss",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16E0_BL_DP_Architecture_Reconciliation_Contract.py",
+          "name": "PAD_Stream_V16E0_BL_DP_Architecture_Reconciliation_Contract.py",
+          "sha256": "e4d32593f9212cd3cd88402bc75802eb3324603fb5a23732a149063c5d92189d",
+          "score": 10,
+          "evidence": [
+            "compressibility",
+            "compressible",
+            "physics loss",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C6_Existing_BL_CCUS_Transport_Physics_PIRNN_Lineage_Binding_Audit.py",
+          "name": "PAD_Stream_V16C6_Existing_BL_CCUS_Transport_Physics_PIRNN_Lineage_Binding_Audit.py",
+          "sha256": "db138d0c57f5d9b0e99d9d3054b0f5b51a4938937f779919b663cba8fba506db",
+          "score": 9,
+          "evidence": [
+            "compressibility",
+            "compressible",
+            "keras",
+            "lstm",
+            "rnn",
+            "tensorflow"
+          ]
+        }
+      ]
+    },
+    "BL_PI_RNN_FULL": {
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "path": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "name": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "sha256": "846cf8c278d9140e38ec11703e97ddd258d98465a7a66039a9b4838b3c74354e",
+          "score": 16,
+          "evidence": [
+            "capillary",
+            "compressibility",
+            "compressible",
+            "diffusion",
+            "film",
+            "fourier",
+            "gru",
+            "keras",
+            "lstm",
+            "physics loss",
+            "residual",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16E0_BL_DP_Architecture_Reconciliation_Contract.py",
+          "name": "PAD_Stream_V16E0_BL_DP_Architecture_Reconciliation_Contract.py",
+          "sha256": "e4d32593f9212cd3cd88402bc75802eb3324603fb5a23732a149063c5d92189d",
+          "score": 14,
+          "evidence": [
+            "capillary",
+            "compressibility",
+            "compressible",
+            "physics loss",
+            "residual",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage2_compressible_godunov.py",
+          "name": "pi_rnn_stage2_compressible_godunov.py",
+          "sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+          "score": 14,
+          "evidence": [
+            "compressibility",
+            "compressible",
+            "diffusion",
+            "keras",
+            "lstm",
+            "physics loss",
+            "residual",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage3_capillary.py",
+          "name": "pi_rnn_stage3_capillary.py",
+          "sha256": "dab8eade38ac08c819ac27d803c8f1bceca9722c4c37e82977dbef6e6232ae0f",
+          "score": 14,
+          "evidence": [
+            "capillary",
+            "compressible",
+            "diffusion",
+            "keras",
+            "lstm",
+            "physics loss",
+            "residual",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "pi_rnn_stage4_full_godunov.py",
+          "name": "pi_rnn_stage4_full_godunov.py",
+          "sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+          "score": 14,
+          "evidence": [
+            "capillary",
+            "compressible",
+            "diffusion",
+            "keras",
+            "lstm",
+            "physics loss",
+            "residual",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16C6_Existing_BL_CCUS_Transport_Physics_PIRNN_Lineage_Binding_Audit.py",
+          "name": "PAD_Stream_V16C6_Existing_BL_CCUS_Transport_Physics_PIRNN_Lineage_Binding_Audit.py",
+          "sha256": "db138d0c57f5d9b0e99d9d3054b0f5b51a4938937f779919b663cba8fba506db",
+          "score": 13,
+          "evidence": [
+            "capillary",
+            "compressibility",
+            "compressible",
+            "diffusion",
+            "keras",
+            "lstm",
+            "residual",
+            "rnn",
+            "tensorflow"
+          ]
+        }
+      ]
+    },
+    "DP_8_LAYER_BENCHMARK": {
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "path": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "name": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "sha256": "846cf8c278d9140e38ec11703e97ddd258d98465a7a66039a9b4838b3c74354e",
+          "score": 13,
+          "evidence": [
+            "8 layer",
+            "8-layer",
+            "dykstra",
+            "flux-weighted",
+            "kh",
+            "layer rate",
+            "local pvi",
+            "no crossflow",
+            "parsons",
+            "pore volume",
+            "rate fraction"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16E0_BL_DP_Architecture_Reconciliation_Contract.py",
+          "name": "PAD_Stream_V16E0_BL_DP_Architecture_Reconciliation_Contract.py",
+          "sha256": "e4d32593f9212cd3cd88402bc75802eb3324603fb5a23732a149063c5d92189d",
+          "score": 9,
+          "evidence": [
+            "8-layer",
+            "dykstra",
+            "flux-weighted",
+            "kh",
+            "parsons",
+            "pore volume"
+          ]
+        }
+      ]
+    },
+    "HYBRID_DP_PI_RNN": {
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "path": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "name": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "sha256": "846cf8c278d9140e38ec11703e97ddd258d98465a7a66039a9b4838b3c74354e",
+          "score": 16,
+          "evidence": [
+            "dykstra",
+            "f-phi",
+            "f_phi",
+            "gru",
+            "hybrid",
+            "keras",
+            "layer",
+            "lorenz",
+            "lstm",
+            "parsons",
+            "pore volume",
+            "rate fraction",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16E0_BL_DP_Architecture_Reconciliation_Contract.py",
+          "name": "PAD_Stream_V16E0_BL_DP_Architecture_Reconciliation_Contract.py",
+          "sha256": "e4d32593f9212cd3cd88402bc75802eb3324603fb5a23732a149063c5d92189d",
+          "score": 15,
+          "evidence": [
+            "dykstra",
+            "f-phi",
+            "f_phi",
+            "hybrid",
+            "layer",
+            "lorenz",
+            "parsons",
+            "pore volume",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16D38_Master_ControlSpace_Branch_Freeze_and_Development_Path_Handoff.py",
+          "name": "PAD_Stream_V16D38_Master_ControlSpace_Branch_Freeze_and_Development_Path_Handoff.py",
+          "sha256": "e8172c8203a317827d558823d0347248cd7216af178a779d6ed7738c79363952",
+          "score": 11,
+          "evidence": [
+            "dykstra",
+            "hybrid",
+            "layer",
+            "lstm",
+            "parsons",
+            "rnn",
+            "tensorflow"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V15SG7C_Frozen_PIRNN_Streamline_Deployment.py",
+          "name": "PAD_Stream_V15SG7C_Frozen_PIRNN_Streamline_Deployment.py",
+          "sha256": "33a6d011dbbc013cf42d7316fd8bd2d96fe0c36c1d010ccd2c80b89226a54f23",
+          "score": 9,
+          "evidence": [
+            "heterogeneity",
+            "keras",
+            "rnn",
+            "tensorflow"
+          ]
+        }
+      ]
+    },
+    "F_PHI_LORENZ": {
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "path": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "name": "PAD_Stream_V16E0A_Legacy_BL_DP_Artifact_Discovery_Inventory.py",
+          "sha256": "846cf8c278d9140e38ec11703e97ddd258d98465a7a66039a9b4838b3c74354e",
+          "score": 14,
+          "evidence": [
+            "f-phi",
+            "f_phi",
+            "flow capacity",
+            "flow-storage",
+            "flow_storage",
+            "flux",
+            "lorenz",
+            "storage capacity",
+            "tof"
+          ]
+        },
+        {
+          "path": "PAD_Stream_V16E0_BL_DP_Architecture_Reconciliation_Contract.py",
+          "name": "PAD_Stream_V16E0_BL_DP_Architecture_Reconciliation_Contract.py",
+          "sha256": "e4d32593f9212cd3cd88402bc75802eb3324603fb5a23732a149063c5d92189d",
+          "score": 9,
+          "evidence": [
+            "f-phi",
+            "f_phi",
+            "flux",
+            "lorenz",
+            "storage capacity",
+            "tof"
+          ]
+        }
+      ]
+    }
+  },
+  "explicit_legacy_round_bindings": {
+    "BL_PI_RNN_ROUND_1": null,
+    "BL_PI_RNN_ROUND_2": null,
+    "BL_PI_RNN_ROUND_3": null,
+    "HYBRID_DP_PI_RNN_OR_LAYER_RNN": null
+  },
+  "checkpoint_candidates": [],
+  "binding_status": {
+    "BL_Round_1_bound": false,
+    "BL_Round_2_bound": false,
+    "BL_Round_3_bound": false,
+    "Hybrid_DP_learned_bound": false
+  },
+  "next_requirement": "Review candidate inventory and bind exact legacy source/checkpoint identities without renaming ambiguous candidates."
+}

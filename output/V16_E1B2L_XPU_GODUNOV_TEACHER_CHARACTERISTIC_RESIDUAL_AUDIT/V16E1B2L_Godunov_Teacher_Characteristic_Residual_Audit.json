@@ -1,0 +1,128 @@
+{
+  "milestone": "V16E-1B2L-XPU",
+  "classification": "NO_TRAINING_GODUNOV_TEACHER_VS_CHARACTERISTIC_RESIDUAL_COMPATIBILITY_AUDIT",
+  "physics_residual_definition": "R = y(xi*xD_star;Nc) - tD*dfw/dS; physics loss = mean(R^2) over interior fan sequence nodes",
+  "teacher_truth": "exact frozen conservative Godunov Stage-2 dataset saturation profiles",
+  "teacher_characteristic_physics_loss": {
+    "train": {
+      "0.00": {
+        "profiles": 2324,
+        "teacher_characteristic_physics_mse": 0.001262893180143274
+      },
+      "0.05": {
+        "profiles": 2342,
+        "teacher_characteristic_physics_mse": 0.03395055293922339
+      },
+      "0.10": {
+        "profiles": 2278,
+        "teacher_characteristic_physics_mse": 0.04819022771543427
+      },
+      "0.20": {
+        "profiles": 2310,
+        "teacher_characteristic_physics_mse": 0.05823856426072327
+      },
+      "0.30": {
+        "profiles": 2266,
+        "teacher_characteristic_physics_mse": 0.06064453509300027
+      }
+    },
+    "holdout": {
+      "0.00": {
+        "profiles": 586,
+        "teacher_characteristic_physics_mse": 0.0011562356203254122
+      },
+      "0.05": {
+        "profiles": 532,
+        "teacher_characteristic_physics_mse": 0.03662126497330522
+      },
+      "0.10": {
+        "profiles": 578,
+        "teacher_characteristic_physics_mse": 0.04889786197033721
+      },
+      "0.20": {
+        "profiles": 612,
+        "teacher_characteristic_physics_mse": 0.05673180060351596
+      },
+      "0.30": {
+        "profiles": 572,
+        "teacher_characteristic_physics_mse": 0.0569005213886291
+      }
+    }
+  },
+  "frozen_model_holdout_physics_loss": {
+    "COMP_XPU_002": {
+      "0.00": 0.0013197745238637405,
+      "0.05": 0.0016098133598181203,
+      "0.10": 0.001703048513229021,
+      "0.20": 0.002396207135414181,
+      "0.30": 0.00322144936405487
+    },
+    "COMP_XPU_004": {
+      "0.00": 0.0008941808474685602,
+      "0.05": 0.001363582208864671,
+      "0.10": 0.0018704404339845257,
+      "0.20": 0.002942104006697442,
+      "0.30": 0.004032454119630523
+    }
+  },
+  "model_vs_teacher_compatibility": {
+    "0.00": {
+      "teacher_characteristic_physics_mse": 0.0011562356203254122,
+      "COMP_XPU_002_physics_mse": 0.0013197745238637405,
+      "COMP_XPU_004_physics_mse": 0.0008941808474685602,
+      "COMP_XPU_002_minus_teacher": 0.00016353890353832832,
+      "COMP_XPU_004_minus_teacher": -0.00026205477285685193,
+      "COMP_XPU_002_over_teacher": 1.1414408107339764,
+      "COMP_XPU_004_over_teacher": 0.7733552156236988
+    },
+    "0.05": {
+      "teacher_characteristic_physics_mse": 0.03662126497330522,
+      "COMP_XPU_002_physics_mse": 0.0016098133598181203,
+      "COMP_XPU_004_physics_mse": 0.001363582208864671,
+      "COMP_XPU_002_minus_teacher": -0.0350114516134871,
+      "COMP_XPU_004_minus_teacher": -0.03525768276444055,
+      "COMP_XPU_002_over_teacher": 0.04395843128279651,
+      "COMP_XPU_004_over_teacher": 0.03723471075776993
+    },
+    "0.10": {
+      "teacher_characteristic_physics_mse": 0.04889786197033721,
+      "COMP_XPU_002_physics_mse": 0.001703048513229021,
+      "COMP_XPU_004_physics_mse": 0.0018704404339845257,
+      "COMP_XPU_002_minus_teacher": -0.04719481345710819,
+      "COMP_XPU_004_minus_teacher": -0.047027421536352684,
+      "COMP_XPU_002_over_teacher": 0.03482869075670706,
+      "COMP_XPU_004_over_teacher": 0.0382519880954956
+    },
+    "0.20": {
+      "teacher_characteristic_physics_mse": 0.05673180060351596,
+      "COMP_XPU_002_physics_mse": 0.002396207135414181,
+      "COMP_XPU_004_physics_mse": 0.002942104006697442,
+      "COMP_XPU_002_minus_teacher": -0.054335593468101774,
+      "COMP_XPU_004_minus_teacher": -0.053789696596818516,
+      "COMP_XPU_002_over_teacher": 0.042237459589211,
+      "COMP_XPU_004_over_teacher": 0.051859873570011546
+    },
+    "0.30": {
+      "teacher_characteristic_physics_mse": 0.0569005213886291,
+      "COMP_XPU_002_physics_mse": 0.00322144936405487,
+      "COMP_XPU_004_physics_mse": 0.004032454119630523,
+      "COMP_XPU_002_minus_teacher": -0.053679072024574226,
+      "COMP_XPU_004_minus_teacher": -0.05286806726899857,
+      "COMP_XPU_002_over_teacher": 0.056615463012235925,
+      "COMP_XPU_004_over_teacher": 0.07086849155720323
+    }
+  },
+  "Nc030_over_Nc000_physics_loss_ratios": {
+    "Godunov_teacher_train": 48.02032036163202,
+    "Godunov_teacher_holdout": 49.211873763770534,
+    "COMP_XPU_002_holdout": 2.4409088869391353,
+    "COMP_XPU_004_holdout": 4.509662817143157
+  },
+  "interpretation_policy": "No numerical threshold is introduced. If the frozen Godunov truth itself shows a strong Nc-dependent characteristic residual, then the retained characteristic physics loss is not a zero-residual constraint for the conservative teacher and the Stage-2 objectives must be interpreted as potentially competing. If teacher residual is negligible/flat while model residual rises, the remaining issue is model approximation/conditioning.",
+  "B3_automatically_authorized": false,
+  "training_executed": false,
+  "optimizer_created": false,
+  "weights_modified": false,
+  "OOD_used": false,
+  "TOF_used": false
+}

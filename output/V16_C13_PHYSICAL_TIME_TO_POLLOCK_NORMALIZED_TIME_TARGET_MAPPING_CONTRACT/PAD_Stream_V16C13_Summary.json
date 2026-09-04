@@ -1,0 +1,20 @@
+{
+  "milestone": "V16C-13",
+  "status": "V16C_PHYSICAL_TIME_TO_POLLOCK_NORMALIZED_TIME_MAPPING_FROZEN",
+  "diagnosis": "PHYSICAL_TIME_IS_DETERMINISTICALLY_MAPPED_TO_PER_STREAMLINE_NORMALIZED_TIME_USING_THE_FROZEN_TERMINAL_POLLOCK_TOF_WITH_EXACT_UNIT_CONVERSION",
+  "physical_time_target_mapping_frozen": true,
+  "streamline_count": 1078,
+  "node_count": 201,
+  "terminal_tof_days": {
+    "min": 134.67954012086182,
+    "median": 344.5662131854729,
+    "mean": 463.3627938545692,
+    "max": 3669.3825678172248
+  },
+  "production_target_times_frozen": false,
+  "Y_transport_generated": false,
+  "Y_generation_authorized": false,
+  "training_authorized": false,
+  "recommendation": "Freeze C13. Next bind the production full-physics transport parameter authority (rock/fluid endpoints, viscosities, Pe_c, capillary lambda, and the role of Nc metadata) without fitting to unavailable V15 states. Y generation remains prohibited until that contract passes.",
+  "next_milestone": "V16C-14 \u2014 Production Full-Physics Transport Parameter Authority Contract"
+}

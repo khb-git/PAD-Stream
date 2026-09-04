@@ -1,0 +1,72 @@
+{
+  "milestone": "V16C-24",
+  "status": "V16C_EXP1_BASELINE_FROZEN_EXP2_PHYSICS_INFORMED_BRANCH_AUTHORIZED_FOR_OBJECTIVE_DESIGN_ONLY",
+  "assessment": {
+    "EXP1_role": "FROZEN_SUPERVISED_V16_BASELINE",
+    "predictive_evidence": {
+      "mse": 1.9360864490401794e-05,
+      "rmse": 0.004400098236449022,
+      "mae": 0.0018270660761256494,
+      "max_abs_error": 0.14034636318683624
+    },
+    "structural_physics_evidence": {
+      "bound_violation": 0.0,
+      "inlet_mae": 0.006831410632123612,
+      "spatial_positive_fraction": 0.020786749482401657,
+      "temporal_negative_fraction": 0.008146379901733568,
+      "front_index_mae_nodes": 1.572808833678399
+    },
+    "differential_residual_evidence": {
+      "global_l1": 0.2565693620128529,
+      "global_l2": 0.7510873362126534,
+      "global_linf": 15.257634621197875,
+      "interpretation": "INDEPENDENT_DISCRETE_DIAGNOSTIC_NOT_A_TRAINING_LOSS_OR_ACCEPTANCE_THRESHOLD"
+    },
+    "interpretation": [
+      "EXP1 demonstrates low aggregate saturation error on held-out streamlines within Foundation Case 0001.",
+      "EXP1 preserves hard saturation bounds by architecture.",
+      "Nonzero spatial-positive and temporal-negative fractions identify residual structure violations without constituting predeclared failure gates.",
+      "The C23A residual is finite and independently measurable, establishing a quantitative baseline for a future physics-informed comparison.",
+      "Because no residual acceptance threshold was frozen before EXP1 evaluation, C23A residual magnitude must not be retroactively labeled pass/fail.",
+      "Current evidence is in-case held-out-streamline generalization only; it is not geological/control OOD evidence."
+    ]
+  },
+  "EXP2_contract": {
+    "role": "CONTROLLED_PHYSICS_INFORMED_COMPARISON_TO_EXP1",
+    "predictor_interface": "UNCHANGED_C20_201x9",
+    "architecture": "UNCHANGED_C21_2xLSTM64_TimeDistributedDense_bounded_Sw",
+    "dataset": "UNCHANGED_C18R_C17_SUPERVISION",
+    "split": "UNCHANGED_C19_STREAMLINE_GROUP_SPLIT",
+    "physics_sidecar": "EXACT_C7_metric_M_dtheta_dxD",
+    "physics_equation": "dS/deta + dfw/dtheta - (phi/Pe_c) M d/dtheta[Dtilde(S) M dS/dtheta] = 0",
+    "physical_constants": {
+      "phi": 0.2,
+      "Pe_c": 22.0,
+      "lambda_c": 2.0,
+      "Nc_role": "metadata_only_no_exp_Nc_xD"
+    },
+    "test_selection": "PROHIBITED",
+    "OOD_claim": "PROHIBITED_FOR_FOUNDATION_CASE_0001",
+    "training_authorized_now": false,
+    "reason_not_yet_authorized": "Differentiable residual discretization, boundary masking, time-derivative construction, normalization, and lambda_phys must be frozen and numerically validated before EXP2 training."
+  },
+  "gates": {
+    "C23_bound": true,
+    "C23A_bound": true,
+    "EXP1_frozen_as_supervised_baseline": true,
+    "EXP1_test_metrics_not_used_for_retuning": true,
+    "C23A_residual_not_retroactively_thresholded": true,
+    "EXP2_predictor_interface_unchanged": true,
+    "EXP2_architecture_lineage_unchanged": true,
+    "C7_metric_sidecar_not_predictor": true,
+    "Pollock_kinematics_primary": true,
+    "legacy_exp_Nc_xD_prohibited": true,
+    "C19_split_unchanged": true,
+    "EXP2_test_locked_for_selection": true,
+    "OOD_not_claimed": true,
+    "EXP2_training_not_yet_authorized": true,
+    "no_training_in_C24": true
+  },
+  "training_performed": false,
+  "next_milestone": "V16C-25 \u2014 Differentiable Pollock Full-Physics Residual, Boundary Mask and Physics-Loss Weight Authority Contract"
+}

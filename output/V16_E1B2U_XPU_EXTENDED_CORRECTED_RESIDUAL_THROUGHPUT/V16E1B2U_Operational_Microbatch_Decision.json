@@ -1,0 +1,52 @@
+{
+  "milestone": "V16E-1B2U-XPU",
+  "largest_successful_tested_microbatch": 128,
+  "successful_microbatches": [
+    32,
+    64,
+    128
+  ],
+  "failed_candidates": [
+    {
+      "microbatch": 256,
+      "failure_class": "RUNTIME_ERROR",
+      "error": "RuntimeError: level_zero backend failed with error: 40 (UR_RESULT_ERROR_OUT_OF_RESOURCES)"
+    }
+  ],
+  "diagnostic_projections": {
+    "32": {
+      "microbatch": 32,
+      "measured_single_candidate_seconds": 21.96541669999897,
+      "measured_profiles_per_second": 1.4568355536820525,
+      "microbatches_per_epoch": 360,
+      "projected_seconds_per_epoch": 7907.550011999629,
+      "projected_hours_per_epoch": 2.1965416699998968,
+      "projected_days_for_800_epochs": 73.21805566666322,
+      "projection_semantics": "diagnostic only; not a runtime promise; excludes optimizer, checkpoint, data-loading, and full-epoch scheduling effects"
+    },
+    "64": {
+      "microbatch": 64,
+      "measured_single_candidate_seconds": 29.94380590000037,
+      "measured_profiles_per_second": 2.1373368573698643,
+      "microbatches_per_epoch": 180,
+      "projected_seconds_per_epoch": 5389.885062000067,
+      "projected_hours_per_epoch": 1.4971902950000184,
+      "projected_days_for_800_epochs": 49.906343166667284,
+      "projection_semantics": "diagnostic only; not a runtime promise; excludes optimizer, checkpoint, data-loading, and full-epoch scheduling effects"
+    },
+    "128": {
+      "microbatch": 128,
+      "measured_single_candidate_seconds": 35.285421500000666,
+      "measured_profiles_per_second": 3.627560464312367,
+      "microbatches_per_epoch": 90,
+      "projected_seconds_per_epoch": 3175.68793500006,
+      "projected_hours_per_epoch": 0.8821355375000166,
+      "projected_days_for_800_epochs": 29.40451791666722,
+      "projection_semantics": "diagnostic only; not a runtime promise; excludes optimizer, checkpoint, data-loading, and full-epoch scheduling effects"
+    }
+  },
+  "operational_microbatch_finalized_for_training": false,
+  "reason_not_finalized": "B2U binds the extended measured behavior. A separate B2V execution-contract freeze must interpret throughput/memory results and explicitly select the COMP-XPU-005 operational microbatch.",
+  "COMP_XPU_005_full_training_authorized": false,
+  "B3_authorized": false
+}

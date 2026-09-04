@@ -1,0 +1,37 @@
+{
+  "milestone": "V16D-24C-R2",
+  "status": "V16D_D24C_R2_BLOCKED",
+  "failure_repair": "R1 function cloning lost scipy module globals required by spsolve; R2 uses normal import of an exact two-line derived source copy.",
+  "reference_diffs": {
+    "pressure_psi": 0.0,
+    "Qx": 0.0,
+    "Qy": 0.0,
+    "Qz": 0.0,
+    "divergence": 0.0,
+    "well_source": 0.0
+  },
+  "pilot_local_rel_L2": 1.0567185503190335,
+  "pilot_global_rel": 1.0,
+  "derived_SG3_sha256": "56efec576db6ccc47602928e36e532eba1a6266e6a06b7c89629c33511e47164",
+  "gates": {
+    "D24C_SHA_exact": true,
+    "SG2_SHA_exact": true,
+    "SG3_SHA_exact": true,
+    "SG4_SHA_exact": true,
+    "case0026_exists": true,
+    "reference_pressure_psi_exact": true,
+    "reference_Qx_exact": true,
+    "reference_Qy_exact": true,
+    "reference_Qz_exact": true,
+    "reference_divergence_exact": true,
+    "reference_well_source_exact": true,
+    "frozen_SG3_unmodified": true,
+    "derived_SG3_exactly_two_lines_changed": false,
+    "pilot_finite": true,
+    "pilot_shapes": true,
+    "pilot_local_conservation_rel_L2_le_1e_9": false,
+    "pilot_global_conservation_rel_le_1e_9": false,
+    "locked_geology0029_not_used": true
+  },
+  "next_milestone": "Diagnose failed gate; do not batch."
+}

@@ -1,0 +1,540 @@
+{
+  "milestone": "V16E-1B2K-XPU",
+  "classification": "NO_TRAINING_COMP002_VS_COMP004_PHYSICS_AWARE_ETA_CHANNEL_COMPARISON",
+  "experiment_1": {
+    "id": "V16E-BLREP-COMP-XPU-002",
+    "epochs": 800,
+    "sequence_features": [
+      "xi"
+    ],
+    "raw_conditioner": "physical 11-D p11",
+    "checkpoint_sha256": "fca205b1981fbbdf15424af8ac8174df88ff7addf99e718548319a81f87d271b"
+  },
+  "experiment_2": {
+    "id": "V16E-BLREP-COMP-XPU-004",
+    "epochs": 800,
+    "sequence_features": [
+      "xi",
+      "eta"
+    ],
+    "eta_definition": "y(xi*xD_star;Nc)/y(xD_star;Nc)",
+    "raw_conditioner": "physical 11-D p11 unchanged",
+    "Nc_scaling": false,
+    "physical_Nc_changed": false,
+    "checkpoint_sha256": "2b54c6ace6c893916bf55ee54dea2ad55eb3b5239d8e0c0cda21bc9311efca69"
+  },
+  "overall_comparison": {
+    "mse": {
+      "COMP_XPU_002": 0.0001078201276767585,
+      "COMP_XPU_004": 8.022774062636826e-05,
+      "percent_improvement_positive_is_better": 25.591128154764743
+    },
+    "rmse": {
+      "COMP_XPU_002": 0.010383647127900606,
+      "COMP_XPU_004": 0.008956993950336702,
+      "percent_improvement_positive_is_better": 13.739422767271456
+    },
+    "mae": {
+      "COMP_XPU_002": 0.005723465151256985,
+      "COMP_XPU_004": 0.004919281601905823,
+      "percent_improvement_positive_is_better": 14.050641143059067
+    },
+    "max_abs_error": {
+      "COMP_XPU_002": 0.1779181957244873,
+      "COMP_XPU_004": 0.17284727096557617,
+      "percent_improvement_positive_is_better": 2.8501439879503057
+    }
+  },
+  "per_Nc_holdout_comparison": {
+    "0.00": {
+      "mae": {
+        "COMP_XPU_002": 0.003139335662126541,
+        "COMP_XPU_004": 0.002407275140285492,
+        "percent_improvement_positive_is_better": 23.31896301095633
+      },
+      "rmse": {
+        "COMP_XPU_002": 0.006813330110162497,
+        "COMP_XPU_004": 0.005496808793395758,
+        "percent_improvement_positive_is_better": 19.322729054373387
+      },
+      "max_abs_error": {
+        "COMP_XPU_002": 0.10202449560165405,
+        "COMP_XPU_004": 0.0987539291381836,
+        "percent_improvement_positive_is_better": 3.205667858668086
+      }
+    },
+    "0.05": {
+      "mae": {
+        "COMP_XPU_002": 0.004541447386145592,
+        "COMP_XPU_004": 0.0038064969703555107,
+        "percent_improvement_positive_is_better": 16.183175831391647
+      },
+      "rmse": {
+        "COMP_XPU_002": 0.008125175721943378,
+        "COMP_XPU_004": 0.006872002501040697,
+        "percent_improvement_positive_is_better": 15.42333684572852
+      },
+      "max_abs_error": {
+        "COMP_XPU_002": 0.14397960901260376,
+        "COMP_XPU_004": 0.13977551460266113,
+        "percent_improvement_positive_is_better": 2.9199234799801457
+      }
+    },
+    "0.10": {
+      "mae": {
+        "COMP_XPU_002": 0.0060758269391953945,
+        "COMP_XPU_004": 0.0052461461164057255,
+        "percent_improvement_positive_is_better": 13.655438693247927
+      },
+      "rmse": {
+        "COMP_XPU_002": 0.010197875089943409,
+        "COMP_XPU_004": 0.008775054477155209,
+        "percent_improvement_positive_is_better": 13.952128264360766
+      },
+      "max_abs_error": {
+        "COMP_XPU_002": 0.1357221007347107,
+        "COMP_XPU_004": 0.13167625665664673,
+        "percent_improvement_positive_is_better": 2.980976610413787
+      }
+    },
+    "0.20": {
+      "mae": {
+        "COMP_XPU_002": 0.006933495867997408,
+        "COMP_XPU_004": 0.006083879619836807,
+        "percent_improvement_positive_is_better": 12.253793242772844
+      },
+      "rmse": {
+        "COMP_XPU_002": 0.011865769512951374,
+        "COMP_XPU_004": 0.01037233043462038,
+        "percent_improvement_positive_is_better": 12.586112318302822
+      },
+      "max_abs_error": {
+        "COMP_XPU_002": 0.1779181957244873,
+        "COMP_XPU_004": 0.17284727096557617,
+        "percent_improvement_positive_is_better": 2.8501439879503057
+      }
+    },
+    "0.30": {
+      "mae": {
+        "COMP_XPU_002": 0.007819497026503086,
+        "COMP_XPU_004": 0.006951407063752413,
+        "percent_improvement_positive_is_better": 11.101608707163702
+      },
+      "rmse": {
+        "COMP_XPU_002": 0.013348451815545559,
+        "COMP_XPU_004": 0.011668311432003975,
+        "percent_improvement_positive_is_better": 12.586780899826138
+      },
+      "max_abs_error": {
+        "COMP_XPU_002": 0.15595853328704834,
+        "COMP_XPU_004": 0.1526888608932495,
+        "percent_improvement_positive_is_better": 2.096501117884237
+      }
+    }
+  },
+  "per_Nc_loss_comparison": {
+    "0.00": {
+      "data": {
+        "COMP_XPU_002": 4.642146303838535e-05,
+        "COMP_XPU_004": 3.0214907327323594e-05,
+        "percent_improvement_positive_is_better": 34.91177281004856
+      },
+      "physics": {
+        "COMP_XPU_002": 0.0013197745238637405,
+        "COMP_XPU_004": 0.0008941808474685602,
+        "percent_improvement_positive_is_better": 32.247453538444
+      },
+      "total": {
+        "COMP_XPU_002": 0.0002355020641867364,
+        "COMP_XPU_004": 0.00014941770831320065,
+        "percent_improvement_positive_is_better": 36.55354621659578
+      }
+    },
+    "0.05": {
+      "data": {
+        "COMP_XPU_002": 6.601847181949218e-05,
+        "COMP_XPU_004": 4.722441826059476e-05,
+        "percent_improvement_positive_is_better": 28.467871250161863
+      },
+      "physics": {
+        "COMP_XPU_002": 0.0016098133598181203,
+        "COMP_XPU_004": 0.001363582208864671,
+        "percent_improvement_positive_is_better": 15.295633462830066
+      },
+      "total": {
+        "COMP_XPU_002": 0.00027482399998820926,
+        "COMP_XPU_004": 0.0002273769939363815,
+        "percent_improvement_positive_is_better": 17.26450603071907
+      }
+    },
+    "0.10": {
+      "data": {
+        "COMP_XPU_002": 0.00010399665488341056,
+        "COMP_XPU_004": 7.700157320271101e-05,
+        "percent_improvement_positive_is_better": 25.957644225156496
+      },
+      "physics": {
+        "COMP_XPU_002": 0.001703048513229021,
+        "COMP_XPU_004": 0.0018704404339845257,
+        "percent_improvement_positive_is_better": -9.82895786322173
+      },
+      "total": {
+        "COMP_XPU_002": 0.0004399127452183115,
+        "COMP_XPU_004": 0.00040125020344219584,
+        "percent_improvement_positive_is_better": 8.788684164385593
+      }
+    },
+    "0.20": {
+      "data": {
+        "COMP_XPU_002": 0.00014079649739798304,
+        "COMP_XPU_004": 0.00010758521609971592,
+        "percent_improvement_positive_is_better": 23.588144529185488
+      },
+      "physics": {
+        "COMP_XPU_002": 0.002396207135414181,
+        "COMP_XPU_004": 0.002942104006697442,
+        "percent_improvement_positive_is_better": -22.78170627302232
+      },
+      "total": {
+        "COMP_XPU_002": 0.0006373646898116016,
+        "COMP_XPU_004": 0.0005906944058902464,
+        "percent_improvement_positive_is_better": 7.322383035550713
+      }
+    },
+    "0.30": {
+      "data": {
+        "COMP_XPU_002": 0.00017818116372894053,
+        "COMP_XPU_004": 0.00013614946622580575,
+        "percent_improvement_positive_is_better": 23.589304628785467
+      },
+      "physics": {
+        "COMP_XPU_002": 0.00322144936405487,
+        "COMP_XPU_004": 0.004032454119630523,
+        "percent_improvement_positive_is_better": -25.17515142795333
+      },
+      "total": {
+        "COMP_XPU_002": 0.0008095224913847926,
+        "COMP_XPU_004": 0.0007475472358218231,
+        "percent_improvement_positive_is_better": 7.655779329485066
+      }
+    }
+  },
+  "case_comparison": {
+    "case1": {
+      "0.00": {
+        "full_domain_mae": {
+          "COMP_XPU_002": 0.004410178138108034,
+          "COMP_XPU_004": 0.0038505303977071554,
+          "percent_improvement_positive_is_better": 12.689912354446703
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_002": 0.004086402108896593,
+          "COMP_XPU_004": 0.003515399951778447,
+          "percent_improvement_positive_is_better": 13.973224903026683
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_002": 0.0007534191392897654,
+          "COMP_XPU_004": 0.0007534191462565333,
+          "percent_improvement_positive_is_better": -9.246868722989355e-07
+        }
+      },
+      "0.05": {
+        "full_domain_mae": {
+          "COMP_XPU_002": 0.0031902424257197813,
+          "COMP_XPU_004": 0.0030408728358644176,
+          "percent_improvement_positive_is_better": 4.682076467015292
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_002": 0.0028533742968393522,
+          "COMP_XPU_004": 0.002701642624696714,
+          "percent_improvement_positive_is_better": 5.3176224482960315
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_002": 0.0006898321818498494,
+          "COMP_XPU_004": 0.0006898321897528367,
+          "percent_improvement_positive_is_better": -1.145639113439221e-06
+        }
+      },
+      "0.10": {
+        "full_domain_mae": {
+          "COMP_XPU_002": 0.00349998595700387,
+          "COMP_XPU_004": 0.0034779532328545076,
+          "percent_improvement_positive_is_better": 0.6295089300364878
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_002": 0.0031703999927827024,
+          "COMP_XPU_004": 0.0031526593001840347,
+          "percent_improvement_positive_is_better": 0.5595726923748963
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_002": 0.0006451814011086761,
+          "COMP_XPU_004": 0.0006451813956886627,
+          "percent_improvement_positive_is_better": 8.400758898373566e-07
+        }
+      },
+      "0.20": {
+        "full_domain_mae": {
+          "COMP_XPU_002": 0.0066488623626682584,
+          "COMP_XPU_004": 0.005663604451231507,
+          "percent_improvement_positive_is_better": 14.818443482432942
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_002": 0.006328799922541653,
+          "COMP_XPU_004": 0.005346746708327676,
+          "percent_improvement_positive_is_better": 15.517210628134107
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_002": 0.0006063673387546129,
+          "COMP_XPU_004": 0.0006063673801922432,
+          "percent_improvement_positive_is_better": -6.833750366889296e-06
+        }
+      },
+      "0.30": {
+        "full_domain_mae": {
+          "COMP_XPU_002": 0.010046451679435112,
+          "COMP_XPU_004": 0.008563246123445882,
+          "percent_improvement_positive_is_better": 14.763476731046469
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_002": 0.009737089947186339,
+          "COMP_XPU_004": 0.008253232277583759,
+          "percent_improvement_positive_is_better": 15.23923140949684
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_002": 0.0005758048696647552,
+          "COMP_XPU_004": 0.0005758049013949306,
+          "percent_improvement_positive_is_better": -5.510577804474545e-06
+        }
+      }
+    },
+    "case2": {
+      "0.00": {
+        "full_domain_mae": {
+          "COMP_XPU_002": 0.0027315370696877053,
+          "COMP_XPU_004": 0.0030453340174981815,
+          "percent_improvement_positive_is_better": -11.487925655219184
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_002": 0.0024902267892844302,
+          "COMP_XPU_004": 0.0028102607959434507,
+          "percent_improvement_positive_is_better": -12.851600827528747
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_002": 0.0003877060028899394,
+          "COMP_XPU_004": 0.0003877060067901746,
+          "percent_improvement_positive_is_better": -1.0059775036959667e-06
+        }
+      },
+      "0.05": {
+        "full_domain_mae": {
+          "COMP_XPU_002": 0.0034898771964558,
+          "COMP_XPU_004": 0.0028616423507328587,
+          "percent_improvement_positive_is_better": 18.00163187291963
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_002": 0.003269839081990699,
+          "COMP_XPU_004": 0.002637324082596981,
+          "percent_improvement_positive_is_better": 19.34391826427859
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_002": 0.00031267679796550467,
+          "COMP_XPU_004": 0.0003126767980116197,
+          "percent_improvement_positive_is_better": -1.4748462893213133e-08
+        }
+      },
+      "0.10": {
+        "full_domain_mae": {
+          "COMP_XPU_002": 0.005844499479296894,
+          "COMP_XPU_004": 0.0048407546541532325,
+          "percent_improvement_positive_is_better": 17.17417939208054
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_002": 0.005676156946403475,
+          "COMP_XPU_004": 0.004662166794419224,
+          "percent_improvement_positive_is_better": 17.86402598727886
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_002": 0.0003267580771291981,
+          "COMP_XPU_004": 0.00032675808025784433,
+          "percent_improvement_positive_is_better": -9.574809109897677e-07
+        }
+      },
+      "0.20": {
+        "full_domain_mae": {
+          "COMP_XPU_002": 0.01010790567799473,
+          "COMP_XPU_004": 0.009141019304085708,
+          "percent_improvement_positive_is_better": 9.565644998191544
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_002": 0.009939351444742124,
+          "COMP_XPU_004": 0.008956583518271022,
+          "percent_improvement_positive_is_better": 9.88764641168798
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_002": 0.0002967378272695938,
+          "COMP_XPU_004": 0.0002967378244664509,
+          "percent_improvement_positive_is_better": 9.446530438098524e-07
+        }
+      },
+      "0.30": {
+        "full_domain_mae": {
+          "COMP_XPU_002": 0.013332452959909133,
+          "COMP_XPU_004": 0.012665539283566403,
+          "percent_improvement_positive_is_better": 5.00218285673423
+        },
+        "front_excluded_mae": {
+          "COMP_XPU_002": 0.013154095090505786,
+          "COMP_XPU_004": 0.012469344718209494,
+          "percent_improvement_positive_is_better": 5.205606068565855
+        },
+        "front_position_mae_xD": {
+          "COMP_XPU_002": 0.0002581672125685846,
+          "COMP_XPU_004": 0.00025816722029830207,
+          "percent_improvement_positive_is_better": -2.994074033191847e-06
+        }
+      }
+    }
+  },
+  "model_to_teacher_response_gain_comparison": {
+    "case1": {
+      "0.00->0.05": {
+        "full_response_gain": {
+          "COMP_XPU_002": 0.7433681331367751,
+          "COMP_XPU_004": 0.7597160288842466,
+          "distance_to_teacher_reference_1_COMP002": 0.2566318668632249,
+          "distance_to_teacher_reference_1_COMP004": 0.2402839711157534
+        },
+        "front_excluded_response_gain": {
+          "COMP_XPU_002": 0.5876518355575958,
+          "COMP_XPU_004": 0.6143705679852224,
+          "distance_to_teacher_reference_1_COMP002": 0.4123481644424042,
+          "distance_to_teacher_reference_1_COMP004": 0.3856294320147776
+        }
+      },
+      "0.05->0.10": {
+        "full_response_gain": {
+          "COMP_XPU_002": 0.7378186838321511,
+          "COMP_XPU_004": 0.7513865658365794,
+          "distance_to_teacher_reference_1_COMP002": 0.2621813161678489,
+          "distance_to_teacher_reference_1_COMP004": 0.24861343416342063
+        },
+        "front_excluded_response_gain": {
+          "COMP_XPU_002": 0.5806653045773954,
+          "COMP_XPU_004": 0.6057084024310886,
+          "distance_to_teacher_reference_1_COMP002": 0.4193346954226046,
+          "distance_to_teacher_reference_1_COMP004": 0.3942915975689114
+        }
+      },
+      "0.10->0.20": {
+        "full_response_gain": {
+          "COMP_XPU_002": 0.7500503674443733,
+          "COMP_XPU_004": 0.7618480685221387,
+          "distance_to_teacher_reference_1_COMP002": 0.24994963255562674,
+          "distance_to_teacher_reference_1_COMP004": 0.2381519314778613
+        },
+        "front_excluded_response_gain": {
+          "COMP_XPU_002": 0.6597286491450475,
+          "COMP_XPU_004": 0.6787280276834421,
+          "distance_to_teacher_reference_1_COMP002": 0.3402713508549525,
+          "distance_to_teacher_reference_1_COMP004": 0.3212719723165579
+        }
+      },
+      "0.20->0.30": {
+        "full_response_gain": {
+          "COMP_XPU_002": 0.7546592971961602,
+          "COMP_XPU_004": 0.769169833314051,
+          "distance_to_teacher_reference_1_COMP002": 0.2453407028038398,
+          "distance_to_teacher_reference_1_COMP004": 0.23083016668594902
+        },
+        "front_excluded_response_gain": {
+          "COMP_XPU_002": 0.6478801105136005,
+          "COMP_XPU_004": 0.6704725363465285,
+          "distance_to_teacher_reference_1_COMP002": 0.3521198894863995,
+          "distance_to_teacher_reference_1_COMP004": 0.3295274636534715
+        }
+      }
+    },
+    "case2": {
+      "0.00->0.05": {
+        "full_response_gain": {
+          "COMP_XPU_002": 0.5965041682767761,
+          "COMP_XPU_004": 0.6542572448527617,
+          "distance_to_teacher_reference_1_COMP002": 0.4034958317232239,
+          "distance_to_teacher_reference_1_COMP004": 0.3457427551472383
+        },
+        "front_excluded_response_gain": {
+          "COMP_XPU_002": 0.3792751218093291,
+          "COMP_XPU_004": 0.4676713419985912,
+          "distance_to_teacher_reference_1_COMP002": 0.6207248781906709,
+          "distance_to_teacher_reference_1_COMP004": 0.5323286580014088
+        }
+      },
+      "0.05->0.10": {
+        "full_response_gain": {
+          "COMP_XPU_002": 0.6074068553241505,
+          "COMP_XPU_004": 0.6425963659948418,
+          "distance_to_teacher_reference_1_COMP002": 0.3925931446758495,
+          "distance_to_teacher_reference_1_COMP004": 0.3574036340051582
+        },
+        "front_excluded_response_gain": {
+          "COMP_XPU_002": 0.37154352629734333,
+          "COMP_XPU_004": 0.4264427645819269,
+          "distance_to_teacher_reference_1_COMP002": 0.6284564737026567,
+          "distance_to_teacher_reference_1_COMP004": 0.5735572354180731
+        }
+      },
+      "0.10->0.20": {
+        "full_response_gain": {
+          "COMP_XPU_002": 0.6339831151558283,
+          "COMP_XPU_004": 0.6421372015862598,
+          "distance_to_teacher_reference_1_COMP002": 0.3660168848441717,
+          "distance_to_teacher_reference_1_COMP004": 0.35786279841374025
+        },
+        "front_excluded_response_gain": {
+          "COMP_XPU_002": 0.4930172003601243,
+          "COMP_XPU_004": 0.5031101269893644,
+          "distance_to_teacher_reference_1_COMP002": 0.5069827996398757,
+          "distance_to_teacher_reference_1_COMP004": 0.4968898730106356
+        }
+      },
+      "0.20->0.30": {
+        "full_response_gain": {
+          "COMP_XPU_002": 0.6495320135882404,
+          "COMP_XPU_004": 0.630474440080476,
+          "distance_to_teacher_reference_1_COMP002": 0.3504679864117596,
+          "distance_to_teacher_reference_1_COMP004": 0.36952555991952396
+        },
+        "front_excluded_response_gain": {
+          "COMP_XPU_002": 0.4812286312458114,
+          "COMP_XPU_004": 0.45278967483311283,
+          "distance_to_teacher_reference_1_COMP002": 0.5187713687541886,
+          "distance_to_teacher_reference_1_COMP004": 0.5472103251668872
+        }
+      }
+    }
+  },
+  "Nc_response_ratios": {
+    "holdout_Nc030_over_Nc000": {
+      "COMP_XPU_002": 2.49081266487008,
+      "COMP_XPU_004": 2.8876662029285143,
+      "percent_ratio_reduction_positive_is_flatter": -15.93269311881928
+    },
+    "case1_full_domain_Nc030_over_Nc000": {
+      "COMP_XPU_002": 2.2780149383591652,
+      "COMP_XPU_004": 2.223913393475603,
+      "percent_ratio_reduction_positive_is_flatter": 2.374942498073842
+    },
+    "case1_front_excluded_Nc030_over_Nc000": {
+      "COMP_XPU_002": 2.3828026923702668,
+      "COMP_XPU_004": 2.347736357397523,
+      "percent_ratio_reduction_positive_is_flatter": 1.4716424102182777
+    }
+  },
+  "interpretation_policy": "No numeric pass/fail threshold is introduced. Determine whether the eta-channel improves absolute errors, per-Nc loss behavior, relative high-Nc response ratios, and model-to-teacher Nc response gains without degrading Stage-1 nesting or saturation bounds.",
+  "B3_automatically_authorized": false,
+  "no_training": true,
+  "no_optimizer": true,
+  "no_weight_update": true,
+  "no_OOD": true,
+  "no_TOF": true
+}

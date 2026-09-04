@@ -1,0 +1,34 @@
+{
+  "milestone": "V16D-9R1",
+  "status": "V16D_CASE0002_0025_POLLOCK_201NODE_CONSERVATIVE_C7_FACE_METRIC_ENSEMBLE_CERTIFIED_READY_FOR_MULTICASE_FMM_ADV_TRAVELTIME_HIERARCHY",
+  "cases": 24,
+  "total_streamlines": 25872,
+  "nodes_per_streamline": 201,
+  "faces_per_streamline": 200,
+  "C7_primary_metric": "M_face=Delta(theta)/Delta(xD)",
+  "C7_node_metric_role": "SIDECAR_ONLY",
+  "manifest_sha256": "30b890677dc0b8f044cd94b62772e8680761eb2519335cb4fc7a7873f83256aa",
+  "gates": {
+    "D9R_authority_bound": true,
+    "exact_24_cases": true,
+    "all_24_certified": true,
+    "total_25872_streamlines": true,
+    "canonical_201_nodes": true,
+    "conservative_200_face_metric": true,
+    "all_face_metrics_positive": true,
+    "no_case_or_streamline_selection": true,
+    "no_clipping_floor_smoothing_fitting": true,
+    "no_FMM": true,
+    "no_ADV": true,
+    "no_transport": true,
+    "no_training": true
+  },
+  "ensemble": {
+    "tof_median_case_min_d": 364.6731702645698,
+    "tof_median_case_median_d": 379.5595013394741,
+    "tof_median_case_max_d": 400.31089050827546,
+    "M_face_global_min": 0.03481143251269923,
+    "M_face_global_max": 40.7733070221738
+  },
+  "next_milestone": "V16D-10 \u2014 Multi-Case FMM/ADV Travel-Time Hierarchy Construction and Certification"
+}

@@ -1,0 +1,22 @@
+{
+  "milestone": "V15-SG7B-10",
+  "frozen_sha256": "9242af83e9aae6dc91ce215f78bf2a6d539972632d5e5ce759ea1fc83f3c11be",
+  "deployment_workspace": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11",
+  "deployment_identity_linf": 2.384185791015625e-07,
+  "baseline_front_metrics": {
+    "truth_front_count": 992,
+    "pred_front_count_total": 0,
+    "recovered_front_count": 0,
+    "global_threshold_gap_mean": 0.11652482487804276,
+    "global_threshold_gap_p90": 0.21295556366443635,
+    "conditioned_threshold_gap_mean": 0.002132494911671654,
+    "conditioned_threshold_gap_p90": 0.002837652862071999,
+    "profile_L1_mean": 0.004091208566285885,
+    "conditioned_profile_L1": 0.008564493506955519,
+    "front_zone_L1": 0.010166469403458462,
+    "local_monotonic_violation": 0.1763744201961828
+  },
+  "legacy_global_gap_target": 0.02913121,
+  "front_conditioned_gap_target": 0.0005331237279179135,
+  "semantic_note": "Operational threshold-gap gate is conditioned on SG7A-front-bearing profiles to avoid creating artificial threshold crossings in physically no-front profiles."
+}

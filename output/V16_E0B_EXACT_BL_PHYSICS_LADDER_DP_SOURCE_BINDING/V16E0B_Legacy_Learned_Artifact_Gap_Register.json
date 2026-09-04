@@ -1,0 +1,35 @@
+{
+  "milestone": "V16E-0B",
+  "unresolved_required_legacy_artifacts": {
+    "BL_Round_1_source_checkpoint": "UNBOUND",
+    "BL_Round_2_source_checkpoint": "UNBOUND",
+    "BL_Round_3_source_checkpoint": "UNBOUND",
+    "Hybrid_DP_PI_RNN_or_layer_RNN_source_checkpoint": "CANDIDATES_FOUND_NEED_REVIEW"
+  },
+  "BL_physics_ladder_checkpoint_gaps": [
+    {
+      "binding_id": "BL_STAGE1_INCOMPRESSIBLE_PI_RNN",
+      "expected_weight_basename": "pi_rnn_fan_multicase_corey.weights.h5"
+    },
+    {
+      "binding_id": "BL_STAGE2_COMPRESSIBLE_GODUNOV_PI_RNN",
+      "expected_weight_basename": "pi_rnn_fan_stage2_godunov.weights.h5"
+    },
+    {
+      "binding_id": "BL_STAGE3_CAPILLARY_PI_RNN",
+      "expected_weight_basename": "pi_rnn_stage3_capillary_v9.weights.h5"
+    },
+    {
+      "binding_id": "BL_STAGE4_FULL_COMPRESSIBLE_CAPILLARY_PI_RNN",
+      "expected_weight_basename": "pi_rnn_stage4_full_godunov.weights.h5"
+    }
+  ],
+  "DP_physics_binding_status": "CANONICAL_SOURCE_NOT_UNIQUELY_BOUND",
+  "why_adapter_coding_remains_blocked": [
+    "Roadmap Round 1/2/3 learned identities remain unbound.",
+    "No actual BL physics-ladder checkpoint files were discovered by E0A.",
+    "Hybrid DP learned source/checkpoint is not yet frozen.",
+    "Canonical learned transport selector remains intentionally deferred."
+  ],
+  "recovery_rule": "Recover/import the exact immutable legacy learned source/checkpoint artifacts; do not retrain substitutes merely to satisfy inventory."
+}

@@ -1,0 +1,252 @@
+{
+  "milestone": "V15-SG7E1R26I-R19C",
+  "status": "CONTROLLED_RUNTIME_VARIANCE_EXPERIMENT_DESIGN_READY",
+  "diagnosis": "HISTORICAL_RUNTIME_IS_PARTIALLY_UNRECOVERABLE_BUT_ONE_BOUNDED_UNRESOLVED_RUNTIME_DIMENSION_CAN_BE_TESTED_WITHOUT_CHANGING_MODEL_OR_GATES",
+  "uncertainty_inventory": [
+    {
+      "component": "TensorFlow version",
+      "resolved": false,
+      "historical_value_or_evidence": "",
+      "role": "UNCERTAIN",
+      "may_vary_in_controlled_experiment": true
+    },
+    {
+      "component": "Keras version",
+      "resolved": true,
+      "historical_value_or_evidence": "3.15.1",
+      "role": "FIXED",
+      "may_vary_in_controlled_experiment": false
+    },
+    {
+      "component": "NumPy version",
+      "resolved": true,
+      "historical_value_or_evidence": "1;0;1.24.3;4>;5.0>);4.0>);1.0>;1.0>);2.0>);5.0>);4.0>);1.0>;1.0>);2.0>);5.0>;4.0>;1.0>;2.0>]);6.0>;7.0>;1.0>;2.0>];5.0>);4.0>);1.0>;42>;42>;1.0>;1.0>;1.0>;6.0>;6.0>;4>;1>;1>;1>;1.0>;1.0>);2.0>;2.0>;2.0>;1.0>;2.0>;2.0>;2.0>;1.0>;0>;1>;2.0>;2.0>);2.0>;4.0>];2.0>;4.0>]);5.0>;5.0>;1.0>;1.0>;1.0>;1.0>;1.0>;1.0>;4.4417057>;10.094786>;2>;4>;4>;1>;4>;3>;3>;1>;2>;1>;2>;1>;5>;1.0000001>;1.0>];10>;5.25>;50.0>;0.25>];12.5>];6>;12>;6.0>;3.0>;2.0>;2>;1>;5>;1>;2>;4>;0>;1.0>;0.0>;1.0>;1.0>];1.0>;1.0>];3.0>;1.0>);8.0>;4.0>];4.3820267>;4.3307333>;2>;0>;42>;3.14>;3.14>;3.14>;3.14>;1>;1>;1>;1>;3.14>;3.14>;0.0>;0.0>;1.5>;0>;0.5>;1.5>;0>;0.5>;1.25>;1.118034>;24.>;24.>;1>;1>;5>;5>;33.3>;21>;21>;0.5>;0.0>;0.0>;0.>;0.6931472>;2.1972246>;0.>;7.389056>;3>;3>;1.0>;1.0>;2>;0>;2>;0>;3>;3>;3>;3>;3>;3>;3>;3>;1.55>;3>;82>;12>;10.0>;20.0>;30.0>;6.0>;6.0>;2.0>;2.5>;2.0>;4.0>;6.0>;2.0>;5>;5.0>;7.0>;1.0>;1.0>;0>;1>;11.0>;5>)",
+      "role": "FIXED",
+      "may_vary_in_controlled_experiment": false
+    },
+    {
+      "component": "TF_ENABLE_ONEDNN_OPTS",
+      "resolved": false,
+      "historical_value_or_evidence": "",
+      "role": "UNCERTAIN",
+      "may_vary_in_controlled_experiment": true
+    },
+    {
+      "component": "Determinism",
+      "resolved": true,
+      "historical_value_or_evidence": "from tensorflow.python.framework.config import enable_op_determinism;enable_op_determinism();from tensorflow.python.framework.config import enable_op_determinism # line: 944;from tensorflow.python.framework.config import enable_op_determinism # line: 944;@tf_export('config.experimental.enable_op_determinism', v1=[]);def enable_op_determinism():;tf.config.experimental.enable_op_determinism();* Call `tf.config.experimental.enable_op_determinism()`, as mentioned above.;config.enable_op_determinism();# via tf.config.experimental.enable_op_determinism(). Additionally, setting the;# be removed in a future TensorFlow version. Unlike the enable_op_determinism();`tf.config.experimental.enable_op_determinism`.;\"ENABLE_OP_DETERMINISM\": r\"enable_op_determinism\",;r\"enable_op_determinism\",;\"enable_op_determinism\",;\"ENABLE_OP_DETERMINISM\": [r\"enable_op_determinism\"],;or any(r[\"field\"] == \"ENABLE_OP_DETERMINISM\" for r in determinism_rows);or \";\".join(r[\"evidence\"] for r in determinism_rows if r[\"field\"] == \"ENABLE_OP_DETERMINISM\"),",
+      "role": "FIXED",
+      "may_vary_in_controlled_experiment": false
+    },
+    {
+      "component": "Thread contract",
+      "resolved": true,
+      "historical_value_or_evidence": "OMP= | MKL= | TF_intra_records=26 | TF_inter_records=29",
+      "role": "FIXED",
+      "may_vary_in_controlled_experiment": false
+    }
+  ],
+  "fixed_contract": [
+    {
+      "quantity": "creator_source",
+      "value": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py"
+    },
+    {
+      "quantity": "model_path",
+      "value": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B11\\V15SG7B_FRONT_AWARE_FROZEN_Model.keras"
+    },
+    {
+      "quantity": "model_sha256",
+      "value": "28c3e555f1ea9e128bddc6c021c5b3648699ba7a33125b3b40a6556990fa9141"
+    },
+    {
+      "quantity": "X100_sha256",
+      "value": "21e4fb419f9c56242516d7c439da5160cf24b2b6cae4d30666d71de752aed526"
+    },
+    {
+      "quantity": "X100_shape",
+      "value": "(2662, 201, 2)"
+    },
+    {
+      "quantity": "X100_dtype",
+      "value": "float32"
+    },
+    {
+      "quantity": "tD_scale",
+      "value": 11.137549167853525
+    },
+    {
+      "quantity": "batch_semantics",
+      "value": "historical_source-defined; must remain unchanged"
+    },
+    {
+      "quantity": "Keras_version",
+      "value": "3.15.1"
+    },
+    {
+      "quantity": "determinism_contract",
+      "value": "historically explicit; must remain enabled as historically specified"
+    },
+    {
+      "quantity": "thread_contract",
+      "value": "historically explicit TF intra/inter-op contract; must remain fixed"
+    },
+    {
+      "quantity": "precision_envelope",
+      "value": 1.1920928955078125e-07
+    },
+    {
+      "quantity": "SG7E_threshold",
+      "value": "unchanged"
+    },
+    {
+      "quantity": "gamma_guard",
+      "value": "unchanged"
+    },
+    {
+      "quantity": "later_time_generation",
+      "value": "prohibited"
+    }
+  ],
+  "variance_matrix": [
+    {
+      "case_id": "C0",
+      "description": "Current runtime baseline reproduction",
+      "tensorflow_version": "CURRENT_INSTALLED",
+      "keras_version": "3.15.1_FIXED",
+      "TF_ENABLE_ONEDNN_OPTS": "CURRENT_UNSET",
+      "thread_contract": "FIXED_HISTORICAL",
+      "determinism_contract": "FIXED_HISTORICAL",
+      "authorized": true,
+      "reason": "Baseline control already represented by R16 runtime."
+    },
+    {
+      "case_id": "C1",
+      "description": "Same runtime with oneDNN explicitly disabled",
+      "tensorflow_version": "CURRENT_INSTALLED",
+      "keras_version": "3.15.1_FIXED",
+      "TF_ENABLE_ONEDNN_OPTS": "0",
+      "thread_contract": "FIXED_HISTORICAL",
+      "determinism_contract": "FIXED_HISTORICAL",
+      "authorized": true,
+      "reason": "oneDNN is historically unresolved and current TensorFlow explicitly warns that oneDNN may change floating-point results by operation ordering."
+    },
+    {
+      "case_id": "C2",
+      "description": "Alternative TensorFlow historical-version replay",
+      "tensorflow_version": "UNRESOLVED_HISTORICAL_VERSION",
+      "keras_version": "3.15.1_FIXED",
+      "TF_ENABLE_ONEDNN_OPTS": "UNRESOLVED",
+      "thread_contract": "FIXED_HISTORICAL",
+      "determinism_contract": "FIXED_HISTORICAL",
+      "authorized": false,
+      "reason": "Historical TensorFlow version is not recovered. Do not install or select a version by numerical closeness."
+    },
+    {
+      "case_id": "C3",
+      "description": "Thread-count perturbation",
+      "tensorflow_version": "CURRENT_INSTALLED",
+      "keras_version": "3.15.1_FIXED",
+      "TF_ENABLE_ONEDNN_OPTS": "CURRENT_UNSET",
+      "thread_contract": "ALTERED",
+      "determinism_contract": "FIXED_HISTORICAL",
+      "authorized": false,
+      "reason": "Thread contract is historically resolved and therefore is not an admissible uncertainty dimension."
+    }
+  ],
+  "required_metrics": [
+    {
+      "metric": "creator100_sha256",
+      "required": true,
+      "purpose": "Exact runtime identity"
+    },
+    {
+      "metric": "frozen100_sha256",
+      "required": true,
+      "purpose": "Historical target identity"
+    },
+    {
+      "metric": "L1",
+      "required": true,
+      "purpose": "Global mean absolute replay difference"
+    },
+    {
+      "metric": "L2",
+      "required": true,
+      "purpose": "Global RMS replay difference"
+    },
+    {
+      "metric": "Linf",
+      "required": true,
+      "purpose": "Frozen precision gate"
+    },
+    {
+      "metric": "count_above_R16_envelope",
+      "required": true,
+      "purpose": "Sparse tail comparison"
+    },
+    {
+      "metric": "max_float32_ULP",
+      "required": true,
+      "purpose": "Runtime numerical drift magnitude"
+    },
+    {
+      "metric": "90_cell_frozen_fingerprint_exact",
+      "required": true,
+      "purpose": "Historical discrepancy fingerprint"
+    },
+    {
+      "metric": "exact_frozen100_hash_match",
+      "required": true,
+      "purpose": "Strongest possible reproducibility evidence"
+    }
+  ],
+  "stopping_rules": [
+    {
+      "rule_id": "S1",
+      "condition": "C1 exact hash == frozen100",
+      "interpretation": "oneDNN runtime ordering explains historical identity difference",
+      "action": "Freeze runtime provenance result; do not widen tolerance."
+    },
+    {
+      "rule_id": "S2",
+      "condition": "C1 Linf <= unchanged R16 envelope but hash differs",
+      "interpretation": "oneDNN setting restores precision-contract closure without exact bit identity",
+      "action": "Audit precision-equivalence only; do not change physical gates."
+    },
+    {
+      "rule_id": "S3",
+      "condition": "C1 remains outside R16 envelope",
+      "interpretation": "oneDNN alone does not explain historical frozen100",
+      "action": "Do not broaden experiment automatically; historical TensorFlow version remains unresolved."
+    },
+    {
+      "rule_id": "S4",
+      "condition": "Any unauthorized case is needed to obtain closure",
+      "interpretation": "reproducibility cannot be certified from preserved provenance",
+      "action": "Record historical runtime as partially unrecoverable; do not tune runtime by performance."
+    },
+    {
+      "rule_id": "S5",
+      "condition": "Any case changes model/X100/threshold/gamma/guard/thread contract",
+      "interpretation": "contract violation",
+      "action": "Reject case."
+    }
+  ],
+  "constraints": {
+    "training_performed": false,
+    "model_predict_executed": false,
+    "model_parameters_changed": false,
+    "precision_envelope_relaxed": false,
+    "creator_authority_reopened": false,
+    "model_authority_reopened": false,
+    "X100_authority_reopened": false,
+    "thread_contract_change_authorized": false,
+    "historical_tensorflow_version_guessed": false,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false
+  },
+  "recommendation": "Execute only the authorized controlled cases. C0 is the existing baseline. C1 is the only new execution authorized: current TensorFlow/Keras runtime with TF_ENABLE_ONEDNN_OPTS=0, while keeping the historical thread/determinism contract, model, X100, batch semantics, and precision envelope unchanged. Do not test alternate TensorFlow versions unless a historical version is explicitly recovered.",
+  "next_milestone": "V15-SG7E1R26I-R19D \u2014 Controlled oneDNN-Off 100-Day Replay"
+}

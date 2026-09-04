@@ -1,0 +1,28 @@
+{
+  "milestone": "V15-SG7E1R10",
+  "status": "SG7E_SG7A_CORRECTED_ARTIFACT_PROVENANCE_STILL_AMBIGUOUS",
+  "diagnosis": "NO_SINGLE_ARTIFACT_INSTANCE_HAS_SUFFICIENT_AUTHORITATIVE_PROVENANCE_MARGIN",
+  "reference_key": "SG7A_corrected",
+  "plume_threshold": {
+    "value": 0.5,
+    "changed": false
+  },
+  "artifact_resolution": {
+    "resolved": false,
+    "artifact_path": null,
+    "artifact_file": null,
+    "array_sha256": null,
+    "file_sha256": null,
+    "score_margin": 0
+  },
+  "constraints": {
+    "candidate_performance_used": false,
+    "threshold_changed": false,
+    "posthoc_alignment": false,
+    "deployment_correction_performed": false,
+    "reference_field_reconstructed": false,
+    "reference_field_frozen": false
+  },
+  "recommendation": "Do not reconstruct the reference field. The SG7A_corrected key is authoritative, but artifact-instance provenance remains insufficiently unique. Audit only the top artifact lineages using creation/load chronology, parent manifests, and the historical SG7E source path; do not use candidate performance.",
+  "next_milestone": "V15-SG7E1R11 \u2014 Top SG7A Corrected Artifact Lineage Conflict Audit"
+}

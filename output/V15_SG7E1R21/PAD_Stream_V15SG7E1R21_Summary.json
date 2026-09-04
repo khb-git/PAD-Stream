@@ -1,0 +1,12 @@
+{
+  "milestone": "V15-SG7E1R21",
+  "status": "L2_100D_EVALUATOR_OUTPUT_BOUND",
+  "diagnosis": "AST_ALIAS_DICTIONARY_SERIALIZER_LINEAGE_IDENTIFIES_UNIQUE_100D_OUTPUT",
+  "binding_resolved": true,
+  "selected_key": "guard_mask",
+  "selected_sha256": "f0bcfc1dcf192ffaac6850091e5bb64b48d52a6964daa21ef8eaf57f715e01f1",
+  "candidate_changed": false,
+  "threshold_changed": false,
+  "recommendation": "The exact historical 100-day deployment output is now bound through AST-level alias/dictionary/serializer provenance to one frozen NPZ key and one historical 100-day hash. Use only this bound array as the replay target. Proceed to a true 100-day deterministic evaluator replay and precision-aware closure validation.",
+  "next_milestone": "V15-SG7E1R22 \u2014 Bound 100-Day Deterministic Evaluator Replay / Closure Validation"
+}

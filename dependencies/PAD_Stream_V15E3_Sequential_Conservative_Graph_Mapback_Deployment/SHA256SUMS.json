@@ -1,0 +1,19 @@
+{
+  "PAD_Stream_V15E3_Dependency_Manifest.json": "f82fde1a672ba4eee0998f49500238067d35fd583eaeba798ee916cb2e2b1ce6",
+  "PAD_Stream_V15E3_Per_Path_Rollout_Audit.csv": "53cb29f438f70bc52fe48ac3e07fb49a169708a266ba1de1aaed27fdf178d94f",
+  "PAD_Stream_V15E3_Restart_State_Day195.npz": "8ff274e94b5554b15ed09c017ad0c513c13bfb4550ead0110ce0928f76a62e92",
+  "PAD_Stream_V15E3_Rollout_Fields.npz": "4205a08f70ce409a4a721c9615bd60cd53b4ab117d707eb86288d7bb2337b2ab",
+  "PAD_Stream_V15E3_Sequential_Conservative_Graph_Mapback_Deployment.py": "dbbbd34c4deffc8851866685b755c708cf87c8fcd4c8fc2fbcc2d821bd6a559f",
+  "PAD_Stream_V15E3_Sequential_Snapshot_Audit.csv": "89bed30b3486aa82f86962eb556963d0c1116651c01c9acea54bb21564a659b1",
+  "PAD_Stream_V15E3_Summary.json": "51a631cab3df6752e3374b5f489c4b85e7846bdabc0730ac2d34614818164853",
+  "PAD_Stream_V15E3_Validation_Matrix.csv": "ef88de1674491973d47c88f22f51467d9ffed726076d976fa104825abe395f83",
+  "README.md": "812600b0d439af19009c8fbbf522e16a7a5ab3c9318ac07182149bb2906671dc",
+  "VERIFY_V15E3_PACKAGE.py": "484b0ad65cc6eb9b6e631d67fcb999a25c9a3248f32a884d62462f654e1feeee",
+  "plots/500_sequential_grid_accuracy.png": "e92b810d07520d02e5e8fa3d008dd9849f29ad75c00cc4f2d61feb4915f2f30d",
+  "plots/501_breakthrough_gas_cut.png": "703bf0ad3067feddee0e86adaec890c7fbfd9bbe2eca3f4a2816f87827694082",
+  "plots/502_inventory_error.png": "1f2951506d64f1d077a6aa164e11eb230deb3f35b68db87fc658826bb64b7412",
+  "plots/503_uncertainty_screen.png": "5055395ab1d162259a60f6ac885cfb2dae80f76971e3ca153713491f52f4e8a2",
+  "plots/504_v15d3_v15e3_comparison.png": "db9e8c50bde6c0cf2f3f9c3a4b51fa87e0ff8fbd1e382c7202b638fba3c5edb3",
+  "plots/505_grid_to_path_error.png": "37d2491f9c6bdbae83f78e5afe607d1cac6f4ad827bf9b871279abf0035b2be1",
+  "plots/506_deployment_scorecard.png": "89e72abfa72266d5649a9352a9b24521ede36a5ee5520802c960f574ade371cd"
+}

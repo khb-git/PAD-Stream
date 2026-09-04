@@ -1,0 +1,63 @@
+{
+  "milestone": "V15-SG7E1R26I-R16",
+  "status": "SG7B16_FROZEN100_CREATOR_RUNTIME_CONTROL_FAILED",
+  "diagnosis": "AUTHORITATIVE_CREATOR_MODEL_AND_X100_EXECUTE_BUT_ONE_OR_MORE_RUNTIME_OR_CLOSURE_GATES_FAIL",
+  "creator": "PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+  "model": {
+    "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B11\\V15SG7B_FRONT_AWARE_FROZEN_Model.keras",
+    "sha256": "28c3e555f1ea9e128bddc6c021c5b3648699ba7a33125b3b40a6556990fa9141",
+    "hash_match": true
+  },
+  "X100": {
+    "artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7E1R26IR15C\\V15SG7E1R26IR15C_Resolved_SG7B16_X100.npz",
+    "shape": [
+      2662,
+      201,
+      2
+    ],
+    "dtype": "float32",
+    "sha256": "21e4fb419f9c56242516d7c439da5160cf24b2b6cae4d30666d71de752aed526",
+    "tD_scale": 11.137549167853525
+  },
+  "runtime100": {
+    "shape": [
+      2662,
+      201
+    ],
+    "sha256": "5e4ddeeef51618002063e459dc69ac1499d4a7517330bfa83587eed864d138df",
+    "range": [
+      0.20768964290618896,
+      0.7445095181465149
+    ]
+  },
+  "frozen100": {
+    "shape": [
+      2662,
+      201
+    ],
+    "sha256": "a08c7320a63ace580456191f408a29afde65e0ad3f078846265243e53cd10297"
+  },
+  "closure": {
+    "L1": 8.730511646611611e-10,
+    "L2": 7.345332306143134e-09,
+    "Linf": 2.682209014892578e-07,
+    "precision_envelope": 1.1920928955078125e-07,
+    "passed": false
+  },
+  "failed_gates": [
+    "creator100_closes_to_frozen100"
+  ],
+  "constraints": {
+    "training_performed": false,
+    "model_parameters_changed": false,
+    "gamma_changed": false,
+    "guard_changed": false,
+    "threshold_changed": false,
+    "authority_reopened": false,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false
+  },
+  "recommendation": "Do not generate later-time states. Audit only the failed R16 gates. Creator, model, workspace, tD_scale, and X100 authority are frozen and must not be reopened.",
+  "next_milestone": "V15-SG7E1R26I-R17 \u2014 SG7B16 Frozen100 Runtime Closure Failure Audit"
+}

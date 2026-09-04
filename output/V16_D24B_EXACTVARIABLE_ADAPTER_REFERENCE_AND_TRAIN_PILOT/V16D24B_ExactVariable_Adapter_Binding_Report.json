@@ -1,0 +1,53 @@
+{
+  "milestone": "V16D-24B",
+  "exact_assignments": {
+    "PRODUCER_BHP_PSI": {
+      "lineno": 122,
+      "value": 2000.0
+    },
+    "CO2_MASS_RATE_TONNES_DAY": {
+      "lineno": 132,
+      "value": 500.0
+    }
+  },
+  "pilot_source_diffs": [
+    {
+      "line": 122,
+      "frozen": "PRODUCER_BHP_PSI = 2000.0",
+      "derived": "PRODUCER_BHP_PSI = 1800.0"
+    },
+    {
+      "line": 132,
+      "frozen": "CO2_MASS_RATE_TONNES_DAY = 500.0",
+      "derived": "CO2_MASS_RATE_TONNES_DAY = 350.0"
+    }
+  ],
+  "prior_D7_runner_candidates": [
+    {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V16D7A_SourceBound_SG2_SG3_SG4_Adapter_and_Case0002_Pilot.py",
+      "sha256": "3bdb11fe60703c05ffd27ea2eab122badcf2894406ff7399f9f55af261038452",
+      "score": 7
+    },
+    {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V16D7B_Full_Frozen_Case0002_0025_SourceBound_SG2_SG3_SG4_Flow_Ensemble_Execution.py",
+      "sha256": "d2a736039bd34ec5bc3272ebf0ab9908f47c28cdc1bd91ca74d8d76ec366922b",
+      "score": 7
+    }
+  ],
+  "derived_SG3": null,
+  "gates": {
+    "D24A_SHA_exact": true,
+    "SG2_SHA_exact": true,
+    "SG3_SHA_exact": true,
+    "SG4_SHA_exact": true,
+    "geology_0026_exists": true,
+    "SG3_exact_two_control_assignments": true,
+    "SG3_reference_values_exact": true,
+    "reference_patch_byte_identical_to_frozen_SG3": true,
+    "pilot_patch_only_two_assignment_lines": true,
+    "pilot_exactly_two_source_lines_changed": true,
+    "unique_prior_D7_flow_runner_bound": false,
+    "derived_SG3_created_without_mutating_frozen_source": false
+  },
+  "decision": "EXECUTION_BLOCKED_UNTIL_UNIQUE_PRIOR_D7_FLOW_RUNNER_IS_BOUND"
+}

@@ -1,0 +1,31 @@
+{
+  "milestone": "V15-SG7C-R3F4-R2",
+  "status": "TRUE_FRONT_DISPLACEMENT_BASIS_AUDIT_COMPLETE",
+  "incoming_diagnosis": "TRUE_FRONT_DISPLACEMENT_REMAINS",
+  "best_experiment": "B4",
+  "diagnosis": "FRONT_SLOPE_SENSITIVITY",
+  "flags": {
+    "basis_asymmetry_material": false,
+    "canonical_residual_asymmetry_material": false,
+    "crossing_core_overactivation": false,
+    "front_slope_sensitivity": true,
+    "first_moment_material": true
+  },
+  "best_metrics": {
+    "experiment": "B4",
+    "front_error_reduction_fraction": 0.4954781984966692,
+    "matched_mean_shift_xi": 1.5070878166660449e-05,
+    "matched_P90_shift_xi": 3.934883955344359e-05,
+    "linearized_P90_shift_xi": 0.016516745495220683,
+    "linearized_to_actual_P90_ratio": 419.7517813146088,
+    "applied_correction_asymmetry": 0.226950012466345,
+    "canonical_residual_asymmetry": 0.22520531918258294,
+    "basis_support_asymmetry": 0.04368277414568135,
+    "mean_crossing_core_correction_fraction": 0.24030909099583755,
+    "P90_crossing_core_correction_fraction": 0.43285635133906525,
+    "mean_abs_first_moment_xi": 0.011339696766725306,
+    "median_abs_frozen_front_slope": 0.45052824336586317
+  },
+  "recommendation": "The remaining displacement is largely explained by the local threshold slope: even bounded correction produces significant xi motion. Design a slope-scaled crossing guard before retraining.",
+  "next_milestone": "V15-SG7C-R3F4-R3 \u2014 Slope-Scaled Crossing Guard Design"
+}

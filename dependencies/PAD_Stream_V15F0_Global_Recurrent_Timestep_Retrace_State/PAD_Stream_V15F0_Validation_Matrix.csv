@@ -1,0 +1,32 @@
+gate,group,passed,value,criterion
+expected_dense_accepted_steps,integrity,True,350,350 accepted/retried audit records
+expected_retrace_snapshots,integrity,True,24,24 transitions after day 15
+finite_dense_features,integrity,True,finite,all dense features finite
+finite_snapshot_features,integrity,True,finite,all snapshot features finite
+finite_targets,integrity,True,finite,all targets finite
+chronological_split_order,integrity,True,ordered,train -> validation -> test
+train_only_normalization,integrity,True,1.8783858024562505e-07,train normalized mean near zero
+well_memory_features_excluded,integrity,True,time_fraction log_current_dt_days retries_before_accept nonlinear_iterations pressure_fixed_point_iterations_final pressure_fixed_point_iterations_total log10_pressure_fixed_point_residual maximum_saturation_change injector_bhp_mpa injector_mass_rate_kg_s log10_pressure_residual_m3_s pressure_guess_rmse_mpa persistence_error_rmse_mpa candidate_innovation_rmse_mpa learned_preflight_change_mpa persistence_preflight_change_mpa warm_start__persistence_bootstrap warm_start__persistence_physics_fallback warm_start__v15b2_physics_gated time_fraction snapshot_interval_over_15_days current_saturation_mean current_saturation_std current_saturation_max current_saturation_p90 mean_absolute_saturation_change rms_saturation_change maximum_saturation_change current_trapped_margin_mean history_growth_mean pressure_change_rms_mpa pressure_change_max_mpa relative_inventory_change current_inventory_billion_kg previous_total_retrace_fraction previous_gas_retrace_fraction previous_total_path_fraction previous_gas_path_fraction v15e3_predicted_inventory_billion_kg v15e3_state_distance_ratio v15e3_graph_disagreement_ratio v15e3_uncertainty_ratio v15e3_graph_selected v15e3_mass_capacity_clipped v15e3_coverage_fraction,"no gas-cut, breakthrough, or exact-future features"
+finite_model_outputs,integrity,True,finite,all model outputs finite
+screened_timestep_bounds,integrity,True,"[0.1,2]",within configured bounds
+retrace_probability_bounds,integrity,True,"[0.00645816,0.969706]","within [0,1]"
+checkpoint_reload_timestep_identity,integrity,True,0.0,exact checkpoint reload
+checkpoint_reload_retrace_identity,integrity,True,0.0,exact checkpoint reload
+restart_hidden_state_identity,integrity,True,0.0,day-195 hidden restart exact
+restart_output_identity,integrity,True,"dt=0.0, retrace=0.0",restart outputs exact
+v15e3_upstream_pass,integrity,True,PASS,15E-3 approved recurrent grid state
+v15c3_upstream_pass,integrity,True,PASS,15C-3 corrected path/cache baseline
+validation_timestep_beats_persistence,deployment,True,0.142762 < 0.284945,screened GRU validation RMSE below persistence
+test_timestep_beats_persistence,deployment,True,0.189993 < 0.292863,screened GRU test RMSE below persistence
+test_timestep_mae_below_0p15_days,deployment,True,0.06819624136121738,<0.15 day test MAE
+test_timestep_rmse_reduction_above_25pct,deployment,True,0.351256656356017,>25% versus persistence
+timestep_screen_exercises_learned,deployment,True,323,>0 selected proposals
+timestep_screen_exercises_fallback,deployment,True,27,>0 confidence fallbacks
+test_retrace_fraction_rmse_below_0p08,deployment,True,0.06530209980681838,<0.08 held-out fraction RMSE
+zero_unsafe_cache_only_decisions,deployment,True,0,zero false reuse/high-retrace misses
+full_family_retraces_avoided,deployment,True,6,>=5 cache-only snapshot updates
+late_ood_high_retrace_fallback,deployment,True,3,all held-out high-retrace events use full retrace
+raw_timestep_head_beats_persistence_test,diagnostic,True,0.171096,raw learned signal is informative
+retrace_screen_exercises_full_family,diagnostic,True,18,>0 full-family decisions
+retrace_screen_exercises_cache_only,diagnostic,True,6,>0 cache-only decisions
+retrace_ood_fallback_exercised,diagnostic,True,5,>0 OOD full-retrace fallbacks

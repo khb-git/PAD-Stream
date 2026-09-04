@@ -1,0 +1,49 @@
+{
+  "milestone": "V16E-1B2J-XPU",
+  "experiment_id": "V16E-BLREP-COMP-XPU-004",
+  "classification": "FRAMEWORK_EQUIVALENT_ONE_FACTOR_PHYSICS_AWARE_ETA_CHANNEL_REPRODUCTION",
+  "authority": {
+    "runner_sha256": "fcc4074863a46f6b8d356a01ff0b4b2182d0ffa3ebc9b3fd053e35282f897a4c",
+    "Stage2_source_sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+    "B2I_protocol_sha256": "34d022c94271326132e34c6603c34c9477e5b111a6cb267b69cc472dc3b595f1",
+    "dataset_sha256": "46f10f00ff6dc48f7b2b936bd7d602e6435f72f8410138c5aad0dd4add555f1c",
+    "comparison_baseline_checkpoint_sha256": "fca205b1981fbbdf15424af8ac8174df88ff7addf99e718548319a81f87d271b"
+  },
+  "one_scientific_change": {
+    "sequence_input_old": [
+      "xi"
+    ],
+    "sequence_input_new": [
+      "xi",
+      "eta"
+    ],
+    "eta": "y(xi*xD_star;Nc)/y(xD_star;Nc)",
+    "first_LSTM_input_width_old": 12,
+    "first_LSTM_input_width_new": 13
+  },
+  "raw_conditioner": {
+    "dim": 11,
+    "physical_Nc": true,
+    "Nc_scaled": false
+  },
+  "physics_firewall": {
+    "teacher_unchanged": true,
+    "physics_residual_unchanged": true,
+    "physical_Nc_unchanged": true,
+    "raw_p11_unchanged": true,
+    "dataset_unchanged": true,
+    "loss_weights_unchanged": true
+  },
+  "training": {
+    "epochs": 800,
+    "seed": 1337,
+    "logical_batch": 8192,
+    "microbatch": 2048,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "Adam_foreach": false,
+    "mixed_precision": false
+  },
+  "evaluation_semantics": "development diagnostic; NOT independent and NOT OOD",
+  "B3_automatic_authorization": false
+}

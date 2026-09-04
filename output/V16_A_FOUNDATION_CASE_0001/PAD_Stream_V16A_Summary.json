@@ -1,0 +1,22 @@
+{
+  "milestone": "V16A",
+  "status": "V16A_FOUNDATION_CASE_EXTRACTION_BLOCKED",
+  "diagnosis": "ONE_OR_MORE_REQUIRED_V15_FOUNDATION_COMPONENTS_ARE_MISSING_OR_AMBIGUOUS",
+  "failed_gates": [
+    "Kx_bound",
+    "Ky_bound",
+    "Kz_bound",
+    "porosity_bound",
+    "pressure_bound",
+    "Qx_bound",
+    "Qy_bound",
+    "Qz_bound",
+    "Vx_bound",
+    "Vy_bound",
+    "Vz_bound",
+    "producer_id_bound",
+    "all_required_components_bound"
+  ],
+  "recommendation": "Do not fabricate missing arrays and do not run Fast Marching. Audit only the failed V16A component bindings.",
+  "next_milestone": "V16A-R1 \u2014 Missing / Ambiguous Foundation Component Binding Audit"
+}

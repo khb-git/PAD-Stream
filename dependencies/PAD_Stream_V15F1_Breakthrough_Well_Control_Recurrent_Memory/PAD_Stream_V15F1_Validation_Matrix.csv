@@ -1,0 +1,34 @@
+gate,group,passed,value,requirement
+upstream_v15e3_pass,integrity,True,PASS,15E-3 frozen PASS
+upstream_v15f0_pass,integrity,True,PASS,15F-0 frozen PASS
+f0_hidden_reproduced,integrity,True,0.0,frozen recurrent state exact
+f0_timestep_output_unchanged,integrity,True,0.0,15F-0 timestep branch unchanged
+f0_retrace_output_unchanged,integrity,True,0.0,15F-0 retrace branch unchanged
+no_future_feature_leakage,integrity,True,f0_hidden_00 f0_hidden_01 f0_hidden_02 f0_hidden_03 f0_hidden_04 f0_hidden_05 f0_hidden_06 f0_hidden_07 f0_hidden_08 f0_hidden_09 f0_hidden_10 f0_hidden_11 f0_hidden_12 f0_hidden_13 f0_hidden_14 f0_hidden_15 f0_hidden_16 f0_hidden_17 f0_hidden_18 f0_hidden_19 f0_hidden_20 f0_hidden_21 f0_hidden_22 f0_hidden_23 f0_hidden_24 f0_hidden_25 f0_hidden_26 f0_hidden_27 f0_hidden_28 f0_hidden_29 f0_hidden_30 f0_hidden_31 current_producer_gas_cut log10_current_producer_gas_cut_plus_1e-8 current_gas_cut_increment current_breakthrough_memory time_since_breakthrough_fraction current_injector_mass_rate_mode current_injector_bhp_over_limit current_injector_mass_rate_over_limit current_bhp_headroom_over_4mpa current_mass_rate_headroom_kg_s current_control_switch_memory,current/past features only
+train_only_normalization,integrity,True,train mask,normalization fit on training rows
+event_holdout_present,integrity,True,30,breakthrough transition held out
+control_holdout_present,integrity,True,17,late injector switch held out
+finite_predictions,integrity,True,finite,all numerical outputs finite
+gas_cut_bounds,integrity,True,"[-0,0.853]",0 <= gas cut <= 1
+hazard_bounds,integrity,True,"[0.00403,1]",0 <= hazard <= 1
+breakthrough_memory_monotone,integrity,True,0.0,hazard never decreases
+active_bhp_constraint_exact,integrity,True,0.0,BHP-mode warm start exactly 30 MPa
+active_rate_constraint_exact,integrity,True,0.0,mass-rate warm start exactly 38.55 kg/s
+restart_hidden_identity,integrity,True,0.0,day-195 frozen recurrent restart exact
+restart_head_identity,integrity,True,"gas=0.0, hazard=0.0, mode=0.0",all 15F-1 outputs restart exact
+exact_well_authority_preserved,integrity,True,warm-start only,Peaceman and control equations remain mandatory
+test_gas_cut_beats_persistence,deployment,True,0.00274073 < 0.00735858,held-out improvement
+event_gas_cut_beats_persistence,deployment,True,0.00535074 < 0.0146159,breakthrough-window improvement
+late_gas_cut_no_regression,deployment,True,0.000696933,stable late-time fallback
+v15e3_gas_cut_handoff_closed,deployment,True,0.00253114 vs 0.37805,close 15E-3 diagnostic
+breakthrough_timing_within_15_days,deployment,True,1.2053213803784644,<=15 day timing error
+breakthrough_warning_precedes_event,deployment,True,10.12512381649698,positive warning lead
+screened_control_mode_exact,deployment,True,1.0,all next-mode warm starts correct
+all_control_switches_preflighted,deployment,True,2/2,no switch bypasses exact preflight
+zero_unsafe_no_preflight,deployment,True,0,zero unsafe cache-only control decisions
+mass_rate_warm_start_no_regression,deployment,True,0.0114479 <= 0.0121346,held-out rate warm start no regression
+raw_mode_signal_informative,diagnostic,True,0.9914040114613181,>95% raw mode accuracy
+gas_screen_exercises_learned_branch,diagnostic,True,98,>0 learned gas selections
+gas_screen_exercises_fallback,diagnostic,True,251,>0 persistence fallbacks
+well_state_ood_exercised,diagnostic,True,2,>0 OOD states
+control_preflight_selective,diagnostic,True,26/349,preflight exercised but not universal

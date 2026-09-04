@@ -1,0 +1,11 @@
+{
+  "milestone": "V16C-9",
+  "status": "V16C_SOURCE_AUTHENTIC_TARGET_GENERATOR_LINEAGE_BOUND_NEW_POLLOCK_ADAPTER_SOLVER_REQUIRED",
+  "diagnosis": "STAGE4_CONSTITUTIVE_AND_NUMERICAL_PHYSICS_ARE_BOUND_BUT_NATIVE_STAGE4_SOLVER_CANNOT_BE_CALLED_DIRECTLY_BECAUSE_V16_REQUIRES_201_NODE_POLLOCK_KINEMATICS_AND_THE_C7_TRANSFORMED_CAPILLARY_OPERATOR",
+  "direct_native_stage4_solver_call_allowed": false,
+  "new_pollock_adapter_solver_required": true,
+  "Y_transport_generated": false,
+  "Y_generation_authorized": false,
+  "recommendation": "Freeze C9 binding. Implement C10 as a no-target numerical operator construction/verification milestone: build the conservative 201-node Pollock-coordinate advection-capillary operator from the bound Stage-4 physics, consume the frozen C7 metric, suppress legacy uD double counting, and validate algebraic/conservation properties before any Y generation.",
+  "next_milestone": "V16C-10 \u2014 Conservative 201-Node Pollock-Coordinate Full-Physics Operator Construction"
+}

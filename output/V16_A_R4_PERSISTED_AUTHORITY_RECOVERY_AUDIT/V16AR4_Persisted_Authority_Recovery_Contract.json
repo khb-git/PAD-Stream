@@ -1,0 +1,82 @@
+{
+  "milestone": "V16A-R4",
+  "status": "V16A_PERSISTED_AUTHORITY_RECOVERY_INCOMPLETE",
+  "diagnosis": "ONE_OR_MORE_PRESSURE_FLUX_OR_PRODUCER_COMPONENTS_LACK_A_UNIQUE_PERSISTED_PRE_V16_SEMANTIC_AUTHORITY",
+  "decisions": [
+    {
+      "target": "pressure",
+      "status": "NO_PERSISTED_AUTHORITY_FOUND",
+      "array_sha256": "",
+      "artifact": "",
+      "key": "",
+      "candidate_count": 0,
+      "distinct_hashes": 0,
+      "semantic_hashes": 0,
+      "reason": "no qualifying pre-V16 persisted numerical state found"
+    },
+    {
+      "target": "Qx",
+      "status": "NO_PERSISTED_AUTHORITY_FOUND",
+      "array_sha256": "",
+      "artifact": "",
+      "key": "",
+      "candidate_count": 0,
+      "distinct_hashes": 0,
+      "semantic_hashes": 0,
+      "reason": "no qualifying pre-V16 persisted numerical state found"
+    },
+    {
+      "target": "Qy",
+      "status": "NO_PERSISTED_AUTHORITY_FOUND",
+      "array_sha256": "",
+      "artifact": "",
+      "key": "",
+      "candidate_count": 0,
+      "distinct_hashes": 0,
+      "semantic_hashes": 0,
+      "reason": "no qualifying pre-V16 persisted numerical state found"
+    },
+    {
+      "target": "Qz",
+      "status": "NO_PERSISTED_AUTHORITY_FOUND",
+      "array_sha256": "",
+      "artifact": "",
+      "key": "",
+      "candidate_count": 0,
+      "distinct_hashes": 0,
+      "semantic_hashes": 0,
+      "reason": "no qualifying pre-V16 persisted numerical state found"
+    },
+    {
+      "target": "producer_id",
+      "status": "SHAPE_OR_PATH_CANDIDATES_ONLY_NOT_AUTHORITATIVE",
+      "array_sha256": "",
+      "artifact": "",
+      "key": "",
+      "candidate_count": 10,
+      "distinct_hashes": 5,
+      "semantic_hashes": 0,
+      "reason": "candidate arrays exist but no sufficiently explicit semantic key authority is persisted"
+    }
+  ],
+  "recovered_targets": [],
+  "unresolved_targets": [
+    "pressure",
+    "Qx",
+    "Qy",
+    "Qz",
+    "producer_id"
+  ],
+  "recommendation": "Do not rerun frozen physics yet. Audit only unresolved targets using exact creator serialization, downstream consumer, manifest, and frozen deployment lineage. If no persisted authority exists, formally decide whether source-authentic deterministic V15 regeneration is permissible as a derived V16 foundation artifact.",
+  "next_milestone": "V16A-R5 \u2014 Residual Frozen Component Authority / Regeneration Policy Audit",
+  "constraints": {
+    "pressure_solve": false,
+    "Darcy_flux_recompute": false,
+    "velocity_reconstruction": false,
+    "Pollock_retrace": false,
+    "FMM": false,
+    "model_predict": false,
+    "training": false,
+    "V15_mutation": false
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "milestone": "V16E-1B2AD-XPU",
+  "classification": "B2AC_CHUNKED_BATCHED_VJP_SWEEP_INTERPRETATION",
+  "B2AC_execution_status": "CERTIFIED",
+  "measured_candidates": {
+    "2": {
+      "median_seconds": 10.100872099999833,
+      "mean_seconds": 10.195303133333558,
+      "median_profiles_per_second": 12.672173128496707,
+      "loop_over_candidate_median_ratio": 1.0001436014618894
+    },
+    "4": {
+      "median_seconds": 8.582610000001296,
+      "mean_seconds": 8.638961866666554,
+      "median_profiles_per_second": 14.913878179246252,
+      "loop_over_candidate_median_ratio": 1.17706881706127
+    },
+    "8": {
+      "median_seconds": 7.927984800000559,
+      "mean_seconds": 7.949328333334051,
+      "median_profiles_per_second": 16.14533872466443,
+      "loop_over_candidate_median_ratio": 1.2742610959595988
+    },
+    "16": {
+      "median_seconds": 7.866887500000303,
+      "mean_seconds": 7.752968999999818,
+      "median_profiles_per_second": 16.270729688201982,
+      "loop_over_candidate_median_ratio": 1.2841575019344516
+    },
+    "32": {
+      "median_seconds": 8.038603999999395,
+      "mean_seconds": 7.8315856333332095,
+      "median_profiles_per_second": 15.923162778015888,
+      "loop_over_candidate_median_ratio": 1.2567259937173807
+    }
+  },
+  "all_candidates_fully_equivalent": true,
+  "descriptive_fastest_chunk": 16,
+  "selection_interpretation": "Chunk 16 is the lowest-median fully-equivalent candidate in the frozen B2AC sweep. The selection is operational and does not claim statistical superiority over nearby candidates.",
+  "prohibited_claims": [
+    "chunk 16 changes the scientific model",
+    "chunk 16 changes the corrected residual",
+    "chunk 16 changes any Stage-2 loss weight",
+    "chunk 16 is statistically proven faster than chunk 8 or chunk 32",
+    "chunk 16 is a new derivative definition"
+  ],
+  "scientific_model_changed": false,
+  "COMP_XPU_005_full_training_authorized": false,
+  "B3_authorized": false
+}

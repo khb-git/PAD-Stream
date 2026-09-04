@@ -1,0 +1,204 @@
+{
+  "version": "15F-0",
+  "dense_features": [
+    {
+      "index": 0,
+      "name": "time_fraction"
+    },
+    {
+      "index": 1,
+      "name": "log_current_dt_days"
+    },
+    {
+      "index": 2,
+      "name": "retries_before_accept"
+    },
+    {
+      "index": 3,
+      "name": "nonlinear_iterations"
+    },
+    {
+      "index": 4,
+      "name": "pressure_fixed_point_iterations_final"
+    },
+    {
+      "index": 5,
+      "name": "pressure_fixed_point_iterations_total"
+    },
+    {
+      "index": 6,
+      "name": "log10_pressure_fixed_point_residual"
+    },
+    {
+      "index": 7,
+      "name": "maximum_saturation_change"
+    },
+    {
+      "index": 8,
+      "name": "injector_bhp_mpa"
+    },
+    {
+      "index": 9,
+      "name": "injector_mass_rate_kg_s"
+    },
+    {
+      "index": 10,
+      "name": "log10_pressure_residual_m3_s"
+    },
+    {
+      "index": 11,
+      "name": "pressure_guess_rmse_mpa"
+    },
+    {
+      "index": 12,
+      "name": "persistence_error_rmse_mpa"
+    },
+    {
+      "index": 13,
+      "name": "candidate_innovation_rmse_mpa"
+    },
+    {
+      "index": 14,
+      "name": "learned_preflight_change_mpa"
+    },
+    {
+      "index": 15,
+      "name": "persistence_preflight_change_mpa"
+    },
+    {
+      "index": 16,
+      "name": "warm_start__persistence_bootstrap"
+    },
+    {
+      "index": 17,
+      "name": "warm_start__persistence_physics_fallback"
+    },
+    {
+      "index": 18,
+      "name": "warm_start__v15b2_physics_gated"
+    }
+  ],
+  "snapshot_features": [
+    {
+      "index": 0,
+      "name": "time_fraction"
+    },
+    {
+      "index": 1,
+      "name": "snapshot_interval_over_15_days"
+    },
+    {
+      "index": 2,
+      "name": "current_saturation_mean"
+    },
+    {
+      "index": 3,
+      "name": "current_saturation_std"
+    },
+    {
+      "index": 4,
+      "name": "current_saturation_max"
+    },
+    {
+      "index": 5,
+      "name": "current_saturation_p90"
+    },
+    {
+      "index": 6,
+      "name": "mean_absolute_saturation_change"
+    },
+    {
+      "index": 7,
+      "name": "rms_saturation_change"
+    },
+    {
+      "index": 8,
+      "name": "maximum_saturation_change"
+    },
+    {
+      "index": 9,
+      "name": "current_trapped_margin_mean"
+    },
+    {
+      "index": 10,
+      "name": "history_growth_mean"
+    },
+    {
+      "index": 11,
+      "name": "pressure_change_rms_mpa"
+    },
+    {
+      "index": 12,
+      "name": "pressure_change_max_mpa"
+    },
+    {
+      "index": 13,
+      "name": "relative_inventory_change"
+    },
+    {
+      "index": 14,
+      "name": "current_inventory_billion_kg"
+    },
+    {
+      "index": 15,
+      "name": "previous_total_retrace_fraction"
+    },
+    {
+      "index": 16,
+      "name": "previous_gas_retrace_fraction"
+    },
+    {
+      "index": 17,
+      "name": "previous_total_path_fraction"
+    },
+    {
+      "index": 18,
+      "name": "previous_gas_path_fraction"
+    },
+    {
+      "index": 19,
+      "name": "v15e3_predicted_inventory_billion_kg"
+    },
+    {
+      "index": 20,
+      "name": "v15e3_state_distance_ratio"
+    },
+    {
+      "index": 21,
+      "name": "v15e3_graph_disagreement_ratio"
+    },
+    {
+      "index": 22,
+      "name": "v15e3_uncertainty_ratio"
+    },
+    {
+      "index": 23,
+      "name": "v15e3_graph_selected"
+    },
+    {
+      "index": 24,
+      "name": "v15e3_mass_capacity_clipped"
+    },
+    {
+      "index": 25,
+      "name": "v15e3_coverage_fraction"
+    }
+  ],
+  "targets": {
+    "timestep": "classical accepted next timestep after the current accepted step",
+    "retrace": [
+      "total_flow_full_retrace_fraction",
+      "gas_path_full_retrace_fraction",
+      "gas_new_path_fraction"
+    ],
+    "high_retrace_threshold": 0.18
+  },
+  "excluded_scope": [
+    "producer gas cut",
+    "breakthrough state",
+    "well-control memory",
+    "exact future saturation",
+    "exact future pressure",
+    "exact future inventory"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "milestone": "V15-SG7C-R3F1-R",
+  "status": "FRONT_STATE_REFINEMENT_OUTCOME_AUDIT_COMPLETE",
+  "incoming_status": "NO_R3F1_CALIBRATOR_PASSES_COMPLETE_CONTRACT",
+  "diagnosis": "FRONT_CAPACITY_TOPOLOGY_TRADEOFF_CONFIRMED",
+  "maximum_front_error_reduction_fraction": 0.3709312712636692,
+  "front_error_reduction_shortfall_fraction": 0.1290687287363308,
+  "best_front_reduction_experiment": "F3",
+  "best_front_reduction_epoch": 35,
+  "best_clean_front_reduction_fraction": null,
+  "recommendation": "R3F1 reaches approximately 35-37% front reduction, but the strongest front correction checkpoints also violate one or more preservation gates. Audit front-local correction geometry before adding more capacity.",
+  "next_milestone": "V15-SG7C-R3F2A \u2014 Front-Correction Geometry / Topology Audit"
+}

@@ -1,0 +1,11 @@
+{
+  "milestone": "V15-SG7C-R3F5-R0A",
+  "status": "AUTHORITATIVE_SUPPORT_FORMULA_EXTRACTED",
+  "diagnosis": "SUPPORT_IS_REQUIRED_VS_SUPPORTED_FRONT_SHELL_RESIDUAL_RATIO",
+  "training_performed": false,
+  "model_parameters_changed": false,
+  "support_extension_calibrated": false,
+  "gate_changed": false,
+  "recommendation": "Use the authoritative ratio front_shell_supported_residual_sum / front_shell_required_residual_sum in R3F5-R1. Reconstruct the exact front-shell and supported-residual masks from the extracted source dependencies. Do not use coefficient occupancy, residual-weighted coefficient averages, or multiplicative anchoring.",
+  "next_milestone": "V15-SG7C-R3F5-R1 \u2014 Controlled Minimal-Support Extension Calibration Repair"
+}

@@ -1,0 +1,26 @@
+{
+  "milestone": "V16D-16",
+  "status": "V16D_EXP_MC1_EXECUTABLE_TRAINING_PROTOCOL_1_0_FROZEN_FIRST_MULTICASE_TRAINING_RUN_AUTHORIZED",
+  "protocol_sha256": "c697527f7b9303f464819bbe299645bd5e0c1894e0779d42ab5fc0aa338d2d9d",
+  "gates": {
+    "D15R1_summary_SHA_exact": true,
+    "dataset_registry_SHA_exact": true,
+    "training_authority_SHA_exact": true,
+    "architecture_frozen_2xLSTM64": true,
+    "batch_size_frozen_64": true,
+    "early_stopping_frozen": true,
+    "checkpoint_rule_frozen": true,
+    "MSE_only_no_physics_loss": true,
+    "memory_safe_loading_frozen": true,
+    "equal_sequence_weighting_frozen": true,
+    "TRAIN_gradient_only": true,
+    "validation_selection_only": true,
+    "locked_OOD_not_opened": true,
+    "serialization_no_retrain_policy_frozen": true,
+    "no_Y_opened": true,
+    "no_training": true,
+    "no_model_selection": true,
+    "no_OOD_evaluation": true
+  },
+  "next_milestone": "V16D-17 \u2014 EXP-MC1 First Multi-Foundation-Case Predictive Baseline Training Run"
+}

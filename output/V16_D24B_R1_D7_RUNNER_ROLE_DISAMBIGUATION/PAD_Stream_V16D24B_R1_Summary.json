@@ -1,0 +1,15 @@
+{
+  "milestone": "V16D-24B-R1",
+  "status": "V16D_D7_RUNNER_ROLE_DISAMBIGUATION_BLOCKED",
+  "authority_sha256": "16fb6d44aa3e39cf260da7e9e1964cbfcd7585f4a939c55d84b2c1fe861f3447",
+  "gates": {
+    "D24B_SHA_exact": true,
+    "D7A_SHA_exact": true,
+    "D7B_SHA_exact": true,
+    "D7A_is_single_case_pilot_role": false,
+    "D7B_is_full_ensemble_role": true,
+    "roles_are_complementary_not_ambiguous": false,
+    "execution_authority_frozen": false
+  },
+  "next_milestone": "Inspect D7A/D7B role evidence; do not execute new-control flow."
+}

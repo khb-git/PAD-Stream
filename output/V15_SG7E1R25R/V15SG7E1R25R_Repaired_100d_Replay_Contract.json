@@ -1,0 +1,37 @@
+{
+  "milestone": "V15-SG7E1R25R",
+  "status": "L2_100D_DETERMINISTIC_REPLAY_VALIDATED",
+  "diagnosis": "BOUND_L2_100D_REPLAY_PASSES_PRECISION_EQUIVALENCE_CONTRACT",
+  "contract_repair": {
+    "original_gate": "unique_numerical_replay_output",
+    "repaired_gate": "all_precision_passing_replays_form_one_equivalence_class",
+    "precision_envelope": 1.1920928955078125e-07,
+    "precision_envelope_changed": false,
+    "basis": "R25_operation_order_precision_equivalence"
+  },
+  "equivalence_evidence": {
+    "passing_variant_count": 10,
+    "passing_output_hash_count": 3,
+    "best_target_Linf": 2.98361850781248e-08,
+    "max_pairwise_passing_Linf": 5.960464477539063e-08,
+    "all_target_close": true,
+    "all_pairwise_close": true,
+    "guard_clip_noop": true,
+    "representation_only_nonuniqueness": true
+  },
+  "failed_repaired_gates": [],
+  "constraints": {
+    "training_performed": false,
+    "model_parameters_changed": false,
+    "gamma_changed": false,
+    "guard_changed": false,
+    "tolerance_relaxed": false,
+    "physics_gate_changed": false,
+    "SG7E_threshold_changed": false,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false
+  },
+  "recommendation": "The 100-day deterministic replay is validated. The former exact-hash uniqueness failure has been repaired using a precision-equivalence-class criterion derived from the already-frozen float32 ULP envelope; no tolerance, model, gamma, guard, or physical acceptance gate was changed. Proceed to controlled four-time L2 state regeneration at 100/250/500/1000 days using the same frozen evaluator and correction operator.",
+  "next_milestone": "V15-SG7E1R26 \u2014 Controlled Four-Time L2 State Regeneration"
+}

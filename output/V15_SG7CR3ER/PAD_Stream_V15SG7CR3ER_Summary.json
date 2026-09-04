@@ -1,0 +1,13 @@
+{
+  "milestone": "V15-SG7C-R3E-R",
+  "status": "CALIBRATION_FINAL_GATE_AUDIT_COMPLETE",
+  "incoming_r3e_status": "NO_R3E_CALIBRATOR_PASSES_COMPLETE_CONTRACT",
+  "epoch_history_available": false,
+  "audit_scope": "authoritative final R3E experiment metrics and final gate matrix only",
+  "dominant_failed_gate": "front_error_reduction",
+  "dominant_failure_count": 1,
+  "minimum_final_failed_gate_count": 1,
+  "diagnosis": "SINGLE_FINAL_GATE_LIMITER",
+  "recommendation": "A final R3E candidate is one authoritative gate from acceptance. Diagnose that gate without retraining or relaxing the contract.",
+  "next_milestone": "V15-SG7C-R3E-R2 \u2014 Single-Gate Calibration Limiter Audit"
+}

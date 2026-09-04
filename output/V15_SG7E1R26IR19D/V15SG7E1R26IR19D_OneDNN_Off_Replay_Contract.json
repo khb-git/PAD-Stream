@@ -1,0 +1,41 @@
+{
+  "milestone": "V15-SG7E1R26I-R19D",
+  "status": "ONEDNN_OFF_DOES_NOT_EXPLAIN_HISTORICAL_FROZEN100",
+  "diagnosis": "AUTHORIZED_ONEDNN_VARIANCE_DOES_NOT_RESTORE_FROZEN100_CLOSURE",
+  "runtime_case": {
+    "case_id": "C1",
+    "TF_ENABLE_ONEDNN_OPTS": "0",
+    "tensorflow_version": "2.21.0",
+    "keras_version": "3.15.1"
+  },
+  "fixed_model": {
+    "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B11\\V15SG7B_FRONT_AWARE_FROZEN_Model.keras",
+    "sha256": "28c3e555f1ea9e128bddc6c021c5b3648699ba7a33125b3b40a6556990fa9141"
+  },
+  "fixed_X100_sha256": "21e4fb419f9c56242516d7c439da5160cf24b2b6cae4d30666d71de752aed526",
+  "hashes": {
+    "baseline_creator100": "5e4ddeeef51618002063e459dc69ac1499d4a7517330bfa83587eed864d138df",
+    "onednn_off_creator100": "4894cc0799a73b9b41675587249278f95f7ebd7d984fbf7561d10149b2c5a317",
+    "historical_frozen100": "a08c7320a63ace580456191f408a29afde65e0ad3f078846265243e53cd10297"
+  },
+  "closure": {
+    "to_baseline": {
+      "L1": 9.45292535075881e-09,
+      "L2": 2.2319956938772068e-08,
+      "Linf": 1.1920928955078125e-07
+    },
+    "to_frozen100": {
+      "L1": 9.855098685438443e-09,
+      "L2": 2.29819051766216e-08,
+      "Linf": 2.384185791015625e-07
+    },
+    "precision_envelope": 1.1920928955078125e-07,
+    "precision_pass": false,
+    "exact_frozen_hash_match": false,
+    "count_above_envelope": 87,
+    "max_ulp_to_frozen100": 13
+  },
+  "failed_gates": [],
+  "recommendation": "Stop runtime-variance testing. Do not try arbitrary TensorFlow versions or thread changes. Record historical runtime as partially unrecoverable and resolve deployment authority accordingly.",
+  "next_milestone": "V15-SG7E1R26I-R19E \u2014 Historical Runtime Reproducibility Limitation / Authority Decision Audit"
+}

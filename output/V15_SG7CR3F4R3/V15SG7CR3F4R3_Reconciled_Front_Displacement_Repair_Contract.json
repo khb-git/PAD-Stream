@@ -1,0 +1,120 @@
+{
+  "milestone": "V15-SG7C-R3F4-R3",
+  "status": "DUAL_REFERENCE_FRONT_CONTRACT_CONFLICT_ESTABLISHED",
+  "diagnosis": "FROZEN_FRONT_PRESERVATION_CONFLICTS_WITH_SG7A_FRONT_ACCURACY",
+  "training_performed": false,
+  "best_experiment": "B4",
+  "front_error_reduction_fraction": 0.4954781984966692,
+  "frozen_vs_truth": {
+    "mean_xi": 0.07981399981700997,
+    "P90_xi": 0.44365669912484623
+  },
+  "calibrated_vs_truth": {
+    "mean_xi": 1.3256288912218535e-05,
+    "P90_xi": 2.921300116240922e-05
+  },
+  "calibrated_vs_frozen": {
+    "mean_xi": 0.07980130132414287,
+    "P90_xi": 0.4436530666350128
+  },
+  "max_beta_passing_frozen_relative_gate": 0.0,
+  "flags": {
+    "frozen_truth_mismatch_material": true,
+    "strong_truth_improvement": true,
+    "corridor_extremely_narrow": true,
+    "objectives_incompatible": true
+  },
+  "objective_design": [
+    {
+      "term": "L_state_front",
+      "definition": "front-shell state error vs SG7A/canonical truth",
+      "role": "retain front-state accuracy target"
+    },
+    {
+      "term": "L_front_truth",
+      "definition": "|xi_cal-xi_SG7A|",
+      "role": "track physics/front accuracy"
+    },
+    {
+      "term": "L_front_frozen",
+      "definition": "|xi_cal-xi_frozen|",
+      "role": "retain frozen-relative preservation metric"
+    },
+    {
+      "term": "L_dual_reference_conflict",
+      "definition": "explicit conflict flag if objectives cannot coexist",
+      "role": "prevent silent gate substitution"
+    },
+    {
+      "term": "L_front_topology",
+      "definition": "crossing identity/multiplicity preservation",
+      "role": "preserve physical correspondence"
+    },
+    {
+      "term": "L_TOF_bias",
+      "definition": "retain SG7B-12 TOF-bias gates",
+      "role": "preserve slow-streamline correction"
+    }
+  ],
+  "preserved_gates": [
+    {
+      "gate": "front_error_reduction",
+      "limit": ">= 50%",
+      "status": "UNCHANGED"
+    },
+    {
+      "gate": "mean calibrated-vs-frozen front shift",
+      "limit": "<= 2.0e-03 xi",
+      "status": "UNCHANGED / MONITORED"
+    },
+    {
+      "gate": "P90 calibrated-vs-frozen front shift",
+      "limit": "<= 5.0e-03 xi",
+      "status": "UNCHANGED / MONITORED"
+    },
+    {
+      "gate": "calibrated-vs-SG7A front error",
+      "limit": "diagnostic physics-accuracy metric",
+      "status": "ADDED AS DIAGNOSTIC, NOT SUBSTITUTE GATE"
+    },
+    {
+      "gate": "front sign agreement",
+      "limit": ">= 95%",
+      "status": "UNCHANGED"
+    },
+    {
+      "gate": "front overshoot",
+      "limit": "<= 5%",
+      "status": "UNCHANGED"
+    },
+    {
+      "gate": "TOF bias guards",
+      "limit": "SG7B-12 exact limits",
+      "status": "UNCHANGED"
+    }
+  ],
+  "experiment_matrix": [
+    {
+      "experiment": "C0",
+      "description": "Existing B4 checkpoint, no changes",
+      "purpose": "dual-reference control"
+    },
+    {
+      "experiment": "C1",
+      "description": "Frozen-dominant corridor target",
+      "purpose": "test maximum admissible beta under frozen-relative gate"
+    },
+    {
+      "experiment": "C2",
+      "description": "Intermediate dual-reference continuation",
+      "purpose": "test state/front tradeoff without architecture change"
+    },
+    {
+      "experiment": "C3",
+      "description": "Truth-dominant bounded continuation",
+      "purpose": "test non-front gates near SG7A front"
+    }
+  ],
+  "recommendation": "The reconciled metrics show that the frozen SG7B-11 front is itself far from the validated SG7A front, while B4 moves almost exactly onto SG7A truth. Under the unchanged frozen-relative front limits, only a very small interpolation fraction toward SG7A is admissible. Do not retrain and do not relax the gate. The next milestone must determine which front reference is authoritative for deployment acceptance while preserving both metrics in the record.",
+  "next_milestone": "V15-SG7C-R3F4-R3A \u2014 Front-Reference Authority / Acceptance Contract Audit"
+}

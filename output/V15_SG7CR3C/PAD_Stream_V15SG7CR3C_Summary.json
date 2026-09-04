@@ -1,0 +1,16 @@
+{
+  "milestone": "V15-SG7C-R3C",
+  "status": "CONDITIONAL_FEATURE_TARGET_SCALING_AUDIT_COMPLETE",
+  "incoming_diagnosis": "MARGINAL_TIME_DISTRIBUTION_SHIFT_WITHOUT_DENSITY_ERROR_LINK",
+  "diagnosis": "CONDITIONAL_FEATURE_SEMANTICS_MISMATCH",
+  "feature_semantics_pass": false,
+  "target_scaling_pass": true,
+  "canonical_manifold_matches": true,
+  "model_error_dominates_interpolation_error": true,
+  "canonical_interp_L1": 1.4078536280130762e-08,
+  "canonical_interp_Linf": 9.691391489319301e-08,
+  "PI_RNN_L1": 0.0017029695548858095,
+  "model_to_interp_L1_ratio": 120962.11715483766,
+  "recommendation": "Canonical and deployment features do not share the same semantics/domain. Repair the feature construction before any model calibration.",
+  "next_milestone": "V15-SG7C-R3C-FIX \u2014 Conditional Feature Construction Repair"
+}

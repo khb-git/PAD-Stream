@@ -1,0 +1,30 @@
+{
+  "milestone": "V16A-R6",
+  "status": "V16A_SG3_PRESSURE_REGENERATION_RECIPE_STILL_INCOMPLETE",
+  "diagnosis": "ONE_OR_MORE_SG3_SOLVER_MATRIX_RHS_OR_PRESSURE_OUTPUT_BINDINGS_REMAIN_UNRESOLVED",
+  "selected_SG3_source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG3_FiveSpot_Pressure_Solve.py",
+  "recipe": {
+    "unique_solver_call": false,
+    "matrix_rhs_bound": false,
+    "pressure_output_bound": false,
+    "downstream_SG4_consumer_bound": false,
+    "recipe_ready": false
+  },
+  "policy": {
+    "source_authentic_regeneration_authorized_if_recipe_ready": false,
+    "derived_artifact_label": null,
+    "historical_V15_relabelling_prohibited": true
+  },
+  "constraints": {
+    "pressure_solve_executed": false,
+    "Darcy_flux_recomputed": false,
+    "velocity_reconstructed": false,
+    "Pollock_retrace_executed": false,
+    "FMM_executed": false,
+    "model_predict_executed": false,
+    "training_performed": false,
+    "V15_artifact_changed": false
+  },
+  "recommendation": "Do not execute the pressure solver. Audit only the failed R6 pressure-recipe binding dimensions.",
+  "next_milestone": "V16A-R6A \u2014 Final SG3 Pressure Recipe Residual Binding Audit"
+}

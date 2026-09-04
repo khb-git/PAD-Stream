@@ -1,0 +1,17 @@
+{
+  "milestone": "V15-SG7E1R26",
+  "status": "FOUR_TIME_REGENERATION_BLOCKED_EVALUATOR_BINDING",
+  "diagnosis": "NO_DISCOVERED_CALLABLE_REPRODUCES_BOUND_100D_STATE",
+  "precision_envelope": 1.1920928955078125e-07,
+  "states_generated": [],
+  "constraints": {
+    "training_performed": false,
+    "model_parameters_changed": false,
+    "gamma_changed": false,
+    "guard_changed": false,
+    "threshold_changed": false,
+    "fabricated_input_used": false
+  },
+  "recommendation": "Do not generate 250/500/1000-day states. The frozen model and 100-day replay contract are valid, but no reusable historical evaluator callable has yet been bound tightly enough to reproduce L2_independent_100. Audit only the exact evaluator function and required feature/time-transform arguments identified by R18; do not fabricate missing inputs.",
+  "next_milestone": "V15-SG7E1R26A \u2014 Exact Multi-Time Evaluator Callable / Argument Binding Audit"
+}

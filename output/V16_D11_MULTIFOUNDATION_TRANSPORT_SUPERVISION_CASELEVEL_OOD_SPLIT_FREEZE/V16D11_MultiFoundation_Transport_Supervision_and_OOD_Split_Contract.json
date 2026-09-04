@@ -1,0 +1,112 @@
+{
+  "milestone": "V16D-11",
+  "status": "V16D_MULTIFOUNDATION_CASELEVEL_OOD_SPLIT_AND_TRANSPORT_SUPERVISION_CONTRACT_FROZEN_RECIPE_VERSION_REPAIR_REQUIRED_BEFORE_GENERATION",
+  "D10C_manifest_sha256": "03efa36354322f533bf5ddd1f7a052f4bb458fb68562a91d7aaa554c5758fded",
+  "split": {
+    "seed": 161101,
+    "method": "SHA256(seed:case_id) deterministic rank",
+    "train": [
+      "V16D_Foundation_Case_0020",
+      "V16D_Foundation_Case_0015",
+      "V16D_Foundation_Case_0013",
+      "V16D_Foundation_Case_0004",
+      "V16D_Foundation_Case_0006",
+      "V16D_Foundation_Case_0002",
+      "V16D_Foundation_Case_0023",
+      "V16D_Foundation_Case_0016",
+      "V16D_Foundation_Case_0009",
+      "V16D_Foundation_Case_0019",
+      "V16D_Foundation_Case_0017",
+      "V16D_Foundation_Case_0024",
+      "V16D_Foundation_Case_0003",
+      "V16D_Foundation_Case_0011",
+      "V16D_Foundation_Case_0014",
+      "V16D_Foundation_Case_0007"
+    ],
+    "validation": [
+      "V16D_Foundation_Case_0010",
+      "V16D_Foundation_Case_0025",
+      "V16D_Foundation_Case_0008",
+      "V16D_Foundation_Case_0012"
+    ],
+    "locked_OOD_test": [
+      "V16D_Foundation_Case_0005",
+      "V16D_Foundation_Case_0018",
+      "V16D_Foundation_Case_0021",
+      "V16D_Foundation_Case_0022"
+    ],
+    "split_csv_sha256": "8be9ea6da6b42c41f618ca34aec5d409e18cc4d31c99474c1c4d4fac6f91e549"
+  },
+  "transport_supervision_contract": {
+    "supervision_semantics": "Y_i,j(t)=Sw(streamline i, theta_j, t)",
+    "primary_coordinate": "Pollock theta=tau/tau_end; Pollock remains authoritative kinematics",
+    "nodes": 201,
+    "target_days": [
+      30,
+      60,
+      100,
+      150,
+      250,
+      365,
+      500,
+      750,
+      1000
+    ],
+    "stage4_parameters": {
+      "nw": 2.0,
+      "no": 2.0,
+      "Swc": 0.2,
+      "Sor": 0.2,
+      "krw_max": 0.8,
+      "kro_max": 0.8,
+      "mu_w_cP": 0.5,
+      "mu_o_cP": 5.0,
+      "phi": 0.2,
+      "Pe_c": 22.0,
+      "lambda": 2.0,
+      "Nc": 0.1,
+      "Nc_role": "metadata/source semantics only; do not stack exp(Nc*xD) on Pollock kinematics"
+    },
+    "capillary_metric": "Use D9R/D9R1 conservative M_face = Delta(theta)/Delta(xD) directly in the conservative capillary operator; node M is sidecar only.",
+    "outlet_capillary_BC": "Stage-4 held-value identity row; NOT Neumann.",
+    "FMM_role": "auxiliary scalar connectivity control",
+    "ADV_role": "auxiliary directional Eulerian travel-time field",
+    "forbidden": [
+      "Pollock retracing for target fitting",
+      "FMM/ADV fitting to Pollock",
+      "case replacement/cherry-picking",
+      "streamline-level leakage across case partitions",
+      "OOD normalization leakage",
+      "using LOCKED_OOD_TEST for model selection",
+      "relabeling unavailable V15 later-time states"
+    ]
+  },
+  "surviving_C17_C18R_C19_authority_files_found": 18,
+  "authority_discovery_csv_sha256": "8cc87bcb1e883b63f49754be3e4182e678561175e920654126e2b5ca6bb4718a",
+  "geology_recipe_provenance": {
+    "status": "REPAIR_REQUIRED_BEFORE_FINAL_DISSERTATION_OR_FOUNDATION_MODEL_FREEZE",
+    "issue_1": "V16D-R3 Recipe 1.0 declared sequential Gaussian simulation, while D5/D6 executed a spectral Gaussian random-field sampler.",
+    "issue_2": "D5/D6 forced each Gaussian realization to exact sample mean 0 and std 1; this realization-specific normalization is a stochastic-model alteration.",
+    "policy": "Do not rewrite frozen R3. Create an explicit new versioned spectral ensemble recipe contract before final dissertation/foundation-model freeze.",
+    "downstream_D10C_physics_validity": "D10C certification remains valid for the actually generated spectral ensemble; the issue is algorithm/provenance naming and stochastic-recipe authority, not a demonstrated downstream flow/travel-time solver failure."
+  },
+  "gates": {
+    "D10C_manifest_SHA_exact": true,
+    "D10C_certified_status_bound": true,
+    "exact_24_cases": true,
+    "split_complete_cases_only": true,
+    "split_16_train_4_val_4_locked_OOD_test": true,
+    "partitions_disjoint": true,
+    "split_precedes_multicase_transport_generation": true,
+    "no_streamline_level_split": true,
+    "no_OOD_normalization_leakage": true,
+    "C17_semantics_frozen": true,
+    "Pollock_authoritative": true,
+    "C7_face_metric_primary_for_capillary": true,
+    "FMM_ADV_auxiliary_only": true,
+    "recipe_mismatch_explicitly_recorded": true,
+    "no_transport_executed": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-11A \u2014 Explicit Versioned Spectral Ensemble Recipe 1.1 Provenance Repair and Binding Audit"
+}

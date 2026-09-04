@@ -1,0 +1,60 @@
+{
+  "milestone": "V15-SG7E0R",
+  "status": "SG7E_GATE_AUTHORITY_RECONCILED",
+  "diagnosis": "CANONICAL_HISTORICAL_SG7E_GATE_REGISTRY_ESTABLISHED",
+  "frozen_input": {
+    "candidate": "P4_full_grid",
+    "sha256": "5c881046bf7b6bcfb411cffc9a332b6e4705e03f91a3a2438ecb58c2eedf9df5",
+    "changed": false
+  },
+  "reconciliation": {
+    "symbols_total": 34,
+    "authoritative_symbols": [
+      "CENTROID_GATE_CELLS",
+      "FOOTPRINT_IOU_GATE",
+      "PRIMARY_VOLUME_GATE",
+      "VERTICAL_EXTENT_GATE_LAYERS"
+    ],
+    "diagnostic_symbols": [
+      "CENTROID_DISTANCE_MAX_CELLS",
+      "CORE_THRESHOLD",
+      "COVERED_PLUME_FRACTION_MIN",
+      "PLUME_THRESHOLD",
+      "PLUME_VOLUME_GATE",
+      "SG7E_VOLUME_ERROR_GATE",
+      "SUPPORTED_COUNT_THRESHOLD",
+      "VERTICAL_EXTENT_DIFFERENCE_MAX_LAYERS",
+      "full_grid",
+      "raw_error"
+    ],
+    "superseded_symbols": [],
+    "unknown_symbols": [
+      "DEFAULT_DIAGNOSTIC_THRESHOLD",
+      "FOOTPRINT_IOU_MIN",
+      "HIGH_SUPPORT_THRESHOLD",
+      "IoU",
+      "N",
+      "ORIGINAL_REFERENCE_TOL",
+      "PLUME_VOLUME_REL_ERROR_MAX",
+      "S",
+      "SG7A_EQUIVALENCE_TOL",
+      "S_MAX",
+      "S_MIN",
+      "corrected_error",
+      "d",
+      "denominator",
+      "differences",
+      "error",
+      "errors",
+      "offsets",
+      "union",
+      "volume"
+    ],
+    "unresolved_threshold_conflicts": []
+  },
+  "canonical_registry_file": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7E0R\\V15SG7E0R_Canonical_SG7E_Gate_Registry.csv",
+  "thresholds_changed": false,
+  "deployment_correction_performed": false,
+  "recommendation": "Historical SG7E gate authority has been reconciled from actual source usage and provenance. Use only the canonical AUTHORITATIVE registry for SG7E1 pass/fail decisions. Preserve DIAGNOSTIC and SUPERSEDED records for reporting only. Do not change any recovered threshold.",
+  "next_milestone": "V15-SG7E1 \u2014 Frozen Full-Grid Deployment Validation"
+}

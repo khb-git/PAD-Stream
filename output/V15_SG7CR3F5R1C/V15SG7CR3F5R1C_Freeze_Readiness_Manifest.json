@@ -1,0 +1,18 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1C",
+  "status": "EXACT_ARRAY_SUPPORT_EXTENSION_VALIDATION_FAILED",
+  "diagnosis": "X08_FAILS_ONE_OR_MORE_INDEPENDENT_DEPLOYMENT_GATES",
+  "selected_experiment": "X08",
+  "candidate_frozen": false,
+  "independent_validation_pass": false,
+  "failed_authoritative_gates": [
+    "bias_500_1000",
+    "bias_1000_2000",
+    "bias_gt2000",
+    "tail_bias",
+    "material_positive_share_500_1000"
+  ],
+  "exact_support_fraction": 0.5000056447248766,
+  "frozen_relative_front_P90_diagnostic": 0.44365332463454504,
+  "next_milestone": "V15-SG7C-R3F5-R1CR \u2014 Exact-Array Independent Validation Failure Audit"
+}

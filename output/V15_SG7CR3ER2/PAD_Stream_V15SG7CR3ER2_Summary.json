@@ -1,0 +1,14 @@
+{
+  "milestone": "V15-SG7C-R3E-R2",
+  "status": "SINGLE_GATE_CALIBRATION_LIMITER_AUDIT_COMPLETE",
+  "incoming_diagnosis": "SINGLE_FINAL_GATE_LIMITER",
+  "dominant_gate": "front_error_reduction",
+  "diagnosis": "FRONT_STATE_CORRECTION_CAPACITY_LIMIT",
+  "required_front_error_reduction_fraction": 0.5,
+  "best_persisted_front_error_reduction_fraction": 0.0,
+  "front_error_reduction_shortfall": 0.5,
+  "best_candidate_other_primary_front_gates_pass": true,
+  "ideal_canonical_front_error_reduction_fraction": 0.9999979042061549,
+  "recommendation": "The best persisted R3E experiment preserves the other primary front gates but reaches only part of the required 50% front-shell error reduction. Keep the 50% gate unchanged. Design a front-state-focused residual calibration branch that increases local correction capacity without changing threshold-position, TOF-bias, or SG7B-11 contracts.",
+  "next_milestone": "V15-SG7C-R3F0 \u2014 Front-State-Focused Calibration Refinement Design"
+}

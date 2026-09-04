@@ -1,0 +1,63 @@
+{
+  "milestone": "V15-SG6",
+  "description": "Streamline time-of-flight and transport coordinates",
+  "status": "PASS",
+  "source": "Frozen V15-SG5 exact Pollock trajectories",
+  "porosity": 0.2,
+  "tof_definition": "tau = integral(phi / |u| ds)",
+  "pollock_time_interpretation": "SG5 used pore velocity u/phi, therefore cumulative Pollock time is physical streamline TOF.",
+  "normalized_transport_coordinate": "xi = tau / tau_end",
+  "common_transport_nodes": 201,
+  "statistics": {
+    "global": {
+      "streamlines": 1078,
+      "total_weight_m3_day": 714.2857142857109,
+      "tof_min_days": 134.67954012086182,
+      "tof_max_days": 3669.3825678172248,
+      "tof_mean_days": 463.3627938545692,
+      "tof_median_days": 344.5662131854729,
+      "tof_flux_weighted_mean_days": 463.81193253390853,
+      "tof_flux_weighted_p10_days": 212.5946010515079,
+      "tof_flux_weighted_p50_days": 345.43810184392373,
+      "tof_flux_weighted_p90_days": 827.6302133561985,
+      "path_length_mean_ft": 665.4834697261573,
+      "path_length_min_ft": 541.571461144502,
+      "path_length_max_ft": 1067.567292094091
+    },
+    "producers": {
+      "PROD_SW": {
+        "streamlines": 188,
+        "weight_m3_day": 120.6696437741277,
+        "tof_min_days": 244.62839702874712,
+        "tof_max_days": 2237.845483428718,
+        "tof_mean_days": 564.2649285082399,
+        "tof_flux_weighted_mean_days": 570.8955809766832
+      },
+      "PROD_SE": {
+        "streamlines": 214,
+        "weight_m3_day": 146.50018286271236,
+        "tof_min_days": 203.53744264345167,
+        "tof_max_days": 3669.3825678172248,
+        "tof_mean_days": 535.7013206158532,
+        "tof_flux_weighted_mean_days": 520.3230565093202
+      },
+      "PROD_NW": {
+        "streamlines": 304,
+        "weight_m3_day": 195.79200377316076,
+        "tof_min_days": 171.37238984248816,
+        "tof_max_days": 3312.127533114822,
+        "tof_mean_days": 435.81111431611976,
+        "tof_flux_weighted_mean_days": 439.15731165934636
+      },
+      "PROD_NE": {
+        "streamlines": 372,
+        "weight_m3_day": 251.3238838757101,
+        "tof_min_days": 134.67954012086182,
+        "tof_max_days": 2352.643811042406,
+        "tof_mean_days": 393.27049422522435,
+        "tof_flux_weighted_mean_days": 398.6630981612949
+      }
+    }
+  },
+  "next_milestone": "V15-SG7 - Buckley-Leverett transport on SGSim streamline TOF coordinates"
+}

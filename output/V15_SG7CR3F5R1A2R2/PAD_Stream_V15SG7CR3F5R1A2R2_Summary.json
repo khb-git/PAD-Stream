@@ -1,0 +1,11 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1A2R2",
+  "status": "RUNTIME_SUPPORT_TRANSFORMATION_NOT_YET_RECONCILED",
+  "diagnosis": "SUPPORTED_REQUIRED_DOES_NOT_CLOSE_AUTHORITATIVE_SUM",
+  "training_performed": false,
+  "support_extension_calibrated": false,
+  "gate_changed": false,
+  "exact_closure": false,
+  "recommendation": "The direct runtime supported_required field does not yet close the authoritative supported residual sum. Use the parsed source expression and best deterministic candidate table to reconstruct the exact transformation before any calibration.",
+  "next_milestone": "V15-SG7C-R3F5-R1A2R3 \u2014 Exact Supported-Residual Expression Reconstruction"
+}

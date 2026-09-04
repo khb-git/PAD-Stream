@@ -1,0 +1,348 @@
+{
+  "milestone": "V16E-1A",
+  "role": "Prospectively freeze source-faithful native-coordinate reproduction of the four final BL PI-RNN model definitions.",
+  "models": {
+    "INC": {
+      "phase": "incompressible",
+      "experiment_id": "V16E-BLREP-INC-001",
+      "source": "pi_rnn_stage1_incompressible.py",
+      "sha256": "98d492e1e4a84e9d2c3ab99a631bf7d21d011b65bdd599e0ab3192d947b36e58",
+      "teacher": "analytical Buckley-Leverett rarefaction + Welge shock/tangent construction",
+      "sequence_coordinate": "xi = xD / xD_star on the pre-breakthrough fan",
+      "input_sequence_features": [
+        "xi"
+      ],
+      "effective_conditioning": [
+        "no",
+        "nw",
+        "swi",
+        "sor",
+        "mu_w",
+        "mu_o",
+        "phi",
+        "tD",
+        "xD_star",
+        "Sw_star"
+      ],
+      "effective_param_dim": 10,
+      "legacy_condition_on_dim": 10,
+      "hidden": 64,
+      "layers": 2,
+      "seed": 1337,
+      "source_train_frac": 0.8,
+      "source_epochs": 400,
+      "source_batch_size": 8192,
+      "loss_weights": {
+        "data": 1.0,
+        "physics": 0.05,
+        "injector_bc": 5.0,
+        "tip_bc": 5.0,
+        "anchor": 10.0,
+        "monotonicity": 0.2,
+        "shape": 0.0
+      },
+      "native_metrics": [
+        "MSE",
+        "MAE",
+        "max_abs_error"
+      ],
+      "legacy_weight_basename": "pi_rnn_fan_multicase_corey.weights.h5",
+      "legacy_config_basename": "pi_rnn_fan_multicase_corey_config.json",
+      "dataset_semantics": "source-generated multi-case analytical fan profiles; six times per valid case; 80/20 shuffled profile split using seed 1337",
+      "nesting_or_limit_checks": [
+        "analytical shock/front consistency",
+        "saturation bounds",
+        "fan monotonicity where source physics requires it"
+      ]
+    },
+    "COMP": {
+      "phase": "compressible",
+      "experiment_id": "V16E-BLREP-COMP-001",
+      "source": "pi_rnn_stage2_compressible_godunov.py",
+      "sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+      "teacher": "conservative compressible Godunov Buckley-Leverett solver",
+      "sequence_coordinate": "xi fan coordinate with Stage-2 compressible travel-time/front transform",
+      "input_sequence_features": [
+        "xi"
+      ],
+      "effective_conditioning": [
+        "no",
+        "nw",
+        "swi",
+        "sor",
+        "mu_w",
+        "mu_o",
+        "phi",
+        "tD",
+        "xD_star",
+        "Sw_star",
+        "Nc"
+      ],
+      "effective_param_dim": 11,
+      "legacy_condition_on_dim": 11,
+      "hidden": 64,
+      "layers": 2,
+      "seed": 1337,
+      "source_train_frac": 0.8,
+      "source_epochs": 400,
+      "source_batch_size": 8192,
+      "loss_weights": {
+        "data": 1.0,
+        "physics": 0.05,
+        "injector_bc": 5.0,
+        "tip_bc": 5.0,
+        "anchor": 10.0,
+        "monotonicity": 0.2,
+        "shape": 0.0
+      },
+      "native_metrics": [
+        "MSE",
+        "MAE",
+        "max_abs_error",
+        "front_error"
+      ],
+      "legacy_weight_basename": "pi_rnn_fan_stage2_godunov.weights.h5",
+      "legacy_config_basename": "pi_rnn_fan_stage2_godunov_config.json",
+      "dataset_semantics": "Godunov targets over Nc grid [0, 0.05, 0.10, 0.20, 0.30]; 0.95 breakthrough horizon; six times; source uses 80/20 shuffled profile split with seed 1337",
+      "nesting_or_limit_checks": [
+        "Nc = 0 nests Stage-1 behavior",
+        "teacher comparison against conservative Godunov reference",
+        "saturation bounds"
+      ]
+    },
+    "CAP": {
+      "phase": "capillary",
+      "experiment_id": "V16E-BLREP-CAP-001",
+      "source": "pi_rnn_stage3_capillary.py",
+      "sha256": "dab8eade38ac08c819ac27d803c8f1bceca9722c4c37e82977dbef6e6232ae0f",
+      "teacher": "capillary Buckley-Leverett numerical teacher: explicit Godunov/upwind advection plus implicit capillary diffusion",
+      "sequence_coordinate": "native xD sequence on the deterministic conditioning grid; N_SEQ = 64 with dense output by interpolation",
+      "input_sequence_features": [
+        "xD",
+        "relative-front coordinate generated inside model: xD - xD_front"
+      ],
+      "base_conditioning_12": [
+        "no",
+        "nw",
+        "swi",
+        "sor",
+        "mu_w",
+        "mu_o",
+        "phi",
+        "tD",
+        "xD_front",
+        "Sw_star",
+        "inv_Pec",
+        "lambda_bc"
+      ],
+      "derived_conditioning": [
+        "log10(mu_w / mu_o)"
+      ],
+      "effective_conditioning": [
+        "no",
+        "nw",
+        "swi",
+        "sor",
+        "mu_w",
+        "mu_o",
+        "phi",
+        "tD",
+        "xD_front",
+        "Sw_star",
+        "inv_Pec",
+        "lambda_bc",
+        "log10(mu_w / mu_o)"
+      ],
+      "effective_param_dim": 13,
+      "legacy_condition_on_dim": 12,
+      "hidden": 64,
+      "layers": 2,
+      "seed": 1337,
+      "source_train_frac": 0.8,
+      "source_epochs": 2000,
+      "source_batch_size_runtime": 4096,
+      "trainconfig_batch_size_field": 16384,
+      "loss_weights": {
+        "data": 1.0,
+        "physics_PDE": 0.1,
+        "injector_bc": 5.0,
+        "outlet_bc": 5.0,
+        "anchor": 2.0,
+        "monotonicity": 5.0,
+        "mass": 20.0,
+        "curvature": 1e-06,
+        "shape": 0.5
+      },
+      "native_metrics": [
+        "profile MAE",
+        "profile max_abs_error",
+        "front_error",
+        "mass/inventory behavior",
+        "source diagnostic sweeps over Pe_c and lambda_bc"
+      ],
+      "legacy_weight_basename": "pi_rnn_stage3_capillary_v9.weights.h5",
+      "legacy_config_basename": "pi_rnn_stage3_capillary_v9_config.json",
+      "dataset_semantics": "Pe_c grid [10, 22, 50, 100], lambda_bc grid [1.5, 2, 3], source max_cases 2400, six times, native N_SEQ=64, 80/20 shuffled profile split with seed 1337",
+      "nesting_or_limit_checks": [
+        "sharp-capillary-limit evaluation is diagnostic/extrapolative, not a trained discontinuous target",
+        "fine-grid capillary teacher comparison",
+        "saturation bounds",
+        "mass/front consistency"
+      ]
+    },
+    "FULL": {
+      "phase": "full_compressible_capillary_godunov",
+      "experiment_id": "V16E-BLREP-FULL-001",
+      "source": "pi_rnn_stage4_full_godunov.py",
+      "sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+      "teacher": "full compressible-capillary conservative-Godunov transport with u_D(xD)=exp(Nc*xD) and implicit capillary diffusion",
+      "sequence_coordinate": "native xD sequence on deterministic conditioning grid; N_SEQ = 64",
+      "input_sequence_features": [
+        "xD",
+        "relative-front coordinate generated inside model: xD - xD_front"
+      ],
+      "base_conditioning_12": [
+        "no",
+        "nw",
+        "swi",
+        "sor",
+        "mu_w",
+        "mu_o",
+        "phi",
+        "tD",
+        "xD_front",
+        "Sw_star",
+        "inv_Pec",
+        "lambda_bc"
+      ],
+      "added_conditioning": [
+        "Nc",
+        "log10(mu_w / mu_o)"
+      ],
+      "effective_conditioning": [
+        "no",
+        "nw",
+        "swi",
+        "sor",
+        "mu_w",
+        "mu_o",
+        "phi",
+        "tD",
+        "xD_front",
+        "Sw_star",
+        "inv_Pec",
+        "lambda_bc",
+        "Nc",
+        "log10(mu_w / mu_o)"
+      ],
+      "effective_param_dim": 14,
+      "legacy_condition_on_dim": 12,
+      "hidden": 64,
+      "layers": 2,
+      "seed": 1337,
+      "source_train_frac": 0.8,
+      "source_epochs": 1000,
+      "source_batch_size_runtime": 4096,
+      "trainconfig_batch_size_field": 256,
+      "loss_weights": {
+        "data": 1.0,
+        "physics_PDE": 0.1,
+        "injector_bc": 5.0,
+        "outlet_bc": 5.0,
+        "anchor": 2.0,
+        "monotonicity": 5.0,
+        "mass": 20.0,
+        "curvature": 1e-06,
+        "shape": 0.5
+      },
+      "native_metrics": [
+        "profile MAE",
+        "profile max_abs_error",
+        "front_error",
+        "mass/inventory behavior",
+        "Nc accuracy sweep",
+        "breakthrough-shift check",
+        "Stage-3 nesting check at Nc=0"
+      ],
+      "legacy_weight_basename": "pi_rnn_stage4_full_godunov.weights.h5",
+      "legacy_config_basename": "pi_rnn_stage4_full_godunov_config.json",
+      "dataset_semantics": "Pe_c grid [10, 22, 50, 100], lambda_bc grid [1.5, 2, 3], Nc grid [0, 0.05, 0.1, 0.2], source max_cases 2400, six times, native N_SEQ=64, 80/20 shuffled profile split with seed 1337",
+      "nesting_or_limit_checks": [
+        "Nc = 0 nests Stage-3 capillary physics",
+        "full conservative-Godunov teacher comparison",
+        "breakthrough-shift consistency",
+        "saturation bounds",
+        "mass/front consistency"
+      ]
+    }
+  },
+  "source_semantic_fingerprints": {
+    "INC": {
+      "condition_on: Tuple[str, ...]": true,
+      "\"tD\", \"xD_star\", \"Sw_star\"": true,
+      "epochs: int = 400": true,
+      "seed: int = 1337": true,
+      "pi_rnn_fan_multicase_corey.weights.h5": true,
+      "train_frac=0.8": true
+    },
+    "COMP": {
+      "\"Nc\"": true,
+      "param_dim: int = 11": true,
+      "epochs: int = 400": true,
+      "seed: int = 1337": true,
+      "pi_rnn_fan_stage2_godunov.weights.h5": true,
+      "nc_vals = np.array([0.0, 0.05, 0.10, 0.20, 0.30]": true
+    },
+    "CAP": {
+      "PARAM_DIM_V7 = 13": true,
+      "N_SEQ = 64": true,
+      "append_logM": true,
+      "epochs: int = 2000": true,
+      "pi_rnn_stage3_capillary_v9.weights.h5": true,
+      "pec_vals = np.array([10.0, 22.0, 50.0, 100.0]": true
+    },
+    "FULL": {
+      "PARAM_DIM_S4 = 14": true,
+      "N_SEQ = 64": true,
+      "CONSERVATIVE_FORM = True": true,
+      "epochs: int = 1000": true,
+      "pi_rnn_stage4_full_godunov.weights.h5": true,
+      "nc_vals = np.array([0.0, 0.05, 0.1, 0.2]": true
+    }
+  },
+  "global_reproduction_rules": {
+    "training_order": [
+      "INC",
+      "COMP",
+      "CAP",
+      "FULL"
+    ],
+    "one_phase_at_a_time": true,
+    "native_coordinate_first": true,
+    "TOF_transformation_in_V16E1": false,
+    "source_native_split": "Preserve source-defined 80/20 shuffled profile split with seed 1337.",
+    "split_interpretation": "Reproduction/holdout split only. It is NOT an independently locked OOD/generalization test and must not be described as one.",
+    "teacher_authority": "Each phase is evaluated against its own source-defined analytical/numerical teacher.",
+    "metric_policy": "Run and archive the source-defined profile/front/mass/nesting diagnostics. Do not invent a numeric pass threshold in V16E-1A.",
+    "acceptance_threshold_status": "NOT_PRE_REGISTERED_IN_SOURCE_AND_NOT_INVENTED",
+    "minimum_non_numeric_acceptance_gates": [
+      "training/reproduction run completes without source modification",
+      "checkpoint and reproduction manifest are written and SHA-bound",
+      "predictions are finite",
+      "saturation remains within source-defined physical range mapping",
+      "source-defined teacher diagnostics execute",
+      "source-defined nesting/limit checks execute where applicable",
+      "no TOF transformation is used in native reproduction"
+    ],
+    "future_threshold_rule": "If a quantitative threshold is later required, freeze it prospectively before examining the evaluation set used to judge it.",
+    "historical_weight_claim_prohibited": true,
+    "new_checkpoint_label": "NEW V16E NATIVE-COORDINATE REPRODUCTION"
+  },
+  "firewall": {
+    "EXP_CS1_remains_closed": true,
+    "geology0029_remains_consumed": true,
+    "no_EXP_CS1_retraining": true,
+    "no_geology0029_reuse_as_new_test": true,
+    "V16D_is_later_comparison_baseline_only": true
+  }
+}

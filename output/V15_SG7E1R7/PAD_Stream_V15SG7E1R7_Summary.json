@@ -1,0 +1,23 @@
+{
+  "milestone": "V15-SG7E1R7",
+  "status": "SG7E_REFERENCE_OBJECT_PROVENANCE_CONFLICT",
+  "diagnosis": "MULTIPLE_PERSISTED_REFERENCE_KEYS_REACHED_THROUGH_OBJECT_FACTORY_LINEAGE",
+  "matched_upstream_keys": [
+    "times_days",
+    "plume_threshold",
+    "SG7A_raw",
+    "SG7A_corrected",
+    "PI_RNN_raw",
+    "cell_pore_volume_m3",
+    "PI_RNN_corrected",
+    "PI_RNN_raw_grid_saturation",
+    "SG7A_raw_grid_saturation",
+    "PI_RNN_corrected_grid_saturation",
+    "SG7A_corrected_grid_saturation"
+  ],
+  "reference_selected": false,
+  "candidate_changed": false,
+  "threshold_changed": false,
+  "recommendation": "Do not evaluate SG7E gates. Object/factory tracing reaches multiple persisted physics keys. Audit only the final constructor/factory branch and field-consumption semantics that distinguish them; do not select by frozen-candidate performance.",
+  "next_milestone": "V15-SG7E1R8 \u2014 Final Object-Branch / Reference-Key Consumption Audit"
+}

@@ -1,0 +1,21 @@
+{
+  "milestone": "V15-SG7E1R2",
+  "status": "SG7E_HISTORICAL_REFERENCE_TRUTH_NOT_PERSISTED",
+  "diagnosis": "NO_DISCOVERED_15X50X50_ARRAY_HAS_VALID_REFERENCE_TRUTH_SEMANTICS",
+  "plume_threshold": 0.5,
+  "distinct_arrays": 7,
+  "reference_eligible_arrays": 0,
+  "semantic_role_counts": {
+    "COVERAGE_SUPPORT_MASK": 2,
+    "STREAMLINE_COUNT_DIAGNOSTIC": 2,
+    "COVERAGE_WEIGHT_DIAGNOSTIC": 2,
+    "UNKNOWN": 1,
+    "REFERENCE_SATURATION_TRUTH": 0,
+    "REFERENCE_PLUME_MASK": 0,
+    "CANDIDATE_OR_PREDICTION": 0
+  },
+  "candidate_changed": false,
+  "threshold_changed": false,
+  "recommendation": "Do not evaluate SG7E gates and do not repurpose a coverage/support diagnostic as truth. The historical SG7E acceptance workflow appears not to have persisted a valid 15x50x50 reference truth/plume array among the discovered artifacts. Trace the historical SG7E source that generated the acceptance metrics and reconstruct its reference input from the original upstream physics artifact.",
+  "next_milestone": "V15-SG7E1R3 \u2014 Historical SG7E Reference Input Reconstruction Audit"
+}

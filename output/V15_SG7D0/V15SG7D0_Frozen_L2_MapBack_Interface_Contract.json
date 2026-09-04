@@ -1,0 +1,46 @@
+{
+  "milestone": "V15-SG7D0",
+  "status": "FROZEN_L2_MAPBACK_INTERFACE_CONTRACT_READY",
+  "diagnosis": "SG7D1_CONSERVATIVE_MAPBACK_INPUTS_AVAILABLE",
+  "frozen_candidate": {
+    "candidate": "L2",
+    "file": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7CR3F5R1F3\\frozen_candidate\\V15SG7CR3F5R1F3_L2_Frozen_Deployment_Candidate.npz",
+    "sha256": "63540f125b5124974ad3348103a9c7347aa9d6484240721d64f8a3efe66397b0",
+    "streamline_count": 2662,
+    "xi_nodes": 201
+  },
+  "streamline_geometry": {
+    "xyz_available": true,
+    "xyz_source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7CR\\SG7CR_FRONT_AWARE_FROZEN_PIRNN_STREAMLINE_DEPLOYMENT.npz",
+    "xyz_key": "xyz_m",
+    "tof_matrix_available": true,
+    "tof_matrix_source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7CR\\SG7CR_FRONT_AWARE_FROZEN_PIRNN_STREAMLINE_DEPLOYMENT.npz",
+    "tof_matrix_key": "tau_s",
+    "weights_available": true,
+    "weights_source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7CR2\\V15SG7CR2_Residual_Streamline_Bias_Audit.npz",
+    "weights_key": "flow_weights_m3_s"
+  },
+  "target_grid": {
+    "shape": [
+      15,
+      50,
+      50
+    ],
+    "array_order": [
+      "k",
+      "j",
+      "i"
+    ],
+    "cell_dimensions_ft": [
+      20.0,
+      20.0,
+      4.0
+    ]
+  },
+  "mapback_performed": false,
+  "frozen_candidate_changed": false,
+  "streamline_geometry_changed": false,
+  "SG7E_threshold_changed": false,
+  "recommendation": "The frozen L2 transport state, SG6 streamline geometry, TOF coordinates, streamline weights, and 15x50x50 SGSim grid contract are jointly available. Proceed to SG7D1 conservative streamline-to-grid accumulation. Keep the R1F3 artifact immutable and do not introduce an unweighted averaging rule.",
+  "next_milestone": "V15-SG7D1 \u2014 Conservative Frozen-L2 Streamline-to-Grid Map-Back"
+}

@@ -1,0 +1,69 @@
+{
+  "milestone": "V15-SG7E-R",
+  "authoritative_source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11\\PAD_Stream_V15SG7E_FullGrid_Plume_Coverage_Validation.py",
+  "authoritative_workspace": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11",
+  "SG7D_R_mapback": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7DR\\SG7DR_FRONT_AWARE_CONSERVATIVE_GRID_MAPBACK.npz",
+  "SG7D_R_authoritative_summary": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7DR\\PAD_Stream_V15SG7D_Summary.json",
+  "input_replacements": {
+    "SG7D_FILE": {
+      "old": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11\\output\\V15_SG7D\\SG7D_CONSERVATIVE_GRID_MAPBACK.npz",
+      "new": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7DR\\SG7DR_FRONT_AWARE_CONSERVATIVE_GRID_MAPBACK.npz"
+    },
+    "SG7D_SUMMARY_FILE": {
+      "old": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11\\output\\V15_SG7D\\PAD_Stream_V15SG7D_Summary.json",
+      "new": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7DR\\PAD_Stream_V15SG7D_Summary.json"
+    }
+  },
+  "output_replacements": {
+    "OUTPUT_DIR": {
+      "old": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7ER",
+      "new": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7ER"
+    },
+    "PLUME_METRICS_FILE": {
+      "old": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11\\output\\V15_SG7E\\V15SG7E_Plume_Metrics.csv",
+      "new": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7ER\\V15SG7E_Plume_Metrics.csv"
+    },
+    "COVERAGE_BY_LAYER_FILE": {
+      "old": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11\\output\\V15_SG7E\\V15SG7E_Coverage_By_Layer.csv",
+      "new": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7ER\\V15SG7E_Coverage_By_Layer.csv"
+    },
+    "PROJECTION_METRICS_FILE": {
+      "old": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11\\output\\V15_SG7E\\V15SG7E_Projection_Dependence.csv",
+      "new": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7ER\\V15SG7E_Projection_Dependence.csv"
+    },
+    "SUMMARY_FILE": {
+      "old": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11\\output\\V15_SG7E\\PAD_Stream_V15SG7E_Summary.json",
+      "new": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7ER\\PAD_Stream_V15SG7E_Summary.json"
+    },
+    "DATABASE_FILE": {
+      "old": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11\\output\\V15_SG7E\\V15SG7E_Plume_Coverage_Validation.npz",
+      "new": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7ER\\V15SG7E_Plume_Coverage_Validation.npz"
+    }
+  },
+  "original_plume_metrics": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2_SG5C_seed_11x11\\output\\V15_SG7E\\V15SG7E_Plume_Metrics.csv",
+  "front_aware_plume_metrics": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7ER\\V15SG7E_Plume_Metrics.csv",
+  "100_day_original": {
+    "time_days": 100.0,
+    "footprint_IoU": 0.9984,
+    "strong_plume_IoU": 0.9945951163015153,
+    "core_IoU": 0.9868366927190456,
+    "plume_volume_relative_error": 0.18240580167113338,
+    "centroid_displacement_cells": 0.12857925554922095,
+    "vertical_extent_difference_layers": 0.0
+  },
+  "100_day_front_aware": {
+    "time_days": 100.0,
+    "footprint_IoU": 0.9984,
+    "strong_plume_IoU": 0.9961000451234449,
+    "core_IoU": 0.9844694887300715,
+    "plume_volume_relative_error": 0.18152293867255231,
+    "centroid_displacement_cells": 0.09445324480084748,
+    "vertical_extent_difference_layers": 0.0
+  },
+  "100_day_absolute_improvement": 0.0008828629985810632,
+  "100_day_relative_improvement": 0.004840103716507942,
+  "authoritative_summary_pass_marker": false,
+  "wrapper_validation_passed": false,
+  "status": "FRONT_AWARE_PLUME_VALIDATION_REQUIRES_DIAGNOSIS",
+  "next_milestone": "V15-SG7E-R1 \u2014 Front-Aware Full-Grid Validation Regression Audit"
+}

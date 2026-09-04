@@ -1,0 +1,84 @@
+{
+  "milestone": "V16D-24A",
+  "contract": "V16D_SG3_CONTROL_ADAPTER_1.0",
+  "source": {
+    "SG3_path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG3_FiveSpot_Pressure_Solve.py",
+    "SG3_sha256": "d3ba7b7be45636f6d3ee254fd6cb95268cef9e6f35e85d53b5793596cb22b14d"
+  },
+  "authorized_inputs": {
+    "CO2_injection_mass_rate_tonnes_per_day": {
+      "levels": [
+        350.0,
+        500.0,
+        650.0
+      ],
+      "conversion": "reservoir volume rate = mass rate / frozen reference CO2 density; preserve SG3 unit conversion and completion allocation exactly"
+    },
+    "producer_BHP_psi": {
+      "levels": [
+        1800.0,
+        2000.0,
+        2200.0
+      ],
+      "application": "same BHP value applied to all four producers exactly where frozen SG3 defines producer BHP"
+    }
+  },
+  "immutable_physics": [
+    "SG2 transmissibility equations",
+    "SG3 matrix assembly and sparse solve",
+    "gravity treatment",
+    "reference fluid properties including CO2 density",
+    "well locations/completions",
+    "well-index algebra/skin/radius",
+    "external no-flow boundaries",
+    "SG4 conservative Darcy-flux reconstruction"
+  ],
+  "execution_policy": [
+    "parameterize only the exact source-bound rate and BHP variables",
+    "do not text-replace arbitrary numeric literals",
+    "do not alter frozen SG3 source file on disk",
+    "create a derived V16D execution copy or runtime namespace adapter",
+    "validate 500 t/day + 2000 psi reproduces frozen reference before new controls",
+    "pilot one TRAIN geology/control before 36-case batch",
+    "no locked OOD response generation in pilot"
+  ],
+  "source_assignment_candidates": [
+    {
+      "line": 88,
+      "text": "TONNE_TO_KG = 1000.0"
+    },
+    {
+      "line": 121,
+      "text": "INITIAL_PRESSURE_PSI = 2500.0"
+    },
+    {
+      "line": 122,
+      "text": "PRODUCER_BHP_PSI = 2000.0"
+    },
+    {
+      "line": 125,
+      "text": "PRODUCER_BHP_PA = PRODUCER_BHP_PSI * PSI_TO_PA"
+    },
+    {
+      "line": 132,
+      "text": "CO2_MASS_RATE_TONNES_DAY = 500.0"
+    },
+    {
+      "line": 133,
+      "text": "CO2_DENSITY_KG_M3 = 700.0"
+    },
+    {
+      "line": 135,
+      "text": "CO2_MASS_RATE_KG_S = ("
+    },
+    {
+      "line": 321,
+      "text": "    q = WI * (Pcell - Pbhp)"
+    },
+    {
+      "line": 957,
+      "text": "        label=\"Producer BHP\","
+    }
+  ],
+  "D24_evidence_sha256": "775c70feb85d6124a14a71ffb923c8c784814e14e84d6c42ca7408d5dc1a1b22"
+}

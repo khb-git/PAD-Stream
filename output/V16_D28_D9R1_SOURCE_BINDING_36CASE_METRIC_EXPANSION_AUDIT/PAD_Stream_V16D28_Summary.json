@@ -1,0 +1,28 @@
+{
+  "milestone": "V16D-28",
+  "status": "V16D_D9R1_EXACT_METRIC_SOURCE_BOUND_36CASE_D28R1_EXECUTION_AUTHORIZED",
+  "D9R1_sha256": "5df7178f316fc1fa94ce49eb40ee8318f804bce4d420a17dbc5cd79ab59ab8d4",
+  "report_sha256": "6b63fba918cd695a6be28d9b12184743b6627332b49047424989ae8fd6085b73",
+  "gates": {
+    "D27_summary_exists": true,
+    "D27_summary_SHA_exact": true,
+    "D9R1_source_exists": true,
+    "D27_status_authorizes_metric_expansion": true,
+    "source_has_TH_np_linspace_0_1_201_": true,
+    "source_has_mf_dth_dx": true,
+    "source_has_mn_0_mf_0_": true,
+    "source_has_mn_1_mf_1_": true,
+    "source_has_mn_1_1_5_mf_1_mf_1_": true,
+    "source_has_invf_dx_dth": true,
+    "source_has_M_face_dtheta_dxD_mf": true,
+    "source_has_M_node_sidecar_dtheta_dxD_mn": true,
+    "source_has_dxD_dtheta_face_invf": true,
+    "source_has_NO_CLIPPING_EPSILON_FLOOR_SMOOTHING_FITTING_CASE": true,
+    "primary_metric_is_face_ratio": true,
+    "reciprocal_is_dx_over_dtheta": true,
+    "node_metric_sidecar_only": true,
+    "future_capillary_uses_face_metric_directly": true,
+    "no_metric_fitting_or_smoothing": true
+  },
+  "next_milestone": "V16D-28-R1 \u2014 Execute exact D9R1 conservative face-metric construction across all 36 control-space Foundation Cases"
+}

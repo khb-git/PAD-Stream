@@ -1,0 +1,8 @@
+{
+  "milestone": "V16A-R6A",
+  "status": "V16A_SG3_PRESSURE_REGENERATION_RECIPE_FINAL_BOUND",
+  "diagnosis": "SG3_PRESSURE_SOLVER_MATRIX_RHS_AND_POSTSOLVE_DATAFLOW_FORM_ONE_SOURCE_AUTHENTIC_REGENERATION_RECIPE",
+  "recipe_ready": true,
+  "recommendation": "The SG3 blocker is cleared. Source-authentic regeneration may now be authorized only as DERIVED_V16_FROM_FROZEN_V15. Proceed to controlled regeneration of pressure, SG4 fluxes, derived velocities, and producer identity without mutating or relabelling frozen V15 artifacts.",
+  "next_milestone": "V16A-R7 \u2014 Controlled Source-Authentic Foundation Component Regeneration"
+}

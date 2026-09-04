@@ -1,0 +1,32 @@
+{
+  "milestone": "V16D-31B",
+  "status": "V16D_VALIDATION_9CASE_STAGE4_TRANSPORT_GENERATION_CONTRACT_FROZEN_RESTARTABLE_VALIDATION_EXECUTION_AUTHORIZED",
+  "contract_sha256": "f03525d1c53234e8b2773684c5e1ab2751e72655441f6d884e93270e888b6e01",
+  "gates": {
+    "D31_SHA_exact": true,
+    "D31A_summary_SHA_exact": true,
+    "D31A_manifest_SHA_exact": true,
+    "C17_SHA_exact": true,
+    "D28_36_metrics_present": true,
+    "D31A_18_TRAIN_certified": true,
+    "validation_exactly_9": true,
+    "validation_geology0028_only": true,
+    "TRAIN_not_regenerated": true,
+    "locked_OOD_0029_untouched": true,
+    "same_nine_times": true,
+    "same_Y_shape": true,
+    "same_C17_physics": true,
+    "Pollock_primary": true,
+    "Mface_primary": true,
+    "theta_adapter_only": true,
+    "restartable_case_local": true,
+    "no_deduplication": true,
+    "no_training": true,
+    "no_tuning": true,
+    "no_validation_normalization_stats": true,
+    "no_selection": true,
+    "no_threshold_relaxation": true,
+    "no_transport_executed_in_D31B": true
+  },
+  "next_milestone": "V16D-31B-R1 \u2014 Restartable validation geology0028 nine-case Stage-4 transport generation"
+}

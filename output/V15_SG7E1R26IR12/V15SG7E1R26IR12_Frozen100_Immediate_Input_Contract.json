@@ -1,0 +1,419 @@
+{
+  "milestone": "V15-SG7E1R26I-R12",
+  "status": "FROZEN100_IMMEDIATE_INPUT_DIRECT_MODEL_PREDICT_CONFLICT",
+  "diagnosis": "MULTIPLE_HISTORICAL_FROZEN100_CREATORS_DIRECTLY_CONSUME_FROZEN_MODEL_PREDICTIONS",
+  "source_priority": [
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": "3864",
+      "kind": "ASSIGNMENT",
+      "expression": "frozen_model.predict(\n        deployment[\n            \"X100\"\n        ],\n        batch_size=BATCH_SIZE,\n        verbose=0,\n    )[\n        :,\n        :,\n        0,\n    ]",
+      "provenance_score": 1220,
+      "provenance_reasons": "direct_frozen_model_predict;late_SG7B_frozen_source"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "line": "1095",
+      "kind": "ASSIGNMENT",
+      "expression": "frozen_model.predict(\n        deployment[\"X100\"], batch_size=BATCH_SIZE, verbose=0\n    )[:, :, 0]",
+      "provenance_score": 1200,
+      "provenance_reasons": "direct_frozen_model_predict;SG7B_frozen_source"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F5R1A2_Authoritative_Serialization_Runtime.py",
+      "line": "855",
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[idx100]",
+      "provenance_score": 880,
+      "provenance_reasons": "direct_time_slice_from_frozen_array;authoritative_serialization_runtime"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F5R1C_Independent_Exact_Array_Support_Extension_Validation.py",
+      "line": "918",
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[\n        idx100\n    ]",
+      "provenance_score": 860,
+      "provenance_reasons": "direct_time_slice_from_frozen_array;independent_exact_array_validation"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3DR_Frozen_Deployment_Calibration_Contract_Repair.py",
+      "line": "263",
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[idx100]",
+      "provenance_score": 700,
+      "provenance_reasons": "direct_time_slice_from_frozen_array"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3ER2_Single_Gate_Calibration_Limiter_Audit.py",
+      "line": "251",
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[idx100]",
+      "provenance_score": 700,
+      "provenance_reasons": "direct_time_slice_from_frozen_array"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F0_Front_State_Focused_Calibration_Refinement_Design.py",
+      "line": "190",
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[idx100]",
+      "provenance_score": 700,
+      "provenance_reasons": "direct_time_slice_from_frozen_array"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F1_Controlled_Front_State_Focused_Calibration_Refinement.py",
+      "line": "344",
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[idx100]",
+      "provenance_score": 700,
+      "provenance_reasons": "direct_time_slice_from_frozen_array"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F2A_Front_Correction_Geometry_Topology_Audit.py",
+      "line": "718",
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[idx100]",
+      "provenance_score": 700,
+      "provenance_reasons": "direct_time_slice_from_frozen_array"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F3_Front_Local_Residual_Basis_Design.py",
+      "line": "288",
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[idx100]",
+      "provenance_score": 700,
+      "provenance_reasons": "direct_time_slice_from_frozen_array"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F4_Controlled_Front_Local_Residual_Basis_Calibration.py",
+      "line": "491",
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[idx100]",
+      "provenance_score": 700,
+      "provenance_reasons": "direct_time_slice_from_frozen_array"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F4R2R_Front_Reference_Crossing_Metric_Reconciliation_Audit.py",
+      "line": "1011",
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[\n            idx100\n        ]",
+      "provenance_score": 700,
+      "provenance_reasons": "direct_time_slice_from_frozen_array"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F4R_Front_Local_Basis_Outcome_Audit.py",
+      "line": "855",
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[idx100]",
+      "provenance_score": 700,
+      "provenance_reasons": "direct_time_slice_from_frozen_array"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F5R1A2R_Runtime_Shape_Audit.py",
+      "line": "855",
+      "kind": "ASSIGNMENT",
+      "expression": "frozen[idx100]",
+      "provenance_score": 700,
+      "provenance_reasons": "direct_time_slice_from_frozen_array"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": "4540",
+      "kind": "SERIALIZATION",
+      "expression": "frozen100.astype(\n                    np.float32\n                )",
+      "provenance_score": 520,
+      "provenance_reasons": "frozen100_serialization;late_SG7B_frozen_source"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F5R1C_Independent_Exact_Array_Support_Extension_Validation.py",
+      "line": "1324",
+      "kind": "SERIALIZATION",
+      "expression": "frozen100.astype(np.float32)",
+      "provenance_score": 460,
+      "provenance_reasons": "frozen100_serialization;independent_exact_array_validation"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F5R1F2C_Independent_Crossing_Local_Candidate_Validation.py",
+      "line": "893",
+      "kind": "SERIALIZATION",
+      "expression": "frozen.astype(np.float32)",
+      "provenance_score": 300,
+      "provenance_reasons": "frozen100_serialization"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F5R1F2CRR_Precision_Aware_Independent_Validation_Contract_Repair.py",
+      "line": "1377",
+      "kind": "SERIALIZATION",
+      "expression": "frozen.astype(\n                np.float32\n            )",
+      "provenance_score": 300,
+      "provenance_reasons": "frozen100_serialization"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7E1R26IR10_Bound_SG7B10_100_Day_Runtime_Control.py",
+      "line": "386",
+      "kind": "SERIALIZATION",
+      "expression": "states[\"frozen100\"]",
+      "provenance_score": 300,
+      "provenance_reasons": "frozen100_serialization"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7E1R26IR11_SG7B10_Raw100_Serialization_Postprocessing_Closure_Audit.py",
+      "line": "433",
+      "kind": "ASSIGNMENT",
+      "expression": "np.asarray(db[\"frozen100\"])",
+      "provenance_score": 0,
+      "provenance_reasons": ""
+    }
+  ],
+  "immediate_input_trace": [
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": "3864",
+      "kind": "ASSIGNMENT",
+      "frozen100_expression": "frozen_model.predict(\n        deployment[\n            \"X100\"\n        ],\n        batch_size=BATCH_SIZE,\n        verbose=0,\n    )[\n        :,\n        :,\n        0,\n    ]",
+      "immediate_dependencies": "BATCH_SIZE;deployment;frozen_model",
+      "provenance_score": 1220,
+      "provenance_reasons": "direct_frozen_model_predict;late_SG7B_frozen_source"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "line": "1095",
+      "kind": "ASSIGNMENT",
+      "frozen100_expression": "frozen_model.predict(\n        deployment[\"X100\"], batch_size=BATCH_SIZE, verbose=0\n    )[:, :, 0]",
+      "immediate_dependencies": "BATCH_SIZE;deployment;frozen_model",
+      "provenance_score": 1200,
+      "provenance_reasons": "direct_frozen_model_predict;SG7B_frozen_source"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F5R1A2_Authoritative_Serialization_Runtime.py",
+      "line": "855",
+      "kind": "ASSIGNMENT",
+      "frozen100_expression": "frozen[idx100]",
+      "immediate_dependencies": "frozen;idx100",
+      "provenance_score": 880,
+      "provenance_reasons": "direct_time_slice_from_frozen_array;authoritative_serialization_runtime"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F5R1C_Independent_Exact_Array_Support_Extension_Validation.py",
+      "line": "918",
+      "kind": "ASSIGNMENT",
+      "frozen100_expression": "frozen[\n        idx100\n    ]",
+      "immediate_dependencies": "frozen;idx100",
+      "provenance_score": 860,
+      "provenance_reasons": "direct_time_slice_from_frozen_array;independent_exact_array_validation"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3DR_Frozen_Deployment_Calibration_Contract_Repair.py",
+      "line": "263",
+      "kind": "ASSIGNMENT",
+      "frozen100_expression": "frozen[idx100]",
+      "immediate_dependencies": "frozen;idx100",
+      "provenance_score": 700,
+      "provenance_reasons": "direct_time_slice_from_frozen_array"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3ER2_Single_Gate_Calibration_Limiter_Audit.py",
+      "line": "251",
+      "kind": "ASSIGNMENT",
+      "frozen100_expression": "frozen[idx100]",
+      "immediate_dependencies": "frozen;idx100",
+      "provenance_score": 700,
+      "provenance_reasons": "direct_time_slice_from_frozen_array"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F0_Front_State_Focused_Calibration_Refinement_Design.py",
+      "line": "190",
+      "kind": "ASSIGNMENT",
+      "frozen100_expression": "frozen[idx100]",
+      "immediate_dependencies": "frozen;idx100",
+      "provenance_score": 700,
+      "provenance_reasons": "direct_time_slice_from_frozen_array"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F1_Controlled_Front_State_Focused_Calibration_Refinement.py",
+      "line": "344",
+      "kind": "ASSIGNMENT",
+      "frozen100_expression": "frozen[idx100]",
+      "immediate_dependencies": "frozen;idx100",
+      "provenance_score": 700,
+      "provenance_reasons": "direct_time_slice_from_frozen_array"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F2A_Front_Correction_Geometry_Topology_Audit.py",
+      "line": "718",
+      "kind": "ASSIGNMENT",
+      "frozen100_expression": "frozen[idx100]",
+      "immediate_dependencies": "frozen;idx100",
+      "provenance_score": 700,
+      "provenance_reasons": "direct_time_slice_from_frozen_array"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F3_Front_Local_Residual_Basis_Design.py",
+      "line": "288",
+      "kind": "ASSIGNMENT",
+      "frozen100_expression": "frozen[idx100]",
+      "immediate_dependencies": "frozen;idx100",
+      "provenance_score": 700,
+      "provenance_reasons": "direct_time_slice_from_frozen_array"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F4_Controlled_Front_Local_Residual_Basis_Calibration.py",
+      "line": "491",
+      "kind": "ASSIGNMENT",
+      "frozen100_expression": "frozen[idx100]",
+      "immediate_dependencies": "frozen;idx100",
+      "provenance_score": 700,
+      "provenance_reasons": "direct_time_slice_from_frozen_array"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F4R2R_Front_Reference_Crossing_Metric_Reconciliation_Audit.py",
+      "line": "1011",
+      "kind": "ASSIGNMENT",
+      "frozen100_expression": "frozen[\n            idx100\n        ]",
+      "immediate_dependencies": "frozen;idx100",
+      "provenance_score": 700,
+      "provenance_reasons": "direct_time_slice_from_frozen_array"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F4R_Front_Local_Basis_Outcome_Audit.py",
+      "line": "855",
+      "kind": "ASSIGNMENT",
+      "frozen100_expression": "frozen[idx100]",
+      "immediate_dependencies": "frozen;idx100",
+      "provenance_score": 700,
+      "provenance_reasons": "direct_time_slice_from_frozen_array"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F5R1A2R_Runtime_Shape_Audit.py",
+      "line": "855",
+      "kind": "ASSIGNMENT",
+      "frozen100_expression": "frozen[idx100]",
+      "immediate_dependencies": "frozen;idx100",
+      "provenance_score": 700,
+      "provenance_reasons": "direct_time_slice_from_frozen_array"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": "4540",
+      "kind": "SERIALIZATION",
+      "frozen100_expression": "frozen100.astype(\n                    np.float32\n                )",
+      "immediate_dependencies": "frozen100;np",
+      "provenance_score": 520,
+      "provenance_reasons": "frozen100_serialization;late_SG7B_frozen_source"
+    }
+  ],
+  "model_predict_lineage": [
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B16_Controlled_Front_Preserving_TOF_Refinement.py",
+      "line": 3839,
+      "symbol": "frozen_model",
+      "expression": "tf.keras.models.load_model(\n        SG7B11_FROZEN_MODEL\n    )",
+      "contains_load_model": true
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7B13_Controlled_TOF_Conditioned_Residual_Bias_Refinement.py",
+      "line": 1086,
+      "symbol": "frozen_model",
+      "expression": "tf.keras.models.load_model(SG7B11_FROZEN_MODEL)",
+      "contains_load_model": true
+    }
+  ],
+  "time_slice_lineage": [
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F5R1A2_Authoritative_Serialization_Runtime.py",
+      "frozen_line": 792,
+      "frozen_expression": "np.asarray(\n        db[\"deployment_pirnn\"],\n        dtype=float,\n    )",
+      "idx100_line": 843,
+      "idx100_expression": "int(\n        np.argmin(\n            np.abs(\n                times_days\n                -\n                100.0\n            )\n        )\n    )"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F5R1C_Independent_Exact_Array_Support_Extension_Validation.py",
+      "frozen_line": 743,
+      "frozen_expression": "np.asarray(\n        runtime[frozen_key],\n        dtype=float,\n    )",
+      "idx100_line": 872,
+      "idx100_expression": "int(\n            np.argmin(\n                np.abs(\n                    times - 100.0\n                )\n            )\n        )"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3DR_Frozen_Deployment_Calibration_Contract_Repair.py",
+      "frozen_line": 230,
+      "frozen_expression": "np.asarray(\n        db[\"deployment_pirnn\"],\n        dtype=float,\n    )",
+      "idx100_line": 257,
+      "idx100_expression": "int(np.argmin(np.abs(times_days - 100.0)))"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3ER2_Single_Gate_Calibration_Limiter_Audit.py",
+      "frozen_line": 217,
+      "frozen_expression": "np.asarray(\n        db[\"deployment_pirnn\"],\n        dtype=float,\n    )",
+      "idx100_line": 237,
+      "idx100_expression": "int(\n        np.argmin(\n            np.abs(\n                times_days\n                -\n                100.0\n            )\n        )\n    )"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F0_Front_State_Focused_Calibration_Refinement_Design.py",
+      "frozen_line": 181,
+      "frozen_expression": "np.asarray(db[\"deployment_pirnn\"], dtype=float)",
+      "idx100_line": 187,
+      "idx100_expression": "int(np.argmin(np.abs(times_days - 100.0)))"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F1_Controlled_Front_State_Focused_Calibration_Refinement.py",
+      "frozen_line": 877,
+      "frozen_expression": "np.asarray(\n        db[\"deployment_pirnn\"],\n        dtype=float,\n    )",
+      "idx100_line": 341,
+      "idx100_expression": "int(np.argmin(np.abs(times_days - 100.0)))"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F2A_Front_Correction_Geometry_Topology_Audit.py",
+      "frozen_line": 665,
+      "frozen_expression": "np.asarray(\n        db[\"deployment_pirnn\"],\n        dtype=float,\n    )",
+      "idx100_line": 709,
+      "idx100_expression": "int(\n        np.argmin(\n            np.abs(\n                times_days - 100.0\n            )\n        )\n    )"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F3_Front_Local_Residual_Basis_Design.py",
+      "frozen_line": 255,
+      "frozen_expression": "np.asarray(\n        db[\"deployment_pirnn\"],\n        dtype=float,\n    )",
+      "idx100_line": 280,
+      "idx100_expression": "int(\n        np.argmin(\n            np.abs(\n                times_days - 100.0\n            )\n        )\n    )"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F4_Controlled_Front_Local_Residual_Basis_Calibration.py",
+      "frozen_line": 1546,
+      "frozen_expression": "np.asarray(\n        db[\"deployment_pirnn\"],\n        dtype=float,\n    )",
+      "idx100_line": 484,
+      "idx100_expression": "int(\n        np.argmin(\n            np.abs(times_days - 100.0)\n        )\n    )"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F4R2R_Front_Reference_Crossing_Metric_Reconciliation_Audit.py",
+      "frozen_line": 878,
+      "frozen_expression": "np.asarray(\n        db[\n            \"deployment_pirnn\"\n        ],\n        dtype=float,\n    )",
+      "idx100_line": 943,
+      "idx100_expression": "int(\n        np.argmin(\n            np.abs(\n                times_days\n                -\n                100.0\n            )\n        )\n    )"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F4R_Front_Local_Basis_Outcome_Audit.py",
+      "frozen_line": 792,
+      "frozen_expression": "np.asarray(\n        db[\"deployment_pirnn\"],\n        dtype=float,\n    )",
+      "idx100_line": 843,
+      "idx100_expression": "int(\n        np.argmin(\n            np.abs(\n                times_days\n                -\n                100.0\n            )\n        )\n    )"
+    },
+    {
+      "source": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG7CR3F5R1A2R_Runtime_Shape_Audit.py",
+      "frozen_line": 792,
+      "frozen_expression": "np.asarray(\n        db[\"deployment_pirnn\"],\n        dtype=float,\n    )",
+      "idx100_line": 843,
+      "idx100_expression": "int(\n        np.argmin(\n            np.abs(\n                times_days\n                -\n                100.0\n            )\n        )\n    )"
+    }
+  ],
+  "constraints": {
+    "training_performed": false,
+    "model_parameters_changed": false,
+    "model_predict_executed": false,
+    "X100_changed": false,
+    "threshold_changed": false,
+    "source_selected_by_performance": false,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false
+  },
+  "recommendation": "Audit only the direct frozen-model creator lineages using model artifact hashes, deployment workspace identities, and parent milestone provenance. Do not choose by numerical closeness.",
+  "next_milestone": "V15-SG7E1R26I-R13 \u2014 Direct Frozen100 Creator Lineage Conflict Audit"
+}

@@ -1,0 +1,23 @@
+{
+  "milestone": "V16E-1B2E-XPU",
+  "B2D_comparison_sha256": "e956f5eb82b34b5af9a085674d8c0ae34da666d65b0c478d37fa71af2ce974fc",
+  "frozen_observations": {
+    "overall_RMSE_percent_improvement_400_to_800": 10.91704842996427,
+    "overall_MAE_percent_improvement_400_to_800": 11.962211611805728,
+    "holdout_Nc030_over_Nc000_400": 2.248350958328951,
+    "holdout_Nc030_over_Nc000_800": 2.49081266487008,
+    "case1_full_Nc030_over_Nc000_400": 2.3249750868261194,
+    "case1_full_Nc030_over_Nc000_800": 2.2780149383591652,
+    "case1_front_excluded_Nc030_over_Nc000_400": 2.433533620478226,
+    "case1_front_excluded_Nc030_over_Nc000_800": 2.3828026923702668
+  },
+  "source_architecture_observation": "Frozen Stage-2 build_model repeats the raw p_vec across sequence nodes and concatenates it directly with xi before the LSTM. Nc is the 11th/final conditioner. No explicit conditioner normalization is present in build_model.",
+  "scientific_interpretation": "Increasing training duration from 400 to 800 epochs improved absolute accuracy but did not remove the relative high-Nc weakness. Undertraining alone is therefore not a sufficient explanation. A plausible next hypothesis is unfavorable Nc input scaling in the raw conditioner; this remains a hypothesis, not a conclusion.",
+  "not_concluded": [
+    "Nc input scaling is definitely the root cause",
+    "the Stage-2 PDE residual is wrong",
+    "the Godunov teacher is wrong",
+    "the LSTM architecture is inadequate",
+    "loss weights are definitely wrong"
+  ]
+}

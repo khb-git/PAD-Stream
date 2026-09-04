@@ -1,0 +1,37 @@
+{
+  "case_id": "V16D_Foundation_Case_0029_R350_B1800",
+  "partition": "LOCKED_OOD_TEST",
+  "status": "CERTIFIED",
+  "metric_sha256": "bdc5c4e1496a79bd68be2dfee2905434bfc7982cd3b8fff7dad1fb7d38e37cee",
+  "artifact_sha256": "42379eca6af7e53ae585b42cec6a5dc7056c07598bcd87686ee0e69b3aee40d1",
+  "steps": 36542,
+  "elapsed_seconds": 1878.2585678100586,
+  "S_min": 0.20099999999999896,
+  "S_max": 0.799,
+  "adv_max": 1.2073607630162797e-17,
+  "cap_max": 8.881784197001252e-15,
+  "preclip_max": 0.0,
+  "temporal_negative_fraction": 0.0,
+  "spatial_positive_fraction": 0.0,
+  "gates": {
+    "finite": true,
+    "shape": true,
+    "bounds": true,
+    "injector": true,
+    "undershoot": true,
+    "adv_conservation": true,
+    "cap_residual": true,
+    "preclip": true,
+    "temporal": true,
+    "spatial": true
+  },
+  "ood_firewall": {
+    "no_training": true,
+    "no_tuning": true,
+    "no_OOD_normalization": true,
+    "no_selection": true,
+    "no_threshold_relaxation": true,
+    "no_deduplication": true,
+    "no_aggregate_OOD_target_statistics": true
+  }
+}

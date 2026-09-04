@@ -1,0 +1,39 @@
+{
+  "milestone": "V16D-6",
+  "status": "V16D_CASE0002_0025_ENSEMBLE_GEOLOGIES_GENERATED_CERTIFIED_READY_FOR_MULTI_CASE_FLOW_PIPELINE",
+  "generated_count": 24,
+  "manifest": {
+    "path": "output\\V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\\V16D6_Ensemble_Geology_Manifest.csv",
+    "sha256": "4ca8e3eba35994e4a5e38a5379fb34015e3935ff108f876d6671740f54269fa6"
+  },
+  "transform": {
+    "historical_source_sha256": "98a85f5bc1c1bab3a460e8a2efb2acfe3c589fd1a52f8798990f9484ca0ccbb1",
+    "V16D_execution": "V16D_FIXED_NORMAL_CDF_50_1000_MD_V1"
+  },
+  "diversity_diagnostic": {
+    "pairwise_gaussian_corr_min": -0.08462809224321574,
+    "median": 0.0014609932357917063,
+    "max": 0.09241536458098645
+  },
+  "gates": {
+    "D5A_bound": true,
+    "D4_registry_exact": true,
+    "R3_transform_source_exact": true,
+    "all_24_registry_entries_attempted": true,
+    "all_24_generated": true,
+    "case_ids_unchanged": true,
+    "seeds_unchanged": true,
+    "all_shapes_contract": true,
+    "all_finite": true,
+    "K_support": true,
+    "KzKh_0p10": true,
+    "phi_0p20": true,
+    "no_cherrypicking": true,
+    "no_seed_replacement": true,
+    "no_per_case_transform_fit": true,
+    "no_flow": true,
+    "no_transport": true,
+    "no_training": true
+  },
+  "next_milestone": "V16D-7 \u2014 Multi-Case SG2/SG3/SG4 Pressure-Flux Physics Pipeline Execution and Certification"
+}

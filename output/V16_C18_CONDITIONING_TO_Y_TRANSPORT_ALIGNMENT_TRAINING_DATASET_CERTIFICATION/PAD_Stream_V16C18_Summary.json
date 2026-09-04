@@ -1,0 +1,45 @@
+{
+  "milestone": "V16C-18",
+  "status": "V16C_CONDITIONING_TO_Y_TRANSPORT_ALIGNMENT_CERTIFICATION_BLOCKED",
+  "diagnosis": "ONE_OR_MORE_ALIGNMENT_OR_PROVENANCE_GATES_FAILED",
+  "samples": 9702,
+  "streamlines": 1078,
+  "nodes": 201,
+  "target_days": [
+    30.0,
+    60.0,
+    100.0,
+    150.0,
+    250.0,
+    365.0,
+    500.0,
+    750.0,
+    1000.0
+  ],
+  "X_sequence_required_shape": [
+    9702,
+    201,
+    7
+  ],
+  "X_sequence_optional_shape": [
+    9702,
+    201,
+    4
+  ],
+  "X_static_required_shape": [
+    9702,
+    1
+  ],
+  "Y_transport_shape": [
+    9702,
+    201
+  ],
+  "theta_alignment_max_abs": 2.8610229629855155e-08,
+  "pollock_tof_normalization_max_abs": 2.8610229629855155e-08,
+  "eta_mapping_max_abs": 0.0,
+  "artifact_sha256": "7656544fec41a141a774f1b8315f0065bb9f3d7d7c9d7097889a724b4e416273",
+  "split_selected": false,
+  "training_authorized": false,
+  "recommendation": "Do not train. Audit only failed C18 gates without reordering by numerical similarity or refitting normalization.",
+  "next_milestone": "V16C-18R \u2014 Alignment Residual Audit"
+}

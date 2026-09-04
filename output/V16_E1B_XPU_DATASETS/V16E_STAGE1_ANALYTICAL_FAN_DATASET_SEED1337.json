@@ -1,0 +1,26 @@
+{
+  "artifact": "V16E Stage-1 analytical fan dataset cache",
+  "source_path": "pi_rnn_stage1_incompressible.py",
+  "source_sha256": "98d492e1e4a84e9d2c3ab99a631bf7d21d011b65bdd599e0ab3192d947b36e58",
+  "seed": 1337,
+  "num_times": 6,
+  "t_min_days": 100.0,
+  "parameter_case_count": 25920,
+  "profile_count": 155520,
+  "xi_shape": [
+    155520,
+    112,
+    1
+  ],
+  "Sw_shape": [
+    155520,
+    112,
+    1
+  ],
+  "p10_shape": [
+    155520,
+    10
+  ],
+  "build_seconds": 26.26177740097046,
+  "dataset_sha256": "3495f933a377928254465d60ed5452bcb9fb0fdf6a9507efab94edd4abee6e98"
+}

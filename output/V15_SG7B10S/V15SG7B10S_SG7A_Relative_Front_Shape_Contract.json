@@ -1,0 +1,127 @@
+{
+  "milestone": "V15-SG7B-10S",
+  "description": "SG7A-relative / E0-relative front-shape preservation contract for front-aware SG7B refinement candidates",
+  "training_performed": false,
+  "model_parameters_changed": false,
+  "architecture_changed": false,
+  "original_SG7B7R_gate_relaxed": false,
+  "SG7E_threshold_changed": false,
+  "candidate_promoted": false,
+  "incoming_diagnosis": "PREEXISTING_MONOTONICITY_METRIC_FLOOR",
+  "design_principle": "A front-aware candidate must materially improve the diagnosed front-recovery defect while not degrading local front-shape discrepancy by more than 10% relative to the accepted E0-to-SG7A baseline. All original SG7B-7R freeze gates remain mandatory.",
+  "shape_relative_allowance": 0.1,
+  "front_improvement_contract": {
+    "minimum_recovered_fronts": 744,
+    "maximum_conditioned_threshold_gap": 0.0005331237279179135,
+    "maximum_100d_profile_L1": 0.004500329422914474
+  },
+  "shape_preservation_gates": [
+    {
+      "gate": "violation_fraction",
+      "reference": "E0 frozen",
+      "reference_value": 0.1763744201961828,
+      "allowance": 0.1,
+      "operator": "<=",
+      "candidate_limit": 0.19401186221580108,
+      "interpretation": "Candidate may not increase the E0-to-SG7A local monotonicity discrepancy by more than 10%."
+    },
+    {
+      "gate": "positive_dS_P99",
+      "reference": "E0 frozen",
+      "reference_value": 0.0003621405363082886,
+      "allowance": 0.1,
+      "operator": "<=",
+      "candidate_limit": 0.0003983545899391175,
+      "interpretation": "Candidate positive-increment P99 may not exceed 110% of the frozen baseline."
+    },
+    {
+      "gate": "positive_dS_MAX",
+      "reference": "E0 frozen",
+      "reference_value": 0.00036485493183135986,
+      "allowance": 0.1,
+      "operator": "<=",
+      "candidate_limit": 0.0004013404250144959,
+      "interpretation": "Candidate maximum positive increment may not exceed 110% of the frozen baseline."
+    },
+    {
+      "gate": "gradient_MAE_vs_SG7A",
+      "reference": "E0-to-SG7A",
+      "reference_value": 0.10899823306580703,
+      "allowance": 0.1,
+      "operator": "<=",
+      "candidate_limit": 0.11989805637238773,
+      "interpretation": "Candidate front-band gradient discrepancy may not degrade by more than 10% relative to E0."
+    },
+    {
+      "gate": "front_state_L1_vs_SG7A",
+      "reference": "E0-to-SG7A",
+      "reference_value": 0.013568690656260587,
+      "allowance": 0.1,
+      "operator": "<=",
+      "candidate_limit": 0.014925559721886647,
+      "interpretation": "Candidate front-band state error may not degrade by more than 10% relative to E0."
+    },
+    {
+      "gate": "front_TV_MAE_vs_SG7A",
+      "reference": "E0-to-SG7A",
+      "reference_value": 0.001994347394318799,
+      "allowance": 0.1,
+      "operator": "<=",
+      "candidate_limit": 0.002193782133750679,
+      "interpretation": "Candidate front-band total-variation discrepancy may not degrade by more than 10% relative to E0."
+    }
+  ],
+  "E2_screen": [
+    {
+      "gate": "violation_fraction",
+      "candidate_value": 0.18568930119382557,
+      "limit": 0.19401186221580108,
+      "ratio_to_E0_reference": 1.0528131062729036,
+      "pass": true
+    },
+    {
+      "gate": "positive_dS_P99",
+      "candidate_value": 0.00025827422738075253,
+      "limit": 0.0003983545899391175,
+      "ratio_to_E0_reference": 0.7131878414210026,
+      "pass": true
+    },
+    {
+      "gate": "positive_dS_MAX",
+      "candidate_value": 0.0002599060535430908,
+      "limit": 0.0004013404250144959,
+      "ratio_to_E0_reference": 0.7123545027567899,
+      "pass": true
+    },
+    {
+      "gate": "gradient_MAE_vs_SG7A",
+      "candidate_value": 0.10769529484640211,
+      "limit": 0.11989805637238773,
+      "ratio_to_E0_reference": 0.9880462445788615,
+      "pass": true
+    },
+    {
+      "gate": "front_state_L1_vs_SG7A",
+      "candidate_value": 0.010139320333094604,
+      "limit": 0.014925559721886647,
+      "ratio_to_E0_reference": 0.7472585667959294,
+      "pass": true
+    },
+    {
+      "gate": "front_TV_MAE_vs_SG7A",
+      "candidate_value": 0.0021875992999499582,
+      "limit": 0.002193782133750679,
+      "ratio_to_E0_reference": 1.0968998210550813,
+      "pass": true
+    }
+  ],
+  "E2_front_improvement": {
+    "recovered_fronts": 949,
+    "truth_fronts": 992,
+    "conditioned_threshold_gap": 0.00039032765093349666,
+    "profile_L1_100d": 0.003531355132111311
+  },
+  "status": "E2_PASSES_RELATIVE_FRONT_SHAPE_SCREEN",
+  "recommendation": "E2 satisfies the SG7A/E0-relative front-shape preservation contract while retaining the required front-recovery improvement. Do not freeze E2 here. Proceed to independent SG7B-11 validation against the complete original SG7B-7R state, mass, regional, and canonical-physics contract.",
+  "next_milestone": "V15-SG7B-11 \u2014 Independent Front-Aware Candidate Validation"
+}

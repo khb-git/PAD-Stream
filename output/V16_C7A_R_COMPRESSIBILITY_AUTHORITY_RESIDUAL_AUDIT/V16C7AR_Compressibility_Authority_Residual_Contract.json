@@ -1,0 +1,17 @@
+{
+  "milestone": "V16C-7A-R",
+  "status": "V16C_COMPRESSIBILITY_AUTHORITY_SEPARATED_POLLOCK_KINEMATICS_PRIMARY",
+  "diagnosis": "C7A_STAGE2_FAILURE_WAS_A_PROVENANCE_OVERCLAIM_STAGE2_CONSUMES_NC_BUT_DOES_NOT_LOCALLY_DERIVE_THE_DENSITY_RATIO_CLOSURE",
+  "corrected_provenance": {
+    "Stage2": "Consumes Nc and implements conservative uD=exp(Nc xD); local density-ratio derivation absent.",
+    "Stage4": "Full-physics lineage and density-ratio closure authority as established by passed C7A gate.",
+    "Pollock_TOF": "Primary frozen kinematic authority."
+  },
+  "prohibited": [
+    "claim Stage2 locally derives Nc from density unless source says so",
+    "stack exp(Nc xD) as second velocity multiplier on Pollock TOF",
+    "invent/fitted PVT closure"
+  ],
+  "recommendation": "Accept C7A with corrected provenance: Stage 2 proves Nc-parameterized conservative variable velocity; Stage 4 remains the full-physics source authority for the density-ratio closure. Preserve Pollock TOF as kinematic authority and do not stack legacy exp(Nc xD). Proceed to C8; do not generate Y yet.",
+  "next_milestone": "V16C-8 \u2014 Full BL/CCUS Streamline Transport Target Semantics Contract"
+}

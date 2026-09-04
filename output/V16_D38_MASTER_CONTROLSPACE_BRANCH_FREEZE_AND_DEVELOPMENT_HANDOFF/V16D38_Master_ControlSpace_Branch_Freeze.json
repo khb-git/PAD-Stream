@@ -1,0 +1,95 @@
+{
+  "milestone": "V16D-38",
+  "branch": "V16D_CONTROLSPACE_EXP_CS1",
+  "role": "Master immutable freeze of the completed Version 16D control-space recurrent Stage-4 branch.",
+  "state": {
+    "branch_complete": true,
+    "EXP_CS1_closed": true,
+    "geology0029_consumed_as_final_OOD": true,
+    "further_EXP_CS1_tuning": "PROHIBITED",
+    "new_learning_requires_new_independent_locked_test": true
+  },
+  "final_authority": {
+    "D37R3_source": {
+      "path": "PAD_Stream_V16D37_R3_EXP_CS1_Final_Experiment_Package_Freeze_and_V16_Architecture_Theory_Integration_SHA_Correction.py",
+      "sha256": "90c3471d66e194a6803f3a8af5156687f145c06de406a06aa72f9219b235ee3b"
+    },
+    "D37R3_manifest": {
+      "path": "output\\V16_D37_R3_EXP_CS1_FINAL_PACKAGE_AND_V16_THEORY_INTEGRATION_SHA_CORRECTION\\V16D37R3_EXP_CS1_Final_Experiment_Manifest.json",
+      "sha256": "fdc294a4d454b8b5405e591e8fbffb3cc6d269b0be07a4204c5a968f278b99e1"
+    },
+    "D37R3_theory": {
+      "path": "output\\V16_D37_R3_EXP_CS1_FINAL_PACKAGE_AND_V16_THEORY_INTEGRATION_SHA_CORRECTION\\V16D37R3_EXP_CS1_Architecture_Theory_Integration.md",
+      "sha256": "a83193b201bd694e5f536e612d355f8aa622ee4711ade13e18bdca2a6b0fbc14"
+    },
+    "D37R3_summary": {
+      "path": "output\\V16_D37_R3_EXP_CS1_FINAL_PACKAGE_AND_V16_THEORY_INTEGRATION_SHA_CORRECTION\\PAD_Stream_V16D37R3_Summary.json",
+      "sha256": "23d12e76e8ea4010a350b602388f9de598088257882a3d36516a33ae0cd0e3df"
+    }
+  },
+  "frozen_model": {
+    "experiment": "EXP-CS1",
+    "architecture_sha256": "4304519d7c41b231f300535cef5daacd2525e395413addc883e66e7310096920",
+    "checkpoint_sha256": "dc586da13e9fd7ce0b51cc661ba73edc8ab0f897d2f961112944504b13d1ed13",
+    "best_epoch": 73,
+    "input_sequence_shape": [
+      201,
+      9
+    ],
+    "model": "LSTM64 -> LSTM64 -> TimeDistributed Dense(1,sigmoid) -> Rescaling[0.2,0.8]"
+  },
+  "scientific_firewall": {
+    "TRAIN_geologies": [
+      "0026",
+      "0027"
+    ],
+    "VALIDATION_geology": "0028",
+    "LOCKED_OOD_geology": "0029",
+    "controls": {
+      "rates_tpd": [
+        350,
+        500,
+        650
+      ],
+      "producer_bhp_psi": [
+        1800,
+        2000,
+        2200
+      ]
+    },
+    "generalization_unit": "complete Foundation Case = geology realization + rate/BHP pair",
+    "D31D_summary_sha256": "a98000f0456f2307fb2f5a6921b1975bdf462dfde43af5fa65de9e5474c676d3"
+  },
+  "final_OOD": {
+    "MSE": 1.793586989075e-05,
+    "RMSE": 0.004235076137538,
+    "MAE": 0.001733692782761,
+    "RMSE_over_validation": 0.97204,
+    "MAE_over_validation": 0.98773,
+    "interpretation": "Aggregate final-OOD RMSE and MAE are slightly below the frozen validation reference."
+  },
+  "PAD_Stream_architecture_status": {
+    "SGSim_heterogeneous_geology": "COMPLETE / FROZEN BASIS",
+    "finite_volume_pressure": "PHYSICS AUTHORITY PRESENT",
+    "conservative_Darcy_fluxes": "PHYSICS AUTHORITY PRESENT",
+    "exact_Pollock_streamlines": "AUTHORITATIVE KINEMATICS",
+    "TOF_transport_coordinates": "PRESENT",
+    "control_space_recurrent_Stage4": "COMPLETE / FROZEN AS EXP-CS1",
+    "ADV": "AUXILIARY",
+    "FMM": "NOT EXP-CS1 PREDICTOR",
+    "M_face": "PHYSICS SIDECAR NOT PREDICTOR"
+  },
+  "supported_claim": "Within the frozen EXP-CS1 experiment, recurrent Stage-4 transport transfers from TRAIN geologies 0026-0027, through validation geology0028, to one independently locked unseen geology0029 across all nine rate/BHP controls without aggregate RMSE or MAE degradation relative to validation.",
+  "claim_boundary": "The branch does not establish universal geological generalization across arbitrary reservoir realizations or field models.",
+  "execution_in_D38": {
+    "TensorFlow_import": false,
+    "model_load": false,
+    "checkpoint_load": false,
+    "NPZ_load": false,
+    "OOD_reopen": false,
+    "inference": false,
+    "training": false,
+    "tuning": false,
+    "archival_and_roadmap_only": true
+  }
+}

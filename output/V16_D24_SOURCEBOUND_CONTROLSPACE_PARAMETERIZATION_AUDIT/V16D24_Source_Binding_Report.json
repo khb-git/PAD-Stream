@@ -1,0 +1,44 @@
+{
+  "milestone": "V16D-24",
+  "sources": {
+    "SG2": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG2_Anisotropic_Transmissibility.py",
+      "sha256": "8dfc3485682830ef854178720d32050b6b2e9d25befa7ee9669993df1e544416"
+    },
+    "SG3": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG3_FiveSpot_Pressure_Solve.py",
+      "sha256": "d3ba7b7be45636f6d3ee254fd6cb95268cef9e6f35e85d53b5793596cb22b14d"
+    },
+    "SG4": {
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V15SG4_Conservative_Darcy_Fluxes.py",
+      "sha256": "86a1c88ffc35033314ae6598ade23f0bebfa709f62cbe2cbef1830cd607e0af9"
+    }
+  },
+  "gates": {
+    "D23_SHA_exact": true,
+    "SG2_unique_exact_source": true,
+    "SG3_unique_exact_source": true,
+    "SG4_unique_exact_source": true,
+    "SG3_rate_evidence_found": true,
+    "SG3_BHP_evidence_found": true,
+    "no_unproven_parameter_mutation": true
+  },
+  "decision": "CONTROL_PARAMETERIZATION_BINDING_REQUIRED_BEFORE_36CASE_FLOW_EXECUTION",
+  "authorized_controls": {
+    "injection_tonnes_per_day": [
+      350.0,
+      500.0,
+      650.0
+    ],
+    "producer_BHP_psi": [
+      1800.0,
+      2000.0,
+      2200.0
+    ]
+  },
+  "prohibitions": [
+    "do not rewrite SG2/SG3/SG4 from memory",
+    "do not fit controls by numerical closeness",
+    "do not run locked geology responses before a versioned control adapter is frozen"
+  ]
+}

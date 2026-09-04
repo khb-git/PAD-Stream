@@ -1,0 +1,33 @@
+{
+  "milestone": "V15-SG7E1R9",
+  "status": "SG7E_REFERENCE_ARTIFACT_INSTANCE_CONFLICT",
+  "diagnosis": "MULTIPLE_DISTINCT_SG7A_CORRECTED_ARTIFACT_IDENTITIES_REMAIN",
+  "reference_key": "SG7A_corrected",
+  "plume_threshold": {
+    "value": 0.5,
+    "changed": false
+  },
+  "artifact": {
+    "resolved": false,
+    "resolution": "MULTIPLE_DISTINCT_ARTIFACT_INSTANCES_REMAIN",
+    "path": null,
+    "array_sha256": null,
+    "shape": null
+  },
+  "time_selection": {
+    "resolved": false,
+    "resolution": "HISTORICAL_TIME_INDEX_NOT_YET_UNIQUELY_RESOLVED",
+    "index": null,
+    "time_days": null
+  },
+  "constraints": {
+    "candidate_performance_used": false,
+    "threshold_changed": false,
+    "posthoc_alignment": false,
+    "deployment_correction_performed": false,
+    "reference_field_reconstructed": false,
+    "reference_field_frozen": false
+  },
+  "recommendation": "Do not reconstruct the reference field yet. Multiple numerically distinct artifacts contain SG7A_corrected. Resolve which artifact instance belongs to the authoritative SG7E consumer lineage using file/source/manifest provenance.",
+  "next_milestone": "V15-SG7E1R10 \u2014 SG7A Corrected Artifact Instance Provenance Audit"
+}

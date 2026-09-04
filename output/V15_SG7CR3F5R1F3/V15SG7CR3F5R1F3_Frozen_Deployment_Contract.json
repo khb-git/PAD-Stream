@@ -1,0 +1,35 @@
+{
+  "contract_name": "PAD-Stream V15-SG7C Frozen L2 Deployment Transport Contract",
+  "freeze_milestone": "V15-SG7C-R3F5-R1F3",
+  "candidate": "L2",
+  "candidate_status": "SG7C_CROSSING_LOCAL_CANDIDATE_FROZEN",
+  "authoritative_numerical_artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7CR3F5R1F3\\frozen_candidate\\V15SG7CR3F5R1F3_L2_Frozen_Deployment_Candidate.npz",
+  "authoritative_sha256": "63540f125b5124974ad3348103a9c7347aa9d6484240721d64f8a3efe66397b0",
+  "transport_model": "Frozen SG7B-11 PI-RNN plus frozen deployment-side correction chain",
+  "support_candidate": "X08",
+  "crossing_local_candidate": "L2",
+  "physics_front_reference": "SG7A / canonical truth",
+  "frozen_model_reference": "SG7B-11 regression diagnostic",
+  "front_protection": {
+    "type": "crossing-distance guard",
+    "threshold": 0.21,
+    "half_width": 0.029999971389770508,
+    "candidate": "L2"
+  },
+  "precision_closure": {
+    "basis": "R1F2CR persisted float32 ULP provenance",
+    "gamma_envelope": 2.9802322387695312e-08,
+    "state_envelope": 1.1920928955078125e-07
+  },
+  "invariants": {
+    "SG7B11_weights_immutable": true,
+    "B4_checkpoint_immutable": true,
+    "X08_support_geometry_immutable": true,
+    "L2_gamma_immutable": true,
+    "crossing_guard_immutable": true,
+    "physics_gates_immutable": true,
+    "TOF_gates_immutable": true
+  },
+  "downstream_use": "Use frozen L2 state for streamline-to-grid map-back and SG7E validation.",
+  "next_milestone": "V15-SG7D \u2014 Frozen L2 Streamline-to-Grid Map-Back Integration"
+}

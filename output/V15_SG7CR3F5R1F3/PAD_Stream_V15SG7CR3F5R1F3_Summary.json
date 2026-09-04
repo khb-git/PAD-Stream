@@ -1,0 +1,16 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1F3",
+  "status": "SG7C_CROSSING_LOCAL_CANDIDATE_FROZEN",
+  "diagnosis": "L2_FROZEN_AS_AUTHORITATIVE_DEPLOYMENT_TRANSPORT_CORRECTION",
+  "candidate": "L2",
+  "candidate_frozen": true,
+  "frozen_numerical_sha256": "63540f125b5124974ad3348103a9c7347aa9d6484240721d64f8a3efe66397b0",
+  "exact_support_fraction": 0.5000056447248766,
+  "selected_guard_half_width": 0.029999971389770508,
+  "training_performed": false,
+  "model_weights_changed": false,
+  "candidate_arrays_changed": false,
+  "gate_changed": false,
+  "recommendation": "The independently validated L2 candidate is now frozen with a complete hash-based provenance chain. Treat the frozen R1F3 numerical artifact and freeze manifest as authoritative for downstream deployment. Do not retrain, recalibrate, replace the crossing guard, or modify the accepted transport gates. Proceed to downstream map-back / SG7E validation using the frozen L2 state.",
+  "next_milestone": "V15-SG7D \u2014 Frozen L2 Streamline-to-Grid Map-Back Integration"
+}

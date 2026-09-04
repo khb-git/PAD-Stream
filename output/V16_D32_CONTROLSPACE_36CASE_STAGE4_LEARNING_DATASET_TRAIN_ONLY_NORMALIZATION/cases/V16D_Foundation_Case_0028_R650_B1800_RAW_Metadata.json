@@ -1,0 +1,66 @@
+{
+  "case_id": "V16D_Foundation_Case_0028_R650_B1800",
+  "geology": "0028",
+  "injection_rate_tpd": 650,
+  "producer_bhp_psi": 1800,
+  "partition": "VALIDATION",
+  "shape": [
+    9,
+    1078,
+    201,
+    9
+  ],
+  "feature_order": [
+    "xi",
+    "pollock_tau_hat",
+    "adv_tau_hat",
+    "log10_Kh",
+    "log10_Kz_over_Kh",
+    "porosity",
+    "pressure_z",
+    "target_time_hat",
+    "target_eta_sequence"
+  ],
+  "control_encoding": "implicit through frozen flow/pressure/Pollock/ADV/eta fields; no direct rate/BHP channels added",
+  "sampling": "containing Cartesian cell at each frozen Pollock XYZ node",
+  "sources": {
+    "D23_geology": {
+      "path": "output\\V16_D23_FRESH_RECIPE1P1_GEOLOGIES_0026_0029\\V16D_Geology_Case_0028_Recipe1p1.npz",
+      "sha256": "db78d9b164859b136213a8df4a0ad03b85198957e3272fccbb33bbc83093c0f8",
+      "keys": [
+        "Kx_mD",
+        "Ky_mD",
+        "Kz_mD",
+        "porosity"
+      ]
+    },
+    "D25_flow": {
+      "path": "output\\V16_D25_36CASE_CONTROLSPACE_SG2_SG3_SG4_FLOW_ENSEMBLE\\cases\\V16D_Foundation_Case_0028_R650_B1800_Flow.npz",
+      "sha256": "ff2dddc0528d43ccec900ee3e1ae5f08c6c2be2f22d53b6c6b678a43b16faee6",
+      "keys": [
+        "Kx_mD",
+        "Ky_mD",
+        "Kz_mD",
+        "pressure_psi"
+      ]
+    },
+    "D27_Pollock": {
+      "path": "output\\V16_D27_36CASE_SG6_STYLE_201NODE_POLLOCK_TRANSPORT_COORDINATES\\cases\\V16D_Foundation_Case_0028_R650_B1800_SG6_201Node_Transport.npz",
+      "sha256": "b7173947c99f074ac67cce312ee7b207cdcdc2d2752d21692d66320ca3db5a67",
+      "keys": [
+        "xi",
+        "transport_xyz_m",
+        "pollock_tau_s",
+        "pollock_tau_end_s"
+      ]
+    },
+    "D29_ADV": {
+      "path": "output\\V16_D29_R1_EXACT_D10C_DERIVED_FMM_ADV_36CASE_CONTROLSPACE_EXECUTION\\cases\\V16D_Foundation_Case_0028_R650_B1800_FMM_ADV_Pollock_Hierarchy.npz",
+      "sha256": "113bd31ec979244927c33e78260c7f6f1431102b06290cd673d6d0ffc2644018",
+      "key": "tau_adv_s",
+      "sampling_mode": "frozen containing-cell sample at Pollock XYZ"
+    }
+  },
+  "raw_artifact": "output\\V16_D32_CONTROLSPACE_36CASE_STAGE4_LEARNING_DATASET_TRAIN_ONLY_NORMALIZATION\\cases\\V16D_Foundation_Case_0028_R650_B1800_Predictors_RAW.npz",
+  "raw_sha256": "4cc6805490f9da0651ff59e2c00db1e88557bfb169e31822f859c1d35d18fedd"
+}

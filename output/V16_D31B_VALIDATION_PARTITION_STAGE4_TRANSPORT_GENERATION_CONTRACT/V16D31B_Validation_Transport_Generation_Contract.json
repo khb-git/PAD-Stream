@@ -1,0 +1,69 @@
+{
+  "milestone": "V16D-31B",
+  "status": "V16D_VALIDATION_9CASE_STAGE4_TRANSPORT_GENERATION_CONTRACT_FROZEN_RESTARTABLE_VALIDATION_EXECUTION_AUTHORIZED",
+  "contract": {
+    "version": "V16D_VALIDATION_TRANSPORT_GENERATION_CONTRACT_1.0",
+    "partition": "VALIDATION",
+    "geology": "0028",
+    "cases": 9,
+    "rates_tpd": [
+      350,
+      500,
+      650
+    ],
+    "producer_bhp_psi": [
+      1800,
+      2000,
+      2200
+    ],
+    "target_days": [
+      30,
+      60,
+      100,
+      150,
+      250,
+      365,
+      500,
+      750,
+      1000
+    ],
+    "Y_shape_each": [
+      9,
+      1078,
+      201
+    ],
+    "physics": "exact C17 kernels; D28-R1 M_face; Pollock authoritative",
+    "theta_schema": "canonical (201,) broadcast adapter only",
+    "restartability": "case-local SHA-certified artifact/summary; certified cases skip",
+    "validation_policy": "generation only; no fitting/tuning/normalization-stat estimation/selection/architecture or threshold change",
+    "locked_OOD_policy": "0029 untouched",
+    "case_independence": "all nine independently; no BHP deduplication"
+  },
+  "gates": {
+    "D31_SHA_exact": true,
+    "D31A_summary_SHA_exact": true,
+    "D31A_manifest_SHA_exact": true,
+    "C17_SHA_exact": true,
+    "D28_36_metrics_present": true,
+    "D31A_18_TRAIN_certified": true,
+    "validation_exactly_9": true,
+    "validation_geology0028_only": true,
+    "TRAIN_not_regenerated": true,
+    "locked_OOD_0029_untouched": true,
+    "same_nine_times": true,
+    "same_Y_shape": true,
+    "same_C17_physics": true,
+    "Pollock_primary": true,
+    "Mface_primary": true,
+    "theta_adapter_only": true,
+    "restartable_case_local": true,
+    "no_deduplication": true,
+    "no_training": true,
+    "no_tuning": true,
+    "no_validation_normalization_stats": true,
+    "no_selection": true,
+    "no_threshold_relaxation": true,
+    "no_transport_executed_in_D31B": true
+  },
+  "next_milestone": "V16D-31B-R1 \u2014 Restartable validation geology0028 nine-case Stage-4 transport generation"
+}

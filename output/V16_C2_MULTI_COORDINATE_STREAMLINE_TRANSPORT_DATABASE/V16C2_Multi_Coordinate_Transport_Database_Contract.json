@@ -1,0 +1,47 @@
+{
+  "milestone": "V16C-2",
+  "status": "V16C_MULTI_COORDINATE_STREAMLINE_TRANSPORT_DATABASE_COMPLETE",
+  "diagnosis": "AUTHORITATIVE_POLLOCK_TOF_AND_RAW_FMM_ADV_GEOLOGY_PRESSURE_CONTEXT_ARE_SYNCHRONIZED_ON_ONE_FROZEN_STREAMLINE_NODE_DATABASE",
+  "database_shape": {
+    "streamlines": 1078,
+    "nodes_per_streamline": 201
+  },
+  "authoritative_coordinate": "pollock_tof_s",
+  "auxiliary_node_channels": [
+    "fmm_arrival_s",
+    "adv_travel_time_s",
+    "Kx_mD",
+    "Ky_mD",
+    "Kz_mD",
+    "porosity",
+    "pressure_psi"
+  ],
+  "streamline_channels": [
+    "streamline_weight_m3_s"
+  ],
+  "sampling": {
+    "method": "trilinear cell-centered",
+    "origin_center_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "grid_spacing_m": [
+      6.096,
+      6.096,
+      1.2192
+    ],
+    "coordinate_source": "frozen V16B-3 Pollock XYZ mapping",
+    "clipping_detected": true
+  },
+  "normalization": {
+    "performed": false,
+    "raw_database_preserved": true
+  },
+  "database_artifact": {
+    "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_C2_MULTI_COORDINATE_STREAMLINE_TRANSPORT_DATABASE\\V16C2_Multi_Coordinate_Streamline_Transport_Database.npz",
+    "sha256": "f5fe7bd2bcb113374b32966911d50976f8a581f95e63e2dd0e94642caa6f11b6"
+  },
+  "recommendation": "Freeze the V16C-2 raw database. Proceed to V16C-3 to define the transport/PI-RNN conditioning contract, including which raw channels are inputs, which remain diagnostics, and how normalization is performed without changing Pollock TOF authority.",
+  "next_milestone": "V16C-3 \u2014 PI-RNN / Transport Conditioning Contract"
+}

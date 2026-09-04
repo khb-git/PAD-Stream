@@ -1,0 +1,55 @@
+{
+  "milestone": "V15-SG7D",
+  "description": "Deterministic conservative streamline-to-grid map-back for frozen PI-RNN and SG7A truth",
+  "training_performed": false,
+  "learned_mapback_used": false,
+  "source": "V15-SG7C",
+  "grid": {
+    "shape_kji": [
+      15,
+      50,
+      50
+    ],
+    "nx": 50,
+    "ny": 50,
+    "nz": 15,
+    "dx_m": 6.096,
+    "dy_m": 6.096,
+    "dz_m": 1.2192,
+    "porosity": 0.2,
+    "grid_pore_volume_m3": 339802.1591040001
+  },
+  "geometry": {
+    "streamlines": 2662,
+    "transport_nodes": 201,
+    "cartesian_subsegments": 661469,
+    "streamtube_pore_volume_m3": 337257.66926067014,
+    "streamtube_to_grid_pv_fraction": 0.9925118491005492,
+    "PV_construction_relative_error": 0.0
+  },
+  "coverage": {
+    "covered_cells": 29107,
+    "uncovered_cells": 8393,
+    "total_cells": 37500,
+    "cell_coverage_fraction": 0.7761866666666667,
+    "covered_grid_pore_volume_m3": 263749.9052010701,
+    "uncovered_cell_fallback": "initial_saturation"
+  },
+  "mapback": {
+    "weight": "q_streamline * delta_tau_subsegment",
+    "raw_operator": "pore-volume-weighted overlap average",
+    "accepted_operator": "bounded inventory projection on covered cells",
+    "uncovered_cells_modified": false
+  },
+  "accuracy": {
+    "maximum_covered_grid_L1": 0.004586256401853999,
+    "maximum_covered_grid_L2": 0.006358074093084462
+  },
+  "conservation": {
+    "maximum_projection_relative_residual": 7.137444950682358e-17,
+    "tolerance": 1e-10
+  },
+  "validation_passed": true,
+  "status": "CONSERVATIVE_SGSIM_GRID_MAPBACK_PASS",
+  "next_milestone": "V15-SG7E \u2014 Full Grid Plume / Coverage Validation"
+}

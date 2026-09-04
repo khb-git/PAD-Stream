@@ -1,0 +1,40 @@
+{
+  "artifact": "V16E Stage-2 compressible Godunov dataset",
+  "source_path": "pi_rnn_stage2_compressible_godunov.py",
+  "source_sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+  "seed": 1337,
+  "parameter_case_count": 25920,
+  "full_combo_count": 129600,
+  "max_cases": 2400,
+  "nc_vals": [
+    0.0,
+    0.05000000074505806,
+    0.10000000149011612,
+    0.20000000298023224,
+    0.30000001192092896
+  ],
+  "NX_TRAIN": 1601,
+  "n_fan": 64,
+  "num_times": 6,
+  "t_min_days": 100.0,
+  "horizon": "0.95*t_BT",
+  "parallel_workers_used": 8,
+  "parallel_output_order_preserved": true,
+  "profile_count": 14400,
+  "xi_shape": [
+    14400,
+    64,
+    1
+  ],
+  "Sw_shape": [
+    14400,
+    64,
+    1
+  ],
+  "p11_shape": [
+    14400,
+    11
+  ],
+  "build_seconds": 344.3886556625366,
+  "dataset_sha256": "46f10f00ff6dc48f7b2b936bd7d602e6435f72f8410138c5aad0dd4add555f1c"
+}

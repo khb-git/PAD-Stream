@@ -1,0 +1,37 @@
+{
+  "case_id": "V16D_Foundation_Case_0029_R650_B2200",
+  "partition": "LOCKED_OOD_TEST",
+  "status": "CERTIFIED",
+  "metric_sha256": "81035166cc9b89ac5ea46db80b9b66161c27ae5819786dd01e2ee34108054836",
+  "artifact_sha256": "ce24247f4752c1113c765e3669d34eef4003dbfb8280ddea1473ac904207610b",
+  "steps": 67888,
+  "elapsed_seconds": 3518.9660255908966,
+  "S_min": 0.20099999999999893,
+  "S_max": 0.799,
+  "adv_max": 1.1995680599015401e-17,
+  "cap_max": 5.329070518200751e-15,
+  "preclip_max": 0.0,
+  "temporal_negative_fraction": 0.0,
+  "spatial_positive_fraction": 0.0,
+  "gates": {
+    "finite": true,
+    "shape": true,
+    "bounds": true,
+    "injector": true,
+    "undershoot": true,
+    "adv_conservation": true,
+    "cap_residual": true,
+    "preclip": true,
+    "temporal": true,
+    "spatial": true
+  },
+  "ood_firewall": {
+    "no_training": true,
+    "no_tuning": true,
+    "no_OOD_normalization": true,
+    "no_selection": true,
+    "no_threshold_relaxation": true,
+    "no_deduplication": true,
+    "no_aggregate_OOD_target_statistics": true
+  }
+}

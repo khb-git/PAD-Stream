@@ -1,0 +1,18 @@
+{
+  "milestone": "V16E-1B2AH-XPU",
+  "experiment_id": "V16E-BLREP-COMP-XPU-005",
+  "classification": "PRODUCTION_RUN_FAILURE_FAIL_CLOSED",
+  "runner_sha256": "10ffef783336118945d6dae78c17c880e51a08c85c63e3410c85ff1be3537e45",
+  "exception_type": "KeyboardInterrupt",
+  "exception_message": "",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V16E1B2AH_XPU_COMP_XPU_005_Authorized_Production_Runner.py\", line 3267, in main\n    ) = train_or_resume(\n        ^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V16E1B2AH_XPU_COMP_XPU_005_Authorized_Production_Runner.py\", line 2543, in train_or_resume\n    scaled_total.backward()\n  File \"C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\.venv_xpu\\Lib\\site-packages\\torch\\_tensor.py\", line 623, in backward\n    torch.autograd.backward(\n  File \"C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\.venv_xpu\\Lib\\site-packages\\torch\\autograd\\__init__.py\", line 395, in backward\n    _engine_run_backward(\n  File \"C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\.venv_xpu\\Lib\\site-packages\\torch\\autograd\\graph.py\", line 1072, in _engine_run_backward\n    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyboardInterrupt\n",
+  "latest_safe_completed_epoch": 1,
+  "latest_safe_checkpoint_sha256": "9847484f2d9abeb7da6c67e13b6e3a3cb75f92412dd510af6530ab15a5575dab",
+  "optimizer_steps_completed_in_process": 0,
+  "partial_epoch_accepted": false,
+  "COMP_XPU_005_complete": false,
+  "B3_authorized": false,
+  "OOD_used": false,
+  "TOF_used": false,
+  "rerun_instruction": "Rerun this exact B2AH command. The runner will restore only the latest valid completed-epoch COMP-XPU-005 checkpoint."
+}

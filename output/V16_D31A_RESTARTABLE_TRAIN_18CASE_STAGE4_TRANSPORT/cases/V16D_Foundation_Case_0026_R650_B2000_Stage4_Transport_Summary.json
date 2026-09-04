@@ -1,0 +1,28 @@
+{
+  "case_id": "V16D_Foundation_Case_0026_R650_B2000",
+  "partition": "TRAIN",
+  "status": "CERTIFIED",
+  "metric_sha256": "114f78796d0ffb3daf6df3f8f7db10cb54389fd8cc0d710d51102ed05dff6e9e",
+  "artifact_sha256": "64968b3529fc10c2fbffffac83b04ddf91f25adaa6b59633ff19d90758d809d3",
+  "steps": 57798,
+  "elapsed_seconds": 2891.47686958313,
+  "S_min": 0.20099999999999904,
+  "S_max": 0.799,
+  "adv_max": 1.3555068254910568e-17,
+  "cap_max": 7.105427357601002e-15,
+  "preclip_max": 0.0,
+  "temporal_negative_fraction": 0.0,
+  "spatial_positive_fraction": 0.0,
+  "gates": {
+    "finite": true,
+    "shape": true,
+    "bounds": true,
+    "injector": true,
+    "undershoot": true,
+    "adv_conservation": true,
+    "cap_residual": true,
+    "preclip": true,
+    "temporal": true,
+    "spatial": true
+  }
+}

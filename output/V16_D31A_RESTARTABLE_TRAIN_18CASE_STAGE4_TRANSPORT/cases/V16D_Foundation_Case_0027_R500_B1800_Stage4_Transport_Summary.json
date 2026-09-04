@@ -1,0 +1,28 @@
+{
+  "case_id": "V16D_Foundation_Case_0027_R500_B1800",
+  "partition": "TRAIN",
+  "status": "CERTIFIED",
+  "metric_sha256": "99857ccf7103b8f5eca7d5804de6350f5f61558392bf217551919b35d853736c",
+  "artifact_sha256": "2dcaf608cf2399225228431059572b30f2e23a678893099cf7b4c7fbbf6387e7",
+  "steps": 45101,
+  "elapsed_seconds": 2326.6413276195526,
+  "S_min": 0.20099999999999846,
+  "S_max": 0.799,
+  "adv_max": 1.284440761216421e-17,
+  "cap_max": 2.842170943040401e-14,
+  "preclip_max": 0.0,
+  "temporal_negative_fraction": 0.0,
+  "spatial_positive_fraction": 0.0,
+  "gates": {
+    "finite": true,
+    "shape": true,
+    "bounds": true,
+    "injector": true,
+    "undershoot": true,
+    "adv_conservation": true,
+    "cap_residual": true,
+    "preclip": true,
+    "temporal": true,
+    "spatial": true
+  }
+}

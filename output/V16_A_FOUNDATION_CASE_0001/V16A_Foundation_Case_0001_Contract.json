@@ -1,0 +1,191 @@
+{
+  "milestone": "V16A",
+  "case_id": "FOUNDATION_CASE_0001",
+  "parent_version": "V15_FROZEN",
+  "status": "V16A_FOUNDATION_CASE_EXTRACTION_BLOCKED",
+  "diagnosis": "ONE_OR_MORE_REQUIRED_V15_FOUNDATION_COMPONENTS_ARE_MISSING_OR_AMBIGUOUS",
+  "geometry": {
+    "grid_shape_nz_ny_nx": [
+      15,
+      50,
+      50
+    ],
+    "cell_dimensions_ft_dx_dy_dz": [
+      20.0,
+      20.0,
+      4.0
+    ],
+    "physical_dimensions_ft_x_y_z": [
+      1000.0,
+      1000.0,
+      60.0
+    ],
+    "well_pattern": "five-spot",
+    "producer_bhp_psi": 2000.0,
+    "co2_injection_tonnes_per_day": 500.0,
+    "gravity_enabled": true
+  },
+  "required_components": [
+    "Kx",
+    "Ky",
+    "Kz",
+    "porosity",
+    "pressure",
+    "Qx",
+    "Qy",
+    "Qz",
+    "Vx",
+    "Vy",
+    "Vz",
+    "streamline_xyz",
+    "pollock_tof",
+    "producer_id",
+    "streamline_weight"
+  ],
+  "bound_components": [
+    {
+      "component": "Kx",
+      "status": "AMBIGUOUS",
+      "artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7D1\\V15SG7D1_Conservative_MapBack.npz",
+      "artifact_sha256": "2cbfb945e1b0b555228776e49b31874f76188bf2e3626b504b682dbad1442721",
+      "key": "segment_piece_count",
+      "score": 100,
+      "margin": 0,
+      "shape": "(15, 50, 50)",
+      "dtype": "int64",
+      "array_sha256": "7a5481b7d0c3be4c49efa66fe3ac2a3f3218d609bef5b039391ee196592f330c"
+    },
+    {
+      "component": "Ky",
+      "status": "AMBIGUOUS",
+      "artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7D1\\V15SG7D1_Conservative_MapBack.npz",
+      "artifact_sha256": "2cbfb945e1b0b555228776e49b31874f76188bf2e3626b504b682dbad1442721",
+      "key": "segment_piece_count",
+      "score": 100,
+      "margin": 0,
+      "shape": "(15, 50, 50)",
+      "dtype": "int64",
+      "array_sha256": "7a5481b7d0c3be4c49efa66fe3ac2a3f3218d609bef5b039391ee196592f330c"
+    },
+    {
+      "component": "Kz",
+      "status": "AMBIGUOUS",
+      "artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7D1\\V15SG7D1_Conservative_MapBack.npz",
+      "artifact_sha256": "2cbfb945e1b0b555228776e49b31874f76188bf2e3626b504b682dbad1442721",
+      "key": "segment_piece_count",
+      "score": 100,
+      "margin": 0,
+      "shape": "(15, 50, 50)",
+      "dtype": "int64",
+      "array_sha256": "7a5481b7d0c3be4c49efa66fe3ac2a3f3218d609bef5b039391ee196592f330c"
+    },
+    {
+      "component": "porosity",
+      "status": "AMBIGUOUS",
+      "artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7D1\\V15SG7D1_Conservative_MapBack.npz",
+      "artifact_sha256": "2cbfb945e1b0b555228776e49b31874f76188bf2e3626b504b682dbad1442721",
+      "key": "segment_piece_count",
+      "score": 100,
+      "margin": 0,
+      "shape": "(15, 50, 50)",
+      "dtype": "int64",
+      "array_sha256": "7a5481b7d0c3be4c49efa66fe3ac2a3f3218d609bef5b039391ee196592f330c"
+    },
+    {
+      "component": "pressure",
+      "status": "AMBIGUOUS",
+      "artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7D1\\V15SG7D1_Conservative_MapBack.npz",
+      "artifact_sha256": "2cbfb945e1b0b555228776e49b31874f76188bf2e3626b504b682dbad1442721",
+      "key": "segment_piece_count",
+      "score": 100,
+      "margin": 0,
+      "shape": "(15, 50, 50)",
+      "dtype": "int64",
+      "array_sha256": "7a5481b7d0c3be4c49efa66fe3ac2a3f3218d609bef5b039391ee196592f330c"
+    },
+    {
+      "component": "Qx",
+      "status": "MISSING"
+    },
+    {
+      "component": "Qy",
+      "status": "MISSING"
+    },
+    {
+      "component": "Qz",
+      "status": "MISSING"
+    },
+    {
+      "component": "Vx",
+      "status": "MISSING"
+    },
+    {
+      "component": "Vy",
+      "status": "MISSING"
+    },
+    {
+      "component": "Vz",
+      "status": "MISSING"
+    },
+    {
+      "component": "streamline_xyz",
+      "status": "BOUND",
+      "artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7C\\SG7C_FROZEN_PIRNN_STREAMLINE_DEPLOYMENT.npz",
+      "artifact_sha256": "49fc923af7d708b333fe27a0938d6b53056a2726cee8871cf8beada37743a003",
+      "key": "streamline_xyz",
+      "score": 460,
+      "margin": 460,
+      "shape": "(1078, 201, 3)",
+      "dtype": "float64",
+      "array_sha256": "d63a7c12d710e9960da85a01a8b0774bab096504486352d7660e16241faf2826"
+    },
+    {
+      "component": "pollock_tof",
+      "status": "BOUND",
+      "artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG6\\STREAMLINE_TRANSPORT_COORDINATES.npz",
+      "artifact_sha256": "083cd13b1073aa6afeb943ccd198b3aaad8941b3f028f2802823d0f88297e1dc",
+      "key": "tau_s",
+      "score": 280,
+      "margin": 80,
+      "shape": "(1078, 201)",
+      "dtype": "float64",
+      "array_sha256": "48882a854941be38ca67bbf2c928cce454ff033f601a6550badf9af862f21577"
+    },
+    {
+      "component": "producer_id",
+      "status": "AMBIGUOUS",
+      "artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG5\\STREAMLINES_POLLOCK.npz",
+      "artifact_sha256": "490d6afaae69066ac6ff3f2398f56b8fda9e6a8c9e1ae7620a27e4c7032df45f",
+      "key": "travel_times_s",
+      "score": 200,
+      "margin": 0,
+      "shape": "(1078,)",
+      "dtype": "float64",
+      "array_sha256": "208f14ab532e01a44411df03a5cf60ad368b4ebd6ee13148a752d27e4e2443ec"
+    },
+    {
+      "component": "streamline_weight",
+      "status": "BOUND",
+      "artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG5\\STREAMLINES_POLLOCK.npz",
+      "artifact_sha256": "490d6afaae69066ac6ff3f2398f56b8fda9e6a8c9e1ae7620a27e4c7032df45f",
+      "key": "weights_m3_s",
+      "score": 360,
+      "margin": 20,
+      "shape": "(1078,)",
+      "dtype": "float64",
+      "array_sha256": "107d1d5a137357c6d1692878a05f8739df2a39f7f9cd6a3ec0dbeef185f32171"
+    }
+  ],
+  "constraints": {
+    "training_performed": false,
+    "model_predict_executed": false,
+    "new_physics_solved": false,
+    "FMM_executed": false,
+    "V15_artifact_changed": false,
+    "missing_feature_fabricated": false
+  },
+  "case_file": null,
+  "case_file_sha256": null,
+  "recommendation": "Do not fabricate missing arrays and do not run Fast Marching. Audit only the failed V16A component bindings.",
+  "next_milestone": "V16A-R1 \u2014 Missing / Ambiguous Foundation Component Binding Audit"
+}

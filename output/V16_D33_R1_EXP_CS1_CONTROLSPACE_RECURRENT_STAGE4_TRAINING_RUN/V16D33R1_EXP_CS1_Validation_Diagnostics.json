@@ -1,0 +1,27 @@
+{
+  "values_evaluated": 17550918,
+  "MSE_float64_accumulation": 1.8982550849500083e-05,
+  "RMSE_float64_accumulation": 0.004356896928950704,
+  "MAE_float64_accumulation": 0.001755229556988638,
+  "mean_signed_error_float64_accumulation": 0.0003469423389961818,
+  "prediction_min": 0.20024335384368896,
+  "prediction_max": 0.7999473810195923,
+  "target_min": 0.20100000500679016,
+  "target_max": 0.7990000247955322,
+  "all_predictions_finite": true,
+  "all_targets_finite": true,
+  "milestone": "V16D-33-R1",
+  "experiment": "EXP-CS1",
+  "selection_partition": "VALIDATION",
+  "checkpoint_selection_rule": "minimum raw VALIDATION MSE / val_loss",
+  "best_epoch": 73,
+  "best_raw_val_MSE_from_training_history": 1.8982551409862936e-05,
+  "keras_reloaded_checkpoint_evaluation": {
+    "loss": 1.8982551409862936e-05,
+    "mae": 0.0017552283825352788
+  },
+  "checkpoint_sha256": "dc586da13e9fd7ce0b51cc661ba73edc8ab0f897d2f961112944504b13d1ed13",
+  "architecture_sha256": "4304519d7c41b231f300535cef5daacd2525e395413addc883e66e7310096920",
+  "LOCKED_OOD_opened": false,
+  "LOCKED_OOD_evaluated": false
+}

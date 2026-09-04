@@ -1,0 +1,208 @@
+{
+  "milestone": "V15-SG7C-R3D",
+  "status": "FROZEN_DEPLOYMENT_CALIBRATION_CONTRACT_INCOMPLETE",
+  "training_performed": false,
+  "frozen_PI_RNN_modified": false,
+  "incoming_diagnosis": "FEATURE_AND_TARGET_TRANSFER_VALID_MODEL_APPROXIMATION_RESIDUAL",
+  "calibration_definition": {
+    "target": "canonical_interpolated_target - frozen_PI_RNN",
+    "output": "deltaS_cal",
+    "calibrated_state": "frozen_PI_RNN + deltaS_cal",
+    "placement": "streamline deployment space before grid map-back"
+  },
+  "features": [
+    {
+      "feature": "xi",
+      "role": "local streamline coordinate",
+      "authority": "canonical/deployment semantic equivalent"
+    },
+    {
+      "feature": "normalized_tD",
+      "role": "deployment conditional time",
+      "authority": "verified by R3A/R3C"
+    },
+    {
+      "feature": "log10_tau_end_days",
+      "role": "captures strong TOF-conditioned residual correlation",
+      "authority": "R3A corr(log10 tau_end,bias)=0.9287"
+    },
+    {
+      "feature": "S_frozen",
+      "role": "local frozen-model state",
+      "authority": "SG7B-11 frozen prediction"
+    },
+    {
+      "feature": "front_distance",
+      "role": "|S_frozen - 0.21| front protection feature",
+      "authority": "SG7B-10S / SG7B-15R front contract"
+    }
+  ],
+  "regions": [
+    {
+      "region": "C0_short_TOF",
+      "definition": "tau_end < 500 d",
+      "calibration_strength": "OFF/VERY_WEAK",
+      "purpose": "preserve already-good fast-streamline deployment"
+    },
+    {
+      "region": "C1_long_TOF_nonfront",
+      "definition": "tau_end >= 500 d and outside front shell",
+      "calibration_strength": "PRIMARY",
+      "purpose": "remove dominant deployment approximation residual"
+    },
+    {
+      "region": "C2_very_long_TOF_nonfront",
+      "definition": "tau_end >= 1000 d and outside front shell",
+      "calibration_strength": "STRONG",
+      "purpose": "correct strongest positive long-TOF residual"
+    },
+    {
+      "region": "C3_front_shell",
+      "definition": "0.205 <= SG7A S <= 0.300",
+      "calibration_strength": "TIGHTLY_BOUNDED",
+      "purpose": "preserve SG7B-11 front morphology"
+    },
+    {
+      "region": "C4_front_core",
+      "definition": "0.210 <= SG7A S <= 0.260",
+      "calibration_strength": "NEAR_ZERO",
+      "purpose": "protect S=0.21 threshold crossing"
+    }
+  ],
+  "objective": [
+    {
+      "term": "L_residual",
+      "definition": "|deltaS_cal - (S_canonical_interp-S_frozen)|",
+      "purpose": "fit deployment approximation residual"
+    },
+    {
+      "term": "L_short_anchor",
+      "definition": "|deltaS_cal| for tau_end < 500 d",
+      "purpose": "keep calibration near zero where frozen model is already good"
+    },
+    {
+      "term": "L_front_anchor",
+      "definition": "|deltaS_cal| in S=[0.205,0.300]",
+      "purpose": "preserve accepted front shell"
+    },
+    {
+      "term": "L_front_core",
+      "definition": "|deltaS_cal| in S=[0.210,0.260]",
+      "purpose": "protect S=0.21 crossing"
+    },
+    {
+      "term": "L_smooth_xi",
+      "definition": "|d(deltaS_cal)/dxi|",
+      "purpose": "prevent oscillatory calibration"
+    },
+    {
+      "term": "L_zero_mean",
+      "definition": "mean(deltaS_cal) outside targeted residual regime",
+      "purpose": "prevent broad saturation shift"
+    }
+  ],
+  "preservation_gates": [
+    {
+      "gate": "Recovered 100d fronts",
+      "limit": ">= 744",
+      "authority": "SG7B-10S"
+    },
+    {
+      "gate": "Conditioned front gap",
+      "limit": "<= 5.33123727917913484e-04",
+      "authority": "SG7B-10S"
+    },
+    {
+      "gate": "100d profile L1",
+      "limit": "<= 4.50032942291447424e-03",
+      "authority": "SG7B-10S"
+    },
+    {
+      "gate": "Front-anchor MAE",
+      "limit": "<= 1.500000e-03",
+      "authority": "SG7B-15R"
+    },
+    {
+      "gate": "P90 frozen-front xi shift",
+      "limit": "<= 5.000000e-03",
+      "authority": "SG7B-15R"
+    },
+    {
+      "gate": "Global calibration magnitude",
+      "limit": "|deltaS| <= 0.020000",
+      "authority": "SG7C-R3D new"
+    },
+    {
+      "gate": "Front calibration magnitude",
+      "limit": "|deltaS_front| <= 0.003000",
+      "authority": "SG7C-R3D new"
+    },
+    {
+      "gate": "Mean front calibration",
+      "limit": "<= 0.001000",
+      "authority": "SG7C-R3D new"
+    },
+    {
+      "gate": "Short-TOF calibration MAE",
+      "limit": "<= 0.001500",
+      "authority": "SG7C-R3D new"
+    },
+    {
+      "gate": "Calibration TV ratio",
+      "limit": "<= 0.150",
+      "authority": "SG7C-R3D new"
+    }
+  ],
+  "controlled_experiments": [
+    {
+      "experiment": "E0",
+      "description": "Frozen SG7B-11 control; no calibration",
+      "model": "zero residual",
+      "front_weight": 0.0,
+      "short_weight": 0.0,
+      "smooth_weight": 0.0
+    },
+    {
+      "experiment": "E1",
+      "description": "Linear TOF-state residual calibration",
+      "model": "linear",
+      "front_weight": 4.0,
+      "short_weight": 2.0,
+      "smooth_weight": 1.0
+    },
+    {
+      "experiment": "E2",
+      "description": "Small MLP residual calibration",
+      "model": "MLP 16x16",
+      "front_weight": 6.0,
+      "short_weight": 2.5,
+      "smooth_weight": 1.5
+    },
+    {
+      "experiment": "E3",
+      "description": "TOF-gated MLP calibration",
+      "model": "MLP 16x16 + long-TOF gate",
+      "front_weight": 8.0,
+      "short_weight": 4.0,
+      "smooth_weight": 2.0
+    },
+    {
+      "experiment": "E4",
+      "description": "Front-masked TOF-gated calibration",
+      "model": "MLP 16x16 + TOF gate + front mask",
+      "front_weight": 10.0,
+      "short_weight": 4.0,
+      "smooth_weight": 2.5
+    }
+  ],
+  "baseline": {
+    "global_required_correction_MAE": 0.001702969736427919,
+    "global_required_correction_MAX": 0.08106630945249682,
+    "front_required_correction_MAE_100d": 0.009261960129912362,
+    "front_required_correction_MAX_100d": 0.05139590639215985,
+    "short_TOF_required_correction_MAE": 0.0011638090729701928,
+    "long_TOF_required_correction_MAE": 0.0030597743122363313,
+    "very_long_TOF_required_correction_MAE": 0.0047112654138375
+  },
+  "next_milestone": "V15-SG7C-R3D-R \u2014 Frozen Deployment Calibration Contract Repair"
+}

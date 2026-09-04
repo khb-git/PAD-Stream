@@ -1,0 +1,58 @@
+{
+  "milestone": "V16E-1B2O-XPU",
+  "classification": "NO_TRAINING_COMP004_CONSERVATIVE_RESIDUAL_AUTOGRAD_FORM_VERIFICATION",
+  "selected_profile_count": 10,
+  "selected_profiles_per_Nc": 2,
+  "selected_dataset_indices": [
+    13854,
+    2940,
+    8610,
+    1230,
+    1014,
+    5796,
+    8664,
+    7002,
+    10296,
+    13548
+  ],
+  "derivative_convention": {
+    "N_xi": "diagonal Jacobian dN_j/dxi_j",
+    "N_tD": "dN_j/dp11[tD] for each output node j",
+    "N_X": "dN_j/dp11[xD_star] for each output node j"
+  },
+  "front_speed_closures": {
+    "Rankine_Hugoniot": {
+      "conservative_form_MSE": 0.0231584794819355,
+      "expanded_form_MSE": 0.02315848134458065,
+      "max_abs_form_difference": 1.4156103134155273e-06,
+      "rms_form_difference": 2.6420678977956413e-07,
+      "machine_epsilon_identity_bound": 6.103515625e-05,
+      "forms_match_within_machine_epsilon_scaled_bound": true,
+      "Nc0_expanded_vs_explicit_incompressible_max_abs_difference": 0.0,
+      "Nc0_expanded_vs_explicit_incompressible_rms_difference": 0.0,
+      "Nc0_machine_epsilon_identity_bound": 6.103515625e-05,
+      "Nc0_nesting_matches_within_machine_epsilon_scaled_bound": true
+    },
+    "finite_difference_Godunov_front": {
+      "conservative_form_MSE": 0.02273581735789776,
+      "expanded_form_MSE": 0.022735819220542908,
+      "max_abs_form_difference": 1.430511474609375e-06,
+      "rms_form_difference": 2.62102247461371e-07,
+      "machine_epsilon_identity_bound": 6.103515625e-05,
+      "forms_match_within_machine_epsilon_scaled_bound": true,
+      "Nc0_expanded_vs_explicit_incompressible_max_abs_difference": 0.0,
+      "Nc0_expanded_vs_explicit_incompressible_rms_difference": 0.0,
+      "Nc0_machine_epsilon_identity_bound": 6.103515625e-05,
+      "Nc0_nesting_matches_within_machine_epsilon_scaled_bound": true
+    }
+  },
+  "identity_bound_policy": {
+    "float32_epsilon": 1.1920928955078125e-07,
+    "multiplier": 512.0,
+    "formula": "multiplier * float32_epsilon * max(1, |form scales|)",
+    "classification": "computational algebraic-identity tolerance; not a scientific acceptance threshold"
+  },
+  "no_training": true,
+  "no_optimizer": true,
+  "no_weight_update": true
+}

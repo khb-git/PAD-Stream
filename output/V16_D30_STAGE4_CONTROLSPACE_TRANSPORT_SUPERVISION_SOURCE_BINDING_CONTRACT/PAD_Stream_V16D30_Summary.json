@@ -1,0 +1,31 @@
+{
+  "milestone": "V16D-30",
+  "status": "V16D_STAGE4_CONTROLSPACE_TRANSPORT_LINEAGE_EXACTLY_BOUND_ONE_TRAIN_PILOT_GENERATION_AUTHORIZED",
+  "contract_sha256": "db813c8c2a77899372523aff64a0848de9406f08b8f08e2f42672b6a93afc17c",
+  "gates": {
+    "D27_SHA_exact": true,
+    "D27_36_cases": true,
+    "D28_SHA_exact": true,
+    "D28_36_cases": true,
+    "D29_SHA_exact": true,
+    "D29_36_cases": true,
+    "historical_D12_exists": true,
+    "exact_C17_source_SHA_unique": true,
+    "Stage4_candidate_bound": true,
+    "C14_candidate_bound": true,
+    "C15_candidate_bound": true,
+    "Pollock_primary": true,
+    "M_face_primary": true,
+    "node_M_sidecar_only": true,
+    "legacy_exp_Nc_xD_not_reintroduced": true,
+    "FMM_ADV_auxiliary_only": true,
+    "split_preserved": true,
+    "one_TRAIN_pilot_first": true,
+    "no_transport": true,
+    "no_training": true,
+    "no_fitting": true,
+    "no_threshold_relaxation": true,
+    "locked_OOD_not_evaluated": true
+  },
+  "next_milestone": "V16D-30-R1 \u2014 one TRAIN source-authentic 9-time Stage-4 transport supervision pilot"
+}

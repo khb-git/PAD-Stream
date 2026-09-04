@@ -1,0 +1,101 @@
+{
+  "milestone": "V16D-32",
+  "fit_partition": "TRAIN_ONLY",
+  "fit_geologies": [
+    "0026",
+    "0027"
+  ],
+  "fit_case_count": 18,
+  "validation_policy": "TRANSFORM_ONLY",
+  "locked_OOD_policy": "TRANSFORM_ONLY",
+  "feature_order": [
+    "xi",
+    "pollock_tau_hat",
+    "adv_tau_hat",
+    "log10_Kh",
+    "log10_Kz_over_Kh",
+    "porosity",
+    "pressure_z",
+    "target_time_hat",
+    "target_eta_sequence"
+  ],
+  "raw_pressure_semantics": "raw channel slot 6 = sampled pressure_psi; normalized slot = pressure_z",
+  "target_used_for_statistics": false,
+  "M_face_predictor": false,
+  "direct_control_channels_added": false,
+  "control_information": "encoded prospectively through pressure, Pollock/ADV travel time, and target_eta_sequence under each frozen rate/BHP case",
+  "statistics": {
+    "xi": {
+      "n": 35101836,
+      "mean": 0.5,
+      "std": 0.2901149197588205,
+      "min": 0.0,
+      "max": 1.0,
+      "policy": "ZSCORE_TRAIN_ONLY"
+    },
+    "pollock_tau_hat": {
+      "n": 35101836,
+      "mean": 0.5,
+      "std": 0.2901149197588205,
+      "min": 0.0,
+      "max": 1.0,
+      "policy": "ZSCORE_TRAIN_ONLY"
+    },
+    "adv_tau_hat": {
+      "n": 35101836,
+      "mean": 0.6159827992892147,
+      "std": 0.3917550828022337,
+      "min": 5.857614896800856e-05,
+      "max": 20.258018557469985,
+      "policy": "ZSCORE_TRAIN_ONLY"
+    },
+    "log10_Kh": {
+      "n": 35101836,
+      "mean": 2.668457056391536,
+      "std": 0.2912320082694561,
+      "min": 1.7004361227537095,
+      "max": 2.9999803008070884,
+      "policy": "ZSCORE_TRAIN_ONLY"
+    },
+    "log10_Kz_over_Kh": {
+      "n": 35101836,
+      "mean": -1.0,
+      "std": 0.0,
+      "min": -1.0,
+      "max": -0.9999999999999999,
+      "policy": "CONSTANT_IDENTITY"
+    },
+    "porosity": {
+      "n": 35101836,
+      "mean": 0.20000000000000015,
+      "std": 0.0,
+      "min": 0.2,
+      "max": 0.2,
+      "policy": "CONSTANT_IDENTITY"
+    },
+    "pressure_z": {
+      "n": 35101836,
+      "mean": 2048.5354824926508,
+      "std": 164.0864327633557,
+      "min": 1810.867796135423,
+      "max": 2349.2069279122193,
+      "policy": "ZSCORE_TRAIN_ONLY"
+    },
+    "target_time_hat": {
+      "n": 35101836,
+      "mean": 0.35611111111111116,
+      "std": 0.31691023771003685,
+      "min": 0.03,
+      "max": 1.0,
+      "policy": "ZSCORE_TRAIN_ONLY"
+    },
+    "target_eta_sequence": {
+      "n": 35101836,
+      "mean": 0.9334488009231787,
+      "std": 1.0383059622413988,
+      "min": 0.006029689250540984,
+      "max": 7.387563471523235,
+      "policy": "ZSCORE_TRAIN_ONLY"
+    }
+  }
+}

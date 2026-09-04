@@ -1,0 +1,19 @@
+{
+  "milestone": "V15-SG7D5",
+  "status": "FULL_GRID_CANDIDATE_FREEZE_READY",
+  "diagnosis": "P4_FULL_GRID_INDEPENDENT_VALIDATION_PASSES_COMPLETE_CONTRACT",
+  "candidate": "P4_full_grid",
+  "candidate_frozen": false,
+  "independent_reconstruction_rule": "SG7D1 supported cells + frozen L2 minimum/background on unsupported cells",
+  "precision_envelope": 1.5e-07,
+  "full_grid_reconstruction_Linf": 0.0,
+  "float32_reconstruction_exact": true,
+  "supported_cells_preserved": true,
+  "unsupported_background_preserved": true,
+  "conservative_evidence_preserved": true,
+  "unsupported_plume_cells": 0,
+  "plume_topology_preserved": true,
+  "SG7E_threshold_changed": false,
+  "recommendation": "The completed 15x50x50 field independently reconstructs from SG7D1 plus the frozen background rule, preserves every supported cell and conservative map-back artifact, creates no unsupported plume cells, and preserves plume topology. Proceed to formal SG7D freeze/provenance. Do not alter the field or SG7E threshold.",
+  "next_milestone": "V15-SG7D6 \u2014 Full-Grid Candidate Freeze / Provenance Manifest"
+}

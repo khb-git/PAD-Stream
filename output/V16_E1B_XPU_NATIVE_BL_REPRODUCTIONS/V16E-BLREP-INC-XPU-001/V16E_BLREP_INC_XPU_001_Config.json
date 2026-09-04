@@ -1,0 +1,37 @@
+{
+  "experiment_id": "V16E-BLREP-INC-XPU-001",
+  "framework": "PyTorch XPU",
+  "pytorch_version": "2.14.0+xpu",
+  "device": "xpu",
+  "source_sha256": "98d492e1e4a84e9d2c3ab99a631bf7d21d011b65bdd599e0ab3192d947b36e58",
+  "framework_port_protocol_sha256": "4832aace96a5c6e6a0c6711c134748ef55bdb86ee67988283af55abf2151cbca",
+  "coordinate": "xi = xD/xD_star",
+  "condition_on": [
+    "no",
+    "nw",
+    "swi",
+    "sor",
+    "mu_w",
+    "mu_o",
+    "phi",
+    "tD",
+    "xD_star",
+    "Sw_star"
+  ],
+  "param_dim": 10,
+  "hidden": 64,
+  "layers": 2,
+  "seed": 1337,
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "logical_batch_size": 8192,
+  "microbatch": 2048,
+  "epochs_requested": 400,
+  "full_certification_run": true,
+  "mixed_precision": false,
+  "dataset": {
+    "path": "output\\V16_E1B_XPU_DATASETS\\V16E_STAGE1_ANALYTICAL_FAN_DATASET_SEED1337.npz",
+    "sha256": "3495f933a377928254465d60ed5452bcb9fb0fdf6a9507efab94edd4abee6e98",
+    "cached": true
+  }
+}

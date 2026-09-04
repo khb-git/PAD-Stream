@@ -1,0 +1,90 @@
+{
+  "authority": {
+    "reference_and_single_train_pilot_runner": "D7A",
+    "future_36case_batch_runner": "D7B",
+    "reason": "D7A is the prior source-bound single-Case0002 pilot adapter; D7B is the subsequent full Case0002\u20130025 ensemble execution. They are sequential roles, not competing alternatives.",
+    "prohibitions": [
+      "do not choose by numerical closeness",
+      "do not rewrite SG2/SG3/SG4 physics",
+      "do not use D7B batch execution before D24C reference+TRAIN pilot certification"
+    ]
+  },
+  "evidence": [
+    {
+      "tag": "D7A",
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V16D7A_SourceBound_SG2_SG3_SG4_Adapter_and_Case0002_Pilot.py",
+      "sha256": "3bdb11fe60703c05ffd27ea2eab122badcf2894406ff7399f9f55af261038452",
+      "mentions_case0002": true,
+      "mentions_0025": true,
+      "has_loop": true,
+      "mentions_manifest": false,
+      "mentions_full_ensemble": true,
+      "source_names": {
+        "PAD_Stream_V15SG2_Anisotropic_Transmissibility.py": true,
+        "PAD_Stream_V15SG3_FiveSpot_Pressure_Solve.py": true,
+        "PAD_Stream_V15SG4_Conservative_Darcy_Fluxes.py": true
+      },
+      "status_lines": [
+        "if d7[\"status\"]!=\"V16D_SG2_SG3_SG4_SOURCE_AUTHENTIC_FLOW_LINEAGE_BOUND_MULTICASE_ADAPTER_IMPLEMENTATION_AUTHORIZED\":raise RuntimeError(\"D7 mismatch\")",
+        "if d6[\"status\"]!=\"V16D_CASE0002_0025_ENSEMBLE_GEOLOGIES_GENERATED_CERTIFIED_READY_FOR_MULTI_CASE_FLOW_PIPELINE\":raise RuntimeError(\"D6 mismatch\")",
+        "status=\"V16D_CASE0002_SOURCEBOUND_SG2_SG3_SG4_PILOT_CERTIFIED_FULL_24CASE_FLOW_EXECUTION_AUTHORIZED\" if ok else \"V16D_CASE0002_SOURCEBOUND_FLOW_PILOT_BLOCKED\"",
+        "summary={\"milestone\":\"V16D-7A\",\"status\":status,",
+        "print(\"\\nSTATUS\\n \",status)"
+      ],
+      "case_range_lines": [
+        "D6=ROOT/\"output\"/\"V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\"/\"PAD_Stream_V16D6_Summary.json\"",
+        "CASE=ROOT/\"output\"/\"V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\"/\"cases\"/\"V16D_Foundation_Case_0002_Geology.npz\"",
+        "OUT=ROOT/\"output\"/\"V16_D7A_SOURCEBOUND_SG2_SG3_SG4_ADAPTER_CASE0002_PILOT\";OUT.mkdir(parents=True,exist_ok=True)",
+        "print(\"Source-Bound SG2/SG3/SG4 Adapter Implementation and Case 0002 Pilot\");print(\"=\"*78)",
+        "if d6[\"status\"]!=\"V16D_CASE0002_0025_ENSEMBLE_GEOLOGIES_GENERATED_CERTIFIED_READY_FOR_MULTI_CASE_FLOW_PIPELINE\":raise RuntimeError(\"D6 mismatch\")",
+        "D7A RUNS ONLY CASE 0002.",
+        "if k.shape!=(15,50,50):raise RuntimeError(\"Case0002 geology shape mismatch\")",
+        "artifact=OUT/\"V16D7A_Case0002_SG2_SG3_SG4_Pilot.npz\"",
+        "case_id=np.array(\"V16D_Foundation_Case_0002\"))",
+        "\"case0002_only\":True,\"pressure_shape\":p_psi.shape==(15,50,50),\"flux_shapes\":shapes,\"finite\":finite,",
+        "status=\"V16D_CASE0002_SOURCEBOUND_SG2_SG3_SG4_PILOT_CERTIFIED_FULL_24CASE_FLOW_EXECUTION_AUTHORIZED\" if ok else \"V16D_CASE0002_SOURCEBOUND_FLOW_PILOT_BLOCKED\"",
+        "\"case_id\":\"V16D_Foundation_Case_0002\",",
+        "\"next_milestone\":\"V16D-7B \u2014 Full Frozen Case 0002-0025 Source-Bound SG2/SG3/SG4 Flow Ensemble Execution\"}",
+        "print(\"\\nCASE 0002 PILOT\")",
+        "print(\"\\nNEXT MILESTONE\\n  V16D-7B \u2014 Full Frozen Case 0002-0025 Source-Bound SG2/SG3/SG4 Flow Ensemble Execution\")"
+      ]
+    },
+    {
+      "tag": "D7B",
+      "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\PAD_Stream_V16D7B_Full_Frozen_Case0002_0025_SourceBound_SG2_SG3_SG4_Flow_Ensemble_Execution.py",
+      "sha256": "d2a736039bd34ec5bc3272ebf0ab9908f47c28cdc1bd91ca74d8d76ec366922b",
+      "mentions_case0002": true,
+      "mentions_0025": true,
+      "has_loop": true,
+      "mentions_manifest": true,
+      "mentions_full_ensemble": true,
+      "source_names": {
+        "PAD_Stream_V15SG2_Anisotropic_Transmissibility.py": true,
+        "PAD_Stream_V15SG3_FiveSpot_Pressure_Solve.py": true,
+        "PAD_Stream_V15SG4_Conservative_Darcy_Fluxes.py": true
+      },
+      "status_lines": [
+        "if a[\"status\"]!=\"V16D_CASE0002_SOURCEBOUND_SG2_SG3_SG4_PILOT_CERTIFIED_FULL_24CASE_FLOW_EXECUTION_AUTHORIZED\":raise RuntimeError(\"D7A mismatch\")",
+        "rec.update(status=\"CERTIFIED\" if passed else \"PHYSICS_GATE_FAILURE\",seed=seed,sha256=sha(fp),",
+        "good=[r for r in recs if r[\"status\"]==\"CERTIFIED\"]",
+        "status=\"V16D_CASE0002_0025_SOURCEBOUND_FLOW_ENSEMBLE_CERTIFIED_READY_FOR_VELOCITY_POLLOCK_TRAVELTIME_PIPELINE\" if ok else \"V16D_MULTICASE_FLOW_ENSEMBLE_HAS_DOCUMENTED_FAILURES\"",
+        "summary={\"milestone\":\"V16D-7B\",\"status\":status,\"certified_count\":len(good),",
+        "print(\"\\nSTATUS\\n \",status)"
+      ],
+      "case_range_lines": [
+        "D7A=ROOT/\"output\"/\"V16_D7A_SOURCEBOUND_SG2_SG3_SG4_ADAPTER_CASE0002_PILOT\"/\"PAD_Stream_V16D7A_Summary.json\"",
+        "D6=ROOT/\"output\"/\"V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\"/\"PAD_Stream_V16D6_Summary.json\"",
+        "CASES=ROOT/\"output\"/\"V16_D6_FROZEN_REGISTRY_CASE0002_0025_ENSEMBLE_GEOLOGY_GENERATION_CERTIFICATION\"/\"cases\"",
+        "OUT=ROOT/\"output\"/\"V16_D7B_FULL_FROZEN_CASE0002_0025_SOURCEBOUND_SG2_SG3_SG4_FLOW_ENSEMBLE\"",
+        "print(\"Full Frozen Case 0002-0025 Source-Bound SG2/SG3/SG4 Flow Ensemble Execution\");print(\"=\"*78)",
+        "if a[\"status\"]!=\"V16D_CASE0002_SOURCEBOUND_SG2_SG3_SG4_PILOT_CERTIFIED_FULL_24CASE_FLOW_EXECUTION_AUTHORIZED\":raise RuntimeError(\"D7A mismatch\")",
+        "man=OUT/\"V16D7B_Flow_Ensemble_Manifest.csv\"",
+        "status=\"V16D_CASE0002_0025_SOURCEBOUND_FLOW_ENSEMBLE_CERTIFIED_READY_FOR_VELOCITY_POLLOCK_TRAVELTIME_PIPELINE\" if ok else \"V16D_MULTICASE_FLOW_ENSEMBLE_HAS_DOCUMENTED_FAILURES\"",
+        "\"ensemble_metrics\":({k:{\"min\":float(vals(k).min()),\"median\":float(np.median(vals(k))),\"max\":float(vals(k).max())}",
+        "\"next_milestone\":\"V16D-8 \u2014 Source-Bound SG5 Velocity/Pollock Multi-Case Execution Binding and Pilot\"}",
+        "print(\"\\nENSEMBLE FLOW SUMMARY\")",
+        "print(\"\\nNEXT MILESTONE\\n  V16D-8 \u2014 Source-Bound SG5 Velocity/Pollock Multi-Case Execution Binding and Pilot\")"
+      ]
+    }
+  ]
+}

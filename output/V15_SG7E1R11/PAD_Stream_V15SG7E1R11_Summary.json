@@ -1,0 +1,13 @@
+{
+  "milestone": "V15-SG7E1R11",
+  "status": "SG7E_TOP_ARTIFACT_LINEAGE_RESOLVED",
+  "diagnosis": "ONE_TOP_SG7A_CORRECTED_ARTIFACT_HAS_UNIQUE_AUTHORITATIVE_LINEAGE",
+  "artifact_resolved": true,
+  "selected_artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7E\\V15SG7E_Plume_Coverage_Validation.npz",
+  "selected_array_sha256": "e3d4bef65753a2d0dd65414db04416cc3cb89408578411109384617847b31bce",
+  "lineage_margin": 1000,
+  "candidate_changed": false,
+  "threshold_changed": false,
+  "recommendation": "The previously tied SG7A_corrected artifact instances are now separated by full-path creation/load/manifest provenance. Preserve the selected file and array hashes. Proceed to resolve the historical snapshot/time index used by the authoritative SG7E consumer before reconstructing the 15x50x50 reference.",
+  "next_milestone": "V15-SG7E1R12 \u2014 Historical Reference Time-Index / Snapshot Resolution Audit"
+}

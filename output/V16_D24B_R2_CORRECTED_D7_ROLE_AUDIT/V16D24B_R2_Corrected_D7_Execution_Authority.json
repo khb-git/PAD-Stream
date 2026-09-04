@@ -1,0 +1,31 @@
+{
+  "authority": {
+    "D7A": "authoritative prior source-bound single-case pilot adapter/execution pattern",
+    "D7B": "authoritative downstream full-ensemble execution pattern",
+    "D24C": "must derive reference-equivalence + one TRAIN pilot from D7A mechanics",
+    "later_batch": "may derive 36-case batch mechanics from D7B only after D24C passes",
+    "correction": "R1 false-negative arose because it incorrectly required token 0025 to be absent from D7A; D7A legitimately mentions 0002-0025 in upstream D6 provenance/status text."
+  },
+  "D7A_evidence": {
+    "explicit_runs_only_case0002": true,
+    "single_CASE_binding": true,
+    "single_pilot_artifact": true,
+    "authorizes_full24_after_pilot": true
+  },
+  "D7B_evidence": {
+    "requires_D7A_certified_status": true,
+    "cases_directory_bound": true,
+    "ensemble_manifest": true,
+    "ensemble_certification_status": true
+  },
+  "gates": {
+    "R1_SHA_exact": true,
+    "D7A_SHA_exact": true,
+    "D7B_SHA_exact": true,
+    "D7A_execution_role_single_case_pilot": true,
+    "D7B_execution_role_full_ensemble": true,
+    "D7B_is_downstream_of_D7A": true,
+    "token_0025_in_D7A_not_used_as_negative_role_test": true,
+    "roles_complementary_and_sequential": true
+  }
+}

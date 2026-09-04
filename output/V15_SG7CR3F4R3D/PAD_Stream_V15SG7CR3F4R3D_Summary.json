@@ -1,0 +1,14 @@
+{
+  "milestone": "V15-SG7C-R3F4-R3D",
+  "status": "NEAR_THRESHOLD_FRONT_REDUCTION_LIMITER_AUDIT_COMPLETE",
+  "incoming_diagnosis": "FRONT_ERROR_REDUCTION_ONLY_REMAINING_LIMITER",
+  "diagnosis": "BASIS_SUPPORT_CEILING_AT_49P5_PERCENT",
+  "training_performed": false,
+  "front_error_reduction_threshold_changed": false,
+  "best_experiment": "B4",
+  "best_final_front_reduction_fraction": 0.4954781984966692,
+  "best_front_reduction_shortfall_fraction": 0.004521801503330813,
+  "best_residual_support_fraction": 0.495478416297645,
+  "recommendation": "Front-error reduction tracks the available front-shell residual support almost one-for-one, and the best candidates plateau below 50%. The remaining ~0.45 percentage-point shortfall is structural support coverage, not a failed optimizer or checkpoint choice. Design the minimum possible support extension needed to exceed 50% while retaining SG7A/canonical front accuracy and all clarified deployment gates.",
+  "next_milestone": "V15-SG7C-R3F4-R3E \u2014 Minimal Residual-Support Extension Design"
+}

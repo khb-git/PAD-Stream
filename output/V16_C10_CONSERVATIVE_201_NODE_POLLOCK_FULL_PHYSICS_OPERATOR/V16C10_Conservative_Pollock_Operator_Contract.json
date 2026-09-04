@@ -1,0 +1,15 @@
+{
+  "milestone": "V16C-10",
+  "status": "V16C_CONSERVATIVE_201_NODE_POLLOCK_OPERATOR_GEOMETRY_CONSTRUCTED_BOUNDARY_PHYSICS_PENDING",
+  "diagnosis": "INTERIOR_ADVECTION_AND_C7_TRANSFORMED_CAPILLARY_OPERATORS_HAVE_CONSERVATIVE_FACE_DIVERGENCE_FORMS_AND_PASS_TELESCOPING_AUDITS_WITHOUT_LEGACY_UD_DOUBLE_COUNTING",
+  "operator_artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V16_C10_CONSERVATIVE_201_NODE_POLLOCK_FULL_PHYSICS_OPERATOR\\V16C10_Conservative_201_Node_Pollock_Operator_Geometry.npz",
+  "operator_sha256": "9162e313351c556e8ac39587e10e191c85eb71cbdb74dfb67bdc1c6e11b3636e",
+  "advection": "conservative face divergence in theta; nonlinear fw deferred to source-authentic solver",
+  "capillary": "M/cv_dtheta times divergence of D_tilde*M*dS/dtheta face flux",
+  "legacy_uD_action": "NOT_APPLIED",
+  "physical_boundary_conditions": "PENDING_C10A",
+  "physical_time_march_authorized": false,
+  "Y_generation_authorized": false,
+  "recommendation": "Freeze the C10 interior operator geometry. Before any physical-time transport solve, bind the source-authentic inlet/outlet transport boundary conditions and their transformed capillary treatment on the Pollock coordinate.",
+  "next_milestone": "V16C-10A \u2014 Pollock-Coordinate Full-Physics Transport Boundary Condition Binding Audit"
+}

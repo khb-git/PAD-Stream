@@ -1,0 +1,90 @@
+{
+  "milestone": "V15-SG7E1R26I-R10",
+  "status": "SG7B10_BOUND_100D_RAW_RUNTIME_CONTROL_EXECUTED_CLOSURE_FAILED",
+  "diagnosis": "CORRECT_MODEL_AND_X100_EXECUTE_BUT_RAW100_DOES_NOT_REPRODUCE_FROZEN100_UNDER_FROZEN_PRECISION_CONTRACT",
+  "model": {
+    "path": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7B7R\\V15SG7B_FROZEN_Model.keras",
+    "sha256": "9242af83e9aae6dc91ce215f78bf2a6d539972632d5e5ce759ea1fc83f3c11be",
+    "hash_match": true
+  },
+  "X100": {
+    "artifact": "C:\\Users\\khali\\PycharmProjects\\PAD_Stream_V15G0_Windows_Portable_v2\\output\\V15_SG7E1R26IR6\\V15SG7E1R26IR6_Reconstructed_X100.npz",
+    "key": "X100",
+    "shape": [
+      2662,
+      201,
+      2
+    ],
+    "dtype": "float32",
+    "sha256": "21e4fb419f9c56242516d7c439da5160cf24b2b6cae4d30666d71de752aed526"
+  },
+  "100d_state_roles": {
+    "frozen100": "FROZEN_BASELINE_OR_PRECORRECTION_STATE",
+    "K5_100": "K5_PRE_L2_INPUT_STATE",
+    "L2_independent_100": "L2_INDEPENDENTLY_VALIDATED_STATE"
+  },
+  "authoritative_raw_runtime_target": "frozen100",
+  "closure": {
+    "frozen100": {
+      "runtime_state": "SG7B10_raw100",
+      "reference_key": "frozen100",
+      "semantic_role": "FROZEN_BASELINE_OR_PRECORRECTION_STATE",
+      "authority": "AUTHORITATIVE_RAW_TARGET",
+      "shape_match": true,
+      "runtime_shape": "(2662, 201)",
+      "reference_shape": "(2662, 201)",
+      "reference_sha256": "a08c7320a63ace580456191f408a29afde65e0ad3f078846265243e53cd10297",
+      "L1": 0.0013315222500466114,
+      "L2": 0.0018463842120311064,
+      "Linf": 0.009418755769729614,
+      "precision_envelope": 1.1920928955078125e-07,
+      "precision_pass": false
+    },
+    "K5_100": {
+      "runtime_state": "SG7B10_raw100",
+      "reference_key": "K5_100",
+      "semantic_role": "K5_PRE_L2_INPUT_STATE",
+      "authority": "DIAGNOSTIC_ONLY",
+      "shape_match": true,
+      "runtime_shape": "(2662, 201)",
+      "reference_shape": "(2662, 201)",
+      "reference_sha256": "a460c076f464e5c9629802944d356dd213d7b65f234539112e785f34a93260af",
+      "L1": 0.0022228344011453183,
+      "L2": 0.0037083427772166364,
+      "Linf": 0.07277947664260864,
+      "precision_envelope": 1.1920928955078125e-07,
+      "precision_pass": false
+    },
+    "L2_independent_100": {
+      "runtime_state": "SG7B10_raw100",
+      "reference_key": "L2_independent_100",
+      "semantic_role": "L2_INDEPENDENTLY_VALIDATED_STATE",
+      "authority": "DIAGNOSTIC_ONLY",
+      "shape_match": true,
+      "runtime_shape": "(2662, 201)",
+      "reference_shape": "(2662, 201)",
+      "reference_sha256": "01bb967c07b262836f6c140dd519538db13d9ce5b3bc0f83d52a6164ddcfa950",
+      "L1": 0.002524375717907928,
+      "L2": 0.004293875999939641,
+      "Linf": 0.07460445165634155,
+      "precision_envelope": 1.1920928955078125e-07,
+      "precision_pass": false
+    }
+  },
+  "precision_envelope": 1.1920928955078125e-07,
+  "failed_gates": [
+    "raw100_closes_to_frozen100_under_unchanged_precision_envelope"
+  ],
+  "constraints": {
+    "training_performed": false,
+    "model_parameters_changed": false,
+    "gamma_changed": false,
+    "guard_changed": false,
+    "threshold_changed": false,
+    "new_250d_state_generated": false,
+    "new_500d_state_generated": false,
+    "new_1000d_state_generated": false
+  },
+  "recommendation": "Do not generate later-time states. The correct SG7B10 model and X100 now execute. Audit only the historical raw-prediction serialization/postprocessing path between model.predict(... )[:,:,0] and frozen100. Do not change model weights, X100, gamma, guard, or the precision envelope.",
+  "next_milestone": "V15-SG7E1R26I-R11 \u2014 SG7B10 Raw100 Serialization / Postprocessing Closure Audit"
+}

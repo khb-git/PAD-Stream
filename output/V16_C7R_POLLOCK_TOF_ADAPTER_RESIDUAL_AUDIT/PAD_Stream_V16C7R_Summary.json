@@ -1,0 +1,10 @@
+{
+  "milestone": "V16C-7R",
+  "status": "V16C7R_CAPILLARY_SOURCE_SEMANTICS_REPAIRED_C7_GEOMETRIC_CAPILLARY_ADAPTER_ACCEPTED",
+  "diagnosis": "C7_FAILURE_WAS_A_SOURCE_DETECTION_FALSE_NEGATIVE_NOT_A_PHYSICS_OR_METRIC_FAILURE",
+  "original_failed_gate": "stage4_capillary_semantics_reproduced",
+  "stage4_capillary_semantics_repaired": true,
+  "inherited_C7_metric_sha256": "5a47ef2a4154291b424e43d1b0e21e30baa0c805c846e9943f62f8b389289e6d",
+  "recommendation": "Accept the existing C7 Pollock/arc-length metric and capillary operator transform without recalculation. Proceed to C7A to separate Stage-4 Nc/uD transport compressibility from frozen Pollock kinematics. Do not generate Y yet.",
+  "next_milestone": "V16C-7A \u2014 Compressibility Authority Separation / Nc-uD Pollock Compatibility Audit"
+}

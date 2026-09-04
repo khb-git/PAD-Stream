@@ -1,0 +1,11 @@
+{
+  "milestone": "V15-SG7C-R3F5-R1D",
+  "status": "JOINT_EXACT_SUPPORT_TOF_RECONCILIATION_CONTRACT_READY",
+  "diagnosis": "X08_FRONT_SUPPORT_ACCEPTED_PREEXISTING_TOF_BIAS_REMAINS",
+  "training_performed": false,
+  "support_extension_recalibrated": false,
+  "X08_support_geometry_changed": false,
+  "gate_changed": false,
+  "recommendation": "Proceed to controlled R1E joint residual correction. Keep X08 support geometry exactly fixed and apply only a bounded TOF/tail-conditioned fraction of the remaining SG7A/canonical residual. Candidate selection must satisfy the unchanged 50% support gate together with every clarified front and SG7B-12 TOF/tail gate.",
+  "next_milestone": "V15-SG7C-R3F5-R1E \u2014 Controlled Joint Exact-Support / TOF-Bias Reconciliation"
+}
