@@ -1,0 +1,26 @@
+* text=auto
+
+# Linux/Colab-friendly text
+*.py text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.csv text eol=lf
+*.ipynb text eol=lf
+*.sh text eol=lf
+
+# Windows launchers
+*.bat text eol=crlf
+
+# Binary scientific/model artifacts
+*.npz binary
+*.npy binary
+*.pt binary
+*.pth binary
+*.pkl binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.keras binary
+*.h5 binary
+*.zip binary
