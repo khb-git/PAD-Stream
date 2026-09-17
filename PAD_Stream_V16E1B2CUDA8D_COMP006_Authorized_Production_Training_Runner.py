@@ -1857,6 +1857,21 @@ def load_recovery(
 ):
 
     if not RECOVERY_LATEST.exists():
+
+        orphaned = sorted(
+            RECOVERY_DIR.glob(
+                "V16E_BLREP_COMP_CUDA_006_RECOVERY_E*.pt"
+            )
+        )
+
+        if orphaned:
+            raise RuntimeError(
+                "COMP006 recovery checkpoints exist but "
+                "RECOVERY_LATEST.json is missing. "
+                "Failing closed rather than guessing which "
+                "completed epoch is authoritative."
+            )
+
         return None
 
 
