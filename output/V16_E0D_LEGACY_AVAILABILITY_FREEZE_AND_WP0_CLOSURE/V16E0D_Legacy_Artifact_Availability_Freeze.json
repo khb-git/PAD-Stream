@@ -1,0 +1,107 @@
+{
+  "milestone": "V16E-0D",
+  "role": "Formal closure of legacy provenance recovery and architecture reconciliation before new prospective reproduction/integration.",
+  "recovered_authorities": {
+    "BL_physics_ladder_sources": {
+      "Stage1_incompressible": {
+        "path": "pi_rnn_stage1_incompressible.py",
+        "sha256": "98d492e1e4a84e9d2c3ab99a631bf7d21d011b65bdd599e0ab3192d947b36e58",
+        "status": "RECOVERED_EXACT_SOURCE"
+      },
+      "Stage2_compressible_godunov": {
+        "path": "pi_rnn_stage2_compressible_godunov.py",
+        "sha256": "1dda3155fc4183930448b689de52554454498b6787fcb323737b121ec0139397",
+        "status": "RECOVERED_EXACT_SOURCE"
+      },
+      "Stage3_capillary": {
+        "path": "pi_rnn_stage3_capillary.py",
+        "sha256": "dab8eade38ac08c819ac27d803c8f1bceca9722c4c37e82977dbef6e6232ae0f",
+        "status": "RECOVERED_EXACT_SOURCE"
+      },
+      "Stage4_full_compressible_capillary": {
+        "path": "pi_rnn_stage4_full_godunov.py",
+        "sha256": "165016fd8c099afbe8fea0f5f1998728dc2a5b70ad2df35b9e1429d6eecb580a",
+        "status": "RECOVERED_EXACT_SOURCE"
+      }
+    },
+    "DP_8_layer_physics_source": {
+      "path": "PAD_Stream_CCUS_Physics_Development_v14_Complete_Validation.py",
+      "sha256": "45c3c8a26ff270df8d28dc6e67ed432a3de86255229f7046f5b0f3d1899d27f6",
+      "status": "RECOVERED_EXACT_SOURCE",
+      "fingerprints": [
+        "class DykstraParsons",
+        "allocation=\"kh\"",
+        "allocation=\"kh_mob\"",
+        "full DP table",
+        "8-layer"
+      ]
+    }
+  },
+  "historical_learned_artifact_availability": {
+    "BL_Round_1": {
+      "status": "UNAVAILABLE_FOR_EXACT_PROVENANCE",
+      "historical_definition": "earliest validated PI-RNN",
+      "source_bound": false,
+      "checkpoint_bound": false
+    },
+    "BL_Round_2": {
+      "status": "UNAVAILABLE_FOR_EXACT_PROVENANCE",
+      "historical_definition": "expanded/conditioned PI-RNN",
+      "source_bound": false,
+      "checkpoint_bound": false
+    },
+    "BL_Round_3": {
+      "status": "UNAVAILABLE_FOR_EXACT_PROVENANCE",
+      "historical_definition": "most complete BL PI-RNN",
+      "source_bound": false,
+      "checkpoint_bound": false
+    },
+    "Hybrid_DP_PI_RNN_or_layer_RNN": {
+      "status": "UNAVAILABLE_FOR_EXACT_PROVENANCE",
+      "source_bound": false,
+      "checkpoint_bound": false
+    }
+  },
+  "search_evidence": {
+    "current_portable_project_searched": true,
+    "sibling_PyCharm_projects_searched": true,
+    "file_library_searched": true,
+    "historical_learned_identity_recovery_complete": true
+  },
+  "provenance_rule": {
+    "may_call_future_model_historical_Round_1_2_3": false,
+    "may_call_future_model_historical_Hybrid_DP": false,
+    "may_retrain_from_exact_recovered_source": true,
+    "future_retraining_label": "NEW V16E PROSPECTIVE REPRODUCTION \u2014 never historical checkpoint recovery",
+    "new_checkpoint_requires_new_SHA_and_manifest": true,
+    "new_training_requires_new_protocol": true
+  },
+  "EXP_CS1_firewall": {
+    "EXP_CS1_remains_closed": true,
+    "geology0029_remains_consumed": true,
+    "geology0029_may_not_be_new_unseen_test": true
+  },
+  "WP0_state": {
+    "common_transport_interface_frozen": true,
+    "physics_authorities_frozen": true,
+    "legacy_availability_audited": true,
+    "WP0_complete": true
+  },
+  "authorization": {
+    "historical_checkpoint_deployment": false,
+    "historical_round_claims": false,
+    "prospective_source_reproduction_protocol_design": true,
+    "TOF_adapter_design_from_exact_recovered_sources": true,
+    "new_Hybrid_DP_design_from_exact_DP_physics": true,
+    "training_now": false
+  },
+  "execution_in_E0D": {
+    "TensorFlow_import": false,
+    "model_load": false,
+    "checkpoint_load": false,
+    "NPZ_load": false,
+    "OOD_reopen": false,
+    "training": false,
+    "inference": false
+  }
+}
