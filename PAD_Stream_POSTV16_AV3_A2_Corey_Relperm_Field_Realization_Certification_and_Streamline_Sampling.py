@@ -34,7 +34,12 @@ STATUS_FAIL = (
 STATUS_BLOCKED = "AV3A2_TECHNICAL_EXECUTION_BLOCKED"
 
 RID = "PAD_STREAM_V16_RC1_B92D52088D01078A"
-PARENT_A1_COMMIT = "2d38e66eec34a9693ae0daaccb3dc584dffe576f"
+
+# The first A2 source revision was pushed but deliberately NOT executed after
+# pre-execution audit found a cell-centered sampling-origin mismatch.
+SUPERSEDED_PREEXECUTION_A2_COMMIT = "d2f12c96508d6d69f94a6b658a83a623f392f3c5"
+SUPERSEDED_PREEXECUTION_A2_BLOB = "875dc8d127fab7b1aace6e394d7d99ba7ef4699b"
+GRANDPARENT_A1_COMMIT = "2d38e66eec34a9693ae0daaccb3dc584dffe576f"
 
 # --------------------------------------------------------------------------------------------------
 # Exact source lineage.
@@ -115,6 +120,12 @@ FT_TO_M = 0.3048
 DX_M = DX_FT * FT_TO_M
 DY_M = DY_FT * FT_TO_M
 DZ_M = DZ_FT * FT_TO_M
+
+# Frozen V16B3/V16C2 cell-centered interpolation geometry.
+ORIGIN_CENTER_M = np.asarray(
+    [DX_M / 2.0, DY_M / 2.0, DZ_M / 2.0],
+    dtype=np.float64,
+)
 
 NSL = 1078
 NN = 201
@@ -594,10 +605,47 @@ def self_test() -> None:
 
     # Trilinear identity on a constant field.
     f = np.full((3, 4, 5), 7.25)
-    xyz = np.asarray([[[0.0, 0.0, 0.0], [6.096, 6.096, 1.2192]]])
-    out, audit = trilinear(f, xyz, 6.096, 6.096, 1.2192, np.zeros(3))
+    xyz = np.asarray(
+        [[
+            [DX_M / 2.0, DY_M / 2.0, DZ_M / 2.0],
+            [3.0 * DX_M / 2.0, 3.0 * DY_M / 2.0, 3.0 * DZ_M / 2.0],
+        ]],
+        dtype=np.float64,
+    )
+    out, audit = trilinear(
+        f,
+        xyz,
+        DX_M,
+        DY_M,
+        DZ_M,
+        ORIGIN_CENTER_M,
+    )
     assert np.allclose(out, 7.25)
     assert audit["total_points"] == 2
+
+    # Regression guard for the exact V16B3/V16C2 cell-centered origin:
+    # the center of cell i=0 must sample index 0, and the center of i=1
+    # must sample index 1. A zero-origin implementation fails this test.
+    ramp = np.broadcast_to(
+        np.arange(5, dtype=np.float64)[None, None, :],
+        (3, 4, 5),
+    ).copy()
+    xyz_ramp = np.asarray(
+        [[
+            [DX_M / 2.0, DY_M / 2.0, DZ_M / 2.0],
+            [3.0 * DX_M / 2.0, DY_M / 2.0, DZ_M / 2.0],
+        ]],
+        dtype=np.float64,
+    )
+    ramp_s, _ = trilinear(
+        ramp,
+        xyz_ramp,
+        DX_M,
+        DY_M,
+        DZ_M,
+        ORIGIN_CENTER_M,
+    )
+    assert np.allclose(ramp_s, np.asarray([[0.0, 1.0]]))
 
     print("POSTV16-AV3-A2 field-realization/sampling self-test: PASS")
 
@@ -664,10 +712,31 @@ def main(root: Path, drive: Path) -> int:
         stage = "repository_authority"
 
         parent = git_text(root, "rev-parse", "HEAD^")
+        grandparent = git_text(root, "rev-parse", "HEAD^^")
         status = git_text(root, "status", "--porcelain")
 
-        gate("repository_parent_is_AV3A1_commit", parent == PARENT_A1_COMMIT, parent)
+        gate(
+            "repository_parent_is_superseded_unexecuted_A2_source_commit",
+            parent == SUPERSEDED_PREEXECUTION_A2_COMMIT,
+            parent,
+        )
+        gate(
+            "repository_grandparent_is_AV3A1_commit",
+            grandparent == GRANDPARENT_A1_COMMIT,
+            grandparent,
+        )
         gate("repository_clean", status == "", repr(status))
+
+        prior_blob = git_text(
+            root,
+            "rev-parse",
+            f"{SUPERSEDED_PREEXECUTION_A2_COMMIT}:{Path(__file__).name}",
+        )
+        gate(
+            "superseded_unexecuted_A2_source_blob_exact",
+            prior_blob == SUPERSEDED_PREEXECUTION_A2_BLOB,
+            prior_blob,
+        )
 
         for fn, expected in SOURCE_BLOBS.items():
             p = root / fn
@@ -791,6 +860,18 @@ def main(root: Path, drive: Path) -> int:
         gate("K_shape_exact", K.shape == GRID, K.shape)
         gate("K_positive", float(np.min(K)) > 0.0, float(np.min(K)))
 
+        gate(
+            "V16B3_V16C2_cell_centered_sampling_origin_exact",
+            np.array_equal(
+                ORIGIN_CENTER_M,
+                np.asarray(
+                    [DX_M / 2.0, DY_M / 2.0, DZ_M / 2.0],
+                    dtype=np.float64,
+                ),
+            ),
+            ORIGIN_CENTER_M.tolist(),
+        )
+
         # ------------------------------------------------------------------------------------------
         # Execute the exact four-realization registry.
         # ------------------------------------------------------------------------------------------
@@ -871,7 +952,7 @@ def main(root: Path, drive: Path) -> int:
                     DX_M,
                     DY_M,
                     DZ_M,
-                    np.zeros(3, dtype=np.float64),
+                    ORIGIN_CENTER_M,
                 )
 
                 sci_gate(f"{rid}_{name}_sample_shape", ss.shape == (NSL, NN), ss.shape)
@@ -892,6 +973,12 @@ def main(root: Path, drive: Path) -> int:
                     "partition": partition,
                     "parameter": name,
                     "method": "TRILINEAR_CELL_CENTERED_V16C2_EXACT_ALGEBRA",
+                    "origin_x_m": float(ORIGIN_CENTER_M[0]),
+                    "origin_y_m": float(ORIGIN_CENTER_M[1]),
+                    "origin_z_m": float(ORIGIN_CENTER_M[2]),
+                    "dx_m": DX_M,
+                    "dy_m": DY_M,
+                    "dz_m": DZ_M,
                     **sa,
                     "sample_min": float(np.min(ss)),
                     "sample_mean": float(np.mean(ss)),
@@ -1093,6 +1180,15 @@ def main(root: Path, drive: Path) -> int:
             "milestone": MILESTONE,
             "status": STATUS_PASS,
             "protocol_id": PROTOCOL_ID,
+            "preexecution_source_revision": {
+                "superseded_commit": SUPERSEDED_PREEXECUTION_A2_COMMIT,
+                "superseded_blob": SUPERSEDED_PREEXECUTION_A2_BLOB,
+                "scientific_execution_occurred_under_superseded_source": False,
+                "correction": (
+                    "Use frozen V16B3/V16C2 cell-centered interpolation origin "
+                    "[dx/2,dy/2,dz/2] instead of zero origin."
+                ),
+            },
             "realizations_completed": 4,
             "all_fields_inside_frozen_bounds": True,
             "latent_geology_orthogonality_certified": True,
@@ -1122,6 +1218,8 @@ def main(root: Path, drive: Path) -> int:
             "milestone": MILESTONE,
             "status": STATUS_PASS,
             "protocol_id": PROTOCOL_ID,
+            "preexecution_sampling_origin_correction_applied": True,
+            "superseded_unexecuted_source_commit": SUPERSEDED_PREEXECUTION_A2_COMMIT,
             "realizations_completed": 4,
             "variable_parameters": VARIABLE_PARAMETERS,
             "nw_open_bounds": [2.0, 4.0],
