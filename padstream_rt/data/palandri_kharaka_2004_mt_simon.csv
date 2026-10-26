@@ -14,5 +14,6 @@ dawsonite,secondary carbonate (mineral trapping),33,42,,,,-7.00,62.8,,,,,,,
 hematite,Fe-oxide grain coatings,31,40,-9.39,66.2,1.000,-14.60,66.2,,,,,,,
 anhydrite,minor sulfate (Eau Claire topics),34,43,,,,-3.19,14.3,,,,,,,
 pyrite,Eau Claire caprock,35,43,-7.52,56.9,-0.500,-4.55,56.9,,,,,,,"Acid term also has order +0.500 in Fe3+; neutral term has order 0.500 in O2 (PK Table 35). Needs redox; not usable in the v0.1 component basis."
-siderite,secondary carbonate (Fe),--,--,,,,,,,,,,,,"Not in PK 2004. Needs another source (e.g. a dedicated siderite kinetics study); do not substitute calcite values silently."
+siderite (provisional; Sun et al. 2020 Table 4),secondary carbonate (Fe),Sun2020-T4,10,,,,-10.77,48.0,,,,,,,"Not in PK 2004. Value from Sun et al. 2020 Fuel 278:118356 Table 4 p.10 (they attribute k to PK and E to Nghiem et al. 2004; primary source unclear). Provisional."
 ankerite,secondary carbonate (Fe-dolomite),--,--,,,,,,,,,,,,"Not in PK 2004. Dolomite is the usual proxy in TOUGHREACT-type models; flag it as a proxy if used."
+illite (provisional; Sun et al. 2020 Table 4),secondary (illitization),Sun2020-T4,10,,,,-14.00,58.62,,,,,,,"Not in PK 2004. Value from Sun et al. 2020 Table 4 p.10; primary source unclear. Provisional; compare with the muscovite/smectite proxies."

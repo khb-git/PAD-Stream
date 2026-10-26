@@ -207,4 +207,6 @@ def test_pk_table_loader_matches_source_values():
     k25 = rate_constant(m, 298.15, pH=0.0)
     assert np.isclose(k25, 10 ** -0.30 + 10 ** -5.81)   # pH 0: acid + neutral
     with pytest.raises(ValueError):
-        load_pk_parameters("siderite")
+        load_pk_parameters("ankerite")                      # no sourced values
+    sid = load_pk_parameters("siderite (provisional; Sun et al. 2020 Table 4)")
+    assert (sid["log10_k25_neutral"], sid["E_neutral"]) == (-10.77, 48.0e3)
