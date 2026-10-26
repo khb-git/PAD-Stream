@@ -191,3 +191,18 @@ def test_io_reads_sgsim_permeability():
     assert perm.shape == (37500, 3)
     np.testing.assert_allclose(perm[:, 2], 0.1 * perm[:, 0])
     assert perm[0, 0] / MD_TO_M2 == pytest.approx(145.65946620)
+
+
+def test_pk_table_loader_matches_source_values():
+    from padstream_rt.kinetics import load_pk_parameters, rate_constant
+    p = load_pk_parameters("calcite")
+    assert (p["log10_k25_acid"], p["E_acid"], p["n_acid"]) == (-0.30, 14.4e3, 1.0)
+    assert (p["log10_k25_neutral"], p["E_neutral"]) == (-5.81, 23.5e3)
+    assert (p["log10_k25_carb"], p["n_carb"]) == (-3.48, 1.0)
+    kf = load_pk_parameters("K-feldspar")
+    assert (kf["log10_k25_base"], kf["n_base"]) == (-21.20, -0.823)
+    m = Mineral("calcite", [1, 1, -1], 36.934e-6, 1.85, **p)
+    k25 = rate_constant(m, 298.15, pH=0.0)
+    assert np.isclose(k25, 10 ** -0.30 + 10 ** -5.81)   # pH 0: acid + neutral
+    with pytest.raises(ValueError):
+        load_pk_parameters("siderite")

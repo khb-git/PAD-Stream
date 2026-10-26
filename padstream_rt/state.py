@@ -83,6 +83,9 @@ class Mineral:
     log10_k25_base: Optional[float] = None
     E_base: Optional[float] = None
     n_base: float = 0.0
+    log10_k25_carb: Optional[float] = None   # carbonate mechanism (PK 2004 Table 33)
+    E_carb: Optional[float] = None
+    n_carb: float = 0.0                      # order with respect to P(CO2)
     specific_area: float = 1.0e3  # m^2 per m^3 of mineral (geometric proxy)
     theta: float = 1.0
     eta: float = 1.0

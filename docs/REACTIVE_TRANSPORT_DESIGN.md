@@ -122,7 +122,7 @@ The result is also clipped to [10⁻³, 10³]·k₀.
 
 ## 6. Verification on this branch
 
-- `pytest -q` passes 10 tests:
+- `pytest -q` passes 11 tests:
   - transfer round trip and conservation;
   - upwind conservation and positivity;
   - routing limits and dilation;
@@ -131,7 +131,8 @@ The result is also clipped to [10⁻³, 10³]·k₀.
   - KC, VP and the learned guard;
   - transmissibilities equal to the SG2 formula;
   - end-to-end acid injection with the reference and with a biased surrogate;
-  - SGSIM I/O.
+  - SGSIM I/O;
+  - the Palandri & Kharaka (2004) parameter loader (`data/palandri_kharaka_2004_mt_simon.csv`, values read from the original report with table and page numbers).
 - `examples/benchmark_full_grid.py` runs at production size (15×50×50, 1078 streamlines × 200 CVs, 215,600 CVs) with synthetic streamlines and calcite + dolomite:
   - operator build takes 0.2 s;
   - one reactive step takes about 12 s on one CPU core, almost all of it in the reference bisection;
