@@ -5,7 +5,10 @@ Porosity from mineral volume balance (review Part 1.5):
 
 Permeability laws (review Part 11.2):
     Kozeny-Carman   k/k0 = (phi/phi0)^3 * ((1-phi0)/(1-phi))^2
-    Verma-Pruess    k/k0 = ((phi - phi_c)/(phi0 - phi_c))^n   (Verma & Pruess 1988)
+    Verma-Pruess    (k - k_c)/(k0 - k_c) = ((phi - phi_c)/(phi0 - phi_c))^n
+                    (Verma & Pruess 1988, JGR 93(B2), Eq. 6, p. 1161; k_c and
+                    phi_c are the asymptotic minimum permeability and porosity.
+                    The common TOUGHREACT form is the special case k_c = 0.)
     Learned         k/k0 = g_theta(phi, phi0, features), guarded:
                     * falls back to Kozeny-Carman outside the training phi range,
                     * must not move opposite to the porosity change,
@@ -36,9 +39,11 @@ def kozeny_carman(phi, phi0):
     return (phi / phi0) ** 3 * ((1.0 - phi0) / (1.0 - phi)) ** 2
 
 
-def verma_pruess(phi, phi0, phi_c=0.0, n=2.0):
+def verma_pruess(phi, phi0, phi_c=0.0, n=2.0, kc_over_k0=0.0):
+    """k/k0 from Verma & Pruess (1988) Eq. 6 with k_c = kc_over_k0 * k0."""
     num = np.clip(phi - phi_c, 0.0, None)
-    return (num / np.maximum(phi0 - phi_c, 1e-12)) ** n
+    f = (num / np.maximum(phi0 - phi_c, 1e-12)) ** n
+    return kc_over_k0 + (1.0 - kc_over_k0) * f
 
 
 @dataclass

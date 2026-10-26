@@ -138,6 +138,8 @@ def test_permeability_laws_and_learned_guard():
     assert kc[1] == pytest.approx(1.0) and np.all(np.diff(kc) > 0)
     vp = verma_pruess(phi, phi0, phi_c=0.1, n=2)
     assert vp[1] == pytest.approx(1.0) and np.all(np.diff(vp) > 0)
+    # Eq. 6 with k_c: at phi = phi_c, k -> k_c
+    assert verma_pruess(np.array([0.1]), np.array([0.2]), phi_c=0.1, n=2, kc_over_k0=0.05)[0] == pytest.approx(0.05)
     learned = LearnedPermeability(lambda p, p0: (p / p0) ** 5, 0.15, 0.24)
     r, fb = learned(phi, phi0)
     assert fb.tolist() == [False, False, False, True, True]
