@@ -1,4 +1,6 @@
-"""Routing ablation on a lower Mt. Simon layer (claim 1 + claim 2 experiment).
+"""Routing ablation on one Mt. Simon-complex layer (claim 1 + claim 2 experiment).
+
+``--system lower_mt_simon`` (default) or ``--system argenta`` (carbonate-bearing).
 
 One 50 x 50 x 1 layer of the PAD-Stream grid (20 x 20 x 4 ft cells), lower
 Mt. Simon mineralogy from Freiburg et al. (2022) (mineralogy.py), PK 2004
@@ -14,6 +16,10 @@ Configurations (all use the same transport and the same time steps):
   da_surr      Damkohler routing + surrogate + fallback          (claims 1 + 2)
   stiff_surr_S surrogate, but cells with stiffness ratio > S go to the
                PHREEQC reference a priori (SpeciationSurrogate.stiffness)
+  da_stiff_S   Damkohler routing (skip / equilibrium) + stiff_surr_S for the
+               KINETIC pairs: the full four-way router
+  *_eqfirst    any config with the v0.3.0 split order (equilibrium pairs
+               before kinetic pairs; default is kinetic first)
   da_sat_*     as da_*, with the saturation-aware Damkohler number
                (precipitating minerals limited by aqueous supply)
 
@@ -41,18 +47,53 @@ from padstream_rt.kinetics import load_pk_parameters
 from padstream_rt.mineralogy import DENSITY_G_CM3, c_eq_scales, unit_mineralogy
 from padstream_rt.phreeqc_backend import ATM, _phreeqc
 from padstream_rt.state import MD_TO_M2
-from padstream_rt.surrogate import MLP, TRACE_MOLAL, SpeciationSurrogate
+from padstream_rt.surrogate import MLP, TRACE_MOLAL, SpeciationSurrogate, trace_elements
 
-ELEMENTS = ["Na", "K", "Mg", "Fe", "Al", "Si", "C", "Cl"]
-PHASES = ["Quartz", "K-feldspar", "Albite", "Siderite", "Illite", "Kaolinite"]
-XRD = ["quartz", "k_feldspar", "plagioclase", "siderite", "illite_mica", None]
-PK = ["quartz", "K-feldspar", "albite", "siderite (provisional; Sun et al. 2020 Table 4)",
-      "illite (provisional; Sun et al. 2020 Table 4)", "kaolinite"]
-MOLAR_MASS = dict(Quartz=60.08, **{"K-feldspar": 278.33}, Albite=262.22, Siderite=115.85,
-                  Illite=389.34, Kaolinite=258.16)          # g/mol, phreeqc.dat formulae
-DENS = dict(Quartz=DENSITY_G_CM3["quartz"], **{"K-feldspar": DENSITY_G_CM3["k_feldspar"]},
-            Albite=DENSITY_G_CM3["plagioclase"], Siderite=DENSITY_G_CM3["siderite"],
-            Illite=DENSITY_G_CM3["illite_mica"], Kaolinite=DENSITY_G_CM3["kaolinite"])
+# Reacting systems.  XRD = Freiburg et al. (2022) Table 1 class for each phase
+# (None = not in the rock: seeded at a small volume fraction, assumed).  Pyrite and
+# hematite are left inert (redox rate laws not modelled).  Molar masses follow the
+# phreeqc.dat formulae.
+SYSTEMS = {
+    "lower_mt_simon": dict(
+        unit="Lower Mt. Simon", grain=None,
+        elements=["Na", "K", "Mg", "Fe", "Al", "Si", "C", "Cl"],
+        phases=["Quartz", "K-feldspar", "Albite", "Siderite", "Illite", "Kaolinite"],
+        xrd=["quartz", "k_feldspar", "plagioclase", "siderite", "illite_mica", None],
+        pk=["quartz", "K-feldspar", "albite", "siderite (provisional; Sun et al. 2020 Table 4)",
+            "illite (provisional; Sun et al. 2020 Table 4)", "kaolinite"],
+        formation_eq=["Quartz", "Kaolinite", "K-feldspar"],
+        secondaries=["Kaolinite", "Quartz"]),
+    # Argenta: Freiburg et al. 2022 give "very fine sandstone to pebble" (p. 11);
+    # pebble is outside the Wentworth table, so very fine to very coarse is ASSUMED.
+    "argenta": dict(
+        unit="Argenta", grain="very fine to very coarse",
+        elements=["Na", "K", "Mg", "Ca", "Al", "Si", "C", "Cl"],
+        phases=["Quartz", "K-feldspar", "Calcite", "Dolomite", "Illite", "Kaolinite", "Chlorite(14A)"],
+        xrd=["quartz", "k_feldspar", "calcite", "dolomite", "illite_mica", "kaolinite", "chlorite"],
+        pk=["quartz", "K-feldspar", "calcite", "dolomite (disordered)",
+            "illite (provisional; Sun et al. 2020 Table 4)", "kaolinite", "chlorite"],
+        formation_eq=["Quartz", "Kaolinite", "K-feldspar", "Calcite", "Dolomite"],
+        secondaries=["Kaolinite", "Quartz", "Calcite"],
+        # ASSUMED: no kinetic precipitation of the primary silicates.  With the
+        # symmetric PK law, illite precipitation on 1-um geometric clay areas in
+        # fully acidified brine stalled PHREEQC KINETICS (> 4 min per cell).
+        dissolution_only=["K-feldspar", "Illite", "Chlorite(14A)"]),
+}
+MOLAR_MASS = {"Quartz": 60.08, "K-feldspar": 278.33, "Albite": 262.22, "Siderite": 115.85,
+              "Illite": 389.34, "Kaolinite": 258.16, "Calcite": 100.09, "Dolomite": 184.40,
+              "Chlorite(14A)": 555.80}
+XRD_DENS = {"Quartz": "quartz", "K-feldspar": "k_feldspar", "Albite": "plagioclase",
+            "Siderite": "siderite", "Illite": "illite_mica", "Kaolinite": "kaolinite",
+            "Calcite": "calcite", "Dolomite": "dolomite", "Chlorite(14A)": "chlorite"}
+
+
+def select_system(name):
+    global SYSTEM, ELEMENTS, PHASES, XRD, PK
+    SYSTEM = SYSTEMS[name]
+    ELEMENTS, PHASES, XRD, PK = (SYSTEM[k] for k in ("elements", "phases", "xrd", "pk"))
+
+
+select_system("lower_mt_simon")
 T_K, P_PA, NACL, LOG_PCO2_INJ = 323.15, 15e6, 2.0, 1.9
 
 
@@ -60,7 +101,7 @@ def brine_totals(log_pco2, phases_eq=()):
     """mol per m^3 brine of each element for 2 m NaCl at (T, P)."""
     p = _phreeqc("phreeqc.dat")
     eq = "\n".join([f" CO2(g) {log_pco2} 100"] + [f" {ph} 0 10" for ph in phases_eq])
-    tr = "\n".join(f" {e} {TRACE_MOLAL}" for e in ("K", "Mg", "Fe(2)", "Al", "Si"))
+    tr = "\n".join(f" {e} {TRACE_MOLAL}" for e in trace_elements(ELEMENTS))
     inp = (f"SELECTED_OUTPUT\n -reset false\nUSER_PUNCH\n -headings {' '.join(ELEMENTS)}\n"
            + "\n".join(f"{10 + i} PUNCH TOT(\"{e}\")" for i, e in enumerate(ELEMENTS))
            + f"\nSOLUTION 1\n temp {T_K - 273.15}\n pressure {P_PA / ATM}\n units mol/kgw\n pH 7 charge\n"
@@ -89,17 +130,18 @@ def synthetic_bundle(geom, nsl=400, nnode=201, total_q=714.29 / 86400 / 15, seed
 
 
 def build(roughness=1.0, seed=3, nx=25):
-    um = unit_mineralogy("Lower Mt. Simon", roughness=roughness)
+    um = unit_mineralogy(SYSTEM["unit"], grain_size_text=SYSTEM["grain"], roughness=roughness)
     vf, spec = {}, {}
     for ph, x in zip(PHASES, XRD):
         if x is None:
-            vf[ph], spec[ph] = 1e-4, 6.0 / 1e-6 * roughness       # kaolinite seed (assumed)
+            vf[ph], spec[ph] = 1e-4, 6.0 / 1e-6 * roughness       # secondary seed (assumed)
         else:
             i = um.minerals.index(x)
             vf[ph], spec[ph] = um.vf_bulk[i], um.specific_area[i]
     kp = {ph: load_pk_parameters(n) for ph, n in zip(PHASES, PK)}
-    vm = {ph: MOLAR_MASS[ph] / DENS[ph] * 1e-6 for ph in PHASES}
-    phq = PhreeqcBackend(ELEMENTS, PHASES, kinetic_params=kp, specific_area=spec, molar_volume=vm)
+    vm = {ph: MOLAR_MASS[ph] / DENSITY_G_CM3[XRD_DENS[ph]] * 1e-6 for ph in PHASES}
+    phq = PhreeqcBackend(ELEMENTS, PHASES, kinetic_params=kp, specific_area=spec, molar_volume=vm,
+                         dissolution_only=SYSTEM.get("dissolution_only", ()))
     ceq = c_eq_scales(PHASES, T_K, P_PA, NACL, 10 ** LOG_PCO2_INJ)
     system = phq.chemical_system(ceq)
     geom = GridGeometry(nx=nx, ny=nx, nz=1)
@@ -108,7 +150,7 @@ def build(roughness=1.0, seed=3, nx=25):
     st = ReactiveState(geom, system, porosity=um.porosity,
                        perm=np.repeat(rng.lognormal(np.log(110), 0.6, n)[:, None], 3, 1) * MD_TO_M2,
                        brine_saturation=0.6,
-                       total_aq=np.tile(brine_totals(-1.0, ["Quartz", "Kaolinite", "K-feldspar"]), (n, 1)),
+                       total_aq=np.tile(brine_totals(-1.0, SYSTEM["formation_eq"]), (n, 1)),
                        mineral_vf=np.tile([vf[p] for p in PHASES], (n, 1)),
                        temperature=T_K, pressure=P_PA)
     frac = nx * nx / 2500.0                     # same flux per unit area as the 50 x 50 layer
@@ -118,11 +160,16 @@ def build(roughness=1.0, seed=3, nx=25):
     return phq, st, op, brine_totals(LOG_PCO2_INJ)
 
 
-def run(config, phq, st0, op0, c_in, net, steps, dt, da_eq=10.0, da_skip=1e-3):
+def run(config, phq, st0, op0, c_in, net, steps, dt, da_eq=10.0, da_skip=1e-3, chem_substeps=1):
+    # suffix "_eqfirst": the v0.3.0 split order (equilibrium pairs, then kinetic)
+    chem_order = ("kinetic", "equilibrium")
+    if config.endswith("_eqfirst"):
+        config, chem_order = config[:-len("_eqfirst")], ("equilibrium", "kinetic")
     st, op = copy.deepcopy(st0), copy.deepcopy(op0)
     sb = st.brine_saturation
     fb = sb ** 2 / (sb ** 2 + 0.1 * (1 - sb) ** 2)
-    stiff_max = float(config.split("_")[-1]) if config.startswith("stiff_surr_") else None
+    stiff_max = (float(config.split("_")[-1])
+                 if config.startswith(("stiff_surr_", "da_stiff_")) else None)
     surr = (SpeciationSurrogate(net, phq.minerals, ELEMENTS, stiff_max=stiff_max)
             if net is not None else None)
     T, P = st.temperature, st.pressure
@@ -140,19 +187,22 @@ def run(config, phq, st0, op0, c_in, net, steps, dt, da_eq=10.0, da_skip=1e-3):
     da = RoutingConfig(da_eq=da_eq, da_skip=da_skip, buffer_cells=1)
     routing = {"truth": off, "aposteriori": off,
                "all_eq": RoutingConfig(da_eq=0.0, da_skip=0.0, buffer_cells=0),
-               "da_ref": da, "da_surr": da, "da_sat_ref": da, "da_sat_surr": da}.get(config, off)
+               "da_ref": da, "da_surr": da, "da_sat_ref": da, "da_sat_surr": da}.get(
+                   config, da if config.startswith("da_stiff_") else off)
     t_chem, mass_err, counts, ref_cells = 0.0, 0.0, [], 0
     failed = None
     for k in range(steps):
         t0 = time.perf_counter()
         try:
             rep = reactive_step(st, op, backend, dt, fb, c_inlet=c_in, routing=routing, pH_fn=pH_fn,
-                                spec_fn=spec_fn)
+                                spec_fn=spec_fn, chem_order=chem_order,
+                                chem_substeps=1 if chem_order[0] == "equilibrium" else chem_substeps)
         except RuntimeError as e:                       # PHREEQC did not converge
             failed = (k, str(e).strip().splitlines()[-1][:160])
             break
         t_chem += time.perf_counter() - t0
         mass_err = max(mass_err, float(np.abs(rep.mass_balance_error).max()))
+        print(f"  [{config}] step {k + 1}/{steps}: {time.perf_counter() - t0:.1f} s", flush=True)
         if backend is phq:                               # every routed cell is a PHREEQC solve
             ref_cells += int((st.regime != 0).any(axis=1).sum())
         counts.append(rep.extra["per_mineral"])
@@ -193,10 +243,16 @@ def main():
     ap.add_argument("--configs", default="truth,all_eq,da_ref,aposteriori,da_surr")
     ap.add_argument("--out", default=None)
     ap.add_argument("--nx", type=int, default=25)
+    ap.add_argument("--reference", default="truth",
+                    help="config the others are compared with (da_ref when full kinetics is too slow)")
+    ap.add_argument("--system", default="lower_mt_simon", choices=sorted(SYSTEMS))
     ap.add_argument("--cache", default="ablation_cache", help="prefix for cached truth / all_eq runs")
     ap.add_argument("--da_eq", type=float, default=10.0)
     ap.add_argument("--da_skip", type=float, default=1e-3)
+    ap.add_argument("--chem_substeps", type=int, default=1,
+                    help="kinetic/equilibrium alternations per step (the _eqfirst configs always use 1)")
     a = ap.parse_args()
+    select_system(a.system)
     net = None
     if a.net:
         net = MLP.load(a.net) if a.net.endswith(".npz") else MLP.from_state(pickle.load(open(a.net, "rb")))
@@ -204,12 +260,12 @@ def main():
     dt = a.dt_days * 86400.0
     results = {}
     for cfg in a.configs.split(","):
-        cache = f"{a.cache}_{cfg}_nx{a.nx}_s{a.steps}_dt{a.dt_days:g}_r{a.roughness:g}.pkl" if a.cache else None
-        if cfg in ("truth", "all_eq") and cache and os.path.exists(cache):
+        cache = f"{a.cache}_{a.system}_{cfg}_cs{a.chem_substeps}_nx{a.nx}_s{a.steps}_dt{a.dt_days:g}_r{a.roughness:g}.pkl" if a.cache else None
+        if cfg in ("truth", "all_eq", "da_ref") and cache and os.path.exists(cache):
             results[cfg] = pickle.load(open(cache, "rb"))
         else:
-            results[cfg] = run(cfg, phq, st0, op0, c_in, net, a.steps, dt, a.da_eq, a.da_skip)
-            if cfg in ("truth", "all_eq") and cache:
+            results[cfg] = run(cfg, phq, st0, op0, c_in, net, a.steps, dt, a.da_eq, a.da_skip, a.chem_substeps)
+            if cfg in ("truth", "all_eq", "da_ref") and cache:
                 pickle.dump(results[cfg], open(cache, "wb"))
         r = results[cfg]
         if r["failed"]:
@@ -220,18 +276,18 @@ def main():
               f"fallback {r['fallback']}  {r['reasons'] or ''}", flush=True)
     summary = {}
     for cfg, r in results.items():
-        if cfg == "truth" or r["failed"]:
+        if cfg == a.reference or r["failed"]:
             summary[cfg] = dict(failed=r["failed"]) if r["failed"] else summary.get(cfg)
             continue
-        c = compare(r, results["truth"], st0)
+        c = compare(r, results[a.reference], st0)
         summary[cfg] = dict(ref_cells=r["ref_cells"], time=r["time"], mass_err=r["mass_err"], fallback=r["fallback"],
                             reasons=r["reasons"], **c, last_regimes=r["per_mineral"][-1])
         print(f"{cfg:12s} d(mineral vol) err {c['dvf_rel_L1']:.2e}  dphi err {c['dphi_rel_L1']:.2e}  dC err {c['dC_rel_L1']:.2e}  "
               f"mineral err {dict(zip(PHASES, np.round(c['mineral_rel_L1'], 4)))}")
-    summary["truth"] = dict(time=results["truth"]["time"], mass_err=results["truth"]["mass_err"],
-                            last_regimes=results["truth"]["per_mineral"][-1],
-                            dphi_max=float(np.abs(results["truth"]["state"].porosity - st0.porosity).max()))
-    print("truth max |dphi|", summary["truth"]["dphi_max"])
+    ref = results[a.reference]
+    summary[a.reference] = dict(time=ref["time"], mass_err=ref["mass_err"], last_regimes=ref["per_mineral"][-1],
+                                dphi_max=float(np.abs(ref["state"].porosity - st0.porosity).max()))
+    print(f"{a.reference} max |dphi|", summary[a.reference]["dphi_max"])
     for cfg in ("da_ref", "da_surr", "da_sat_ref", "da_sat_surr"):
         if cfg in results:
             print(cfg, "final regimes", results[cfg]["per_mineral"][-1])

@@ -60,6 +60,8 @@ def mineral_rate(m: Mineral, area, T, pH, omega) -> np.ndarray:
     """Net dissolution rate per bulk volume (mol m^-3 s^-1)."""
     k = rate_constant(m, T, pH)
     drive = 1.0 - np.power(np.clip(omega, 0.0, None), m.theta)
+    if not getattr(m, "precipitate", True):
+        drive = np.clip(drive, 0.0, None)
     return area * k * np.sign(drive) * np.abs(drive) ** m.eta
 
 

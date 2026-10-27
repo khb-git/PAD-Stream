@@ -262,6 +262,10 @@ class SurrogateBackend:
             ok = self._check(x, out, mode)
             xi = np.where(x.mask(), np.asarray(out["xi"], dtype=float), 0.0)
             routed = np.asarray(out.get("route_to_reference", np.zeros(len(ok), bool)), bool)
+        except NotImplementedError:  # model declines this mode (e.g. equilibrium): reference, not a failure
+            ok = np.zeros(x.n_aq.shape[0], dtype=bool)
+            routed = np.ones(x.n_aq.shape[0], dtype=bool)
+            xi = np.zeros_like(x.n_min)
         except Exception:  # model failure -> everything falls back
             ok = np.zeros(x.n_aq.shape[0], dtype=bool)
             routed = np.zeros(x.n_aq.shape[0], dtype=bool)

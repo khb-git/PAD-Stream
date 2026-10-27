@@ -276,3 +276,22 @@ Full results: `docs/ROUTING_ABLATION_2026-10-27.md`.
     cells sent to the reference.
 * **Revised claim 1:** the router chooses among four treatments: explicit surrogate, implicit reference, equilibrium
   and skip. Damköhler numbers decide equilibrium and skip; the stiffness ratio decides surrogate versus reference.
+
+## 13. Carbonate unit, split order and dissolution-only silicates (v0.3.1)
+
+Results: second half of `docs/ROUTING_ABLATION_2026-10-27.md`.
+
+* **Split order:** `reactive_step(..., chem_order=("kinetic", "equilibrium"), chem_substeps=1)`. Kinetic pairs now
+  run first, and the EQUILIBRIUM pairs re-equilibrate with what the kinetics released. In the carbonate-bearing
+  Argenta, the old order (equilibrium first) missed 64–86% of the mineral change against full kinetics.
+  Kinetic-then-equilibrium with 6 substeps missed 0.1–16% (76% in unreacted formation brine, where the changes
+  are small).
+* **Dissolution-only option:** `Mineral.precipitate` and `PhreeqcBackend(..., dissolution_only=[...])` apply the
+  PK law to dissolution only. This is assumed for K-feldspar, illite and chlorite in the Argenta runs, because
+  symmetric precipitation on geometric clay areas stalled PHREEQC KINETICS.
+* **Multi-unit ablation:** `examples/routing_ablation.py --system {lower_mt_simon, argenta}`. It adds the four-way
+  router config `da_stiff_S`, a `*_eqfirst` suffix for the old split order, `--reference` and `--chem_substeps`.
+  `train_speciation_surrogate.py --system` trains the network for either unit.
+* **Finding:** in Argenta, Damköhler routing sends calcite and dolomite to EQUILIBRIUM, which makes the reference
+  practical (full kinetics is 1–90x slower per cell). The surrogate handles only 8% of kinetic cell-solves there;
+  the rest are stiff.

@@ -56,3 +56,11 @@ def test_phreeqc_kinetics_keeps_elements_positive():
     after = n_aq + xi @ b.chemical_system().nu_matrix
     assert after.min() > -1e-10
     assert xi[0, 1] > 0                                          # feldspar dissolves in acid brine
+
+
+def test_dissolution_only_rate():
+    from padstream_rt import Mineral
+    from padstream_rt.kinetics import mineral_rate
+    m = Mineral("x", [1.0], 2e-5, 0.0, -10.0, 0.0, precipitate=False)
+    assert mineral_rate(m, 1.0, 323.15, 5.0, 10.0) == 0.0          # supersaturated: no growth
+    assert mineral_rate(m, 1.0, 323.15, 5.0, 0.1) > 0.0            # undersaturated: dissolves

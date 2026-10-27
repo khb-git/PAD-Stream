@@ -88,7 +88,7 @@ At S > 8, the error falls about 11x (13% → 1.2%) compared with the surrogate c
   - equilibrium;
   - skip.
 
-  Damköhler numbers decide equilibrium and skip; the stiffness ratio decides surrogate versus implicit reference. As far as the literature search found, no published scheme routes on stiffness. Re-check this against Leal 2020 and Coatléven 2026 before putting it in the thesis.
+  Damköhler numbers decide equilibrium and skip; the stiffness ratio decides surrogate versus implicit reference. Per-cell a priori solver selection already exists in combustion (Lapointe et al. 2020, doi:10.1016/j.combustflame.2020.06.033), so the claim is its transfer to mineral reactive transport with physical criteria. The Scopus check is in living-doc section 12.12; Web of Science is still to do.
 - **Claim 2:** the surrogate with fallback works and conserves mass exactly. In this system, its speed is limited by how many cells are stiff, not by network accuracy.
 
 ## Limitations
@@ -96,6 +96,70 @@ At S > 8, the error falls about 11x (13% → 1.2%) compared with the surrogate c
 - **Small domain:** one layer, a 25 x 25 grid and synthetic streamlines.
 - **Assumed rock and fluid properties:** geometric surface areas, NaCl-only brine (IBDP brine is Na-Ca-Cl) and an assumed kaolinite seed.
 - **Siderite and illite rate constants** are provisional (from Sun et al. 2020).
-- **Damköhler thresholds not tested:** da_skip = 1e-2 and 1e-1 still need to be run.
+- **Skip threshold:** at da_skip = 1e-2 the router skips kaolinite everywhere (its Da_dt is 6e-3). No cell is skipped whole, so nothing is saved, and removing the Al sink made the PHREEQC reference 3–8x slower per step (more than 7 minutes at step 5 on a 10 x 10 layer, when the run was stopped). Skipping a secondary sink phase is harmful; the error was not measured.
 - **Timing hardware:** 2 CPU cores.
 - **Timings include transport.** PHREEQC KINETICS costs about 24 ms per cell; the surrogate itself costs under 0.1 ms per cell.
+
+
+# Carbonate-bearing unit: Argenta (27 Oct 2026, later the same day)
+
+Run with `--system argenta`. Network: `examples/models/argenta_speciation_v1.npz`, with pH MAE 0.005 and SI MAE 0.007–0.053 (chlorite is the worst).
+
+## Set-up changes from the lower Mt. Simon runs
+
+- **Mineralogy:** Freiburg et al. (2022), Table 1, Argenta row: quartz, K-feldspar, calcite, dolomite, illite, kaolinite and chlorite. Pyrite and hematite are inert.
+- **Grain size:** "very fine to very coarse", assumed. The paper's own description runs from very fine sand to pebble.
+- **Dolomite:** PK 2004 "disordered" parameters.
+- **No kinetic precipitation of K-feldspar, illite or chlorite** (assumed). With the symmetric PK law, illite precipitation on 1-µm clay areas in fully acidified brine stalled PHREEQC KINETICS for more than 4 minutes per cell.
+- **Formation brine:** equilibrated with quartz, kaolinite, K-feldspar, calcite and dolomite at pCO2 = 0.1 atm.
+
+## 1. Damköhler routing now does work
+
+At 30-day steps it routes every calcite and dolomite pair to EQUILIBRIUM, where Da_dt runs from 2e2 to 1e5. Kaolinite also goes to EQUILIBRIUM at the inlet (Da_dt 16), and the silicates stay KINETIC.
+
+## 2. Full kinetics is impractical
+
+One cell and one 30-day step, single-cell test (`local_arg.py` in the scratch folder). The routed result uses the new kinetic-then-equilibrium order with 6 substeps.
+
+| Inlet-brine fraction | PHREEQC full kinetics (s) | Routed (s) | Routed error | All-equilibrium error |
+|---|---|---|---|---|
+| 0 (formation brine) | 2.5 | 2.2 | 76% (small absolute change) | 2951x |
+| 0.25 | 11.6 | 2.4 | 16% | 92x |
+| 0.50 | 52.4 | 1.8 | 0.12% | 90x |
+| 0.75 | 84.7 | 1.9 | 0.53% | 89x |
+| 1.0 | 165.7 | 1.9 | 22% (kaolinite also at equilibrium) | 89x |
+
+## 3. The order of the split matters
+
+The v0.3.0 coupling did equilibrium first, then kinetics. That misses Mg released by chlorite, which full kinetics precipitates as dolomite. Errors per order, in the same single-cell test:
+
+| Inlet-brine fraction | Equilibrium → kinetic | Kinetic → equilibrium | Kinetic → equilibrium, 6 substeps |
+|---|---|---|---|
+| 0.25 | 86% | 58% | 16% |
+| 0.50 | 74% | 20% | 0.12% |
+| 0.75 | 64% | 1.2% | 0.53% |
+
+`reactive_step` now defaults to `chem_order=("kinetic", "equilibrium")` and takes `chem_substeps`.
+
+## 4. Coupled run
+
+6 x 6 layer, 4 steps of 30 days, 6 chemistry substeps. The reference is the Damköhler-routed PHREEQC run, because full kinetics is too slow.
+
+| Configuration | Time (s) | Mineral-volume error | Porosity error | Dissolved-C error |
+|---|---|---|---|---|
+| Damköhler-routed PHREEQC (reference) | 135 | — | — | — |
+| All-equilibrium | 1.6 | 46x | 41x | 93% |
+| v0.3.0 split (equilibrium first, 1 substep) | 71 | 51% | 178% | 66% |
+| Four-way router (surrogate + stiffness S > 8) | 170 | 3e-5 | 4e-4 | 1e-5 |
+
+Mass balance held to 7.6e-16 in every run except all-equilibrium (7.3e-13).
+
+## 5. The surrogate barely runs here
+
+90% of the kinetic cell-solves were stiff and went to PHREEQC a priori, and 12 more were rejected. The surrogate handled only 72 of 864 (8%). The four-way router is therefore accurate but slower than the reference: its checks add overhead and almost nothing goes to the surrogate.
+
+Brine buffered by calcite and dolomite sits near equilibrium with the silicates, which is the stiff regime found in the lower Mt. Simon formation brine. In this unit, the gain comes from Damköhler routing of the carbonates (full kinetics is 1–90x slower per cell), not from the surrogate.
+
+## 6. Reporting note
+
+`SurrogateBackend` now counts equilibrium calls that the speciation surrogate declines as routed to the reference, not as model errors. The coupled run above used the old counting: 864 "model_error" are those equilibrium calls.

@@ -65,7 +65,8 @@ class PhreeqcBackend:
                  kinetic_params: Optional[Dict[str, dict]] = None,
                  specific_area: Optional[Dict[str, float]] = None,
                  molar_volume: Optional[Dict[str, float]] = None,
-                 database: str = "phreeqc.dat", water_density: float = 1000.0):
+                 database: str = "phreeqc.dat", water_density: float = 1000.0,
+                 dissolution_only: Sequence[str] = ()):
         self.db = database
         self.elements = list(elements)
         self.phases = list(phases)
@@ -76,6 +77,7 @@ class PhreeqcBackend:
         vm = molar_volume or {}
         self.minerals = [Mineral(name, list(self.nu[j]), vm.get(name, 3.7e-5), 0.0,
                                  specific_area=sa.get(name, 1.0e3),
+                                 precipitate=name not in set(dissolution_only),
                                  **(kp.get(name) or dict(log10_k25_neutral=-99.0, E_neutral=0.0)))
                          for j, name in enumerate(self.phases)]
 
@@ -179,6 +181,7 @@ END"""
                       f"30 d = 1 - SR(\"{m.name}\")^{m.theta}",
                       f"40 rate = PARM(1) * (M / M0)^(2/3) * kk * SGN(d) * ABS(d)^{m.eta}",
                       "50 IF (rate > 0) AND (M <= 0) THEN rate = 0",
+                      "55 IF (rate < 0) THEN rate = 0" if not m.precipitate else "55 REM",
                       "60 SAVE rate * TIME", "70 END",
                       "200 SAVE 0", "-end"]
         return "\n".join(lines)
@@ -204,7 +207,7 @@ END"""
             blocks.append(self._solution_block(k + 1, x.n_aq[k], x.v_brine[k], x.T[k], x.P[k])
                           + f"\nKINETICS {k + 1}\n" + "\n".join(kin)
                           + f"\n -steps {x.dt:.10g}\n -cvode {'true' if cvode else 'false'}"
-                          + "\n -bad_step_max 5000\nEND")
+                          + "\n -bad_step_max 5000\n -cvode_steps 100000\nEND")
         names = " ".join(m.name for m in self.minerals)
         sel = (self._rates_block() + "\nSELECTED_OUTPUT\n -reset false\n -sim true\n -state true\n"
                " -step true\n -kinetic_reactants " + names + "\n")

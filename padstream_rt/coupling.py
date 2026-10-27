@@ -46,7 +46,8 @@ def reactive_step(state: ReactiveState, op: TransferOperator, backend, dt: float
                   brine_fractional_flow: np.ndarray, c_inlet: Optional[np.ndarray] = None,
                   routing: RoutingConfig = RoutingConfig(), perm_law="kozeny_carman",
                   retrace_tol: float = 0.02, pH_fn=None, hydrocarbons=None,
-                  co2_backend=None, spec_fn=None) -> StepReport:
+                  co2_backend=None, spec_fn=None, chem_order=("kinetic", "equilibrium"),
+                  chem_substeps: int = 1) -> StepReport:
     """One reactive step.  If ``hydrocarbons`` (partition.HydrocarbonState) is
     given, CO2 is first equilibrated between free gas, residual oil and brine
     with ``co2_backend`` (a PhreeqcBackend; defaults to ``backend`` or its
@@ -95,17 +96,25 @@ def reactive_step(state: ReactiveState, op: TransferOperator, backend, dt: float
 
     # 4. chemistry on routed cells --------------------------------------
     area = reactive_area(state)
-    # equilibrium minerals first (fast), then kinetic minerals on the updated state
-    for code, method in ((Regime.EQUILIBRIUM, "equilibrium"), (Regime.KINETIC, "kinetic")):
-        act = (state.regime == code) & (vb > 0)[:, None]
-        rows = act.any(axis=1)
-        if rows.any():
-            x = ChemInput(n_aq[rows], n_min[rows], vb[rows], state.geom.cell_volume,
-                          area[rows], state.temperature[rows], state.pressure[rows], dt,
-                          act[rows])
-            xi_r = np.where(act[rows], getattr(backend, method)(x), 0.0)
-            n_aq[rows] += xi_r @ sys_.nu_matrix
-            n_min[rows] -= xi_r
+    # Sequential split of the routed chemistry.  Default: kinetic pairs first,
+    # then the EQUILIBRIUM pairs re-equilibrate with what the kinetics released,
+    # so the step ends at equilibrium for them.  (v0.3.0 ran equilibrium first;
+    # in the carbonate-bearing Argenta that left Mg from chlorite unbuffered and
+    # missed 66-87 % of the mineral change against full kinetics, 27 Oct 2026.)
+    # ``chem_substeps`` > 1 alternates the sequence over dt / chem_substeps.
+    code_of = {"equilibrium": Regime.EQUILIBRIUM, "kinetic": Regime.KINETIC}
+    h = dt / chem_substeps
+    for _ in range(chem_substeps):
+        for method in chem_order:
+            act = (state.regime == code_of[method]) & (vb > 0)[:, None]
+            rows = act.any(axis=1)
+            if rows.any():
+                x = ChemInput(n_aq[rows], n_min[rows], vb[rows], state.geom.cell_volume,
+                              area[rows], state.temperature[rows], state.pressure[rows], h,
+                              act[rows])
+                xi_r = np.where(act[rows], getattr(backend, method)(x), 0.0)
+                n_aq[rows] += xi_r @ sys_.nu_matrix
+                n_min[rows] -= xi_r
 
     # 5. rock update ------------------------------------------------------
     vm = np.array([m.molar_volume for m in sys_.minerals])

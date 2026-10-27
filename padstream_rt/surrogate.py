@@ -58,14 +58,19 @@ class SamplingRanges:
     log_extent: tuple = (-8.0, -2.0)            # mol/kgw dissolved along the path
 
 
-def _soln(k, T, P, nacl):
+def trace_elements(elements):
+    """Elements given a trace background (all but Na, Cl, C; Fe as Fe(2))."""
+    return [{"Fe": "Fe(2)"}.get(e, e) for e in elements if e not in ("Na", "Cl", "C")]
+
+
+def _soln(k, T, P, nacl, trace=("K", "Mg", "Fe(2)", "Al", "Si")):
     s = [f"SOLUTION {k}", f" temp {T:.4f}", f" pressure {P / ATM:.4f}", " units mol/kgw",
          " pH 7 charge", f" Na {nacl:.6g}", f" Cl {nacl:.6g}"]
     # trace background so that every SI is defined (real brines always carry these)
-    return s + [f" {e} {TRACE_MOLAL:g}" for e in ("K", "Mg", "Fe(2)", "Al", "Si")]
+    return s + [f" {e} {TRACE_MOLAL:g}" for e in trace]
 
 
-def _sample_input(k, rng, r: SamplingRanges, primaries, formation_eq, secondaries):
+def _sample_input(k, rng, r: SamplingRanges, primaries, formation_eq, secondaries, trace):
     """PHREEQC input for sample k; only its last simulation is written out.
 
     path:   NaCl brine (+ CO2 gas or dissolved CO2) -> partial dissolution of
@@ -83,17 +88,17 @@ def _sample_input(k, rng, r: SamplingRanges, primaries, formation_eq, secondarie
     base = 3 * k
     out = []
     if rng.random() < r.p_mixing:
-        out += ["SELECTED_OUTPUT", off] + _soln(base + 1, T, P, nacl)
+        out += ["SELECTED_OUTPUT", off] + _soln(base + 1, T, P, nacl, trace)
         out += [f"EQUILIBRIUM_PHASES {base + 1}", f" CO2(g) {rng.uniform(*r.log_pco2_formation):.5f} 100"]
         out += [f" {ph} 0 10" for ph in formation_eq] + [f"SAVE solution {base + 1}", "END"]
-        out += _soln(base + 2, T, P, nacl)
+        out += _soln(base + 2, T, P, nacl, trace)
         out += [f"EQUILIBRIUM_PHASES {base + 2}", f" CO2(g) {rng.uniform(*r.log_pco2_atm):.5f} 100",
                 f"SAVE solution {base + 2}", "END"]
         f = rng.uniform(0.0, 1.0)
         out += ["SELECTED_OUTPUT", on, f"MIX {base + 3}", f" {base + 1} {f:.6f}", f" {base + 2} {1 - f:.6f}"]
         eq = [f" {ph} 0 0" for ph in sec]
     else:
-        out += ["SELECTED_OUTPUT", on] + _soln(base + 3, T, P, nacl)
+        out += ["SELECTED_OUTPUT", on] + _soln(base + 3, T, P, nacl, trace)
         eq = [f" {ph} 0 0" for ph in sec]
         if rng.random() < r.p_co2_phase:
             eq.insert(0, f" CO2(g) {rng.uniform(*r.log_pco2_atm):.5f} 100")
@@ -129,7 +134,8 @@ def sample_states(backend, n: int, rng: np.random.Generator,
     done = 0
     while done < n:
         m = min(chunk, n - done)
-        inp = head + "\n".join(_sample_input(k, rng, ranges, primaries, formation_eq, secondaries)
+        tr = trace_elements(els)
+        inp = head + "\n".join(_sample_input(k, rng, ranges, primaries, formation_eq, secondaries, tr)
                                 for k in range(m))
         p = _phreeqc(backend.db)
         if p.RunString(inp):

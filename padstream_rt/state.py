@@ -89,6 +89,11 @@ class Mineral:
     specific_area: float = 1.0e3  # m^2 per m^3 of mineral (geometric proxy)
     theta: float = 1.0
     eta: float = 1.0
+    # False: the rate law is applied to dissolution only (no kinetic
+    # precipitation).  Common for primary silicates at reservoir temperature,
+    # where precipitation is nucleation-limited and the symmetric TST law
+    # overpredicts it.
+    precipitate: bool = True
 
     def logK(self, T: float) -> float:
         return float(self.log10_K(T)) if callable(self.log10_K) else float(self.log10_K)
