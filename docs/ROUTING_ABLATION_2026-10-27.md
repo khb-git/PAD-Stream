@@ -297,7 +297,7 @@ The coupled states were not used for training.
 | Routed PHREEQC (reference) | 29.5 | 1200 | — | — | — | — |
 | Step surrogate, SI inputs + overshoot repair | 15.2 | 731 | 903 / 1200 (75%) | 3.8% | 2.0% | 2.4e-5 |
 | Step surrogate, SI inputs, no repair | 15.4 | 793 | 841 / 1200 (70%) | 3.7% | 2.1% | 2.3e-5 |
-| Step surrogate, composition inputs only (no SI) | 28.3 | 1600 | 34 / 1200 (3%) | 1.3%* | 2.4% | 5e-6 |
+| First attempt: fixed-ion data, composition inputs only (no SI) | 28.3 | 1600 | 34 / 1200 (3%) | 1.3%* | 2.4% | 5e-6 |
 
 *Low only because almost every cell fell back to PHREEQC.
 
