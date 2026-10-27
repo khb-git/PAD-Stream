@@ -227,3 +227,23 @@ The result is also clipped to [10⁻³, 10³]·k₀.
 - surrogate training;
 - the claim experiments;
 - wiring into AV4 with a real SG6 file.
+
+
+## 11. Mt. Simon mineralogy, reactive areas and c_eq scales (v0.2.1)
+
+`padstream_rt/mineralogy.py`, data from Freiburg et al. (2022), *Marine and Petroleum Geology* 146, 105963
+(doi:10.1016/j.marpetgeo.2022.105963): Table 1 (p. 6, whole-rock XRD wt %, IBDP) and Table 3 (p. 12, porosity and
+permeability), grain-size descriptions pp. 10-11.
+
+* Table 1 quirk: clay species are % of total clay in every row except New Albany, whose clay columns sum to its
+  total clay (whole-rock wt %). The loader detects this.
+* wt % -> volume fractions with assumed handbook densities; bulk fractions close to 1 - phi.
+* Reactive area = 6/d per m^3 mineral (geometric spheres) x roughness factor. d comes from the verbal Wentworth class
+  (geometric mean of the class span); clays use an assumed 1 um equivalent sphere. Freiburg et al. give no measured
+  surface areas, so the roughness factor is a sensitivity parameter.
+* c_eq per mineral: |PHREEQC equilibrium extent| of that mineral alone in CO2-saturated NaCl brine. Freiburg et al.
+  give no brine composition, so NaCl molality is a required input.
+* Lower Mt. Simon, 50 C, 150 bar, 2 m NaCl, pCO2 100 atm, pH 4.8, S_b 0.5: Da over 1 day residence is 4e-4 (siderite)
+  to 4e-2 (quartz); over a 30-day step 1e-2 to 1.1. So most of the reservoir routes KINETIC, not EQUILIBRIUM.
+* Pyrite gives Da ~1e7 because the PK 2004 pyrite rate laws carry O2 / Fe3+ dependence that `kinetics.py` does not
+  model. In anoxic Mt. Simon brine pyrite should be treated as inert (or given a redox-aware rate) until fixed.

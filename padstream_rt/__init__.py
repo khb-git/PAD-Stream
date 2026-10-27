@@ -16,10 +16,11 @@ from .petrophysics import (LearnedPermeability, kozeny_carman, verma_pruess,
 from .coupling import reactive_step, StepReport
 from .pvt import Fluid, flash, load_sun2020_fwu
 from .partition import HydrocarbonState, equilibrate_co2
+from .mineralogy import unit_mineralogy, load_freiburg_table1, load_freiburg_table3, c_eq_scales
 
 try:  # optional: needs `pip install phreeqc`
     from .phreeqc_backend import PhreeqcBackend
 except ImportError:  # pragma: no cover
     PhreeqcBackend = None
 
-__version__ = "0.2.0"
+__version__ = "0.2.1"

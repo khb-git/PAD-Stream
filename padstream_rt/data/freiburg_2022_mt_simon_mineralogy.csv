@@ -1,0 +1,11 @@
+# Freiburg, Amer, Henkel, Wemmer & Grathoff (2022) Marine and Petroleum Geology 146, 105963. doi:10.1016/j.marpetgeo.2022.105963
+# Table 1 (p. 6): representative mineralogy, weight %, single-sample XRD (from Freiburg et al. 2014, 2016).
+# Non-clay columns are wt% of whole rock. smectite..chlorite are % OF TOTAL CLAY (rows sum to ~100), EXCEPT New Albany whose clay columns sum to its total clay (49), i.e. whole-rock wt %; the loader detects this. organic_carbon: na = not analysed.
+unit,lithology,quartz,k_feldspar,plagioclase,calcite,siderite,dolomite,pyrite,hematite,total_non_clay,total_clay,smectite,illite_smectite,illite_mica,kaolinite,chlorite,organic_carbon
+New Albany,Shale,33,5,7,1,0,2,3,0,51,49,0,10,28,1,10,8
+Maquoketa,Clayey Dolomite,31,2,4,1,5,47,5,0,95,5,0,20,59,5,16,na
+Eau Claire,Shale,9,10,0,5,1,0,3,0,28,72,0,25,66,0,8,<1
+Upper Mt. Simon,Sandstone/shale,33,42,10,1,2,1,0,1,90,10,0,16,62,0,22,0
+Middle Mt. Simon,Sandstone,88,2,2,0,0,1,0,0,93,7,0,45,45,5,5,0
+Lower Mt. Simon,Sandstone,73,13,7,0,1,0,1,0,96,4,0,0,100,0,0,0
+Argenta,Sandstone,69,6,0,1,0,2,1,1,80,20,0,0,42,43,15,0

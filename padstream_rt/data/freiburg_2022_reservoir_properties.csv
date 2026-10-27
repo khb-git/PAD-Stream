@@ -1,0 +1,14 @@
+# Freiburg et al. (2022) MPG 146, 105963, Table 3 (p. 12): porosity and permeability of the dated samples (from Freiburg et al. 2014), IBDP cores.
+# grain_size_text: petrographic description (middle Mt. Simon p. 10, lower Mt. Simon p. 11); blank where the paper gives none for that sample.
+unit,depth_ft,depth_m,porosity_pct,permeability_mD,classification,grain_size_text
+New Albany,2157,657.5,3.9,<0.01,Seal,
+Maquoketa,2816,858.3,4.7,<0.01,Seal,
+Eau Claire,5465,1665.7,1.9,<0.01,Seal,
+Upper Mt. Simon,5546,1690.4,9.3,0.74,Seal,
+Middle Mt. Simon,6426,1958.6,15.4,5.45,Seal,rounded to well-rounded medium to coarse
+Lower Mt. Simon,6741,2054.7,22.0,134.71,Reservoir,fine to medium
+Lower Mt. Simon,6889,2099.8,16.7,85.89,Reservoir,coarse to very coarse
+Lower Mt. Simon,6980,2127.5,20.2,98.73,Reservoir,
+Lower Mt. Simon,6986,2129.3,20.5,151.31,Reservoir,medium
+Argenta,7016,2138.5,8.7,49.54,Seal,
+Argenta,7025,2141.2,10.8,1.13,Seal,
