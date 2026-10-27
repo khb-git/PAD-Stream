@@ -364,3 +364,97 @@ class SpeciationSurrogate:
         if stiff is not None:
             out["route_to_reference"] = stiff
         return out
+
+
+# ----------------------------------------------------------------------
+# 4. Step-map surrogate: learn the PHREEQC KINETICS step itself
+# ----------------------------------------------------------------------
+STEP_Y_SCALE = 1e-6      # mol/kgw; targets are asinh(xi/kgw / STEP_Y_SCALE)
+
+
+def step_features(n_aq, n_min, v_brine, area, T, P, dt, v_bulk, elements, kin_idx,
+                  water_density=1000.0):
+    """[log10 m_i, charge feature, T, P(bar), log10 dt, log10 A_j/kgw, log10 n_j/kgw]."""
+    kgw = np.maximum(np.asarray(v_brine, float) * water_density, 1e-12)
+    m = np.clip(n_aq / kgw[:, None], 10 ** LOG_FLOOR, None)
+    base = add_charge_feature(np.column_stack([np.log10(m), T, np.asarray(P, float) / 1e5]), elements)
+    dt = np.broadcast_to(np.asarray(dt, float), kgw.shape)
+    A = np.clip(area[:, kin_idx] * v_bulk / kgw[:, None], 1e-30, None)
+    N = np.clip(n_min[:, kin_idx] / kgw[:, None], 1e-30, None)
+    return np.column_stack([base, np.log10(dt), np.log10(A), np.log10(N)])
+
+
+class StepSurrogate:
+    """Callable ``model(x, mode)`` predicting the mineral extents of one PHREEQC
+    KINETICS step (stiff CVODE integration baked into the training labels).
+
+    * Only the minerals in ``kinetic_minerals`` are predicted; a cell whose
+      active set contains anything else, or whose features fall outside the
+      training box by more than ``box_margin`` standard deviations, is routed
+      to the reference a priori (``route_to_reference``).
+    * Extents pass the exact positivity limiter, so elements and minerals stay
+      non-negative; conservation holds because only extents are returned.
+    """
+
+    def __init__(self, net: MLP, nu, elements, phases, kinetic_minerals, x_min, x_max,
+                 box_margin: float = 0.5, box_floor: float = 0.1, water_density: float = 1000.0,
+                 speciate_fn=None):
+        self.net, self.nu = net, np.asarray(nu, float)
+        self.elements, self.phases = list(elements), list(phases)
+        self.kin_idx = [self.phases.index(m) for m in kinetic_minerals]
+        self.kin_mask = np.isin(np.arange(len(self.phases)), self.kin_idx)
+        pad = np.maximum(box_margin * net.x_sd, box_floor)   # absolute floor: near-constant features
+        self.lo = np.asarray(x_min) - pad
+        self.hi = np.asarray(x_max) + pad
+        self.rho_w = water_density
+        # optional exact speciation (e.g. PhreeqcBackend.speciate, ~0.15 ms/cell):
+        # pH and the saturation indices of the kinetic minerals become inputs
+        self.speciate_fn = speciate_fn
+        self.repair_iters = 4
+        self.omega_tol = 0.05
+
+    def _repair_overshoot(self, x: ChemInput, xi, act):
+        """Halve the extent of any mineral whose saturation index the predicted
+        step carries across equilibrium by more than ``omega_tol`` (exact
+        PHREEQC speciation, a few calls on the offending cells only).  The
+        reference integrator ends such steps at SI ~ 0; small network errors
+        overshoot because Al and Si are ~1e-7 mol/kg."""
+        si0 = self.speciate_fn(x)[1]
+        rows = np.arange(xi.shape[0])
+        for _ in range(self.repair_iters):
+            xn = ChemInput(np.clip(x.n_aq[rows] + xi[rows] @ self.nu, 0, None),
+                           np.clip(x.n_min[rows] - xi[rows], 0, None), x.v_brine[rows], x.v_bulk,
+                           x.area[rows], x.T[rows], x.P[rows], x.dt, None)
+            si1 = self.speciate_fn(xn)[1]
+            cross = (np.sign(si0[rows]) * si1 < -self.omega_tol) & (np.abs(xi[rows]) > 0) & act[rows]
+            bad = cross.any(axis=1)
+            if not bad.any():
+                break
+            xi[rows[bad]] = np.where(cross[bad], 0.5 * xi[rows[bad]], xi[rows[bad]])
+            rows = rows[bad]
+        return xi
+
+    def features(self, x: ChemInput):
+        F = step_features(x.n_aq, x.n_min, x.v_brine, x.area, x.T, x.P, x.dt, x.v_bulk,
+                          self.elements, self.kin_idx, self.rho_w)
+        if self.speciate_fn is not None:
+            pH, si = self.speciate_fn(x)
+            F = np.column_stack([F, pH, np.clip(si[:, self.kin_idx], -30.0, 10.0)])
+        return F
+
+    def __call__(self, x: ChemInput, mode: str):
+        if mode != "kinetic":
+            raise NotImplementedError("equilibrium cells use the reference backend")
+        act = x.mask()
+        F = self.features(x)
+        y = self.net.predict(F)
+        kgw = np.maximum(x.v_brine * self.rho_w, 1e-12)
+        xi = np.zeros_like(x.n_min)
+        xi[:, self.kin_idx] = np.sinh(y) * STEP_Y_SCALE * kgw[:, None]
+        xi = np.where(act, xi, 0.0)
+        xi = positivity_limit(xi, x.n_aq, x.n_min, self.nu)
+        if self.speciate_fn is not None and self.repair_iters:
+            xi = self._repair_overshoot(x, xi, act)
+        outside = ((F < self.lo) | (F > self.hi)).any(axis=1)
+        foreign = (act & ~self.kin_mask[None, :]).any(axis=1)
+        return {"xi": xi, "route_to_reference": outside | foreign}

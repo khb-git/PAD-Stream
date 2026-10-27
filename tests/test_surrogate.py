@@ -64,3 +64,23 @@ def test_dissolution_only_rate():
     m = Mineral("x", [1.0], 2e-5, 0.0, -10.0, 0.0, precipitate=False)
     assert mineral_rate(m, 1.0, 323.15, 5.0, 10.0) == 0.0          # supersaturated: no growth
     assert mineral_rate(m, 1.0, 323.15, 5.0, 0.1) > 0.0            # undersaturated: dissolves
+
+
+def test_step_surrogate_routes_foreign_and_out_of_box_cells():
+    from padstream_rt import ChemInput
+    from padstream_rt.surrogate import MLP, StepSurrogate, step_features
+    rng = np.random.default_rng(0)
+    els, phases = ["Na", "Si", "Cl"], ["Quartz", "Calcite"]
+    nu = np.array([[0.0, 1.0, 0.0], [0.0, 0.0, 0.0]])
+    n = 4
+    x = ChemInput(np.tile([1.0, 1e-4, 1.0], (n, 1)), np.full((n, 2), 10.0), np.full(n, 1e-3), 1.0,
+                  np.full((n, 2), 1.0), np.full(n, 323.15), np.full(n, 1.5e7), 86400.0)
+    F = step_features(x.n_aq, x.n_min, x.v_brine, x.area, x.T, x.P, x.dt, x.v_bulk, els, [0])
+    net = MLP([F.shape[1], 4, 1], rng)
+    net.x_mu, net.x_sd, net.y_mu, net.y_sd = F.mean(0), np.ones(F.shape[1]), np.zeros(1), np.ones(1)
+    s = StepSurrogate(net, nu, els, phases, ["Quartz"], F.min(0), F.max(0))
+    act = np.zeros((n, 2), bool); act[:, 0] = True; act[3, 1] = True     # cell 3 asks for calcite
+    x.active = act
+    out = s(x, "kinetic")
+    assert out["route_to_reference"].tolist() == [False, False, False, True]
+    assert np.all(x.n_aq + out["xi"] @ nu >= -1e-15)                    # positivity limiter

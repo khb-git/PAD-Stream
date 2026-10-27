@@ -263,3 +263,64 @@ Primary silicates are dissolution-only throughout.
   the carbonate result is unchanged by the seed size (-1,954 vs -1,950 mol).
 - **The speciation networks were trained on NaCl brines.** The surrogate configurations need retraining before they
   are used with the brine systems.
+
+## 10. Pilot: learn the PHREEQC step itself (`StepSurrogate`, config `da_step`)
+
+**Setup.** The network predicts the mineral extents of one PHREEQC KINETICS (CVODE) step from:
+
+- the element molalities, charge feature, T, P and dt;
+- the reactive area and amount of the 5 kinetic minerals (quartz, K-feldspar, albite, siderite, illite);
+- pH and the saturation indices of those minerals, both from exact PHREEQC speciation (about 0.15 ms per cell).
+
+**Safeguards.**
+
+- The exact positivity limiter is applied to every prediction.
+- Cells outside the training feature box, or asking for other kinetic minerals, go straight to PHREEQC.
+- If a predicted step carries a saturation index across equilibrium by more than 0.05, that mineral's extent is
+  halved, up to 4 times, using exact speciation.
+- SurrogateBackend's checks then send any remaining failures to PHREEQC.
+
+**Training data** (`examples/generate_step_data.py`, `examples/train_step_surrogate.py`):
+
+- 35,200 samples, 27 ms each, generated in roughly 8-minute chunks.
+- Sampled states: mixtures of formation and injected Liu brine, with the conservative ions varied ±25% and carbon
+  varied 30x.
+- Held-out relative error: 2.7–4.4% per mineral.
+- The first data set held the brine ions fixed. On that set every coupled cell left the training box after one
+  step, which is why the second, varied set was needed.
+
+**Test.** Lower Mt. Simon with the Liu brine, 10 x 10 layer, 12 x 30 d. The reference is Damköhler-routed PHREEQC.
+The coupled states were not used for training.
+
+| Configuration | Time (s) | PHREEQC cell-solves | Kinetic cells on the surrogate | Mineral-volume error | Porosity error | Dissolved-C error |
+|---|---|---|---|---|---|---|
+| Routed PHREEQC (reference) | 29.5 | 1200 | — | — | — | — |
+| Step surrogate, SI inputs + overshoot repair | 15.2 | 731 | 903 / 1200 (75%) | 3.8% | 2.0% | 2.4e-5 |
+| Step surrogate, SI inputs, no repair | 15.4 | 793 | 841 / 1200 (70%) | 3.7% | 2.1% | 2.3e-5 |
+| Step surrogate, composition inputs only (no SI) | 28.3 | 1600 | 34 / 1200 (3%) | 1.3%* | 2.4% | 5e-6 |
+
+*Low only because almost every cell fell back to PHREEQC.
+
+**Pilot criteria were 70% of cells accepted and under 5% error. Both are met** (75% and 3.8%), with a 1.9x speed-up
+in wall time. Mass balance held to 3e-15.
+
+What limits the speed-up now is not PHREEQC KINETICS but:
+
+- the speciation calls (3–6 per cell, for features, repair and checks);
+- the equilibrium cells (calcite, about 36 per step).
+
+Where the remaining rejections come from: of the 1200 kinetic cells, 37 left the training box and 260 were
+rejected for overshoot.
+
+**What this means for claim 2.** A learned PHREEQC step, with exact speciation as its input and its check, works
+where the explicit-kinetics surrogate failed (13% error, or 62% of cells sent to PHREEQC).
+
+The ML part is the time integration of stiff kinetics. That is the expensive and stiff part, and the part
+Section 4 showed explicit methods cannot do.
+
+**Not yet tested:**
+
+- the Argenta brine case (carbonate-buffered, the stiffest);
+- longer runs;
+- 3D;
+- a speciation network in place of PHREEQC speciation, which would cut the remaining cost.

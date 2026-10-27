@@ -195,6 +195,7 @@ END"""
         element negative.  This is the reference for the surrogate."""
         n = x.n_aq.shape[0]
         act = x.mask()
+        dts = np.broadcast_to(np.asarray(x.dt, float), (n,))   # scalar or per-cell step
         blocks = []
         for k in range(n):
             kin = []
@@ -207,7 +208,7 @@ END"""
                 kin = [self.minerals[0].name, " -m 0", " -m0 0", " -parms 0"]
             blocks.append(self._solution_block(k + 1, x.n_aq[k], x.v_brine[k], x.T[k], x.P[k])
                           + f"\nKINETICS {k + 1}\n" + "\n".join(kin)
-                          + f"\n -steps {x.dt:.10g}\n -cvode {'true' if cvode else 'false'}"
+                          + f"\n -steps {dts[k]:.10g}\n -cvode {'true' if cvode else 'false'}"
                           + "\n -bad_step_max 5000\n -cvode_steps 100000\nEND")
         names = " ".join(m.name for m in self.minerals)
         sel = (self._rates_block() + "\nSELECTED_OUTPUT\n -reset false\n -sim true\n -state true\n"

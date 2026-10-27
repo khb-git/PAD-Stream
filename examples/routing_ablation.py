@@ -16,6 +16,8 @@ Configurations (all use the same transport and the same time steps):
   da_surr      Damkohler routing + surrogate + fallback          (claims 1 + 2)
   stiff_surr_S surrogate, but cells with stiffness ratio > S go to the
                PHREEQC reference a priori (SpeciationSurrogate.stiffness)
+  da_step      Damkohler routing + learned PHREEQC KINETICS step (StepSurrogate)
+               with PHREEQC-speciation checks and reference fallback
   da_stiff_S   Damkohler routing (skip / equilibrium) + stiff_surr_S for the
                KINETIC pairs: the full four-way router
   *_eqfirst    any config with the v0.3.0 split order (equilibrium pairs
@@ -122,6 +124,8 @@ def select_system(name):
 
 
 select_system("lower_mt_simon")
+STEP_MODEL = dict(net=None, box=None,
+                  kinetic=["Quartz", "K-feldspar", "Albite", "Siderite", "Illite"])
 T_K, P_PA, NACL, LOG_PCO2_INJ = 323.15, 15e6, 2.0, 1.9
 BRINE_PH = 6.9            # Liu et al. 2011, Table 3
 
@@ -216,7 +220,16 @@ def run(config, phq, st0, op0, c_in, net, steps, dt, da_eq=10.0, da_skip=1e-3, c
             if net is not None else None)
     T, P = st.temperature, st.pressure
     surrogate = config in ("aposteriori", "da_surr", "da_sat_surr") or stiff_max is not None
-    if surrogate:
+    if config == "da_step":                    # learned PHREEQC step + reference checks
+        from padstream_rt.surrogate import StepSurrogate
+        box = np.load(STEP_MODEL["box"])
+        step = StepSurrogate(MLP.load(STEP_MODEL["net"]), phq.nu, ELEMENTS, PHASES, STEP_MODEL["kinetic"],
+                             box["x_min"], box["x_max"],
+                             speciate_fn=phq.speciate if STEP_MODEL.get("with_si", True) else None)
+        backend = SurrogateBackend(step, phq, keep_training_data=False)   # checks use PHREEQC speciation
+        spec = lambda a, v: phq.speciate(ChemInput(a, np.zeros((len(v), len(PHASES))), v, 1.0,
+                                                   np.zeros((len(v), len(PHASES))), T, P, 0.0))
+    elif surrogate:
         backend = SurrogateBackend(surr, phq, speciate_fn=surr.speciate, keep_training_data=False)
         spec = lambda a, v: surr._spec(a, v, T, P)
     else:
@@ -229,7 +242,7 @@ def run(config, phq, st0, op0, c_in, net, steps, dt, da_eq=10.0, da_skip=1e-3, c
     da = RoutingConfig(da_eq=da_eq, da_skip=da_skip, buffer_cells=1)
     routing = {"truth": off, "aposteriori": off,
                "all_eq": RoutingConfig(da_eq=0.0, da_skip=0.0, buffer_cells=0),
-               "da_ref": da, "da_surr": da, "da_sat_ref": da, "da_sat_surr": da}.get(
+               "da_ref": da, "da_step": da, "da_surr": da, "da_sat_ref": da, "da_sat_surr": da}.get(
                    config, da if config.startswith("da_stiff_") else off)
     t_chem, mass_err, counts, ref_cells = 0.0, 0.0, [], 0
     failed = None
@@ -289,6 +302,8 @@ def main():
                     help="factor on the geometric area of clay phases only (illite, kaolinite, chlorite, ...)")
     ap.add_argument("--dissolution_only", default=None,
                     help="comma list overriding the system's dissolution_only minerals")
+    ap.add_argument("--step_net", default=None, help="step-surrogate network (.npz) for config da_step")
+    ap.add_argument("--step_box", default=None, help="training feature box (.npz) for da_step")
     ap.add_argument("--seed_vf", type=float, default=None,
                     help="volume fraction given to secondary phases absent from the rock "
                          "(default: the system's seed_vf, else 1e-4)")
@@ -304,6 +319,7 @@ def main():
                     help="kinetic/equilibrium alternations per step (the _eqfirst configs always use 1)")
     a = ap.parse_args()
     select_system(a.system)
+    STEP_MODEL.update(net=a.step_net, box=a.step_box)
     if a.dissolution_only is not None:
         SYSTEM["dissolution_only"] = [m for m in a.dissolution_only.split(",") if m]
     net = None
