@@ -324,3 +324,43 @@ Section 4 showed explicit methods cannot do.
 - longer runs;
 - 3D;
 - a speciation network in place of PHREEQC speciation, which would cut the remaining cost.
+
+## 11. Step surrogate on the Argenta brine case (the stiffest)
+
+**Setup.**
+
+- Kinetic minerals: quartz, K-feldspar, illite, kaolinite and chlorite. Calcite, dolomite and anhydrite are
+  solved at equilibrium.
+- Training data: 23,800 PHREEQC KINETICS samples at about 112 ms each, 4x the lower Mt. Simon cost.
+- dt ranges over 1–60 d, and half the samples were first equilibrated with the carbonates.
+- Held-out relative L1 error: 4.4–8.8% per mineral. A larger network trained for longer did no better.
+
+**Test.** 6 x 6 layer, 4 x 30 d, 6 chemistry substeps. The reference is Damköhler-routed PHREEQC.
+
+| Configuration | Time (s) | Kinetic cell-solves on the surrogate | Volume error, all minerals | Volume error, kinetic minerals only | Dissolved-C error |
+|---|---|---|---|---|---|
+| Routed PHREEQC (reference) | 42.0 | — | — | — | — |
+| Step surrogate (`da_step`) | 24.5 | 534 / 864 (62%) | 0.37% | 3.1% | 1.2e-4 |
+
+Per-mineral errors: quartz 6.2%, K-feldspar 9.3%, illite 15% (small absolute change), kaolinite 2.7%,
+chlorite 0.9%.
+
+The all-minerals volume error is flattering, because the carbonates dominate the volume change and are solved
+exactly at equilibrium. The kinetic-only figure (3.1%) is the honest one.
+
+**Against the pilot criteria:**
+
+- The error criterion is met: 3.1% kinetic-only, against a target under 5%.
+- The acceptance criterion is missed: 62%, against a target of at least 70%. Of the 330 kinetic cell-solves sent
+  to PHREEQC, 311 failed the overshoot check after repair and 19 fell outside the training box.
+- The run was still 1.7x faster.
+
+**What this means for claim 2.** The step surrogate holds its accuracy in both units. In carbonate-buffered rock
+it covers about 60% rather than 75% of cells. The remaining overshoot rejections are cells near
+silicate–carbonate equilibrium.
+
+Options:
+
+- **More data near equilibrium:** focused samples of carbonate-equilibrated states.
+- **A softer overshoot test:** accept crossings within the network's own error band.
+- **State it as is:** acceptance depends on how close the rock sits to equilibrium.

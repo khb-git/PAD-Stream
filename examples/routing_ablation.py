@@ -304,6 +304,8 @@ def main():
                     help="comma list overriding the system's dissolution_only minerals")
     ap.add_argument("--step_net", default=None, help="step-surrogate network (.npz) for config da_step")
     ap.add_argument("--step_box", default=None, help="training feature box (.npz) for da_step")
+    ap.add_argument("--step_kinetic", default=None,
+                    help="comma list of the minerals the step network predicts (default: lower Mt. Simon set)")
     ap.add_argument("--seed_vf", type=float, default=None,
                     help="volume fraction given to secondary phases absent from the rock "
                          "(default: the system's seed_vf, else 1e-4)")
@@ -320,6 +322,8 @@ def main():
     a = ap.parse_args()
     select_system(a.system)
     STEP_MODEL.update(net=a.step_net, box=a.step_box)
+    if a.step_kinetic:
+        STEP_MODEL["kinetic"] = a.step_kinetic.split(",")
     if a.dissolution_only is not None:
         SYSTEM["dissolution_only"] = [m for m in a.dissolution_only.split(",") if m]
     net = None
