@@ -255,7 +255,7 @@ Primary silicates are dissolution-only throughout.
 - **In the Argenta the brine flips calcite from dissolving to precipitating** (+5,854 mol), while dolomite
   dissolves. Net carbonate C still falls, but by half as much as with NaCl, and the porosity change is about 3x
   smaller.
-- **No carbonate trapping appears in the lower Mt. Simon within a year**, and silicate dissolution rises 10–70%.
+- **No carbonate trapping appears in the lower Mt. Simon within a year**, and silicate dissolution rises 9–71% (K-feldspar +9%, albite +71%).
 - **The Damköhler router now uses all three routes.** In the lower Mt. Simon brine run, calcite is SKIP in 88 cells
   and EQUILIBRIUM in 12; anhydrite is SKIP; kaolinite is SKIP.
 - **Seeds matter.** With 1e-4 seeds, the seeds themselves dissolved (calcite -8,034 and anhydrite -5,368 mol) and
