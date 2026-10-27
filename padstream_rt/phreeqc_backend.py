@@ -47,7 +47,8 @@ ATM = 101325.0
 # 27 Oct 2026: explicit re-speciation dissolved 30x more siderite than PHREEQC
 # KINETICS, which keeps the redox state during the reaction).  Deep saline
 # reservoirs are reducing, so dissolved iron is entered as Fe(2).
-REDOX_INPUT = {"Fe": "Fe(2)"}
+# Sulfur is entered as sulfate for the same reason (formation-brine S is SO4).
+REDOX_INPUT = {"Fe": "Fe(2)", "S": "S(6)"}
 # CO2(g) constants as given in phreeqc.dat / pitzer.dat (T_c 304.2 K, P_c 72.86 atm, omega 0.225)
 CO2_PHREEQC = Fluid(["CO2"], [304.2], [72.86 * ATM], [0.225], [0.04401])
 

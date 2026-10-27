@@ -45,7 +45,7 @@ CLAY = ["smectite", "illite_smectite", "illite_mica", "kaolinite", "chlorite"]
 DENSITY_G_CM3 = dict(quartz=2.65, k_feldspar=2.56, plagioclase=2.62, calcite=2.71,
                      siderite=3.96, dolomite=2.84, pyrite=5.01, hematite=5.26,
                      smectite=2.35, illite_smectite=2.60, illite_mica=2.75,
-                     kaolinite=2.60, chlorite=2.65)
+                     kaolinite=2.60, chlorite=2.65, anhydrite=2.97)
 
 # Wentworth (1922) class bounds in mm; the geometric mean of each class is used.
 WENTWORTH_MM = {"very fine": (0.0625, 0.125), "fine": (0.125, 0.25), "medium": (0.25, 0.5),
@@ -152,12 +152,33 @@ def unit_mineralogy(unit: str, porosity: Optional[float] = None, grain_size_text
     return UnitMineralogy(unit, porosity, names, (1.0 - porosity) * vf_solid, spec, d)
 
 
-def c_eq_scales(phases, T: float, P: float, nacl_molal: float, pco2_atm: float,
+def load_brine(name: str = "liu2011_mt_simon_brine") -> Dict[str, float]:
+    """{element: mol/kgw} from ``data/<name>.csv``."""
+    return {r["component"]: float(r["molality_mol_per_kg_h2o"]) for r in _rows(f"{name}.csv")}
+
+
+def brine_solution_lines(nacl_molal: Optional[float] = None,
+                         brine: Optional[Dict[str, float]] = None) -> list:
+    """PHREEQC SOLUTION concentration lines for an NaCl brine or a given brine
+    (Fe entered as Fe(2), S as S(6); see phreeqc_backend.REDOX_INPUT)."""
+    from .phreeqc_backend import REDOX_INPUT
+    if brine is None:
+        return [f" Na {nacl_molal}", f" Cl {nacl_molal}"]
+    # a measured brine keeps its pH; electroneutrality is closed on Cl (the
+    # reported analysis carries a ~1 % anion excess, which pH-charge balancing
+    # would turn into pH ~3)
+    lines = [f" {REDOX_INPUT.get(e, e)} {m:.8g}" + (" charge" if e == "Cl" else "")
+             for e, m in brine.items() if e != "pH"]
+    return lines
+
+
+def c_eq_scales(phases, T: float, P: float, nacl_molal: Optional[float], pco2_atm: float,
                 database: str = "phreeqc.dat", water_density: float = 1000.0,
-                floor: float = 1e-9) -> np.ndarray:
+                floor: float = 1e-9, brine: Optional[Dict[str, float]] = None,
+                brine_ph: float = 6.9) -> np.ndarray:
     """Characteristic concentration for the Damkohler number, mol per m^3 brine.
 
-    For each phase separately: a NaCl brine at (T, P) is equilibrated with
+    For each phase separately: a NaCl brine (or ``brine``) at (T, P) is equilibrated with
     CO2(g) at ``pco2_atm`` (PHREEQC partial-pressure target) and with that phase
     alone; c_eq is |moles of phase dissolved or precipitated| per kg water,
     times the water density.  Needs ``pip install phreeqc``.
@@ -175,9 +196,8 @@ SOLUTION 1
  temp {T - 273.15:.4f}
  pressure {P / 101325.0:.4f}
  units mol/kgw
- pH 7 charge
- Na {nacl_molal}
- Cl {nacl_molal}
+ {"pH 7 charge" if brine is None else "pH " + str(brine_ph)}
+{chr(10).join(brine_solution_lines(nacl_molal, brine))}
 EQUILIBRIUM_PHASES 1
  CO2(g) {np.log10(pco2_atm):.6f} 100
  {ph} 0 10

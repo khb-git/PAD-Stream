@@ -34,3 +34,14 @@ def test_c_eq_scales_positive():
     from padstream_rt.mineralogy import c_eq_scales
     c = c_eq_scales(["Calcite", "Quartz"], 323.15, 15e6, 1.0, 100.0)
     assert np.all(c > 0) and c[0] > c[1]                           # calcite far more soluble
+
+
+def test_liu2011_brine_and_brine_c_eq():
+    from padstream_rt.mineralogy import load_brine
+    b = load_brine()
+    assert b["Ca"] == pytest.approx(0.3547) and b["Cl"] == pytest.approx(2.545)
+    pytest.importorskip("phreeqc")
+    from padstream_rt.mineralogy import c_eq_scales
+    c_nacl = c_eq_scales(["Calcite"], 323.15, 15e6, 2.0, 100.0)
+    c_brine = c_eq_scales(["Calcite"], 323.15, 15e6, None, 100.0, brine=b)
+    assert 0 < c_brine[0] < c_nacl[0]        # common-ion effect: Ca-rich brine dissolves less calcite

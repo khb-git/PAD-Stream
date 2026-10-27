@@ -220,3 +220,46 @@ bounds. Below about 2e2 cm2/g the results converge.
 
 **Brine:** `data/liu2011_mt_simon_brine.csv` holds a Mt. Simon Na–Ca–Cl brine from Liu et al. (2011, Table 3,
 after Eliasson et al. 1998). It is Indiana well data, not IBDP. It is not yet used by the examples.
+
+## 9. Mt. Simon brine (Liu et al. 2011) instead of 2 m NaCl
+
+Defaults now are: clay area factor 0.01, and a Na–Ca–Mg–Cl–SO4 brine for the new systems `lower_mt_simon_brine`
+and `argenta_brine`.
+
+**Brine handling:**
+
+- The brine is Table 3 of Liu et al. (2011), doi:10.1016/j.ijggc.2010.08.008, after Eliasson et al. (1998),
+  Indiana well data.
+- The measured pH of 6.9 is kept. Charge is closed on Cl, because the analysis has about a 1% anion excess, and
+  balancing that on pH gave pH 3.3.
+- Only quartz and kaolinite are equilibrated, plus calcite and dolomite in the Argenta. Forcing K-feldspar
+  equilibrium at 50 C dissolved about 0.1 mol/kg of feldspar, which contradicts the measured K.
+- The injected brine is the same brine, CO2-saturated at 80 atm.
+- Calcite and anhydrite are possible secondary phases, seeded at a volume fraction of 1e-6.
+
+**Reference:** routed PHREEQC (`da_ref`). Full kinetics stalled, because calcite is kinetic in the "truth" run.
+Primary silicates are dissolution-only throughout.
+
+| Case | Grid, time | Mean Δφ | Max abs Δφ | Dissolved C (mol) | Δ carbonate C (mol) | Main mineral changes (mol) |
+|---|---|---|---|---|---|---|
+| Lower Mt. Simon, NaCl | 10x10, 12 x 30 d | +1.67e-5 | 8.8e-5 | 318,763 | -483 | quartz +3,190; K-feldspar -729; albite -538; siderite -483 |
+| Lower Mt. Simon, brine | 10x10, 12 x 30 d | +2.29e-5 | 8.6e-5 | 269,752 | -757 | quartz +4,498; K-feldspar -792; albite -919; siderite -743; no calcite growth |
+| Argenta, NaCl | 6x6, 4 x 30 d | +9.28e-5 | 4.4e-4 | 54,550 | -4,028 | calcite -1,862; dolomite -1,083; chlorite -125 |
+| Argenta, brine | 6x6, 4 x 30 d | +3.09e-5 | 1.3e-4 | 44,136 | -1,950 | calcite +5,854; dolomite -3,902; chlorite -115 |
+
+**Findings**
+
+- **Less carbon dissolves in the real brine:** 15% less in the lower Mt. Simon and 19% less in the Argenta. CO2
+  solubility is lower in the Ca–Mg-rich, higher-ionic-strength brine. Note that phreeqc.dat is used here at
+  I ≈ 3 mol/kg, outside its comfort range.
+- **In the Argenta the brine flips calcite from dissolving to precipitating** (+5,854 mol), while dolomite
+  dissolves. Net carbonate C still falls, but by half as much as with NaCl, and the porosity change is about 3x
+  smaller.
+- **No carbonate trapping appears in the lower Mt. Simon within a year**, and silicate dissolution rises 10–70%.
+- **The Damköhler router now uses all three routes.** In the lower Mt. Simon brine run, calcite is SKIP in 88 cells
+  and EQUILIBRIUM in 12; anhydrite is SKIP; kaolinite is SKIP.
+- **Seeds matter.** With 1e-4 seeds, the seeds themselves dissolved (calcite -8,034 and anhydrite -5,368 mol) and
+  inflated the mean porosity change about 6x. The brine systems therefore default to 1e-6 seeds. In the Argenta,
+  the carbonate result is unchanged by the seed size (-1,954 vs -1,950 mol).
+- **The speciation networks were trained on NaCl brines.** The surrogate configurations need retraining before they
+  are used with the brine systems.

@@ -44,7 +44,8 @@ import numpy as np
 from padstream_rt import (ChemInput, GridGeometry, PhreeqcBackend, ReactiveState, RoutingConfig,
                           SurrogateBackend, TransferOperator, reactive_step)
 from padstream_rt.kinetics import load_pk_parameters
-from padstream_rt.mineralogy import CLAY, DENSITY_G_CM3, c_eq_scales, unit_mineralogy
+from padstream_rt.mineralogy import (CLAY, DENSITY_G_CM3, brine_solution_lines, c_eq_scales, load_brine,
+                                     unit_mineralogy)
 from padstream_rt.phreeqc_backend import ATM, _phreeqc
 from padstream_rt.state import MD_TO_M2
 from padstream_rt.surrogate import MLP, TRACE_MOLAL, SpeciationSurrogate, trace_elements
@@ -63,6 +64,24 @@ SYSTEMS = {
             "illite (provisional; Sun et al. 2020 Table 4)", "kaolinite"],
         formation_eq=["Quartz", "Kaolinite", "K-feldspar"],
         secondaries=["Kaolinite", "Quartz"]),
+    # Same rock with the Liu et al. (2011) Na-Ca-Mg-Cl-SO4 brine: Ca and S become
+    # transported components and calcite / anhydrite can form (seeded, assumed).
+    "lower_mt_simon_brine": dict(
+        unit="Lower Mt. Simon", grain=None, brine="liu2011_mt_simon_brine",
+        elements=["Na", "K", "Mg", "Ca", "Fe", "Al", "Si", "C", "S", "Cl"],
+        phases=["Quartz", "K-feldspar", "Albite", "Siderite", "Illite", "Kaolinite", "Calcite", "Anhydrite"],
+        xrd=["quartz", "k_feldspar", "plagioclase", "siderite", "illite_mica", None, None, None],
+        pk=["quartz", "K-feldspar", "albite", "siderite (provisional; Sun et al. 2020 Table 4)",
+            "illite (provisional; Sun et al. 2020 Table 4)", "kaolinite", "calcite", "anhydrite"],
+        # measured brine kept as given (incl. its dissolved C); only Si and Al are set by
+        # quartz and kaolinite.  Forcing K-feldspar equilibrium at 50 C dissolved
+        # ~0.1 mol/kgw of feldspar, i.e. it contradicted the measured K.
+        formation_eq=["Quartz", "Kaolinite"], formation_log_pco2=None,
+        secondaries=["Kaolinite", "Quartz", "Calcite", "Anhydrite"],
+        dissolution_only=["K-feldspar", "Albite", "Illite"],
+        # 1e-4 seeds of calcite/anhydrite simply dissolved in the acid front and
+        # inflated the porosity change ~6x; 1e-6 removes that artefact
+        seed_vf=1e-6),
     # Argenta: Freiburg et al. 2022 give "very fine sandstone to pebble" (p. 11);
     # pebble is outside the Wentworth table, so very fine to very coarse is ASSUMED.
     "argenta": dict(
@@ -79,10 +98,19 @@ SYSTEMS = {
         # fully acidified brine stalled PHREEQC KINETICS (> 4 min per cell).
         dissolution_only=["K-feldspar", "Illite", "Chlorite(14A)"]),
 }
-MOLAR_MASS = {"Quartz": 60.08, "K-feldspar": 278.33, "Albite": 262.22, "Siderite": 115.85,
+SYSTEMS["argenta_brine"] = dict(SYSTEMS["argenta"], brine="liu2011_mt_simon_brine",
+                                formation_eq=["Quartz", "Kaolinite", "Calcite", "Dolomite"],
+                                formation_log_pco2=None,
+                                elements=["Na", "K", "Mg", "Ca", "Al", "Si", "C", "S", "Cl"],
+                                phases=SYSTEMS["argenta"]["phases"] + ["Anhydrite"],
+                                xrd=SYSTEMS["argenta"]["xrd"] + [None],
+                                pk=SYSTEMS["argenta"]["pk"] + ["anhydrite"],
+                                secondaries=SYSTEMS["argenta"]["secondaries"] + ["Anhydrite"],
+                                seed_vf=1e-6)
+MOLAR_MASS = {"Anhydrite": 136.14, "Quartz": 60.08, "K-feldspar": 278.33, "Albite": 262.22, "Siderite": 115.85,
               "Illite": 389.34, "Kaolinite": 258.16, "Calcite": 100.09, "Dolomite": 184.40,
               "Chlorite(14A)": 555.80}
-XRD_DENS = {"Quartz": "quartz", "K-feldspar": "k_feldspar", "Albite": "plagioclase",
+XRD_DENS = {"Anhydrite": "anhydrite", "Quartz": "quartz", "K-feldspar": "k_feldspar", "Albite": "plagioclase",
             "Siderite": "siderite", "Illite": "illite_mica", "Kaolinite": "kaolinite",
             "Calcite": "calcite", "Dolomite": "dolomite", "Chlorite(14A)": "chlorite"}
 
@@ -95,17 +123,26 @@ def select_system(name):
 
 select_system("lower_mt_simon")
 T_K, P_PA, NACL, LOG_PCO2_INJ = 323.15, 15e6, 2.0, 1.9
+BRINE_PH = 6.9            # Liu et al. 2011, Table 3
 
 
 def brine_totals(log_pco2, phases_eq=()):
-    """mol per m^3 brine of each element for 2 m NaCl at (T, P)."""
+    """mol per m^3 brine of each element for 2 m NaCl, or the system's brine, at (T, P)."""
     p = _phreeqc("phreeqc.dat")
-    eq = "\n".join([f" CO2(g) {log_pco2} 100"] + [f" {ph} 0 10" for ph in phases_eq])
+    eq = "\n".join(([f" CO2(g) {log_pco2} 100"] if log_pco2 is not None else [])
+                   + [f" {ph} 0 10" for ph in phases_eq])
     tr = "\n".join(f" {e} {TRACE_MOLAL}" for e in trace_elements(ELEMENTS))
+    brine = load_brine(SYSTEM["brine"]) if SYSTEM.get("brine") else None
+    sol = "\n".join(brine_solution_lines(NACL, brine))
+    if brine is not None:     # trace only what the brine lacks
+        tr = "\n".join(f" {e} {TRACE_MOLAL}" for e in trace_elements(ELEMENTS)
+                       if e.split("(")[0] not in brine)
     inp = (f"SELECTED_OUTPUT\n -reset false\nUSER_PUNCH\n -headings {' '.join(ELEMENTS)}\n"
            + "\n".join(f"{10 + i} PUNCH TOT(\"{e}\")" for i, e in enumerate(ELEMENTS))
            + f"\nSOLUTION 1\n temp {T_K - 273.15}\n pressure {P_PA / ATM}\n units mol/kgw\n pH 7 charge\n"
-             f" Na {NACL}\n Cl {NACL}\n{tr}\nEQUILIBRIUM_PHASES 1\n{eq}\nEND")
+             f"{sol}\n{tr}\nEQUILIBRIUM_PHASES 1\n{eq}\nEND")
+    if brine is not None:   # measured pH, charge closed on Cl (brine_solution_lines)
+        inp = inp.replace(" pH 7 charge\n", f" pH {BRINE_PH}\n")
     if p.RunString(inp):
         raise RuntimeError(p.GetErrorString())
     o = p.GetSelectedOutput()
@@ -129,12 +166,14 @@ def synthetic_bundle(geom, nsl=400, nnode=201, total_q=714.29 / 86400 / 15, seed
     return StreamlineBundle(np.array(xyz), np.array(tau), np.full(nsl, total_q / nsl))
 
 
-def build(roughness=1.0, seed=3, nx=25, clay_roughness=1.0, allow_precipitation=False):
+def build(roughness=1.0, seed=3, nx=25, clay_roughness=0.01, allow_precipitation=False, seed_vf=None):
+    if seed_vf is None:
+        seed_vf = SYSTEM.get("seed_vf", 1e-4)
     um = unit_mineralogy(SYSTEM["unit"], grain_size_text=SYSTEM["grain"], roughness=roughness)
     vf, spec = {}, {}
     for ph, x in zip(PHASES, XRD):
         if x is None:
-            vf[ph], spec[ph] = 1e-4, 6.0 / 1e-6 * roughness       # secondary seed (assumed)
+            vf[ph], spec[ph] = seed_vf, 6.0 / 1e-6 * roughness    # secondary seed (assumed)
         else:
             i = um.minerals.index(x)
             vf[ph], spec[ph] = um.vf_bulk[i], um.specific_area[i]
@@ -144,7 +183,8 @@ def build(roughness=1.0, seed=3, nx=25, clay_roughness=1.0, allow_precipitation=
     vm = {ph: MOLAR_MASS[ph] / DENSITY_G_CM3[XRD_DENS[ph]] * 1e-6 for ph in PHASES}
     phq = PhreeqcBackend(ELEMENTS, PHASES, kinetic_params=kp, specific_area=spec, molar_volume=vm,
                          dissolution_only=() if allow_precipitation else SYSTEM.get("dissolution_only", ()))
-    ceq = c_eq_scales(PHASES, T_K, P_PA, NACL, 10 ** LOG_PCO2_INJ)
+    ceq = c_eq_scales(PHASES, T_K, P_PA, NACL, 10 ** LOG_PCO2_INJ,
+                      brine=load_brine(SYSTEM["brine"]) if SYSTEM.get("brine") else None)
     system = phq.chemical_system(ceq)
     geom = GridGeometry(nx=nx, ny=nx, nz=1)
     n = geom.ncell
@@ -152,7 +192,7 @@ def build(roughness=1.0, seed=3, nx=25, clay_roughness=1.0, allow_precipitation=
     st = ReactiveState(geom, system, porosity=um.porosity,
                        perm=np.repeat(rng.lognormal(np.log(110), 0.6, n)[:, None], 3, 1) * MD_TO_M2,
                        brine_saturation=0.6,
-                       total_aq=np.tile(brine_totals(-1.0, SYSTEM["formation_eq"]), (n, 1)),
+                       total_aq=np.tile(brine_totals(SYSTEM.get("formation_log_pco2", -1.0), SYSTEM["formation_eq"]), (n, 1)),
                        mineral_vf=np.tile([vf[p] for p in PHASES], (n, 1)),
                        temperature=T_K, pressure=P_PA)
     frac = nx * nx / 2500.0                     # same flux per unit area as the 50 x 50 layer
@@ -245,8 +285,13 @@ def main():
     ap.add_argument("--configs", default="truth,all_eq,da_ref,aposteriori,da_surr")
     ap.add_argument("--out", default=None)
     ap.add_argument("--nx", type=int, default=25)
-    ap.add_argument("--clay_roughness", type=float, default=1.0,
+    ap.add_argument("--clay_roughness", type=float, default=0.01,
                     help="factor on the geometric area of clay phases only (illite, kaolinite, chlorite, ...)")
+    ap.add_argument("--dissolution_only", default=None,
+                    help="comma list overriding the system's dissolution_only minerals")
+    ap.add_argument("--seed_vf", type=float, default=None,
+                    help="volume fraction given to secondary phases absent from the rock "
+                         "(default: the system's seed_vf, else 1e-4)")
     ap.add_argument("--allow_precipitation", action="store_true",
                     help="ignore the system's dissolution_only list (symmetric PK law for every mineral)")
     ap.add_argument("--reference", default="truth",
@@ -259,15 +304,18 @@ def main():
                     help="kinetic/equilibrium alternations per step (the _eqfirst configs always use 1)")
     a = ap.parse_args()
     select_system(a.system)
+    if a.dissolution_only is not None:
+        SYSTEM["dissolution_only"] = [m for m in a.dissolution_only.split(",") if m]
     net = None
     if a.net:
         net = MLP.load(a.net) if a.net.endswith(".npz") else MLP.from_state(pickle.load(open(a.net, "rb")))
     phq, st0, op0, c_in = build(a.roughness, nx=a.nx, clay_roughness=a.clay_roughness,
-                                allow_precipitation=a.allow_precipitation)
+                                allow_precipitation=a.allow_precipitation, seed_vf=a.seed_vf)
+    a.seed_vf = a.seed_vf if a.seed_vf is not None else SYSTEM.get("seed_vf", 1e-4)
     dt = a.dt_days * 86400.0
     results = {}
     for cfg in a.configs.split(","):
-        cache = f"{a.cache}_{a.system}_{cfg}_cs{a.chem_substeps}_nx{a.nx}_s{a.steps}_dt{a.dt_days:g}_r{a.roughness:g}_cr{a.clay_roughness:g}_p{int(a.allow_precipitation)}.pkl" if a.cache else None
+        cache = f"{a.cache}_{a.system}_{cfg}_cs{a.chem_substeps}_nx{a.nx}_s{a.steps}_dt{a.dt_days:g}_r{a.roughness:g}_cr{a.clay_roughness:g}_p{int(a.allow_precipitation)}_do{len(SYSTEM.get("dissolution_only", ()))}_sv{a.seed_vf:g}.pkl" if a.cache else None
         if cfg in ("truth", "all_eq", "da_ref") and cache and os.path.exists(cache):
             results[cfg] = pickle.load(open(cache, "rb"))
         else:
