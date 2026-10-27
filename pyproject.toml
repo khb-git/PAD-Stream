@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "padstream-rt"
-version = "0.2.1"
+version = "0.3.0"
 description = "Reactive transport for the PAD-Stream 3D streamline CO2 simulator"
 requires-python = ">=3.10"
 dependencies = ["numpy>=1.24", "scipy>=1.10"]

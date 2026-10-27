@@ -41,6 +41,13 @@ from .pvt import Fluid, phase_props
 from .state import ChemicalSystem, Mineral
 
 ATM = 101325.0
+# Transported totals carry no redox state.  Entered as a plain total, PHREEQC
+# would split Fe between Fe(2) and Fe(3) at the default pe 4, i.e. oxidise it
+# at every call, which makes siderite look strongly undersaturated (found
+# 27 Oct 2026: explicit re-speciation dissolved 30x more siderite than PHREEQC
+# KINETICS, which keeps the redox state during the reaction).  Deep saline
+# reservoirs are reducing, so dissolved iron is entered as Fe(2).
+REDOX_INPUT = {"Fe": "Fe(2)"}
 # CO2(g) constants as given in phreeqc.dat / pitzer.dat (T_c 304.2 K, P_c 72.86 atm, omega 0.225)
 CO2_PHREEQC = Fluid(["CO2"], [304.2], [72.86 * ATM], [0.225], [0.04401])
 
@@ -107,7 +114,7 @@ END"""
         for e, n in zip(self.elements, n_aq_row):
             m = n / kgw
             if m > 1e-15:
-                lines.append(f" {e} {m:.12g}")
+                lines.append(f" {REDOX_INPUT.get(e, e)} {m:.12g}")
         return "\n".join(lines)
 
     def _run(self, blocks: List[str], punch_sel: str):
@@ -152,7 +159,76 @@ END"""
             xi[:, j] = -col                      # d_phase < 0 means it dissolved
         return np.where(act, xi, 0.0)
 
-    def kinetic(self, x: ChemInput) -> np.ndarray:
+    def _rates_block(self) -> str:
+        """PHREEQC RATES for the Palandri & Kharaka (2004) law of every phase:
+        r = A0 (M/M0)^(2/3) * sum_mech k_mech(T) a_H+^n_mech * sgn(d)|d|^eta,
+        d = 1 - SR^theta.  Positive = dissolution (mol/s)."""
+        lines = ["RATES"]
+        for m in self.minerals:
+            def term(lk, E, n, act):
+                if lk is None:
+                    return "0"
+                a = "" if act is None else f" * ACT(\"H+\")^({n})"
+                return f"10^({lk}) * EXP(-({E or 0.0}) / 8.314462618 * (1 / TK - 1 / 298.15)){a}"
+            k = " + ".join([term(m.log10_k25_neutral, m.E_neutral, 0, None),
+                            term(m.log10_k25_acid, m.E_acid, m.n_acid, "H"),
+                            term(m.log10_k25_base, m.E_base, m.n_base, "H")])
+            lines += [m.name, "-start",
+                      "10 IF (M0 <= 0) THEN GOTO 200",
+                      f"20 kk = {k}",
+                      f"30 d = 1 - SR(\"{m.name}\")^{m.theta}",
+                      f"40 rate = PARM(1) * (M / M0)^(2/3) * kk * SGN(d) * ABS(d)^{m.eta}",
+                      "50 IF (rate > 0) AND (M <= 0) THEN rate = 0",
+                      "60 SAVE rate * TIME", "70 END",
+                      "200 SAVE 0", "-end"]
+        return "\n".join(lines)
+
+    def kinetic(self, x: ChemInput, tol: float = 1e-8, cvode: bool = True) -> np.ndarray:
+        """Kinetic extents integrated by PHREEQC itself (KINETICS + RATES;
+        CVODE stiff solver by default, error-controlled Runge-Kutta with
+        ``cvode=False``), so saturation indices are updated
+        inside the step and no mineral can overshoot equilibrium or drive an
+        element negative.  This is the reference for the surrogate."""
+        n = x.n_aq.shape[0]
+        act = x.mask()
+        blocks = []
+        for k in range(n):
+            kin = []
+            for j, m in enumerate(self.minerals):
+                if act[k, j] and x.n_min[k, j] > 0 and x.area[k, j] > 0:
+                    nm = x.n_min[k, j]
+                    kin += [m.name, f" -m {nm:.12g}", f" -m0 {nm:.12g}",
+                            f" -parms {x.area[k, j] * x.v_bulk:.12g}", f" -tol {tol:g}"]
+            if not kin:
+                kin = [self.minerals[0].name, " -m 0", " -m0 0", " -parms 0"]
+            blocks.append(self._solution_block(k + 1, x.n_aq[k], x.v_brine[k], x.T[k], x.P[k])
+                          + f"\nKINETICS {k + 1}\n" + "\n".join(kin)
+                          + f"\n -steps {x.dt:.10g}\n -cvode {'true' if cvode else 'false'}"
+                          + "\n -bad_step_max 5000\nEND")
+        names = " ".join(m.name for m in self.minerals)
+        sel = (self._rates_block() + "\nSELECTED_OUTPUT\n -reset false\n -sim true\n -state true\n"
+               " -step true\n -kinetic_reactants " + names + "\n")
+        out = self._run(blocks, sel)
+        sims = np.array(out["sim"], int)
+        state = [str(s).strip() for s in out["state"]]
+        xi = np.zeros((n, len(self.minerals)))
+        last = {}
+        for i, (sm, stt) in enumerate(zip(sims, state)):
+            if stt == "react":
+                last[sm] = i
+        for k in range(n):
+            i = last.get(k + 1)
+            if i is None:
+                continue
+            for j, m in enumerate(self.minerals):
+                d = float(out[f"dk_{m.name}"][i])
+                xi[k, j] = -d                         # dk < 0: reactant consumed (dissolved)
+        return np.where(act, xi, 0.0)
+
+    def kinetic_explicit(self, x: ChemInput) -> np.ndarray:
+        """One explicit PK step with a joint-equilibrium cap (v0.2 behaviour).
+        Not conservative of positivity when several minerals share elements;
+        kept for comparison only."""
         pH, si = self.speciate(x)
         omega = 10.0 ** si
         rate = np.column_stack([mineral_rate(m, x.area[:, j], x.T, pH, omega[:, j])

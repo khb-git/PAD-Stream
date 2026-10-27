@@ -46,7 +46,7 @@ def reactive_step(state: ReactiveState, op: TransferOperator, backend, dt: float
                   brine_fractional_flow: np.ndarray, c_inlet: Optional[np.ndarray] = None,
                   routing: RoutingConfig = RoutingConfig(), perm_law="kozeny_carman",
                   retrace_tol: float = 0.02, pH_fn=None, hydrocarbons=None,
-                  co2_backend=None) -> StepReport:
+                  co2_backend=None, spec_fn=None) -> StepReport:
     """One reactive step.  If ``hydrocarbons`` (partition.HydrocarbonState) is
     given, CO2 is first equilibrated between free gas, residual oil and brine
     with ``co2_backend`` (a PhreeqcBackend; defaults to ``backend`` or its
@@ -84,8 +84,14 @@ def reactive_step(state: ReactiveState, op: TransferOperator, backend, dt: float
             pH_fn = lambda a, v: chem.pH(a, v, state.temperature, state.pressure)
         elif hasattr(chem, "pH"):
             pH_fn = chem.pH
-    pH = pH_fn(n_aq, vb) if pH_fn is not None else 5.0
-    state.regime = route(state, op.residence_time, dt, routing, pH=pH, previous=state.regime)
+    # spec_fn(n_aq, v_brine) -> (pH, SI) enables the saturation-aware
+    # Damkohler number (precipitating minerals limited by aqueous supply)
+    si = None
+    if spec_fn is not None:
+        pH, si = spec_fn(n_aq, vb)
+    else:
+        pH = pH_fn(n_aq, vb) if pH_fn is not None else 5.0
+    state.regime = route(state, op.residence_time, dt, routing, pH=pH, previous=state.regime, si=si)
 
     # 4. chemistry on routed cells --------------------------------------
     area = reactive_area(state)

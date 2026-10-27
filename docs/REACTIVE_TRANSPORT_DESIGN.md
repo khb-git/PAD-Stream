@@ -247,3 +247,32 @@ permeability), grain-size descriptions pp. 10-11.
   to 4e-2 (quartz); over a 30-day step 1e-2 to 1.1. So most of the reservoir routes KINETIC, not EQUILIBRIUM.
 * Pyrite gives Da ~1e7 because the PK 2004 pyrite rate laws carry O2 / Fe3+ dependence that `kinetics.py` does not
   model. In anoxic Mt. Simon brine pyrite should be treated as inert (or given a redox-aware rate) until fixed.
+
+## 12. Surrogate, PHREEQC kinetics reference and routing ablation (v0.3.0)
+
+Full results: `docs/ROUTING_ABLATION_2026-10-27.md`.
+
+* **Reference kinetics:** `PhreeqcBackend.kinetic` now integrates the PK rate laws with PHREEQC `KINETICS`/`RATES`
+  (CVODE). The v0.2 explicit step with a joint-equilibrium cap drove K, Al and Si negative when several minerals
+  shared elements; it is kept as `kinetic_explicit` for comparison only.
+* **Redox:** dissolved Fe is entered as Fe(2) (`REDOX_INPUT`). Entered as a plain total, PHREEQC oxidised it at
+  pe 4 on every call, which made siderite look about 30x more undersaturated.
+* **Routing fix:** cells with no streamline are no longer forced to EQUILIBRIUM; Da_dt alone decides for them.
+* **Surrogate (`surrogate.py`):**
+  * the network learns speciation (pH and SI);
+  * the PK rate law is evaluated exactly, in 8 explicit substeps;
+  * a joint positivity limiter is exact;
+  * conservation holds by construction.
+* **Training data:** reaction-path and mixing samples labelled by PHREEQC. A charge-excess input feature cut the
+  pH error 14x (pH MAE 0.005).
+* **Weights:** plain NumPy MLP, stored in `examples/models/*.npz`. No new dependencies.
+* **Ablation:**
+  * Damköhler routing with c_eq routes every lower Mt. Simon pair KINETIC at 30-day steps, which is correct.
+  * All-equilibrium is about 600x wrong.
+  * Sending stiff, supersaturated pairs to EQUILIBRIUM is 8x wrong.
+  * The surrogate with a posteriori checks only is 13% off, because explicit integration fails in stiff
+    near-equilibrium cells.
+  * A priori stiffness routing (`SpeciationSurrogate.stiffness`, S > 8 → PHREEQC) brings that to 1.2%, with 62% of
+    cells sent to the reference.
+* **Revised claim 1:** the router chooses among four treatments: explicit surrogate, implicit reference, equilibrium
+  and skip. Damköhler numbers decide equilibrium and skip; the stiffness ratio decides surrogate versus reference.

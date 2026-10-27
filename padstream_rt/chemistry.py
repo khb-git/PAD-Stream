@@ -167,6 +167,7 @@ class FallbackStats:
     calls: int = 0
     cells: int = 0
     rejected: int = 0
+    routed: int = 0          # sent to the reference a priori by the model (stiff), not rejected
     reasons: Dict[str, int] = field(default_factory=dict)
 
     def add(self, reason: str, n: int):
@@ -175,7 +176,14 @@ class FallbackStats:
 
     @property
     def fallback_rate(self) -> float:
-        return self.rejected / self.cells if self.cells else 0.0
+        """Share of surrogate-handled cells rejected by the checks (a posteriori)."""
+        n = self.cells - self.routed
+        return self.rejected / n if n else 0.0
+
+    @property
+    def reference_rate(self) -> float:
+        """Share of all cells solved by the reference (routed + rejected)."""
+        return (self.rejected + self.routed) / self.cells if self.cells else 0.0
 
 
 class SurrogateBackend:
@@ -198,7 +206,7 @@ class SurrogateBackend:
 
     def __init__(self, model: Callable, reference: ReferenceBackend,
                  rtol: float = 1e-8, atol: float = 1e-12, omega_tol: float = 0.05,
-                 keep_training_data: bool = True):
+                 keep_training_data: bool = True, speciate_fn: Optional[Callable] = None):
         self.model = model
         self.ref = reference
         self.nu = reference.nu
@@ -206,6 +214,11 @@ class SurrogateBackend:
         self.stats = FallbackStats()
         self.keep = keep_training_data
         self.training_buffer = []
+        # Saturation indices for the overshoot / equilibrium checks.  Default:
+        # the reference's own speciation (independent but as costly as a
+        # PHREEQC call).  Passing the surrogate's learned speciation makes the
+        # check cheap; positivity and conservation stay exact either way.
+        self.speciate_fn = speciate_fn or getattr(reference, "speciate", None)
 
     def _check(self, x: ChemInput, out: dict, mode: str) -> np.ndarray:
         xi = np.where(x.mask(), out["xi"], 0.0)
@@ -220,14 +233,15 @@ class SurrogateBackend:
         n_min = x.n_min - xi
         bad = (n_aq < -self.atol).any(axis=1) | (n_min < -self.atol).any(axis=1)
         self.stats.add("positivity", np.sum(bad & ok)); ok &= ~bad
-        if hasattr(self.ref, "speciate"):          # PHREEQC reference: one call per state
-            LO_old = self.ref.speciate(x)[1]
+        spec = self.speciate_fn
+        if spec is not None:                       # PHREEQC or learned speciation
+            LO_old = spec(x)[1]
             xn = ChemInput(np.clip(n_aq, 0, None), np.clip(n_min, 0, None), x.v_brine, x.v_bulk,
                            x.area, x.T, x.P, x.dt, x.active)
-            LO_new = self.ref.speciate(xn)[1]
+            LO_new = spec(xn)[1]
         nmin = len(self.ref.minerals) if hasattr(self.ref, "minerals") else self.ref.sys.nmin
         for j in range(nmin):
-            if hasattr(self.ref, "speciate"):
+            if spec is not None:
                 lo_old, lo_new = LO_old[:, j], LO_new[:, j]
             else:
                 lo_old = self.ref._log_omega(j, x.n_aq, x.v_brine, x.T)
@@ -247,12 +261,15 @@ class SurrogateBackend:
             out = self.model(x, mode)
             ok = self._check(x, out, mode)
             xi = np.where(x.mask(), np.asarray(out["xi"], dtype=float), 0.0)
+            routed = np.asarray(out.get("route_to_reference", np.zeros(len(ok), bool)), bool)
         except Exception:  # model failure -> everything falls back
             ok = np.zeros(x.n_aq.shape[0], dtype=bool)
+            routed = np.zeros(x.n_aq.shape[0], dtype=bool)
             xi = np.zeros_like(x.n_min)
             self.stats.add("model_error", x.n_aq.shape[0])
-        rej = ~ok
-        self.stats.rejected += int(rej.sum())
+        self.stats.routed += int(routed.sum())
+        self.stats.rejected += int((~ok & ~routed).sum())
+        rej = ~ok | routed
         if rej.any():
             sub = x.subset(rej)
             ref = getattr(self.ref, mode)(sub)
