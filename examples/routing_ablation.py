@@ -44,7 +44,7 @@ import numpy as np
 from padstream_rt import (ChemInput, GridGeometry, PhreeqcBackend, ReactiveState, RoutingConfig,
                           SurrogateBackend, TransferOperator, reactive_step)
 from padstream_rt.kinetics import load_pk_parameters
-from padstream_rt.mineralogy import DENSITY_G_CM3, c_eq_scales, unit_mineralogy
+from padstream_rt.mineralogy import CLAY, DENSITY_G_CM3, c_eq_scales, unit_mineralogy
 from padstream_rt.phreeqc_backend import ATM, _phreeqc
 from padstream_rt.state import MD_TO_M2
 from padstream_rt.surrogate import MLP, TRACE_MOLAL, SpeciationSurrogate, trace_elements
@@ -129,7 +129,7 @@ def synthetic_bundle(geom, nsl=400, nnode=201, total_q=714.29 / 86400 / 15, seed
     return StreamlineBundle(np.array(xyz), np.array(tau), np.full(nsl, total_q / nsl))
 
 
-def build(roughness=1.0, seed=3, nx=25):
+def build(roughness=1.0, seed=3, nx=25, clay_roughness=1.0, allow_precipitation=False):
     um = unit_mineralogy(SYSTEM["unit"], grain_size_text=SYSTEM["grain"], roughness=roughness)
     vf, spec = {}, {}
     for ph, x in zip(PHASES, XRD):
@@ -138,10 +138,12 @@ def build(roughness=1.0, seed=3, nx=25):
         else:
             i = um.minerals.index(x)
             vf[ph], spec[ph] = um.vf_bulk[i], um.specific_area[i]
+        if (x or "") in CLAY or ph == "Kaolinite":   # clay-only area factor (sensitivity)
+            spec[ph] *= clay_roughness
     kp = {ph: load_pk_parameters(n) for ph, n in zip(PHASES, PK)}
     vm = {ph: MOLAR_MASS[ph] / DENSITY_G_CM3[XRD_DENS[ph]] * 1e-6 for ph in PHASES}
     phq = PhreeqcBackend(ELEMENTS, PHASES, kinetic_params=kp, specific_area=spec, molar_volume=vm,
-                         dissolution_only=SYSTEM.get("dissolution_only", ()))
+                         dissolution_only=() if allow_precipitation else SYSTEM.get("dissolution_only", ()))
     ceq = c_eq_scales(PHASES, T_K, P_PA, NACL, 10 ** LOG_PCO2_INJ)
     system = phq.chemical_system(ceq)
     geom = GridGeometry(nx=nx, ny=nx, nz=1)
@@ -243,6 +245,10 @@ def main():
     ap.add_argument("--configs", default="truth,all_eq,da_ref,aposteriori,da_surr")
     ap.add_argument("--out", default=None)
     ap.add_argument("--nx", type=int, default=25)
+    ap.add_argument("--clay_roughness", type=float, default=1.0,
+                    help="factor on the geometric area of clay phases only (illite, kaolinite, chlorite, ...)")
+    ap.add_argument("--allow_precipitation", action="store_true",
+                    help="ignore the system's dissolution_only list (symmetric PK law for every mineral)")
     ap.add_argument("--reference", default="truth",
                     help="config the others are compared with (da_ref when full kinetics is too slow)")
     ap.add_argument("--system", default="lower_mt_simon", choices=sorted(SYSTEMS))
@@ -256,11 +262,12 @@ def main():
     net = None
     if a.net:
         net = MLP.load(a.net) if a.net.endswith(".npz") else MLP.from_state(pickle.load(open(a.net, "rb")))
-    phq, st0, op0, c_in = build(a.roughness, nx=a.nx)
+    phq, st0, op0, c_in = build(a.roughness, nx=a.nx, clay_roughness=a.clay_roughness,
+                                allow_precipitation=a.allow_precipitation)
     dt = a.dt_days * 86400.0
     results = {}
     for cfg in a.configs.split(","):
-        cache = f"{a.cache}_{a.system}_{cfg}_cs{a.chem_substeps}_nx{a.nx}_s{a.steps}_dt{a.dt_days:g}_r{a.roughness:g}.pkl" if a.cache else None
+        cache = f"{a.cache}_{a.system}_{cfg}_cs{a.chem_substeps}_nx{a.nx}_s{a.steps}_dt{a.dt_days:g}_r{a.roughness:g}_cr{a.clay_roughness:g}_p{int(a.allow_precipitation)}.pkl" if a.cache else None
         if cfg in ("truth", "all_eq", "da_ref") and cache and os.path.exists(cache):
             results[cfg] = pickle.load(open(cache, "rb"))
         else:

@@ -163,3 +163,32 @@ Brine buffered by calcite and dolomite sits near equilibrium with the silicates,
 ## 6. Reporting note
 
 `SurrogateBackend` now counts equilibrium calls that the speciation surrogate declines as routed to the reference, not as model errors. The coupled run above used the old counting: 864 "model_error" are those equilibrium calls.
+
+## 7. Sensitivity: silicate precipitation and clay surface area
+
+Argenta, 6 x 6 layer, 4 steps of 30 days, routed PHREEQC reference, 6 substeps.
+
+- `--allow_precipitation` turns the symmetric PK law back on for K-feldspar, illite and chlorite.
+- `--clay_roughness` scales the geometric area of illite, kaolinite and chlorite only.
+- Changes are summed over the layer. Carbonate C = Δcalcite + 2 Δdolomite (mol).
+
+| Clay area factor | Silicate precipitation | Time (s) | Mean Δφ | Max abs Δφ | Dissolved C (mol) | Δ carbonate C (mol) | Δ dolomite (mol) | Δ chlorite (mol) |
+|---|---|---|---|---|---|---|---|---|
+| 1 (geometric) | off (baseline) | 135 | -1.49e-4 | 4.30e-4 | 23,940 | +30,840 | +32,524 | -6,689 |
+| 1 | on | > 500 for step 1 (stopped) | — | — | — | — | — | — |
+| 0.1 | off | 47 | +6.15e-5 | 4.02e-4 | 50,569 | +631 | +3,439 | -1,011 |
+| 0.1 | on | 48 | +6.10e-5 | 4.02e-4 | 50,567 | +645 | +3,457 | -1,015 |
+| 0.01 | off | 27 | +9.28e-5 | 4.43e-4 | 54,550 | -4,028 | -1,083 | -125 |
+| 0.01 | on | 23 | +9.25e-5 | 4.43e-4 | 54,548 | -4,017 | -1,071 | -128 |
+
+**Findings**
+
+- **The precipitation assumption is immaterial wherever the model can run.** At the same clay area, allowing K-feldspar, illite and chlorite to precipitate changes:
+  - mean Δφ by 0.3–0.9%;
+  - dissolved C by less than 1e-4 (relative);
+  - carbonate C by at most 2%.
+
+  Illite still dissolves overall when allowed to precipitate. K-feldspar switches from -19 to +21 mol, which is negligible.
+- **At full geometric clay area, allowing precipitation makes the reference intractable.** Step 1 did not finish in 500 s; the baseline took 27 s.
+- **Clay reactive surface area is the first-order uncertainty.** Cutting it 10x changes carbonate trapping 49x (+30,840 → +631 mol), doubles dissolved C, and flips the sign of the mean porosity change. The mechanism is chlorite dissolution, which supplies Mg that precipitates as dolomite.
+- **What this means:** the dissertation should state dissolution-only primary silicates as an assumption, backed by this table and the Freiburg et al. (2022) illite K-Ar ages. It should treat clay reactive surface area as a parameter to constrain, through BET data or a range, and to propagate as uncertainty.

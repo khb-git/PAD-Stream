@@ -23,4 +23,4 @@ try:  # optional: needs `pip install phreeqc`
 except ImportError:  # pragma: no cover
     PhreeqcBackend = None
 
-__version__ = "0.3.1"
+__version__ = "0.3.2"
