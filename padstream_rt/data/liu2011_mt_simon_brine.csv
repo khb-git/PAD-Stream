@@ -1,0 +1,11 @@
+# Mt. Simon formation brine used by Liu, Lu, Zhu & Xiao (2011), Int. J. Greenhouse Gas Control 5(2):294-307,
+# doi:10.1016/j.ijggc.2010.08.008, Table 3 ("after Eliasson et al., 1998"; Indiana well data, not IBDP). pH 6.9, 75 C.
+component,molality_mol_per_kg_h2o
+Ca,0.3547
+Mg,0.1033
+Na,1.596
+K,0.03108
+Fe,3.161e-5
+C,1.724e-3
+S,1.408e-2
+Cl,2.545

@@ -192,3 +192,31 @@ Argenta, 6 x 6 layer, 4 steps of 30 days, routed PHREEQC reference, 6 substeps.
 - **At full geometric clay area, allowing precipitation makes the reference intractable.** Step 1 did not finish in 500 s; the baseline took 27 s.
 - **Clay reactive surface area is the first-order uncertainty.** Cutting it 10x changes carbonate trapping 49x (+30,840 → +631 mol), doubles dissolved C, and flips the sign of the mean porosity change. The mechanism is chlorite dissolution, which supplies Mg that precipitates as dolomite.
 - **What this means:** the dissertation should state dissolution-only primary silicates as an assumption, backed by this table and the Freiburg et al. (2022) illite K-Ar ages. It should treat clay reactive surface area as a parameter to constrain, through BET data or a range, and to propagate as uncertainty.
+
+## 8. Clay reactive surface area: literature range and uncertainty band
+
+Same Argenta set-up as section 7, dissolution-only silicates, `--clay_roughness` 1 / 0.1 / 0.01 / 0.001. That is
+about 2.2e4 / 2.2e3 / 2.2e2 / 22 cm2/g, from 6/(rho d) with d = 1 um.
+
+| Clay area (cm2/g) | Mean Δφ | Dissolved C (mol) | Δ carbonate C (mol) | Δ dolomite (mol) | Δ chlorite (mol) |
+|---|---|---|---|---|---|
+| 2.2e4 | -1.49e-4 | 23,940 | +30,843 | +32,524 | -6,689 |
+| 2.2e3 | +6.15e-5 | 50,569 | +631 | +3,439 | -1,011 |
+| 2.2e2 | +9.28e-5 | 54,550 | -4,028 | -1,083 | -125 |
+| 22 | +9.68e-5 | 54,989 | -4,617 | -1,652 | -14 |
+
+**Literature range** (DOIs checked):
+
+- **Black, Carroll & Haese (2015, doi:10.1016/j.chemgeo.2014.09.020, Fig. 4).** Clay areas used in models fall at
+  about 10 to 3e4 cm2/g. BET-measured values are higher: chlorite about 2e4–7e4, kaolinite about 5e4–1.2e5,
+  illite–smectite about 3e5–1e6 cm2/g. These were read from a log-scale figure and are approximate.
+- **Xu, Apps & Pruess (2005, doi:10.1016/j.chemgeo.2004.12.015, Table 1).** Clays 151.6 cm2/g and chlorite
+  9.8 cm2/g, both reduced 10x in their runs.
+- **Beckingham et al. (2017, doi:10.1016/j.gca.2017.02.006).** Field-accessible areas needed a 10–20x reduction to
+  match their core flood.
+
+**Recommendation:** use a clay factor of 0.01 (about 2e2 cm2/g) as the central value, and report 0.1 and 0.001 as
+bounds. Below about 2e2 cm2/g the results converge.
+
+**Brine:** `data/liu2011_mt_simon_brine.csv` holds a Mt. Simon Na–Ca–Cl brine from Liu et al. (2011, Table 3,
+after Eliasson et al. 1998). It is Indiana well data, not IBDP. It is not yet used by the examples.
