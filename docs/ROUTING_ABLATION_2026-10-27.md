@@ -186,7 +186,7 @@ Argenta, 6 x 6 layer, 4 steps of 30 days, routed PHREEQC reference, 6 substeps.
 - **The precipitation assumption is immaterial wherever the model can run.** At the same clay area, allowing K-feldspar, illite and chlorite to precipitate changes:
   - mean Δφ by 0.3–0.9%;
   - dissolved C by less than 1e-4 (relative);
-  - carbonate C by at most 2%.
+  - carbonate C by at most 2.2%.
 
   Illite still dissolves overall when allowed to precipitate. K-feldspar switches from -19 to +21 mol, which is negligible.
 - **At full geometric clay area, allowing precipitation makes the reference intractable.** Step 1 did not finish in 500 s; the baseline took 27 s.
