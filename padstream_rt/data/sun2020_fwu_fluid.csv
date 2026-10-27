@@ -1,0 +1,12 @@
+# Farnsworth Unit reservoir fluid tuned to the EOS, Sun et al. (2020) Fuel 278:118356, Table A2, p. 13
+# (read from the PDF supplied by Khalil, 26 Oct 2026). Pc in atm as published. No binary interaction coefficients are given in the paper.
+component,mole_pct,MW_g_mol,Tc_K,Pc_atm,omega
+CO2,1E-07,44.01,304.70,72.90,0.225
+C1,38.55,16.04,190.60,45.44,0.013
+C2,3.86,30.07,305.43,48.20,0.0986
+C3,2.46,44.10,369.80,41.90,0.152
+C6,2.83,86.18,507.40,29.30,0.296
+IC4+NC4,1.95,58.12,422.66,37.28,0.19047
+IC5+NC5,1.79,72.15,466.88,33.33,0.24389
+C7-38,15.00,189.95,701.46,22.20,0.48326
+C38-70,33.61,545.65,854.12,16.04,0.5748

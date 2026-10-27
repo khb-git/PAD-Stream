@@ -220,9 +220,18 @@ class SurrogateBackend:
         n_min = x.n_min - xi
         bad = (n_aq < -self.atol).any(axis=1) | (n_min < -self.atol).any(axis=1)
         self.stats.add("positivity", np.sum(bad & ok)); ok &= ~bad
-        for j in range(self.ref.sys.nmin):
-            lo_old = self.ref._log_omega(j, x.n_aq, x.v_brine, x.T)
-            lo_new = self.ref._log_omega(j, np.clip(n_aq, 0, None), x.v_brine, x.T)
+        if hasattr(self.ref, "speciate"):          # PHREEQC reference: one call per state
+            LO_old = self.ref.speciate(x)[1]
+            xn = ChemInput(np.clip(n_aq, 0, None), np.clip(n_min, 0, None), x.v_brine, x.v_bulk,
+                           x.area, x.T, x.P, x.dt, x.active)
+            LO_new = self.ref.speciate(xn)[1]
+        nmin = len(self.ref.minerals) if hasattr(self.ref, "minerals") else self.ref.sys.nmin
+        for j in range(nmin):
+            if hasattr(self.ref, "speciate"):
+                lo_old, lo_new = LO_old[:, j], LO_new[:, j]
+            else:
+                lo_old = self.ref._log_omega(j, x.n_aq, x.v_brine, x.T)
+                lo_new = self.ref._log_omega(j, np.clip(n_aq, 0, None), x.v_brine, x.T)
             cross = (np.sign(lo_old) * lo_new < -self.omega_tol) & (np.abs(xi[:, j]) > 0)
             self.stats.add("overshoot", np.sum(cross & ok)); ok &= ~cross
             if mode == "equilibrium":

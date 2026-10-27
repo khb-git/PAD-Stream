@@ -141,13 +141,13 @@ The result is also clipped to [10⁻³, 10³]·k₀.
 
   The 12 s step time is the cost a trained surrogate should remove.
 
-## 7. Modelling assumptions for the depleted oil field (v0.1)
+## 7. Modelling assumptions for the depleted oil field (v0.2)
 
-- **Residual oil** is immobile and non-reacting. It enters only through S_b = 1 − S_g − S_or, which the caller supplies. PAD-Stream has no oil phase; adding one is a separate milestone.
-- **Asphaltene deposition** can be represented as an extra solid phase in `mineral_vf`. Its volume reduces porosity like a mineral. Its deposition kinetics are not implemented and need an oil-phase carrier.
-- **CO2 dissolution** into brine is not implemented. It needs a solubility backend (Duan & Sun 2003 or Spycher et al. 2003) that adds dissolved inorganic carbon from the gas saturation. This is the first item to add after a speciation backend.
-- **Reference chemistry** uses ideal activities with component totals as free activities. For production, implement `ChemistryBackend` on Reaktoro or PHREEQC, with Debye–Hückel/Pitzer activities, speciation and pH.
-- **Temperature** is isothermal. The `temperature` field and the Arrhenius terms are already in place for a later thermal model.
+- **Residual oil** is immobile, but it now takes up CO2 (§10). It still enters the flow only through S_b = 1 − S_g − S_or, which the caller supplies. Oil swelling is not fed back to saturations; that needs three-phase flow in PAD-Stream.
+- **Asphaltene deposition** can be represented as an extra solid phase in `mineral_vf`, whose volume reduces porosity like a mineral. Its kinetics are not implemented.
+- **CO2 dissolution** into brine is implemented (§10). CO2 is held at local equilibrium between free gas, residual oil and brine in every cell that contains hydrocarbons.
+- **Chemistry:** the PHREEQC backend (§10) is the production path. `ReferenceBackend` (ideal activities) is kept for fast tests.
+- **Temperature** is isothermal. The `temperature` field and the Arrhenius terms are in place for a later thermal model.
 
 ## 8. Experiments that test the claims
 
@@ -169,3 +169,61 @@ The result is also clipped to [10⁻³, 10³]·k₀.
 - The CO2 "w/displacing" phase label in SG7A should be renamed to gas/brine before aqueous species are added.
 - v14 has duplicate function definitions: `ccus_relative_permeability`, `trace_streamline` and `trace_streamline_detailed`.
 - TensorFlow and PyTorch are both used. The recommendation is PyTorch for the chemistry surrogate.
+
+## 10. v0.2: oil phase, PHREEQC backend and CO2 solubility
+
+**Oil phase (`pvt.py`, `partition.py`).**
+
+- Peng–Robinson EOS with van der Waals mixing, Michelsen stability test, Rachford–Rice and successive-substitution flash, all vectorised over cells.
+- The default fluid is the Farnsworth Unit reservoir oil from Sun et al. 2020, Table A2, p. 13, stored in `data/sun2020_fwu_fluid.csv`.
+- That paper gives no binary interaction coefficients. A CO2–hydrocarbon k_ij of 0.12 is an **assumption** and can be changed.
+- **Check 1:** the computed bubble point of the live oil at 168 °F falls between 2000 and 2050 psia. Sun et al. report 2073.7 psia (p. 3).
+- **Check 2:** pure-CO2 density against Span–Wagner (CoolProp), 40–76 °C and 50–300 bar: mean error < 5 %, worst 10 % near the critical region. This is the known error of plain PR without a volume shift.
+- `equilibrate_co2` splits each cell's CO2 between free gas, residual oil and brine at equal CO2 fugacity. CO2 is only moved between pools, so it is conserved exactly.
+- Behaviour at 168 °F, with 30 % oil, 20 % CO2 and 50 % brine (1 m NaCl) by pore volume:
+  - at 2000 psia: 39 % gas / 45 % oil / 16 % brine;
+  - at 5000 psia: 0 % gas / 87 % oil / 13 % brine.
+
+  This agrees with Sun et al.'s finding that oil-phase dissolution dominates above the minimum miscibility pressure.
+- **Cost:** about 3 ms per cell per call (flash plus PHREEQC), which makes this a second target for the surrogate.
+
+**PHREEQC backend (`phreeqc_backend.py`).**
+
+- Runs on IPHREEQC (`pip install phreeqc`; wheels exist for Windows and Linux, Python 3.10–3.13).
+- **Component basis:** element totals. H, O and pH are closed by charge balance. Mineral stoichiometry is derived from the database itself.
+- **Equilibrium cells:** `EQUILIBRIUM_PHASES`.
+- **Kinetic cells:** PHREEQC speciation gives pH and saturation indices; the Palandri & Kharaka rate (Part 14 table) gives the rate; the extent is capped by the PHREEQC equilibrium extent.
+- **Cost:** about 0.8 ms per cell for an equilibrium solve with 7 minerals and 9 elements.
+- **Database:** default `phreeqc.dat`, which has the aluminosilicates. `pitzer.dat` lacks feldspars and clays, but is more accurate for brines.
+
+**CO2 solubility.**
+
+- Brine is equilibrated with CO2(g) at the hydrocarbon-phase fugacity.
+- PHREEQC's `EQUILIBRIUM_PHASES` takes a partial pressure and applies its own PR fugacity coefficient (checked: target log10 P returns SI = log10(φP)). A target fugacity is therefore converted to the equivalent pure-CO2 pressure.
+- **Validation** against Duan & Sun 2003, Tables 3–5 (22 points, 30–120 °C, 50–300 bar, 0–2 m NaCl; data in `data/duan_sun_2003_co2_solubility.csv`):
+
+| Database | Mean error | Worst error | Note |
+|---|---|---|---|
+| phreeqc.dat | 5.0 % | 12.5 % | Overpredicts in brine, more so as salinity rises |
+| pitzer.dat | 3.3 % | 9.2 % | |
+
+  For Mt. Simon-strength brines, either use pitzer.dat for the carbonate system or apply a salinity correction before quantitative work.
+- Duan & Sun's Table 4 entry at 400 bar / 333.15 K reads 1.8127, which looks like a typo for about 1.18. It is excluded.
+
+**Tests.** 19 tests pass. The 8 new ones cover:
+
+- PR vs Span–Wagner;
+- the FWU bubble point;
+- flash fugacity equality and mass balance;
+- database stoichiometry;
+- CO2 solubility vs Duan & Sun;
+- calcite reaching saturation;
+- partition conservation and miscibility;
+- an end-to-end reactive step with oil plus PHREEQC, with mass-balance error < 1e-8.
+
+**Still open from the plan:**
+
+- Mt. Simon surface areas and c_eq scales;
+- surrogate training;
+- the claim experiments;
+- wiring into AV4 with a real SG6 file.

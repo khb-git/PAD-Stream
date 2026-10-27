@@ -14,5 +14,12 @@ from .chemistry import ChemInput, ReferenceBackend, SurrogateBackend
 from .petrophysics import (LearnedPermeability, kozeny_carman, verma_pruess,
                            update_permeability, transmissibilities_field_units)
 from .coupling import reactive_step, StepReport
+from .pvt import Fluid, flash, load_sun2020_fwu
+from .partition import HydrocarbonState, equilibrate_co2
 
-__version__ = "0.1.0"
+try:  # optional: needs `pip install phreeqc`
+    from .phreeqc_backend import PhreeqcBackend
+except ImportError:  # pragma: no cover
+    PhreeqcBackend = None
+
+__version__ = "0.2.0"

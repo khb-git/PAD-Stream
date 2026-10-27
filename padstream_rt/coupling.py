@@ -45,7 +45,14 @@ class StepReport:
 def reactive_step(state: ReactiveState, op: TransferOperator, backend, dt: float,
                   brine_fractional_flow: np.ndarray, c_inlet: Optional[np.ndarray] = None,
                   routing: RoutingConfig = RoutingConfig(), perm_law="kozeny_carman",
-                  retrace_tol: float = 0.02, pH_fn=None) -> StepReport:
+                  retrace_tol: float = 0.02, pH_fn=None, hydrocarbons=None,
+                  co2_backend=None) -> StepReport:
+    """One reactive step.  If ``hydrocarbons`` (partition.HydrocarbonState) is
+    given, CO2 is first equilibrated between free gas, residual oil and brine
+    with ``co2_backend`` (a PhreeqcBackend; defaults to ``backend`` or its
+    reference).  The CO2 moved into brine is reported in
+    ``extra['co2_to_brine']`` and accounted for in the mass ledger; the caller
+    removes it from PAD-Stream's free-phase CO2."""
     sys_ = state.system
     inv0 = state.component_inventory()
 
@@ -56,14 +63,27 @@ def reactive_step(state: ReactiveState, op: TransferOperator, backend, dt: float
     c_new, out, inn, nsub = advect_along_streamlines(op, c_cv, sb_cv, fb_cv, dt, c_inlet)
     state.total_aq = op.to_grid(c_new, state.total_aq)
 
-    # 3. a priori routing ----------------------------------------------
+    # 2b. CO2 gas / oil / brine equilibrium (depleted oil field) ---------
     vb = state.brine_volume()
     n_aq = state.total_aq * vb[:, None]
+    co2_in = np.zeros(sys_.ncomp)
+    part = None
+    if hydrocarbons is not None:
+        from .partition import equilibrate_co2
+        cb = co2_backend or (backend.ref if hasattr(backend, "ref") else backend)
+        cells = np.flatnonzero((hydrocarbons.n_hc.sum(1) > 0) & (vb > 0))
+        part = equilibrate_co2(hydrocarbons, cb, n_aq, vb, state.temperature, state.pressure, cells)
+        co2_in[sys_.components.index("C")] = part.co2_brine_delta.sum()
+        state.total_aq = np.divide(n_aq, vb[:, None], out=state.total_aq.copy(), where=vb[:, None] > 0)
+
+    # 3. a priori routing ----------------------------------------------
     n_min = state.mineral_moles()
-    if pH_fn is None and isinstance(backend, ReferenceBackend):
-        pH_fn = backend.pH
-    elif pH_fn is None and hasattr(backend, "ref"):
-        pH_fn = backend.ref.pH
+    if pH_fn is None:
+        chem = backend.ref if hasattr(backend, "ref") else backend
+        if hasattr(chem, "speciate"):          # PHREEQC: needs T and P
+            pH_fn = lambda a, v: chem.pH(a, v, state.temperature, state.pressure)
+        elif hasattr(chem, "pH"):
+            pH_fn = chem.pH
     pH = pH_fn(n_aq, vb) if pH_fn is not None else 5.0
     state.regime = route(state, op.residence_time, dt, routing, pH=pH, previous=state.regime)
 
@@ -97,7 +117,7 @@ def reactive_step(state: ReactiveState, op: TransferOperator, backend, dt: float
     op.rebuild_volumes(state.porosity * state.geom.cell_volume)
     inv1 = state.component_inventory()
     scale = np.maximum(np.abs(inv0), 1e-30)
-    err = (inv1 - inv0 - (inn - out)) / scale
+    err = (inv1 - inv0 - (inn - out) - co2_in) / scale
     cell_reg = cell_regime(state.regime)
     counts = {r.name: int(np.sum(cell_reg == r)) for r in Regime}
     per_mineral = {m.name: {r.name: int(np.sum(state.regime[:, j] == r)) for r in Regime}
@@ -107,5 +127,8 @@ def reactive_step(state: ReactiveState, op: TransferOperator, backend, dt: float
                       float(np.max(np.abs(state.perm / perm_old - 1.0))),
                       needs_retrace(perm_old, state.perm, retrace_tol), int(fb.sum()),
                       {"per_mineral": per_mineral,
+                       "co2_to_brine": None if part is None else part.co2_brine_delta,
+                       "co2_gas": None if part is None else part.co2_gas,
+                       "co2_oil": None if part is None else part.co2_oil,
                        "fallback_rate": getattr(stats, "fallback_rate", None),
                        "fallback_reasons": dict(getattr(stats, "reasons", {}) or {})})
