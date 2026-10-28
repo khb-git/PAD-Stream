@@ -213,3 +213,16 @@ def test_pk_table_loader_matches_source_values():
         load_pk_parameters("ankerite")                      # no sourced values
     sid = load_pk_parameters("siderite (provisional; Sun et al. 2020 Table 4)")
     assert (sid["log10_k25_neutral"], sid["E_neutral"]) == (-10.77, 48.0e3)
+
+
+def test_surrogate_per_mineral_overshoot_tolerance():
+    ref = ReferenceBackend(system())
+    x = _chem_input()
+    nmin = x.n_min.shape[1]
+    wrong = lambda inp, mode: {"xi": 1.5 * ref.equilibrium(inp)}        # past equilibrium by construction
+    strict = SurrogateBackend(wrong, ref)
+    strict.kinetic(x)
+    off = SurrogateBackend(wrong, ref, omega_tol=np.full(nmin, np.inf))  # check switched off per mineral
+    off.kinetic(x)
+    assert strict.stats.reasons.get("overshoot", 0) > 0
+    assert off.stats.reasons.get("overshoot", 0) == 0

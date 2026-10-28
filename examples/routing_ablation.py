@@ -228,7 +228,10 @@ def run(config, phq, st0, op0, c_in, net, steps, dt, da_eq=10.0, da_skip=1e-3, c
                              speciate_fn=phq.speciate if STEP_MODEL.get("with_si", True) else None)
         # keep_training_data: the rejected / routed cells and their PHREEQC extents
         # (harvested for focused retraining, examples/harvest_step_states.py)
-        backend = SurrogateBackend(step, phq, keep_training_data=bool(STEP_MODEL.get("harvest")))
+        tol = STEP_MODEL.get("omega_tol", 0.05)   # SI sign-flip tolerance, repair and check (section 13)
+        step.omega_tol = STEP_MODEL.get("repair_tol", tol)
+        backend = SurrogateBackend(step, phq, keep_training_data=bool(STEP_MODEL.get("harvest")),
+                                   omega_tol=tol)
         spec = lambda a, v: phq.speciate(ChemInput(a, np.zeros((len(v), len(PHASES))), v, 1.0,
                                                    np.zeros((len(v), len(PHASES))), T, P, 0.0))
     elif surrogate:
@@ -311,6 +314,9 @@ def main():
     ap.add_argument("--step_box", default=None, help="training feature box (.npz) for da_step")
     ap.add_argument("--step_kinetic", default=None,
                     help="comma list of the minerals the step network predicts (default: lower Mt. Simon set)")
+    ap.add_argument("--omega_tol", default="0.05",
+                    help="da_step: SI sign-flip tolerance of the overshoot repair and check: a number, "
+                         "inf (no check), or cal (per mineral, from <step_net>_tol.json; section 13)")
     ap.add_argument("--seed_vf", type=float, default=None,
                     help="volume fraction given to secondary phases absent from the rock "
                          "(default: the system's seed_vf, else 1e-4)")
@@ -326,7 +332,13 @@ def main():
                     help="kinetic/equilibrium alternations per step (the _eqfirst configs always use 1)")
     a = ap.parse_args()
     select_system(a.system)
-    STEP_MODEL.update(net=a.step_net, box=a.step_box)
+    if a.omega_tol == "cal":
+        import json
+        cal = json.load(open(a.step_net[:-4] + "_tol.json"))
+        tol = np.array([float(cal.get(p, 0.05)) for p in PHASES])
+    else:
+        tol = float(a.omega_tol)
+    STEP_MODEL.update(net=a.step_net, box=a.step_box, omega_tol=tol)
     if a.step_kinetic:
         STEP_MODEL["kinetic"] = a.step_kinetic.split(",")
     if a.dissolution_only is not None:

@@ -445,3 +445,121 @@ Mass balance held to 4e-15 throughout.
 `acceptance()`), and the ablation prints "kinetic cells on the surrogate" directly. It reproduces the hand
 counts in Sections 10 and 11 (903 / 1200 and 534 / 864).
 
+
+## 13. The overshoot check: test it directly (option 2)
+
+Section 12 left the overshoot check as the suspected ceiling on acceptance. The check rejects a cell when a
+mineral's saturation index changes sign by more than 0.05 over the step, and the repair first halves such
+extents up to 4 times.
+
+**New code.**
+
+- `SurrogateBackend(omega_tol=...)` takes one tolerance per mineral (`np.inf` switches the check off).
+- `routing_ablation.py --omega_tol {number | inf | cal}`, where `cal` reads `<step_net>_tol.json`.
+- `examples/overshoot_tolerance_calibration.py`: tolerance from held-out data.
+- `examples/overshoot_tolerance_sweep.py`: coupled sweep. It also counts how often the reference's own kinetic
+  solves would fail the check.
+
+### 13.1 Does PHREEQC itself pass the check?
+
+The routed-PHREEQC reference was run with every kinetic solve also put through the sign-flip check.
+
+| Run | Kinetic solves | Fail at 0.05 | 0.2 | 0.5 | 1.0 |
+|---|---|---|---|---|---|
+| Argenta A (6x6, 4 x 30 d) | 864 | 36% | 33% | 11% | 7% |
+| Argenta B (7x7, 4 x 25 d) | 1176 | 43% | 28% | 8% | 5% |
+| Argenta A, 12 x 30 d | 2592 | 17% | 16% | 9% | 5% |
+| Lower Mt. Simon (10x10, 12 x 30 d) | 1200 | 38% | 19% | 14% | 14% |
+
+On held-out training samples the figures are 34–44% at 0.05.
+
+**So the check rejects the reference in up to 43% of solves.** In a multi-mineral system, a mineral's SI often
+changes sign during a step for real reasons: another mineral's reaction carries it across saturation (feldspar
+dissolution supplying Al and Si, which saturates kaolinite and quartz). The check was written for single-mineral
+overshoot, and in these systems it mostly flags physics.
+
+A narrower **direction check** was also tried: flag only when a mineral's own extent carries it past
+equilibrium (it dissolved yet ends supersaturated). PHREEQC fails it rarely in the Argenta (1–4.5%), but in
+20% of lower Mt. Simon samples at 0.05. The network fails it in 22–44%. It was not taken further.
+
+### 13.2 Network error expressed as SI
+
+For each held-out sample, SI at the end of the step was computed from the predicted and from the PHREEQC extents.
+The table gives the 95th percentile of the difference, in log units (v1 networks). These values are the
+error-matched tolerances, stored as `<net>_tol.json`.
+
+| Mineral | Argenta | Lower Mt. Simon |
+|---|---|---|
+| Quartz | 0.21 | 0.13 |
+| K-feldspar | 2.7 | 0.43 |
+| Albite | — | 0.48 |
+| Siderite | — | 0.06 |
+| Illite | 6.5 | 0.42 |
+| Kaolinite | 5.6 | — |
+| Chlorite | 8.3 | — |
+
+The network predicts the *extents* to 4–9%, but in the Argenta the end-of-step Al is a small difference between
+feldspar and clay dissolution and kaolinite precipitation. Its SI is not resolved to better than several log
+units. At the network's accuracy, an SI check means something only for quartz there, and for every mineral in
+the lower Mt. Simon.
+
+### 13.3 Coupled sweep
+
+All runs use the v1 networks. The reference is routed PHREEQC, timed alone: A 42.0 s, B 79.4 s, A-12 131.6 s,
+lower Mt. Simon 29.5 s. The surrogate runs shared 2 cores with another job, so their times are upper bounds.
+
+Each cell gives the share of kinetic cells accepted / the volume error on the kinetic minerals.
+
+| Tolerance | Argenta A | Argenta B | Lower Mt. Simon |
+|---|---|---|---|
+| 0.05 (default) | 61.8% / 3.1% | 67.4% / 4.8% | 75.2% / 3.7% |
+| 0.2 | 64.0% / 3.8% | 71.0% / 5.3% | 77.9% / 3.8% |
+| 0.5 | 70.1% / 4.6% | 79.8% / 6.2% | 83.0% / 4.0% |
+| 1.0 | 76.3% / 4.1% | 85.1% / 6.7% | 82.2% / 4.0% |
+| no check, no repair | 80.4% / 2.4% | 83.8% / 3.3% | 96.2% / 4.2% |
+| **calibrated (`cal`)** | **95.9% / 3.5%** | **97.3% / 4.5%** | **81.5% / 4.0%** |
+
+With `cal`, the Argenta runs take 6.2 s (A) and 7.0 s (B), 7–11x faster than routed PHREEQC.
+
+**Longer run** (Argenta A, 12 x 30 d, v1). The error does not grow with time.
+
+| Tolerance | Accepted | Kinetic-mineral error | Time (s) |
+|---|---|---|---|
+| 0.05 | 68.8% | 1.2% | 73.4 |
+| no check | 88.2% | 1.6% | 35.4 |
+| cal | 96.4% | 1.6% | 17.4 (7.6x) |
+
+Mass balance held to 4e-15 in every run.
+
+**Repair and check, separately** (Argenta A, v1). With repair off, the check sends many more cells to PHREEQC:
+acceptance is 43% at 0.05, 46% at 0.5 and 58% at `cal`. The error falls to 0.7–0.9%, simply because more of
+the cells are solved by PHREEQC. So the repair is what lets about 20 points of cells through.
+
+**v2 network.** With `cal`, v2 reaches 96–97% in A and B, but its error in B is 5.3%, which misses the target.
+v1 stays the network of record.
+
+### 13.4 What this settles
+
+- **The acceptance ceiling came from the check, not the network.** PHREEQC itself fails that check in up to 43%
+  of coupled solves.
+- **With a tolerance matched to the network's own held-out SI error, v1 meets both pilot criteria in every
+  run.** In the Argenta that is 96–97% accepted and under 5% error at 7–11x the speed of routed PHREEQC,
+  including the 12-step run. In the lower Mt. Simon it is 81.5% accepted at 4.0% error.
+- **Without any check, the error stayed under 5% as well.** In these runs the error is bounded by the network's
+  accuracy and by the training-box routing, not by the overshoot check.
+
+**What protects the result once the check is relaxed:**
+
+- conservation by extent and the exact positivity limiter (both unchanged);
+- training-box routing (routes 16–20% of Argenta cells when the check is off);
+- the quartz check (0.21) in the Argenta, and all the checks in the lower Mt. Simon.
+
+**Caveat.** For the Argenta aluminosilicates, the calibrated tolerance (2.7–8.3) leaves no working SI safeguard.
+It is matched to what the network can resolve, and the coupled error confirms that this is enough here. It is
+not a guarantee for states far from training.
+
+**For claim 2:** use v1 with the calibrated tolerance and state the guarantees as conservation, positivity and
+range routing. Report the SI check as calibrated to the network's held-out error. Keep the 0.05 default in the
+code for comparison.
+
+**Still untested:** 3D, longer horizons than 1 yr, and a second rock system for the calibration procedure itself.

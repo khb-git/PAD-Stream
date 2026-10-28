@@ -1,0 +1,8 @@
+{
+ "_note": "95th percentile of |SI_end(network) - SI_end(PHREEQC)| on the held-out split; examples/overshoot_tolerance_calibration.py, 27 Oct 2026. Minerals not listed: 0.05.",
+ "Quartz": 0.211,
+ "K-feldspar": 2.693,
+ "Illite": 6.507,
+ "Kaolinite": 5.601,
+ "Chlorite(14A)": 8.298
+}

@@ -204,7 +204,8 @@ class SurrogateBackend:
     2. positivity: all aqueous and mineral amounts stay >= -atol;
     3. direction: no mineral may cross equilibrium (sign of log Omega must not
        flip by more than ``omega_tol``) - the overshoot that makes surrogate
-       errors grow in time;
+       errors grow in time.  ``omega_tol`` may be one value per mineral;
+       ``np.inf`` switches the check off for that mineral;
     4. equilibrium mode only: |log10 Omega_new| <= omega_tol for every mineral
        with remaining mass.
 
@@ -213,7 +214,7 @@ class SurrogateBackend:
     """
 
     def __init__(self, model: Callable, reference: ReferenceBackend,
-                 rtol: float = 1e-8, atol: float = 1e-12, omega_tol: float = 0.05,
+                 rtol: float = 1e-8, atol: float = 1e-12, omega_tol=0.05,
                  keep_training_data: bool = True, speciate_fn: Optional[Callable] = None):
         self.model = model
         self.ref = reference
@@ -248,17 +249,18 @@ class SurrogateBackend:
                            x.area, x.T, x.P, x.dt, x.active)
             LO_new = spec(xn)[1]
         nmin = len(self.ref.minerals) if hasattr(self.ref, "minerals") else self.ref.sys.nmin
+        tol = np.broadcast_to(np.asarray(self.omega_tol, float), (nmin,))   # scalar or per mineral
         for j in range(nmin):
             if spec is not None:
                 lo_old, lo_new = LO_old[:, j], LO_new[:, j]
             else:
                 lo_old = self.ref._log_omega(j, x.n_aq, x.v_brine, x.T)
                 lo_new = self.ref._log_omega(j, np.clip(n_aq, 0, None), x.v_brine, x.T)
-            cross = (np.sign(lo_old) * lo_new < -self.omega_tol) & (np.abs(xi[:, j]) > 0)
+            cross = (np.sign(lo_old) * lo_new < -tol[j]) & (np.abs(xi[:, j]) > 0)
             self.stats.add("overshoot", np.sum(cross & ok)); ok &= ~cross
             if mode == "equilibrium":
                 present = (n_min[:, j] > self.atol) & x.mask()[:, j]
-                bad = present & (np.abs(lo_new) > self.omega_tol)
+                bad = present & (np.abs(lo_new) > tol[j])
                 self.stats.add("not_at_equilibrium", np.sum(bad & ok)); ok &= ~bad
         return ok
 
