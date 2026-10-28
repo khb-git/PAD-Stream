@@ -169,6 +169,14 @@ class FallbackStats:
     rejected: int = 0
     routed: int = 0          # sent to the reference a priori by the model (stiff), not rejected
     reasons: Dict[str, int] = field(default_factory=dict)
+    # per mode ("kinetic" / "equilibrium"): cells offered, cells the surrogate's answer was kept
+    offered: Dict[str, int] = field(default_factory=dict)
+    accepted: Dict[str, int] = field(default_factory=dict)
+
+    def acceptance(self, mode: str = "kinetic") -> float:
+        """Share of ``mode`` cells answered by the surrogate (not routed, not rejected)."""
+        n = self.offered.get(mode, 0)
+        return self.accepted.get(mode, 0) / n if n else 0.0
 
     def add(self, reason: str, n: int):
         if n:
@@ -274,6 +282,9 @@ class SurrogateBackend:
         self.stats.routed += int(routed.sum())
         self.stats.rejected += int((~ok & ~routed).sum())
         rej = ~ok | routed
+        n = x.n_aq.shape[0]
+        self.stats.offered[mode] = self.stats.offered.get(mode, 0) + n
+        self.stats.accepted[mode] = self.stats.accepted.get(mode, 0) + int(n - rej.sum())
         if rej.any():
             sub = x.subset(rej)
             ref = getattr(self.ref, mode)(sub)

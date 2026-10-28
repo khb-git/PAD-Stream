@@ -121,10 +121,13 @@ def test_surrogate_accepts_good_rejects_bad():
     good = SurrogateBackend(lambda inp, mode: {"xi": getattr(ref, mode)(inp)}, ref)
     np.testing.assert_allclose(good.equilibrium(x), ref.equilibrium(x))
     assert good.stats.rejected == 0
+    assert good.stats.acceptance("equilibrium") == 1.0
     bad = SurrogateBackend(lambda inp, mode: {"xi": -getattr(ref, mode)(inp)}, ref)  # wrong direction
     out = bad.equilibrium(x)
     np.testing.assert_allclose(out, ref.equilibrium(x))
     assert bad.stats.fallback_rate == 1.0
+    assert bad.stats.acceptance("equilibrium") == 0.0
+    assert bad.stats.offered["equilibrium"] == x.n_aq.shape[0]
     leak = SurrogateBackend(lambda inp, mode: {"xi": ref.equilibrium(inp),
                                                "d_aq": ref.equilibrium(inp) @ ref.nu + 1.0}, ref)
     leak.equilibrium(x)

@@ -226,7 +226,9 @@ def run(config, phq, st0, op0, c_in, net, steps, dt, da_eq=10.0, da_skip=1e-3, c
         step = StepSurrogate(MLP.load(STEP_MODEL["net"]), phq.nu, ELEMENTS, PHASES, STEP_MODEL["kinetic"],
                              box["x_min"], box["x_max"],
                              speciate_fn=phq.speciate if STEP_MODEL.get("with_si", True) else None)
-        backend = SurrogateBackend(step, phq, keep_training_data=False)   # checks use PHREEQC speciation
+        # keep_training_data: the rejected / routed cells and their PHREEQC extents
+        # (harvested for focused retraining, examples/harvest_step_states.py)
+        backend = SurrogateBackend(step, phq, keep_training_data=bool(STEP_MODEL.get("harvest")))
         spec = lambda a, v: phq.speciate(ChemInput(a, np.zeros((len(v), len(PHASES))), v, 1.0,
                                                    np.zeros((len(v), len(PHASES))), T, P, 0.0))
     elif surrogate:
@@ -268,7 +270,10 @@ def run(config, phq, st0, op0, c_in, net, steps, dt, da_eq=10.0, da_skip=1e-3, c
                 fallback=None if stats is None else stats.fallback_rate,
                 routed=None if stats is None else stats.routed,
                 reasons=None if stats is None else dict(stats.reasons),
-                surr_cells=None if stats is None else stats.cells)
+                surr_cells=None if stats is None else stats.cells,
+                buffer=getattr(backend, "training_buffer", None),
+                kinetic_offered=None if stats is None else stats.offered.get("kinetic", 0),
+                kinetic_accepted=None if stats is None else stats.accepted.get("kinetic", 0))
 
 
 def compare(res, truth, st0):
@@ -349,6 +354,9 @@ def main():
         print(f"{cfg:12s} chem+transport {r['time']:7.1f} s  PHREEQC cell-solves {r['ref_cells']}  "
               f"(routed a priori {r.get('routed')})  max|mass err| {r['mass_err']:.1e}  "
               f"fallback {r['fallback']}  {r['reasons'] or ''}", flush=True)
+        if r.get("kinetic_offered"):
+            print(f"{cfg:12s} kinetic cells on the surrogate {r['kinetic_accepted']} / {r['kinetic_offered']} "
+                  f"({r['kinetic_accepted'] / r['kinetic_offered']:.1%})", flush=True)
     summary = {}
     for cfg, r in results.items():
         if cfg == a.reference or r["failed"]:

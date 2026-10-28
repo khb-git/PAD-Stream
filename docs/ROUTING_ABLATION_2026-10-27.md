@@ -364,3 +364,84 @@ Options:
 - **More data near equilibrium:** focused samples of carbonate-equilibrated states.
 - **A softer overshoot test:** accept crossings within the network's own error band.
 - **State it as is:** acceptance depends on how close the rock sits to equilibrium.
+
+## 12. Argenta: focused near-equilibrium training data (step surrogate v2)
+
+**Method (offline active learning).**
+
+1. Harvest: `examples/harvest_step_states.py` runs `da_step` with the v1 network on two coupled cases that are
+   not the test case: 5 x 5, 5 x 20 d, and 4 x 4, 4 x 45 d (test: 6 x 6, 4 x 30 d). It saves every kinetic
+   cell the surrogate could not take: 365 states, almost all overshoot rejections. In these states quartz
+   (median SI +0.2 to +0.5) and kaolinite (median SI +0.1 to +1.2) sit near saturation, where a small extent
+   error flips the sign of SI.
+2. Label: `examples/generate_step_data_focused.py` perturbs each state 36 times and runs PHREEQC KINETICS.
+   - Al and Si are varied ±0.4 log units, so the samples straddle quartz and kaolinite saturation.
+   - K and C are varied ±0.2 log units, and the other ions ±0.05.
+   - Mineral amounts vary ±20%, area ±0.3 log units, and dt over 1–15 d.
+   - This gives 13,140 samples at about 55 ms each (12 min on 2 cores).
+3. Retrain on the 23,800 broad and 13,140 focused samples (same network size, 300 epochs, 157 s), giving
+   `examples/models/argenta_brine_step_v2.npz`.
+
+No state from either test case was used in training. This is the offline counterpart of the on-demand
+retraining of Leal et al. (2020).
+
+**Held-out error (relative L1 per mineral).**
+
+| Held-out set | Quartz | K-feldspar | Illite | Kaolinite | Chlorite |
+|---|---|---|---|---|---|
+| Broad samples | 18% | 8.1% | 6.1% | 12% | 8.1% |
+| Focused samples | 38% | 5.6% | 3.4% | 10% | 5.3% |
+
+On the broad set this is worse than v1 (4.4–8.8%). Quartz extents in the focused samples are tiny, so their
+relative error is large.
+
+**Coupled tests.** The reference is Damköhler-routed PHREEQC. Case A is the Section 11 test. Case B is a second
+unseen case: 7 x 7, 4 x 25 d.
+
+(The permeability seed in `build` turned out not to change the run, because the synthetic streamlines do not use
+the permeability field. A seed-7 copy of case A reproduced it exactly, so case B differs in grid and time step
+instead.)
+
+| Case | Network | Time (s) | Kinetic cells on the surrogate | Overshoot rejections | Volume error, kinetic minerals | Dissolved-C error |
+|---|---|---|---|---|---|---|
+| A: 6x6, 4 x 30 d (ref. 42.0 s) | v1 | 24.5 | 534 / 864 (61.8%) | 327 | 3.1% | 1.2e-4 |
+| A | v2 | 25.7 | 618 / 864 (71.5%) | 246 | 4.3% | 5.9e-4 |
+| B: 7x7, 4 x 25 d (ref. 79.4 s) | v1 | 42.1 | 793 / 1176 (67.4%) | 378 | 4.8% | 1.3e-4 |
+| B | v2 | 40.1 | 763 / 1176 (64.9%) | 413 | 3.7% | 3.9e-4 |
+
+Per-mineral errors, case B:
+
+- v1: quartz 10%, K-feldspar 15%, illite 21%, kaolinite 4.2%, chlorite 1.1%.
+- v2: quartz 4.6%, K-feldspar 7.0%, illite 7.3%, kaolinite 2.6%, chlorite 3.3%.
+
+Mass balance held to 4e-15 throughout.
+
+**Result: the focused data did not raise acceptance reliably.**
+
+- In case A it lifted acceptance past the 70% target (61.8% to 71.5%), but the error rose (3.1% to 4.3%).
+- In case B acceptance fell (67.4% to 64.9%), while the error improved (4.8% to 3.7%).
+- With either network, acceptance across the two cases spans 62–72%, and the speed-up over routed PHREEQC is
+  1.7–2.0x.
+
+**Reading.**
+
+- More data near equilibrium mainly moves error around: per-mineral errors became more even, especially in
+  case B.
+- It does not lift the acceptance ceiling. The binding constraint seems to be the overshoot test itself: a
+  0.05 tolerance on an SI sign flip, for minerals sitting at SI ≈ 0 with Al and Si near 1e-7 mol/kg. Any
+  prediction error of a few percent crosses it.
+- That makes option 2 (a tolerance matched to the network's error) a question about the check, not the data.
+  Whether a crossing of a given size matters can be tested directly: accept it, then compare against the
+  reference.
+
+**For claim 2, as it stands:**
+
+- The learned step holds under 5% kinetic-mineral error in all four Argenta runs and in the lower Mt. Simon.
+- It takes 62–72% of kinetic cells in the carbonate-buffered Argenta and 75% in the lower Mt. Simon.
+- It runs at 1.6–2.0x the speed of routed PHREEQC.
+- v1 stays the default; v2 is kept for the comparison.
+
+**Counting.** `FallbackStats` now records cells offered and accepted per mode (`offered`, `accepted`,
+`acceptance()`), and the ablation prints "kinetic cells on the surrogate" directly. It reproduces the hand
+counts in Sections 10 and 11 (903 / 1200 and 534 / 864).
+
