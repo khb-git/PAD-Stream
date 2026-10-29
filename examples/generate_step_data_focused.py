@@ -6,14 +6,17 @@ varied most (+-0.4 log units) so the samples straddle quartz / kaolinite
 saturation, where the overshoot check rejects.  Writes focus_chunk<id>.npz in
 the format of generate_step_data_argenta.py.
 
-    python examples/generate_step_data_focused.py <chunk_id> <K> harvest_a.npz [harvest_b.npz ...]
+    python examples/generate_step_data_focused.py [--system <name>] <chunk_id> <K> harvest_a.npz [harvest_b.npz ...]
 """
 import sys, time, numpy as np
 sys.path.insert(0, __import__('os').path.dirname(__import__('os').path.abspath(__file__)))
 import routing_ablation as R
 from padstream_rt import ChemInput
 
-R.select_system("argenta_brine")
+SYS = "argenta_brine"
+if sys.argv[1] == "--system":                        # optional: --system <name> first
+    SYS = sys.argv[2]; sys.argv = [sys.argv[0]] + sys.argv[3:]
+R.select_system(SYS)
 phq = R.build(nx=2)[0]
 chunk, K, files = int(sys.argv[1]), int(sys.argv[2]), sys.argv[3:]
 H = [np.load(f) for f in files]
@@ -48,6 +51,6 @@ for s0 in range(0, N, B):
                 ok[i] = False
     if time.time() - t0 > 470:
         N = min(s0 + B, N); break
-np.savez(f"focus_chunk{chunk}.npz", n_aq=n_aq[:N], n_min=n_min[:N], vb=vb[:N], area=area[:N], T=T[:N], P=P[:N],
+np.savez(f"focus_chunk{chunk}.npz" if SYS == "argenta_brine" else f"{SYS}_focus_chunk{chunk}.npz", n_aq=n_aq[:N], n_min=n_min[:N], vb=vb[:N], area=area[:N], T=T[:N], P=P[:N],
          dt=dt[:N], xi=XI[:N], ok=ok[:N], V=V)
 print(f"focus chunk {chunk}: {N} samples, {ok[:N].sum()} ok, {time.time() - t0:.0f} s", flush=True)

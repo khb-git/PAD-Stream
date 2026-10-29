@@ -1,0 +1,18 @@
+# Iranmanesh, Locke, Wimmer & Garner (2024) Illinois Basin - Decatur Project: Deep Fluid Monitoring Program,
+# Illinois State Geological Survey Circular 611 (https://hdl.handle.net/2142/125233); data file c611_IBDP_data.xlsx.
+# Pre-injection SWAB (baseline) samples of verification well VW1, May 2011 (Circular 611 Table 9-10, printed pp. 23-24).
+# Zones by formation from Table 1 (printed p. 7). mg/L converted to mol/kg water with kg water per L = density - TDS.
+# Field pH (surface, after degassing) is listed but is NOT an in-situ pH. Fe is as measured (swab Fe 75-108 mg/L is
+# higher than later Westbay samples, 33-47 mg/L; possibly well-completion iron). Br and Sr are not modelled.
+# Upper Mt. Simon: zones 8-9 (1,780 and 1,723 m), 2 swab samples. Field pH 6.34 mean, density 1.105, TDS 156,050 mg/L.
+# C from TIC as CO2; S from SO4.
+component,molality_mol_per_kg_h2o
+Ca,0.3819
+Mg,0.08721
+Na,1.78
+K,0.04484
+Fe,0.001066
+Si,0.0003733
+C,0.001963
+S,0.008409
+Cl,2.698

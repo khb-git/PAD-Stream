@@ -24,17 +24,33 @@ ap.add_argument("--nx", type=int, default=5)
 ap.add_argument("--steps", type=int, default=5)
 ap.add_argument("--dt_days", type=float, default=20.0)
 ap.add_argument("--chem_substeps", type=int, default=6)
-ap.add_argument("--step_net", required=True)
-ap.add_argument("--step_box", required=True)
+ap.add_argument("--step_net", default=None)
+ap.add_argument("--step_box", default=None)
 ap.add_argument("--step_kinetic", required=True)
 ap.add_argument("--out", required=True)
+ap.add_argument("--all_reference", action="store_true",
+                help="record EVERY kinetic solve of a routed-PHREEQC (da_ref) run instead of the "
+                     "surrogate's rejections (on-distribution data; ROUTING_ABLATION section 15)")
 a = ap.parse_args()
 assert (a.nx, a.dt_days) not in ((6, 30.0), (7, 25.0)), "that is a test case (ROUTING_ABLATION section 12)"
 R.select_system(a.system)
-R.STEP_MODEL.update(net=a.step_net, box=a.step_box, kinetic=a.step_kinetic.split(","), harvest=True)
+if not a.all_reference:
+    R.STEP_MODEL.update(net=a.step_net, box=a.step_box, kinetic=a.step_kinetic.split(","), harvest=True)
 phq, st0, op0, c_in = R.build(seed=a.seed, nx=a.nx)
-res = R.run("da_step", phq, st0, op0, c_in, None, a.steps, a.dt_days * 86400.0, chem_substeps=a.chem_substeps)
-keep = [(x, xi) for mode, x, xi in res["buffer"] if mode == "kinetic"]
+if a.all_reference:
+    keep, orig = [], phq.kinetic
+
+    def kinetic(x):
+        xi = orig(x)
+        keep.append((x, xi))
+        return xi
+    phq.kinetic = kinetic
+    res = R.run("da_ref", phq, st0, op0, c_in, None, a.steps, a.dt_days * 86400.0, chem_substeps=a.chem_substeps)
+    phq.kinetic = orig
+    res.setdefault("routed", None)
+else:
+    res = R.run("da_step", phq, st0, op0, c_in, None, a.steps, a.dt_days * 86400.0, chem_substeps=a.chem_substeps)
+    keep = [(x, xi) for mode, x, xi in res["buffer"] if mode == "kinetic"]
 cat = lambda f: np.concatenate([f(x, xi) for x, xi in keep])
 dt = cat(lambda x, xi: np.broadcast_to(np.asarray(x.dt, float), (len(x.v_brine),)))
 np.savez(a.out, n_aq=cat(lambda x, xi: x.n_aq), n_min=cat(lambda x, xi: x.n_min), vb=cat(lambda x, xi: x.v_brine),

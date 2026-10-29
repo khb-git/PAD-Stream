@@ -22,7 +22,10 @@ from padstream_rt import ChemInput
 from padstream_rt.surrogate import MLP, step_features, positivity_limit, STEP_Y_SCALE
 
 KIN = {"argenta_brine": ["Quartz", "K-feldspar", "Illite", "Kaolinite", "Chlorite(14A)"],
-       "lower_mt_simon_brine": ["Quartz", "K-feldspar", "Albite", "Siderite", "Illite"]}
+       "lower_mt_simon_brine": ["Quartz", "K-feldspar", "Albite", "Siderite", "Illite"],
+       "upper_mt_simon_brine": ["Quartz", "K-feldspar", "Albite", "Siderite", "Illite", "Chlorite(14A)", "Kaolinite"]}
+KIN.update(lower_mt_simon_ibdp=KIN["lower_mt_simon_brine"], argenta_ibdp=KIN["argenta_brine"],
+           upper_mt_simon_ibdp=KIN["upper_mt_simon_brine"])
 ap = argparse.ArgumentParser()
 ap.add_argument("system")
 ap.add_argument("net")

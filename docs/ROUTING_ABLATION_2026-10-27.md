@@ -563,3 +563,143 @@ range routing. Report the SI check as calibrated to the network's held-out error
 code for comparison.
 
 **Still untested:** 3D, longer horizons than 1 yr, and a second rock system for the calibration procedure itself.
+
+## 14. Ten-year runs (28 Oct 2026)
+
+`examples/long_run.py` runs a configuration year by year (12 × 30 d) with a checkpoint after each year,
+and `--compare` prints the error against the reference by year. Same layers as before (Argenta 6 × 6 with
+6 chemistry substeps; lower Mt. Simon 10 × 10 with 1); v1 networks.
+
+| Year | Argenta, `cal`: accepted / kinetic-vol err | Argenta, 0.05 | Lower Mt. Simon, `cal` | Lower Mt. Simon, 0.05 |
+|---|---|---|---|---|
+| 1 | 96.4% / 1.6% | 68.8% / 1.2% | 81.5% / 4.0% | 75.2% / 3.7% |
+| 2 | 96.6% / 1.3% | 71.3% / 0.9% | 94.0% / 4.4% | 86.0% / 4.2% |
+| 5 | 96.8% / 1.2% | 71.4% / 0.9% | 94.0% / 4.6% | 86.0% / 4.5% |
+| 10 | 96.8% / 1.2% | 73.1% / 0.8% | 94.0% / 4.6% | 86.0% / 4.5% |
+
+- **The error does not grow.** Relative to the cumulative change it falls slightly in the Argenta and levels
+  off at about 4.6% in the lower Mt. Simon after year 3.
+- **Porosity error** stays at 0.1–0.2% (Argenta) and 4.0% (lower Mt. Simon); dissolved-C error under 1e-4.
+- **Speed (wall time per year, two jobs sharing 2 cores):** Argenta 53 s routed PHREEQC, 8.4 s with `cal`
+  (6.3×), 28 s with 0.05 (1.9×); lower Mt. Simon 13 s, 4 s (3.1×), 5 s.
+- Mass balance held to 1.5e-15 in every year.
+
+The lower Mt. Simon's acceptance rises after year 1 because the early, far-from-equilibrium transient is when
+cells leave the training box.
+
+## 15. Second rock system: Upper Mt. Simon (28 Oct 2026)
+
+**System** (`upper_mt_simon_brine`): Freiburg et al. (2022) Table 1, feldspar-rich: 33% quartz, 42% K-feldspar,
+10% plagioclase, 10% clay (illite/mica, I/S and chlorite), 1% calcite, 2% siderite, 1% dolomite; porosity 9.3%.
+Liu brine, 6 chemistry substeps. Kinetic: quartz, K-feldspar, albite, siderite, illite, chlorite, kaolinite;
+calcite, dolomite and anhydrite at equilibrium. Freiburg et al. list this unit as a seal (0.74 mD) with no
+grain-size description, so "fine" is assumed; it is run on the same synthetic streamlines as a chemistry test,
+not as a flow scenario.
+
+**Procedure, same as for the other units:**
+
+1. 24,000 PHREEQC KINETICS samples (`examples/generate_step_data_system.py`, about 64 ms each, porosity sampled
+   around the unit's own 9.3%) and a 3 × 160 network (`examples/train_step_surrogate_system.py`): held-out error
+   5.1–9.7% per mineral (v1).
+2. Calibration on the held-out split. PHREEQC itself fails the 0.05 sign-flip check in 47% of samples (34–41% of
+   coupled solves). Network SI error, 95th percentile: quartz 0.53, siderite 1.3, K-feldspar 4.0, albite 3.8,
+   chlorite 4.4, kaolinite 4.1, illite 7.2 log units.
+
+**First result: v1 fails the error target.**
+
+| Network | Check | Case A (6×6, 4 × 30 d) | Case B (7×7, 4 × 25 d) |
+|---|---|---|---|
+| v1 | 0.05 | 87.6% / 11.9% | 90.5% / 9.5% |
+| v1 | `cal` | 94.0% / 21.5% | 94.6% / 15.5% |
+| v1 | none | 99.0% / 29.8% | 98.8% / 21.1% |
+
+(accepted kinetic cells / kinetic-mineral volume error). Almost every coupled state was inside the training box,
+but the network was inaccurate there: quartz 28–44%, albite 10–207%, illite 20–39%.
+
+**Fix: on-distribution training data.** `harvest_step_states.py --all_reference` records every kinetic PHREEQC
+solve of two non-test routed runs (5 × 5, 5 × 20 d; 4 × 4, 4 × 45 d): 1,134 states, perturbed into 9,072 more
+samples (`generate_step_data_focused.py --system`). Retrained on all 33,072 (v2).
+
+| Network | Check | Case A | Case B |
+|---|---|---|---|
+| v2 | 0.05 | 84.0% / **3.3%** | 86.6% / **4.8%** |
+| v2 | `cal` (95th pct) | 94.1% / 4.7% | 94.6% / 5.6% |
+| v2 | 90th-percentile tolerance | 93.6% / 4.4% | 94.4% / 5.1% |
+| v2 | none | 97.3% / 21.7% | 97.0% / 31.2% |
+
+Routed PHREEQC takes 10.9 s (A) and 13.5 s (B); the surrogate runs take 4.5–7.2 s, so 1.5–2.7× faster. The
+feldspar-rich rock is cheap for PHREEQC, so the gain is smaller than in the Argenta.
+
+**What carries over and what does not:**
+
+- **The calibration procedure carries over for acceptance:** 94–95% with `cal` in both cases, as in the Argenta.
+- **The accuracy does not carry over automatically.** It depended on training data drawn from the coupled-state
+  distribution (v1 → v2: error 12% → 3–5%). Box routing cannot catch this: the states were inside the box.
+- **In this rock the overshoot check is doing real work.** With no check the error is 22–31% (K-feldspar
+  100–135%), unlike the Argenta, where no check stayed under 5%.
+- **Best setting here is the stricter one:** the 0.05 check passes both targets (84–87%, 3.3–4.8%); `cal` passes
+  in case A and misses by 0.6 points in case B.
+
+**For claim 2:** the defensible procedure is (1) broad samples, (2) on-distribution samples harvested from non-test
+routed runs, (3) per-mineral tolerance from held-out SI error, checked against a coupled reference, with the
+fixed 0.05 check as the fallback where the calibrated one misses.
+
+## 16. Chemistry assumptions (28 Oct 2026)
+
+Routed-PHREEQC runs (`examples/chem_sensitivity.py`; Argenta 6 × 6, 4 × 30 d; lower Mt. Simon 10 × 10, 12 × 30 d).
+
+**Dissolution-only primary silicates.** Rerun with the symmetric PK law for every mineral (`--variant precip`):
+
+| Case | Dissolved C | Carbonate-mineral C | max \|Δφ\| |
+|---|---|---|---|
+| Argenta, dissolution-only (default) | +43,994 mol | −1,950 mol | 1.32e-4 |
+| Argenta, symmetric | +43,995 | −1,952 | 1.32e-4 |
+| Lower Mt. Simon, dissolution-only | +268,822 | −757 | 8.62e-5 |
+| Lower Mt. Simon, symmetric | +268,806 | −739 | 8.62e-5 |
+
+A 10-year Argenta run with the symmetric law (`long_run.py --allow_precipitation`) matches the default to within
+2 mol of 44,000 in carbonate C at years 1, 5 and 10. **The assumption is now harmless:** with the 0.01 clay-area
+default the primary silicates stay undersaturated, so they never precipitate, and PHREEQC no longer stalls (it did
+at geometric clay areas). It can be stated as a check rather than an assumption.
+
+**Secondary-mineral seed volume fraction** (default 1e-6):
+
+| Case | 1e-7 | 1e-6 (default) | 1e-5 |
+|---|---|---|---|
+| Argenta, carbonate-mineral C | −1,950 | −1,950 | −1,951 |
+| Lower Mt. Simon, carbonate-mineral C | −671 | −757 | −1,726 |
+
+The Argenta is insensitive. In the lower Mt. Simon, 1e-5 seeds of calcite and anhydrite dissolve in the acid
+front (calcite −986, anhydrite −988 mol) and double the carbonate-C loss; between 1e-7 and 1e-6 the result moves
+by 11%. Report 1e-6 with this band.
+
+**Inert pyrite and hematite.** If all Fe in them became siderite, the carbon it could trap is 177 mol/m³ (lower
+Mt. Simon, 1% pyrite), 499 mol/m³ (Argenta, 1% pyrite + 1% hematite) and 301 mol/m³ (Upper Mt. Simon, 1% hematite).
+The 10-year carbonate-C change in the Argenta layer is −27 mol/m³. So these minerals could matter if they react,
+but releasing their Fe needs a redox driver: a reductant for hematite (H2S, CH4 or residual hydrocarbons, which a
+depleted reservoir has) or an oxidant for pyrite. With CO2 and brine alone they are stable. Keep them inert for
+the aquifer cases and flag them for contribution 3. Field evidence: Frio brine Fe rose after CO2 breakthrough
+(Kharaka et al. 2006); at IBDP, VW1 zone 5 Fe rose from 33–75 to 354 mg/L by Round 10 (Iranmanesh et al. 2024
+data), although the report links that zone's changes to CO2 migration in the well annulus.
+
+**Measured IBDP brine.** Iranmanesh et al. (2024, ISGS Circular 611, https://hdl.handle.net/2142/125233) publish
+the VW1 deep-fluid data. Pre-injection swab samples (May 2011) of lower Mt. Simon zones 2–7 give Na 2.23, Cl 3.56,
+Ca 0.56, Mg 0.10, K 0.059 mol/kgw (TDS 204 g/L, density 1.140, field pH 6.36). That is about 40% more saline than
+the Liu et al. (2011) Indiana brine (Na 1.60, Cl 2.55, Ca 0.35). Upper Mt. Simon zones 8–9 match Liu closely
+(Na 1.78, Cl 2.70, Ca 0.38). Stored as `data/ibdp_vw1_lower_mt_simon_brine.csv` and `..._upper_...csv`; systems
+`lower_mt_simon_ibdp`, `argenta_ibdp`, `upper_mt_simon_ibdp`.
+
+| Case | Dissolved C | Carbonate-mineral C | Main changes |
+|---|---|---|---|
+| Argenta, Liu | +43,994 mol | −1,950 | calcite +5,854, dolomite −3,902 |
+| Argenta, IBDP | +36,708 (−17%) | −2,414 | calcite +14,408, dolomite −8,411 |
+| Lower Mt. Simon, Liu | +268,822 | −757 | quartz +4,498, albite −919, siderite −742 |
+| Lower Mt. Simon, IBDP | +219,973 (−18%) | −723 | quartz +5,631, albite −1,042, siderite −698 |
+
+The saltier IBDP brine dissolves 17–18% less CO2 and, in the Argenta, drives 2.5× more calcite precipitation and
+2× more dolomite dissolution.
+
+**The step networks do not transfer to the IBDP brine.** Run on the IBDP-brine systems, the Liu-trained networks
+accepted 0 of 1,200 (lower Mt. Simon) and 0 of 864 (Argenta) kinetic cells: every state was outside the training
+box, so every cell went to PHREEQC and the error was zero. Range routing failed safe, but using the IBDP brine
+means regenerating the training data (about 40 min of PHREEQC per unit) and recalibrating.

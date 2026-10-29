@@ -45,3 +45,13 @@ def test_liu2011_brine_and_brine_c_eq():
     c_nacl = c_eq_scales(["Calcite"], 323.15, 15e6, 2.0, 100.0)
     c_brine = c_eq_scales(["Calcite"], 323.15, 15e6, None, 100.0, brine=b)
     assert 0 < c_brine[0] < c_nacl[0]        # common-ion effect: Ca-rich brine dissolves less calcite
+
+
+def test_ibdp_brines_and_upper_mt_simon():
+    from padstream_rt.mineralogy import load_brine, unit_mineralogy
+    lo = load_brine("ibdp_vw1_lower_mt_simon_brine")
+    up = load_brine("ibdp_vw1_upper_mt_simon_brine")
+    assert abs(lo["Na"] - 2.23) < 1e-6 and abs(lo["Cl"] - 3.563) < 1e-6
+    assert lo["Cl"] > up["Cl"] > 2.5                      # lower Mt. Simon brine is the saltier
+    um = unit_mineralogy("Upper Mt. Simon", grain_size_text="fine")
+    assert "k_feldspar" in um.minerals and abs(um.porosity - 0.093) < 1e-9

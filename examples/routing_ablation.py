@@ -109,6 +109,32 @@ SYSTEMS["argenta_brine"] = dict(SYSTEMS["argenta"], brine="liu2011_mt_simon_brin
                                 pk=SYSTEMS["argenta"]["pk"] + ["anhydrite"],
                                 secondaries=SYSTEMS["argenta"]["secondaries"] + ["Anhydrite"],
                                 seed_vf=1e-6)
+# Upper Mt. Simon: the feldspar-rich second rock for the tolerance-calibration test
+# (ROUTING_ABLATION section 15).  Freiburg et al. 2022 Table 1: 33 % quartz, 42 % K-feldspar,
+# 10 % plagioclase, 10 % clay (62 % illite/mica, 16 % I/S, 22 % chlorite of clay), 1 % calcite,
+# 2 % siderite, 1 % dolomite.  Table 3 lists it as a seal (9.3 %, 0.74 mD) with no grain-size
+# description: "fine" is ASSUMED.  I/S is not modelled separately (illite/mica stands for it),
+# hematite is left inert.  Run on the same synthetic streamlines as the other units, so this
+# is a chemistry test, not a flow scenario for a seal.
+SYSTEMS["upper_mt_simon_brine"] = dict(
+    unit="Upper Mt. Simon", grain="fine", brine="liu2011_mt_simon_brine",
+    elements=["Na", "K", "Mg", "Ca", "Fe", "Al", "Si", "C", "S", "Cl"],
+    phases=["Quartz", "K-feldspar", "Albite", "Calcite", "Siderite", "Dolomite", "Illite", "Chlorite(14A)",
+            "Kaolinite", "Anhydrite"],
+    xrd=["quartz", "k_feldspar", "plagioclase", "calcite", "siderite", "dolomite", "illite_mica", "chlorite",
+         None, None],
+    pk=["quartz", "K-feldspar", "albite", "calcite", "siderite (provisional; Sun et al. 2020 Table 4)",
+        "dolomite (disordered)", "illite (provisional; Sun et al. 2020 Table 4)", "chlorite", "kaolinite",
+        "anhydrite"],
+    formation_eq=["Quartz", "Kaolinite", "Calcite", "Dolomite"], formation_log_pco2=None,
+    secondaries=["Kaolinite", "Quartz", "Calcite", "Anhydrite"],
+    dissolution_only=["K-feldspar", "Albite", "Illite", "Chlorite(14A)"],
+    seed_vf=1e-6)
+# Measured IBDP verification-well brine (Iranmanesh et al. 2024, Circular 611) in place of the
+# Liu et al. (2011) Indiana brine (ROUTING_ABLATION section 16).  Field pH 6.4 is a surface value.
+SYSTEMS["lower_mt_simon_ibdp"] = dict(SYSTEMS["lower_mt_simon_brine"], brine="ibdp_vw1_lower_mt_simon_brine", brine_ph=6.36)
+SYSTEMS["argenta_ibdp"] = dict(SYSTEMS["argenta_brine"], brine="ibdp_vw1_lower_mt_simon_brine", brine_ph=6.36)
+SYSTEMS["upper_mt_simon_ibdp"] = dict(SYSTEMS["upper_mt_simon_brine"], brine="ibdp_vw1_upper_mt_simon_brine", brine_ph=6.34)
 MOLAR_MASS = {"Anhydrite": 136.14, "Quartz": 60.08, "K-feldspar": 278.33, "Albite": 262.22, "Siderite": 115.85,
               "Illite": 389.34, "Kaolinite": 258.16, "Calcite": 100.09, "Dolomite": 184.40,
               "Chlorite(14A)": 555.80}
@@ -146,7 +172,7 @@ def brine_totals(log_pco2, phases_eq=()):
            + f"\nSOLUTION 1\n temp {T_K - 273.15}\n pressure {P_PA / ATM}\n units mol/kgw\n pH 7 charge\n"
              f"{sol}\n{tr}\nEQUILIBRIUM_PHASES 1\n{eq}\nEND")
     if brine is not None:   # measured pH, charge closed on Cl (brine_solution_lines)
-        inp = inp.replace(" pH 7 charge\n", f" pH {BRINE_PH}\n")
+        inp = inp.replace(" pH 7 charge\n", f" pH {SYSTEM.get('brine_ph', BRINE_PH)}\n")
     if p.RunString(inp):
         raise RuntimeError(p.GetErrorString())
     o = p.GetSelectedOutput()
@@ -188,7 +214,8 @@ def build(roughness=1.0, seed=3, nx=25, clay_roughness=0.01, allow_precipitation
     phq = PhreeqcBackend(ELEMENTS, PHASES, kinetic_params=kp, specific_area=spec, molar_volume=vm,
                          dissolution_only=() if allow_precipitation else SYSTEM.get("dissolution_only", ()))
     ceq = c_eq_scales(PHASES, T_K, P_PA, NACL, 10 ** LOG_PCO2_INJ,
-                      brine=load_brine(SYSTEM["brine"]) if SYSTEM.get("brine") else None)
+                      brine=load_brine(SYSTEM["brine"]) if SYSTEM.get("brine") else None,
+                      brine_ph=SYSTEM.get("brine_ph", BRINE_PH))
     system = phq.chemical_system(ceq)
     geom = GridGeometry(nx=nx, ny=nx, nz=1)
     n = geom.ncell
@@ -269,7 +296,7 @@ def run(config, phq, st0, op0, c_in, net, steps, dt, da_eq=10.0, da_skip=1e-3, c
     stats = getattr(backend, "stats", None)
     if stats is not None:
         ref_cells = stats.rejected + stats.routed
-    return dict(ref_cells=ref_cells, state=st, time=t_chem, mass_err=mass_err, per_mineral=counts, failed=failed,
+    return dict(ref_cells=ref_cells, state=st, op=op, time=t_chem, mass_err=mass_err, per_mineral=counts, failed=failed,
                 fallback=None if stats is None else stats.fallback_rate,
                 routed=None if stats is None else stats.routed,
                 reasons=None if stats is None else dict(stats.reasons),
