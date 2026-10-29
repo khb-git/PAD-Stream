@@ -38,6 +38,10 @@ ap.add_argument("--chem_substeps", type=int, default=6)
 ap.add_argument("--nets", required=True, help="comma list of step networks (.npz; box = <name>_box.npz)")
 ap.add_argument("--tols", default="0.05,0.2,0.5,1,inf,cal")
 ap.add_argument("--cache", default="tolsweep")
+ap.add_argument("--ref_undersat", default="",
+                help="comma list: cells where one of these minerals is undersaturated go to PHREEQC (section 17)")
+ap.add_argument("--dissolution_constraint", action="store_true",
+                help="zero the extent of dissolution-only minerals that stay supersaturated (section 17)")
 a = ap.parse_args()
 R.select_system(a.system)
 kin = KIN[a.system]
@@ -84,7 +88,9 @@ for net in a.nets.split(","):
         # "<check>" or "<check>:<repair>"; the repair tolerance defaults to the check's
         parse = lambda v: (np.array([cal_tol(net).get(p, 0.05) for p in R.PHASES]) if v == "cal" else float(v))
         chk, rep = (tol.split(":") + [None])[:2]
-        R.STEP_MODEL.update(net=net, box=net[:-4] + "_box.npz", kinetic=kin, omega_tol=parse(chk))
+        R.STEP_MODEL.update(net=net, box=net[:-4] + "_box.npz", kinetic=kin, omega_tol=parse(chk),
+                            dissolution_constraint=a.dissolution_constraint,
+                            ref_undersat=[m for m in a.ref_undersat.split(",") if m])
         R.STEP_MODEL.pop("repair_tol", None)
         if rep is not None:
             R.STEP_MODEL["repair_tol"] = parse(rep)
@@ -95,7 +101,7 @@ for net in a.nets.split(","):
         dv = (r["state"].mineral_moles() - n0) * vm
         ek = np.abs(dv - dvt)[:, kmask].sum() / np.abs(dvt)[:, kmask].sum()
         per = {p: round(float(e), 3) for p, e in zip(R.PHASES, c["mineral_rel_L1"]) if p in kin}
-        print(f"{name:30s} tol {tol:9s} accepted {r['kinetic_accepted']:5d}/{r['kinetic_offered']:<5d} "
+        print(f"{name + ('+dc' if a.dissolution_constraint else '') + ('+ru' if a.ref_undersat else ''):30s} tol {tol:9s} accepted {r['kinetic_accepted']:5d}/{r['kinetic_offered']:<5d} "
               f"({r['kinetic_accepted'] / r['kinetic_offered']:5.1%})  kin-vol err {ek:6.2%}  "
               f"dphi err {c['dphi_rel_L1']:.2e}  dC err {c['dC_rel_L1']:.1e}  time {r['time']:5.1f} s  "
               f"rejected {r['reasons']}  per-mineral {per}", flush=True)

@@ -6,7 +6,7 @@ varied most (+-0.4 log units) so the samples straddle quartz / kaolinite
 saturation, where the overshoot check rejects.  Writes focus_chunk<id>.npz in
 the format of generate_step_data_argenta.py.
 
-    python examples/generate_step_data_focused.py [--system <name>] <chunk_id> <K> harvest_a.npz [harvest_b.npz ...]
+    python examples/generate_step_data_focused.py [--system <name>] [--scale <s>] <chunk_id> <K> harvest_a.npz [harvest_b.npz ...]
 """
 import sys, time, numpy as np
 sys.path.insert(0, __import__('os').path.dirname(__import__('os').path.abspath(__file__)))
@@ -16,6 +16,9 @@ from padstream_rt import ChemInput
 SYS = "argenta_brine"
 if sys.argv[1] == "--system":                        # optional: --system <name> first
     SYS = sys.argv[2]; sys.argv = [sys.argv[0]] + sys.argv[3:]
+SCALE = 1.0
+if sys.argv[1] == "--scale":                         # optional: shrink every perturbation (on-distribution data)
+    SCALE = float(sys.argv[2]); sys.argv = [sys.argv[0]] + sys.argv[3:]
 R.select_system(SYS)
 phq = R.build(nx=2)[0]
 chunk, K, files = int(sys.argv[1]), int(sys.argv[2]), sys.argv[3:]
@@ -30,12 +33,15 @@ E = R.ELEMENTS
 logspan = np.full(len(E), 0.05)                          # conservative ions
 for e, s in (("Al", 0.4), ("Si", 0.4), ("K", 0.2), ("C", 0.2), ("Mg", 0.1), ("Ca", 0.1)):
     logspan[E.index(e)] = s
-n_aq = n_aq0[idx] * 10 ** (rng.uniform(-1, 1, (N, len(E))) * logspan)
-n_min = n_min0[idx] * rng.uniform(0.8, 1.2, (N, n_min0.shape[1]))
-area = area0[idx] * 10 ** rng.uniform(-0.3, 0.3, (N, n_min0.shape[1]))
+n_aq = n_aq0[idx] * 10 ** (rng.uniform(-1, 1, (N, len(E))) * logspan * SCALE)
+n_min = n_min0[idx] * (1 + 0.2 * SCALE * rng.uniform(-1, 1, (N, n_min0.shape[1])))
+area = area0[idx] * 10 ** (0.3 * SCALE * rng.uniform(-1, 1, (N, n_min0.shape[1])))
 vb = vb0[idx] * rng.uniform(0.9, 1.1, N)
 T = T0[idx] + rng.uniform(-2, 2, N); P = P0[idx] * rng.uniform(0.95, 1.05, N)
-dt = 86400.0 * 10 ** rng.uniform(0, np.log10(15), N)
+if SCALE == 1.0:      # original near-equilibrium sampling (section 12): dt 1-15 d
+    dt = 86400.0 * 10 ** rng.uniform(0, np.log10(15), N)
+else:                 # on-distribution (section 17): keep the harvested step length, +-40 %
+    dt = cat("dt")[idx] * 10 ** rng.uniform(-0.15, 0.15, N)
 act = act0[idx]
 XI = np.zeros_like(n_min); ok = np.ones(N, bool)
 t0 = time.time(); B = 200

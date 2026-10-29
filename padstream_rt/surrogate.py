@@ -398,7 +398,7 @@ class StepSurrogate:
 
     def __init__(self, net: MLP, nu, elements, phases, kinetic_minerals, x_min, x_max,
                  box_margin: float = 0.5, box_floor: float = 0.1, water_density: float = 1000.0,
-                 speciate_fn=None):
+                 speciate_fn=None, dissolution_only=(), reference_if_undersaturated=()):
         self.net, self.nu = net, np.asarray(nu, float)
         self.elements, self.phases = list(elements), list(phases)
         self.kin_idx = [self.phases.index(m) for m in kinetic_minerals]
@@ -412,6 +412,15 @@ class StepSurrogate:
         self.speciate_fn = speciate_fn
         self.repair_iters = 4
         self.omega_tol = 0.05
+        # minerals whose rate law only dissolves (Mineral.precipitate = False): their
+        # extent cannot be negative, and it is zero if the mineral is supersaturated at
+        # both ends of the step (ROUTING_ABLATION section 17)
+        # minerals the network handles poorly when they dissolve: a cell where one of
+        # them is active and undersaturated goes to the reference a priori (section 17)
+        self.ref_undersat = np.isin(np.arange(len(self.phases)),
+                                    [self.phases.index(m) for m in reference_if_undersaturated if m in self.phases])
+        self.dissolution_only = np.isin(np.arange(len(self.phases)),
+                                        [self.phases.index(m) for m in dissolution_only if m in self.phases])
 
     def _repair_overshoot(self, x: ChemInput, xi, act):
         """Halve the extent of any mineral whose saturation index the predicted
@@ -434,11 +443,29 @@ class StepSurrogate:
             rows = rows[bad]
         return xi
 
+    def _dissolution_only(self, x: ChemInput, xi, F):
+        d = self.dissolution_only[None, :]
+        xi = np.where(d, np.maximum(xi, 0.0), xi)                 # no precipitation
+        if self.speciate_fn is None:
+            return xi
+        si0 = self.speciate_fn(x)[1]
+        cand = d & (xi > 0) & (si0 > 0)
+        rows = np.flatnonzero(cand.any(axis=1))
+        if len(rows):
+            xn = ChemInput(np.clip(x.n_aq[rows] + xi[rows] @ self.nu, 0, None),
+                           np.clip(x.n_min[rows] - xi[rows], 0, None), x.v_brine[rows], x.v_bulk,
+                           x.area[rows], x.T[rows], x.P[rows], x.dt, None)
+            si1 = self.speciate_fn(xn)[1]
+            zero = cand[rows] & (si1 > 0)                         # supersaturated throughout
+            xi[rows] = np.where(zero, 0.0, xi[rows])
+        return xi
+
     def features(self, x: ChemInput):
         F = step_features(x.n_aq, x.n_min, x.v_brine, x.area, x.T, x.P, x.dt, x.v_bulk,
                           self.elements, self.kin_idx, self.rho_w)
         if self.speciate_fn is not None:
             pH, si = self.speciate_fn(x)
+            self._si0 = si
             F = np.column_stack([F, pH, np.clip(si[:, self.kin_idx], -30.0, 10.0)])
         return F
 
@@ -452,9 +479,15 @@ class StepSurrogate:
         xi = np.zeros_like(x.n_min)
         xi[:, self.kin_idx] = np.sinh(y) * STEP_Y_SCALE * kgw[:, None]
         xi = np.where(act, xi, 0.0)
+        if self.dissolution_only.any():
+            xi = self._dissolution_only(x, xi, F)
         xi = positivity_limit(xi, x.n_aq, x.n_min, self.nu)
         if self.speciate_fn is not None and self.repair_iters:
             xi = self._repair_overshoot(x, xi, act)
         outside = ((F < self.lo) | (F > self.hi)).any(axis=1)
         foreign = (act & ~self.kin_mask[None, :]).any(axis=1)
-        return {"xi": xi, "route_to_reference": outside | foreign}
+        route = outside | foreign
+        if self.ref_undersat.any() and self.speciate_fn is not None:
+            si0 = self._si0                       # speciated once, in features()
+            route |= (act & self.ref_undersat[None, :] & (si0 < 0) & (x.n_min > 0)).any(axis=1)
+        return {"xi": xi, "route_to_reference": route}

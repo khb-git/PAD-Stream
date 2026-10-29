@@ -84,3 +84,31 @@ def test_step_surrogate_routes_foreign_and_out_of_box_cells():
     out = s(x, "kinetic")
     assert out["route_to_reference"].tolist() == [False, False, False, True]
     assert np.all(x.n_aq + out["xi"] @ nu >= -1e-15)                    # positivity limiter
+
+
+def test_step_surrogate_routes_undersaturated_listed_mineral():
+    """reference_if_undersaturated (ROUTING_ABLATION section 17): a cell where a listed
+    mineral is present, active and undersaturated goes to PHREEQC; others stay."""
+    from padstream_rt import ChemInput
+    from padstream_rt.surrogate import MLP, StepSurrogate, step_features
+    rng = np.random.default_rng(0)
+    els, phases = ["Na", "Si", "K", "Cl"], ["Quartz", "K-feldspar"]
+    nu = np.array([[0.0, 1.0, 0.0, 0.0], [0.0, 3.0, 1.0, 0.0]])
+    n = 3
+    x = ChemInput(np.tile([1.0, 1e-4, 1e-2, 1.0], (n, 1)), np.array([[10.0, 1.0], [10.0, 1.0], [10.0, 0.0]]),
+                  np.full(n, 1e-3), 1.0, np.full((n, 2), 1.0), np.full(n, 323.15), np.full(n, 1.5e7), 86400.0)
+    si = np.array([[0.1, 0.5], [0.1, -0.5], [0.1, -0.5]])    # cell 1: K-feldspar dissolving; cell 2: none left
+    spec = lambda xx: (np.full(len(xx.v_brine), 6.0), si[:len(xx.v_brine)])
+    F = step_features(x.n_aq, x.n_min, x.v_brine, x.area, x.T, x.P, x.dt, x.v_bulk, els, [0, 1])
+    F = np.column_stack([F, np.full(n, 6.0), si])
+    net = MLP([F.shape[1], 4, 2], rng)
+    net.x_mu, net.x_sd, net.y_mu, net.y_sd = F.mean(0), np.ones(F.shape[1]), np.zeros(2), np.ones(2)
+    kw = dict(speciate_fn=spec)
+    x.active = np.ones((n, 2), bool)
+    base = StepSurrogate(net, nu, els, phases, phases, F.min(0) - 1, F.max(0) + 1, **kw)
+    base.repair_iters = 0
+    assert not base(x, "kinetic")["route_to_reference"].any()
+    s = StepSurrogate(net, nu, els, phases, phases, F.min(0) - 1, F.max(0) + 1,
+                      reference_if_undersaturated=("K-feldspar",), **kw)
+    s.repair_iters = 0
+    assert s(x, "kinetic")["route_to_reference"].tolist() == [False, True, False]

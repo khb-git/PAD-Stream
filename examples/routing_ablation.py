@@ -252,7 +252,10 @@ def run(config, phq, st0, op0, c_in, net, steps, dt, da_eq=10.0, da_skip=1e-3, c
         box = np.load(STEP_MODEL["box"])
         step = StepSurrogate(MLP.load(STEP_MODEL["net"]), phq.nu, ELEMENTS, PHASES, STEP_MODEL["kinetic"],
                              box["x_min"], box["x_max"],
-                             speciate_fn=phq.speciate if STEP_MODEL.get("with_si", True) else None)
+                             speciate_fn=phq.speciate if STEP_MODEL.get("with_si", True) else None,
+                             dissolution_only=[m.name for m in phq.minerals if not m.precipitate]
+                             if STEP_MODEL.get("dissolution_constraint") else (),
+                             reference_if_undersaturated=STEP_MODEL.get("ref_undersat", ()))
         # keep_training_data: the rejected / routed cells and their PHREEQC extents
         # (harvested for focused retraining, examples/harvest_step_states.py)
         tol = STEP_MODEL.get("omega_tol", 0.05)   # SI sign-flip tolerance, repair and check (section 13)

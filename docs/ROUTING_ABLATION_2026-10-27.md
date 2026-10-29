@@ -703,3 +703,48 @@ The saltier IBDP brine dissolves 17–18% less CO2 and, in the Argenta, drives 2
 accepted 0 of 1,200 (lower Mt. Simon) and 0 of 864 (Argenta) kinetic cells: every state was outside the training
 box, so every cell went to PHREEQC and the error was zero. Range routing failed safe, but using the IBDP brine
 means regenerating the training data (about 40 min of PHREEQC per unit) and recalibrating.
+
+## 17. Retraining the step networks on the IBDP brine (29 Oct 2026)
+
+Same recipe as sections 12 and 15 for each unit: broad PHREEQC KINETICS samples
+(`generate_step_data_system.py`), on-distribution states from routed-PHREEQC runs on grids and time steps that are
+not test cases (`harvest_step_states.py --all_reference`), perturbed with `generate_step_data_focused.py --scale 0.3`
+(keeps the harvested dt), then training and per-mineral tolerance calibration (`*_tol.json`). Targets as before:
+≥70% of kinetic cells accepted and <5% kinetic-volume error against routed PHREEQC.
+
+| Unit | Network | Case | Check | Accepted | Kin-vol error |
+|---|---|---|---|---|---|
+| Lower Mt. Simon | `lower_mt_simon_ibdp_step_v2` | A (10×10, 12×30 d) | 0.05 / cal | 81.8% / 87.2% | 2.05% / 2.17% |
+| | | B (8×8, 6×45 d) | 0.05 / cal | 71.4% / 73.4% | 2.61% / 2.58% |
+| Argenta | `argenta_ibdp_step_v1` | A (6×6, 4×30 d) | 0.05 / cal | 80.4% / 99.9% | 2.87% / 3.25% |
+| | | B (7×7, 4×25 d) | 0.05 / cal | 73.6% / 99.9% | 3.99% / 4.13% |
+| Upper Mt. Simon | `upper_mt_simon_ibdp_step_v3` | A | cal | — | 13.5–16.5% (v1–v3) |
+| Upper Mt. Simon + K-feldspar routing | `upper_mt_simon_ibdp_step_v3` | A | 0.05 / cal | 88.4% / 92.2% | 2.27% / 2.12% |
+| | | B | 0.05 / cal | 91.2% / 93.3% | 2.04% / 2.05% |
+| | | C (9×9, 4×35 d) | 0.05 / cal | 89.8% / 92.6% | 1.97% / 2.05% |
+
+Lower Mt. Simon case A with the calibrated check runs in 7.1 s against about 18 s for routed PHREEQC; Argenta
+case A in 2.2 s against 31 s.
+
+**Upper Mt. Simon failed until K-feldspar was routed.** Three networks (v1; v2 with more harvests; v3 with more
+harvests, scale 0.3 and 450 epochs) all gave 13.5–19% error. The error was nearly all K-feldspar (69–90% per-mineral
+error) and quartz (16–24%): in case A the reference dissolves 32.6 mol K-feldspar and the network 6.5 mol, which is
+2,850 of the 3,869 cm³ total volume error. 94% of the reference K-feldspar extents in the training data are zero, so
+the few dissolving cells are under-represented. Clipping or zeroing K-feldspar extents by saturation state
+(`dissolution_constraint`) did not help.
+
+The fix is a routing rule, not a better network: `StepSurrogate(reference_if_undersaturated=("K-feldspar",))` sends a
+cell to PHREEQC before prediction when K-feldspar is present, kinetic and undersaturated at the start of the step
+(the SI comes from the speciation already done for the features; no reference result is used). Only about 40–100
+cells per run qualify, so acceptance stays near 90% and the error drops to about 2%.
+
+**Caveats.**
+
+1. The rule was chosen after diagnosing case A. Case B shares the system, so case C (a grid and dt not used to train
+   or choose the rule) is the fairer check; it gives 19.4% → 2.05%.
+2. The rule is unit-specific. Applied to Lower Mt. Simon and Argenta, where the IBDP brine leaves K-feldspar
+   undersaturated almost everywhere, it routes most cells (acceptance 22.7% and 28.7%) and removes the speed-up.
+   So it is a per-unit setting, chosen from the unit's own chemistry, not a general fix.
+3. The proper fix is training data that covers dissolving K-feldspar (oversampling or weighting nonzero extents);
+   not attempted here.
+4. Ten-year runs with the IBDP networks have not been done.
